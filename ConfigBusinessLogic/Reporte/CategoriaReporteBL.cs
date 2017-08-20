@@ -1,5 +1,6 @@
 ﻿using ConfigBusinessEntity;
 using ConfigDataAccess.Reporte;
+using ConfigUtilitarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +31,21 @@ namespace ConfigBusinessLogic.Reporte
         {
             return new CategoriaReporteDA().CategoriaReporteXCod(cod);
         }
-        public List<RPTt02_categoria_reporte> ListaCategoriaReporte(int? id_estado = null)
+        public List<RPTt02_categoria_reporte> ListaCategoriaReporte(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
         {
-            return new CategoriaReporteDA().ListaCategoriaReporte(id_estado);
+            var lista = new CategoriaReporteDA().ListaCategoriaReporte(id_estado);
+            if (ocultarBlankReg && lista != null && lista.Count > 0)
+            {
+                var itemToRemove = lista.SingleOrDefault(x => x.cod_categoria_reporte == Parameter.BlankRegister);
+                if (itemToRemove != null && itemToRemove.id_categoria_reporte > 0)
+                    lista.Remove(itemToRemove);
+            }
+
+            if (enableTopList && lista != null)
+                return lista.OrderBy(x => x.cod_categoria_reporte != TopList.CategoriaReporte).ThenBy(x => x.txt_desc).ToList();
+
+
+            return lista;
         }
     }
 }

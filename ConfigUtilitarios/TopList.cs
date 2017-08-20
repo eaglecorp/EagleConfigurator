@@ -48,5 +48,7 @@ namespace ConfigUtilitarios
         public static string Impuesto { get; } = "0";
         public static string TipoLocation { get; } = "0";
 
+        public static string CategoriaReporte { get; } = "0";
+
     }
 }

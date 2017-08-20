@@ -11,6 +11,7 @@ using ConfigBusinessLogic.General;
 using System.IO;
 using ConfigBusinessLogic;
 using ConfigUtilitarios;
+using ConfiguradorUI.Reporte;
 
 namespace ConfiguradorUI
 {
@@ -358,10 +359,24 @@ namespace ConfiguradorUI
 
 
 
-        #endregion
 
         #endregion
 
+        #endregion
 
+        #region Reportes
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            FormReporte oForm = new FormReporte();
+            oForm.ShowDialog();
+        }
+
+        private void btnCategoriaReporte_Click(object sender, EventArgs e)
+        {
+
+            FormCategoriaReporte oForm = new FormCategoriaReporte();
+            oForm.ShowDialog();
+        } 
+        #endregion
     }
 }

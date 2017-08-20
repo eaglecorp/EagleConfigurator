@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            this.tabProductos = new MetroFramework.Controls.MetroTabControl();
+            this.tabPanel = new MetroFramework.Controls.MetroTabControl();
             this.tabPagProductos = new MetroFramework.Controls.MetroTabPage();
             this.btnCombo = new System.Windows.Forms.Button();
             this.btnReceta = new System.Windows.Forms.Button();
@@ -68,25 +68,30 @@
             this.toolStripUsername = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripFechaCronologica = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabProductos.SuspendLayout();
+            this.tabPagReportes = new MetroFramework.Controls.MetroTabPage();
+            this.btnCategoriaReporte = new System.Windows.Forms.Button();
+            this.btnReporte = new System.Windows.Forms.Button();
+            this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
             this.tabPagMaestros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.StatusStripEagle.SuspendLayout();
+            this.tabPagReportes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabProductos
+            // tabPanel
             // 
-            this.tabProductos.Controls.Add(this.tabPagProductos);
-            this.tabProductos.Controls.Add(this.tabPagPersonas);
-            this.tabProductos.Controls.Add(this.tabPagMaestros);
-            this.tabProductos.Location = new System.Drawing.Point(31, 166);
-            this.tabProductos.Name = "tabProductos";
-            this.tabProductos.SelectedIndex = 0;
-            this.tabProductos.Size = new System.Drawing.Size(681, 259);
-            this.tabProductos.TabIndex = 0;
-            this.tabProductos.UseSelectable = true;
+            this.tabPanel.Controls.Add(this.tabPagProductos);
+            this.tabPanel.Controls.Add(this.tabPagPersonas);
+            this.tabPanel.Controls.Add(this.tabPagMaestros);
+            this.tabPanel.Controls.Add(this.tabPagReportes);
+            this.tabPanel.Location = new System.Drawing.Point(31, 166);
+            this.tabPanel.Name = "tabPanel";
+            this.tabPanel.SelectedIndex = 3;
+            this.tabPanel.Size = new System.Drawing.Size(681, 259);
+            this.tabPanel.TabIndex = 0;
+            this.tabPanel.UseSelectable = true;
             // 
             // tabPagProductos
             // 
@@ -755,6 +760,64 @@
             this.toolStripHora.Size = new System.Drawing.Size(39, 21);
             this.toolStripHora.Text = "Hora";
             // 
+            // tabPagReportes
+            // 
+            this.tabPagReportes.Controls.Add(this.btnCategoriaReporte);
+            this.tabPagReportes.Controls.Add(this.btnReporte);
+            this.tabPagReportes.HorizontalScrollbarBarColor = true;
+            this.tabPagReportes.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagReportes.HorizontalScrollbarSize = 10;
+            this.tabPagReportes.Location = new System.Drawing.Point(4, 38);
+            this.tabPagReportes.Name = "tabPagReportes";
+            this.tabPagReportes.Size = new System.Drawing.Size(673, 217);
+            this.tabPagReportes.TabIndex = 3;
+            this.tabPagReportes.Text = "Reportes";
+            this.tabPagReportes.VerticalScrollbarBarColor = true;
+            this.tabPagReportes.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagReportes.VerticalScrollbarSize = 10;
+            // 
+            // btnCategoriaReporte
+            // 
+            this.btnCategoriaReporte.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCategoriaReporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCategoriaReporte.FlatAppearance.BorderSize = 0;
+            this.btnCategoriaReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnCategoriaReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCategoriaReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoriaReporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoriaReporte.ForeColor = System.Drawing.Color.White;
+            this.btnCategoriaReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaReporte.Image")));
+            this.btnCategoriaReporte.Location = new System.Drawing.Point(2, 52);
+            this.btnCategoriaReporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCategoriaReporte.Name = "btnCategoriaReporte";
+            this.btnCategoriaReporte.Size = new System.Drawing.Size(135, 37);
+            this.btnCategoriaReporte.TabIndex = 13;
+            this.btnCategoriaReporte.Text = "Categorías";
+            this.btnCategoriaReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategoriaReporte.UseVisualStyleBackColor = false;
+            this.btnCategoriaReporte.Click += new System.EventHandler(this.btnCategoriaReporte_Click);
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnReporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.ForeColor = System.Drawing.Color.White;
+            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
+            this.btnReporte.Location = new System.Drawing.Point(2, 11);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(135, 37);
+            this.btnReporte.TabIndex = 12;
+            this.btnReporte.Text = "Reportes";
+            this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,7 +829,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.dtpFechaCronologia);
-            this.Controls.Add(this.tabProductos);
+            this.Controls.Add(this.tabPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -775,13 +838,14 @@
             this.Resizable = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
-            this.tabProductos.ResumeLayout(false);
+            this.tabPanel.ResumeLayout(false);
             this.tabPagProductos.ResumeLayout(false);
             this.tabPagPersonas.ResumeLayout(false);
             this.tabPagMaestros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.StatusStripEagle.ResumeLayout(false);
             this.StatusStripEagle.PerformLayout();
+            this.tabPagReportes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -812,7 +876,7 @@
         private System.Windows.Forms.Button btnCanalVenta;
         private System.Windows.Forms.Button btnTipoOrden;
         private System.Windows.Forms.Button btnDescuento;
-        private MetroFramework.Controls.MetroTabControl tabProductos;
+        private MetroFramework.Controls.MetroTabControl tabPanel;
         private MetroFramework.Controls.MetroTabPage tabPagProductos;
         private MetroFramework.Controls.MetroTabPage tabPagPersonas;
         private MetroFramework.Controls.MetroTabPage tabPagMaestros;
@@ -827,6 +891,9 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripUsername;
         private System.Windows.Forms.ToolStripStatusLabel toolStripFechaCronologica;
         private System.Windows.Forms.ToolStripStatusLabel toolStripHora;
+        private MetroFramework.Controls.MetroTabPage tabPagReportes;
+        private System.Windows.Forms.Button btnCategoriaReporte;
+        private System.Windows.Forms.Button btnReporte;
     }
 }
 

@@ -55,6 +55,28 @@ namespace ConfigUtilitarios
             }
         }
 
+        public static string Reporting
+        {
+            get
+            {
+                string strPath = "";
+                try
+                {
+                    strPath = Application.StartupPath + @"\Reporting";
+                    if (!Directory.Exists(strPath))
+                    {
+                        Directory.CreateDirectory(strPath);
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Reporting Path: Utilitarios. ", e.Message);
+                }
+                return strPath;
+            }
+        }
+
         public static string FotoDefault { get; } = Application.StartupPath+ @"\FotosDefault";
 
 

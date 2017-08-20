@@ -18,5 +18,6 @@ namespace ConfigUtilitarios
         public static int Modelo_Producto { get; } = 8;
         public static int SubFamilia_Producto { get; } = 9;
         public static int Clase_Producto { get; } = 10;
+        public static int CategoriaReporte_Reporte { get; } = 11;
     }
 }

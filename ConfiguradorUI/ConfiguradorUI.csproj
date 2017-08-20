@@ -218,6 +218,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Reporte\FormCategoriaReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\FormCategoriaReporte.Designer.cs">
+      <DependentUpon>FormCategoriaReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\FormReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\FormReporte.Designer.cs">
+      <DependentUpon>FormReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\FormBackupRestore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +346,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\FormCategoriaReporte.resx">
+      <DependentUpon>FormCategoriaReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\FormReporte.resx">
+      <DependentUpon>FormReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FormBackupRestore.resx">
       <DependentUpon>FormBackupRestore.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,6 +403,8 @@
     <Content Include="Resources\icons\connection.png" />
     <Content Include="Resources\icons\databases-symbol.png" />
     <Content Include="Resources\icons\plug.png" />
+    <Content Include="Resources\icons\report.png" />
+    <Content Include="Resources\icons\report_category.png" />
     <Content Include="Resources\logoEagleConfig.ico" />
     <Content Include="Resources\off.png" />
     <Content Include="Resources\on.png" />
