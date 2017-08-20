@@ -88,6 +88,8 @@
     <Compile Include="Producto\SubFamiliaDA.cs" />
     <Compile Include="Producto\TipoProdDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporte\CategoriaReporteDA.cs" />
+    <Compile Include="Reporte\ReporteDA.cs" />
     <Compile Include="Seguridad\UsuarioDA.cs" />
     <Compile Include="Sunat\CondicionLaboralDA.cs" />
     <Compile Include="Sunat\DepartamentoDA.cs" />

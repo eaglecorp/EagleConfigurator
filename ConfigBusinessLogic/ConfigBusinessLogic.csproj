@@ -66,6 +66,8 @@
     <Compile Include="Producto\RecetaBL.cs" />
     <Compile Include="Producto\SubFamiliaBL.cs" />
     <Compile Include="Producto\TipoProdBL.cs" />
+    <Compile Include="Reporte\CategoriaReporteBL.cs" />
+    <Compile Include="Reporte\ReporteBL.cs" />
     <Compile Include="Seguridad\UsuarioBL.cs" />
     <Compile Include="Sunat\CondicionLaboralBL.cs" />
     <Compile Include="Sunat\DepartamentoBL.cs" />
