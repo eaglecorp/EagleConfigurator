@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6D7FEA5-C86F-46D4-B014-63F52F731A18}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConfigDataAccess</RootNamespace>
+    <AssemblyName>ConfigDataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clinica\EspecialidadMedicaDA.cs" />
+    <Compile Include="Clinica\TipoEspecialidadDA.cs" />
+    <Compile Include="General\HorarioDA.cs" />
+    <Compile Include="General\ParametroDA.cs" />
+    <Compile Include="Maestro\CanalVentaDA.cs" />
+    <Compile Include="Maestro\DescuentoDA.cs" />
+    <Compile Include="Maestro\EstadoCivilDA.cs" />
+    <Compile Include="Maestro\ImpuestoDA.cs" />
+    <Compile Include="Maestro\LocationDA.cs" />
+    <Compile Include="Maestro\MedioPagoDA.cs" />
+    <Compile Include="Maestro\RazonDA.cs" />
+    <Compile Include="Maestro\TipoLocationDA.cs" />
+    <Compile Include="Maestro\TipoOrdenDA.cs" />
+    <Compile Include="Persona\ClienteDA.cs" />
+    <Compile Include="Persona\EmpleadoDA.cs" />
+    <Compile Include="Persona\ProveedorDA.cs" />
+    <Compile Include="Producto\ClaseProdDA.cs" />
+    <Compile Include="Producto\ComboDA.cs" />
+    <Compile Include="Producto\ComboDetalleDA.cs" />
+    <Compile Include="Producto\ComboGrupoDA.cs" />
+    <Compile Include="Producto\FamiliaDA.cs" />
+    <Compile Include="Producto\GrupoProdDA.cs" />
+    <Compile Include="Producto\MarcaDA.cs" />
+    <Compile Include="Producto\ModeloDA.cs" />
+    <Compile Include="Producto\PrecioProdDA.cs" />
+    <Compile Include="Producto\ProductoDA.cs" />
+    <Compile Include="Producto\RecetaDA.cs" />
+    <Compile Include="Producto\RecetaDetalleDA.cs" />
+    <Compile Include="Producto\SubFamiliaDA.cs" />
+    <Compile Include="Producto\TipoProdDA.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\UsuarioDA.cs" />
+    <Compile Include="Sunat\CondicionLaboralDA.cs" />
+    <Compile Include="Sunat\DepartamentoDA.cs" />
+    <Compile Include="Sunat\DistritoDA.cs" />
+    <Compile Include="Sunat\EntidadFinancieraDA.cs" />
+    <Compile Include="Sunat\ModalidadFormativaDA.cs" />
+    <Compile Include="Sunat\MotivoBajaDA.cs" />
+    <Compile Include="Sunat\NacionalidadDA.cs" />
+    <Compile Include="Sunat\OcupacionDA.cs" />
+    <Compile Include="Sunat\PeriodoRemuneracionDA.cs" />
+    <Compile Include="Sunat\ProvinciaDA.cs" />
+    <Compile Include="Sunat\RegimenLaboralDA.cs" />
+    <Compile Include="Sunat\RegimenPensionarioDA.cs" />
+    <Compile Include="Sunat\RegimenSaludDA.cs" />
+    <Compile Include="Sunat\SaludEpsDA.cs" />
+    <Compile Include="Sunat\SituacionDA.cs" />
+    <Compile Include="Sunat\SituacionEducativaDA.cs" />
+    <Compile Include="Sunat\SuspencionLaboralDA.cs" />
+    <Compile Include="Sunat\TipoDocIdentidadDA.cs" />
+    <Compile Include="Sunat\TipoExistenciaDA.cs" />
+    <Compile Include="Sunat\TipoMedioPagoDA.cs" />
+    <Compile Include="Sunat\TipoMonedaDA.cs" />
+    <Compile Include="Sunat\TipoTrabajadorDA.cs" />
+    <Compile Include="Sunat\UnidadMedidaDA.cs" />
+    <Compile Include="Sunat\ViaDA.cs" />
+    <Compile Include="Sunat\ZonaDA.cs" />
+    <Compile Include="Utiles\UtilDA.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigBusinessEntity\ConfigBusinessEntity.csproj">
+      <Project>{5f19851a-857f-4335-9dec-13db240874df}</Project>
+      <Name>ConfigBusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConfigUtilitarios\ConfigUtilitarios.csproj">
+      <Project>{F3D8EA2A-C06C-44F9-BB6B-23AA33D24591}</Project>
+      <Name>ConfigUtilitarios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
