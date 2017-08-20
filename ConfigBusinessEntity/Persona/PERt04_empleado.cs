@@ -14,6 +14,7 @@ namespace ConfigBusinessEntity
             CLIt03_atencion = new HashSet<CLIt03_atencion>();
             CLIt04_atencion_dtl = new HashSet<CLIt04_atencion_dtl>();
             CLIt19_cita = new HashSet<CLIt19_cita>();
+            MSTt13_caja_dtl = new HashSet<MSTt13_caja_dtl>();
             PERt01_usuario = new HashSet<PERt01_usuario>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
             TNSt04_comp_emitido1 = new HashSet<TNSt04_comp_emitido>();
@@ -213,6 +214,9 @@ namespace ConfigBusinessEntity
         public virtual ICollection<CLIt19_cita> CLIt19_cita { get; set; }
 
         public virtual MSTt07_estado_civil MSTt07_estado_civil { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MSTt13_caja_dtl> MSTt13_caja_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PERt01_usuario> PERt01_usuario { get; set; }

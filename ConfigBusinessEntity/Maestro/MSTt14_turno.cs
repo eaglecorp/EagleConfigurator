@@ -6,38 +6,41 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class MSTt06_impuesto
+    public partial class MSTt14_turno
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MSTt06_impuesto()
+        public MSTt14_turno()
         {
-            PROt09_producto = new HashSet<PROt09_producto>();
-            TNSt01_comp_recibido = new HashSet<TNSt01_comp_recibido>();
+            MSTt13_caja_dtl = new HashSet<MSTt13_caja_dtl>();
+            TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
         }
 
         [Key]
-        public int id_impuesto { get; set; }
+        public int id_turno { get; set; }
 
         [StringLength(10)]
-        public string cod_impuesto { get; set; }
+        public string cod_turno { get; set; }
 
-        [StringLength(150)]
-        public string txt_desc { get; set; }
-
-        [StringLength(30)]
+        [StringLength(10)]
         public string txt_abrv { get; set; }
 
-        public decimal por_impto { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string txt_desc { get; set; }
 
-        public int? id_estado { get; set; }
+        public TimeSpan hora_inicio { get; set; }
+
+        public TimeSpan hora_fin { get; set; }
+
+        public int id_estado { get; set; }
 
         [StringLength(20)]
         public string txt_estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt09_producto> PROt09_producto { get; set; }
+        public virtual ICollection<MSTt13_caja_dtl> MSTt13_caja_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TNSt01_comp_recibido> TNSt01_comp_recibido { get; set; }
+        public virtual ICollection<TNSt04_comp_emitido> TNSt04_comp_emitido { get; set; }
     }
 }

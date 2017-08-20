@@ -6,32 +6,30 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class CLIt16_cie10
+    public partial class MSTt16_estado_mesa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CLIt16_cie10()
+        public MSTt16_estado_mesa()
         {
-            CLIt15_diagnostico = new HashSet<CLIt15_diagnostico>();
+            MSTt15_mesa = new HashSet<MSTt15_mesa>();
         }
 
         [Key]
-        public int id_cie10 { get; set; }
+        public int id_estado_mesa { get; set; }
 
-        [StringLength(50)]
-        public string cod_3 { get; set; }
-
-        [Required]
-        [StringLength(2000)]
-        public string txt_categoria { get; set; }
-
-        [StringLength(50)]
-        public string cod_4 { get; set; }
+        [StringLength(10)]
+        public string cod_estado_mesa { get; set; }
 
         [Required]
-        [StringLength(2000)]
+        [StringLength(50)]
         public string txt_desc { get; set; }
 
+        public int id_estado { get; set; }
+
+        [StringLength(20)]
+        public string txt_estado { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CLIt15_diagnostico> CLIt15_diagnostico { get; set; }
+        public virtual ICollection<MSTt15_mesa> MSTt15_mesa { get; set; }
     }
 }

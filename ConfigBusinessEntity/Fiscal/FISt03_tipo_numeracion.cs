@@ -6,40 +6,30 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class MSTt04_canal_vta
+    public partial class FISt03_tipo_numeracion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MSTt04_canal_vta()
+        public FISt03_tipo_numeracion()
         {
             FISt01_control_numeracion = new HashSet<FISt01_control_numeracion>();
-            MSTt15_mesa = new HashSet<MSTt15_mesa>();
-            TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
         }
 
         [Key]
-        public int id_can_vta { get; set; }
+        public int id_tipo_numeracion { get; set; }
 
         [StringLength(10)]
-        public string cod_can_vta { get; set; }
+        public string cod_tipo_numeracion { get; set; }
 
-        [StringLength(10)]
-        public string txt_abrv { get; set; }
-
-        [StringLength(200)]
+        [Required]
+        [StringLength(100)]
         public string txt_desc { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
         [StringLength(20)]
         public string txt_estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FISt01_control_numeracion> FISt01_control_numeracion { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MSTt15_mesa> MSTt15_mesa { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TNSt04_comp_emitido> TNSt04_comp_emitido { get; set; }
     }
 }

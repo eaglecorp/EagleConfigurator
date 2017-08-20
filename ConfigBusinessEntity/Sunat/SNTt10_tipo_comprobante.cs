@@ -11,6 +11,7 @@ namespace ConfigBusinessEntity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SNTt10_tipo_comprobante()
         {
+            FISt01_control_numeracion = new HashSet<FISt01_control_numeracion>();
             TNSt01_comp_recibido = new HashSet<TNSt01_comp_recibido>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
         }
@@ -55,6 +56,9 @@ namespace ConfigBusinessEntity
 
         [StringLength(20)]
         public string txt_estado { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FISt01_control_numeracion> FISt01_control_numeracion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt01_comp_recibido> TNSt01_comp_recibido { get; set; }

@@ -77,9 +77,13 @@
     <Compile Include="Clinica\CLIt19_cita.cs" />
     <Compile Include="Conexion\ConnectionManager.cs" />
     <Compile Include="EagleContext.cs" />
+    <Compile Include="Fiscal\FISt01_control_numeracion.cs" />
+    <Compile Include="Fiscal\FISt02_nivel.cs" />
+    <Compile Include="Fiscal\FISt03_tipo_numeracion.cs" />
     <Compile Include="General\GRLt01_parametro.cs" />
     <Compile Include="General\GRLt02_estado.cs" />
     <Compile Include="General\GRLt03_horario.cs" />
+    <Compile Include="General\GRLt04_configuracion_caja.cs" />
     <Compile Include="Maestro\MSTt01_medio_pago.cs" />
     <Compile Include="Maestro\MSTt02_descuento.cs" />
     <Compile Include="Maestro\MSTt03_tipo_orden.cs" />
@@ -89,6 +93,13 @@
     <Compile Include="Maestro\MSTt07_estado_civil.cs" />
     <Compile Include="Maestro\MSTt08_location.cs" />
     <Compile Include="Maestro\MSTt09_tipo_location.cs" />
+    <Compile Include="Maestro\MSTt10_impresora.cs" />
+    <Compile Include="Maestro\MSTt11_tipo_impresora.cs" />
+    <Compile Include="Maestro\MSTt12_caja.cs" />
+    <Compile Include="Maestro\MSTt13_caja_dtl.cs" />
+    <Compile Include="Maestro\MSTt14_turno.cs" />
+    <Compile Include="Maestro\MSTt15_mesa.cs" />
+    <Compile Include="Maestro\MSTt16_estado_mesa.cs" />
     <Compile Include="Persona\PERt01_usuario.cs" />
     <Compile Include="Persona\PERt02_cliente.cs" />
     <Compile Include="Persona\PERt03_proveedor.cs" />
@@ -109,6 +120,8 @@
     <Compile Include="Producto\PROt13_combo_dtl.cs" />
     <Compile Include="Producto\PROt14_combo_grupo.cs" />
     <Compile Include="Producto\PROt15_receta_grupo.cs" />
+    <Compile Include="Reporte\RPTt01_reporte.cs" />
+    <Compile Include="Reporte\RPTt02_categoria_reporte.cs" />
     <Compile Include="Sunat\SNTt01_tipo_medio_pago.cs" />
     <Compile Include="Sunat\SNTt02_tipo_doc_identidad.cs" />
     <Compile Include="Sunat\SNTt03_entidad_financiera.cs" />
@@ -164,6 +177,7 @@
       <Name>ConfigUtilitarios</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

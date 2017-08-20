@@ -26,6 +26,8 @@ namespace ConfigBusinessEntity
 
         public int id_tipo_comp { get; set; }
 
+        public long id_cliente { get; set; }
+
         public long? id_empleado { get; set; }
 
         public long? id_emp_autorizador { get; set; }
@@ -66,8 +68,6 @@ namespace ConfigBusinessEntity
 
         public int id_tipo_orden { get; set; }
 
-        public decimal por_impto { get; set; }
-
         public int id_location { get; set; }
 
         [StringLength(1000)]
@@ -83,15 +83,11 @@ namespace ConfigBusinessEntity
 
         public decimal mto_dscto_tot { get; set; }
 
-        public decimal mto_cms_tot { get; set; }
-
-        public decimal mto_flete_tot { get; set; }
+        public decimal mto_servicio { get; set; }
 
         public decimal mto_sub_tot { get; set; }
 
         public decimal mto_impto_tot { get; set; }
-
-        public decimal mto_servicio { get; set; }
 
         public decimal mto_tot_comp { get; set; }
 
@@ -112,6 +108,38 @@ namespace ConfigBusinessEntity
         public int? sn_chk_abierto { get; set; }
 
         public int? sn_chk_enviado { get; set; }
+
+        public decimal? tax_por01 { get; set; }
+
+        public decimal? tax_por02 { get; set; }
+
+        public decimal? tax_por03 { get; set; }
+
+        public decimal? tax_por04 { get; set; }
+
+        public decimal? tax_por05 { get; set; }
+
+        public decimal? tax_por06 { get; set; }
+
+        public decimal? tax_por07 { get; set; }
+
+        public decimal? tax_por08 { get; set; }
+
+        public decimal? tax_mto01 { get; set; }
+
+        public decimal? tax_mto02 { get; set; }
+
+        public decimal? tax_mto03 { get; set; }
+
+        public decimal? tax_mto04 { get; set; }
+
+        public decimal? tax_mto05 { get; set; }
+
+        public decimal? tax_mto06 { get; set; }
+
+        public decimal? tax_mto07 { get; set; }
+
+        public decimal? tax_mto08 { get; set; }
 
         [StringLength(500)]
         public string info01 { get; set; }
@@ -168,6 +196,10 @@ namespace ConfigBusinessEntity
 
         public decimal? info_mto05 { get; set; }
 
+        public int? num_comensales { get; set; }
+
+        public int id_turno { get; set; }
+
         public long? id_usuario { get; set; }
 
         [StringLength(50)]
@@ -181,17 +213,17 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
-        public int id_impuesto { get; set; }
-
-        public long id_cliente { get; set; }
+        public int? id_mesa { get; set; }
 
         public virtual MSTt03_tipo_orden MSTt03_tipo_orden { get; set; }
 
         public virtual MSTt04_canal_vta MSTt04_canal_vta { get; set; }
 
-        public virtual MSTt06_impuesto MSTt06_impuesto { get; set; }
-
         public virtual MSTt08_location MSTt08_location { get; set; }
+
+        public virtual MSTt14_turno MSTt14_turno { get; set; }
+
+        public virtual MSTt15_mesa MSTt15_mesa { get; set; }
 
         public virtual PERt01_usuario PERt01_usuario { get; set; }
 
