@@ -652,7 +652,8 @@ namespace ConfiguradorUI.Maestro
         private void SetMaxLengthTxt()
         {
             txtCodigo.MaxLength = 10;
-            txtNombre.MaxLength = 250;
+            txtNombre.MaxLength = 100;
+            txtInfo01.MaxLength = 100;
 
         }
         private void ContarEstados(List<MSTt11_tipo_impresora> lista)

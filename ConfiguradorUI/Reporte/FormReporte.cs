@@ -1032,6 +1032,32 @@ namespace ConfiguradorUI.Reporte
 
         }
 
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var openFile = new OpenFileDialog();
+                openFile.Filter = "Report files (*.rpt)|*.rpt";
+                openFile.FilterIndex = 0;
+
+                //Crea
+                var reportingPath = FilePath.Reporting;
+                if (Directory.Exists(reportingPath))
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Reporting",$"Se creó la carpeta de reportes en local. La ruta es {reportingPath}");
+                }
+
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    txtPath.Text = Path.GetFullPath(openFile.FileName);
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Ocurrió una excepción. " + exc.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -1082,26 +1108,5 @@ namespace ConfiguradorUI.Reporte
 
         #endregion
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var openFile = new OpenFileDialog();
-                openFile.Filter = "Report files (*.rpt)|*.rpt";
-                openFile.FilterIndex = 0;
-
-                if (Directory.Exists(FilePath.Reporting))
-                    openFile.InitialDirectory = FilePath.Reporting;
-
-                if (openFile.ShowDialog() == DialogResult.OK)
-                {
-                    txtPath.Text = Path.GetFullPath(openFile.FileName);
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show("Ocurrió una excepción. " + exc.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
     }
 }

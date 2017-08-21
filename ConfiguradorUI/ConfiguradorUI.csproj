@@ -296,6 +296,9 @@
     <EmbeddedResource Include="Maestro\FormDescuento.resx">
       <DependentUpon>FormDescuento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maestro\FormImpresora.resx">
+      <DependentUpon>FormImpresora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormImpuesto.resx">
       <DependentUpon>FormImpuesto.cs</DependentUpon>
     </EmbeddedResource>

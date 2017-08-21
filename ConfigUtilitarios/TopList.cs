@@ -51,6 +51,7 @@ namespace ConfigUtilitarios
         public static string CategoriaReporte { get; } = "0";
 
         public static string TipoImpresora { get; } = "0";
+        public static string Impresora { get; } = "0";
 
     }
 }

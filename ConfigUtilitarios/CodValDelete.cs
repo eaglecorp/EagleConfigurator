@@ -20,5 +20,6 @@ namespace ConfigUtilitarios
         public static int Clase_Producto { get; } = 10;
         public static int CategoriaReporte_Reporte { get; } = 11;
         public static int TipoImpresora_Impresora { get; } = 12;
+        public static int Impresora_Caja { get; } = 13;
     }
 }
