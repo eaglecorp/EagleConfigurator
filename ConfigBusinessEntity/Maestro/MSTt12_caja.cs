@@ -46,9 +46,10 @@ namespace ConfigBusinessEntity
 
         public int? id_impresora06 { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
-        [StringLength(100)]
+        [Required]
+        [StringLength(20)]
         public string txt_estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

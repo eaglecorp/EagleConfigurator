@@ -29,6 +29,7 @@ namespace ConfigBusinessEntity
 
         public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 

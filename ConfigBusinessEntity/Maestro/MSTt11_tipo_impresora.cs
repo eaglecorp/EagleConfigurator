@@ -15,7 +15,6 @@ namespace ConfigBusinessEntity
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_tipo_impresora { get; set; }
 
         [StringLength(10)]
@@ -27,8 +26,9 @@ namespace ConfigBusinessEntity
         [StringLength(100)]
         public string txt_info01 { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 
