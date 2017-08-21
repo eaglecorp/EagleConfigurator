@@ -58,6 +58,9 @@
             this.btnRazon = new System.Windows.Forms.Button();
             this.btnTipoOrden = new System.Windows.Forms.Button();
             this.btnCanalVenta = new System.Windows.Forms.Button();
+            this.tabPagReportes = new MetroFramework.Controls.MetroTabPage();
+            this.btnCategoriaReporte = new System.Windows.Forms.Button();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.dtpFechaCronologia = new System.Windows.Forms.DateTimePicker();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -68,16 +71,15 @@
             this.toolStripUsername = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripFechaCronologica = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabPagReportes = new MetroFramework.Controls.MetroTabPage();
-            this.btnCategoriaReporte = new System.Windows.Forms.Button();
-            this.btnReporte = new System.Windows.Forms.Button();
+            this.btnTipoImpresora = new System.Windows.Forms.Button();
+            this.btnImpresora = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
             this.tabPagMaestros.SuspendLayout();
+            this.tabPagReportes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.StatusStripEagle.SuspendLayout();
-            this.tabPagReportes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPanel
@@ -88,7 +90,7 @@
             this.tabPanel.Controls.Add(this.tabPagReportes);
             this.tabPanel.Location = new System.Drawing.Point(31, 166);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 3;
+            this.tabPanel.SelectedIndex = 2;
             this.tabPanel.Size = new System.Drawing.Size(681, 259);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -443,6 +445,8 @@
             // 
             // tabPagMaestros
             // 
+            this.tabPagMaestros.Controls.Add(this.btnImpresora);
+            this.tabPagMaestros.Controls.Add(this.btnTipoImpresora);
             this.tabPagMaestros.Controls.Add(this.btnParametro);
             this.tabPagMaestros.Controls.Add(this.btnTipoLocation);
             this.tabPagMaestros.Controls.Add(this.btnLocation);
@@ -475,7 +479,7 @@
             this.btnParametro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParametro.ForeColor = System.Drawing.Color.White;
             this.btnParametro.Image = ((System.Drawing.Image)(resources.GetObject("btnParametro.Image")));
-            this.btnParametro.Location = new System.Drawing.Point(142, 135);
+            this.btnParametro.Location = new System.Drawing.Point(281, 11);
             this.btnParametro.Margin = new System.Windows.Forms.Padding(2);
             this.btnParametro.Name = "btnParametro";
             this.btnParametro.Size = new System.Drawing.Size(135, 37);
@@ -493,7 +497,7 @@
             this.btnTipoLocation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnTipoLocation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnTipoLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoLocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoLocation.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnTipoLocation.ForeColor = System.Drawing.Color.White;
             this.btnTipoLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoLocation.Image")));
             this.btnTipoLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -502,7 +506,7 @@
             this.btnTipoLocation.Name = "btnTipoLocation";
             this.btnTipoLocation.Size = new System.Drawing.Size(135, 37);
             this.btnTipoLocation.TabIndex = 7;
-            this.btnTipoLocation.Text = "Tipo de Location";
+            this.btnTipoLocation.Text = "Tipo Location";
             this.btnTipoLocation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTipoLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTipoLocation.UseVisualStyleBackColor = false;
@@ -621,7 +625,7 @@
             this.btnTipoOrden.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnTipoOrden.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnTipoOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoOrden.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoOrden.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnTipoOrden.ForeColor = System.Drawing.Color.White;
             this.btnTipoOrden.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoOrden.Image")));
             this.btnTipoOrden.Location = new System.Drawing.Point(2, 94);
@@ -654,6 +658,64 @@
             this.btnCanalVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCanalVenta.UseVisualStyleBackColor = false;
             this.btnCanalVenta.Click += new System.EventHandler(this.btnCanalVenta_Click);
+            // 
+            // tabPagReportes
+            // 
+            this.tabPagReportes.Controls.Add(this.btnCategoriaReporte);
+            this.tabPagReportes.Controls.Add(this.btnReporte);
+            this.tabPagReportes.HorizontalScrollbarBarColor = true;
+            this.tabPagReportes.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagReportes.HorizontalScrollbarSize = 10;
+            this.tabPagReportes.Location = new System.Drawing.Point(4, 38);
+            this.tabPagReportes.Name = "tabPagReportes";
+            this.tabPagReportes.Size = new System.Drawing.Size(673, 217);
+            this.tabPagReportes.TabIndex = 3;
+            this.tabPagReportes.Text = "Reportes";
+            this.tabPagReportes.VerticalScrollbarBarColor = true;
+            this.tabPagReportes.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagReportes.VerticalScrollbarSize = 10;
+            // 
+            // btnCategoriaReporte
+            // 
+            this.btnCategoriaReporte.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCategoriaReporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCategoriaReporte.FlatAppearance.BorderSize = 0;
+            this.btnCategoriaReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnCategoriaReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCategoriaReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoriaReporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoriaReporte.ForeColor = System.Drawing.Color.White;
+            this.btnCategoriaReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaReporte.Image")));
+            this.btnCategoriaReporte.Location = new System.Drawing.Point(2, 52);
+            this.btnCategoriaReporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCategoriaReporte.Name = "btnCategoriaReporte";
+            this.btnCategoriaReporte.Size = new System.Drawing.Size(135, 37);
+            this.btnCategoriaReporte.TabIndex = 13;
+            this.btnCategoriaReporte.Text = "Categorías";
+            this.btnCategoriaReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategoriaReporte.UseVisualStyleBackColor = false;
+            this.btnCategoriaReporte.Click += new System.EventHandler(this.btnCategoriaReporte_Click);
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnReporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.ForeColor = System.Drawing.Color.White;
+            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
+            this.btnReporte.Location = new System.Drawing.Point(2, 11);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(135, 37);
+            this.btnReporte.TabIndex = 12;
+            this.btnReporte.Text = "Reportes";
+            this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // dtpFechaCronologia
             // 
@@ -760,63 +822,47 @@
             this.toolStripHora.Size = new System.Drawing.Size(39, 21);
             this.toolStripHora.Text = "Hora";
             // 
-            // tabPagReportes
+            // btnTipoImpresora
             // 
-            this.tabPagReportes.Controls.Add(this.btnCategoriaReporte);
-            this.tabPagReportes.Controls.Add(this.btnReporte);
-            this.tabPagReportes.HorizontalScrollbarBarColor = true;
-            this.tabPagReportes.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagReportes.HorizontalScrollbarSize = 10;
-            this.tabPagReportes.Location = new System.Drawing.Point(4, 38);
-            this.tabPagReportes.Name = "tabPagReportes";
-            this.tabPagReportes.Size = new System.Drawing.Size(673, 217);
-            this.tabPagReportes.TabIndex = 3;
-            this.tabPagReportes.Text = "Reportes";
-            this.tabPagReportes.VerticalScrollbarBarColor = true;
-            this.tabPagReportes.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagReportes.VerticalScrollbarSize = 10;
+            this.btnTipoImpresora.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTipoImpresora.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTipoImpresora.FlatAppearance.BorderSize = 0;
+            this.btnTipoImpresora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnTipoImpresora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTipoImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoImpresora.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnTipoImpresora.ForeColor = System.Drawing.Color.White;
+            this.btnTipoImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoImpresora.Image")));
+            this.btnTipoImpresora.Location = new System.Drawing.Point(142, 176);
+            this.btnTipoImpresora.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTipoImpresora.Name = "btnTipoImpresora";
+            this.btnTipoImpresora.Size = new System.Drawing.Size(135, 37);
+            this.btnTipoImpresora.TabIndex = 9;
+            this.btnTipoImpresora.Text = "Tipo Impresora";
+            this.btnTipoImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTipoImpresora.UseVisualStyleBackColor = false;
+            this.btnTipoImpresora.Click += new System.EventHandler(this.btnTipoImpresora_Click);
             // 
-            // btnCategoriaReporte
+            // btnImpresora
             // 
-            this.btnCategoriaReporte.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCategoriaReporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCategoriaReporte.FlatAppearance.BorderSize = 0;
-            this.btnCategoriaReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnCategoriaReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnCategoriaReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoriaReporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoriaReporte.ForeColor = System.Drawing.Color.White;
-            this.btnCategoriaReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaReporte.Image")));
-            this.btnCategoriaReporte.Location = new System.Drawing.Point(2, 52);
-            this.btnCategoriaReporte.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCategoriaReporte.Name = "btnCategoriaReporte";
-            this.btnCategoriaReporte.Size = new System.Drawing.Size(135, 37);
-            this.btnCategoriaReporte.TabIndex = 13;
-            this.btnCategoriaReporte.Text = "Categorías";
-            this.btnCategoriaReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCategoriaReporte.UseVisualStyleBackColor = false;
-            this.btnCategoriaReporte.Click += new System.EventHandler(this.btnCategoriaReporte_Click);
-            // 
-            // btnReporte
-            // 
-            this.btnReporte.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnReporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnReporte.FlatAppearance.BorderSize = 0;
-            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.ForeColor = System.Drawing.Color.White;
-            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
-            this.btnReporte.Location = new System.Drawing.Point(2, 11);
-            this.btnReporte.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(135, 37);
-            this.btnReporte.TabIndex = 12;
-            this.btnReporte.Text = "Reportes";
-            this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReporte.UseVisualStyleBackColor = false;
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            this.btnImpresora.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImpresora.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImpresora.FlatAppearance.BorderSize = 0;
+            this.btnImpresora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnImpresora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpresora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpresora.ForeColor = System.Drawing.Color.White;
+            this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
+            this.btnImpresora.Location = new System.Drawing.Point(142, 135);
+            this.btnImpresora.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImpresora.Name = "btnImpresora";
+            this.btnImpresora.Size = new System.Drawing.Size(135, 37);
+            this.btnImpresora.TabIndex = 10;
+            this.btnImpresora.Text = "Impresora";
+            this.btnImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImpresora.UseVisualStyleBackColor = false;
+            this.btnImpresora.Click += new System.EventHandler(this.btnImpresora_Click);
             // 
             // MenuPrincipal
             // 
@@ -842,10 +888,10 @@
             this.tabPagProductos.ResumeLayout(false);
             this.tabPagPersonas.ResumeLayout(false);
             this.tabPagMaestros.ResumeLayout(false);
+            this.tabPagReportes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.StatusStripEagle.ResumeLayout(false);
             this.StatusStripEagle.PerformLayout();
-            this.tabPagReportes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -894,6 +940,8 @@
         private MetroFramework.Controls.MetroTabPage tabPagReportes;
         private System.Windows.Forms.Button btnCategoriaReporte;
         private System.Windows.Forms.Button btnReporte;
+        private System.Windows.Forms.Button btnImpresora;
+        private System.Windows.Forms.Button btnTipoImpresora;
     }
 }
 

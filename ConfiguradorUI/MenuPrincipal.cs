@@ -344,6 +344,17 @@ namespace ConfiguradorUI
             oForm.ShowDialog();
         }
 
+        private void btnTipoImpresora_Click(object sender, EventArgs e)
+        {
+            FormTipoImpresora oForm = new FormTipoImpresora();
+            oForm.ShowDialog();
+        }
+        private void btnImpresora_Click(object sender, EventArgs e)
+        {
+            FormImpresora oForm = new FormImpresora();
+            oForm.ShowDialog();
+        }
+
         private void btnParametro_Click(object sender, EventArgs e)
         {
             FormParametro oForm = new FormParametro();
@@ -351,7 +362,6 @@ namespace ConfiguradorUI
 
             if (true)
                 AsignarImagenHeader();
-
         }
 
 
@@ -362,9 +372,7 @@ namespace ConfiguradorUI
 
         #endregion
 
-        #endregion
-
-        #region Reportes
+        #region Eventos TabPag Reporte
         private void btnReporte_Click(object sender, EventArgs e)
         {
             FormReporte oForm = new FormReporte();
@@ -376,7 +384,11 @@ namespace ConfiguradorUI
 
             FormCategoriaReporte oForm = new FormCategoriaReporte();
             oForm.ShowDialog();
-        } 
+        }
+
         #endregion
+
+        #endregion
+
     }
 }

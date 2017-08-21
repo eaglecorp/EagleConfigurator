@@ -97,6 +97,12 @@
     <Compile Include="Maestro\FormDescuento.Designer.cs">
       <DependentUpon>FormDescuento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestro\FormImpresora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestro\FormImpresora.Designer.cs">
+      <DependentUpon>FormImpresora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestro\FormImpuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="Maestro\FormRazon.Designer.cs">
       <DependentUpon>FormRazon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestro\FormTipoImpresora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestro\FormTipoImpresora.Designer.cs">
+      <DependentUpon>FormTipoImpresora.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestro\FormTipoLocation.cs">
       <SubType>Form</SubType>
@@ -298,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormRazon.resx">
       <DependentUpon>FormRazon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestro\FormTipoImpresora.resx">
+      <DependentUpon>FormTipoImpresora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormTipoLocation.resx">
       <DependentUpon>FormTipoLocation.cs</DependentUpon>
