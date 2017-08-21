@@ -64,10 +64,12 @@
     <Compile Include="Maestro\CanalVentaDA.cs" />
     <Compile Include="Maestro\DescuentoDA.cs" />
     <Compile Include="Maestro\EstadoCivilDA.cs" />
+    <Compile Include="Maestro\ImpresoraDA.cs" />
     <Compile Include="Maestro\ImpuestoDA.cs" />
     <Compile Include="Maestro\LocationDA.cs" />
     <Compile Include="Maestro\MedioPagoDA.cs" />
     <Compile Include="Maestro\RazonDA.cs" />
+    <Compile Include="Maestro\TipoImpresoraDA.cs" />
     <Compile Include="Maestro\TipoLocationDA.cs" />
     <Compile Include="Maestro\TipoOrdenDA.cs" />
     <Compile Include="Persona\ClienteDA.cs" />

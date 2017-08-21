@@ -44,7 +44,6 @@ namespace ConfigBusinessLogic.Reporte
             if (enableTopList && lista != null)
                 return lista.OrderBy(x => x.cod_categoria_reporte != TopList.CategoriaReporte).ThenBy(x => x.txt_desc).ToList();
 
-
             return lista;
         }
     }
