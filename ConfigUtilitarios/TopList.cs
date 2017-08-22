@@ -52,6 +52,8 @@ namespace ConfigUtilitarios
 
         public static string TipoImpresora { get; } = "0";
         public static string Impresora { get; } = "0";
+        public static string EstadoMesa { get; } = "0";
+        public static string Mesa { get; } = "0";
 
     }
 }
