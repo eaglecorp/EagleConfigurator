@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.txtClave = new MetroFramework.Controls.MetroTextBox();
-            this.lblClave = new MetroFramework.Controls.MetroLabel();
             this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
-            this.lblUsuario = new MetroFramework.Controls.MetroLabel();
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.linkOlvideCuenta = new System.Windows.Forms.LinkLabel();
             this.picStatus = new System.Windows.Forms.PictureBox();
@@ -53,43 +51,35 @@
             // 
             // 
             this.txtClave.CustomButton.Image = null;
-            this.txtClave.CustomButton.Location = new System.Drawing.Point(159, 1);
+            this.txtClave.CustomButton.Location = new System.Drawing.Point(237, 1);
             this.txtClave.CustomButton.Name = "";
-            this.txtClave.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtClave.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtClave.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtClave.CustomButton.TabIndex = 1;
             this.txtClave.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtClave.CustomButton.UseSelectable = true;
             this.txtClave.CustomButton.Visible = false;
+            this.txtClave.DisplayIcon = true;
+            this.txtClave.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtClave.Icon = ((System.Drawing.Image)(resources.GetObject("txtClave.Icon")));
             this.txtClave.Lines = new string[0];
-            this.txtClave.Location = new System.Drawing.Point(256, 137);
+            this.txtClave.Location = new System.Drawing.Point(174, 130);
             this.txtClave.MaxLength = 32767;
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '\0';
+            this.txtClave.PromptText = "Contraseña";
             this.txtClave.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtClave.SelectedText = "";
             this.txtClave.SelectionLength = 0;
             this.txtClave.SelectionStart = 0;
             this.txtClave.ShortcutsEnabled = true;
-            this.txtClave.Size = new System.Drawing.Size(181, 23);
+            this.txtClave.Size = new System.Drawing.Size(263, 27);
             this.txtClave.TabIndex = 3;
-            this.txtClave.UseCustomBackColor = true;
             this.txtClave.UseSelectable = true;
+            this.txtClave.WaterMark = "Contraseña";
             this.txtClave.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtClave.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtClave.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblClave.ForeColor = System.Drawing.Color.Navy;
-            this.lblClave.Location = new System.Drawing.Point(159, 139);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(88, 19);
-            this.lblClave.TabIndex = 2;
-            this.lblClave.Text = "Contraseña:";
-            this.lblClave.UseCustomForeColor = true;
             // 
             // txtUsuario
             // 
@@ -98,43 +88,35 @@
             // 
             // 
             this.txtUsuario.CustomButton.Image = null;
-            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(159, 1);
+            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(237, 1);
             this.txtUsuario.CustomButton.Name = "";
-            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtUsuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtUsuario.CustomButton.TabIndex = 1;
             this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtUsuario.CustomButton.UseSelectable = true;
             this.txtUsuario.CustomButton.Visible = false;
+            this.txtUsuario.DisplayIcon = true;
+            this.txtUsuario.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtUsuario.Icon = ((System.Drawing.Image)(resources.GetObject("txtUsuario.Icon")));
             this.txtUsuario.Lines = new string[0];
-            this.txtUsuario.Location = new System.Drawing.Point(256, 97);
+            this.txtUsuario.Location = new System.Drawing.Point(174, 97);
             this.txtUsuario.MaxLength = 32767;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.PromptText = "Usuario";
             this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUsuario.SelectedText = "";
             this.txtUsuario.SelectionLength = 0;
             this.txtUsuario.SelectionStart = 0;
             this.txtUsuario.ShortcutsEnabled = true;
-            this.txtUsuario.Size = new System.Drawing.Size(181, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(263, 27);
             this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.UseCustomBackColor = true;
             this.txtUsuario.UseSelectable = true;
+            this.txtUsuario.WaterMark = "Usuario";
             this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUsuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUsuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblUsuario.ForeColor = System.Drawing.Color.Navy;
-            this.lblUsuario.Location = new System.Drawing.Point(159, 99);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(64, 19);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "Usuario:";
-            this.lblUsuario.UseCustomForeColor = true;
             // 
             // lblNombreForm
             // 
@@ -153,7 +135,7 @@
             this.linkOlvideCuenta.AutoSize = true;
             this.linkOlvideCuenta.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkOlvideCuenta.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.linkOlvideCuenta.Location = new System.Drawing.Point(313, 231);
+            this.linkOlvideCuenta.Location = new System.Drawing.Point(310, 205);
             this.linkOlvideCuenta.Name = "linkOlvideCuenta";
             this.linkOlvideCuenta.Size = new System.Drawing.Size(127, 17);
             this.linkOlvideCuenta.TabIndex = 6;
@@ -163,7 +145,7 @@
             // 
             // picStatus
             // 
-            this.picStatus.Location = new System.Drawing.Point(401, 28);
+            this.picStatus.Location = new System.Drawing.Point(401, 17);
             this.picStatus.Name = "picStatus";
             this.picStatus.Size = new System.Drawing.Size(36, 32);
             this.picStatus.TabIndex = 91;
@@ -180,10 +162,10 @@
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(159, 185);
+            this.btnCancelar.Location = new System.Drawing.Point(213, 162);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(116, 37);
+            this.btnCancelar.Size = new System.Drawing.Size(110, 32);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -201,12 +183,12 @@
             this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
             this.btnEntrar.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrar.Image")));
-            this.btnEntrar.Location = new System.Drawing.Point(321, 185);
+            this.btnEntrar.Location = new System.Drawing.Point(327, 162);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(116, 37);
+            this.btnEntrar.Size = new System.Drawing.Size(110, 32);
             this.btnEntrar.TabIndex = 4;
-            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.Text = "Login";
             this.btnEntrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -222,7 +204,8 @@
             // 
             // picUserLogin
             // 
-            this.picUserLogin.Location = new System.Drawing.Point(23, 87);
+            this.picUserLogin.InitialImage = null;
+            this.picUserLogin.Location = new System.Drawing.Point(24, 87);
             this.picUserLogin.Name = "picUserLogin";
             this.picUserLogin.Size = new System.Drawing.Size(130, 135);
             this.picUserLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -238,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 274);
+            this.ClientSize = new System.Drawing.Size(462, 255);
             this.Controls.Add(this.picStatus);
             this.Controls.Add(this.linkOlvideCuenta);
             this.Controls.Add(this.lblNombreForm);
@@ -247,9 +230,7 @@
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.picUserLogin);
             this.Controls.Add(this.txtClave);
-            this.Controls.Add(this.lblClave);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.lblUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -268,9 +249,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroTextBox txtClave;
-        private MetroFramework.Controls.MetroLabel lblClave;
         private MetroFramework.Controls.MetroTextBox txtUsuario;
-        private MetroFramework.Controls.MetroLabel lblUsuario;
         private System.Windows.Forms.PictureBox picUserLogin;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btnCancelar;

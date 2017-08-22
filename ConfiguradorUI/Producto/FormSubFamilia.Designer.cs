@@ -470,7 +470,7 @@
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
-            this.txtFiltro.WaterMark = "Filtro";
+            this.txtFiltro.PromptText = "Filtro";
             this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFiltro.SelectedText = "";
             this.txtFiltro.SelectionLength = 0;

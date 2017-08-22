@@ -115,6 +115,8 @@ namespace ConfiguradorUI
             try
             {
                 var oFormLogin = new FormLogin();
+                //Al cerrar el form de conexión(no existoso) error 
+                //No se puede acceder a un elemento desechado
                 oFormLogin.ShowDialog();
 
                 if (oFormLogin.result)

@@ -435,10 +435,15 @@
     <Content Include="Resources\icons\backup.png" />
     <Content Include="Resources\icons\backupRestore.png" />
     <Content Include="Resources\icons\backupx16.png" />
+    <Content Include="Resources\icons\cashier.png" />
     <Content Include="Resources\icons\cn.png" />
     <Content Include="Resources\icons\connection.png" />
     <Content Include="Resources\icons\databases-symbol.png" />
+    <Content Include="Resources\icons\login_passwordx16.png" />
+    <Content Include="Resources\icons\login_userx16.png" />
     <Content Include="Resources\icons\plug.png" />
+    <Content Include="Resources\icons\printer-machine.png" />
+    <Content Include="Resources\icons\printer.png" />
     <Content Include="Resources\icons\report.png" />
     <Content Include="Resources\icons\report_category.png" />
     <Content Include="Resources\logoEagleConfig.ico" />
