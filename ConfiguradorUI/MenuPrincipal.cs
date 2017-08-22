@@ -47,8 +47,8 @@ namespace ConfiguradorUI
             NombreUsuario();
             RunTimer();
             btnPrecio.Enabled = false;
-            btnReceta.Enabled = false;
-            btnCombo.Enabled = false;
+            //btnReceta.Enabled = false;
+            //btnCombo.Enabled = false;
         }
 
         private void NombreUsuario()
@@ -263,7 +263,8 @@ namespace ConfiguradorUI
 
         private void btnCombo_Click(object sender, EventArgs e)
         {
-
+            var form = new FormCombo();
+            form.ShowDialog();
         }
 
         #endregion
@@ -355,6 +356,11 @@ namespace ConfiguradorUI
             oForm.ShowDialog();
         }
 
+        private void btnCaja_Click(object sender, EventArgs e)
+        {
+            FormCaja oForm = new FormCaja();
+            oForm.ShowDialog();
+        }
         private void btnParametro_Click(object sender, EventArgs e)
         {
             FormParametro oForm = new FormParametro();

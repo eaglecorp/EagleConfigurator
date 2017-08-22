@@ -1,9 +1,9 @@
 ﻿using ConfigBusinessEntity;
-using ConfigBusinessLogic;
-using ConfigBusinessLogic.Persona;
-using ConfigBusinessLogic.Seguridad;
+using ConfigBusinessLogic.Maestro;
+using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -11,28 +11,27 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ConfiguradorUI.Seguridad
+namespace ConfiguradorUI.Maestro
 {
-    public partial class FormUsuario : MetroForm
+    public partial class FormCaja : MetroForm
     {
-
         #region Variables
         bool isSelected = false;
         bool isChangedRow = false;
         bool isPending = false;
         bool preguntar = true;
+        public bool actualizar = false;
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
-        //para que al actualizar no se pierda la clave
-        private PERt01_usuario usuarioSelected = null;
-
+        string codSelected = "";
         #endregion
 
-        public FormUsuario()
+        public FormCaja()
         {
             InitializeComponent();
         }
@@ -42,12 +41,19 @@ namespace ConfiguradorUI.Seguridad
         private void addHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
-            var txts = new[] { txtCodigo };
+            var txts = new[] { txtNombre, txtCodigo, txtInfo01, txtInfo02, txtIp };
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
-
             }
+            //.TextChanged += new EventHandler(OnContentChanged);
+            var cbos = new[] { cboImpresora,cboImpresora02,cboImpresora03,cboImpresora04,
+                                cboImpresora05,cboImpresora06};
+            foreach (var cbo in cbos)
+            {
+                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+            }
+
 
             var chks = new[] { chkActivo };
 
@@ -78,6 +84,15 @@ namespace ConfiguradorUI.Seguridad
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
+                    if (esValido())
+                    {
+                        var obj = new MSTt12_caja();
+                        obj = GetObjeto();
+                        int id = new CajaBL().InsertarCaja(obj);
+                        if (id > 0)
+                            actualizar = true;
+                        ControlarEventosABM(id);
+                    }
                 }
                 else
                 {
@@ -94,21 +109,31 @@ namespace ConfiguradorUI.Seguridad
         {
             if (TipoOperacion == TipoOperacionABM.Eliminar)
             {
-                if (dgvUsuario.RowCount > 0)
+                if (dgvCaja.RowCount > 0)
                 {
-                    if (dgvUsuario.SelectedRows.Count > 0)
+                    if (dgvCaja.SelectedRows.Count > 0)
                     {
                         try
                         {
-                            long id = 0;
-                            if (long.TryParse(lblIdUsuario.Text, out id) && id > 0)
+                            int id = 0;
+                            if (int.TryParse(lblIdCaja.Text, out id) && id > 0)
                             {
                                 DialogResult rp = MessageBox.Show("¿Seguro de eliminar el registro?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (rp == DialogResult.Yes)
                                 {
-
-                                    new UsuarioBL().EliminarUsuario(id);
-                                    ControlarEventosABM();
+                                    bool validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Caja_ControlNumeracion);
+                                    if (validDelete)
+                                    {
+                                        new CajaBL().EliminarCaja(id);
+                                        actualizar = true;
+                                        ControlarEventosABM();
+                                    }
+                                    else
+                                    {
+                                        TipoOperacion = TipoOperacionABM.No_Action;
+                                        ControlarEventosABM();
+                                        MessageBox.Show(this, "Este registro no se puede eliminar porque se usa en otro lado.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
                                 }
                             }
                             else
@@ -135,10 +160,6 @@ namespace ConfiguradorUI.Seguridad
         }
         private bool Actualizar()
         {
-            //Esta variable booleana se usa en algunos para controlar la validez
-            // del reg, por ejemplo, cuando el usuario quiere salir
-            //y tiene una modificación pendiente(pero si no es válida no sale)
-            //en esa caso usaremos esta variables, en otras no.
             bool isValid = false;
             try
             {
@@ -146,16 +167,16 @@ namespace ConfiguradorUI.Seguridad
                 {
                     if (esValido())
                     {
-                        var obj = new PERt01_usuario();
-                        obj = GetObjeto();
-                        long id = 0;
-                        if (long.TryParse(lblIdUsuario.Text, out id))
-                        {
-                            obj.id_usuario = id;
-                            obj.fecha_modificacion = DateTime.Now;
-                            new UsuarioBL().ActualizarUsuario(obj);
 
-                            ControlarEventosABM(obj.id_usuario);
+                        var obj = new MSTt12_caja();
+                        obj = GetObjeto();
+                        int id = 0;
+                        if (int.TryParse(lblIdCaja.Text, out id))
+                        {
+                            obj.id_caja = id;
+                            new CajaBL().ActualizarCaja(obj);
+                            actualizar = true;
+                            ControlarEventosABM(obj.id_caja);
                         }
                         isValid = true;
                     }
@@ -177,14 +198,14 @@ namespace ConfiguradorUI.Seguridad
                 {
                     if (esValido())
                     {
-                        var obj = new PERt01_usuario();
+                        var obj = new MSTt12_caja();
                         obj = GetObjeto();
-                        long id = 0;
-                        if (long.TryParse(lblIdUsuario.Text, out id))
+                        int id = 0;
+                        if (int.TryParse(lblIdCaja.Text, out id))
                         {
-                            obj.id_usuario = id;
-                            obj.fecha_modificacion = DateTime.Now;
-                            new UsuarioBL().ActualizarUsuario(obj);
+                            obj.id_caja = id;
+                            new CajaBL().ActualizarCaja(obj);
+                            actualizar = true;
                         }
                         isValid = true;
                     }
@@ -197,71 +218,39 @@ namespace ConfiguradorUI.Seguridad
             }
             return isValid;
         }
-        private void EnviarCredenciales()
+
+        private MSTt12_caja GetObjeto()
         {
-            string emailFrom = Parameter.EmailFrom;
-            string password = Parameter.Password;
-            if (!string.IsNullOrEmpty(emailFrom) && !string.IsNullOrEmpty(password))
-            {
-                var empleado = new EmpleadoBL().EmpleadoXId(usuarioSelected.id_empleado);
-                if (empleado != null && empleado.id_empleado > 0)
-                {
-                    if (empleado.txt_email1.Length > 0 || empleado.txt_email2.Length > 0)
-                    {
-                        bool enviado = false;
-                        string body = new EmpleadoBL().ArmarMsjCredenciales(usuarioSelected, empleado,ParameterCode.SubjectCredentials);
-                        if (empleado.txt_email1.Length > 0)
-                        {
-                            enviado = new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, empleado.txt_email1, Parameter.SubjectCredentials, body, Parameter.MailServer, Parameter.Port);
-                            if (enviado)
-                                MessageBox.Show($"Las credenciales han sido enviadas al email: {empleado.txt_email1}.", "AVISO EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else if (empleado.txt_email2.Length > 0)
-                        {
-                            enviado = new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, empleado.txt_email2, Parameter.SubjectCredentials, body, Parameter.MailServer, Parameter.Port);
-                            if (enviado)
-                                MessageBox.Show($"Las credenciales han sido enviadas al email: {empleado.txt_email2}.", "AVISO EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        if (!enviado)
-                            MessageBox.Show($"No se pudo enviar las credenciales a su email.", "AVISO EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("El empleado no tiene ningún email registrado.", "AVISO EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("El empleado no tiene ningún email registrado.", "AVISO EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                MessageBox.Show($"No se envío el correo electronico. Deberá asignar valores a los parámetros {ParameterCode.EmailFrom} y {ParameterCode.Password}.", "Aviso Eagle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        }
-
-        private PERt01_usuario GetObjeto()
-        {
-            var obj = new PERt01_usuario();
+            var obj = new MSTt12_caja();
             try
             {
-                obj.txt_usuario = txtUsuario.Text.Trim();
-                obj.cod_usuario = txtCodigo.Text.Trim();
-
-
-                obj.txt_clave = usuarioSelected.txt_clave;
-                obj.sn_upd_requered = usuarioSelected.sn_upd_requered;
+                obj.txt_desc = txtNombre.Text.Trim();
+                obj.cod_caja = txtCodigo.Text.Trim();
+                obj.txt_ip = txtIp.Text.Trim();
+                obj.txt_info01 = txtInfo01.Text.Trim();
+                obj.txt_info02 = txtInfo02.Text.Trim();
 
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
-                if (usuarioSelected.id_empleado != 0)
-                    obj.id_empleado = usuarioSelected.id_empleado;
-                //De cumplir la condición lo guardaría con 0 generaría un error.
-                //Puede en estos casos guardar con el id del registro vacío u otros(opción).
+                if (int.TryParse(cboImpresora.SelectedValue?.ToString(), out int id))
+                    obj.id_impresora = id;
+
+                if (int.TryParse(cboImpresora02.SelectedValue?.ToString(), out id))
+                    obj.id_impresora02 = id;
+
+                if (int.TryParse(cboImpresora03.SelectedValue?.ToString(), out id))
+                    obj.id_impresora03 = id;
+
+                if (int.TryParse(cboImpresora04.SelectedValue?.ToString(), out id))
+                    obj.id_impresora04 = id;
+
+                if (int.TryParse(cboImpresora05.SelectedValue?.ToString(), out id))
+                    obj.id_impresora05 = id;
+
+                if (int.TryParse(cboImpresora06.SelectedValue?.ToString(), out id))
+                    obj.id_impresora06 = id;
+
             }
             catch (Exception e)
             {
@@ -270,69 +259,87 @@ namespace ConfiguradorUI.Seguridad
 
             return obj;
         }
-        private void SetObjeto(PERt01_usuario obj)
+        private void SetObjeto(MSTt12_caja obj)
         {
             try
             {
-                // Variable de la lógica de cambio.
-                // Indica que la asignación de los datos de un reg se está dando
-                // porque se cambió de fila.
+
                 isChangedRow = true;
                 LimpiarForm();
 
-                usuarioSelected = obj;
+                chkActivo.Checked = (obj.id_estado == Estado.IdActivo) ? true : false;
 
-                chkActivo.Checked = obj.id_estado == Estado.IdActivo ? true : false;
+                lblIdCaja.Text = obj.id_caja.ToString();
+                codSelected = obj.cod_caja;
 
-                lblIdUsuario.Text = obj.id_usuario.ToString();
+                txtNombre.Text = obj.txt_desc;
+                txtCodigo.Text = obj.cod_caja;
+                txtInfo01.Text = obj.txt_info01;
+                txtInfo02.Text = obj.txt_info02;
+                txtIp.Text = obj.txt_ip;
 
-                txtUsuario.Text = obj.txt_usuario;
-                txtCodigo.Text = obj.cod_usuario;
-
-                if (usuarioSelected.id_empleado != 0)
-                {
-                    long idEmp = usuarioSelected.id_empleado;
-                    var emp = new EmpleadoBL().EmpleadoXIdMM(idEmp);
-                    if (emp != null && emp.id_empleado > 0)
-                    {
-                        string nombreCompleto = Nombre(emp.txt_ape_pat, emp.txt_ape_mat, emp.txt_pri_nom, emp.txt_seg_nom, emp.txt_rzn_social);
-                        txtNombreEmpleado.Text = nombreCompleto;
-                    }
-                }
-
+                setValueInCbo(cboImpresora, obj.id_impresora);
+                setValueInCbo(cboImpresora02, obj.id_impresora02);
+                setValueInCbo(cboImpresora03, obj.id_impresora03);
+                setValueInCbo(cboImpresora04, obj.id_impresora04);
+                setValueInCbo(cboImpresora05, obj.id_impresora05);
+                setValueInCbo(cboImpresora06, obj.id_impresora06);
             }
             catch (Exception e)
             {
                 MessageBox.Show(this, "Excepción en el Set: " + e.Message);
             }
+
         }
 
         private bool esValido()
         {
-            //Por ver - validar combos.
-            errorProv.Clear();
             bool no_error = true;
+            errorProv.Clear();
             //validando los controles para el tabPageGeneral
-            //Foreach en caso se requiera validar más controles - por ver.
-            if (string.IsNullOrEmpty(txtUsuario.Text.Trim()))
+
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
             {
-                tabUsuario.SelectedTab = tabPagGeneral;
-                errorProv.SetError(txtUsuario, "Este campo es requerido.");
-                txtUsuario.Focus();
+                tabCaja.SelectedTab = tabPagGeneral;
+                errorProv.SetError(txtNombre, "Este campo es requerido.");
+                txtNombre.Focus();
                 no_error = false;
             }
+
+            if (no_error)
+            {
+                var cbos = new[] { cboImpresora,cboImpresora02,cboImpresora03,cboImpresora04,cboImpresora05,
+                                cboImpresora06};
+                for (int i = 0; i < cbos.Length; i++)
+                {
+                    if (cbos[i].SelectedValue != null && i < cbos.Length - 1)
+                    {
+                        for (int j = i + 1; j < cbos.Length; j++)
+                        {
+                            if (cbos[j].SelectedValue != null)
+                                if (cbos[i].SelectedValue.ToString() == cbos[j].SelectedValue.ToString())
+                                {
+                                    errorProv.SetError(cbos[j], "Ya estás usando esta impresora.");
+                                    cbos[j].Focus();
+                                    no_error = false;
+                                }
+                        }
+                    }
+                }
+            }
+            #region código único
 
             if (no_error)
             {
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var usuario = new UsuarioBL().UsuarioXCod(cod);
+                    var obj = new CajaBL().CajaXCod(cod);
                     if (TipoOperacion == TipoOperacionABM.Insertar)
                     {
-                        if (usuario != null && usuario.id_usuario > 0)
+                        if (obj != null && obj.id_caja > 0)
                         {
-                            tabUsuario.SelectedTab = tabPagGeneral;
+                            tabCaja.SelectedTab = tabPagGeneral;
                             MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             errorProv.SetError(txtCodigo, "El código ya está en uso.");
                             txtCodigo.Focus();
@@ -341,9 +348,9 @@ namespace ConfiguradorUI.Seguridad
                     }
                     else if (TipoOperacion == TipoOperacionABM.Modificar)
                     {
-                        if (cod != usuarioSelected.cod_usuario && usuario != null && usuario.id_usuario > 0)
+                        if (cod != codSelected && obj != null && obj.id_caja > 0)
                         {
-                            tabUsuario.SelectedTab = tabPagGeneral;
+                            tabCaja.SelectedTab = tabPagGeneral;
                             MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             errorProv.SetError(txtCodigo, "El código ya está en uso.");
                             txtCodigo.Focus();
@@ -353,75 +360,53 @@ namespace ConfiguradorUI.Seguridad
                 }
             }
 
-            if (no_error == true)
+            #endregion
+
+            if (no_error && !string.IsNullOrEmpty(txtIp.Text.Trim()))
             {
-                //validamos el que no tenga espacios en blanco
-                if (txtUsuario.Text.Trim().Contains(" "))
+                if (!IPAddress.TryParse(txtIp.Text.Trim(), out IPAddress ip))
                 {
-                    tabUsuario.SelectedTab = tabPagGeneral;
-                    errorProv.SetError(txtUsuario, "El nombre de usuario no debe tener espacios en blanco.");
-                    txtUsuario.Focus();
-                    MessageBox.Show("El nombre de usuario no debe tener espacios en blanco.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    errorProv.SetError(txtIp, "La dirección IP es incorrecta.");
+                    txtIp.Focus();
                     no_error = false;
                 }
             }
-            #region lógica de validación cuando se habilite la opción de agregar
-            //if (no_error == true)
-            //{
-            //    //validamos el largo min
-            //    if (txtUsuario.Text.Trim().Length < 6)
-            //    {
-            //        tabUsuario.SelectedTab = tabPagGeneral;
-            //        errorProv.SetError(txtUsuario, "El usuario debe tener mínimamente 6 carácteres.");
-            //        txtUsuario.Focus();
-            //        MessageBox.Show("El nombre de usuario debe tener mínimimamente 6 carácteres.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //        no_error = false;
-            //    }
-            //}
 
-            //if (no_error == true)
-            //{
-            //    var usuario = new UsuarioBL().UsuarioXUsername(txtUsuario.Text.Trim());
-            //    //validamos que el usuario este disponible.
+            #region validación delete
 
-            //    if (TipoOperacion == TipoOperacionABM.Insertar)
-            //    {
+            if (no_error && !chkActivo.Checked && TipoOperacion == TipoOperacionABM.Modificar)
+            {
+                if (int.TryParse(lblIdCaja.Text, out int idImp))
+                {
+                    bool validDelete = false;
+                    validDelete = new UtilBL().ValidarDelete(idImp, CodValDelete.Caja_ControlNumeracion);
+                    if (!validDelete)
+                    {
+                        MessageBox.Show(this, "Este registro no se puede desactivar porque se usa en otro lado.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        tabCaja.SelectedTab = tabPagGeneral;
+                        errorProv.SetError(chkActivo, "No puede desactivarlo, está usándose en otro lado.");
+                        chkActivo.Focus();
+                        no_error = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(this, "No se pudo obtener el id para verificar la validación.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    no_error = false;
+                }
+            }
 
-            //        if (usuario != null)
-            //        {
-            //            tabUsuario.SelectedTab = tabPagGeneral;
-            //            errorProv.SetError(txtUsuario, "El usuario ya existe");
-            //            txtUsuario.Focus();
-            //            MessageBox.Show("El nombre de usuario ya existe.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //            no_error = false;
-
-            //        }
-            //    }
-            //    else if(TipoOperacion == TipoOperacionABM.Modificar)
-            //    {
-            //        //dos casos
-            //        //1. Cambio el username
-            //        //2. No cambió el username
-
-            //        if (usuario != null)
-            //        {
-            //            if (lblUsername.Text!=txtUsuario.Text.Trim())
-            //            {
-            //                tabUsuario.SelectedTab = tabPagGeneral;
-            //                errorProv.SetError(txtUsuario, "El usuario ya existe");
-            //                txtUsuario.Focus();
-            //                MessageBox.Show("El nombre de usuario ya existe.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //                no_error = false;
-            //            }
-
-            //        }
-            //    }
-            //}
 
             #endregion
 
-
             return no_error;
+        }
+        void setValueInCbo(MetroComboBox cbo, int? id)
+        {
+            if (id != null)
+                cbo.SelectedValue = id;
+            else
+                cbo.SelectedIndex = -1;
         }
         private void Filtrar(int criterio, string filtro)
         {
@@ -432,33 +417,34 @@ namespace ConfiguradorUI.Seguridad
 
                 if (criterio == Filtro.Nombre)
                 {
-                    DataGridViewRow row = dgvUsuario.Rows
+                    DataGridViewRow row = dgvCaja.Rows
                     .Cast<DataGridViewRow>()
                     .Where(r => r.Cells["NOMBRE"].Value.ToString().ToUpper().Contains(filtro.ToUpper()))
                     .FirstOrDefault();
                     if (row != null)
                     {
                         index = row.Index;
-                        if (dgvUsuario.Rows.Count > 0)
+                        if (dgvCaja.Rows.Count > 0)
                         {
-                            dgvUsuario.Rows[index].Selected = true;
-                            dgvUsuario.FirstDisplayedScrollingRowIndex = index;
+                            dgvCaja.Rows[index].Selected = true;
+                            dgvCaja.FirstDisplayedScrollingRowIndex = index;
+
                         }
                     }
                 }
                 else if (criterio == Filtro.Codigo)
                 {
-                    DataGridViewRow row = dgvUsuario.Rows
+                    DataGridViewRow row = dgvCaja.Rows
                     .Cast<DataGridViewRow>()
                     .Where(r => r.Cells["CODIGO"].Value.ToString().ToUpper().Contains(filtro.ToUpper()))
                     .FirstOrDefault();
                     if (row != null)
                     {
                         index = row.Index;
-                        if (dgvUsuario.Rows.Count > 0)
+                        if (dgvCaja.Rows.Count > 0)
                         {
-                            dgvUsuario.Rows[index].Selected = true;
-                            dgvUsuario.FirstDisplayedScrollingRowIndex = index;
+                            dgvCaja.Rows[index].Selected = true;
+                            dgvCaja.FirstDisplayedScrollingRowIndex = index;
                         }
                     }
                 }
@@ -469,23 +455,23 @@ namespace ConfiguradorUI.Seguridad
                 MessageBox.Show(this, "Ocurrió una excepción al seleccionar el registro: " + e.Message, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void SeleccionarPorId(long id)
+        private void SeleccionarPorId(int id)
         {
             int index = 0;
             try
             {
                 //si no haya alguna fila con el id enviado, signfica que no está el id
-                DataGridViewRow row = dgvUsuario.Rows
+                DataGridViewRow row = dgvCaja.Rows
                 .Cast<DataGridViewRow>()
-                .Where(r => r.Cells["id_usuario"].Value.ToString().Equals(id.ToString()))
+                .Where(r => r.Cells["id_caja"].Value.ToString().Equals(id.ToString()))
                 .FirstOrDefault();
                 if (row != null)
                 {
                     index = row.Index;
-                    if (dgvUsuario.Rows.Count > 0)
+                    if (dgvCaja.Rows.Count > 0)
                     {
-                        dgvUsuario.Rows[index].Selected = true;
-                        dgvUsuario.FirstDisplayedScrollingRowIndex = index;
+                        dgvCaja.Rows[index].Selected = true;
+                        dgvCaja.FirstDisplayedScrollingRowIndex = index;
                     }
                 }
             }
@@ -497,14 +483,13 @@ namespace ConfiguradorUI.Seguridad
         private void SeleccionarRegistro()
         {
             isPending = false;
-            if (dgvUsuario.RowCount > 0 && dgvUsuario.SelectedRows.Count > 0 && dgvUsuario.CurrentRow.Index != -1)
+            if (dgvCaja.RowCount > 0 && dgvCaja.SelectedRows.Count > 0 && dgvCaja.CurrentRow.Index != -1)
             {
-                long id = 0;
-                if (long.TryParse(GetIdSelected(), out id))
+                if (int.TryParse(GetIdSelected(), out int id))
                 {
                     if (id > 0)
                     {
-                        var obj = new UsuarioBL().UsuarioXId(id);
+                        var obj = new CajaBL().CajaXId(id);
                         if (obj != null)
                         {
                             isSelected = false;
@@ -525,9 +510,9 @@ namespace ConfiguradorUI.Seguridad
             string id = "-1";
             try
             {
-                if (dgvUsuario.SelectedRows.Count > 0 && dgvUsuario.Rows.Count > 0)
+                if (dgvCaja.SelectedRows.Count > 0 && dgvCaja.Rows.Count > 0)
                 {
-                    id = dgvUsuario.SelectedRows[0].Cells[0].Value.ToString();
+                    id = dgvCaja.SelectedRows[0].Cells[0].Value.ToString();
                 }
             }
             catch (Exception e)
@@ -538,7 +523,6 @@ namespace ConfiguradorUI.Seguridad
         }
 
 
-        //Métodos utilitarios de lógica del Form
         private void CargarComboFiltro()
         {
             try
@@ -558,12 +542,14 @@ namespace ConfiguradorUI.Seguridad
         private void LimpiarForm()
         {
             isSelected = false;
-            usuarioSelected = null;
-            lblIdUsuario.Text = 0 + "";
-            txtUsuario.Clear();
-            txtCodigo.Clear();
-            txtNombreEmpleado.Clear();
+            lblIdCaja.Text = 0 + "";
+            codSelected = "";
 
+            txtNombre.Clear();
+            txtCodigo.Clear();
+            txtIp.Clear();
+            txtInfo02.Clear();
+            txtInfo01.Clear();
 
             if (TipoOperacion == TipoOperacionABM.Nuevo)
                 chkActivo.Enabled = false;
@@ -572,6 +558,15 @@ namespace ConfiguradorUI.Seguridad
 
             chkActivo.Checked = true;
 
+            //Posicionarse en el registro por defecto (top 1 en el combo)
+            //if (cboImpresora.Items.Count > 0) cboImpresora.SelectedIndex = 0;
+
+            cboImpresora.SelectedIndex = -1;
+            cboImpresora02.SelectedIndex = -1;
+            cboImpresora03.SelectedIndex = -1;
+            cboImpresora04.SelectedIndex = -1;
+            cboImpresora05.SelectedIndex = -1;
+            cboImpresora06.SelectedIndex = -1;
         }
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
         {
@@ -582,15 +577,15 @@ namespace ConfiguradorUI.Seguridad
             btnSearch.Enabled = eSearch;
             btnFilter.Enabled = eFilter;
         }
-        private void ControlarEventosABM(long? id = null)
+        private void ControlarEventosABM(int? id = null)
         {
 
             if (TipoOperacion == TipoOperacionABM.No_Action)
             {
                 isPending = false;
-                ControlarBotones(false, true, false, false, true, true);
+                ControlarBotones(true, true, false, false, true, true);
                 errorProv.Clear();
-                //tab
+                //tabProducto.SelectedTab = tabPagGeneral;
             }
             else
             {
@@ -599,22 +594,22 @@ namespace ConfiguradorUI.Seguridad
                     ControlarBotones(false, false, true, true, false, false);
                     errorProv.Clear();
                     LimpiarForm();
-                    tabUsuario.SelectedTab = tabPagGeneral;
-                    txtUsuario.Focus();
+                    tabCaja.SelectedTab = tabPagGeneral;
+                    txtNombre.Focus();
                 }
                 else
                 {
                     //Después de hacer el commit-insertar
                     if (TipoOperacion == TipoOperacionABM.Insertar)
                     {
-                        ControlarBotones(false, true, false, false, true, true);
+                        ControlarBotones(true, true, false, false, true, true);
                         LimpiarForm();
 
                         if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
 
                         int idInsertado = (int)id;
                         SeleccionarPorId(idInsertado);
-                        tabUsuario.SelectedTab = tabPagGeneral;
+                        tabCaja.SelectedTab = tabPagGeneral;
                         btnNuevo.Focus();
                     }
                     else
@@ -623,22 +618,22 @@ namespace ConfiguradorUI.Seguridad
                         if (TipoOperacion == TipoOperacionABM.Eliminar)
                         {
                             errorProv.Clear();
-                            ControlarBotones(false, true, false, false, true, true);
+                            ControlarBotones(true, true, false, false, true, true);
                             LimpiarForm();
                             if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
-                            tabUsuario.SelectedTab = tabPagGeneral;
+                            tabCaja.SelectedTab = tabPagGeneral;
                             btnNuevo.Focus();
                         }
                         else
                         {
                             if (TipoOperacion == TipoOperacionABM.Rollback)
                             {
-                                ControlarBotones(false, true, false, false, true, true);
+                                ControlarBotones(true, true, false, false, true, true);
                                 isPending = false;
                                 errorProv.Clear();
                                 LimpiarForm();
                                 SeleccionarRegistro();
-                                tabUsuario.SelectedTab = tabPagGeneral;
+                                tabCaja.SelectedTab = tabPagGeneral;
                                 btnNuevo.Focus();
                             }
                             else
@@ -654,14 +649,14 @@ namespace ConfiguradorUI.Seguridad
                                     {
                                         errorProv.Clear();
                                         LimpiarForm();
-                                        ControlarBotones(false, true, false, false, true, true);
+                                        ControlarBotones(true, true, false, false, true, true);
                                         isSelected = false;
                                         isPending = false;
                                         isChangedRow = false;
 
                                         if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
 
-                                        tabUsuario.SelectedTab = tabPagGeneral;
+                                        tabCaja.SelectedTab = tabPagGeneral;
 
                                         if (id != null)
                                         {
@@ -677,51 +672,97 @@ namespace ConfiguradorUI.Seguridad
                 }
             }
         }
-        private string Nombre(string apPaterno, string apMaterno, string primerNom, string segundoNom, string rznSocial)
+        private void MantenerEstadoABM()
         {
-            string nombre = "";
-            if (apPaterno != null && apPaterno.Trim() != "")
+            if (TipoOperacion == TipoOperacionABM.Nuevo)
             {
-                nombre = apPaterno + " ";
+                ControlarBotones(false, false, true, true, false, false);
             }
-            if (apMaterno != null && apMaterno.Trim() != "")
+            else if (TipoOperacion == TipoOperacionABM.Cambio)
             {
-                nombre += apMaterno + " ";
+                ControlarBotones(false, false, true, true, false, false);
+                isPending = true;
             }
-            if (primerNom != null && primerNom.Trim() != "")
+            else if (TipoOperacion == TipoOperacionABM.No_Action)
             {
-                nombre += primerNom + " ";
+                isPending = false;
+                ControlarBotones(true, true, false, false, true, true);
             }
-            if (segundoNom != null && segundoNom.Trim() != "")
+            else
             {
-                nombre += segundoNom + " ";
+                isPending = false;
+                ControlarBotones(true, true, false, false, true, true);
             }
-            if (rznSocial != null && rznSocial.Trim() != "")
+        }
+        private void CargarCombos()
+        {
+            try
             {
-                if (nombre.Length > 0)
-                {
-                    nombre += "| " + rznSocial;
-                }
-                else
-                {
-                    nombre = rznSocial;
-                }
+                var impresoras = new ImpresoraBL().ListaImpresora(Estado.IdActivo, false, true);
+
+                var impresoras02 = new List<MSTt10_impresora>();
+                impresoras02.AddRange(impresoras ?? new List<MSTt10_impresora>());
+
+                var impresoras03 = new List<MSTt10_impresora>();
+                impresoras03.AddRange(impresoras ?? new List<MSTt10_impresora>());
+
+                var impresoras04 = new List<MSTt10_impresora>();
+                impresoras04.AddRange(impresoras ?? new List<MSTt10_impresora>());
+
+                var impresoras05 = new List<MSTt10_impresora>();
+                impresoras05.AddRange(impresoras ?? new List<MSTt10_impresora>());
+
+                var impresoras06 = new List<MSTt10_impresora>();
+                impresoras06.AddRange(impresoras ?? new List<MSTt10_impresora>());
+
+                cboImpresora.DataSource = null;
+                cboImpresora.DisplayMember = "txt_desc";
+                cboImpresora.ValueMember = "id_impresora";
+                cboImpresora.DataSource = impresoras;
+
+                cboImpresora02.DataSource = null;
+                cboImpresora02.DisplayMember = "txt_desc";
+                cboImpresora02.ValueMember = "id_impresora";
+                cboImpresora02.DataSource = impresoras02;
+
+                cboImpresora03.DataSource = null;
+                cboImpresora03.DisplayMember = "txt_desc";
+                cboImpresora03.ValueMember = "id_impresora";
+                cboImpresora03.DataSource = impresoras03;
+
+                cboImpresora04.DataSource = null;
+                cboImpresora04.DisplayMember = "txt_desc";
+                cboImpresora04.ValueMember = "id_impresora";
+                cboImpresora04.DataSource = impresoras04;
+
+                cboImpresora05.DataSource = null;
+                cboImpresora05.DisplayMember = "txt_desc";
+                cboImpresora05.ValueMember = "id_impresora";
+                cboImpresora05.DataSource = impresoras05;
+
+                cboImpresora06.DataSource = null;
+                cboImpresora06.DisplayMember = "txt_desc";
+                cboImpresora06.ValueMember = "id_impresora";
+                cboImpresora06.DataSource = impresoras06;
             }
-            return nombre;
+            catch (Exception e)
+            {
+                MessageBox.Show(this, "Ocurrió una excepción al cargar los combos: " + e.Message, "MENSAJE");
+            }
         }
         private void CargarGrilla(int? id_estado = null)
         {
             try
             {
-                var lista = new UsuarioBL().ListaUsuario(id_estado,true);
-                var listaView = lista.Select(x => new { x.id_usuario, CODIGO = x.cod_usuario, NOMBRE = x.txt_usuario })
-                .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
+                var lista = new CajaBL().ListaCaja(id_estado);
+                var listaView = lista.Select(x => new { x.id_caja, CODIGO = x.cod_caja, NOMBRE = x.txt_desc })
+               .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 
                 if (lista != null)
                 {
                     ContarEstados(lista);
-                    dgvUsuario.DataSource = listaView;
-                    dgvUsuario.Columns["id_usuario"].Visible = false;
+                    dgvCaja.DataSource = listaView;
+                    dgvCaja.Columns["id_caja"].Visible = false;
                 }
             }
             catch (Exception e)
@@ -736,29 +777,28 @@ namespace ConfiguradorUI.Seguridad
         }
         private void ConfigurarGrilla()
         {
-            dgvUsuario.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#ecf0f1");
-            dgvUsuario.AlternatingRowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FAFAFA");
+            dgvCaja.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#ecf0f1");
+            dgvCaja.AlternatingRowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FAFAFA");
 
             //Cabecera
-            dgvUsuario.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#00B2EE");
-            dgvUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCaja.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#00B2EE");
+            dgvCaja.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             //Selección
-            dgvUsuario.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
+            dgvCaja.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
 
             //Para que no sobreescriba los estilos de cabecera
-            dgvUsuario.EnableHeadersVisualStyles = false;
+            dgvCaja.EnableHeadersVisualStyles = false;
         }
         private void SetMaxLengthTxt()
         {
-            txtUsuario.Enabled = false;
-            txtNombreEmpleado.Enabled = false;
             txtCodigo.MaxLength = 10;
-            //este es por siacaso porque en realidad 
-            //el txt usuario es solo de lectura.
-            txtUsuario.MaxLength = 20;
+            txtNombre.MaxLength = 100;
+            txtIp.MaxLength = 15;
+            txtInfo01.MaxLength = 100;
+            txtInfo02.MaxLength = 100;
 
         }
-        private void ContarEstados(List<PERt01_usuario> lista)
+        private void ContarEstados(List<MSTt12_caja> lista)
         {
             try
             {
@@ -786,11 +826,12 @@ namespace ConfiguradorUI.Seguridad
 
         #region Eventos de ventana
 
-        private void FormUsuario_Load(object sender, EventArgs e)
+        private void FormCaja_Load(object sender, EventArgs e)
         {
-            lblIdUsuario.Visible = false;
+            lblIdCaja.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();
+            CargarCombos();
             LimpiarForm();
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
@@ -878,14 +919,7 @@ namespace ConfiguradorUI.Seguridad
             }
         }
 
-        private void cboFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtFiltro.Clear();
-            txtFiltro.Focus();
-
-        }
-
-        private void dgvUsuario_SelectionChanged(object sender, EventArgs e)
+        private void dgvCaja_SelectionChanged(object sender, EventArgs e)
         {
             errorProv.Clear();
             if (isPending)
@@ -897,23 +931,14 @@ namespace ConfiguradorUI.Seguridad
                     if (rp == DialogResult.Yes)
                     {
                         TipoOperacion = TipoOperacionABM.Modificar;
-                        //al intentar cambiar la fila si no es válido
-                        //la actualización, no pasará hasta que sea válido
-                        //o se dea rollback.
                         bool isValid = false;
                         string idSelect = GetIdSelected();
 
-                        //Indica que está seleccionado otro registro
-                        //que el que se quiere modificar
-                        if (idSelect != lblIdUsuario.Text && idSelect != "-1")
+                        if (idSelect != lblIdCaja.Text && idSelect != "-1")
                         {
                             isValid = Actualizar();
                             if (isValid)
                             {
-                                //Sobreescribe el indice indicado
-                                //por el indice que corresponde al seleccionado
-                                //que es diferente respecto quién está en el proceso.
-                                //manejar 
                                 SeleccionarPorId(int.Parse(idSelect));
                             }
                         }
@@ -931,20 +956,16 @@ namespace ConfiguradorUI.Seguridad
                         TipoOperacion = TipoOperacionABM.No_Action;
                         ControlarEventosABM();
                     }
-
                 }
                 else if (preguntar == false)
                 {
                     TipoOperacion = TipoOperacionABM.Modificar;
-                    //al intentar cambiar la fila si no es válido
-                    //la actualización, no pasará hasta que sea válido
-                    //o se dea rollback.
                     bool isValid = false;
                     string idSelect = GetIdSelected();
 
                     //Indica que está seleccionado otro registro
                     //que el que se quiere modificar
-                    if (idSelect != lblIdUsuario.Text && idSelect != "-1")
+                    if (idSelect != lblIdCaja.Text && idSelect != "-1")
                     {
                         isValid = Actualizar();
                         if (isValid)
@@ -964,6 +985,12 @@ namespace ConfiguradorUI.Seguridad
                 TipoOperacion = TipoOperacionABM.No_Action;
                 ControlarEventosABM();
             }
+        }
+
+        private void cboFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFiltro.Clear();
+            txtFiltro.Focus();
         }
 
         private void tglListarInactivos_Click(object sender, EventArgs e)
@@ -1042,29 +1069,6 @@ namespace ConfiguradorUI.Seguridad
             }
         }
 
-        private void btnEnviarCredenciales_Click(object sender, EventArgs e)
-        {
-
-            if (usuarioSelected != null && usuarioSelected.id_usuario > 0)
-            {
-                try
-                {
-                    using (new CursorWait())
-                    {
-                        EnviarCredenciales();
-                    }
-                }
-                catch (Exception exe)
-                {
-                    MessageBox.Show("Ocurrió una excepción al enviar las credenciales: " + exe.Message, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione el usuario a quién desea enviar las credenciles.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
@@ -1072,6 +1076,50 @@ namespace ConfiguradorUI.Seguridad
                 btnFilter_Click(null, null);
             }
         }
+
+        #region Eventos ventana emergente
+
+        private void btnImpresora_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int? oldValue = null, oldValue02 = null, oldValue03 = null,
+                    oldValue04 = null, oldValue05 = null, oldValue06 = null;
+                int op = TipoOperacion;
+
+                if (cboImpresora.SelectedValue != null) oldValue = int.Parse(cboImpresora.SelectedValue.ToString());
+                if (cboImpresora02.SelectedValue != null) oldValue02 = int.Parse(cboImpresora02.SelectedValue.ToString());
+                if (cboImpresora03.SelectedValue != null) oldValue03 = int.Parse(cboImpresora03.SelectedValue.ToString());
+                if (cboImpresora04.SelectedValue != null) oldValue04 = int.Parse(cboImpresora04.SelectedValue.ToString());
+                if (cboImpresora05.SelectedValue != null) oldValue05 = int.Parse(cboImpresora05.SelectedValue.ToString());
+                if (cboImpresora06.SelectedValue != null) oldValue06 = int.Parse(cboImpresora06.SelectedValue.ToString());
+
+                var frm = new FormImpresora();
+                frm.ShowDialog();
+
+                if (frm.actualizar)
+                {
+                    CargarCombos();
+
+                    setValueInCbo(cboImpresora, oldValue);
+                    setValueInCbo(cboImpresora02, oldValue02);
+                    setValueInCbo(cboImpresora03, oldValue03);
+                    setValueInCbo(cboImpresora04, oldValue04);
+                    setValueInCbo(cboImpresora05, oldValue05);
+                    setValueInCbo(cboImpresora06, oldValue06);
+                    TipoOperacion = op;
+                    MantenerEstadoABM();
+                }
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        #endregion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -1120,6 +1168,5 @@ namespace ConfiguradorUI.Seguridad
         }
 
         #endregion
-
     }
 }

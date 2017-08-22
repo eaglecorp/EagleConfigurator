@@ -61,6 +61,7 @@
     <Compile Include="Clinica\TipoEspecialidadDA.cs" />
     <Compile Include="General\HorarioDA.cs" />
     <Compile Include="General\ParametroDA.cs" />
+    <Compile Include="Maestro\CajaDA.cs" />
     <Compile Include="Maestro\CanalVentaDA.cs" />
     <Compile Include="Maestro\DescuentoDA.cs" />
     <Compile Include="Maestro\EstadoCivilDA.cs" />

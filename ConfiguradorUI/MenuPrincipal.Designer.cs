@@ -49,6 +49,8 @@
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnEmpleado = new System.Windows.Forms.Button();
             this.tabPagMaestros = new MetroFramework.Controls.MetroTabPage();
+            this.btnImpresora = new System.Windows.Forms.Button();
+            this.btnTipoImpresora = new System.Windows.Forms.Button();
             this.btnParametro = new System.Windows.Forms.Button();
             this.btnTipoLocation = new System.Windows.Forms.Button();
             this.btnLocation = new System.Windows.Forms.Button();
@@ -71,8 +73,7 @@
             this.toolStripUsername = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripFechaCronologica = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnTipoImpresora = new System.Windows.Forms.Button();
-            this.btnImpresora = new System.Windows.Forms.Button();
+            this.btnCaja = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
@@ -445,6 +446,7 @@
             // 
             // tabPagMaestros
             // 
+            this.tabPagMaestros.Controls.Add(this.btnCaja);
             this.tabPagMaestros.Controls.Add(this.btnImpresora);
             this.tabPagMaestros.Controls.Add(this.btnTipoImpresora);
             this.tabPagMaestros.Controls.Add(this.btnParametro);
@@ -468,6 +470,48 @@
             this.tabPagMaestros.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagMaestros.VerticalScrollbarSize = 10;
             // 
+            // btnImpresora
+            // 
+            this.btnImpresora.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImpresora.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImpresora.FlatAppearance.BorderSize = 0;
+            this.btnImpresora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnImpresora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpresora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpresora.ForeColor = System.Drawing.Color.White;
+            this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
+            this.btnImpresora.Location = new System.Drawing.Point(142, 135);
+            this.btnImpresora.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImpresora.Name = "btnImpresora";
+            this.btnImpresora.Size = new System.Drawing.Size(135, 37);
+            this.btnImpresora.TabIndex = 10;
+            this.btnImpresora.Text = "Impresora";
+            this.btnImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImpresora.UseVisualStyleBackColor = false;
+            this.btnImpresora.Click += new System.EventHandler(this.btnImpresora_Click);
+            // 
+            // btnTipoImpresora
+            // 
+            this.btnTipoImpresora.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTipoImpresora.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTipoImpresora.FlatAppearance.BorderSize = 0;
+            this.btnTipoImpresora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnTipoImpresora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTipoImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoImpresora.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnTipoImpresora.ForeColor = System.Drawing.Color.White;
+            this.btnTipoImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoImpresora.Image")));
+            this.btnTipoImpresora.Location = new System.Drawing.Point(142, 176);
+            this.btnTipoImpresora.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTipoImpresora.Name = "btnTipoImpresora";
+            this.btnTipoImpresora.Size = new System.Drawing.Size(135, 37);
+            this.btnTipoImpresora.TabIndex = 9;
+            this.btnTipoImpresora.Text = "Tipo Impresora";
+            this.btnTipoImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTipoImpresora.UseVisualStyleBackColor = false;
+            this.btnTipoImpresora.Click += new System.EventHandler(this.btnTipoImpresora_Click);
+            // 
             // btnParametro
             // 
             this.btnParametro.BackColor = System.Drawing.Color.DodgerBlue;
@@ -479,7 +523,7 @@
             this.btnParametro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParametro.ForeColor = System.Drawing.Color.White;
             this.btnParametro.Image = ((System.Drawing.Image)(resources.GetObject("btnParametro.Image")));
-            this.btnParametro.Location = new System.Drawing.Point(281, 11);
+            this.btnParametro.Location = new System.Drawing.Point(281, 52);
             this.btnParametro.Margin = new System.Windows.Forms.Padding(2);
             this.btnParametro.Name = "btnParametro";
             this.btnParametro.Size = new System.Drawing.Size(135, 37);
@@ -822,47 +866,26 @@
             this.toolStripHora.Size = new System.Drawing.Size(39, 21);
             this.toolStripHora.Text = "Hora";
             // 
-            // btnTipoImpresora
+            // btnCaja
             // 
-            this.btnTipoImpresora.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnTipoImpresora.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnTipoImpresora.FlatAppearance.BorderSize = 0;
-            this.btnTipoImpresora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnTipoImpresora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnTipoImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoImpresora.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnTipoImpresora.ForeColor = System.Drawing.Color.White;
-            this.btnTipoImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoImpresora.Image")));
-            this.btnTipoImpresora.Location = new System.Drawing.Point(142, 176);
-            this.btnTipoImpresora.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTipoImpresora.Name = "btnTipoImpresora";
-            this.btnTipoImpresora.Size = new System.Drawing.Size(135, 37);
-            this.btnTipoImpresora.TabIndex = 9;
-            this.btnTipoImpresora.Text = "Tipo Impresora";
-            this.btnTipoImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTipoImpresora.UseVisualStyleBackColor = false;
-            this.btnTipoImpresora.Click += new System.EventHandler(this.btnTipoImpresora_Click);
-            // 
-            // btnImpresora
-            // 
-            this.btnImpresora.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnImpresora.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImpresora.FlatAppearance.BorderSize = 0;
-            this.btnImpresora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnImpresora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImpresora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImpresora.ForeColor = System.Drawing.Color.White;
-            this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
-            this.btnImpresora.Location = new System.Drawing.Point(142, 135);
-            this.btnImpresora.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImpresora.Name = "btnImpresora";
-            this.btnImpresora.Size = new System.Drawing.Size(135, 37);
-            this.btnImpresora.TabIndex = 10;
-            this.btnImpresora.Text = "Impresora";
-            this.btnImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImpresora.UseVisualStyleBackColor = false;
-            this.btnImpresora.Click += new System.EventHandler(this.btnImpresora_Click);
+            this.btnCaja.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCaja.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCaja.FlatAppearance.BorderSize = 0;
+            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaja.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCaja.Image")));
+            this.btnCaja.Location = new System.Drawing.Point(281, 11);
+            this.btnCaja.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(135, 37);
+            this.btnCaja.TabIndex = 11;
+            this.btnCaja.Text = "Cajas";
+            this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCaja.UseVisualStyleBackColor = false;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
             // 
             // MenuPrincipal
             // 
@@ -942,6 +965,7 @@
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Button btnImpresora;
         private System.Windows.Forms.Button btnTipoImpresora;
+        private System.Windows.Forms.Button btnCaja;
     }
 }
 

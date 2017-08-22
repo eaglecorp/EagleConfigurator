@@ -85,6 +85,12 @@
     <Compile Include="FormUtil\CustomDialog.Designer.cs">
       <DependentUpon>CustomDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestro\FormCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestro\FormCaja.Designer.cs">
+      <DependentUpon>FormCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestro\FormCanalVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,12 @@
     </Compile>
     <Compile Include="Producto\FormClase.Designer.cs">
       <DependentUpon>FormClase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\FormCombo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\FormCombo.Designer.cs">
+      <DependentUpon>FormCombo.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto\FormFamilia.cs">
       <SubType>Form</SubType>
@@ -290,6 +302,9 @@
     <EmbeddedResource Include="FormUtil\CustomDialog.resx">
       <DependentUpon>CustomDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maestro\FormCaja.resx">
+      <DependentUpon>FormCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormCanalVenta.resx">
       <DependentUpon>FormCanalVenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\FormClase.resx">
       <DependentUpon>FormClase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\FormCombo.resx">
+      <DependentUpon>FormCombo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\FormFamilia.resx">
       <DependentUpon>FormFamilia.cs</DependentUpon>
@@ -515,7 +533,9 @@
     <Content Include="Resources\img-form\linea_celeste.jpg" />
     <Content Include="Resources\EagleIco.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Fiscal\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConfigBusinessEntity\ConfigBusinessEntity.csproj">
       <Project>{5f19851a-857f-4335-9dec-13db240874df}</Project>

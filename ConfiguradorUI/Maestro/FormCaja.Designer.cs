@@ -1,6 +1,6 @@
 ﻿namespace ConfiguradorUI.Maestro
 {
-    partial class FormImpresora
+    partial class FormCaja
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImpresora));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCaja));
+            this.lblIdCaja = new MetroFramework.Controls.MetroLabel();
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.dgvImpresora = new System.Windows.Forms.DataGridView();
+            this.dgvCaja = new System.Windows.Forms.DataGridView();
             this.panelFiltro = new MetroFramework.Controls.MetroPanel();
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
@@ -47,37 +48,58 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tglListarInactivos = new MetroFramework.Controls.MetroToggle();
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
-            this.tabImpresora = new MetroFramework.Controls.MetroTabControl();
+            this.tabCaja = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.cboImpresora06 = new MetroFramework.Controls.MetroComboBox();
+            this.btnImpresora06 = new MetroFramework.Controls.MetroLink();
+            this.lblImpresora06 = new MetroFramework.Controls.MetroLabel();
+            this.cboImpresora05 = new MetroFramework.Controls.MetroComboBox();
+            this.btnImpresora05 = new MetroFramework.Controls.MetroLink();
+            this.lblImpresora05 = new MetroFramework.Controls.MetroLabel();
+            this.cboImpresora04 = new MetroFramework.Controls.MetroComboBox();
+            this.btnImpresora04 = new MetroFramework.Controls.MetroLink();
+            this.lblImpresora04 = new MetroFramework.Controls.MetroLabel();
+            this.cboImpresora03 = new MetroFramework.Controls.MetroComboBox();
+            this.btnImpresora03 = new MetroFramework.Controls.MetroLink();
+            this.lblImpresora03 = new MetroFramework.Controls.MetroLabel();
+            this.cboImpresora02 = new MetroFramework.Controls.MetroComboBox();
+            this.btnImpresora02 = new MetroFramework.Controls.MetroLink();
+            this.lblImpresora02 = new MetroFramework.Controls.MetroLabel();
+            this.cboImpresora = new MetroFramework.Controls.MetroComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtIp = new MetroFramework.Controls.MetroTextBox();
-            this.txtInfo01 = new MetroFramework.Controls.MetroTextBox();
-            this.lblInfo01 = new MetroFramework.Controls.MetroLabel();
-            this.txtModelo = new MetroFramework.Controls.MetroTextBox();
-            this.lblModelo = new MetroFramework.Controls.MetroLabel();
-            this.txtMarca = new MetroFramework.Controls.MetroTextBox();
-            this.lblMarca = new MetroFramework.Controls.MetroLabel();
             this.lblIp = new MetroFramework.Controls.MetroLabel();
+            this.btnImpresora = new MetroFramework.Controls.MetroLink();
+            this.lblImpresora = new MetroFramework.Controls.MetroLabel();
+            this.txtInfo01 = new MetroFramework.Controls.MetroTextBox();
+            this.txtInfo02 = new MetroFramework.Controls.MetroTextBox();
+            this.lblInfo02 = new MetroFramework.Controls.MetroLabel();
+            this.lblInfo01 = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnTipoImpresora = new MetroFramework.Controls.MetroLink();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
-            this.lblTipoImpresora = new MetroFramework.Controls.MetroLabel();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
-            this.lblCodBarra = new MetroFramework.Controls.MetroLabel();
+            this.lblCod = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
-            this.lblIdImpresora = new MetroFramework.Controls.MetroLabel();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cboTipoImpresora = new MetroFramework.Controls.MetroComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImpresora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCaja)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
-            this.tabImpresora.SuspendLayout();
+            this.tabCaja.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblIdCaja
+            // 
+            this.lblIdCaja.AutoSize = true;
+            this.lblIdCaja.Location = new System.Drawing.Point(450, 21);
+            this.lblIdCaja.Name = "lblIdCaja";
+            this.lblIdCaja.Size = new System.Drawing.Size(0, 0);
+            this.lblIdCaja.TabIndex = 140;
             // 
             // lblNumInactivo
             // 
@@ -85,11 +107,11 @@
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(177, 397);
+            this.lblNumInactivo.Location = new System.Drawing.Point(177, 497);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
-            this.lblNumInactivo.TabIndex = 127;
+            this.lblNumInactivo.TabIndex = 139;
             this.lblNumInactivo.Text = "Inactivos: ";
             // 
             // lblNumActivo
@@ -98,11 +120,11 @@
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(97, 397);
+            this.lblNumActivo.Location = new System.Drawing.Point(97, 497);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
-            this.lblNumActivo.TabIndex = 126;
+            this.lblNumActivo.TabIndex = 138;
             this.lblNumActivo.Text = "Activos: ";
             // 
             // lblNumReg
@@ -111,33 +133,33 @@
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(30, 396);
+            this.lblNumReg.Location = new System.Drawing.Point(30, 496);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
-            this.lblNumReg.TabIndex = 125;
+            this.lblNumReg.TabIndex = 137;
             this.lblNumReg.Text = "Total: ";
             // 
-            // dgvImpresora
+            // dgvCaja
             // 
-            this.dgvImpresora.AllowUserToAddRows = false;
-            this.dgvImpresora.AllowUserToResizeColumns = false;
-            this.dgvImpresora.AllowUserToResizeRows = false;
-            this.dgvImpresora.BackgroundColor = System.Drawing.Color.White;
-            this.dgvImpresora.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvImpresora.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvImpresora.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvImpresora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvImpresora.Location = new System.Drawing.Point(39, 141);
-            this.dgvImpresora.MultiSelect = false;
-            this.dgvImpresora.Name = "dgvImpresora";
-            this.dgvImpresora.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvImpresora.RowHeadersVisible = false;
-            this.dgvImpresora.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvImpresora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImpresora.Size = new System.Drawing.Size(222, 252);
-            this.dgvImpresora.TabIndex = 117;
-            this.dgvImpresora.SelectionChanged += new System.EventHandler(this.dgvImpresora_SelectionChanged);
+            this.dgvCaja.AllowUserToAddRows = false;
+            this.dgvCaja.AllowUserToResizeColumns = false;
+            this.dgvCaja.AllowUserToResizeRows = false;
+            this.dgvCaja.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCaja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvCaja.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCaja.Location = new System.Drawing.Point(39, 141);
+            this.dgvCaja.MultiSelect = false;
+            this.dgvCaja.Name = "dgvCaja";
+            this.dgvCaja.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCaja.RowHeadersVisible = false;
+            this.dgvCaja.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCaja.Size = new System.Drawing.Size(222, 345);
+            this.dgvCaja.TabIndex = 129;
+            this.dgvCaja.SelectionChanged += new System.EventHandler(this.dgvCaja_SelectionChanged);
             // 
             // panelFiltro
             // 
@@ -149,10 +171,10 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(311, 370);
+            this.panelFiltro.Location = new System.Drawing.Point(311, 470);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
-            this.panelFiltro.TabIndex = 120;
+            this.panelFiltro.TabIndex = 132;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
             this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
@@ -246,7 +268,7 @@
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
-            this.panelMantenimiento.TabIndex = 119;
+            this.panelMantenimiento.TabIndex = 131;
             this.panelMantenimiento.UseCustomBackColor = true;
             this.panelMantenimiento.UseStyleColors = true;
             this.panelMantenimiento.VerticalScrollbarBarColor = true;
@@ -334,7 +356,7 @@
             this.tglListarInactivos.Location = new System.Drawing.Point(137, 121);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 122;
+            this.tglListarInactivos.TabIndex = 134;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -345,37 +367,51 @@
             this.lblListarInactivos.Location = new System.Drawing.Point(39, 119);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
-            this.lblListarInactivos.TabIndex = 121;
+            this.lblListarInactivos.TabIndex = 133;
             this.lblListarInactivos.Text = "Listar inactivos";
             // 
-            // tabImpresora
+            // tabCaja
             // 
-            this.tabImpresora.Controls.Add(this.tabPagGeneral);
-            this.tabImpresora.Location = new System.Drawing.Point(311, 103);
-            this.tabImpresora.Name = "tabImpresora";
-            this.tabImpresora.SelectedIndex = 0;
-            this.tabImpresora.Size = new System.Drawing.Size(562, 261);
-            this.tabImpresora.TabIndex = 118;
-            this.tabImpresora.UseSelectable = true;
+            this.tabCaja.Controls.Add(this.tabPagGeneral);
+            this.tabCaja.Location = new System.Drawing.Point(311, 103);
+            this.tabCaja.Name = "tabCaja";
+            this.tabCaja.SelectedIndex = 0;
+            this.tabCaja.Size = new System.Drawing.Size(562, 361);
+            this.tabCaja.TabIndex = 130;
+            this.tabCaja.UseSelectable = true;
             // 
             // tabPagGeneral
             // 
-            this.tabPagGeneral.Controls.Add(this.cboTipoImpresora);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora06);
+            this.tabPagGeneral.Controls.Add(this.btnImpresora06);
+            this.tabPagGeneral.Controls.Add(this.lblImpresora06);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora05);
+            this.tabPagGeneral.Controls.Add(this.btnImpresora05);
+            this.tabPagGeneral.Controls.Add(this.lblImpresora05);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora04);
+            this.tabPagGeneral.Controls.Add(this.btnImpresora04);
+            this.tabPagGeneral.Controls.Add(this.lblImpresora04);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora03);
+            this.tabPagGeneral.Controls.Add(this.btnImpresora03);
+            this.tabPagGeneral.Controls.Add(this.lblImpresora03);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora02);
+            this.tabPagGeneral.Controls.Add(this.btnImpresora02);
+            this.tabPagGeneral.Controls.Add(this.lblImpresora02);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora);
+            this.tabPagGeneral.Controls.Add(this.panel1);
             this.tabPagGeneral.Controls.Add(this.txtIp);
-            this.tabPagGeneral.Controls.Add(this.txtInfo01);
-            this.tabPagGeneral.Controls.Add(this.lblInfo01);
-            this.tabPagGeneral.Controls.Add(this.txtModelo);
-            this.tabPagGeneral.Controls.Add(this.lblModelo);
-            this.tabPagGeneral.Controls.Add(this.txtMarca);
-            this.tabPagGeneral.Controls.Add(this.lblMarca);
             this.tabPagGeneral.Controls.Add(this.lblIp);
+            this.tabPagGeneral.Controls.Add(this.btnImpresora);
+            this.tabPagGeneral.Controls.Add(this.lblImpresora);
+            this.tabPagGeneral.Controls.Add(this.txtInfo01);
+            this.tabPagGeneral.Controls.Add(this.txtInfo02);
+            this.tabPagGeneral.Controls.Add(this.lblInfo02);
+            this.tabPagGeneral.Controls.Add(this.lblInfo01);
             this.tabPagGeneral.Controls.Add(this.panel2);
             this.tabPagGeneral.Controls.Add(this.panel3);
-            this.tabPagGeneral.Controls.Add(this.btnTipoImpresora);
             this.tabPagGeneral.Controls.Add(this.chkActivo);
-            this.tabPagGeneral.Controls.Add(this.lblTipoImpresora);
             this.tabPagGeneral.Controls.Add(this.txtCodigo);
-            this.tabPagGeneral.Controls.Add(this.lblCodBarra);
+            this.tabPagGeneral.Controls.Add(this.lblCod);
             this.tabPagGeneral.Controls.Add(this.txtNombre);
             this.tabPagGeneral.Controls.Add(this.lblNombre);
             this.tabPagGeneral.HorizontalScrollbarBarColor = true;
@@ -383,12 +419,215 @@
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(554, 219);
+            this.tabPagGeneral.Size = new System.Drawing.Size(554, 319);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // cboImpresora06
+            // 
+            this.cboImpresora06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora06.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cboImpresora06.FormattingEnabled = true;
+            this.cboImpresora06.ItemHeight = 19;
+            this.cboImpresora06.Location = new System.Drawing.Point(348, 246);
+            this.cboImpresora06.Name = "cboImpresora06";
+            this.cboImpresora06.Size = new System.Drawing.Size(155, 25);
+            this.cboImpresora06.TabIndex = 117;
+            this.cboImpresora06.UseCustomBackColor = true;
+            this.cboImpresora06.UseSelectable = true;
+            this.cboImpresora06.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // btnImpresora06
+            // 
+            this.btnImpresora06.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora06.Image")));
+            this.btnImpresora06.ImageSize = 24;
+            this.btnImpresora06.Location = new System.Drawing.Point(504, 244);
+            this.btnImpresora06.Name = "btnImpresora06";
+            this.btnImpresora06.Size = new System.Drawing.Size(29, 27);
+            this.btnImpresora06.TabIndex = 116;
+            this.btnImpresora06.UseSelectable = true;
+            this.btnImpresora06.Click += new System.EventHandler(this.btnImpresora_Click);
+            // 
+            // lblImpresora06
+            // 
+            this.lblImpresora06.AutoSize = true;
+            this.lblImpresora06.ForeColor = System.Drawing.Color.Navy;
+            this.lblImpresora06.Location = new System.Drawing.Point(285, 249);
+            this.lblImpresora06.Name = "lblImpresora06";
+            this.lblImpresora06.Size = new System.Drawing.Size(59, 19);
+            this.lblImpresora06.TabIndex = 115;
+            this.lblImpresora06.Text = "Impr. 06:";
+            this.lblImpresora06.UseCustomForeColor = true;
+            // 
+            // cboImpresora05
+            // 
+            this.cboImpresora05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora05.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cboImpresora05.FormattingEnabled = true;
+            this.cboImpresora05.ItemHeight = 19;
+            this.cboImpresora05.Location = new System.Drawing.Point(77, 246);
+            this.cboImpresora05.Name = "cboImpresora05";
+            this.cboImpresora05.Size = new System.Drawing.Size(155, 25);
+            this.cboImpresora05.TabIndex = 114;
+            this.cboImpresora05.UseCustomBackColor = true;
+            this.cboImpresora05.UseSelectable = true;
+            this.cboImpresora05.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // btnImpresora05
+            // 
+            this.btnImpresora05.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora05.Image")));
+            this.btnImpresora05.ImageSize = 24;
+            this.btnImpresora05.Location = new System.Drawing.Point(233, 244);
+            this.btnImpresora05.Name = "btnImpresora05";
+            this.btnImpresora05.Size = new System.Drawing.Size(29, 27);
+            this.btnImpresora05.TabIndex = 113;
+            this.btnImpresora05.UseSelectable = true;
+            this.btnImpresora05.Click += new System.EventHandler(this.btnImpresora_Click);
+            // 
+            // lblImpresora05
+            // 
+            this.lblImpresora05.AutoSize = true;
+            this.lblImpresora05.ForeColor = System.Drawing.Color.Navy;
+            this.lblImpresora05.Location = new System.Drawing.Point(4, 249);
+            this.lblImpresora05.Name = "lblImpresora05";
+            this.lblImpresora05.Size = new System.Drawing.Size(59, 19);
+            this.lblImpresora05.TabIndex = 112;
+            this.lblImpresora05.Text = "Impr. 05:";
+            this.lblImpresora05.UseCustomForeColor = true;
+            // 
+            // cboImpresora04
+            // 
+            this.cboImpresora04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora04.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cboImpresora04.FormattingEnabled = true;
+            this.cboImpresora04.ItemHeight = 19;
+            this.cboImpresora04.Location = new System.Drawing.Point(348, 207);
+            this.cboImpresora04.Name = "cboImpresora04";
+            this.cboImpresora04.Size = new System.Drawing.Size(155, 25);
+            this.cboImpresora04.TabIndex = 111;
+            this.cboImpresora04.UseCustomBackColor = true;
+            this.cboImpresora04.UseSelectable = true;
+            this.cboImpresora04.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // btnImpresora04
+            // 
+            this.btnImpresora04.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora04.Image")));
+            this.btnImpresora04.ImageSize = 24;
+            this.btnImpresora04.Location = new System.Drawing.Point(504, 205);
+            this.btnImpresora04.Name = "btnImpresora04";
+            this.btnImpresora04.Size = new System.Drawing.Size(29, 27);
+            this.btnImpresora04.TabIndex = 110;
+            this.btnImpresora04.UseSelectable = true;
+            this.btnImpresora04.Click += new System.EventHandler(this.btnImpresora_Click);
+            // 
+            // lblImpresora04
+            // 
+            this.lblImpresora04.AutoSize = true;
+            this.lblImpresora04.ForeColor = System.Drawing.Color.Navy;
+            this.lblImpresora04.Location = new System.Drawing.Point(285, 210);
+            this.lblImpresora04.Name = "lblImpresora04";
+            this.lblImpresora04.Size = new System.Drawing.Size(59, 19);
+            this.lblImpresora04.TabIndex = 109;
+            this.lblImpresora04.Text = "Impr. 04:";
+            this.lblImpresora04.UseCustomForeColor = true;
+            // 
+            // cboImpresora03
+            // 
+            this.cboImpresora03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora03.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cboImpresora03.FormattingEnabled = true;
+            this.cboImpresora03.ItemHeight = 19;
+            this.cboImpresora03.Location = new System.Drawing.Point(77, 207);
+            this.cboImpresora03.Name = "cboImpresora03";
+            this.cboImpresora03.Size = new System.Drawing.Size(155, 25);
+            this.cboImpresora03.TabIndex = 108;
+            this.cboImpresora03.UseCustomBackColor = true;
+            this.cboImpresora03.UseSelectable = true;
+            this.cboImpresora03.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // btnImpresora03
+            // 
+            this.btnImpresora03.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora03.Image")));
+            this.btnImpresora03.ImageSize = 24;
+            this.btnImpresora03.Location = new System.Drawing.Point(233, 205);
+            this.btnImpresora03.Name = "btnImpresora03";
+            this.btnImpresora03.Size = new System.Drawing.Size(29, 27);
+            this.btnImpresora03.TabIndex = 107;
+            this.btnImpresora03.UseSelectable = true;
+            this.btnImpresora03.Click += new System.EventHandler(this.btnImpresora_Click);
+            // 
+            // lblImpresora03
+            // 
+            this.lblImpresora03.AutoSize = true;
+            this.lblImpresora03.ForeColor = System.Drawing.Color.Navy;
+            this.lblImpresora03.Location = new System.Drawing.Point(4, 210);
+            this.lblImpresora03.Name = "lblImpresora03";
+            this.lblImpresora03.Size = new System.Drawing.Size(59, 19);
+            this.lblImpresora03.TabIndex = 106;
+            this.lblImpresora03.Text = "Impr. 03:";
+            this.lblImpresora03.UseCustomForeColor = true;
+            // 
+            // cboImpresora02
+            // 
+            this.cboImpresora02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora02.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cboImpresora02.FormattingEnabled = true;
+            this.cboImpresora02.ItemHeight = 19;
+            this.cboImpresora02.Location = new System.Drawing.Point(348, 168);
+            this.cboImpresora02.Name = "cboImpresora02";
+            this.cboImpresora02.Size = new System.Drawing.Size(155, 25);
+            this.cboImpresora02.TabIndex = 105;
+            this.cboImpresora02.UseCustomBackColor = true;
+            this.cboImpresora02.UseSelectable = true;
+            this.cboImpresora02.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // btnImpresora02
+            // 
+            this.btnImpresora02.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora02.Image")));
+            this.btnImpresora02.ImageSize = 24;
+            this.btnImpresora02.Location = new System.Drawing.Point(504, 166);
+            this.btnImpresora02.Name = "btnImpresora02";
+            this.btnImpresora02.Size = new System.Drawing.Size(29, 27);
+            this.btnImpresora02.TabIndex = 104;
+            this.btnImpresora02.UseSelectable = true;
+            this.btnImpresora02.Click += new System.EventHandler(this.btnImpresora_Click);
+            // 
+            // lblImpresora02
+            // 
+            this.lblImpresora02.AutoSize = true;
+            this.lblImpresora02.ForeColor = System.Drawing.Color.Navy;
+            this.lblImpresora02.Location = new System.Drawing.Point(285, 171);
+            this.lblImpresora02.Name = "lblImpresora02";
+            this.lblImpresora02.Size = new System.Drawing.Size(59, 19);
+            this.lblImpresora02.TabIndex = 103;
+            this.lblImpresora02.Text = "Impr. 02:";
+            this.lblImpresora02.UseCustomForeColor = true;
+            // 
+            // cboImpresora
+            // 
+            this.cboImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cboImpresora.FormattingEnabled = true;
+            this.cboImpresora.ItemHeight = 19;
+            this.cboImpresora.Location = new System.Drawing.Point(77, 168);
+            this.cboImpresora.Name = "cboImpresora";
+            this.cboImpresora.Size = new System.Drawing.Size(155, 25);
+            this.cboImpresora.TabIndex = 102;
+            this.cboImpresora.UseCustomBackColor = true;
+            this.cboImpresora.UseSelectable = true;
+            this.cboImpresora.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(4, 145);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(528, 8);
+            this.panel1.TabIndex = 101;
             // 
             // txtIp
             // 
@@ -406,7 +645,7 @@
             this.txtIp.CustomButton.UseSelectable = true;
             this.txtIp.CustomButton.Visible = false;
             this.txtIp.Lines = new string[0];
-            this.txtIp.Location = new System.Drawing.Point(348, 72);
+            this.txtIp.Location = new System.Drawing.Point(77, 72);
             this.txtIp.MaxLength = 32767;
             this.txtIp.Name = "txtIp";
             this.txtIp.PasswordChar = '\0';
@@ -416,12 +655,45 @@
             this.txtIp.SelectionStart = 0;
             this.txtIp.ShortcutsEnabled = true;
             this.txtIp.Size = new System.Drawing.Size(184, 23);
-            this.txtIp.TabIndex = 95;
+            this.txtIp.TabIndex = 100;
             this.txtIp.UseCustomBackColor = true;
             this.txtIp.UseSelectable = true;
             this.txtIp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtIp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtIp.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblIp
+            // 
+            this.lblIp.AutoSize = true;
+            this.lblIp.ForeColor = System.Drawing.Color.Navy;
+            this.lblIp.Location = new System.Drawing.Point(4, 74);
+            this.lblIp.Name = "lblIp";
+            this.lblIp.Size = new System.Drawing.Size(23, 19);
+            this.lblIp.TabIndex = 99;
+            this.lblIp.Text = "IP:";
+            this.lblIp.UseCustomForeColor = true;
+            // 
+            // btnImpresora
+            // 
+            this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
+            this.btnImpresora.ImageSize = 24;
+            this.btnImpresora.Location = new System.Drawing.Point(233, 166);
+            this.btnImpresora.Name = "btnImpresora";
+            this.btnImpresora.Size = new System.Drawing.Size(29, 27);
+            this.btnImpresora.TabIndex = 98;
+            this.btnImpresora.UseSelectable = true;
+            this.btnImpresora.Click += new System.EventHandler(this.btnImpresora_Click);
+            // 
+            // lblImpresora
+            // 
+            this.lblImpresora.AutoSize = true;
+            this.lblImpresora.ForeColor = System.Drawing.Color.Navy;
+            this.lblImpresora.Location = new System.Drawing.Point(4, 171);
+            this.lblImpresora.Name = "lblImpresora";
+            this.lblImpresora.Size = new System.Drawing.Size(57, 19);
+            this.lblImpresora.TabIndex = 96;
+            this.lblImpresora.Text = "Impr. 01:";
+            this.lblImpresora.UseCustomForeColor = true;
             // 
             // txtInfo01
             // 
@@ -430,7 +702,7 @@
             // 
             // 
             this.txtInfo01.CustomButton.Image = null;
-            this.txtInfo01.CustomButton.Location = new System.Drawing.Point(433, 1);
+            this.txtInfo01.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo01.CustomButton.Name = "";
             this.txtInfo01.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -439,7 +711,7 @@
             this.txtInfo01.CustomButton.UseSelectable = true;
             this.txtInfo01.CustomButton.Visible = false;
             this.txtInfo01.Lines = new string[0];
-            this.txtInfo01.Location = new System.Drawing.Point(77, 145);
+            this.txtInfo01.Location = new System.Drawing.Point(348, 72);
             this.txtInfo01.MaxLength = 32767;
             this.txtInfo01.Name = "txtInfo01";
             this.txtInfo01.PasswordChar = '\0';
@@ -448,129 +720,74 @@
             this.txtInfo01.SelectionLength = 0;
             this.txtInfo01.SelectionStart = 0;
             this.txtInfo01.ShortcutsEnabled = true;
-            this.txtInfo01.Size = new System.Drawing.Size(455, 23);
-            this.txtInfo01.TabIndex = 94;
+            this.txtInfo01.Size = new System.Drawing.Size(184, 23);
+            this.txtInfo01.TabIndex = 95;
             this.txtInfo01.UseCustomBackColor = true;
             this.txtInfo01.UseSelectable = true;
             this.txtInfo01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtInfo01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtInfo01.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
+            // txtInfo02
+            // 
+            this.txtInfo02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtInfo02.CustomButton.Image = null;
+            this.txtInfo02.CustomButton.Location = new System.Drawing.Point(433, 1);
+            this.txtInfo02.CustomButton.Name = "";
+            this.txtInfo02.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtInfo02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtInfo02.CustomButton.TabIndex = 1;
+            this.txtInfo02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtInfo02.CustomButton.UseSelectable = true;
+            this.txtInfo02.CustomButton.Visible = false;
+            this.txtInfo02.Lines = new string[0];
+            this.txtInfo02.Location = new System.Drawing.Point(77, 109);
+            this.txtInfo02.MaxLength = 32767;
+            this.txtInfo02.Name = "txtInfo02";
+            this.txtInfo02.PasswordChar = '\0';
+            this.txtInfo02.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtInfo02.SelectedText = "";
+            this.txtInfo02.SelectionLength = 0;
+            this.txtInfo02.SelectionStart = 0;
+            this.txtInfo02.ShortcutsEnabled = true;
+            this.txtInfo02.Size = new System.Drawing.Size(455, 23);
+            this.txtInfo02.TabIndex = 94;
+            this.txtInfo02.UseCustomBackColor = true;
+            this.txtInfo02.UseSelectable = true;
+            this.txtInfo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtInfo02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtInfo02.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblInfo02
+            // 
+            this.lblInfo02.AutoSize = true;
+            this.lblInfo02.ForeColor = System.Drawing.Color.Navy;
+            this.lblInfo02.Location = new System.Drawing.Point(3, 111);
+            this.lblInfo02.Name = "lblInfo02";
+            this.lblInfo02.Size = new System.Drawing.Size(52, 19);
+            this.lblInfo02.TabIndex = 93;
+            this.lblInfo02.Text = "Info 02:";
+            this.lblInfo02.UseCustomForeColor = true;
+            // 
             // lblInfo01
             // 
             this.lblInfo01.AutoSize = true;
             this.lblInfo01.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo01.Location = new System.Drawing.Point(3, 147);
+            this.lblInfo01.Location = new System.Drawing.Point(285, 74);
             this.lblInfo01.Name = "lblInfo01";
-            this.lblInfo01.Size = new System.Drawing.Size(50, 19);
-            this.lblInfo01.TabIndex = 93;
-            this.lblInfo01.Text = "Info 01:";
+            this.lblInfo01.Size = new System.Drawing.Size(53, 19);
+            this.lblInfo01.TabIndex = 87;
+            this.lblInfo01.Text = "Info. 01:";
             this.lblInfo01.UseCustomForeColor = true;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtModelo.CustomButton.Image = null;
-            this.txtModelo.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtModelo.CustomButton.Name = "";
-            this.txtModelo.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtModelo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtModelo.CustomButton.TabIndex = 1;
-            this.txtModelo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtModelo.CustomButton.UseSelectable = true;
-            this.txtModelo.CustomButton.Visible = false;
-            this.txtModelo.Lines = new string[0];
-            this.txtModelo.Location = new System.Drawing.Point(348, 108);
-            this.txtModelo.MaxLength = 32767;
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.PasswordChar = '\0';
-            this.txtModelo.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtModelo.SelectedText = "";
-            this.txtModelo.SelectionLength = 0;
-            this.txtModelo.SelectionStart = 0;
-            this.txtModelo.ShortcutsEnabled = true;
-            this.txtModelo.Size = new System.Drawing.Size(184, 23);
-            this.txtModelo.TabIndex = 92;
-            this.txtModelo.UseCustomBackColor = true;
-            this.txtModelo.UseSelectable = true;
-            this.txtModelo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtModelo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtModelo.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblModelo
-            // 
-            this.lblModelo.AutoSize = true;
-            this.lblModelo.ForeColor = System.Drawing.Color.Navy;
-            this.lblModelo.Location = new System.Drawing.Point(283, 110);
-            this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(58, 19);
-            this.lblModelo.TabIndex = 91;
-            this.lblModelo.Text = "Modelo:";
-            this.lblModelo.UseCustomForeColor = true;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtMarca.CustomButton.Image = null;
-            this.txtMarca.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtMarca.CustomButton.Name = "";
-            this.txtMarca.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtMarca.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtMarca.CustomButton.TabIndex = 1;
-            this.txtMarca.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtMarca.CustomButton.UseSelectable = true;
-            this.txtMarca.CustomButton.Visible = false;
-            this.txtMarca.Lines = new string[0];
-            this.txtMarca.Location = new System.Drawing.Point(77, 108);
-            this.txtMarca.MaxLength = 32767;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.PasswordChar = '\0';
-            this.txtMarca.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtMarca.SelectedText = "";
-            this.txtMarca.SelectionLength = 0;
-            this.txtMarca.SelectionStart = 0;
-            this.txtMarca.ShortcutsEnabled = true;
-            this.txtMarca.Size = new System.Drawing.Size(184, 23);
-            this.txtMarca.TabIndex = 90;
-            this.txtMarca.UseCustomBackColor = true;
-            this.txtMarca.UseSelectable = true;
-            this.txtMarca.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtMarca.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMarca.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.ForeColor = System.Drawing.Color.Navy;
-            this.lblMarca.Location = new System.Drawing.Point(3, 110);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(49, 19);
-            this.lblMarca.TabIndex = 89;
-            this.lblMarca.Text = "Marca:";
-            this.lblMarca.UseCustomForeColor = true;
-            // 
-            // lblIp
-            // 
-            this.lblIp.AutoSize = true;
-            this.lblIp.ForeColor = System.Drawing.Color.Navy;
-            this.lblIp.Location = new System.Drawing.Point(285, 74);
-            this.lblIp.Name = "lblIp";
-            this.lblIp.Size = new System.Drawing.Size(23, 19);
-            this.lblIp.TabIndex = 87;
-            this.lblIp.Text = "IP:";
-            this.lblIp.UseCustomForeColor = true;
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(4, 179);
+            this.panel2.Location = new System.Drawing.Point(4, 285);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(528, 8);
             this.panel2.TabIndex = 86;
@@ -584,17 +801,6 @@
             this.panel3.Size = new System.Drawing.Size(528, 8);
             this.panel3.TabIndex = 65;
             // 
-            // btnTipoImpresora
-            // 
-            this.btnTipoImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoImpresora.Image")));
-            this.btnTipoImpresora.ImageSize = 24;
-            this.btnTipoImpresora.Location = new System.Drawing.Point(239, 68);
-            this.btnTipoImpresora.Name = "btnTipoImpresora";
-            this.btnTipoImpresora.Size = new System.Drawing.Size(29, 27);
-            this.btnTipoImpresora.TabIndex = 59;
-            this.btnTipoImpresora.UseSelectable = true;
-            this.btnTipoImpresora.Click += new System.EventHandler(this.btnTipoImpresora_Click);
-            // 
             // chkActivo
             // 
             this.chkActivo.AutoSize = true;
@@ -603,7 +809,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(5, 193);
+            this.chkActivo.Location = new System.Drawing.Point(9, 300);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 6;
@@ -611,17 +817,6 @@
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
             this.chkActivo.CheckedChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblTipoImpresora
-            // 
-            this.lblTipoImpresora.AutoSize = true;
-            this.lblTipoImpresora.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoImpresora.Location = new System.Drawing.Point(1, 74);
-            this.lblTipoImpresora.Name = "lblTipoImpresora";
-            this.lblTipoImpresora.Size = new System.Drawing.Size(65, 19);
-            this.lblTipoImpresora.TabIndex = 4;
-            this.lblTipoImpresora.Text = "Tipo Imp:";
-            this.lblTipoImpresora.UseCustomForeColor = true;
             // 
             // txtCodigo
             // 
@@ -656,16 +851,16 @@
             this.txtCodigo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtCodigo.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
-            // lblCodBarra
+            // lblCod
             // 
-            this.lblCodBarra.AutoSize = true;
-            this.lblCodBarra.ForeColor = System.Drawing.Color.Navy;
-            this.lblCodBarra.Location = new System.Drawing.Point(283, 16);
-            this.lblCodBarra.Name = "lblCodBarra";
-            this.lblCodBarra.Size = new System.Drawing.Size(56, 19);
-            this.lblCodBarra.TabIndex = 2;
-            this.lblCodBarra.Text = "Código:";
-            this.lblCodBarra.UseCustomForeColor = true;
+            this.lblCod.AutoSize = true;
+            this.lblCod.ForeColor = System.Drawing.Color.Navy;
+            this.lblCod.Location = new System.Drawing.Point(283, 16);
+            this.lblCod.Name = "lblCod";
+            this.lblCod.Size = new System.Drawing.Size(56, 19);
+            this.lblCod.TabIndex = 2;
+            this.lblCod.Text = "Código:";
+            this.lblCod.UseCustomForeColor = true;
             // 
             // txtNombre
             // 
@@ -718,9 +913,9 @@
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblNombreForm.Location = new System.Drawing.Point(89, 45);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(166, 45);
-            this.lblNombreForm.TabIndex = 124;
-            this.lblNombreForm.Text = "Impresoras";
+            this.lblNombreForm.Size = new System.Drawing.Size(91, 45);
+            this.lblNombreForm.TabIndex = 136;
+            this.lblNombreForm.Text = "Cajas";
             // 
             // btnCerrar
             // 
@@ -730,60 +925,38 @@
             this.btnCerrar.Location = new System.Drawing.Point(27, 39);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 123;
+            this.btnCerrar.TabIndex = 135;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // lblIdImpresora
-            // 
-            this.lblIdImpresora.AutoSize = true;
-            this.lblIdImpresora.Location = new System.Drawing.Point(450, 18);
-            this.lblIdImpresora.Name = "lblIdImpresora";
-            this.lblIdImpresora.Size = new System.Drawing.Size(0, 0);
-            this.lblIdImpresora.TabIndex = 128;
             // 
             // errorProv
             // 
             this.errorProv.ContainerControl = this;
             // 
-            // cboTipoImpresora
-            // 
-            this.cboTipoImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoImpresora.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cboTipoImpresora.FormattingEnabled = true;
-            this.cboTipoImpresora.ItemHeight = 19;
-            this.cboTipoImpresora.Location = new System.Drawing.Point(77, 70);
-            this.cboTipoImpresora.Name = "cboTipoImpresora";
-            this.cboTipoImpresora.Size = new System.Drawing.Size(160, 25);
-            this.cboTipoImpresora.TabIndex = 129;
-            this.cboTipoImpresora.UseCustomBackColor = true;
-            this.cboTipoImpresora.UseSelectable = true;
-            this.cboTipoImpresora.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // FormImpresora
+            // FormCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 450);
-            this.Controls.Add(this.lblIdImpresora);
+            this.ClientSize = new System.Drawing.Size(900, 552);
+            this.Controls.Add(this.lblIdCaja);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
-            this.Controls.Add(this.dgvImpresora);
+            this.Controls.Add(this.dgvCaja);
             this.Controls.Add(this.panelFiltro);
             this.Controls.Add(this.panelMantenimiento);
             this.Controls.Add(this.tglListarInactivos);
             this.Controls.Add(this.lblListarInactivos);
-            this.Controls.Add(this.tabImpresora);
+            this.Controls.Add(this.tabCaja);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
-            this.Name = "FormImpresora";
-            this.Load += new System.EventHandler(this.FormImpresora_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImpresora)).EndInit();
+            this.Name = "FormCaja";
+            this.Load += new System.EventHandler(this.FormCaja_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCaja)).EndInit();
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();
             this.panelMantenimiento.ResumeLayout(false);
-            this.tabImpresora.ResumeLayout(false);
+            this.tabCaja.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
@@ -794,10 +967,11 @@
 
         #endregion
 
+        private MetroFramework.Controls.MetroLabel lblIdCaja;
         private System.Windows.Forms.Label lblNumInactivo;
         private System.Windows.Forms.Label lblNumActivo;
         private System.Windows.Forms.Label lblNumReg;
-        private System.Windows.Forms.DataGridView dgvImpresora;
+        private System.Windows.Forms.DataGridView dgvCaja;
         private MetroFramework.Controls.MetroPanel panelFiltro;
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
@@ -811,29 +985,42 @@
         private System.Windows.Forms.Button btnDelete;
         private MetroFramework.Controls.MetroToggle tglListarInactivos;
         private MetroFramework.Controls.MetroLabel lblListarInactivos;
-        private MetroFramework.Controls.MetroTabControl tabImpresora;
+        private MetroFramework.Controls.MetroTabControl tabCaja;
         private MetroFramework.Controls.MetroTabPage tabPagGeneral;
+        private MetroFramework.Controls.MetroTextBox txtInfo01;
+        private MetroFramework.Controls.MetroTextBox txtInfo02;
+        private MetroFramework.Controls.MetroLabel lblInfo02;
+        private MetroFramework.Controls.MetroLabel lblInfo01;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private MetroFramework.Controls.MetroLink btnTipoImpresora;
         private MetroFramework.Controls.MetroCheckBox chkActivo;
-        private MetroFramework.Controls.MetroLabel lblTipoImpresora;
         private MetroFramework.Controls.MetroTextBox txtCodigo;
-        private MetroFramework.Controls.MetroLabel lblCodBarra;
+        private MetroFramework.Controls.MetroLabel lblCod;
         private MetroFramework.Controls.MetroTextBox txtNombre;
         private MetroFramework.Controls.MetroLabel lblNombre;
         private System.Windows.Forms.Label lblNombreForm;
         private MetroFramework.Controls.MetroLink btnCerrar;
-        private MetroFramework.Controls.MetroLabel lblIp;
-        private MetroFramework.Controls.MetroLabel lblIdImpresora;
-        private MetroFramework.Controls.MetroTextBox txtInfo01;
-        private MetroFramework.Controls.MetroLabel lblInfo01;
-        private MetroFramework.Controls.MetroTextBox txtModelo;
-        private MetroFramework.Controls.MetroLabel lblModelo;
-        private MetroFramework.Controls.MetroTextBox txtMarca;
-        private MetroFramework.Controls.MetroLabel lblMarca;
-        private System.Windows.Forms.ErrorProvider errorProv;
+        private MetroFramework.Controls.MetroLink btnImpresora;
+        private MetroFramework.Controls.MetroLabel lblImpresora;
+        private MetroFramework.Controls.MetroComboBox cboImpresora06;
+        private MetroFramework.Controls.MetroLink btnImpresora06;
+        private MetroFramework.Controls.MetroLabel lblImpresora06;
+        private MetroFramework.Controls.MetroComboBox cboImpresora05;
+        private MetroFramework.Controls.MetroLink btnImpresora05;
+        private MetroFramework.Controls.MetroLabel lblImpresora05;
+        private MetroFramework.Controls.MetroComboBox cboImpresora04;
+        private MetroFramework.Controls.MetroLink btnImpresora04;
+        private MetroFramework.Controls.MetroLabel lblImpresora04;
+        private MetroFramework.Controls.MetroComboBox cboImpresora03;
+        private MetroFramework.Controls.MetroLink btnImpresora03;
+        private MetroFramework.Controls.MetroLabel lblImpresora03;
+        private MetroFramework.Controls.MetroComboBox cboImpresora02;
+        private MetroFramework.Controls.MetroLink btnImpresora02;
+        private MetroFramework.Controls.MetroLabel lblImpresora02;
+        private MetroFramework.Controls.MetroComboBox cboImpresora;
+        private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroTextBox txtIp;
-        private MetroFramework.Controls.MetroComboBox cboTipoImpresora;
+        private MetroFramework.Controls.MetroLabel lblIp;
+        private System.Windows.Forms.ErrorProvider errorProv;
     }
 }
