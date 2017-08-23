@@ -1,5 +1,6 @@
 ﻿using ConfigBusinessEntity;
 using ConfigDataAccess.Maestro;
+using ConfigUtilitarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace ConfigBusinessLogic.Maestro
             return new CanalVentaDA().CanalVentaXCod(cod);
         }
 
-        public List<MSTt04_canal_vta> ListaCanalVenta(int? id_estado = null, bool ocultarBlankReg = false)
+        public List<MSTt04_canal_vta> ListaCanalVenta(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
         {
             var lista = new CanalVentaDA().ListaCanalVenta(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
@@ -44,6 +45,9 @@ namespace ConfigBusinessLogic.Maestro
                 if (itemToRemove != null && itemToRemove.id_can_vta > 0)
                     lista.Remove(itemToRemove);
             }
+            if (enableTopList && lista != null)
+                return lista.OrderBy(x => x.cod_can_vta != TopList.CanalVenta).ThenBy(x => x.txt_desc).ToList();
+
             return lista;
         }
     }

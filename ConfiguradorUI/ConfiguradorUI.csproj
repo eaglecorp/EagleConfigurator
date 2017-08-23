@@ -169,6 +169,12 @@
     <Compile Include="Maestro\FormTipoOrden.Designer.cs">
       <DependentUpon>FormTipoOrden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestro\FormTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestro\FormTurno.Designer.cs">
+      <DependentUpon>FormTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormMedioPago.resx">
       <DependentUpon>FormMedioPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestro\FormMesa.resx">
+      <DependentUpon>FormMesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormParametro.resx">
       <DependentUpon>FormParametro.cs</DependentUpon>

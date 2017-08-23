@@ -22,6 +22,7 @@ namespace ConfiguradorUI.Maestro
         bool isChangedRow = false;
         bool isPending = false;
         bool preguntar = true;
+        public bool actualizar = false;
         private int TipoOperacion = TipoOperacionABM.No_Action;
         string codSelected = "";
         #endregion
@@ -84,6 +85,8 @@ namespace ConfiguradorUI.Maestro
                         var obj = new MSTt04_canal_vta();
                         obj = GetObjeto();
                         int id = new CanalVentaBL().InsertarCanalVenta(obj);
+                        if (id > 0)
+                            actualizar = true;
                         ControlarEventosABM(id);
                     }
                 }
@@ -91,7 +94,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     Actualizar();
                 }
-               
+
             }
             catch (Exception e)
             {
@@ -116,6 +119,7 @@ namespace ConfiguradorUI.Maestro
                                 if (rp == DialogResult.Yes)
                                 {
                                     new CanalVentaBL().EliminarCanalVenta(id);
+                                    actualizar = true;
                                     ControlarEventosABM();
                                 }
                             }
@@ -161,6 +165,7 @@ namespace ConfiguradorUI.Maestro
                         {
                             obj.id_can_vta = id;
                             new CanalVentaBL().ActualizarCanalVenta(obj);
+                            actualizar = true;
                             ControlarEventosABM(obj.id_can_vta);
                         }
                         isValid = true;
@@ -190,6 +195,7 @@ namespace ConfiguradorUI.Maestro
                         {
                             obj.id_can_vta = id;
                             new CanalVentaBL().ActualizarCanalVenta(obj);
+                            actualizar = true;
                         }
                         isValid = true;
                     }

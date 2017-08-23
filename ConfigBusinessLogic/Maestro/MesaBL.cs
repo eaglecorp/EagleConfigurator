@@ -15,9 +15,9 @@ namespace ConfigBusinessLogic.Maestro
         {
             return new MesaDA().InsertarMesa(obj);
         }
-        public void EliminarMesa(int id)
+        public void CambiarEstadoMesa(int id_mesa, int id_estado_mesa)
         {
-            new MesaDA().EliminarMesa(id);
+            new MesaDA().CambiarEstadoMesa(id_mesa,id_estado_mesa);
         }
         public void ActualizarMesa(MSTt15_mesa actualizado)
         {
@@ -31,9 +31,9 @@ namespace ConfigBusinessLogic.Maestro
         {
             return new MesaDA().MesaXCod(cod);
         }
-        public List<MSTt15_mesa> ListaMesa(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
+        public List<MSTt15_mesa> ListaMesa(int? id_estado_mesa = null, bool ocultarBlankReg = false, bool enableTopList = false)
         {
-            var lista = new MesaDA().ListaMesa(id_estado);
+            var lista = new MesaDA().ListaMesa(id_estado_mesa);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
                 var itemToRemove = lista.SingleOrDefault(x => x.cod_mesa == Parameter.BlankRegister);

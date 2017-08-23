@@ -363,6 +363,24 @@ namespace ConfiguradorUI
             FormCaja oForm = new FormCaja();
             oForm.ShowDialog();
         }
+        private void btnMesa_Click(object sender, EventArgs e)
+        {
+            var form = new FormMesa();
+            form.ShowDialog();
+        }
+
+        private void btnEstadoMesa_Click(object sender, EventArgs e)
+        {
+            var form = new FormEstadoMesa();
+            form.ShowDialog();
+        }
+
+        private void btnTurno_Click(object sender, EventArgs e)
+        {
+            var form = new FormTurno();
+            form.ShowDialog();
+        }
+
         private void btnParametro_Click(object sender, EventArgs e)
         {
             FormParametro oForm = new FormParametro();
@@ -371,12 +389,6 @@ namespace ConfiguradorUI
             if (true)
                 AsignarImagenHeader();
         }
-
-
-
-
-
-
 
         #endregion
 
@@ -398,10 +410,6 @@ namespace ConfiguradorUI
 
         #endregion
 
-        private void btnEstadoMesa_Click(object sender, EventArgs e)
-        {
-            var form = new FormEstadoMesa();
-            form.ShowDialog();
-        }
+
     }
 }

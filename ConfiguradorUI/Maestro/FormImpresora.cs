@@ -288,7 +288,7 @@ namespace ConfiguradorUI.Maestro
                 no_error = false;
             }
 
-            if (no_error && !int.TryParse(cboTipoImpresora.SelectedValue?.ToString(), out int id))
+            if (!int.TryParse(cboTipoImpresora.SelectedValue?.ToString(), out int id))
             {
                 errorProv.SetError(cboTipoImpresora, "Este campo es requerido.");
                 cboTipoImpresora.Focus();

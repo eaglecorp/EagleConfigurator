@@ -157,7 +157,7 @@
             // cboFamilia
             // 
             this.cboFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboFamilia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cboFamilia.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.cboFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

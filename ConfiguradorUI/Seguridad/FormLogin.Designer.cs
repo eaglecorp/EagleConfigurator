@@ -60,7 +60,6 @@
             this.txtClave.CustomButton.UseSelectable = true;
             this.txtClave.CustomButton.Visible = false;
             this.txtClave.DisplayIcon = true;
-            this.txtClave.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtClave.Icon = ((System.Drawing.Image)(resources.GetObject("txtClave.Icon")));
             this.txtClave.Lines = new string[0];
             this.txtClave.Location = new System.Drawing.Point(174, 130);
@@ -205,7 +204,7 @@
             // picUserLogin
             // 
             this.picUserLogin.InitialImage = null;
-            this.picUserLogin.Location = new System.Drawing.Point(24, 87);
+            this.picUserLogin.Location = new System.Drawing.Point(23, 78);
             this.picUserLogin.Name = "picUserLogin";
             this.picUserLogin.Size = new System.Drawing.Size(130, 135);
             this.picUserLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;

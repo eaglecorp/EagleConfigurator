@@ -59,6 +59,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lnkNuevo = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoMesa)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -215,6 +216,7 @@
             // panelMantenimiento
             // 
             this.panelMantenimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.panelMantenimiento.Controls.Add(this.lnkNuevo);
             this.panelMantenimiento.Controls.Add(this.btnSearch);
             this.panelMantenimiento.Controls.Add(this.btnNuevo);
             this.panelMantenimiento.Controls.Add(this.btnRollback);
@@ -515,6 +517,16 @@
             // 
             this.errorProv.ContainerControl = this;
             // 
+            // lnkNuevo
+            // 
+            this.lnkNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.lnkNuevo.Location = new System.Drawing.Point(234, 17);
+            this.lnkNuevo.Name = "lnkNuevo";
+            this.lnkNuevo.Size = new System.Drawing.Size(75, 23);
+            this.lnkNuevo.TabIndex = 5;
+            this.lnkNuevo.UseCustomBackColor = true;
+            this.lnkNuevo.UseSelectable = true;
+            // 
             // FormEstadoMesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,5 +590,6 @@
         private System.Windows.Forms.Label lblNombreForm;
         private MetroFramework.Controls.MetroLink btnCerrar;
         private System.Windows.Forms.ErrorProvider errorProv;
+        private MetroFramework.Controls.MetroLink lnkNuevo;
     }
 }

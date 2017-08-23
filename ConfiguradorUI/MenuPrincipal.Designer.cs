@@ -49,6 +49,9 @@
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnEmpleado = new System.Windows.Forms.Button();
             this.tabPagMaestros = new MetroFramework.Controls.MetroTabPage();
+            this.btnTurno = new System.Windows.Forms.Button();
+            this.btnEstadoMesa = new System.Windows.Forms.Button();
+            this.btnMesa = new System.Windows.Forms.Button();
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnImpresora = new System.Windows.Forms.Button();
             this.btnTipoImpresora = new System.Windows.Forms.Button();
@@ -74,8 +77,7 @@
             this.toolStripUsername = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripFechaCronologica = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnMesa = new System.Windows.Forms.Button();
-            this.btnEstadoMesa = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
@@ -91,10 +93,10 @@
             this.tabPanel.Controls.Add(this.tabPagPersonas);
             this.tabPanel.Controls.Add(this.tabPagMaestros);
             this.tabPanel.Controls.Add(this.tabPagReportes);
-            this.tabPanel.Location = new System.Drawing.Point(31, 166);
+            this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 2;
-            this.tabPanel.Size = new System.Drawing.Size(681, 259);
+            this.tabPanel.SelectedIndex = 0;
+            this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
             // 
@@ -117,7 +119,7 @@
             this.tabPagProductos.HorizontalScrollbarSize = 10;
             this.tabPagProductos.Location = new System.Drawing.Point(4, 38);
             this.tabPagProductos.Name = "tabPagProductos";
-            this.tabPagProductos.Size = new System.Drawing.Size(673, 217);
+            this.tabPagProductos.Size = new System.Drawing.Size(673, 222);
             this.tabPagProductos.TabIndex = 0;
             this.tabPagProductos.Text = "Productos";
             this.tabPagProductos.VerticalScrollbarBarColor = true;
@@ -355,7 +357,7 @@
             this.tabPagPersonas.HorizontalScrollbarSize = 10;
             this.tabPagPersonas.Location = new System.Drawing.Point(4, 38);
             this.tabPagPersonas.Name = "tabPagPersonas";
-            this.tabPagPersonas.Size = new System.Drawing.Size(673, 217);
+            this.tabPagPersonas.Size = new System.Drawing.Size(673, 222);
             this.tabPagPersonas.TabIndex = 1;
             this.tabPagPersonas.Text = "Personas";
             this.tabPagPersonas.VerticalScrollbarBarColor = true;
@@ -448,6 +450,7 @@
             // 
             // tabPagMaestros
             // 
+            this.tabPagMaestros.Controls.Add(this.btnTurno);
             this.tabPagMaestros.Controls.Add(this.btnEstadoMesa);
             this.tabPagMaestros.Controls.Add(this.btnMesa);
             this.tabPagMaestros.Controls.Add(this.btnCaja);
@@ -467,12 +470,75 @@
             this.tabPagMaestros.HorizontalScrollbarSize = 10;
             this.tabPagMaestros.Location = new System.Drawing.Point(4, 38);
             this.tabPagMaestros.Name = "tabPagMaestros";
-            this.tabPagMaestros.Size = new System.Drawing.Size(673, 217);
+            this.tabPagMaestros.Size = new System.Drawing.Size(673, 222);
             this.tabPagMaestros.TabIndex = 2;
             this.tabPagMaestros.Text = "Maestros";
             this.tabPagMaestros.VerticalScrollbarBarColor = true;
             this.tabPagMaestros.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagMaestros.VerticalScrollbarSize = 10;
+            // 
+            // btnTurno
+            // 
+            this.btnTurno.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTurno.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTurno.FlatAppearance.BorderSize = 0;
+            this.btnTurno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnTurno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTurno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTurno.ForeColor = System.Drawing.Color.White;
+            this.btnTurno.Image = ((System.Drawing.Image)(resources.GetObject("btnTurno.Image")));
+            this.btnTurno.Location = new System.Drawing.Point(281, 134);
+            this.btnTurno.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTurno.Name = "btnTurno";
+            this.btnTurno.Size = new System.Drawing.Size(135, 37);
+            this.btnTurno.TabIndex = 14;
+            this.btnTurno.Text = "Turnos";
+            this.btnTurno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTurno.UseVisualStyleBackColor = false;
+            this.btnTurno.Click += new System.EventHandler(this.btnTurno_Click);
+            // 
+            // btnEstadoMesa
+            // 
+            this.btnEstadoMesa.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnEstadoMesa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEstadoMesa.FlatAppearance.BorderSize = 0;
+            this.btnEstadoMesa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnEstadoMesa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnEstadoMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstadoMesa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadoMesa.ForeColor = System.Drawing.Color.White;
+            this.btnEstadoMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadoMesa.Image")));
+            this.btnEstadoMesa.Location = new System.Drawing.Point(281, 93);
+            this.btnEstadoMesa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEstadoMesa.Name = "btnEstadoMesa";
+            this.btnEstadoMesa.Size = new System.Drawing.Size(135, 37);
+            this.btnEstadoMesa.TabIndex = 13;
+            this.btnEstadoMesa.Text = "Estado Mesa";
+            this.btnEstadoMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstadoMesa.UseVisualStyleBackColor = false;
+            this.btnEstadoMesa.Click += new System.EventHandler(this.btnEstadoMesa_Click);
+            // 
+            // btnMesa
+            // 
+            this.btnMesa.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnMesa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMesa.FlatAppearance.BorderSize = 0;
+            this.btnMesa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnMesa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMesa.ForeColor = System.Drawing.Color.White;
+            this.btnMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnMesa.Image")));
+            this.btnMesa.Location = new System.Drawing.Point(281, 52);
+            this.btnMesa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMesa.Name = "btnMesa";
+            this.btnMesa.Size = new System.Drawing.Size(135, 37);
+            this.btnMesa.TabIndex = 12;
+            this.btnMesa.Text = "Mesas";
+            this.btnMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMesa.UseVisualStyleBackColor = false;
+            this.btnMesa.Click += new System.EventHandler(this.btnMesa_Click);
             // 
             // btnCaja
             // 
@@ -548,7 +614,7 @@
             this.btnParametro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParametro.ForeColor = System.Drawing.Color.White;
             this.btnParametro.Image = ((System.Drawing.Image)(resources.GetObject("btnParametro.Image")));
-            this.btnParametro.Location = new System.Drawing.Point(281, 134);
+            this.btnParametro.Location = new System.Drawing.Point(281, 175);
             this.btnParametro.Margin = new System.Windows.Forms.Padding(2);
             this.btnParametro.Name = "btnParametro";
             this.btnParametro.Size = new System.Drawing.Size(135, 37);
@@ -737,7 +803,7 @@
             this.tabPagReportes.HorizontalScrollbarSize = 10;
             this.tabPagReportes.Location = new System.Drawing.Point(4, 38);
             this.tabPagReportes.Name = "tabPagReportes";
-            this.tabPagReportes.Size = new System.Drawing.Size(673, 217);
+            this.tabPagReportes.Size = new System.Drawing.Size(673, 222);
             this.tabPagReportes.TabIndex = 3;
             this.tabPagReportes.Text = "Reportes";
             this.tabPagReportes.VerticalScrollbarBarColor = true;
@@ -824,7 +890,7 @@
             this.lnkBackup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.lnkBackup.FontWeight = MetroFramework.MetroLinkWeight.Regular;
             this.lnkBackup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lnkBackup.Location = new System.Drawing.Point(31, 100);
+            this.lnkBackup.Location = new System.Drawing.Point(31, 95);
             this.lnkBackup.Name = "lnkBackup";
             this.lnkBackup.Size = new System.Drawing.Size(62, 60);
             this.lnkBackup.TabIndex = 1;
@@ -839,7 +905,7 @@
             this.lnkConnection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.lnkConnection.FontWeight = MetroFramework.MetroLinkWeight.Regular;
             this.lnkConnection.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lnkConnection.Location = new System.Drawing.Point(95, 100);
+            this.lnkConnection.Location = new System.Drawing.Point(95, 95);
             this.lnkConnection.Name = "lnkConnection";
             this.lnkConnection.Size = new System.Drawing.Size(60, 60);
             this.lnkConnection.TabIndex = 2;
@@ -891,52 +957,21 @@
             this.toolStripHora.Size = new System.Drawing.Size(39, 21);
             this.toolStripHora.Text = "Hora";
             // 
-            // btnMesa
+            // panel3
             // 
-            this.btnMesa.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnMesa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMesa.FlatAppearance.BorderSize = 0;
-            this.btnMesa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnMesa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMesa.ForeColor = System.Drawing.Color.White;
-            this.btnMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnMesa.Image")));
-            this.btnMesa.Location = new System.Drawing.Point(281, 52);
-            this.btnMesa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMesa.Name = "btnMesa";
-            this.btnMesa.Size = new System.Drawing.Size(135, 37);
-            this.btnMesa.TabIndex = 12;
-            this.btnMesa.Text = "Mesas";
-            this.btnMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMesa.UseVisualStyleBackColor = false;
-            // 
-            // btnEstadoMesa
-            // 
-            this.btnEstadoMesa.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnEstadoMesa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEstadoMesa.FlatAppearance.BorderSize = 0;
-            this.btnEstadoMesa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnEstadoMesa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnEstadoMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadoMesa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadoMesa.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadoMesa.Image")));
-            this.btnEstadoMesa.Location = new System.Drawing.Point(281, 93);
-            this.btnEstadoMesa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEstadoMesa.Name = "btnEstadoMesa";
-            this.btnEstadoMesa.Size = new System.Drawing.Size(135, 37);
-            this.btnEstadoMesa.TabIndex = 13;
-            this.btnEstadoMesa.Text = "Estado Mesa";
-            this.btnEstadoMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEstadoMesa.UseVisualStyleBackColor = false;
-            this.btnEstadoMesa.Click += new System.EventHandler(this.btnEstadoMesa_Click);
+            this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(35, 424);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(673, 4);
+            this.panel3.TabIndex = 66;
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 485);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.StatusStripEagle);
             this.Controls.Add(this.lnkConnection);
             this.Controls.Add(this.lnkBackup);
@@ -1013,6 +1048,8 @@
         private System.Windows.Forms.Button btnCaja;
         private System.Windows.Forms.Button btnEstadoMesa;
         private System.Windows.Forms.Button btnMesa;
+        private System.Windows.Forms.Button btnTurno;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

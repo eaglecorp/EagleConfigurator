@@ -12,19 +12,19 @@ namespace ConfigDataAccess.Maestro
 {
     public class MesaDA
     {
-        public List<MSTt15_mesa> ListaMesa(int? id_estado = null)
+        public List<MSTt15_mesa> ListaMesa(int? id_estado_mesa = null)
         {
             var lista = new List<MSTt15_mesa>();
             string sentencia = string.Empty;
-            sentencia = (id_estado == null) ?
+            sentencia = (id_estado_mesa == null) ?
                 @"SELECT * FROM MSTt15_mesa" :
-                @"SELECT * FROM MSTt15_mesa WHERE id_estado=@id_estado";
+                @"SELECT * FROM MSTt15_mesa WHERE id_estado_estado=@id_estado_mesa";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    lista = cnn.Query<MSTt15_mesa>(sentencia, new { id_estado }).ToList();
+                    lista = cnn.Query<MSTt15_mesa>(sentencia, new { id_estado_mesa }).ToList();
                 }
                 catch (Exception e)
                 {
@@ -53,20 +53,17 @@ namespace ConfigDataAccess.Maestro
             }
             return id;
         }
-        public void EliminarMesa(int id)
+        public void CambiarEstadoMesa(int id_mesa, int id_estado_mesa)
         {
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    int id_estado = Estado.IdInactivo;
-                    string txt_estado = Estado.TxtInactivo;
                     using (SqlCommand cmd = cnn.CreateCommand())
                     {
-                        cmd.CommandText = "UPDATE MSTt15_mesa SET id_estado = @id_estado, txt_estado = @txt_estado Where id_mesa=@id";
-                        cmd.Parameters.AddWithValue("@id_estado", id_estado);
-                        cmd.Parameters.AddWithValue("@txt_estado", txt_estado);
-                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.CommandText = "UPDATE MSTt15_mesa SET id_estado_mesa = @id_estado_mesa Where id_mesa=@id_mesa";
+                        cmd.Parameters.AddWithValue("@id_estado_mesa", id_estado_mesa);
+                        cmd.Parameters.AddWithValue("@id_mesa", id_mesa);
                         cnn.Open();
                         cmd.ExecuteNonQuery();
                     }
@@ -74,7 +71,7 @@ namespace ConfigDataAccess.Maestro
                 catch (Exception e)
                 {
                     var log = new Log();
-                    log.ArchiveLog("Eliminar Mesa: ", e.Message);
+                    log.ArchiveLog("Cambiar Estado Mesa: ", e.Message);
                 }
             }
         }
