@@ -16,5 +16,11 @@ namespace ConfiguradorUI.Maestro
         {
             InitializeComponent();
         }
+
+        private void FormTurno_Load(object sender, EventArgs e)
+        {
+
+            
+        }
     }
 }

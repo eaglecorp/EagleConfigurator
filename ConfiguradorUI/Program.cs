@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfiguradorUI.Maestro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace ConfiguradorUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new splahScreen(3));
-            Application.Run(new MenuPrincipal());
+            //Application.Run(new MenuPrincipal());
+            Application.Run(new FormTurno());
         }
     }
 }

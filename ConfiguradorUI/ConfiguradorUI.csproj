@@ -362,6 +362,9 @@
     <EmbeddedResource Include="Maestro\FormTipoOrden.resx">
       <DependentUpon>FormTipoOrden.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maestro\FormTurno.resx">
+      <DependentUpon>FormTurno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
