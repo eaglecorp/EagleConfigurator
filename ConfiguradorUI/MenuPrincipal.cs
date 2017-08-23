@@ -398,5 +398,10 @@ namespace ConfiguradorUI
 
         #endregion
 
+        private void btnEstadoMesa_Click(object sender, EventArgs e)
+        {
+            var form = new FormEstadoMesa();
+            form.ShowDialog();
+        }
     }
 }

@@ -103,6 +103,12 @@
     <Compile Include="Maestro\FormDescuento.Designer.cs">
       <DependentUpon>FormDescuento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestro\FormEstadoMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestro\FormEstadoMesa.Designer.cs">
+      <DependentUpon>FormEstadoMesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestro\FormImpresora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="Maestro\FormMedioPago.Designer.cs">
       <DependentUpon>FormMedioPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestro\FormMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestro\FormMesa.Designer.cs">
+      <DependentUpon>FormMesa.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestro\FormParametro.cs">
       <SubType>Form</SubType>
@@ -310,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormDescuento.resx">
       <DependentUpon>FormDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestro\FormEstadoMesa.resx">
+      <DependentUpon>FormEstadoMesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormImpresora.resx">
       <DependentUpon>FormImpresora.cs</DependentUpon>

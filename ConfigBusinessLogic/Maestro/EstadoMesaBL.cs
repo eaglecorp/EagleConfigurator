@@ -19,17 +19,17 @@ namespace ConfigBusinessLogic.Maestro
         {
             new EstadoMesaDA().EliminarEstadoMesa(id);
         }
-        public void ActualizarTipoEstadoMesa(MSTt16_estado_mesa actualizado)
+        public void ActualizarEstadoMesa(MSTt16_estado_mesa actualizado)
         {
-            new EstadoMesaDA().ActualizarTipoEstadoMesa(actualizado);
+            new EstadoMesaDA().ActualizarEstadoMesa(actualizado);
         }
-        public MSTt16_estado_mesa TipoEstadoMesaXId(int id)
+        public MSTt16_estado_mesa EstadoMesaXId(int id)
         {
-            return new EstadoMesaDA().TipoEstadoMesaXId(id);
+            return new EstadoMesaDA().EstadoMesaXId(id);
         }
-        public MSTt16_estado_mesa TipoEstadoMesaXCod(string cod)
+        public MSTt16_estado_mesa EstadoMesaXCod(string cod)
         {
-            return new EstadoMesaDA().TipoEstadoMesaXCod(cod);
+            return new EstadoMesaDA().EstadoMesaXCod(cod);
         }
         public List<MSTt16_estado_mesa> ListaEstadoMesa(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
         {

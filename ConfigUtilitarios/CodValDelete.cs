@@ -8,6 +8,7 @@ namespace ConfigUtilitarios
 {
     public class CodValDelete
     {
+        //[TABLAPADRE]_[TABLAHIJA]
         public static int TipoLocation_Location { get; } = 1;
         public static int Impuesto_Producto { get; } = 2;
         public static int Familia_SubFamilia { get; } = 3;
@@ -22,5 +23,6 @@ namespace ConfigUtilitarios
         public static int TipoImpresora_Impresora { get; } = 12;
         public static int Impresora_Caja { get; } = 13;
         public static int Caja_ControlNumeracion { get; } = 14;
+        public static int EstadoMesa_Mesa { get; } = 15;
     }
 }

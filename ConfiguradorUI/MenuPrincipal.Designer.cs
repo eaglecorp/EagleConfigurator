@@ -49,6 +49,7 @@
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnEmpleado = new System.Windows.Forms.Button();
             this.tabPagMaestros = new MetroFramework.Controls.MetroTabPage();
+            this.btnCaja = new System.Windows.Forms.Button();
             this.btnImpresora = new System.Windows.Forms.Button();
             this.btnTipoImpresora = new System.Windows.Forms.Button();
             this.btnParametro = new System.Windows.Forms.Button();
@@ -73,7 +74,8 @@
             this.toolStripUsername = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripFechaCronologica = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnCaja = new System.Windows.Forms.Button();
+            this.btnMesa = new System.Windows.Forms.Button();
+            this.btnEstadoMesa = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
@@ -446,6 +448,8 @@
             // 
             // tabPagMaestros
             // 
+            this.tabPagMaestros.Controls.Add(this.btnEstadoMesa);
+            this.tabPagMaestros.Controls.Add(this.btnMesa);
             this.tabPagMaestros.Controls.Add(this.btnCaja);
             this.tabPagMaestros.Controls.Add(this.btnImpresora);
             this.tabPagMaestros.Controls.Add(this.btnTipoImpresora);
@@ -469,6 +473,27 @@
             this.tabPagMaestros.VerticalScrollbarBarColor = true;
             this.tabPagMaestros.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagMaestros.VerticalScrollbarSize = 10;
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCaja.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCaja.FlatAppearance.BorderSize = 0;
+            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaja.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCaja.Image")));
+            this.btnCaja.Location = new System.Drawing.Point(281, 11);
+            this.btnCaja.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(135, 37);
+            this.btnCaja.TabIndex = 11;
+            this.btnCaja.Text = "Cajas";
+            this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCaja.UseVisualStyleBackColor = false;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
             // 
             // btnImpresora
             // 
@@ -523,7 +548,7 @@
             this.btnParametro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParametro.ForeColor = System.Drawing.Color.White;
             this.btnParametro.Image = ((System.Drawing.Image)(resources.GetObject("btnParametro.Image")));
-            this.btnParametro.Location = new System.Drawing.Point(281, 52);
+            this.btnParametro.Location = new System.Drawing.Point(281, 134);
             this.btnParametro.Margin = new System.Windows.Forms.Padding(2);
             this.btnParametro.Name = "btnParametro";
             this.btnParametro.Size = new System.Drawing.Size(135, 37);
@@ -866,26 +891,46 @@
             this.toolStripHora.Size = new System.Drawing.Size(39, 21);
             this.toolStripHora.Text = "Hora";
             // 
-            // btnCaja
+            // btnMesa
             // 
-            this.btnCaja.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCaja.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCaja.FlatAppearance.BorderSize = 0;
-            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaja.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaja.ForeColor = System.Drawing.Color.White;
-            this.btnCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCaja.Image")));
-            this.btnCaja.Location = new System.Drawing.Point(281, 11);
-            this.btnCaja.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(135, 37);
-            this.btnCaja.TabIndex = 11;
-            this.btnCaja.Text = "Cajas";
-            this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCaja.UseVisualStyleBackColor = false;
-            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            this.btnMesa.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnMesa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMesa.FlatAppearance.BorderSize = 0;
+            this.btnMesa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnMesa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMesa.ForeColor = System.Drawing.Color.White;
+            this.btnMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnMesa.Image")));
+            this.btnMesa.Location = new System.Drawing.Point(281, 52);
+            this.btnMesa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMesa.Name = "btnMesa";
+            this.btnMesa.Size = new System.Drawing.Size(135, 37);
+            this.btnMesa.TabIndex = 12;
+            this.btnMesa.Text = "Mesas";
+            this.btnMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMesa.UseVisualStyleBackColor = false;
+            // 
+            // btnEstadoMesa
+            // 
+            this.btnEstadoMesa.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnEstadoMesa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEstadoMesa.FlatAppearance.BorderSize = 0;
+            this.btnEstadoMesa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnEstadoMesa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnEstadoMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstadoMesa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadoMesa.ForeColor = System.Drawing.Color.White;
+            this.btnEstadoMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadoMesa.Image")));
+            this.btnEstadoMesa.Location = new System.Drawing.Point(281, 93);
+            this.btnEstadoMesa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEstadoMesa.Name = "btnEstadoMesa";
+            this.btnEstadoMesa.Size = new System.Drawing.Size(135, 37);
+            this.btnEstadoMesa.TabIndex = 13;
+            this.btnEstadoMesa.Text = "Estado Mesa";
+            this.btnEstadoMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstadoMesa.UseVisualStyleBackColor = false;
+            this.btnEstadoMesa.Click += new System.EventHandler(this.btnEstadoMesa_Click);
             // 
             // MenuPrincipal
             // 
@@ -966,6 +1011,8 @@
         private System.Windows.Forms.Button btnImpresora;
         private System.Windows.Forms.Button btnTipoImpresora;
         private System.Windows.Forms.Button btnCaja;
+        private System.Windows.Forms.Button btnEstadoMesa;
+        private System.Windows.Forms.Button btnMesa;
     }
 }
 

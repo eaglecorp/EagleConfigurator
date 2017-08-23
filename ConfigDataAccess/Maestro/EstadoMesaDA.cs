@@ -78,7 +78,7 @@ namespace ConfigDataAccess.Maestro
                 }
             }
         }
-        public void ActualizarTipoEstadoMesa(MSTt16_estado_mesa actualizado)
+        public void ActualizarEstadoMesa(MSTt16_estado_mesa actualizado)
         {
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
@@ -98,7 +98,7 @@ namespace ConfigDataAccess.Maestro
                 }
             }
         }
-        public MSTt16_estado_mesa TipoEstadoMesaXId(int id)
+        public MSTt16_estado_mesa EstadoMesaXId(int id)
         {
             var obj = new MSTt16_estado_mesa();
             string sentencia = "SELECT * FROM MSTt16_estado_mesa WHERE id_estado_mesa=@id";
@@ -117,7 +117,7 @@ namespace ConfigDataAccess.Maestro
             }
             return obj;
         }
-        public MSTt16_estado_mesa TipoEstadoMesaXCod(string cod)
+        public MSTt16_estado_mesa EstadoMesaXCod(string cod)
         {
             var obj = new MSTt16_estado_mesa();
             string sentencia = "SELECT * FROM MSTt16_estado_mesa WHERE cod_estado_mesa=@cod";
