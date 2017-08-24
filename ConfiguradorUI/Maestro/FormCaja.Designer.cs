@@ -85,6 +85,7 @@
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblImpresoras = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaja)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -382,6 +383,7 @@
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.lblImpresoras);
             this.tabPagGeneral.Controls.Add(this.cboImpresora06);
             this.tabPagGeneral.Controls.Add(this.btnImpresora06);
             this.tabPagGeneral.Controls.Add(this.lblImpresora06);
@@ -624,9 +626,9 @@
             // 
             this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(4, 145);
+            this.panel1.Location = new System.Drawing.Point(82, 145);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 8);
+            this.panel1.Size = new System.Drawing.Size(450, 8);
             this.panel1.TabIndex = 101;
             // 
             // txtIp
@@ -933,6 +935,18 @@
             // 
             this.errorProv.ContainerControl = this;
             // 
+            // lblImpresoras
+            // 
+            this.lblImpresoras.AutoSize = true;
+            this.lblImpresoras.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblImpresoras.ForeColor = System.Drawing.Color.Navy;
+            this.lblImpresoras.Location = new System.Drawing.Point(4, 138);
+            this.lblImpresoras.Name = "lblImpresoras";
+            this.lblImpresoras.Size = new System.Drawing.Size(84, 19);
+            this.lblImpresoras.TabIndex = 118;
+            this.lblImpresoras.Text = "Impresoras";
+            this.lblImpresoras.UseCustomForeColor = true;
+            // 
             // FormCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1022,5 +1036,6 @@
         private MetroFramework.Controls.MetroTextBox txtIp;
         private MetroFramework.Controls.MetroLabel lblIp;
         private System.Windows.Forms.ErrorProvider errorProv;
+        private MetroFramework.Controls.MetroLabel lblImpresoras;
     }
 }

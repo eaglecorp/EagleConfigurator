@@ -18,8 +18,8 @@ namespace ConfiguradorUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new splahScreen(3));
-            //Application.Run(new MenuPrincipal());
-            Application.Run(new FormTurno());
+            Application.Run(new MenuPrincipal());
+            //Application.Run(new FormTurno());
         }
     }
 }

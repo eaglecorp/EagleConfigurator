@@ -79,14 +79,14 @@
             this.dgvCanalVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCanalVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCanalVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCanalVenta.Location = new System.Drawing.Point(42, 145);
+            this.dgvCanalVenta.Location = new System.Drawing.Point(42, 143);
             this.dgvCanalVenta.MultiSelect = false;
             this.dgvCanalVenta.Name = "dgvCanalVenta";
             this.dgvCanalVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCanalVenta.RowHeadersVisible = false;
             this.dgvCanalVenta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCanalVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCanalVenta.Size = new System.Drawing.Size(227, 189);
+            this.dgvCanalVenta.Size = new System.Drawing.Size(227, 170);
             this.dgvCanalVenta.TabIndex = 0;
             this.dgvCanalVenta.SelectionChanged += new System.EventHandler(this.dgvCanalVenta_SelectionChanged);
             // 
@@ -100,7 +100,7 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(317, 305);
+            this.panelFiltro.Location = new System.Drawing.Point(318, 284);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(547, 49);
             this.panelFiltro.TabIndex = 3;
@@ -156,6 +156,7 @@
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
+            this.txtFiltro.PromptText = "Filtro";
             this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFiltro.SelectedText = "";
             this.txtFiltro.SelectionLength = 0;
@@ -192,7 +193,7 @@
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(314, 54);
+            this.panelMantenimiento.Location = new System.Drawing.Point(314, 52);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(547, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -281,7 +282,7 @@
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(140, 125);
+            this.tglListarInactivos.Location = new System.Drawing.Point(140, 123);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -292,7 +293,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(42, 123);
+            this.lblListarInactivos.Location = new System.Drawing.Point(42, 121);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;
@@ -301,10 +302,10 @@
             // tabCanalVenta
             // 
             this.tabCanalVenta.Controls.Add(this.tabPagGeneral);
-            this.tabCanalVenta.Location = new System.Drawing.Point(314, 110);
+            this.tabCanalVenta.Location = new System.Drawing.Point(314, 108);
             this.tabCanalVenta.Name = "tabCanalVenta";
             this.tabCanalVenta.SelectedIndex = 0;
-            this.tabCanalVenta.Size = new System.Drawing.Size(554, 189);
+            this.tabCanalVenta.Size = new System.Drawing.Size(554, 174);
             this.tabCanalVenta.TabIndex = 1;
             this.tabCanalVenta.UseSelectable = true;
             // 
@@ -323,7 +324,7 @@
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(546, 147);
+            this.tabPagGeneral.Size = new System.Drawing.Size(546, 132);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
@@ -346,7 +347,7 @@
             this.txtAbreviacion.CustomButton.UseSelectable = true;
             this.txtAbreviacion.CustomButton.Visible = false;
             this.txtAbreviacion.Lines = new string[0];
-            this.txtAbreviacion.Location = new System.Drawing.Point(353, 14);
+            this.txtAbreviacion.Location = new System.Drawing.Point(82, 52);
             this.txtAbreviacion.MaxLength = 32767;
             this.txtAbreviacion.Name = "txtAbreviacion";
             this.txtAbreviacion.PasswordChar = '\0';
@@ -356,7 +357,7 @@
             this.txtAbreviacion.SelectionStart = 0;
             this.txtAbreviacion.ShortcutsEnabled = true;
             this.txtAbreviacion.Size = new System.Drawing.Size(184, 23);
-            this.txtAbreviacion.TabIndex = 3;
+            this.txtAbreviacion.TabIndex = 5;
             this.txtAbreviacion.UseCustomBackColor = true;
             this.txtAbreviacion.UseSelectable = true;
             this.txtAbreviacion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -367,18 +368,18 @@
             // 
             this.lblAbreviacion.AutoSize = true;
             this.lblAbreviacion.ForeColor = System.Drawing.Color.Navy;
-            this.lblAbreviacion.Location = new System.Drawing.Point(291, 16);
+            this.lblAbreviacion.Location = new System.Drawing.Point(3, 54);
             this.lblAbreviacion.Name = "lblAbreviacion";
-            this.lblAbreviacion.Size = new System.Drawing.Size(47, 19);
+            this.lblAbreviacion.Size = new System.Drawing.Size(81, 19);
             this.lblAbreviacion.TabIndex = 2;
-            this.lblAbreviacion.Text = "Abrev:";
+            this.lblAbreviacion.Text = "Abreviación:";
             this.lblAbreviacion.UseCustomForeColor = true;
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(4, 96);
+            this.panel2.Location = new System.Drawing.Point(4, 89);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(533, 8);
             this.panel2.TabIndex = 86;
@@ -391,7 +392,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(8, 120);
+            this.chkActivo.Location = new System.Drawing.Point(7, 107);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 6;
@@ -416,7 +417,7 @@
             this.txtCodigo.CustomButton.UseSelectable = true;
             this.txtCodigo.CustomButton.Visible = false;
             this.txtCodigo.Lines = new string[0];
-            this.txtCodigo.Location = new System.Drawing.Point(79, 56);
+            this.txtCodigo.Location = new System.Drawing.Point(343, 14);
             this.txtCodigo.MaxLength = 32767;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -426,7 +427,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.TabIndex = 3;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -437,7 +438,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.ForeColor = System.Drawing.Color.Navy;
-            this.lblCodigo.Location = new System.Drawing.Point(3, 58);
+            this.lblCodigo.Location = new System.Drawing.Point(286, 16);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(56, 19);
             this.lblCodigo.TabIndex = 4;
@@ -481,7 +482,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.ForeColor = System.Drawing.Color.Navy;
-            this.lblNombre.Location = new System.Drawing.Point(3, 18);
+            this.lblNombre.Location = new System.Drawing.Point(3, 16);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(62, 19);
             this.lblNombre.TabIndex = 0;
@@ -493,7 +494,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(92, 52);
+            this.lblNombreForm.Location = new System.Drawing.Point(92, 50);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(180, 45);
             this.lblNombreForm.TabIndex = 3;
@@ -504,7 +505,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(32, 46);
+            this.btnCerrar.Location = new System.Drawing.Point(32, 44);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 6;
@@ -514,7 +515,7 @@
             // lblIdCanalVenta
             // 
             this.lblIdCanalVenta.AutoSize = true;
-            this.lblIdCanalVenta.Location = new System.Drawing.Point(580, 32);
+            this.lblIdCanalVenta.Location = new System.Drawing.Point(580, 29);
             this.lblIdCanalVenta.Name = "lblIdCanalVenta";
             this.lblIdCanalVenta.Size = new System.Drawing.Size(0, 0);
             this.lblIdCanalVenta.TabIndex = 89;
@@ -529,7 +530,7 @@
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(186, 337);
+            this.lblNumInactivo.Location = new System.Drawing.Point(190, 316);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -542,7 +543,7 @@
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(106, 337);
+            this.lblNumActivo.Location = new System.Drawing.Point(110, 316);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -555,7 +556,7 @@
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(39, 337);
+            this.lblNumReg.Location = new System.Drawing.Point(43, 316);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -567,7 +568,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 400);
+            this.ClientSize = new System.Drawing.Size(900, 375);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
