@@ -22,7 +22,7 @@ namespace ConfigBusinessLogic.Persona
             }
 
             if (enableTopList && lista != null)
-                return lista.OrderBy(x => x.cod_categoria_emp != TopList.CategoriaEmp).ThenBy(x => x.txt_desc).ToList();
+                return lista.OrderBy(x => x.cod_categoria_emp != TopList.CategoriaEmp).ThenBy(x => x.txt_nombre).ToList();
 
             return lista;
         }

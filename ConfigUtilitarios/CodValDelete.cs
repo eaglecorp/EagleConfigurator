@@ -24,5 +24,7 @@ namespace ConfigUtilitarios
         public static int Impresora_Caja { get; } = 13;
         public static int Caja_ControlNumeracion { get; } = 14;
         public static int EstadoMesa_Mesa { get; } = 15;
+        public static int ClaseEmp_Empleado { get; } = 16;
+        public static int CategoriaEmp_Empleado { get; } = 17;
     }
 }

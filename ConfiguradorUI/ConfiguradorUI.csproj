@@ -380,6 +380,12 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Persona\FormCategoriaEmp.resx">
+      <DependentUpon>FormCategoriaEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persona\FormClaseEmp.resx">
+      <DependentUpon>FormClaseEmp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Persona\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>

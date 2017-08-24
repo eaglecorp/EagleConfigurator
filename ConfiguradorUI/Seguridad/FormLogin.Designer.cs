@@ -51,9 +51,9 @@
             // 
             // 
             this.txtClave.CustomButton.Image = null;
-            this.txtClave.CustomButton.Location = new System.Drawing.Point(237, 1);
+            this.txtClave.CustomButton.Location = new System.Drawing.Point(237, 2);
             this.txtClave.CustomButton.Name = "";
-            this.txtClave.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtClave.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtClave.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtClave.CustomButton.TabIndex = 1;
             this.txtClave.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -62,7 +62,7 @@
             this.txtClave.DisplayIcon = true;
             this.txtClave.Icon = ((System.Drawing.Image)(resources.GetObject("txtClave.Icon")));
             this.txtClave.Lines = new string[0];
-            this.txtClave.Location = new System.Drawing.Point(174, 130);
+            this.txtClave.Location = new System.Drawing.Point(174, 131);
             this.txtClave.MaxLength = 32767;
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '\0';
@@ -72,7 +72,7 @@
             this.txtClave.SelectionLength = 0;
             this.txtClave.SelectionStart = 0;
             this.txtClave.ShortcutsEnabled = true;
-            this.txtClave.Size = new System.Drawing.Size(263, 27);
+            this.txtClave.Size = new System.Drawing.Size(263, 28);
             this.txtClave.TabIndex = 3;
             this.txtClave.UseSelectable = true;
             this.txtClave.WaterMark = "Contraseña";
@@ -87,9 +87,9 @@
             // 
             // 
             this.txtUsuario.CustomButton.Image = null;
-            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(237, 1);
+            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(237, 2);
             this.txtUsuario.CustomButton.Name = "";
-            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtUsuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtUsuario.CustomButton.TabIndex = 1;
             this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -109,7 +109,7 @@
             this.txtUsuario.SelectionLength = 0;
             this.txtUsuario.SelectionStart = 0;
             this.txtUsuario.ShortcutsEnabled = true;
-            this.txtUsuario.Size = new System.Drawing.Size(263, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(263, 28);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.UseSelectable = true;
             this.txtUsuario.WaterMark = "Usuario";
@@ -158,13 +158,13 @@
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(213, 162);
+            this.btnCancelar.Location = new System.Drawing.Point(220, 164);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(110, 32);
+            this.btnCancelar.Size = new System.Drawing.Size(103, 32);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -179,13 +179,13 @@
             this.btnEntrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
             this.btnEntrar.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrar.Image")));
-            this.btnEntrar.Location = new System.Drawing.Point(327, 162);
+            this.btnEntrar.Location = new System.Drawing.Point(334, 164);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(110, 32);
+            this.btnEntrar.Size = new System.Drawing.Size(103, 32);
             this.btnEntrar.TabIndex = 4;
             this.btnEntrar.Text = "Login";
             this.btnEntrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
