@@ -13,7 +13,7 @@ namespace ConfigBusinessLogic
     {
 
         #region Parámetros Utiles(Extras sin cod)
-        public static string BlankRegister { get; } = "0";
+        public static string BlankRegister = "0";
         public static int LenghtPassMin { get; } = 7;
         public static int LenghtPassMed { get; } = 13;
         public static int LenghtPassMax { get; } = 20;

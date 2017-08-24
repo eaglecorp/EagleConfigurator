@@ -279,6 +279,18 @@ namespace ConfiguradorUI
             oForm.ShowDialog();
         }
 
+        private void btnCategoriaEmp_Click(object sender, EventArgs e)
+        {
+            var form = new FormCategoriaEmp();
+            form.ShowDialog();
+        }
+
+        private void btnClaseEmp_Click(object sender, EventArgs e)
+        {
+            var form = new FormClaseEmp();
+            form.ShowDialog();
+        }
+
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             FormProveedor oForm = new FormProveedor();
@@ -406,10 +418,10 @@ namespace ConfiguradorUI
             oForm.ShowDialog();
         }
 
-        #endregion
 
         #endregion
 
+        #endregion
 
     }
 }

@@ -78,6 +78,8 @@
             this.toolStripFechaCronologica = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClaseEmp = new System.Windows.Forms.Button();
+            this.btnCategoriaEmp = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
@@ -95,7 +97,7 @@
             this.tabPanel.Controls.Add(this.tabPagReportes);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 0;
+            this.tabPanel.SelectedIndex = 1;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -348,6 +350,8 @@
             // 
             // tabPagPersonas
             // 
+            this.tabPagPersonas.Controls.Add(this.btnClaseEmp);
+            this.tabPagPersonas.Controls.Add(this.btnCategoriaEmp);
             this.tabPagPersonas.Controls.Add(this.btnUsuario);
             this.tabPagPersonas.Controls.Add(this.btnCliente);
             this.tabPagPersonas.Controls.Add(this.btnProveedor);
@@ -375,7 +379,7 @@
             this.btnUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
             this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
-            this.btnUsuario.Location = new System.Drawing.Point(2, 135);
+            this.btnUsuario.Location = new System.Drawing.Point(141, 11);
             this.btnUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(135, 37);
@@ -396,7 +400,7 @@
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.White;
             this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
-            this.btnCliente.Location = new System.Drawing.Point(2, 94);
+            this.btnCliente.Location = new System.Drawing.Point(2, 177);
             this.btnCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(135, 37);
@@ -417,7 +421,7 @@
             this.btnProveedor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
             this.btnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedor.Image")));
-            this.btnProveedor.Location = new System.Drawing.Point(2, 52);
+            this.btnProveedor.Location = new System.Drawing.Point(2, 135);
             this.btnProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(135, 37);
@@ -966,6 +970,48 @@
             this.panel3.Size = new System.Drawing.Size(673, 4);
             this.panel3.TabIndex = 66;
             // 
+            // btnClaseEmp
+            // 
+            this.btnClaseEmp.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnClaseEmp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClaseEmp.FlatAppearance.BorderSize = 0;
+            this.btnClaseEmp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnClaseEmp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnClaseEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClaseEmp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClaseEmp.ForeColor = System.Drawing.Color.White;
+            this.btnClaseEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnClaseEmp.Image")));
+            this.btnClaseEmp.Location = new System.Drawing.Point(2, 94);
+            this.btnClaseEmp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClaseEmp.Name = "btnClaseEmp";
+            this.btnClaseEmp.Size = new System.Drawing.Size(135, 37);
+            this.btnClaseEmp.TabIndex = 5;
+            this.btnClaseEmp.Text = "Clase Emp.";
+            this.btnClaseEmp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClaseEmp.UseVisualStyleBackColor = false;
+            this.btnClaseEmp.Click += new System.EventHandler(this.btnClaseEmp_Click);
+            // 
+            // btnCategoriaEmp
+            // 
+            this.btnCategoriaEmp.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCategoriaEmp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCategoriaEmp.FlatAppearance.BorderSize = 0;
+            this.btnCategoriaEmp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnCategoriaEmp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCategoriaEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoriaEmp.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnCategoriaEmp.ForeColor = System.Drawing.Color.White;
+            this.btnCategoriaEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaEmp.Image")));
+            this.btnCategoriaEmp.Location = new System.Drawing.Point(2, 52);
+            this.btnCategoriaEmp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCategoriaEmp.Name = "btnCategoriaEmp";
+            this.btnCategoriaEmp.Size = new System.Drawing.Size(135, 37);
+            this.btnCategoriaEmp.TabIndex = 4;
+            this.btnCategoriaEmp.Text = "Categoría Emp.";
+            this.btnCategoriaEmp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategoriaEmp.UseVisualStyleBackColor = false;
+            this.btnCategoriaEmp.Click += new System.EventHandler(this.btnCategoriaEmp_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1050,6 +1096,8 @@
         private System.Windows.Forms.Button btnMesa;
         private System.Windows.Forms.Button btnTurno;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnClaseEmp;
+        private System.Windows.Forms.Button btnCategoriaEmp;
     }
 }
 

@@ -181,6 +181,18 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persona\FormCategoriaEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persona\FormCategoriaEmp.Designer.cs">
+      <DependentUpon>FormCategoriaEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persona\FormClaseEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persona\FormClaseEmp.Designer.cs">
+      <DependentUpon>FormClaseEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persona\FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>

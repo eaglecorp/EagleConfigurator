@@ -57,5 +57,8 @@ namespace ConfigUtilitarios
         public static string Mesa { get; } = "0";
         public static string Turno { get; } = "0";
 
+        public static string CategoriaEmp { get; } = "0";
+        public static string ClaseEmp { get; } = "0";
+
     }
 }

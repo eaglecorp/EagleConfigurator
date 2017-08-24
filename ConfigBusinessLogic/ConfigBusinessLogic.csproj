@@ -60,6 +60,8 @@
     <Compile Include="Maestro\TipoOrdenBL.cs" />
     <Compile Include="Maestro\TurnoBL.cs" />
     <Compile Include="Parameter.cs" />
+    <Compile Include="Persona\CategoriaEmpBL.cs" />
+    <Compile Include="Persona\ClaseEmpBL.cs" />
     <Compile Include="Persona\ClienteBL.cs" />
     <Compile Include="Persona\EmpleadoBL.cs" />
     <Compile Include="Persona\ProveedorBL.cs" />
