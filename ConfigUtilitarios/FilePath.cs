@@ -62,7 +62,7 @@ namespace ConfigUtilitarios
                 string strPath = "";
                 try
                 {
-                    strPath = Application.StartupPath + @"\Reporting";
+                    strPath = Application.StartupPath + @"\CustomReports";
                     if (!Directory.Exists(strPath))
                     {
                         Directory.CreateDirectory(strPath);

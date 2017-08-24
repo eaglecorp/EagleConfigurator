@@ -26,7 +26,7 @@ namespace ConfiguradorUI.Reporte
         bool preguntar = true;
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
-        string pathAndFile = null;
+        //string pathAndFile = null;
         string codSelected = "";
         #endregion
 
@@ -208,7 +208,7 @@ namespace ConfiguradorUI.Reporte
             {
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.cod_reporte = txtCodigo.Text.Trim();
-                obj.txt_path = pathAndFile;
+                obj.txt_path = txtPath.Text.Trim();
 
                 obj.sn_date_range = chkRangoFechas.Checked;
                 obj.sn_number_range = chkRangoNumeros.Checked;
@@ -260,20 +260,75 @@ namespace ConfiguradorUI.Reporte
 
         private bool esValido()
         {
-            pathAndFile = null;
+            //pathAndFile = null;
             bool no_error = true;
             errorProv.Clear();
 
-            var requiredTxts = new[] { txtNombre, txtPath };
 
-            foreach (var txt in requiredTxts)
-                if (string.IsNullOrEmpty(txt.Text.Trim()))
+
+            if (string.IsNullOrEmpty(txtPath.Text.Trim()))
+            {
+                errorProv.SetError(txtPath, "Debe seleccionar un reporte.");
+                txtPath.Focus();
+                no_error = false;
+            }
+            else
+            {
+                if (!File.Exists(txtPath.Text.Trim()))
                 {
-                    tabReportes.SelectedTab = tabPagGeneral;
-                    errorProv.SetError(txt, "Este campo es requerido.");
-                    txt.Focus();
+                    errorProv.SetError(txtPath, "La ruta del archivo no existe.");
+                    txtPath.Focus();
                     no_error = false;
                 }
+                else if (!txtPath.Text.Trim().EndsWith(".rpt"))
+                {
+                    errorProv.SetError(txtPath, "El formato del archivo debe ser '.rpt'.");
+                    txtPath.Focus();
+                    no_error = false;
+                }
+            }
+
+            if (!int.TryParse(cboCategoriaReporte.SelectedValue?.ToString(), out int id))
+            {
+                errorProv.SetError(cboCategoriaReporte, "Este campo es requerido.");
+                cboCategoriaReporte.Focus();
+                no_error = false;
+            }
+
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                tabReportes.SelectedTab = tabPagGeneral;
+                errorProv.SetError(txtNombre, "Este campo es requerido.");
+                txtNombre.Focus();
+                no_error = false;
+            }
+
+
+            #region validación copia de rpt
+            //if (no_error)
+            //{
+            //    //if (!File.Exists(txtPath.Text.Trim()))
+            //    //{
+            //    //    errorProv.SetError(txtPath, "La archivo de origen no existe o ha sido modificada.");
+            //    //    txtPath.Focus();
+            //    //    no_error = false;
+            //    //}
+            //    //else
+            //    //{
+            //    //    string path = GuardarRptInterno();
+            //    //    if (path == null)
+            //    //    {
+            //    //        errorProv.SetError(txtPath, "No se pudo guardar el archivo .rpt");
+            //    //        txtPath.Focus();
+            //    //        no_error = false;
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        pathAndFile = path;
+            //    //    }
+            //    //}
+            //} 
+            #endregion
 
             #region código único
 
@@ -309,36 +364,6 @@ namespace ConfiguradorUI.Reporte
             }
 
             #endregion
-
-            if (no_error && !int.TryParse(cboCategoriaReporte.SelectedValue?.ToString(), out int id))
-            {
-                errorProv.SetError(cboCategoriaReporte, "Este campo es requerido.");
-                cboCategoriaReporte.Focus();
-                no_error = false;
-            }
-            if (no_error)
-            {
-                if (!File.Exists(txtPath.Text.Trim()))
-                {
-                    errorProv.SetError(txtPath, "La archivo de origen no existe o ha sido modificada.");
-                    txtPath.Focus();
-                    no_error = false;
-                }
-                else
-                {
-                    string path = GuardarRptInterno();
-                    if (path == null)
-                    {
-                        errorProv.SetError(txtPath, "No se pudo guardar el archivo .rpt");
-                        txtPath.Focus();
-                        no_error = false;
-                    }
-                    else
-                    {
-                        pathAndFile = path;
-                    }
-                }
-            }
 
             return no_error;
         }
@@ -386,6 +411,7 @@ namespace ConfiguradorUI.Reporte
             }
             catch (Exception e)
             {
+
                 MessageBox.Show(this, "Ocurrió una excepción al seleccionar el registro: " + e.Message, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -456,8 +482,6 @@ namespace ConfiguradorUI.Reporte
             }
             return id;
         }
-
-
         string GuardarRptInterno()
         {
             string fullPathFile = txtPath.Text.Trim();
@@ -1040,12 +1064,12 @@ namespace ConfiguradorUI.Reporte
                 openFile.Filter = "Report files (*.rpt)|*.rpt";
                 openFile.FilterIndex = 0;
 
-                //Crea
-                var reportingPath = FilePath.Reporting;
-                if (Directory.Exists(reportingPath))
+                //Crea si no existe
+                if (Directory.Exists(FilePath.Reporting))
                 {
-                    var log = new Log();
-                    log.ArchiveLog("Reporting",$"Se creó la carpeta de reportes en local. La ruta es {reportingPath}");
+                    openFile.InitialDirectory = FilePath.Reporting;
+                    //var log = new Log();
+                    //log.ArchiveLog("Reporting",$"Se creó la carpeta de reportes en local. La ruta es {reportingPath}");
                 }
 
                 if (openFile.ShowDialog() == DialogResult.OK)
