@@ -12,19 +12,19 @@ namespace ConfigDataAccess.Maestro
 {
     public class MesaDA
     {
-        public List<MSTt15_mesa> ListaMesa(int? id_estado_mesa = null)
+        public List<MSTt14_mesa> ListaMesa(int? id_estado_mesa = null)
         {
-            var lista = new List<MSTt15_mesa>();
+            var lista = new List<MSTt14_mesa>();
             string sentencia = string.Empty;
             sentencia = (id_estado_mesa == null) ?
-                @"SELECT * FROM MSTt15_mesa" :
-                @"SELECT * FROM MSTt15_mesa WHERE id_estado_estado=@id_estado_mesa";
+                @"SELECT * FROM MSTt14_mesa" :
+                @"SELECT * FROM MSTt14_mesa WHERE id_estado_estado=@id_estado_mesa";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    lista = cnn.Query<MSTt15_mesa>(sentencia, new { id_estado_mesa }).ToList();
+                    lista = cnn.Query<MSTt14_mesa>(sentencia, new { id_estado_mesa }).ToList();
                 }
                 catch (Exception e)
                 {
@@ -34,14 +34,14 @@ namespace ConfigDataAccess.Maestro
             }
             return lista;
         }
-        public int InsertarMesa(MSTt15_mesa obj)
+        public int InsertarMesa(MSTt14_mesa obj)
         {
             int id = 0;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    ctx.MSTt15_mesa.Add(obj);
+                    ctx.MSTt14_mesa.Add(obj);
                     ctx.SaveChanges();
                     id = obj.id_mesa;
                 }
@@ -61,7 +61,7 @@ namespace ConfigDataAccess.Maestro
                 {
                     using (SqlCommand cmd = cnn.CreateCommand())
                     {
-                        cmd.CommandText = "UPDATE MSTt15_mesa SET id_estado_mesa = @id_estado_mesa Where id_mesa=@id_mesa";
+                        cmd.CommandText = "UPDATE MSTt14_mesa SET id_estado_mesa = @id_estado_mesa Where id_mesa=@id_mesa";
                         cmd.Parameters.AddWithValue("@id_estado_mesa", id_estado_mesa);
                         cmd.Parameters.AddWithValue("@id_mesa", id_mesa);
                         cnn.Open();
@@ -75,13 +75,13 @@ namespace ConfigDataAccess.Maestro
                 }
             }
         }
-        public void ActualizarMesa(MSTt15_mesa actualizado)
+        public void ActualizarMesa(MSTt14_mesa actualizado)
         {
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    var original = ctx.MSTt15_mesa.Find(actualizado.id_mesa);
+                    var original = ctx.MSTt14_mesa.Find(actualizado.id_mesa);
                     if (original != null && original.id_mesa > 0)
                     {
                         ctx.Entry(original).CurrentValues.SetValues(actualizado);
@@ -95,16 +95,16 @@ namespace ConfigDataAccess.Maestro
                 }
             }
         }
-        public MSTt15_mesa MesaXId(int id)
+        public MSTt14_mesa MesaXId(int id)
         {
-            var obj = new MSTt15_mesa();
-            string sentencia = "SELECT * FROM MSTt15_mesa WHERE id_mesa=@id";
+            var obj = new MSTt14_mesa();
+            string sentencia = "SELECT * FROM MSTt14_mesa WHERE id_mesa=@id";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    obj = cnn.Query<MSTt15_mesa>(sentencia, new { id }).FirstOrDefault();
+                    obj = cnn.Query<MSTt14_mesa>(sentencia, new { id }).FirstOrDefault();
                 }
                 catch (Exception e)
                 {
@@ -114,16 +114,16 @@ namespace ConfigDataAccess.Maestro
             }
             return obj;
         }
-        public MSTt15_mesa MesaXCod(string cod)
+        public MSTt14_mesa MesaXCod(string cod)
         {
-            var obj = new MSTt15_mesa();
-            string sentencia = "SELECT * FROM MSTt15_mesa WHERE cod_mesa=@cod";
+            var obj = new MSTt14_mesa();
+            string sentencia = "SELECT * FROM MSTt14_mesa WHERE cod_mesa=@cod";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    obj = cnn.Query<MSTt15_mesa>(sentencia, new { cod }).FirstOrDefault();
+                    obj = cnn.Query<MSTt14_mesa>(sentencia, new { cod }).FirstOrDefault();
                 }
                 catch (Exception e)
                 {

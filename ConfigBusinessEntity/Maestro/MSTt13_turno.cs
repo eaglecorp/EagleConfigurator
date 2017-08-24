@@ -6,12 +6,12 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class MSTt14_turno
+    public partial class MSTt13_turno
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MSTt14_turno()
+        public MSTt13_turno()
         {
-            MSTt13_caja_dtl = new HashSet<MSTt13_caja_dtl>();
+            CSHt01_caja_dtl = new HashSet<CSHt01_caja_dtl>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
         }
 
@@ -39,7 +39,7 @@ namespace ConfigBusinessEntity
         public string txt_estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MSTt13_caja_dtl> MSTt13_caja_dtl { get; set; }
+        public virtual ICollection<CSHt01_caja_dtl> CSHt01_caja_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt04_comp_emitido> TNSt04_comp_emitido { get; set; }

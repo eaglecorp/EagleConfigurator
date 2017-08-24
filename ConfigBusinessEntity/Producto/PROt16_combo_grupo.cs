@@ -6,12 +6,12 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class PROt14_combo_grupo
+    public partial class PROt16_combo_grupo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROt14_combo_grupo()
+        public PROt16_combo_grupo()
         {
-            PROt12_combo = new HashSet<PROt12_combo>();
+            PROt13_combo = new HashSet<PROt13_combo>();
         }
 
         [Key]
@@ -20,15 +20,17 @@ namespace ConfigBusinessEntity
         [StringLength(10)]
         public string cod_combo_grupo { get; set; }
 
+        [Required]
         [StringLength(250)]
         public string txt_desc { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt12_combo> PROt12_combo { get; set; }
+        public virtual ICollection<PROt13_combo> PROt13_combo { get; set; }
     }
 }

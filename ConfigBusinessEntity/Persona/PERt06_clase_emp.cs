@@ -6,29 +6,34 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class PROt15_receta_grupo
+    public partial class PERt06_clase_emp
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROt15_receta_grupo()
+        public PERt06_clase_emp()
         {
-            PROt10_receta = new HashSet<PROt10_receta>();
+            PERt04_empleado = new HashSet<PERt04_empleado>();
         }
 
         [Key]
-        public long id_receta_grupo { get; set; }
+        public int id_clase_emp { get; set; }
 
         [StringLength(10)]
-        public string cod_receta_grupo { get; set; }
+        public string cod_clase_emp { get; set; }
 
-        [StringLength(250)]
+        [Required]
+        [StringLength(100)]
+        public string txt_nombre { get; set; }
+
+        [StringLength(750)]
         public string txt_desc { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt10_receta> PROt10_receta { get; set; }
+        public virtual ICollection<PERt04_empleado> PERt04_empleado { get; set; }
     }
 }

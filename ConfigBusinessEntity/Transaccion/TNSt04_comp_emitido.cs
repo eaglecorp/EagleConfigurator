@@ -198,8 +198,6 @@ namespace ConfigBusinessEntity
 
         public int? num_comensales { get; set; }
 
-        public int id_turno { get; set; }
-
         public long? id_usuario { get; set; }
 
         [StringLength(50)]
@@ -215,15 +213,17 @@ namespace ConfigBusinessEntity
 
         public int? id_mesa { get; set; }
 
+        public int id_turno { get; set; }
+
         public virtual MSTt03_tipo_orden MSTt03_tipo_orden { get; set; }
 
         public virtual MSTt04_canal_vta MSTt04_canal_vta { get; set; }
 
         public virtual MSTt08_location MSTt08_location { get; set; }
 
-        public virtual MSTt14_turno MSTt14_turno { get; set; }
+        public virtual MSTt13_turno MSTt13_turno { get; set; }
 
-        public virtual MSTt15_mesa MSTt15_mesa { get; set; }
+        public virtual MSTt14_mesa MSTt14_mesa { get; set; }
 
         public virtual PERt01_usuario PERt01_usuario { get; set; }
 

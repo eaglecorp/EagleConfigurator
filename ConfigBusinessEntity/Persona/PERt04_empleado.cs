@@ -14,7 +14,8 @@ namespace ConfigBusinessEntity
             CLIt03_atencion = new HashSet<CLIt03_atencion>();
             CLIt04_atencion_dtl = new HashSet<CLIt04_atencion_dtl>();
             CLIt19_cita = new HashSet<CLIt19_cita>();
-            MSTt13_caja_dtl = new HashSet<MSTt13_caja_dtl>();
+            CSHt01_caja_dtl = new HashSet<CSHt01_caja_dtl>();
+            CSHt01_caja_dtl1 = new HashSet<CSHt01_caja_dtl>();
             PERt01_usuario = new HashSet<PERt01_usuario>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
             TNSt04_comp_emitido1 = new HashSet<TNSt04_comp_emitido>();
@@ -202,6 +203,10 @@ namespace ConfigBusinessEntity
 
         public int? id_especialidad_medica { get; set; }
 
+        public int? id_categoria_emp { get; set; }
+
+        public int? id_clase_emp { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CLIt03_atencion> CLIt03_atencion { get; set; }
 
@@ -213,10 +218,13 @@ namespace ConfigBusinessEntity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CLIt19_cita> CLIt19_cita { get; set; }
 
-        public virtual MSTt07_estado_civil MSTt07_estado_civil { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CSHt01_caja_dtl> CSHt01_caja_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MSTt13_caja_dtl> MSTt13_caja_dtl { get; set; }
+        public virtual ICollection<CSHt01_caja_dtl> CSHt01_caja_dtl1 { get; set; }
+
+        public virtual MSTt07_estado_civil MSTt07_estado_civil { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PERt01_usuario> PERt01_usuario { get; set; }
@@ -226,6 +234,10 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt04_comp_emitido> TNSt04_comp_emitido1 { get; set; }
+
+        public virtual PERt05_categoria_emp PERt05_categoria_emp { get; set; }
+
+        public virtual PERt06_clase_emp PERt06_clase_emp { get; set; }
 
         public virtual SNTt02_tipo_doc_identidad SNTt02_tipo_doc_identidad { get; set; }
 

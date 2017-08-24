@@ -87,7 +87,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt15_mesa();
+                        var obj = new MSTt14_mesa();
                         obj = GetObjeto();
                         int id = new MesaBL().InsertarMesa(obj);
                         if (id > 0)
@@ -173,7 +173,7 @@ namespace ConfiguradorUI.Maestro
                     if (esValido())
                     {
 
-                        var obj = new MSTt15_mesa();
+                        var obj = new MSTt14_mesa();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdMesa.Text, out id))
@@ -203,7 +203,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt15_mesa();
+                        var obj = new MSTt14_mesa();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdMesa.Text, out id))
@@ -224,9 +224,9 @@ namespace ConfiguradorUI.Maestro
             return isValid;
         }
 
-        private MSTt15_mesa GetObjeto()
+        private MSTt14_mesa GetObjeto()
         {
-            var obj = new MSTt15_mesa();
+            var obj = new MSTt14_mesa();
             try
             {
                 obj.txt_num = txtNumero.Text.Trim();
@@ -245,7 +245,7 @@ namespace ConfiguradorUI.Maestro
             }
             return obj;
         }
-        private void SetObjeto(MSTt15_mesa obj)
+        private void SetObjeto(MSTt14_mesa obj)
         {
             try
             {
@@ -680,7 +680,7 @@ namespace ConfiguradorUI.Maestro
         private void SetMaxLengthTxt()
         {
             txtCodigo.MaxLength = 10;
-            txtNumero.MaxLength = 5;
+            txtNumero.MaxLength = 20;
             txtCapacidad.MaxLength = 9;
 
         }

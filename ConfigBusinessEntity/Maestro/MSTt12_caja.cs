@@ -11,17 +11,18 @@ namespace ConfigBusinessEntity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MSTt12_caja()
         {
+            CSHt01_caja_dtl = new HashSet<CSHt01_caja_dtl>();
             FISt01_control_numeracion = new HashSet<FISt01_control_numeracion>();
             GRLt04_configuracion_caja = new HashSet<GRLt04_configuracion_caja>();
-            MSTt13_caja_dtl = new HashSet<MSTt13_caja_dtl>();
         }
 
         [Key]
         public int id_caja { get; set; }
 
-        [StringLength(20)]
+        [StringLength(10)]
         public string cod_caja { get; set; }
 
+        [Required]
         [StringLength(100)]
         public string txt_desc { get; set; }
 
@@ -53,6 +54,9 @@ namespace ConfigBusinessEntity
         public string txt_estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CSHt01_caja_dtl> CSHt01_caja_dtl { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FISt01_control_numeracion> FISt01_control_numeracion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -69,8 +73,5 @@ namespace ConfigBusinessEntity
         public virtual MSTt10_impresora MSTt10_impresora4 { get; set; }
 
         public virtual MSTt10_impresora MSTt10_impresora5 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MSTt13_caja_dtl> MSTt13_caja_dtl { get; set; }
     }
 }

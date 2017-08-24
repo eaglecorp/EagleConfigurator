@@ -6,20 +6,19 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class PROt10_receta
+    public partial class PROt12_receta_grupo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROt10_receta()
+        public PROt12_receta_grupo()
         {
-            PROt09_producto = new HashSet<PROt09_producto>();
-            PROt11_receta_dtl = new HashSet<PROt11_receta_dtl>();
+            PROt10_receta = new HashSet<PROt10_receta>();
         }
 
         [Key]
-        public long id_receta { get; set; }
+        public long id_receta_grupo { get; set; }
 
         [StringLength(10)]
-        public string cod_receta { get; set; }
+        public string cod_receta_grupo { get; set; }
 
         [StringLength(250)]
         public string txt_desc { get; set; }
@@ -29,14 +28,7 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
-        public long? id_receta_grupo { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt09_producto> PROt09_producto { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt11_receta_dtl> PROt11_receta_dtl { get; set; }
-
-        public virtual PROt12_receta_grupo PROt12_receta_grupo { get; set; }
+        public virtual ICollection<PROt10_receta> PROt10_receta { get; set; }
     }
 }

@@ -73,7 +73,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt16_estado_mesa();
+                        var obj = new MSTt15_estado_mesa();
                         obj = GetObjeto();
                         int id = new EstadoMesaBL().InsertarEstadoMesa(obj);
                         if (id > 0)
@@ -155,7 +155,7 @@ namespace ConfiguradorUI.Maestro
                     if (esValido())
                     {
 
-                        var obj = new MSTt16_estado_mesa();
+                        var obj = new MSTt15_estado_mesa();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdEstadoMesa.Text, out id))
@@ -185,7 +185,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt16_estado_mesa();
+                        var obj = new MSTt15_estado_mesa();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdEstadoMesa.Text, out id))
@@ -206,9 +206,9 @@ namespace ConfiguradorUI.Maestro
             return isValid;
         }
 
-        private MSTt16_estado_mesa GetObjeto()
+        private MSTt15_estado_mesa GetObjeto()
         {
-            var obj = new MSTt16_estado_mesa();
+            var obj = new MSTt15_estado_mesa();
             try
             {
                 obj.txt_desc = txtNombre.Text.Trim();
@@ -226,7 +226,7 @@ namespace ConfiguradorUI.Maestro
 
             return obj;
         }
-        private void SetObjeto(MSTt16_estado_mesa obj)
+        private void SetObjeto(MSTt15_estado_mesa obj)
         {
             try
             {
@@ -652,7 +652,7 @@ namespace ConfiguradorUI.Maestro
             txtNombre.MaxLength = 50;
 
         }
-        private void ContarEstados(List<MSTt16_estado_mesa> lista)
+        private void ContarEstados(List<MSTt15_estado_mesa> lista)
         {
             try
             {

@@ -12,19 +12,19 @@ namespace ConfigDataAccess.Maestro
 {
     public class EstadoMesaDA
     {
-        public List<MSTt16_estado_mesa> ListaEstadoMesa(int? id_estado = null)
+        public List<MSTt15_estado_mesa> ListaEstadoMesa(int? id_estado = null)
         {
-            var lista = new List<MSTt16_estado_mesa>();
+            var lista = new List<MSTt15_estado_mesa>();
             string sentencia = string.Empty;
             sentencia = (id_estado == null) ?
-                @"SELECT * FROM MSTt16_estado_mesa" :
-                @"SELECT * FROM MSTt16_estado_mesa WHERE id_estado=@id_estado";
+                @"SELECT * FROM MSTt15_estado_mesa" :
+                @"SELECT * FROM MSTt15_estado_mesa WHERE id_estado=@id_estado";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    lista = cnn.Query<MSTt16_estado_mesa>(sentencia, new { id_estado }).ToList();
+                    lista = cnn.Query<MSTt15_estado_mesa>(sentencia, new { id_estado }).ToList();
                 }
                 catch (Exception e)
                 {
@@ -34,14 +34,14 @@ namespace ConfigDataAccess.Maestro
             }
             return lista;
         }
-        public int InsertarEstadoMesa(MSTt16_estado_mesa obj)
+        public int InsertarEstadoMesa(MSTt15_estado_mesa obj)
         {
             int id = 0;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    ctx.MSTt16_estado_mesa.Add(obj);
+                    ctx.MSTt15_estado_mesa.Add(obj);
                     ctx.SaveChanges();
                     id = obj.id_estado_mesa;
                 }
@@ -63,7 +63,7 @@ namespace ConfigDataAccess.Maestro
                     string txt_estado = Estado.TxtInactivo;
                     using (SqlCommand cmd = cnn.CreateCommand())
                     {
-                        cmd.CommandText = "UPDATE MSTt16_estado_mesa SET id_estado = @id_estado, txt_estado = @txt_estado Where id_estado_mesa=@id";
+                        cmd.CommandText = "UPDATE MSTt15_estado_mesa SET id_estado = @id_estado, txt_estado = @txt_estado Where id_estado_mesa=@id";
                         cmd.Parameters.AddWithValue("@id_estado", id_estado);
                         cmd.Parameters.AddWithValue("@txt_estado", txt_estado);
                         cmd.Parameters.AddWithValue("@id", id);
@@ -78,13 +78,13 @@ namespace ConfigDataAccess.Maestro
                 }
             }
         }
-        public void ActualizarEstadoMesa(MSTt16_estado_mesa actualizado)
+        public void ActualizarEstadoMesa(MSTt15_estado_mesa actualizado)
         {
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    var original = ctx.MSTt16_estado_mesa.Find(actualizado.id_estado_mesa);
+                    var original = ctx.MSTt15_estado_mesa.Find(actualizado.id_estado_mesa);
                     if (original != null && original.id_estado_mesa > 0)
                     {
                         ctx.Entry(original).CurrentValues.SetValues(actualizado);
@@ -98,16 +98,16 @@ namespace ConfigDataAccess.Maestro
                 }
             }
         }
-        public MSTt16_estado_mesa EstadoMesaXId(int id)
+        public MSTt15_estado_mesa EstadoMesaXId(int id)
         {
-            var obj = new MSTt16_estado_mesa();
-            string sentencia = "SELECT * FROM MSTt16_estado_mesa WHERE id_estado_mesa=@id";
+            var obj = new MSTt15_estado_mesa();
+            string sentencia = "SELECT * FROM MSTt15_estado_mesa WHERE id_estado_mesa=@id";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    obj = cnn.Query<MSTt16_estado_mesa>(sentencia, new { id }).FirstOrDefault();
+                    obj = cnn.Query<MSTt15_estado_mesa>(sentencia, new { id }).FirstOrDefault();
                 }
                 catch (Exception e)
                 {
@@ -117,16 +117,16 @@ namespace ConfigDataAccess.Maestro
             }
             return obj;
         }
-        public MSTt16_estado_mesa EstadoMesaXCod(string cod)
+        public MSTt15_estado_mesa EstadoMesaXCod(string cod)
         {
-            var obj = new MSTt16_estado_mesa();
-            string sentencia = "SELECT * FROM MSTt16_estado_mesa WHERE cod_estado_mesa=@cod";
+            var obj = new MSTt15_estado_mesa();
+            string sentencia = "SELECT * FROM MSTt15_estado_mesa WHERE cod_estado_mesa=@cod";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    obj = cnn.Query<MSTt16_estado_mesa>(sentencia, new { cod }).FirstOrDefault();
+                    obj = cnn.Query<MSTt15_estado_mesa>(sentencia, new { cod }).FirstOrDefault();
                 }
                 catch (Exception e)
                 {

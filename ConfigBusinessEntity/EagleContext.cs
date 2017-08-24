@@ -30,6 +30,7 @@ namespace ConfigBusinessEntity
         public virtual DbSet<CLIt17_tratamiento> CLIt17_tratamiento { get; set; }
         public virtual DbSet<CLIt18_evolucion> CLIt18_evolucion { get; set; }
         public virtual DbSet<CLIt19_cita> CLIt19_cita { get; set; }
+        public virtual DbSet<CSHt01_caja_dtl> CSHt01_caja_dtl { get; set; }
         public virtual DbSet<FISt01_control_numeracion> FISt01_control_numeracion { get; set; }
         public virtual DbSet<FISt02_nivel> FISt02_nivel { get; set; }
         public virtual DbSet<FISt03_tipo_numeracion> FISt03_tipo_numeracion { get; set; }
@@ -49,14 +50,15 @@ namespace ConfigBusinessEntity
         public virtual DbSet<MSTt10_impresora> MSTt10_impresora { get; set; }
         public virtual DbSet<MSTt11_tipo_impresora> MSTt11_tipo_impresora { get; set; }
         public virtual DbSet<MSTt12_caja> MSTt12_caja { get; set; }
-        public virtual DbSet<MSTt13_caja_dtl> MSTt13_caja_dtl { get; set; }
-        public virtual DbSet<MSTt14_turno> MSTt14_turno { get; set; }
-        public virtual DbSet<MSTt15_mesa> MSTt15_mesa { get; set; }
-        public virtual DbSet<MSTt16_estado_mesa> MSTt16_estado_mesa { get; set; }
+        public virtual DbSet<MSTt13_turno> MSTt13_turno { get; set; }
+        public virtual DbSet<MSTt14_mesa> MSTt14_mesa { get; set; }
+        public virtual DbSet<MSTt15_estado_mesa> MSTt15_estado_mesa { get; set; }
         public virtual DbSet<PERt01_usuario> PERt01_usuario { get; set; }
         public virtual DbSet<PERt02_cliente> PERt02_cliente { get; set; }
         public virtual DbSet<PERt03_proveedor> PERt03_proveedor { get; set; }
         public virtual DbSet<PERt04_empleado> PERt04_empleado { get; set; }
+        public virtual DbSet<PERt05_categoria_emp> PERt05_categoria_emp { get; set; }
+        public virtual DbSet<PERt06_clase_emp> PERt06_clase_emp { get; set; }
         public virtual DbSet<PROt01_marca> PROt01_marca { get; set; }
         public virtual DbSet<PROt02_modelo> PROt02_modelo { get; set; }
         public virtual DbSet<PROt03_familia> PROt03_familia { get; set; }
@@ -68,10 +70,11 @@ namespace ConfigBusinessEntity
         public virtual DbSet<PROt09_producto> PROt09_producto { get; set; }
         public virtual DbSet<PROt10_receta> PROt10_receta { get; set; }
         public virtual DbSet<PROt11_receta_dtl> PROt11_receta_dtl { get; set; }
-        public virtual DbSet<PROt12_combo> PROt12_combo { get; set; }
-        public virtual DbSet<PROt13_combo_dtl> PROt13_combo_dtl { get; set; }
-        public virtual DbSet<PROt14_combo_grupo> PROt14_combo_grupo { get; set; }
-        public virtual DbSet<PROt15_receta_grupo> PROt15_receta_grupo { get; set; }
+        public virtual DbSet<PROt12_receta_grupo> PROt12_receta_grupo { get; set; }
+        public virtual DbSet<PROt13_combo> PROt13_combo { get; set; }
+        public virtual DbSet<PROt14_combo_dtl> PROt14_combo_dtl { get; set; }
+        public virtual DbSet<PROt15_combo_size> PROt15_combo_size { get; set; }
+        public virtual DbSet<PROt16_combo_grupo> PROt16_combo_grupo { get; set; }
         public virtual DbSet<RPTt01_reporte> RPTt01_reporte { get; set; }
         public virtual DbSet<RPTt02_categoria_reporte> RPTt02_categoria_reporte { get; set; }
         public virtual DbSet<SNTt01_tipo_medio_pago> SNTt01_tipo_medio_pago { get; set; }
@@ -917,64 +920,64 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<MSTt12_caja>()
-                .HasMany(e => e.GRLt04_configuracion_caja)
+                .HasMany(e => e.CSHt01_caja_dtl)
                 .WithRequired(e => e.MSTt12_caja)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MSTt12_caja>()
-                .HasMany(e => e.MSTt13_caja_dtl)
+                .HasMany(e => e.GRLt04_configuracion_caja)
                 .WithRequired(e => e.MSTt12_caja)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<MSTt14_turno>()
+            modelBuilder.Entity<MSTt13_turno>()
                 .Property(e => e.cod_turno)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt14_turno>()
+            modelBuilder.Entity<MSTt13_turno>()
                 .Property(e => e.txt_abrv)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt14_turno>()
+            modelBuilder.Entity<MSTt13_turno>()
                 .Property(e => e.txt_desc)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt14_turno>()
+            modelBuilder.Entity<MSTt13_turno>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt14_turno>()
-                .HasMany(e => e.MSTt13_caja_dtl)
-                .WithRequired(e => e.MSTt14_turno)
+            modelBuilder.Entity<MSTt13_turno>()
+                .HasMany(e => e.CSHt01_caja_dtl)
+                .WithRequired(e => e.MSTt13_turno)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<MSTt14_turno>()
+            modelBuilder.Entity<MSTt13_turno>()
                 .HasMany(e => e.TNSt04_comp_emitido)
-                .WithRequired(e => e.MSTt14_turno)
+                .WithRequired(e => e.MSTt13_turno)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<MSTt15_mesa>()
+            modelBuilder.Entity<MSTt14_mesa>()
                 .Property(e => e.cod_mesa)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt15_mesa>()
+            modelBuilder.Entity<MSTt14_mesa>()
                 .Property(e => e.txt_num)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt16_estado_mesa>()
+            modelBuilder.Entity<MSTt15_estado_mesa>()
                 .Property(e => e.cod_estado_mesa)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt16_estado_mesa>()
+            modelBuilder.Entity<MSTt15_estado_mesa>()
                 .Property(e => e.txt_desc)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt16_estado_mesa>()
+            modelBuilder.Entity<MSTt15_estado_mesa>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt16_estado_mesa>()
-                .HasMany(e => e.MSTt15_mesa)
-                .WithRequired(e => e.MSTt16_estado_mesa)
+            modelBuilder.Entity<MSTt15_estado_mesa>()
+                .HasMany(e => e.MSTt14_mesa)
+                .WithRequired(e => e.MSTt15_estado_mesa)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERt01_usuario>()
@@ -1496,8 +1499,15 @@ namespace ConfigBusinessEntity
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERt04_empleado>()
-                .HasMany(e => e.MSTt13_caja_dtl)
+                .HasMany(e => e.CSHt01_caja_dtl)
                 .WithRequired(e => e.PERt04_empleado)
+                .HasForeignKey(e => e.id_empleado)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PERt04_empleado>()
+                .HasMany(e => e.CSHt01_caja_dtl1)
+                .WithRequired(e => e.PERt04_empleado1)
+                .HasForeignKey(e => e.id_emp_autorizador)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERt04_empleado>()
@@ -1514,6 +1524,38 @@ namespace ConfigBusinessEntity
                 .HasMany(e => e.TNSt04_comp_emitido1)
                 .WithOptional(e => e.PERt04_empleado1)
                 .HasForeignKey(e => e.id_emp_autorizador);
+
+            modelBuilder.Entity<PERt05_categoria_emp>()
+                .Property(e => e.cod_categoria_emp)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt05_categoria_emp>()
+                .Property(e => e.txt_nombre)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt05_categoria_emp>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt05_categoria_emp>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt06_clase_emp>()
+                .Property(e => e.cod_clase_emp)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt06_clase_emp>()
+                .Property(e => e.txt_nombre)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt06_clase_emp>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt06_clase_emp>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
 
             modelBuilder.Entity<PROt01_marca>()
                 .Property(e => e.cod_marca)
@@ -1827,6 +1869,11 @@ namespace ConfigBusinessEntity
                 .WithRequired(e => e.PROt09_producto)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<PROt09_producto>()
+                .HasMany(e => e.PROt15_combo_size)
+                .WithRequired(e => e.PROt09_producto)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<PROt10_receta>()
                 .Property(e => e.cod_receta)
                 .IsUnicode(false);
@@ -1856,63 +1903,97 @@ namespace ConfigBusinessEntity
                 .Property(e => e.cantidad)
                 .HasPrecision(18, 8);
 
-            modelBuilder.Entity<PROt12_combo>()
-                .Property(e => e.cod_combo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt12_combo>()
-                .Property(e => e.txt_desc)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt12_combo>()
-                .Property(e => e.mto_pvpu_sin_igv)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<PROt12_combo>()
-                .Property(e => e.mto_pvpu_con_igv)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<PROt12_combo>()
-                .Property(e => e.txt_estado)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt13_combo_dtl>()
-                .Property(e => e.cod_combo_dtl)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt13_combo_dtl>()
-                .Property(e => e.mto_pvpu_sin_igv)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<PROt13_combo_dtl>()
-                .Property(e => e.mto_pvpu_con_igv)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<PROt13_combo_dtl>()
-                .Property(e => e.txt_estado)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt14_combo_grupo>()
-                .Property(e => e.cod_combo_grupo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt14_combo_grupo>()
-                .Property(e => e.txt_desc)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt14_combo_grupo>()
-                .Property(e => e.txt_estado)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt15_receta_grupo>()
+            modelBuilder.Entity<PROt12_receta_grupo>()
                 .Property(e => e.cod_receta_grupo)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PROt15_receta_grupo>()
+            modelBuilder.Entity<PROt12_receta_grupo>()
                 .Property(e => e.txt_desc)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PROt15_receta_grupo>()
+            modelBuilder.Entity<PROt12_receta_grupo>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt13_combo>()
+                .Property(e => e.cod_combo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt13_combo>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt13_combo>()
+                .Property(e => e.mto_pvpu_sin_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt13_combo>()
+                .Property(e => e.mto_pvpu_con_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt13_combo>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt13_combo>()
+                .HasMany(e => e.PROt14_combo_dtl)
+                .WithRequired(e => e.PROt13_combo)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PROt14_combo_dtl>()
+                .Property(e => e.cod_combo_dtl)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt14_combo_dtl>()
+                .Property(e => e.cantidad)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt14_combo_dtl>()
+                .Property(e => e.mto_pvpu_sin_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt14_combo_dtl>()
+                .Property(e => e.mto_pvpu_con_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt14_combo_dtl>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt14_combo_dtl>()
+                .HasMany(e => e.PROt15_combo_size)
+                .WithRequired(e => e.PROt14_combo_dtl)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PROt15_combo_size>()
+                .Property(e => e.cod_combo_size)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt15_combo_size>()
+                .Property(e => e.cantidad)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt15_combo_size>()
+                .Property(e => e.mto_pvpu_sin_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt15_combo_size>()
+                .Property(e => e.mto_pvpu_con_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt15_combo_size>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt16_combo_grupo>()
+                .Property(e => e.cod_combo_grupo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt16_combo_grupo>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt16_combo_grupo>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
 

@@ -190,7 +190,7 @@ namespace ConfigDataAccess
                     SELECT * FROM PROt07_tipo_prod WHERE id_tipo_prod=@id_tipo_prod
                     SELECT * FROM PROt06_clase_prod WHERE id_clase_prod=@id_clase_prod
                     SELECT * FROM PROt10_receta WHERE id_receta=@id_receta
-                    SELECT * FROM PROt12_combo WHERE id_combo=@id_combo";
+                    SELECT * FROM PROt13_combo WHERE id_combo=@id_combo";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
@@ -219,7 +219,7 @@ namespace ConfigDataAccess
                     var tipoProd = multi.Read<PROt07_tipo_prod>().FirstOrDefault();
                     var clase = multi.Read<PROt06_clase_prod>().FirstOrDefault();
                     var recet = multi.Read<PROt10_receta>().FirstOrDefault();
-                    var combo = multi.Read<PROt12_combo>().FirstOrDefault();
+                    var combo = multi.Read<PROt13_combo>().FirstOrDefault();
 
                     obj.PROt04_subfamilia = subFam;
                     obj.SNTt06_unidad_medida = um;
@@ -230,7 +230,7 @@ namespace ConfigDataAccess
                     obj.PROt07_tipo_prod = tipoProd;
                     obj.PROt06_clase_prod = clase;
                     obj.PROt10_receta = recet;
-                    obj.PROt12_combo = combo;
+                    obj.PROt13_combo = combo;
 
                 }
                 catch (Exception e)

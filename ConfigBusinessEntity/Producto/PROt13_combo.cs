@@ -6,13 +6,13 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class PROt12_combo
+    public partial class PROt13_combo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROt12_combo()
+        public PROt13_combo()
         {
             PROt09_producto = new HashSet<PROt09_producto>();
-            PROt13_combo_dtl = new HashSet<PROt13_combo_dtl>();
+            PROt14_combo_dtl = new HashSet<PROt14_combo_dtl>();
         }
 
         [Key]
@@ -21,26 +21,30 @@ namespace ConfigBusinessEntity
         [StringLength(10)]
         public string cod_combo { get; set; }
 
+        [Required]
         [StringLength(250)]
         public string txt_desc { get; set; }
 
-        public decimal? mto_pvpu_sin_igv { get; set; }
+        public decimal mto_pvpu_sin_tax { get; set; }
 
-        public decimal? mto_pvpu_con_igv { get; set; }
+        public decimal mto_pvpu_con_tax { get; set; }
 
-        public long? id_combo_grupo { get; set; }
+        public bool sn_price_dtl { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
+
+        public long? id_combo_grupo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROt09_producto> PROt09_producto { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt13_combo_dtl> PROt13_combo_dtl { get; set; }
+        public virtual ICollection<PROt14_combo_dtl> PROt14_combo_dtl { get; set; }
 
-        public virtual PROt14_combo_grupo PROt14_combo_grupo { get; set; }
+        public virtual PROt16_combo_grupo PROt16_combo_grupo { get; set; }
     }
 }

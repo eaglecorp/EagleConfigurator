@@ -85,7 +85,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt14_turno();
+                        var obj = new MSTt13_turno();
                         obj = GetObjeto();
                         int id = new TurnoBL().InsertarTurno(obj);
                         if (id > 0)
@@ -161,7 +161,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt14_turno();
+                        var obj = new MSTt13_turno();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdTurno.Text, out id))
@@ -191,7 +191,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt14_turno();
+                        var obj = new MSTt13_turno();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdTurno.Text, out id))
@@ -242,9 +242,9 @@ namespace ConfiguradorUI.Maestro
             cboTT.SelectedValue = tt;
         }
 
-        private MSTt14_turno GetObjeto()
+        private MSTt13_turno GetObjeto()
         {
-            var obj = new MSTt14_turno();
+            var obj = new MSTt13_turno();
             try
             {
                 obj.txt_desc = txtNombre.Text.Trim();
@@ -262,7 +262,7 @@ namespace ConfiguradorUI.Maestro
 
             return obj;
         }
-        private void SetObjeto(MSTt14_turno obj)
+        private void SetObjeto(MSTt13_turno obj)
         {
             try
             {
@@ -701,7 +701,7 @@ namespace ConfiguradorUI.Maestro
             txtAbreviacion.MaxLength = 10;
             txtNombre.MaxLength = 50;
         }
-        private void ContarEstados(List<MSTt14_turno> lista)
+        private void ContarEstados(List<MSTt13_turno> lista)
         {
             try
             {

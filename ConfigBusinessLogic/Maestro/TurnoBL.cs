@@ -11,7 +11,7 @@ namespace ConfigBusinessLogic.Maestro
 {
     public class TurnoBL
     {
-        public int InsertarTurno(MSTt14_turno obj)
+        public int InsertarTurno(MSTt13_turno obj)
         {
             return new TurnoDA().InsertarTurno(obj);
         }
@@ -19,19 +19,19 @@ namespace ConfigBusinessLogic.Maestro
         {
             new TurnoDA().EliminarTurno(id);
         }
-        public void ActualizarTurno(MSTt14_turno actualizado)
+        public void ActualizarTurno(MSTt13_turno actualizado)
         {
             new TurnoDA().ActualizarTurno(actualizado);
         }
-        public MSTt14_turno TurnoXId(int id)
+        public MSTt13_turno TurnoXId(int id)
         {
             return new TurnoDA().TurnoXId(id);
         }
-        public MSTt14_turno TurnoXCod(string cod)
+        public MSTt13_turno TurnoXCod(string cod)
         {
             return new TurnoDA().TurnoXCod(cod);
         }
-        public List<MSTt14_turno> ListaTurno(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
+        public List<MSTt13_turno> ListaTurno(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
         {
             var lista = new TurnoDA().ListaTurno(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)

@@ -6,16 +6,16 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class MSTt13_caja_dtl
+    public partial class CSHt01_caja_dtl
     {
         [Key]
         public long id_caja_dtl { get; set; }
 
         public int id_caja { get; set; }
 
-        public int id_turno { get; set; }
-
         public long id_empleado { get; set; }
+
+        public long id_emp_autorizador { get; set; }
 
         public bool sn_open { get; set; }
 
@@ -26,10 +26,14 @@ namespace ConfigBusinessEntity
 
         public TimeSpan hora { get; set; }
 
+        public int id_turno { get; set; }
+
         public virtual MSTt12_caja MSTt12_caja { get; set; }
 
-        public virtual MSTt14_turno MSTt14_turno { get; set; }
+        public virtual MSTt13_turno MSTt13_turno { get; set; }
 
         public virtual PERt04_empleado PERt04_empleado { get; set; }
+
+        public virtual PERt04_empleado PERt04_empleado1 { get; set; }
     }
 }

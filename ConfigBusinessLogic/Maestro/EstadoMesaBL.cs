@@ -11,7 +11,7 @@ namespace ConfigBusinessLogic.Maestro
 {
     public class EstadoMesaBL
     {
-        public int InsertarEstadoMesa(MSTt16_estado_mesa obj)
+        public int InsertarEstadoMesa(MSTt15_estado_mesa obj)
         {
             return new EstadoMesaDA().InsertarEstadoMesa(obj);
         }
@@ -19,19 +19,19 @@ namespace ConfigBusinessLogic.Maestro
         {
             new EstadoMesaDA().EliminarEstadoMesa(id);
         }
-        public void ActualizarEstadoMesa(MSTt16_estado_mesa actualizado)
+        public void ActualizarEstadoMesa(MSTt15_estado_mesa actualizado)
         {
             new EstadoMesaDA().ActualizarEstadoMesa(actualizado);
         }
-        public MSTt16_estado_mesa EstadoMesaXId(int id)
+        public MSTt15_estado_mesa EstadoMesaXId(int id)
         {
             return new EstadoMesaDA().EstadoMesaXId(id);
         }
-        public MSTt16_estado_mesa EstadoMesaXCod(string cod)
+        public MSTt15_estado_mesa EstadoMesaXCod(string cod)
         {
             return new EstadoMesaDA().EstadoMesaXCod(cod);
         }
-        public List<MSTt16_estado_mesa> ListaEstadoMesa(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
+        public List<MSTt15_estado_mesa> ListaEstadoMesa(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
         {
             var lista = new EstadoMesaDA().ListaEstadoMesa(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
