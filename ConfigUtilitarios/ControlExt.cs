@@ -11,14 +11,23 @@ namespace ConfigUtilitarios
     {
         public static int DropDownWidth(ComboBox myCombo)
         {
+
             int maxWidth = 0, temp = 0;
-            foreach (var obj in myCombo.Items)
+            try
             {
-                temp = TextRenderer.MeasureText(myCombo.GetItemText(obj), myCombo.Font).Width;
-                if (temp > maxWidth)
+                foreach (var obj in myCombo.Items)
                 {
-                    maxWidth = temp;
+                    temp = TextRenderer.MeasureText(myCombo.GetItemText(obj), myCombo.Font).Width;
+                    if (temp > maxWidth)
+                    {
+                        maxWidth = temp;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+
+                return 200;
             }
             return maxWidth + SystemInformation.VerticalScrollBarWidth;
         }

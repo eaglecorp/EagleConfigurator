@@ -63,8 +63,8 @@ namespace ConfiguradorUI.Persona
 
             }
 
-            var cbos = new[] { cboEstadoCivil,cboTipoDocIdentidad,cboDepartamento,cboProvincia,
-                                cboDistrito,cboNacionalidad,cboZona,cboVia,
+            var cbos = new[] { cboEstadoCivil,cboClaseEmp,cboCategoriaEmp, cboTipoDocIdentidad,
+                                cboDepartamento,cboProvincia,cboDistrito,cboNacionalidad,cboZona,cboVia,
 
                                 cboPeriodoPago,cboEntidadFinanciera,cboTipoTrabajador,cboOcupacion,
                                 cboCondicionLaboral,cboRegPension,cboRegLaboral,cboRegSalud,
@@ -73,7 +73,7 @@ namespace ConfiguradorUI.Persona
             foreach (var cbo in cbos)
             {
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-                
+
             }
 
 
@@ -185,7 +185,8 @@ namespace ConfiguradorUI.Persona
             try
             {
                 buttonToolTip.SetToolTip(cbo, cbo.Text);
-            }catch
+            }
+            catch
             {
                 buttonToolTip.SetToolTip(cbo, "Error");
             }
@@ -426,6 +427,13 @@ namespace ConfiguradorUI.Persona
                 }
                 else obj.sexo = null;
 
+
+                if (cboClaseEmp.SelectedValue != null)
+                    obj.id_clase_emp = int.Parse(cboClaseEmp.SelectedValue.ToString());
+
+                if (cboCategoriaEmp.SelectedValue != null)
+                    obj.id_categoria_emp = int.Parse(cboCategoriaEmp.SelectedValue.ToString());
+
                 if (cboTipoDocIdentidad.SelectedValue != null)
                     obj.id_tipo_doc_identidad = int.Parse(cboTipoDocIdentidad.SelectedValue.ToString());
                 else obj.id_tipo_doc_identidad = null;
@@ -607,6 +615,15 @@ namespace ConfiguradorUI.Persona
                 }
                 else { rbtFemenino.Checked = false; rbtMasculino.Checked = false; }
 
+
+                if (obj.id_categoria_emp != null)
+                    cboCategoriaEmp.SelectedValue = obj.id_categoria_emp;
+                else cboCategoriaEmp.SelectedIndex = -1;
+
+                if (obj.id_clase_emp != null)
+                    cboClaseEmp.SelectedValue = obj.id_clase_emp;
+                else cboClaseEmp.SelectedIndex = -1;
+
                 if (obj.id_tipo_doc_identidad != null)
                     cboTipoDocIdentidad.SelectedValue = obj.id_tipo_doc_identidad;
                 else cboTipoDocIdentidad.SelectedIndex = -1;
@@ -721,7 +738,7 @@ namespace ConfiguradorUI.Persona
             errorProv.Clear();
 
             #region validación de nombres y apellidos (requeridos)
-            var txtRequeridos = new[] { txtPrimerNom, txtApPaterno };
+            var txtRequeridos = new[] { txtApPaterno, txtPrimerNom };
             foreach (var txtReq in txtRequeridos)
             {
                 if (txtReq.Text.Trim().Length == 0)
@@ -1167,6 +1184,9 @@ namespace ConfiguradorUI.Persona
             txtSalQuincenal.Clear();
             txtSalHora.Clear();
 
+            cboClaseEmp.SelectedIndex = -1;
+            cboCategoriaEmp.SelectedIndex = -1;
+
             cboTipoDocIdentidad.SelectedIndex = (cboTipoDocIdentidad.Items.Count > 0) ? 0 : -1;
             cboEstadoCivil.SelectedIndex = (cboEstadoCivil.Items.Count > 0) ? 0 : -1;
             cboVia.SelectedIndex = (cboVia.Items.Count > 0) ? 0 : -1;
@@ -1205,6 +1225,28 @@ namespace ConfiguradorUI.Persona
             btnSearch.Enabled = eSearch;
             btnFilter.Enabled = eFilter;
         }
+        private void MantenerEstadoABM()
+        {
+            if (TipoOperacion == TipoOperacionABM.Nuevo)
+            {
+                ControlarBotones(false, false, true, true, false, false);
+            }
+            else if (TipoOperacion == TipoOperacionABM.Cambio)
+            {
+                ControlarBotones(false, false, true, true, false, false);
+                isPending = true;
+            }
+            else if (TipoOperacion == TipoOperacionABM.No_Action)
+            {
+                isPending = false;
+                ControlarBotones(true, true, false, false, true, true);
+            }
+            else
+            {
+                isPending = false;
+                ControlarBotones(true, true, false, false, true, true);
+            }
+        }
         private void ControlarEventosABM(long? id = null)
         {
 
@@ -1222,7 +1264,7 @@ namespace ConfiguradorUI.Persona
                     errorProv.Clear();
                     LimpiarForm();
                     tabEmpleado.SelectedTab = tabPagGeneral;
-                    txtApPaterno.Focus();
+                    txtPrimerNom.Focus();
                 }
                 else
                 {
@@ -1301,20 +1343,31 @@ namespace ConfiguradorUI.Persona
         {
             try
             {
+                cboClaseEmp.DataSource = null;
+                cboClaseEmp.DisplayMember = "txt_nombre";
+                cboClaseEmp.ValueMember = "id_clase_emp";
+                cboClaseEmp.DataSource = new ClaseEmpBL().ListaClaseEmp(Estado.IdActivo, false, true);
+
+                cboCategoriaEmp.DataSource = null;
+                cboCategoriaEmp.DisplayMember = "txt_nombre";
+                cboCategoriaEmp.ValueMember = "id_categoria_emp";
+                cboCategoriaEmp.DataSource = new CategoriaEmpBL().ListaCategoriaEmp(Estado.IdActivo, false, true);
+
+
                 cboEstadoCivil.DataSource = null;
                 cboEstadoCivil.DisplayMember = "txt_desc";
                 cboEstadoCivil.ValueMember = "id_estado_civil";
-                cboEstadoCivil.DataSource = new EstadoCivilBL().ListaEstadoCivil(Estado.IdActivo,false,true);
+                cboEstadoCivil.DataSource = new EstadoCivilBL().ListaEstadoCivil(Estado.IdActivo, false, true);
 
                 cboTipoDocIdentidad.DataSource = null;
                 cboTipoDocIdentidad.DisplayMember = "txt_abrv";
                 cboTipoDocIdentidad.ValueMember = "id_tipo_doc_identidad";
-                cboTipoDocIdentidad.DataSource = new TipoDocIdentidadBL().ListaTipoDocIdentidad(Estado.IdActivo,true);
+                cboTipoDocIdentidad.DataSource = new TipoDocIdentidadBL().ListaTipoDocIdentidad(Estado.IdActivo, true);
 
                 cboDepartamento.DataSource = null;
                 cboDepartamento.DisplayMember = "txt_desc";
                 cboDepartamento.ValueMember = "id_dpto";
-                cboDepartamento.DataSource = new DepartamentoBL().ListaDepartamento(Estado.IdActivo,true);
+                cboDepartamento.DataSource = new DepartamentoBL().ListaDepartamento(Estado.IdActivo, true);
 
                 cboProvincia.DataSource = null;
                 cboProvincia.DisplayMember = "txt_desc";
@@ -1332,23 +1385,23 @@ namespace ConfiguradorUI.Persona
                 cboNacionalidad.DataSource = null;
                 cboNacionalidad.DisplayMember = "txt_desc";
                 cboNacionalidad.ValueMember = "id_nacionalidad";
-                cboNacionalidad.DataSource = new NacionalidadBL().ListaNacionalidad(Estado.IdActivo,true);
+                cboNacionalidad.DataSource = new NacionalidadBL().ListaNacionalidad(Estado.IdActivo, true);
 
                 cboZona.DataSource = null;
                 cboZona.DisplayMember = "txt_desc";
                 cboZona.ValueMember = "id_zona";
-                cboZona.DataSource = new ZonaBL().ListaZona(Estado.IdActivo,true);
+                cboZona.DataSource = new ZonaBL().ListaZona(Estado.IdActivo, true);
 
                 cboVia.DataSource = null;
                 cboVia.DisplayMember = "txt_desc";
                 cboVia.ValueMember = "id_via";
-                cboVia.DataSource = new ViaBL().ListaVia(Estado.IdActivo,true);
+                cboVia.DataSource = new ViaBL().ListaVia(Estado.IdActivo, true);
 
 
                 cboPeriodoPago.DataSource = null;
                 cboPeriodoPago.DisplayMember = "txt_desc";
                 cboPeriodoPago.ValueMember = "id_periodo_remuneracion";
-                cboPeriodoPago.DataSource = new PeriodoRemuneracionBL().ListaPeriodoRemuneracion(Estado.IdActivo,true);
+                cboPeriodoPago.DataSource = new PeriodoRemuneracionBL().ListaPeriodoRemuneracion(Estado.IdActivo, true);
 
                 cboEntidadFinanciera.DataSource = null;
                 cboEntidadFinanciera.DisplayMember = "txt_desc";
@@ -1567,7 +1620,7 @@ namespace ConfiguradorUI.Persona
         }
 
         #endregion
-
+        
         #region Eventos de ventana
 
         private void FormEmpleado_Load(object sender, EventArgs e)
@@ -1693,6 +1746,70 @@ namespace ConfiguradorUI.Persona
             }
             else cboDistrito.DataSource = null;
             isChangedRow = false;
+        }
+
+        private void btnClaseEmp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int oldValue = 0;
+                int op = TipoOperacion;
+
+                if (cboClaseEmp.SelectedValue != null)
+                    oldValue = int.Parse(cboClaseEmp.SelectedValue.ToString());
+
+                var frm = new FormClaseEmp();
+                frm.ShowDialog();
+
+                if (frm.actualizar)
+                {
+                    cboClaseEmp.DataSource = null;
+                    cboClaseEmp.DisplayMember = "txt_nombre";
+                    cboClaseEmp.ValueMember = "id_clase_emp";
+                    cboClaseEmp.DataSource = new ClaseEmpBL().ListaClaseEmp(Estado.IdActivo, false, true);
+
+                    cboClaseEmp.SelectedValue = oldValue;
+                    TipoOperacion = op;
+                    MantenerEstadoABM();
+                }
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCategoriaEmp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int oldValue = 0;
+                int op = TipoOperacion;
+
+                if (cboCategoriaEmp.SelectedValue != null)
+                    oldValue = int.Parse(cboCategoriaEmp.SelectedValue.ToString());
+
+                var frm = new FormCategoriaEmp();
+                frm.ShowDialog();
+
+                if (frm.actualizar)
+                {
+                    cboCategoriaEmp.DataSource = null;
+                    cboCategoriaEmp.DisplayMember = "txt_nombre";
+                    cboCategoriaEmp.ValueMember = "id_categoria_emp";
+                    cboCategoriaEmp.DataSource = new CategoriaEmpBL().ListaCategoriaEmp(Estado.IdActivo, false, true);
+
+                    cboCategoriaEmp.SelectedValue = oldValue;
+                    TipoOperacion = op;
+                    MantenerEstadoABM();
+                }
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cboTipoEspc_SelectedIndexChanged(object sender, EventArgs e)

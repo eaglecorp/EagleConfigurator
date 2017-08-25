@@ -485,7 +485,9 @@
     <Content Include="Resources\icons\connection.png" />
     <Content Include="Resources\icons\databases-symbol.png" />
     <Content Include="Resources\icons\login_passwordx16.png" />
+    <Content Include="Resources\icons\login_passwordx24.png" />
     <Content Include="Resources\icons\login_userx16.png" />
+    <Content Include="Resources\icons\login_userx24.png" />
     <Content Include="Resources\icons\plug.png" />
     <Content Include="Resources\icons\printer-machine.png" />
     <Content Include="Resources\icons\printer.png" />

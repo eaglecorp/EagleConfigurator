@@ -39,6 +39,10 @@
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.tabEmpleado = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.lblCategoriaEmp = new MetroFramework.Controls.MetroLabel();
+            this.cboCategoriaEmp = new System.Windows.Forms.ComboBox();
+            this.cboClaseEmp = new System.Windows.Forms.ComboBox();
+            this.lblClaseEmp = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.txtReferencia = new MetroFramework.Controls.MetroTextBox();
             this.lblReferencia = new MetroFramework.Controls.MetroLabel();
@@ -202,6 +206,8 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
+            this.btnClaseEmp = new MetroFramework.Controls.MetroLink();
+            this.btnCategoriaEmp = new MetroFramework.Controls.MetroLink();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -307,6 +313,7 @@
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
+            this.txtFiltro.PromptText = "Filtro";
             this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFiltro.SelectedText = "";
             this.txtFiltro.SelectionLength = 0;
@@ -349,12 +356,22 @@
             // tabPagGeneral
             // 
             this.tabPagGeneral.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagGeneral.Controls.Add(this.btnCategoriaEmp);
+            this.tabPagGeneral.Controls.Add(this.btnClaseEmp);
+            this.tabPagGeneral.Controls.Add(this.lblCategoriaEmp);
+            this.tabPagGeneral.Controls.Add(this.cboCategoriaEmp);
+            this.tabPagGeneral.Controls.Add(this.cboClaseEmp);
+            this.tabPagGeneral.Controls.Add(this.lblClaseEmp);
             this.tabPagGeneral.Controls.Add(this.chkActivo);
             this.tabPagGeneral.Controls.Add(this.txtReferencia);
             this.tabPagGeneral.Controls.Add(this.lblReferencia);
             this.tabPagGeneral.Controls.Add(this.txtDireccion02);
+            this.tabPagGeneral.Controls.Add(this.txtSegundoNom);
+            this.tabPagGeneral.Controls.Add(this.lblPrimerNom);
             this.tabPagGeneral.Controls.Add(this.lblDireccion02);
+            this.tabPagGeneral.Controls.Add(this.txtPrimerNom);
             this.tabPagGeneral.Controls.Add(this.txtDireccion01);
+            this.tabPagGeneral.Controls.Add(this.lblSegundoNom);
             this.tabPagGeneral.Controls.Add(this.lblDireccion01);
             this.tabPagGeneral.Controls.Add(this.txtNumVia);
             this.tabPagGeneral.Controls.Add(this.lblNumVia);
@@ -395,12 +412,8 @@
             this.tabPagGeneral.Controls.Add(this.lblFechaNac);
             this.tabPagGeneral.Controls.Add(this.cboEstadoCivil);
             this.tabPagGeneral.Controls.Add(this.lblEstadoCivil);
-            this.tabPagGeneral.Controls.Add(this.txtSegundoNom);
-            this.tabPagGeneral.Controls.Add(this.lblSegundoNom);
             this.tabPagGeneral.Controls.Add(this.txtApMaterno);
             this.tabPagGeneral.Controls.Add(this.lblApMaterno);
-            this.tabPagGeneral.Controls.Add(this.txtPrimerNom);
-            this.tabPagGeneral.Controls.Add(this.lblPrimerNom);
             this.tabPagGeneral.Controls.Add(this.txtApPaterno);
             this.tabPagGeneral.Controls.Add(this.lblApPaterno);
             this.tabPagGeneral.HorizontalScrollbarBarColor = true;
@@ -415,6 +428,54 @@
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // lblCategoriaEmp
+            // 
+            this.lblCategoriaEmp.AutoSize = true;
+            this.lblCategoriaEmp.ForeColor = System.Drawing.Color.Navy;
+            this.lblCategoriaEmp.Location = new System.Drawing.Point(289, 158);
+            this.lblCategoriaEmp.Name = "lblCategoriaEmp";
+            this.lblCategoriaEmp.Size = new System.Drawing.Size(70, 19);
+            this.lblCategoriaEmp.TabIndex = 19;
+            this.lblCategoriaEmp.Text = "Categoría:";
+            this.lblCategoriaEmp.UseCustomForeColor = true;
+            // 
+            // cboCategoriaEmp
+            // 
+            this.cboCategoriaEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboCategoriaEmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoriaEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboCategoriaEmp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoriaEmp.FormattingEnabled = true;
+            this.cboCategoriaEmp.Location = new System.Drawing.Point(373, 155);
+            this.cboCategoriaEmp.Name = "cboCategoriaEmp";
+            this.cboCategoriaEmp.Size = new System.Drawing.Size(157, 23);
+            this.cboCategoriaEmp.TabIndex = 20;
+            this.cboCategoriaEmp.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboClaseEmp
+            // 
+            this.cboClaseEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboClaseEmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboClaseEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboClaseEmp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboClaseEmp.FormattingEnabled = true;
+            this.cboClaseEmp.Location = new System.Drawing.Point(83, 156);
+            this.cboClaseEmp.Name = "cboClaseEmp";
+            this.cboClaseEmp.Size = new System.Drawing.Size(159, 23);
+            this.cboClaseEmp.TabIndex = 18;
+            this.cboClaseEmp.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblClaseEmp
+            // 
+            this.lblClaseEmp.AutoSize = true;
+            this.lblClaseEmp.ForeColor = System.Drawing.Color.Navy;
+            this.lblClaseEmp.Location = new System.Drawing.Point(0, 158);
+            this.lblClaseEmp.Name = "lblClaseEmp";
+            this.lblClaseEmp.Size = new System.Drawing.Size(74, 19);
+            this.lblClaseEmp.TabIndex = 17;
+            this.lblClaseEmp.Text = "Clase Emp:";
+            this.lblClaseEmp.UseCustomForeColor = true;
+            // 
             // chkActivo
             // 
             this.chkActivo.AutoSize = true;
@@ -423,10 +484,10 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.chkActivo.Location = new System.Drawing.Point(293, 229);
+            this.chkActivo.Location = new System.Drawing.Point(293, 258);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 27;
+            this.chkActivo.TabIndex = 31;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -439,7 +500,7 @@
             // 
             // 
             this.txtReferencia.CustomButton.Image = null;
-            this.txtReferencia.CustomButton.Location = new System.Drawing.Point(452, 1);
+            this.txtReferencia.CustomButton.Location = new System.Drawing.Point(159, 1);
             this.txtReferencia.CustomButton.Name = "";
             this.txtReferencia.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtReferencia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -448,7 +509,7 @@
             this.txtReferencia.CustomButton.UseSelectable = true;
             this.txtReferencia.CustomButton.Visible = false;
             this.txtReferencia.Lines = new string[0];
-            this.txtReferencia.Location = new System.Drawing.Point(82, 516);
+            this.txtReferencia.Location = new System.Drawing.Point(375, 442);
             this.txtReferencia.MaxLength = 32767;
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.PasswordChar = '\0';
@@ -457,7 +518,7 @@
             this.txtReferencia.SelectionLength = 0;
             this.txtReferencia.SelectionStart = 0;
             this.txtReferencia.ShortcutsEnabled = true;
-            this.txtReferencia.Size = new System.Drawing.Size(474, 23);
+            this.txtReferencia.Size = new System.Drawing.Size(181, 23);
             this.txtReferencia.TabIndex = 51;
             this.txtReferencia.UseCustomBackColor = true;
             this.txtReferencia.UseSelectable = true;
@@ -469,7 +530,7 @@
             // 
             this.lblReferencia.AutoSize = true;
             this.lblReferencia.ForeColor = System.Drawing.Color.Navy;
-            this.lblReferencia.Location = new System.Drawing.Point(1, 518);
+            this.lblReferencia.Location = new System.Drawing.Point(289, 444);
             this.lblReferencia.Name = "lblReferencia";
             this.lblReferencia.Size = new System.Drawing.Size(73, 19);
             this.lblReferencia.TabIndex = 50;
@@ -492,7 +553,7 @@
             this.txtDireccion02.CustomButton.UseSelectable = true;
             this.txtDireccion02.CustomButton.Visible = false;
             this.txtDireccion02.Lines = new string[0];
-            this.txtDireccion02.Location = new System.Drawing.Point(82, 482);
+            this.txtDireccion02.Location = new System.Drawing.Point(82, 512);
             this.txtDireccion02.MaxLength = 32767;
             this.txtDireccion02.Name = "txtDireccion02";
             this.txtDireccion02.PasswordChar = '\0';
@@ -502,7 +563,7 @@
             this.txtDireccion02.SelectionStart = 0;
             this.txtDireccion02.ShortcutsEnabled = true;
             this.txtDireccion02.Size = new System.Drawing.Size(474, 23);
-            this.txtDireccion02.TabIndex = 49;
+            this.txtDireccion02.TabIndex = 55;
             this.txtDireccion02.UseCustomBackColor = true;
             this.txtDireccion02.UseSelectable = true;
             this.txtDireccion02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -513,10 +574,10 @@
             // 
             this.lblDireccion02.AutoSize = true;
             this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion02.Location = new System.Drawing.Point(-1, 484);
+            this.lblDireccion02.Location = new System.Drawing.Point(-1, 514);
             this.lblDireccion02.Name = "lblDireccion02";
             this.lblDireccion02.Size = new System.Drawing.Size(84, 19);
-            this.lblDireccion02.TabIndex = 48;
+            this.lblDireccion02.TabIndex = 54;
             this.lblDireccion02.Text = "Dirección 02:";
             this.lblDireccion02.UseCustomForeColor = true;
             // 
@@ -536,7 +597,7 @@
             this.txtDireccion01.CustomButton.UseSelectable = true;
             this.txtDireccion01.CustomButton.Visible = false;
             this.txtDireccion01.Lines = new string[0];
-            this.txtDireccion01.Location = new System.Drawing.Point(82, 447);
+            this.txtDireccion01.Location = new System.Drawing.Point(82, 477);
             this.txtDireccion01.MaxLength = 32767;
             this.txtDireccion01.Name = "txtDireccion01";
             this.txtDireccion01.PasswordChar = '\0';
@@ -546,7 +607,7 @@
             this.txtDireccion01.SelectionStart = 0;
             this.txtDireccion01.ShortcutsEnabled = true;
             this.txtDireccion01.Size = new System.Drawing.Size(474, 23);
-            this.txtDireccion01.TabIndex = 47;
+            this.txtDireccion01.TabIndex = 53;
             this.txtDireccion01.UseCustomBackColor = true;
             this.txtDireccion01.UseSelectable = true;
             this.txtDireccion01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -557,10 +618,10 @@
             // 
             this.lblDireccion01.AutoSize = true;
             this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion01.Location = new System.Drawing.Point(-1, 449);
+            this.lblDireccion01.Location = new System.Drawing.Point(-1, 479);
             this.lblDireccion01.Name = "lblDireccion01";
             this.lblDireccion01.Size = new System.Drawing.Size(82, 19);
-            this.lblDireccion01.TabIndex = 46;
+            this.lblDireccion01.TabIndex = 52;
             this.lblDireccion01.Text = "Dirección 01:";
             this.lblDireccion01.UseCustomForeColor = true;
             // 
@@ -580,7 +641,7 @@
             this.txtNumVia.CustomButton.UseSelectable = true;
             this.txtNumVia.CustomButton.Visible = false;
             this.txtNumVia.Lines = new string[0];
-            this.txtNumVia.Location = new System.Drawing.Point(82, 412);
+            this.txtNumVia.Location = new System.Drawing.Point(82, 442);
             this.txtNumVia.MaxLength = 32767;
             this.txtNumVia.Name = "txtNumVia";
             this.txtNumVia.PasswordChar = '\0';
@@ -590,7 +651,7 @@
             this.txtNumVia.SelectionStart = 0;
             this.txtNumVia.ShortcutsEnabled = true;
             this.txtNumVia.Size = new System.Drawing.Size(184, 23);
-            this.txtNumVia.TabIndex = 45;
+            this.txtNumVia.TabIndex = 49;
             this.txtNumVia.UseCustomBackColor = true;
             this.txtNumVia.UseSelectable = true;
             this.txtNumVia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -601,10 +662,10 @@
             // 
             this.lblNumVia.AutoSize = true;
             this.lblNumVia.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumVia.Location = new System.Drawing.Point(-1, 414);
+            this.lblNumVia.Location = new System.Drawing.Point(-1, 444);
             this.lblNumVia.Name = "lblNumVia";
             this.lblNumVia.Size = new System.Drawing.Size(66, 19);
-            this.lblNumVia.TabIndex = 44;
+            this.lblNumVia.TabIndex = 48;
             this.lblNumVia.Text = "Num. Vía:";
             this.lblNumVia.UseCustomForeColor = true;
             // 
@@ -615,20 +676,20 @@
             this.cboNacionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboNacionalidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNacionalidad.FormattingEnabled = true;
-            this.cboNacionalidad.Location = new System.Drawing.Point(375, 308);
+            this.cboNacionalidad.Location = new System.Drawing.Point(375, 338);
             this.cboNacionalidad.Name = "cboNacionalidad";
             this.cboNacionalidad.Size = new System.Drawing.Size(183, 23);
-            this.cboNacionalidad.TabIndex = 35;
+            this.cboNacionalidad.TabIndex = 39;
             this.cboNacionalidad.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblNacionalidad
             // 
             this.lblNacionalidad.AutoSize = true;
             this.lblNacionalidad.ForeColor = System.Drawing.Color.Navy;
-            this.lblNacionalidad.Location = new System.Drawing.Point(291, 310);
+            this.lblNacionalidad.Location = new System.Drawing.Point(291, 340);
             this.lblNacionalidad.Name = "lblNacionalidad";
             this.lblNacionalidad.Size = new System.Drawing.Size(89, 19);
-            this.lblNacionalidad.TabIndex = 34;
+            this.lblNacionalidad.TabIndex = 38;
             this.lblNacionalidad.Text = "Nacionalidad:";
             this.lblNacionalidad.UseCustomForeColor = true;
             // 
@@ -639,20 +700,20 @@
             this.cboProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(376, 274);
+            this.cboProvincia.Location = new System.Drawing.Point(376, 304);
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(182, 23);
-            this.cboProvincia.TabIndex = 31;
+            this.cboProvincia.TabIndex = 35;
             this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.ForeColor = System.Drawing.Color.Navy;
-            this.lblProvincia.Location = new System.Drawing.Point(292, 276);
+            this.lblProvincia.Location = new System.Drawing.Point(292, 306);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(65, 19);
-            this.lblProvincia.TabIndex = 30;
+            this.lblProvincia.TabIndex = 34;
             this.lblProvincia.Text = "Provincia:";
             this.lblProvincia.UseCustomForeColor = true;
             // 
@@ -663,20 +724,20 @@
             this.cboDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDepartamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDepartamento.FormattingEnabled = true;
-            this.cboDepartamento.Location = new System.Drawing.Point(83, 276);
+            this.cboDepartamento.Location = new System.Drawing.Point(83, 306);
             this.cboDepartamento.Name = "cboDepartamento";
             this.cboDepartamento.Size = new System.Drawing.Size(182, 23);
-            this.cboDepartamento.TabIndex = 29;
+            this.cboDepartamento.TabIndex = 33;
             this.cboDepartamento.SelectedIndexChanged += new System.EventHandler(this.cboDepartamento_SelectedIndexChanged);
             // 
             // lblDepartamento
             // 
             this.lblDepartamento.AutoSize = true;
             this.lblDepartamento.ForeColor = System.Drawing.Color.Navy;
-            this.lblDepartamento.Location = new System.Drawing.Point(-2, 278);
+            this.lblDepartamento.Location = new System.Drawing.Point(-2, 308);
             this.lblDepartamento.Name = "lblDepartamento";
             this.lblDepartamento.Size = new System.Drawing.Size(41, 19);
-            this.lblDepartamento.TabIndex = 28;
+            this.lblDepartamento.TabIndex = 32;
             this.lblDepartamento.Text = "Dpto:";
             this.lblDepartamento.UseCustomForeColor = true;
             // 
@@ -687,20 +748,20 @@
             this.cboDistrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDistrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDistrito.FormattingEnabled = true;
-            this.cboDistrito.Location = new System.Drawing.Point(82, 310);
+            this.cboDistrito.Location = new System.Drawing.Point(82, 340);
             this.cboDistrito.Name = "cboDistrito";
             this.cboDistrito.Size = new System.Drawing.Size(184, 23);
-            this.cboDistrito.TabIndex = 33;
+            this.cboDistrito.TabIndex = 37;
             this.cboDistrito.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblDistrito
             // 
             this.lblDistrito.AutoSize = true;
             this.lblDistrito.ForeColor = System.Drawing.Color.Navy;
-            this.lblDistrito.Location = new System.Drawing.Point(-2, 312);
+            this.lblDistrito.Location = new System.Drawing.Point(-2, 342);
             this.lblDistrito.Name = "lblDistrito";
             this.lblDistrito.Size = new System.Drawing.Size(53, 19);
-            this.lblDistrito.TabIndex = 32;
+            this.lblDistrito.TabIndex = 36;
             this.lblDistrito.Text = "Distrito:";
             this.lblDistrito.UseCustomForeColor = true;
             // 
@@ -720,7 +781,7 @@
             this.txtNomVia.CustomButton.UseSelectable = true;
             this.txtNomVia.CustomButton.Visible = false;
             this.txtNomVia.Lines = new string[0];
-            this.txtNomVia.Location = new System.Drawing.Point(375, 378);
+            this.txtNomVia.Location = new System.Drawing.Point(375, 408);
             this.txtNomVia.MaxLength = 32767;
             this.txtNomVia.Name = "txtNomVia";
             this.txtNomVia.PasswordChar = '\0';
@@ -730,7 +791,7 @@
             this.txtNomVia.SelectionStart = 0;
             this.txtNomVia.ShortcutsEnabled = true;
             this.txtNomVia.Size = new System.Drawing.Size(182, 23);
-            this.txtNomVia.TabIndex = 43;
+            this.txtNomVia.TabIndex = 47;
             this.txtNomVia.UseCustomBackColor = true;
             this.txtNomVia.UseSelectable = true;
             this.txtNomVia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -741,10 +802,10 @@
             // 
             this.lblNomVia.AutoSize = true;
             this.lblNomVia.ForeColor = System.Drawing.Color.Navy;
-            this.lblNomVia.Location = new System.Drawing.Point(292, 380);
+            this.lblNomVia.Location = new System.Drawing.Point(292, 410);
             this.lblNomVia.Name = "lblNomVia";
             this.lblNomVia.Size = new System.Drawing.Size(67, 19);
-            this.lblNomVia.TabIndex = 42;
+            this.lblNomVia.TabIndex = 46;
             this.lblNomVia.Text = "Nom. Vía:";
             this.lblNomVia.UseCustomForeColor = true;
             // 
@@ -764,7 +825,7 @@
             this.txtNomZona.CustomButton.UseSelectable = true;
             this.txtNomZona.CustomButton.Visible = false;
             this.txtNomZona.Lines = new string[0];
-            this.txtNomZona.Location = new System.Drawing.Point(375, 345);
+            this.txtNomZona.Location = new System.Drawing.Point(375, 375);
             this.txtNomZona.MaxLength = 32767;
             this.txtNomZona.Name = "txtNomZona";
             this.txtNomZona.PasswordChar = '\0';
@@ -774,7 +835,7 @@
             this.txtNomZona.SelectionStart = 0;
             this.txtNomZona.ShortcutsEnabled = true;
             this.txtNomZona.Size = new System.Drawing.Size(182, 23);
-            this.txtNomZona.TabIndex = 39;
+            this.txtNomZona.TabIndex = 43;
             this.txtNomZona.UseCustomBackColor = true;
             this.txtNomZona.UseSelectable = true;
             this.txtNomZona.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -785,10 +846,10 @@
             // 
             this.lblNomZona.AutoSize = true;
             this.lblNomZona.ForeColor = System.Drawing.Color.Navy;
-            this.lblNomZona.Location = new System.Drawing.Point(292, 347);
+            this.lblNomZona.Location = new System.Drawing.Point(292, 377);
             this.lblNomZona.Name = "lblNomZona";
             this.lblNomZona.Size = new System.Drawing.Size(79, 19);
-            this.lblNomZona.TabIndex = 38;
+            this.lblNomZona.TabIndex = 42;
             this.lblNomZona.Text = "Nom. Zona:";
             this.lblNomZona.UseCustomForeColor = true;
             // 
@@ -799,20 +860,20 @@
             this.cboVia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboVia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboVia.FormattingEnabled = true;
-            this.cboVia.Location = new System.Drawing.Point(82, 378);
+            this.cboVia.Location = new System.Drawing.Point(82, 408);
             this.cboVia.Name = "cboVia";
             this.cboVia.Size = new System.Drawing.Size(184, 23);
-            this.cboVia.TabIndex = 41;
+            this.cboVia.TabIndex = 45;
             this.cboVia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblVia
             // 
             this.lblVia.AutoSize = true;
             this.lblVia.ForeColor = System.Drawing.Color.Navy;
-            this.lblVia.Location = new System.Drawing.Point(-1, 380);
+            this.lblVia.Location = new System.Drawing.Point(-1, 410);
             this.lblVia.Name = "lblVia";
             this.lblVia.Size = new System.Drawing.Size(60, 19);
-            this.lblVia.TabIndex = 40;
+            this.lblVia.TabIndex = 44;
             this.lblVia.Text = "Tipo Vía:";
             this.lblVia.UseCustomForeColor = true;
             // 
@@ -823,20 +884,20 @@
             this.cboZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboZona.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboZona.FormattingEnabled = true;
-            this.cboZona.Location = new System.Drawing.Point(82, 345);
+            this.cboZona.Location = new System.Drawing.Point(82, 375);
             this.cboZona.Name = "cboZona";
             this.cboZona.Size = new System.Drawing.Size(184, 23);
-            this.cboZona.TabIndex = 37;
+            this.cboZona.TabIndex = 41;
             this.cboZona.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblZona
             // 
             this.lblZona.AutoSize = true;
             this.lblZona.ForeColor = System.Drawing.Color.Navy;
-            this.lblZona.Location = new System.Drawing.Point(-1, 347);
+            this.lblZona.Location = new System.Drawing.Point(-1, 377);
             this.lblZona.Name = "lblZona";
             this.lblZona.Size = new System.Drawing.Size(72, 19);
-            this.lblZona.TabIndex = 36;
+            this.lblZona.TabIndex = 40;
             this.lblZona.Text = "Tipo Zona:";
             this.lblZona.UseCustomForeColor = true;
             // 
@@ -856,7 +917,7 @@
             this.txtNumRuc.CustomButton.UseSelectable = true;
             this.txtNumRuc.CustomButton.Visible = false;
             this.txtNumRuc.Lines = new string[0];
-            this.txtNumRuc.Location = new System.Drawing.Point(82, 227);
+            this.txtNumRuc.Location = new System.Drawing.Point(82, 256);
             this.txtNumRuc.MaxLength = 32767;
             this.txtNumRuc.Name = "txtNumRuc";
             this.txtNumRuc.PasswordChar = '\0';
@@ -866,7 +927,7 @@
             this.txtNumRuc.SelectionStart = 0;
             this.txtNumRuc.ShortcutsEnabled = true;
             this.txtNumRuc.Size = new System.Drawing.Size(184, 23);
-            this.txtNumRuc.TabIndex = 26;
+            this.txtNumRuc.TabIndex = 30;
             this.txtNumRuc.UseCustomBackColor = true;
             this.txtNumRuc.UseSelectable = true;
             this.txtNumRuc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -877,10 +938,10 @@
             // 
             this.lblNumRuc.AutoSize = true;
             this.lblNumRuc.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumRuc.Location = new System.Drawing.Point(1, 229);
+            this.lblNumRuc.Location = new System.Drawing.Point(1, 258);
             this.lblNumRuc.Name = "lblNumRuc";
             this.lblNumRuc.Size = new System.Drawing.Size(74, 19);
-            this.lblNumRuc.TabIndex = 25;
+            this.lblNumRuc.TabIndex = 29;
             this.lblNumRuc.Text = "Num. RUC:";
             this.lblNumRuc.UseCustomForeColor = true;
             // 
@@ -900,7 +961,7 @@
             this.txtNumDoc.CustomButton.UseSelectable = true;
             this.txtNumDoc.CustomButton.Visible = false;
             this.txtNumDoc.Lines = new string[0];
-            this.txtNumDoc.Location = new System.Drawing.Point(375, 193);
+            this.txtNumDoc.Location = new System.Drawing.Point(375, 222);
             this.txtNumDoc.MaxLength = 32767;
             this.txtNumDoc.Name = "txtNumDoc";
             this.txtNumDoc.PasswordChar = '\0';
@@ -910,7 +971,7 @@
             this.txtNumDoc.SelectionStart = 0;
             this.txtNumDoc.ShortcutsEnabled = true;
             this.txtNumDoc.Size = new System.Drawing.Size(182, 23);
-            this.txtNumDoc.TabIndex = 24;
+            this.txtNumDoc.TabIndex = 28;
             this.txtNumDoc.UseCustomBackColor = true;
             this.txtNumDoc.UseSelectable = true;
             this.txtNumDoc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -921,10 +982,10 @@
             // 
             this.lblNumDoc.AutoSize = true;
             this.lblNumDoc.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumDoc.Location = new System.Drawing.Point(289, 197);
+            this.lblNumDoc.Location = new System.Drawing.Point(289, 226);
             this.lblNumDoc.Name = "lblNumDoc";
             this.lblNumDoc.Size = new System.Drawing.Size(71, 19);
-            this.lblNumDoc.TabIndex = 23;
+            this.lblNumDoc.TabIndex = 27;
             this.lblNumDoc.Text = "Num. Doc:";
             this.lblNumDoc.UseCustomForeColor = true;
             // 
@@ -935,21 +996,21 @@
             this.cboTipoDocIdentidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoDocIdentidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoDocIdentidad.FormattingEnabled = true;
-            this.cboTipoDocIdentidad.Location = new System.Drawing.Point(82, 193);
+            this.cboTipoDocIdentidad.Location = new System.Drawing.Point(82, 222);
             this.cboTipoDocIdentidad.Name = "cboTipoDocIdentidad";
             this.cboTipoDocIdentidad.Size = new System.Drawing.Size(184, 23);
-            this.cboTipoDocIdentidad.TabIndex = 22;
+            this.cboTipoDocIdentidad.TabIndex = 26;
             this.cboTipoDocIdentidad.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblTipoDocIdentidad
             // 
             this.lblTipoDocIdentidad.AutoSize = true;
             this.lblTipoDocIdentidad.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoDocIdentidad.Location = new System.Drawing.Point(-1, 195);
+            this.lblTipoDocIdentidad.Location = new System.Drawing.Point(-2, 224);
             this.lblTipoDocIdentidad.Name = "lblTipoDocIdentidad";
-            this.lblTipoDocIdentidad.Size = new System.Drawing.Size(71, 19);
-            this.lblTipoDocIdentidad.TabIndex = 21;
-            this.lblTipoDocIdentidad.Text = "Doc. Ident:";
+            this.lblTipoDocIdentidad.Size = new System.Drawing.Size(68, 19);
+            this.lblTipoDocIdentidad.TabIndex = 25;
+            this.lblTipoDocIdentidad.Text = "Doc Ident:";
             this.lblTipoDocIdentidad.UseCustomForeColor = true;
             // 
             // txtNomComercial
@@ -968,7 +1029,7 @@
             this.txtNomComercial.CustomButton.UseSelectable = true;
             this.txtNomComercial.CustomButton.Visible = false;
             this.txtNomComercial.Lines = new string[0];
-            this.txtNomComercial.Location = new System.Drawing.Point(375, 159);
+            this.txtNomComercial.Location = new System.Drawing.Point(375, 188);
             this.txtNomComercial.MaxLength = 32767;
             this.txtNomComercial.Name = "txtNomComercial";
             this.txtNomComercial.PasswordChar = '\0';
@@ -978,7 +1039,7 @@
             this.txtNomComercial.SelectionStart = 0;
             this.txtNomComercial.ShortcutsEnabled = true;
             this.txtNomComercial.Size = new System.Drawing.Size(182, 23);
-            this.txtNomComercial.TabIndex = 20;
+            this.txtNomComercial.TabIndex = 24;
             this.txtNomComercial.UseCustomBackColor = true;
             this.txtNomComercial.UseSelectable = true;
             this.txtNomComercial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -989,10 +1050,10 @@
             // 
             this.lblNomComercial.AutoSize = true;
             this.lblNomComercial.ForeColor = System.Drawing.Color.Navy;
-            this.lblNomComercial.Location = new System.Drawing.Point(289, 161);
+            this.lblNomComercial.Location = new System.Drawing.Point(289, 190);
             this.lblNomComercial.Name = "lblNomComercial";
             this.lblNomComercial.Size = new System.Drawing.Size(89, 19);
-            this.lblNomComercial.TabIndex = 19;
+            this.lblNomComercial.TabIndex = 23;
             this.lblNomComercial.Text = "N. Comercial:";
             this.lblNomComercial.UseCustomForeColor = true;
             // 
@@ -1012,7 +1073,7 @@
             this.txtRazonSocial.CustomButton.UseSelectable = true;
             this.txtRazonSocial.CustomButton.Visible = false;
             this.txtRazonSocial.Lines = new string[0];
-            this.txtRazonSocial.Location = new System.Drawing.Point(82, 159);
+            this.txtRazonSocial.Location = new System.Drawing.Point(82, 188);
             this.txtRazonSocial.MaxLength = 32767;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.PasswordChar = '\0';
@@ -1022,7 +1083,7 @@
             this.txtRazonSocial.SelectionStart = 0;
             this.txtRazonSocial.ShortcutsEnabled = true;
             this.txtRazonSocial.Size = new System.Drawing.Size(184, 23);
-            this.txtRazonSocial.TabIndex = 18;
+            this.txtRazonSocial.TabIndex = 22;
             this.txtRazonSocial.UseCustomBackColor = true;
             this.txtRazonSocial.UseSelectable = true;
             this.txtRazonSocial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1033,10 +1094,10 @@
             // 
             this.lblRazonSocial.AutoSize = true;
             this.lblRazonSocial.ForeColor = System.Drawing.Color.Navy;
-            this.lblRazonSocial.Location = new System.Drawing.Point(0, 161);
+            this.lblRazonSocial.Location = new System.Drawing.Point(0, 190);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(86, 19);
-            this.lblRazonSocial.TabIndex = 17;
+            this.lblRazonSocial.TabIndex = 21;
             this.lblRazonSocial.Text = "Razón Social:";
             this.lblRazonSocial.UseCustomForeColor = true;
             // 
@@ -1133,9 +1194,9 @@
             // 
             this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(1, 260);
+            this.panel3.Location = new System.Drawing.Point(1, 289);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(555, 8);
+            this.panel3.Size = new System.Drawing.Size(555, 6);
             this.panel3.TabIndex = 59;
             // 
             // panel1
@@ -1144,7 +1205,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(1, 142);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(555, 8);
+            this.panel1.Size = new System.Drawing.Size(555, 6);
             this.panel1.TabIndex = 57;
             // 
             // lblFechaNac
@@ -1167,7 +1228,7 @@
             this.cboEstadoCivil.FormattingEnabled = true;
             this.cboEstadoCivil.Location = new System.Drawing.Point(84, 111);
             this.cboEstadoCivil.Name = "cboEstadoCivil";
-            this.cboEstadoCivil.Size = new System.Drawing.Size(183, 23);
+            this.cboEstadoCivil.Size = new System.Drawing.Size(181, 23);
             this.cboEstadoCivil.TabIndex = 13;
             this.cboEstadoCivil.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -1198,7 +1259,7 @@
             this.txtSegundoNom.CustomButton.UseSelectable = true;
             this.txtSegundoNom.CustomButton.Visible = false;
             this.txtSegundoNom.Lines = new string[0];
-            this.txtSegundoNom.Location = new System.Drawing.Point(375, 44);
+            this.txtSegundoNom.Location = new System.Drawing.Point(376, 9);
             this.txtSegundoNom.MaxLength = 32767;
             this.txtSegundoNom.Name = "txtSegundoNom";
             this.txtSegundoNom.PasswordChar = '\0';
@@ -1208,7 +1269,7 @@
             this.txtSegundoNom.SelectionStart = 0;
             this.txtSegundoNom.ShortcutsEnabled = true;
             this.txtSegundoNom.Size = new System.Drawing.Size(182, 23);
-            this.txtSegundoNom.TabIndex = 7;
+            this.txtSegundoNom.TabIndex = 3;
             this.txtSegundoNom.UseCustomBackColor = true;
             this.txtSegundoNom.UseSelectable = true;
             this.txtSegundoNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1219,10 +1280,10 @@
             // 
             this.lblSegundoNom.AutoSize = true;
             this.lblSegundoNom.ForeColor = System.Drawing.Color.Navy;
-            this.lblSegundoNom.Location = new System.Drawing.Point(289, 46);
+            this.lblSegundoNom.Location = new System.Drawing.Point(290, 11);
             this.lblSegundoNom.Name = "lblSegundoNom";
             this.lblSegundoNom.Size = new System.Drawing.Size(78, 19);
-            this.lblSegundoNom.TabIndex = 6;
+            this.lblSegundoNom.TabIndex = 2;
             this.lblSegundoNom.Text = "2° Nombre:";
             this.lblSegundoNom.UseCustomForeColor = true;
             // 
@@ -1242,7 +1303,7 @@
             this.txtApMaterno.CustomButton.UseSelectable = true;
             this.txtApMaterno.CustomButton.Visible = false;
             this.txtApMaterno.Lines = new string[0];
-            this.txtApMaterno.Location = new System.Drawing.Point(375, 11);
+            this.txtApMaterno.Location = new System.Drawing.Point(375, 43);
             this.txtApMaterno.MaxLength = 32767;
             this.txtApMaterno.Name = "txtApMaterno";
             this.txtApMaterno.PasswordChar = '\0';
@@ -1252,7 +1313,7 @@
             this.txtApMaterno.SelectionStart = 0;
             this.txtApMaterno.ShortcutsEnabled = true;
             this.txtApMaterno.Size = new System.Drawing.Size(181, 23);
-            this.txtApMaterno.TabIndex = 3;
+            this.txtApMaterno.TabIndex = 7;
             this.txtApMaterno.UseCustomBackColor = true;
             this.txtApMaterno.UseSelectable = true;
             this.txtApMaterno.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1263,10 +1324,10 @@
             // 
             this.lblApMaterno.AutoSize = true;
             this.lblApMaterno.ForeColor = System.Drawing.Color.Navy;
-            this.lblApMaterno.Location = new System.Drawing.Point(289, 13);
+            this.lblApMaterno.Location = new System.Drawing.Point(289, 45);
             this.lblApMaterno.Name = "lblApMaterno";
             this.lblApMaterno.Size = new System.Drawing.Size(86, 19);
-            this.lblApMaterno.TabIndex = 2;
+            this.lblApMaterno.TabIndex = 6;
             this.lblApMaterno.Text = "Ap. Materno:";
             this.lblApMaterno.UseCustomForeColor = true;
             // 
@@ -1286,7 +1347,7 @@
             this.txtPrimerNom.CustomButton.UseSelectable = true;
             this.txtPrimerNom.CustomButton.Visible = false;
             this.txtPrimerNom.Lines = new string[0];
-            this.txtPrimerNom.Location = new System.Drawing.Point(83, 44);
+            this.txtPrimerNom.Location = new System.Drawing.Point(84, 9);
             this.txtPrimerNom.MaxLength = 32767;
             this.txtPrimerNom.Name = "txtPrimerNom";
             this.txtPrimerNom.PasswordChar = '\0';
@@ -1296,7 +1357,7 @@
             this.txtPrimerNom.SelectionStart = 0;
             this.txtPrimerNom.ShortcutsEnabled = true;
             this.txtPrimerNom.Size = new System.Drawing.Size(184, 23);
-            this.txtPrimerNom.TabIndex = 5;
+            this.txtPrimerNom.TabIndex = 1;
             this.txtPrimerNom.UseCustomBackColor = true;
             this.txtPrimerNom.UseSelectable = true;
             this.txtPrimerNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1307,10 +1368,10 @@
             // 
             this.lblPrimerNom.AutoSize = true;
             this.lblPrimerNom.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrimerNom.Location = new System.Drawing.Point(0, 46);
+            this.lblPrimerNom.Location = new System.Drawing.Point(1, 11);
             this.lblPrimerNom.Name = "lblPrimerNom";
             this.lblPrimerNom.Size = new System.Drawing.Size(76, 19);
-            this.lblPrimerNom.TabIndex = 4;
+            this.lblPrimerNom.TabIndex = 0;
             this.lblPrimerNom.Text = "1° Nombre:";
             this.lblPrimerNom.UseCustomForeColor = true;
             // 
@@ -1330,7 +1391,7 @@
             this.txtApPaterno.CustomButton.UseSelectable = true;
             this.txtApPaterno.CustomButton.Visible = false;
             this.txtApPaterno.Lines = new string[0];
-            this.txtApPaterno.Location = new System.Drawing.Point(83, 11);
+            this.txtApPaterno.Location = new System.Drawing.Point(83, 43);
             this.txtApPaterno.MaxLength = 32767;
             this.txtApPaterno.Name = "txtApPaterno";
             this.txtApPaterno.PasswordChar = '\0';
@@ -1340,7 +1401,7 @@
             this.txtApPaterno.SelectionStart = 0;
             this.txtApPaterno.ShortcutsEnabled = true;
             this.txtApPaterno.Size = new System.Drawing.Size(184, 23);
-            this.txtApPaterno.TabIndex = 1;
+            this.txtApPaterno.TabIndex = 5;
             this.txtApPaterno.UseCustomBackColor = true;
             this.txtApPaterno.UseSelectable = true;
             this.txtApPaterno.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1351,10 +1412,10 @@
             // 
             this.lblApPaterno.AutoSize = true;
             this.lblApPaterno.ForeColor = System.Drawing.Color.Navy;
-            this.lblApPaterno.Location = new System.Drawing.Point(0, 13);
+            this.lblApPaterno.Location = new System.Drawing.Point(0, 45);
             this.lblApPaterno.Name = "lblApPaterno";
             this.lblApPaterno.Size = new System.Drawing.Size(81, 19);
-            this.lblApPaterno.TabIndex = 0;
+            this.lblApPaterno.TabIndex = 4;
             this.lblApPaterno.Text = "Ap. Paterno:";
             this.lblApPaterno.UseCustomForeColor = true;
             // 
@@ -3302,12 +3363,34 @@
             this.lblNumReg.TabIndex = 108;
             this.lblNumReg.Text = "Total: ";
             // 
+            // btnClaseEmp
+            // 
+            this.btnClaseEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnClaseEmp.Image")));
+            this.btnClaseEmp.ImageSize = 24;
+            this.btnClaseEmp.Location = new System.Drawing.Point(244, 151);
+            this.btnClaseEmp.Name = "btnClaseEmp";
+            this.btnClaseEmp.Size = new System.Drawing.Size(29, 27);
+            this.btnClaseEmp.TabIndex = 56;
+            this.btnClaseEmp.UseSelectable = true;
+            this.btnClaseEmp.Click += new System.EventHandler(this.btnClaseEmp_Click);
+            // 
+            // btnCategoriaEmp
+            // 
+            this.btnCategoriaEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaEmp.Image")));
+            this.btnCategoriaEmp.ImageSize = 24;
+            this.btnCategoriaEmp.Location = new System.Drawing.Point(531, 151);
+            this.btnCategoriaEmp.Name = "btnCategoriaEmp";
+            this.btnCategoriaEmp.Size = new System.Drawing.Size(29, 27);
+            this.btnCategoriaEmp.TabIndex = 57;
+            this.btnCategoriaEmp.UseSelectable = true;
+            this.btnCategoriaEmp.Click += new System.EventHandler(this.btnCategoriaEmp_Click);
+            // 
             // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 713);
+            this.ClientSize = new System.Drawing.Size(919, 713);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -3530,5 +3613,11 @@
         private System.Windows.Forms.Label lblNumInactivo;
         private System.Windows.Forms.Label lblNumActivo;
         private System.Windows.Forms.Label lblNumReg;
+        private System.Windows.Forms.ComboBox cboClaseEmp;
+        private MetroFramework.Controls.MetroLabel lblClaseEmp;
+        private MetroFramework.Controls.MetroLabel lblCategoriaEmp;
+        private System.Windows.Forms.ComboBox cboCategoriaEmp;
+        private MetroFramework.Controls.MetroLink btnCategoriaEmp;
+        private MetroFramework.Controls.MetroLink btnClaseEmp;
     }
 }
