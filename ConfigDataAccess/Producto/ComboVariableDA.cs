@@ -39,17 +39,23 @@ namespace ConfigDataAccess.Producto
             int id = 0;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
-                try
+                using (var tns = ctx.Database.BeginTransaction())
                 {
-                    ctx.PROt15_combo_variable.Add(obj);
-                    ctx.SaveChanges();
-                    id = obj.id_combo_variable;
+                    try
+                    {
+                        ctx.PROt15_combo_variable.Add(obj);
+                        ctx.SaveChanges();
+                        tns.Commit();
+                        id = obj.id_combo_variable;
+                    }
+                    catch (Exception e)
+                    {
+                        tns.Rollback();
+                        var log = new Log();
+                        log.ArchiveLog("Insertar Combo Variable: ", e.Message);
+                    }
                 }
-                catch (Exception e)
-                {
-                    var log = new Log();
-                    log.ArchiveLog("Insertar Combo Variable: ", e.Message);
-                }
+
             }
             return id;
         }
@@ -82,19 +88,24 @@ namespace ConfigDataAccess.Producto
         {
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
-                try
+                using (var tns = ctx.Database.BeginTransaction())
                 {
-                    var original = ctx.PROt15_combo_variable.Find(actualizado.id_combo_variable);
-                    if (original != null && original.id_combo_variable > 0)
+                    try
                     {
-                        ctx.Entry(original).CurrentValues.SetValues(actualizado);
-                        ctx.SaveChanges();
+                        var original = ctx.PROt15_combo_variable.Find(actualizado.id_combo_variable);
+                        if (original != null && original.id_combo_variable > 0)
+                        {
+                            ctx.Entry(original).CurrentValues.SetValues(actualizado);
+                            ctx.SaveChanges();
+                            tns.Commit();
+                        }
                     }
-                }
-                catch (Exception e)
-                {
-                    var log = new Log();
-                    log.ArchiveLog("Actualizar Combo Variable: ", e.Message);
+                    catch (Exception e)
+                    {
+                        tns.Rollback();
+                        var log = new Log();
+                        log.ArchiveLog("Actualizar Combo Variable: ", e.Message);
+                    }
                 }
             }
         }
