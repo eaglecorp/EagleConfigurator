@@ -37,29 +37,29 @@
             this.dgvEstadoMesa = new System.Windows.Forms.DataGridView();
             this.panelFiltro = new MetroFramework.Controls.MetroPanel();
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
+            this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
+            this.lnkNuevo = new MetroFramework.Controls.MetroLink();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnRollback = new System.Windows.Forms.Button();
+            this.btnCommit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tglListarInactivos = new MetroFramework.Controls.MetroToggle();
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabEstadoMesa = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
             this.lblCodigo = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
             this.lblNombreForm = new System.Windows.Forms.Label();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnRollback = new System.Windows.Forms.Button();
-            this.btnCommit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lnkNuevo = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoMesa)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -168,6 +168,21 @@
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
+            this.btnFilter.Location = new System.Drawing.Point(500, 6);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(37, 30);
+            this.btnFilter.TabIndex = 1;
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // txtFiltro
             // 
             // 
@@ -236,6 +251,91 @@
             this.panelMantenimiento.VerticalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.VerticalScrollbarSize = 10;
             // 
+            // lnkNuevo
+            // 
+            this.lnkNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.lnkNuevo.Location = new System.Drawing.Point(234, 17);
+            this.lnkNuevo.Name = "lnkNuevo";
+            this.lnkNuevo.Size = new System.Drawing.Size(75, 23);
+            this.lnkNuevo.TabIndex = 5;
+            this.lnkNuevo.UseCustomBackColor = true;
+            this.lnkNuevo.UseSelectable = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(3, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(40, 40);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.Location = new System.Drawing.Point(372, 5);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnRollback
+            // 
+            this.btnRollback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnRollback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRollback.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnRollback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnRollback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRollback.Image = ((System.Drawing.Image)(resources.GetObject("btnRollback.Image")));
+            this.btnRollback.Location = new System.Drawing.Point(498, 5);
+            this.btnRollback.Name = "btnRollback";
+            this.btnRollback.Size = new System.Drawing.Size(40, 40);
+            this.btnRollback.TabIndex = 3;
+            this.btnRollback.UseVisualStyleBackColor = false;
+            this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
+            // 
+            // btnCommit
+            // 
+            this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
+            this.btnCommit.Location = new System.Drawing.Point(456, 5);
+            this.btnCommit.Name = "btnCommit";
+            this.btnCommit.Size = new System.Drawing.Size(40, 40);
+            this.btnCommit.TabIndex = 0;
+            this.btnCommit.UseVisualStyleBackColor = false;
+            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(414, 5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(40, 40);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
@@ -285,6 +385,15 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(4, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(530, 8);
+            this.panel2.TabIndex = 86;
             // 
             // chkActivo
             // 
@@ -402,105 +511,6 @@
             this.lblNombreForm.TabIndex = 125;
             this.lblNombreForm.Text = "Estado Mesa";
             // 
-            // btnFilter
-            // 
-            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
-            this.btnFilter.Location = new System.Drawing.Point(500, 6);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(37, 30);
-            this.btnFilter.TabIndex = 1;
-            this.btnFilter.UseVisualStyleBackColor = false;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(3, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(40, 40);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(372, 5);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnRollback
-            // 
-            this.btnRollback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnRollback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRollback.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnRollback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnRollback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRollback.Image = ((System.Drawing.Image)(resources.GetObject("btnRollback.Image")));
-            this.btnRollback.Location = new System.Drawing.Point(498, 5);
-            this.btnRollback.Name = "btnRollback";
-            this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
-            this.btnRollback.UseVisualStyleBackColor = false;
-            this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
-            // 
-            // btnCommit
-            // 
-            this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
-            this.btnCommit.Location = new System.Drawing.Point(456, 5);
-            this.btnCommit.Name = "btnCommit";
-            this.btnCommit.Size = new System.Drawing.Size(40, 40);
-            this.btnCommit.TabIndex = 0;
-            this.btnCommit.UseVisualStyleBackColor = false;
-            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(414, 5);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(4, 52);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(530, 8);
-            this.panel2.TabIndex = 86;
-            // 
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -516,16 +526,6 @@
             // errorProv
             // 
             this.errorProv.ContainerControl = this;
-            // 
-            // lnkNuevo
-            // 
-            this.lnkNuevo.BackColor = System.Drawing.Color.Transparent;
-            this.lnkNuevo.Location = new System.Drawing.Point(234, 17);
-            this.lnkNuevo.Name = "lnkNuevo";
-            this.lnkNuevo.Size = new System.Drawing.Size(75, 23);
-            this.lnkNuevo.TabIndex = 5;
-            this.lnkNuevo.UseCustomBackColor = true;
-            this.lnkNuevo.UseSelectable = true;
             // 
             // FormEstadoMesa
             // 

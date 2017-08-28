@@ -39,6 +39,8 @@
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.tabEmpleado = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.btnCategoriaEmp = new MetroFramework.Controls.MetroLink();
+            this.btnClaseEmp = new MetroFramework.Controls.MetroLink();
             this.lblCategoriaEmp = new MetroFramework.Controls.MetroLabel();
             this.cboCategoriaEmp = new System.Windows.Forms.ComboBox();
             this.cboClaseEmp = new System.Windows.Forms.ComboBox();
@@ -47,8 +49,12 @@
             this.txtReferencia = new MetroFramework.Controls.MetroTextBox();
             this.lblReferencia = new MetroFramework.Controls.MetroLabel();
             this.txtDireccion02 = new MetroFramework.Controls.MetroTextBox();
+            this.txtSegundoNom = new MetroFramework.Controls.MetroTextBox();
+            this.lblPrimerNom = new MetroFramework.Controls.MetroLabel();
             this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
+            this.txtPrimerNom = new MetroFramework.Controls.MetroTextBox();
             this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
+            this.lblSegundoNom = new MetroFramework.Controls.MetroLabel();
             this.lblDireccion01 = new MetroFramework.Controls.MetroLabel();
             this.txtNumVia = new MetroFramework.Controls.MetroTextBox();
             this.lblNumVia = new MetroFramework.Controls.MetroLabel();
@@ -89,12 +95,8 @@
             this.lblFechaNac = new MetroFramework.Controls.MetroLabel();
             this.cboEstadoCivil = new System.Windows.Forms.ComboBox();
             this.lblEstadoCivil = new MetroFramework.Controls.MetroLabel();
-            this.txtSegundoNom = new MetroFramework.Controls.MetroTextBox();
-            this.lblSegundoNom = new MetroFramework.Controls.MetroLabel();
             this.txtApMaterno = new MetroFramework.Controls.MetroTextBox();
             this.lblApMaterno = new MetroFramework.Controls.MetroLabel();
-            this.txtPrimerNom = new MetroFramework.Controls.MetroTextBox();
-            this.lblPrimerNom = new MetroFramework.Controls.MetroLabel();
             this.txtApPaterno = new MetroFramework.Controls.MetroTextBox();
             this.lblApPaterno = new MetroFramework.Controls.MetroLabel();
             this.tabPagDetalles = new MetroFramework.Controls.MetroTabPage();
@@ -206,8 +208,6 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.btnClaseEmp = new MetroFramework.Controls.MetroLink();
-            this.btnCategoriaEmp = new MetroFramework.Controls.MetroLink();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -428,6 +428,28 @@
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // btnCategoriaEmp
+            // 
+            this.btnCategoriaEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaEmp.Image")));
+            this.btnCategoriaEmp.ImageSize = 24;
+            this.btnCategoriaEmp.Location = new System.Drawing.Point(531, 151);
+            this.btnCategoriaEmp.Name = "btnCategoriaEmp";
+            this.btnCategoriaEmp.Size = new System.Drawing.Size(29, 27);
+            this.btnCategoriaEmp.TabIndex = 57;
+            this.btnCategoriaEmp.UseSelectable = true;
+            this.btnCategoriaEmp.Click += new System.EventHandler(this.btnCategoriaEmp_Click);
+            // 
+            // btnClaseEmp
+            // 
+            this.btnClaseEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnClaseEmp.Image")));
+            this.btnClaseEmp.ImageSize = 24;
+            this.btnClaseEmp.Location = new System.Drawing.Point(244, 151);
+            this.btnClaseEmp.Name = "btnClaseEmp";
+            this.btnClaseEmp.Size = new System.Drawing.Size(29, 27);
+            this.btnClaseEmp.TabIndex = 56;
+            this.btnClaseEmp.UseSelectable = true;
+            this.btnClaseEmp.Click += new System.EventHandler(this.btnClaseEmp_Click);
+            // 
             // lblCategoriaEmp
             // 
             this.lblCategoriaEmp.AutoSize = true;
@@ -483,7 +505,7 @@
             this.chkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkActivo.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.chkActivo.ForeColor = System.Drawing.Color.Navy;
             this.chkActivo.Location = new System.Drawing.Point(293, 258);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
@@ -570,6 +592,50 @@
             this.txtDireccion02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtDireccion02.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
+            // txtSegundoNom
+            // 
+            this.txtSegundoNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtSegundoNom.CustomButton.Image = null;
+            this.txtSegundoNom.CustomButton.Location = new System.Drawing.Point(160, 1);
+            this.txtSegundoNom.CustomButton.Name = "";
+            this.txtSegundoNom.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtSegundoNom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSegundoNom.CustomButton.TabIndex = 1;
+            this.txtSegundoNom.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSegundoNom.CustomButton.UseSelectable = true;
+            this.txtSegundoNom.CustomButton.Visible = false;
+            this.txtSegundoNom.Lines = new string[0];
+            this.txtSegundoNom.Location = new System.Drawing.Point(376, 9);
+            this.txtSegundoNom.MaxLength = 32767;
+            this.txtSegundoNom.Name = "txtSegundoNom";
+            this.txtSegundoNom.PasswordChar = '\0';
+            this.txtSegundoNom.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSegundoNom.SelectedText = "";
+            this.txtSegundoNom.SelectionLength = 0;
+            this.txtSegundoNom.SelectionStart = 0;
+            this.txtSegundoNom.ShortcutsEnabled = true;
+            this.txtSegundoNom.Size = new System.Drawing.Size(182, 23);
+            this.txtSegundoNom.TabIndex = 3;
+            this.txtSegundoNom.UseCustomBackColor = true;
+            this.txtSegundoNom.UseSelectable = true;
+            this.txtSegundoNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSegundoNom.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSegundoNom.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblPrimerNom
+            // 
+            this.lblPrimerNom.AutoSize = true;
+            this.lblPrimerNom.ForeColor = System.Drawing.Color.Navy;
+            this.lblPrimerNom.Location = new System.Drawing.Point(1, 11);
+            this.lblPrimerNom.Name = "lblPrimerNom";
+            this.lblPrimerNom.Size = new System.Drawing.Size(76, 19);
+            this.lblPrimerNom.TabIndex = 0;
+            this.lblPrimerNom.Text = "1° Nombre:";
+            this.lblPrimerNom.UseCustomForeColor = true;
+            // 
             // lblDireccion02
             // 
             this.lblDireccion02.AutoSize = true;
@@ -580,6 +646,39 @@
             this.lblDireccion02.TabIndex = 54;
             this.lblDireccion02.Text = "Dirección 02:";
             this.lblDireccion02.UseCustomForeColor = true;
+            // 
+            // txtPrimerNom
+            // 
+            this.txtPrimerNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPrimerNom.CustomButton.Image = null;
+            this.txtPrimerNom.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtPrimerNom.CustomButton.Name = "";
+            this.txtPrimerNom.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPrimerNom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPrimerNom.CustomButton.TabIndex = 1;
+            this.txtPrimerNom.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPrimerNom.CustomButton.UseSelectable = true;
+            this.txtPrimerNom.CustomButton.Visible = false;
+            this.txtPrimerNom.Lines = new string[0];
+            this.txtPrimerNom.Location = new System.Drawing.Point(84, 9);
+            this.txtPrimerNom.MaxLength = 32767;
+            this.txtPrimerNom.Name = "txtPrimerNom";
+            this.txtPrimerNom.PasswordChar = '\0';
+            this.txtPrimerNom.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPrimerNom.SelectedText = "";
+            this.txtPrimerNom.SelectionLength = 0;
+            this.txtPrimerNom.SelectionStart = 0;
+            this.txtPrimerNom.ShortcutsEnabled = true;
+            this.txtPrimerNom.Size = new System.Drawing.Size(184, 23);
+            this.txtPrimerNom.TabIndex = 1;
+            this.txtPrimerNom.UseCustomBackColor = true;
+            this.txtPrimerNom.UseSelectable = true;
+            this.txtPrimerNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPrimerNom.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrimerNom.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtDireccion01
             // 
@@ -613,6 +712,17 @@
             this.txtDireccion01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDireccion01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtDireccion01.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblSegundoNom
+            // 
+            this.lblSegundoNom.AutoSize = true;
+            this.lblSegundoNom.ForeColor = System.Drawing.Color.Navy;
+            this.lblSegundoNom.Location = new System.Drawing.Point(290, 11);
+            this.lblSegundoNom.Name = "lblSegundoNom";
+            this.lblSegundoNom.Size = new System.Drawing.Size(78, 19);
+            this.lblSegundoNom.TabIndex = 2;
+            this.lblSegundoNom.Text = "2° Nombre:";
+            this.lblSegundoNom.UseCustomForeColor = true;
             // 
             // lblDireccion01
             // 
@@ -1243,50 +1353,6 @@
             this.lblEstadoCivil.Text = "Estado Civil:";
             this.lblEstadoCivil.UseCustomForeColor = true;
             // 
-            // txtSegundoNom
-            // 
-            this.txtSegundoNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtSegundoNom.CustomButton.Image = null;
-            this.txtSegundoNom.CustomButton.Location = new System.Drawing.Point(160, 1);
-            this.txtSegundoNom.CustomButton.Name = "";
-            this.txtSegundoNom.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtSegundoNom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSegundoNom.CustomButton.TabIndex = 1;
-            this.txtSegundoNom.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSegundoNom.CustomButton.UseSelectable = true;
-            this.txtSegundoNom.CustomButton.Visible = false;
-            this.txtSegundoNom.Lines = new string[0];
-            this.txtSegundoNom.Location = new System.Drawing.Point(376, 9);
-            this.txtSegundoNom.MaxLength = 32767;
-            this.txtSegundoNom.Name = "txtSegundoNom";
-            this.txtSegundoNom.PasswordChar = '\0';
-            this.txtSegundoNom.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSegundoNom.SelectedText = "";
-            this.txtSegundoNom.SelectionLength = 0;
-            this.txtSegundoNom.SelectionStart = 0;
-            this.txtSegundoNom.ShortcutsEnabled = true;
-            this.txtSegundoNom.Size = new System.Drawing.Size(182, 23);
-            this.txtSegundoNom.TabIndex = 3;
-            this.txtSegundoNom.UseCustomBackColor = true;
-            this.txtSegundoNom.UseSelectable = true;
-            this.txtSegundoNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSegundoNom.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtSegundoNom.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblSegundoNom
-            // 
-            this.lblSegundoNom.AutoSize = true;
-            this.lblSegundoNom.ForeColor = System.Drawing.Color.Navy;
-            this.lblSegundoNom.Location = new System.Drawing.Point(290, 11);
-            this.lblSegundoNom.Name = "lblSegundoNom";
-            this.lblSegundoNom.Size = new System.Drawing.Size(78, 19);
-            this.lblSegundoNom.TabIndex = 2;
-            this.lblSegundoNom.Text = "2° Nombre:";
-            this.lblSegundoNom.UseCustomForeColor = true;
-            // 
             // txtApMaterno
             // 
             this.txtApMaterno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
@@ -1330,50 +1396,6 @@
             this.lblApMaterno.TabIndex = 6;
             this.lblApMaterno.Text = "Ap. Materno:";
             this.lblApMaterno.UseCustomForeColor = true;
-            // 
-            // txtPrimerNom
-            // 
-            this.txtPrimerNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPrimerNom.CustomButton.Image = null;
-            this.txtPrimerNom.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtPrimerNom.CustomButton.Name = "";
-            this.txtPrimerNom.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPrimerNom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPrimerNom.CustomButton.TabIndex = 1;
-            this.txtPrimerNom.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPrimerNom.CustomButton.UseSelectable = true;
-            this.txtPrimerNom.CustomButton.Visible = false;
-            this.txtPrimerNom.Lines = new string[0];
-            this.txtPrimerNom.Location = new System.Drawing.Point(84, 9);
-            this.txtPrimerNom.MaxLength = 32767;
-            this.txtPrimerNom.Name = "txtPrimerNom";
-            this.txtPrimerNom.PasswordChar = '\0';
-            this.txtPrimerNom.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPrimerNom.SelectedText = "";
-            this.txtPrimerNom.SelectionLength = 0;
-            this.txtPrimerNom.SelectionStart = 0;
-            this.txtPrimerNom.ShortcutsEnabled = true;
-            this.txtPrimerNom.Size = new System.Drawing.Size(184, 23);
-            this.txtPrimerNom.TabIndex = 1;
-            this.txtPrimerNom.UseCustomBackColor = true;
-            this.txtPrimerNom.UseSelectable = true;
-            this.txtPrimerNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPrimerNom.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPrimerNom.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblPrimerNom
-            // 
-            this.lblPrimerNom.AutoSize = true;
-            this.lblPrimerNom.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrimerNom.Location = new System.Drawing.Point(1, 11);
-            this.lblPrimerNom.Name = "lblPrimerNom";
-            this.lblPrimerNom.Size = new System.Drawing.Size(76, 19);
-            this.lblPrimerNom.TabIndex = 0;
-            this.lblPrimerNom.Text = "1° Nombre:";
-            this.lblPrimerNom.UseCustomForeColor = true;
             // 
             // txtApPaterno
             // 
@@ -3362,28 +3384,6 @@
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
             this.lblNumReg.TabIndex = 108;
             this.lblNumReg.Text = "Total: ";
-            // 
-            // btnClaseEmp
-            // 
-            this.btnClaseEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnClaseEmp.Image")));
-            this.btnClaseEmp.ImageSize = 24;
-            this.btnClaseEmp.Location = new System.Drawing.Point(244, 151);
-            this.btnClaseEmp.Name = "btnClaseEmp";
-            this.btnClaseEmp.Size = new System.Drawing.Size(29, 27);
-            this.btnClaseEmp.TabIndex = 56;
-            this.btnClaseEmp.UseSelectable = true;
-            this.btnClaseEmp.Click += new System.EventHandler(this.btnClaseEmp_Click);
-            // 
-            // btnCategoriaEmp
-            // 
-            this.btnCategoriaEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaEmp.Image")));
-            this.btnCategoriaEmp.ImageSize = 24;
-            this.btnCategoriaEmp.Location = new System.Drawing.Point(531, 151);
-            this.btnCategoriaEmp.Name = "btnCategoriaEmp";
-            this.btnCategoriaEmp.Size = new System.Drawing.Size(29, 27);
-            this.btnCategoriaEmp.TabIndex = 57;
-            this.btnCategoriaEmp.UseSelectable = true;
-            this.btnCategoriaEmp.Click += new System.EventHandler(this.btnCategoriaEmp_Click);
             // 
             // FormEmpleado
             // 

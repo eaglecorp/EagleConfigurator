@@ -6,20 +6,21 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class PROt13_combo
+    public partial class PROt15_combo_variable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROt13_combo()
+        public PROt15_combo_variable()
         {
-            PROt09_producto = new HashSet<PROt09_producto>();
             PROt14_combo_fixed_dtl = new HashSet<PROt14_combo_fixed_dtl>();
+            PROt16_combo_variable_dtl = new HashSet<PROt16_combo_variable_dtl>();
         }
 
         [Key]
-        public long id_combo { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int id_combo_variable { get; set; }
 
         [StringLength(10)]
-        public string cod_combo { get; set; }
+        public string cod_combo_variable { get; set; }
 
         [Required]
         [StringLength(250)]
@@ -35,14 +36,10 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
-        public int id_combo_grupo { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt09_producto> PROt09_producto { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROt14_combo_fixed_dtl> PROt14_combo_fixed_dtl { get; set; }
 
-        public virtual PROt17_combo_grupo PROt17_combo_grupo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PROt16_combo_variable_dtl> PROt16_combo_variable_dtl { get; set; }
     }
 }

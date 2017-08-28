@@ -18,6 +18,7 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_abrv { get; set; }
 
+        [Required]
         [StringLength(250)]
         public string txt_desc { get; set; }
     }

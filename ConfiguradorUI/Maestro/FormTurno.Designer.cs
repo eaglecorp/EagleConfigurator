@@ -484,6 +484,7 @@
             this.metroLabel2.Size = new System.Drawing.Size(78, 19);
             this.metroLabel2.TabIndex = 89;
             this.metroLabel2.Text = "Hora Salida";
+            this.metroLabel2.UseCustomForeColor = true;
             // 
             // metroLabel1
             // 
@@ -495,6 +496,7 @@
             this.metroLabel1.Size = new System.Drawing.Size(90, 19);
             this.metroLabel1.TabIndex = 88;
             this.metroLabel1.Text = "Hora Entrada";
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // panel1
             // 
@@ -547,6 +549,7 @@
             this.lblAbreviacion.Size = new System.Drawing.Size(81, 19);
             this.lblAbreviacion.TabIndex = 2;
             this.lblAbreviacion.Text = "Abreviación:";
+            this.lblAbreviacion.UseCustomForeColor = true;
             // 
             // panel2
             // 
@@ -616,6 +619,7 @@
             this.lblCodigo.Size = new System.Drawing.Size(56, 19);
             this.lblCodigo.TabIndex = 4;
             this.lblCodigo.Text = "Código:";
+            this.lblCodigo.UseCustomForeColor = true;
             // 
             // txtNombre
             // 
@@ -659,6 +663,7 @@
             this.lblNombre.Size = new System.Drawing.Size(62, 19);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre:";
+            this.lblNombre.UseCustomForeColor = true;
             // 
             // lblNombreForm
             // 

@@ -53,7 +53,9 @@ namespace ConfiguradorUI.Reporte
             }
 
 
-            var chks = new[] { chkActivo, chkRangoFechas, chkRangoNumeros, chkRangoRVC };
+            var chks = new[] { chkActivo, chkRangoFechas, chkTurno, chkRangoRVC,
+                                 chkEmpleado, chkClaseEmpleado, chkNombreProducto,
+                                chkFamiliaProducto, chkSubfamiliaProducto };
 
             foreach (var chk in chks)
             {
@@ -211,8 +213,15 @@ namespace ConfiguradorUI.Reporte
                 obj.txt_path = txtPath.Text.Trim();
 
                 obj.sn_date_range = chkRangoFechas.Checked;
-                obj.sn_number_range = chkRangoNumeros.Checked;
                 obj.sn_rvc_range = chkRangoRVC.Checked;
+                obj.sn_turno = chkTurno.Checked;
+
+                obj.sn_empleado = chkEmpleado.Checked;
+                obj.sn_clase_empleado = chkClaseEmpleado.Checked;
+                obj.sn_producto_por_nombre = chkNombreProducto.Checked;
+                obj.sn_producto_por_familia = chkFamiliaProducto.Checked;
+                obj.sn_producto_por_subfamilia = chkSubfamiliaProducto.Checked;
+
 
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
@@ -245,8 +254,14 @@ namespace ConfiguradorUI.Reporte
                 txtPath.Text = obj.txt_path;
 
                 chkRangoFechas.Checked = obj.sn_date_range;
-                chkRangoNumeros.Checked = obj.sn_number_range;
                 chkRangoRVC.Checked = obj.sn_rvc_range;
+                chkTurno.Checked = obj.sn_turno;
+
+                chkEmpleado.Checked = obj.sn_empleado;
+                chkClaseEmpleado.Checked = obj.sn_clase_empleado;
+                chkNombreProducto.Checked = obj.sn_producto_por_nombre;
+                chkFamiliaProducto.Checked = obj.sn_producto_por_familia;
+                chkSubfamiliaProducto.Checked = obj.sn_producto_por_subfamilia;
 
                 cboCategoriaReporte.SelectedValue = obj.id_categoria_reporte;
 
@@ -549,9 +564,15 @@ namespace ConfiguradorUI.Reporte
                 chkActivo.Enabled = true;
 
             chkActivo.Checked = true;
+
             chkRangoFechas.Checked = false;
-            chkRangoNumeros.Checked = false;
+            chkTurno.Checked = false;
             chkRangoRVC.Checked = false;
+            chkEmpleado.Checked = false;
+            chkClaseEmpleado.Checked = false;
+            chkNombreProducto.Checked = false;
+            chkFamiliaProducto.Checked = false;
+            chkSubfamiliaProducto.Checked = false;
 
             if (cboCategoriaReporte.Items.Count > 0) cboCategoriaReporte.SelectedIndex = 0;
 
@@ -1131,6 +1152,5 @@ namespace ConfiguradorUI.Reporte
         }
 
         #endregion
-
     }
 }

@@ -1007,7 +1007,7 @@
             // 
             this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(35, 424);
+            this.panel3.Location = new System.Drawing.Point(37, 424);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(673, 4);
             this.panel3.TabIndex = 66;

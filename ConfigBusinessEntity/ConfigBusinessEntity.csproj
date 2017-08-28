@@ -120,9 +120,10 @@
     <Compile Include="Producto\PROt11_receta_dtl.cs" />
     <Compile Include="Producto\PROt12_receta_grupo.cs" />
     <Compile Include="Producto\PROt13_combo.cs" />
-    <Compile Include="Producto\PROt14_combo_dtl.cs" />
-    <Compile Include="Producto\PROt15_combo_size.cs" />
-    <Compile Include="Producto\PROt16_combo_grupo.cs" />
+    <Compile Include="Producto\PROt14_combo_fixed_dtl.cs" />
+    <Compile Include="Producto\PROt15_combo_variable.cs" />
+    <Compile Include="Producto\PROt16_combo_variable_dtl.cs" />
+    <Compile Include="Producto\PROt17_combo_grupo.cs" />
     <Compile Include="Reporte\RPTt01_reporte.cs" />
     <Compile Include="Reporte\RPTt02_categoria_reporte.cs" />
     <Compile Include="Sunat\SNTt01_tipo_medio_pago.cs" />

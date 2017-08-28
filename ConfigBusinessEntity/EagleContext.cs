@@ -11,6 +11,7 @@ namespace ConfigBusinessEntity
         {
         }
 
+
         public virtual DbSet<CLIt01_paciente> CLIt01_paciente { get; set; }
         public virtual DbSet<CLIt02_actividad> CLIt02_actividad { get; set; }
         public virtual DbSet<CLIt03_atencion> CLIt03_atencion { get; set; }
@@ -72,9 +73,10 @@ namespace ConfigBusinessEntity
         public virtual DbSet<PROt11_receta_dtl> PROt11_receta_dtl { get; set; }
         public virtual DbSet<PROt12_receta_grupo> PROt12_receta_grupo { get; set; }
         public virtual DbSet<PROt13_combo> PROt13_combo { get; set; }
-        public virtual DbSet<PROt14_combo_dtl> PROt14_combo_dtl { get; set; }
-        public virtual DbSet<PROt15_combo_size> PROt15_combo_size { get; set; }
-        public virtual DbSet<PROt16_combo_grupo> PROt16_combo_grupo { get; set; }
+        public virtual DbSet<PROt14_combo_fixed_dtl> PROt14_combo_fixed_dtl { get; set; }
+        public virtual DbSet<PROt15_combo_variable> PROt15_combo_variable { get; set; }
+        public virtual DbSet<PROt16_combo_variable_dtl> PROt16_combo_variable_dtl { get; set; }
+        public virtual DbSet<PROt17_combo_grupo> PROt17_combo_grupo { get; set; }
         public virtual DbSet<RPTt01_reporte> RPTt01_reporte { get; set; }
         public virtual DbSet<RPTt02_categoria_reporte> RPTt02_categoria_reporte { get; set; }
         public virtual DbSet<SNTt01_tipo_medio_pago> SNTt01_tipo_medio_pago { get; set; }
@@ -969,6 +971,10 @@ namespace ConfigBusinessEntity
 
             modelBuilder.Entity<MSTt15_estado_mesa>()
                 .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<MSTt15_estado_mesa>()
+                .Property(e => e.txt_color_hex)
                 .IsUnicode(false);
 
             modelBuilder.Entity<MSTt15_estado_mesa>()
@@ -1870,7 +1876,7 @@ namespace ConfigBusinessEntity
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PROt09_producto>()
-                .HasMany(e => e.PROt15_combo_size)
+                .HasMany(e => e.PROt16_combo_variable_dtl)
                 .WithRequired(e => e.PROt09_producto)
                 .WillCascadeOnDelete(false);
 
@@ -1936,66 +1942,91 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<PROt13_combo>()
-                .HasMany(e => e.PROt14_combo_dtl)
+                .HasMany(e => e.PROt14_combo_fixed_dtl)
                 .WithRequired(e => e.PROt13_combo)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PROt14_combo_dtl>()
-                .Property(e => e.cod_combo_dtl)
+            modelBuilder.Entity<PROt14_combo_fixed_dtl>()
+                .Property(e => e.cod_combo_fixed_dtl)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PROt14_combo_dtl>()
+            modelBuilder.Entity<PROt14_combo_fixed_dtl>()
                 .Property(e => e.cantidad)
                 .HasPrecision(18, 8);
 
-            modelBuilder.Entity<PROt14_combo_dtl>()
+            modelBuilder.Entity<PROt14_combo_fixed_dtl>()
                 .Property(e => e.mto_pvpu_sin_tax)
                 .HasPrecision(18, 8);
 
-            modelBuilder.Entity<PROt14_combo_dtl>()
+            modelBuilder.Entity<PROt14_combo_fixed_dtl>()
                 .Property(e => e.mto_pvpu_con_tax)
                 .HasPrecision(18, 8);
 
-            modelBuilder.Entity<PROt14_combo_dtl>()
+            modelBuilder.Entity<PROt14_combo_fixed_dtl>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PROt14_combo_dtl>()
-                .HasMany(e => e.PROt15_combo_size)
-                .WithRequired(e => e.PROt14_combo_dtl)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PROt15_combo_size>()
-                .Property(e => e.cod_combo_size)
+            modelBuilder.Entity<PROt15_combo_variable>()
+                .Property(e => e.cod_combo_variable)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PROt15_combo_size>()
-                .Property(e => e.cantidad)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<PROt15_combo_size>()
-                .Property(e => e.mto_pvpu_sin_tax)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<PROt15_combo_size>()
-                .Property(e => e.mto_pvpu_con_tax)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<PROt15_combo_size>()
-                .Property(e => e.txt_estado)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt16_combo_grupo>()
-                .Property(e => e.cod_combo_grupo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PROt16_combo_grupo>()
+            modelBuilder.Entity<PROt15_combo_variable>()
                 .Property(e => e.txt_desc)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PROt16_combo_grupo>()
+            modelBuilder.Entity<PROt15_combo_variable>()
+                .Property(e => e.mto_pvpu_sin_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt15_combo_variable>()
+                .Property(e => e.mto_pvpu_con_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt15_combo_variable>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<PROt15_combo_variable>()
+                .HasMany(e => e.PROt16_combo_variable_dtl)
+                .WithRequired(e => e.PROt15_combo_variable)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PROt16_combo_variable_dtl>()
+                .Property(e => e.cod_combo_variable_dtl)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt16_combo_variable_dtl>()
+                .Property(e => e.cantidad)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt16_combo_variable_dtl>()
+                .Property(e => e.mto_pvpu_sin_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt16_combo_variable_dtl>()
+                .Property(e => e.mto_pvpu_con_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt16_combo_variable_dtl>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt17_combo_grupo>()
+                .Property(e => e.cod_combo_grupo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt17_combo_grupo>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt17_combo_grupo>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PROt17_combo_grupo>()
+                .HasMany(e => e.PROt13_combo)
+                .WithRequired(e => e.PROt17_combo_grupo)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<RPTt01_reporte>()
                 .Property(e => e.cod_reporte)

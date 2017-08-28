@@ -24,6 +24,9 @@ namespace ConfigBusinessEntity
         [StringLength(50)]
         public string txt_desc { get; set; }
 
+        [StringLength(7)]
+        public string txt_color_hex { get; set; }
+
         public int id_estado { get; set; }
 
         [Required]

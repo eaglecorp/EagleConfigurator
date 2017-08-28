@@ -6,16 +6,16 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class PROt16_combo_grupo
+    public partial class PROt17_combo_grupo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROt16_combo_grupo()
+        public PROt17_combo_grupo()
         {
             PROt13_combo = new HashSet<PROt13_combo>();
         }
 
         [Key]
-        public long id_combo_grupo { get; set; }
+        public int id_combo_grupo { get; set; }
 
         [StringLength(10)]
         public string cod_combo_grupo { get; set; }

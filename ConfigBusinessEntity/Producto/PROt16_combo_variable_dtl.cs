@@ -6,13 +6,13 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class PROt15_combo_size
+    public partial class PROt16_combo_variable_dtl
     {
         [Key]
-        public long id_combo_size { get; set; }
+        public long id_combo_variable_dtl { get; set; }
 
         [StringLength(10)]
-        public string cod_combo_size { get; set; }
+        public string cod_combo_variable_dtl { get; set; }
 
         public decimal cantidad { get; set; }
 
@@ -26,12 +26,12 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
-        public long id_combo_dtl { get; set; }
+        public int id_combo_variable { get; set; }
 
         public long id_producto { get; set; }
 
         public virtual PROt09_producto PROt09_producto { get; set; }
 
-        public virtual PROt14_combo_dtl PROt14_combo_dtl { get; set; }
+        public virtual PROt15_combo_variable PROt15_combo_variable { get; set; }
     }
 }

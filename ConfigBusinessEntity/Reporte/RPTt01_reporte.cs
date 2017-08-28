@@ -22,7 +22,17 @@ namespace ConfigBusinessEntity
 
         public bool sn_rvc_range { get; set; }
 
-        public bool sn_number_range { get; set; }
+        public bool sn_empleado { get; set; }
+
+        public bool sn_clase_empleado { get; set; }
+
+        public bool sn_producto_por_nombre { get; set; }
+
+        public bool sn_producto_por_familia { get; set; }
+
+        public bool sn_producto_por_subfamilia { get; set; }
+
+        public bool sn_turno { get; set; }
 
         [StringLength(260)]
         public string txt_path { get; set; }

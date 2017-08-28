@@ -15,8 +15,8 @@ namespace ConfigBusinessEntity
             TNSt02_comp_recibido_dtl = new HashSet<TNSt02_comp_recibido_dtl>();
             TNSt05_comp_emitido_dtl = new HashSet<TNSt05_comp_emitido_dtl>();
             PROt11_receta_dtl = new HashSet<PROt11_receta_dtl>();
-            PROt14_combo_dtl = new HashSet<PROt14_combo_dtl>();
-            PROt15_combo_size = new HashSet<PROt15_combo_size>();
+            PROt14_combo_fixed_dtl = new HashSet<PROt14_combo_fixed_dtl>();
+            PROt16_combo_variable_dtl = new HashSet<PROt16_combo_variable_dtl>();
         }
 
         [Key]
@@ -137,10 +137,10 @@ namespace ConfigBusinessEntity
         public virtual SNTt05_tipo_existencia SNTt05_tipo_existencia { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt14_combo_dtl> PROt14_combo_dtl { get; set; }
+        public virtual ICollection<PROt14_combo_fixed_dtl> PROt14_combo_fixed_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PROt15_combo_size> PROt15_combo_size { get; set; }
+        public virtual ICollection<PROt16_combo_variable_dtl> PROt16_combo_variable_dtl { get; set; }
 
         public virtual PROt10_receta PROt10_receta { get; set; }
 
