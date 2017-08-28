@@ -80,6 +80,7 @@
             this.toolStripFechaCronologica = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnComboVariable = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
@@ -104,6 +105,7 @@
             // 
             // tabPagProductos
             // 
+            this.tabPagProductos.Controls.Add(this.btnComboVariable);
             this.tabPagProductos.Controls.Add(this.btnCombo);
             this.tabPagProductos.Controls.Add(this.btnReceta);
             this.tabPagProductos.Controls.Add(this.btnPrecio);
@@ -1012,6 +1014,25 @@
             this.panel3.Size = new System.Drawing.Size(673, 4);
             this.panel3.TabIndex = 66;
             // 
+            // btnComboVariable
+            // 
+            this.btnComboVariable.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnComboVariable.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnComboVariable.FlatAppearance.BorderSize = 0;
+            this.btnComboVariable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnComboVariable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnComboVariable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComboVariable.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.btnComboVariable.Image = ((System.Drawing.Image)(resources.GetObject("btnComboVariable.Image")));
+            this.btnComboVariable.Location = new System.Drawing.Point(281, 52);
+            this.btnComboVariable.Margin = new System.Windows.Forms.Padding(2);
+            this.btnComboVariable.Name = "btnComboVariable";
+            this.btnComboVariable.Size = new System.Drawing.Size(135, 37);
+            this.btnComboVariable.TabIndex = 11;
+            this.btnComboVariable.Text = "Cbos Variables";
+            this.btnComboVariable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnComboVariable.UseVisualStyleBackColor = false;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1098,6 +1119,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnClaseEmp;
         private System.Windows.Forms.Button btnCategoriaEmp;
+        private System.Windows.Forms.Button btnComboVariable;
     }
 }
 

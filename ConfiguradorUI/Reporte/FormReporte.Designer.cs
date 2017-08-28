@@ -50,6 +50,12 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabReportes = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.chkFamiliaProducto = new MetroFramework.Controls.MetroCheckBox();
+            this.chkSubfamiliaProducto = new MetroFramework.Controls.MetroCheckBox();
+            this.chkClaseEmpleado = new MetroFramework.Controls.MetroCheckBox();
+            this.chkNombreProducto = new MetroFramework.Controls.MetroCheckBox();
+            this.chkEmpleado = new MetroFramework.Controls.MetroCheckBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtPath = new MetroFramework.Controls.MetroTextBox();
             this.lblRuta = new MetroFramework.Controls.MetroLabel();
@@ -69,12 +75,6 @@
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkClaseEmpleado = new MetroFramework.Controls.MetroCheckBox();
-            this.chkNombreProducto = new MetroFramework.Controls.MetroCheckBox();
-            this.chkEmpleado = new MetroFramework.Controls.MetroCheckBox();
-            this.chkFamiliaProducto = new MetroFramework.Controls.MetroCheckBox();
-            this.chkSubfamiliaProducto = new MetroFramework.Controls.MetroCheckBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -406,6 +406,93 @@
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel1.Location = new System.Drawing.Point(3, 109);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(126, 19);
+            this.metroLabel1.TabIndex = 98;
+            this.metroLabel1.Text = "Incluir filtros por:";
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
+            // chkFamiliaProducto
+            // 
+            this.chkFamiliaProducto.AutoSize = true;
+            this.chkFamiliaProducto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkFamiliaProducto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkFamiliaProducto.ForeColor = System.Drawing.Color.Navy;
+            this.chkFamiliaProducto.Location = new System.Drawing.Point(234, 167);
+            this.chkFamiliaProducto.Name = "chkFamiliaProducto";
+            this.chkFamiliaProducto.Size = new System.Drawing.Size(148, 19);
+            this.chkFamiliaProducto.TabIndex = 97;
+            this.chkFamiliaProducto.Text = "Familia de productos";
+            this.chkFamiliaProducto.UseCustomForeColor = true;
+            this.chkFamiliaProducto.UseSelectable = true;
+            this.chkFamiliaProducto.CheckedChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // chkSubfamiliaProducto
+            // 
+            this.chkSubfamiliaProducto.AutoSize = true;
+            this.chkSubfamiliaProducto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkSubfamiliaProducto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkSubfamiliaProducto.ForeColor = System.Drawing.Color.Navy;
+            this.chkSubfamiliaProducto.Location = new System.Drawing.Point(234, 185);
+            this.chkSubfamiliaProducto.Name = "chkSubfamiliaProducto";
+            this.chkSubfamiliaProducto.Size = new System.Drawing.Size(168, 19);
+            this.chkSubfamiliaProducto.TabIndex = 96;
+            this.chkSubfamiliaProducto.Text = "Subfamilia de productos";
+            this.chkSubfamiliaProducto.UseCustomForeColor = true;
+            this.chkSubfamiliaProducto.UseSelectable = true;
+            this.chkSubfamiliaProducto.CheckedChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // chkClaseEmpleado
+            // 
+            this.chkClaseEmpleado.AutoSize = true;
+            this.chkClaseEmpleado.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkClaseEmpleado.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkClaseEmpleado.ForeColor = System.Drawing.Color.Navy;
+            this.chkClaseEmpleado.Location = new System.Drawing.Point(7, 185);
+            this.chkClaseEmpleado.Name = "chkClaseEmpleado";
+            this.chkClaseEmpleado.Size = new System.Drawing.Size(144, 19);
+            this.chkClaseEmpleado.TabIndex = 95;
+            this.chkClaseEmpleado.Text = "Clase de empleados";
+            this.chkClaseEmpleado.UseCustomForeColor = true;
+            this.chkClaseEmpleado.UseSelectable = true;
+            this.chkClaseEmpleado.CheckedChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // chkNombreProducto
+            // 
+            this.chkNombreProducto.AutoSize = true;
+            this.chkNombreProducto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkNombreProducto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkNombreProducto.ForeColor = System.Drawing.Color.Navy;
+            this.chkNombreProducto.Location = new System.Drawing.Point(234, 149);
+            this.chkNombreProducto.Name = "chkNombreProducto";
+            this.chkNombreProducto.Size = new System.Drawing.Size(152, 19);
+            this.chkNombreProducto.TabIndex = 94;
+            this.chkNombreProducto.Text = "Nombre de producto";
+            this.chkNombreProducto.UseCustomForeColor = true;
+            this.chkNombreProducto.UseSelectable = true;
+            this.chkNombreProducto.CheckedChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // chkEmpleado
+            // 
+            this.chkEmpleado.AutoSize = true;
+            this.chkEmpleado.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkEmpleado.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkEmpleado.ForeColor = System.Drawing.Color.Navy;
+            this.chkEmpleado.Location = new System.Drawing.Point(7, 167);
+            this.chkEmpleado.Name = "chkEmpleado";
+            this.chkEmpleado.Size = new System.Drawing.Size(90, 19);
+            this.chkEmpleado.TabIndex = 93;
+            this.chkEmpleado.Text = "Empleados";
+            this.chkEmpleado.UseCustomForeColor = true;
+            this.chkEmpleado.UseSelectable = true;
+            this.chkEmpleado.CheckedChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // btnBrowse
             // 
             this.btnBrowse.BackColor = System.Drawing.Color.DodgerBlue;
@@ -457,7 +544,7 @@
             this.txtPath.UseCustomBackColor = true;
             this.txtPath.UseSelectable = true;
             this.txtPath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtPath.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblRuta
@@ -700,93 +787,6 @@
             // errorProv
             // 
             this.errorProv.ContainerControl = this;
-            // 
-            // chkClaseEmpleado
-            // 
-            this.chkClaseEmpleado.AutoSize = true;
-            this.chkClaseEmpleado.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkClaseEmpleado.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkClaseEmpleado.ForeColor = System.Drawing.Color.Navy;
-            this.chkClaseEmpleado.Location = new System.Drawing.Point(7, 185);
-            this.chkClaseEmpleado.Name = "chkClaseEmpleado";
-            this.chkClaseEmpleado.Size = new System.Drawing.Size(144, 19);
-            this.chkClaseEmpleado.TabIndex = 95;
-            this.chkClaseEmpleado.Text = "Clase de empleados";
-            this.chkClaseEmpleado.UseCustomForeColor = true;
-            this.chkClaseEmpleado.UseSelectable = true;
-            this.chkClaseEmpleado.CheckedChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // chkNombreProducto
-            // 
-            this.chkNombreProducto.AutoSize = true;
-            this.chkNombreProducto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkNombreProducto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkNombreProducto.ForeColor = System.Drawing.Color.Navy;
-            this.chkNombreProducto.Location = new System.Drawing.Point(234, 149);
-            this.chkNombreProducto.Name = "chkNombreProducto";
-            this.chkNombreProducto.Size = new System.Drawing.Size(152, 19);
-            this.chkNombreProducto.TabIndex = 94;
-            this.chkNombreProducto.Text = "Nombre de producto";
-            this.chkNombreProducto.UseCustomForeColor = true;
-            this.chkNombreProducto.UseSelectable = true;
-            this.chkNombreProducto.CheckedChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // chkEmpleado
-            // 
-            this.chkEmpleado.AutoSize = true;
-            this.chkEmpleado.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkEmpleado.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkEmpleado.ForeColor = System.Drawing.Color.Navy;
-            this.chkEmpleado.Location = new System.Drawing.Point(7, 167);
-            this.chkEmpleado.Name = "chkEmpleado";
-            this.chkEmpleado.Size = new System.Drawing.Size(90, 19);
-            this.chkEmpleado.TabIndex = 93;
-            this.chkEmpleado.Text = "Empleados";
-            this.chkEmpleado.UseCustomForeColor = true;
-            this.chkEmpleado.UseSelectable = true;
-            this.chkEmpleado.CheckedChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // chkFamiliaProducto
-            // 
-            this.chkFamiliaProducto.AutoSize = true;
-            this.chkFamiliaProducto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkFamiliaProducto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkFamiliaProducto.ForeColor = System.Drawing.Color.Navy;
-            this.chkFamiliaProducto.Location = new System.Drawing.Point(234, 167);
-            this.chkFamiliaProducto.Name = "chkFamiliaProducto";
-            this.chkFamiliaProducto.Size = new System.Drawing.Size(148, 19);
-            this.chkFamiliaProducto.TabIndex = 97;
-            this.chkFamiliaProducto.Text = "Familia de productos";
-            this.chkFamiliaProducto.UseCustomForeColor = true;
-            this.chkFamiliaProducto.UseSelectable = true;
-            this.chkFamiliaProducto.CheckedChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // chkSubfamiliaProducto
-            // 
-            this.chkSubfamiliaProducto.AutoSize = true;
-            this.chkSubfamiliaProducto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkSubfamiliaProducto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkSubfamiliaProducto.ForeColor = System.Drawing.Color.Navy;
-            this.chkSubfamiliaProducto.Location = new System.Drawing.Point(234, 185);
-            this.chkSubfamiliaProducto.Name = "chkSubfamiliaProducto";
-            this.chkSubfamiliaProducto.Size = new System.Drawing.Size(168, 19);
-            this.chkSubfamiliaProducto.TabIndex = 96;
-            this.chkSubfamiliaProducto.Text = "Subfamilia de productos";
-            this.chkSubfamiliaProducto.UseCustomForeColor = true;
-            this.chkSubfamiliaProducto.UseSelectable = true;
-            this.chkSubfamiliaProducto.CheckedChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 109);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(126, 19);
-            this.metroLabel1.TabIndex = 98;
-            this.metroLabel1.Text = "Incluir filtros por:";
-            this.metroLabel1.UseCustomForeColor = true;
             // 
             // FormReporte
             // 

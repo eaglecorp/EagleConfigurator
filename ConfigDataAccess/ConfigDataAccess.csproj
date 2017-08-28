@@ -85,6 +85,7 @@
     <Compile Include="Producto\ComboDA.cs" />
     <Compile Include="Producto\ComboDetalleDA.cs" />
     <Compile Include="Producto\ComboGrupoDA.cs" />
+    <Compile Include="Producto\ComboVariableDA.cs" />
     <Compile Include="Producto\FamiliaDA.cs" />
     <Compile Include="Producto\GrupoProdDA.cs" />
     <Compile Include="Producto\MarcaDA.cs" />
