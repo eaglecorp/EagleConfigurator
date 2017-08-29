@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buscadores\FormBuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FormBuscarProducto.Designer.cs">
+      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUtil\CheckBoxDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,9 @@
     <Compile Include="splahScreen.Designer.cs">
       <DependentUpon>splahScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Buscadores\FormBuscarProducto.resx">
+      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUtil\CheckBoxDialog.resx">
       <DependentUpon>CheckBoxDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\FormCombo.resx">
       <DependentUpon>FormCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\FormComboVariable.resx">
+      <DependentUpon>FormComboVariable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\FormFamilia.resx">
       <DependentUpon>FormFamilia.cs</DependentUpon>

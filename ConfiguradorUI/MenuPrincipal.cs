@@ -269,6 +269,12 @@ namespace ConfiguradorUI
             form.ShowDialog();
         }
 
+        private void btnComboVariable_Click(object sender, EventArgs e)
+        {
+            var form = new FormComboVariable();
+            form.ShowDialog();
+        }
+
         #endregion
 
         #region Eventos TabPag Persona
@@ -302,6 +308,7 @@ namespace ConfiguradorUI
             FormCliente oForm = new FormCliente();
             oForm.ShowDialog();
         }
+
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             FormUsuario oForm = new FormUsuario();

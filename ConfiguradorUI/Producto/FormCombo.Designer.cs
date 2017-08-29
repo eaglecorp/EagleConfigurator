@@ -49,6 +49,7 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabModelo = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.dataGrid1 = new System.Windows.Forms.DataGrid();
             this.button1 = new System.Windows.Forms.Button();
             this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
-            this.dataGrid1 = new System.Windows.Forms.DataGrid();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModelo)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -395,6 +395,15 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // dataGrid1
+            // 
+            this.dataGrid1.DataMember = "";
+            this.dataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+            this.dataGrid1.Location = new System.Drawing.Point(3, 177);
+            this.dataGrid1.Name = "dataGrid1";
+            this.dataGrid1.Size = new System.Drawing.Size(529, 150);
+            this.dataGrid1.TabIndex = 141;
             // 
             // button1
             // 
@@ -817,15 +826,6 @@
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 123;
             this.btnCerrar.UseSelectable = true;
-            // 
-            // dataGrid1
-            // 
-            this.dataGrid1.DataMember = "";
-            this.dataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText;
-            this.dataGrid1.Location = new System.Drawing.Point(3, 177);
-            this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(529, 150);
-            this.dataGrid1.TabIndex = 141;
             // 
             // FormCombo
             // 

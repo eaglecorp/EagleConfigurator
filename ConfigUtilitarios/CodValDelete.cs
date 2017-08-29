@@ -26,5 +26,8 @@ namespace ConfigUtilitarios
         public static int EstadoMesa_Mesa { get; } = 15;
         public static int ClaseEmp_Empleado { get; } = 16;
         public static int CategoriaEmp_Empleado { get; } = 17;
+        public static int Producto_ComboFixedDtl { get; } = 18;
+        public static int Producto_ComboVariableDtl { get; } = 19;
+        public static int ComboGrupo_Combo { get; } = 20;
     }
 }

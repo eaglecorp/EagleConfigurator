@@ -1032,6 +1032,7 @@
             this.btnComboVariable.Text = "Cbos Variables";
             this.btnComboVariable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnComboVariable.UseVisualStyleBackColor = false;
+            this.btnComboVariable.Click += new System.EventHandler(this.btnComboVariable_Click);
             // 
             // MenuPrincipal
             // 

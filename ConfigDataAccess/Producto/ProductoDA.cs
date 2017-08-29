@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using Dapper;
 using System.Data.Entity;
 using ConfigUtilitarios;
+using System.Data;
 
 namespace ConfigDataAccess
 {
@@ -285,6 +286,25 @@ namespace ConfigDataAccess
                 }
             }
             return lista;
+        }
+
+        public IEnumerable<PROt09_producto> BuscarProductos(string cod, string cod02, string nombre, int snVenta, int snCompra, int idEstado)
+        {
+            using (IDbConnection cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    return cnn.Query<PROt09_producto>("SP_PROD_CNS_Producto",
+                                                        new { cod, cod02, nombre, snVenta, snCompra, idEstado },
+                                                        commandType: CommandType.StoredProcedure);
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Buscar Productos: ", e.Message);
+                    return null;
+                }
+            }
         }
     }
 }

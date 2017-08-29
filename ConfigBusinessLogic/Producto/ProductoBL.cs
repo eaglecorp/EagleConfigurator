@@ -72,6 +72,11 @@ namespace ConfigBusinessLogic
             return new ProductoDA().ListaProductoXMod(id_modelo, id_estado);
         }
 
+        public IEnumerable<PROt09_producto> BuscarProducto(string cod, string cod02, string nombre, int snVenta, int snCompra, int idEstado)
+        {
+            return new ProductoDA().BuscarProductos(cod, cod02, nombre, snVenta, snCompra, idEstado);
+        }
+
 
     }
 }
