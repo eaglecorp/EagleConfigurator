@@ -3,6 +3,8 @@ using ConfigBusinessLogic.Maestro;
 using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.Extensions;
+using ConfigUtilitarios.HelperGeneric;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -27,6 +29,7 @@ namespace ConfiguradorUI.Maestro
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
         string codSelected = "";
+        string sinColor = UtilString.Space(10) + "Sin Color";
         #endregion
 
         public FormEstadoMesa()
@@ -48,6 +51,8 @@ namespace ConfiguradorUI.Maestro
             {
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
+
+            pnlColor.BackColorChanged += new EventHandler(OnContentChanged);
 
         }
 
@@ -213,7 +218,7 @@ namespace ConfiguradorUI.Maestro
             {
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.cod_estado_mesa = txtCodigo.Text.Trim();
-
+                obj.txt_color_hex = pnlColor.BackColor != Color.Transparent ? pnlColor.BackColor.ToHexString() : null;
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
@@ -241,6 +246,9 @@ namespace ConfiguradorUI.Maestro
 
                 txtNombre.Text = obj.txt_desc;
                 txtCodigo.Text = obj.cod_estado_mesa;
+
+                pnlColor.BackColor = obj.txt_color_hex != null ? ColorTranslator.FromHtml(obj.txt_color_hex) : Color.Transparent;
+                lblColorPanel.Text = obj.txt_color_hex != null ? UtilString.Space(10) + obj.txt_color_hex : sinColor;
 
             }
             catch (Exception e)
@@ -429,6 +437,15 @@ namespace ConfiguradorUI.Maestro
                 }
             }
         }
+        private void SeleccionarColor()
+        {
+            DialogResult result = colorDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                pnlColor.BackColor = colorDialog.Color;
+                lblColorPanel.Text = UtilString.Space(10) + colorDialog.Color.ToHexString();
+            }
+        }
         private string GetIdSelected()
         {
             string id = "-1";
@@ -445,8 +462,6 @@ namespace ConfiguradorUI.Maestro
             }
             return id;
         }
-
-
 
         private void CargarComboFiltro()
         {
@@ -472,6 +487,8 @@ namespace ConfiguradorUI.Maestro
 
             txtNombre.Clear();
             txtCodigo.Clear();
+            pnlColor.BackColor = Color.Transparent;
+            lblColorPanel.Text = sinColor;
 
             if (TipoOperacion == TipoOperacionABM.Nuevo)
                 chkActivo.Enabled = false;
@@ -683,6 +700,8 @@ namespace ConfiguradorUI.Maestro
         private void FormEstadoMesa_Load(object sender, EventArgs e)
         {
             lblIdEstadoMesa.Visible = false;
+            lblColorPanel.Text = sinColor;
+            txtColor.Enabled = false;
             SetMaxLengthTxt();
             ControlarEventosABM();
             LimpiarForm();
@@ -978,5 +997,30 @@ namespace ConfiguradorUI.Maestro
         }
 
         #endregion
+
+        private void lblColorPanel_Click(object sender, EventArgs e)
+        {
+            SeleccionarColor();
+        }
+
+        private void pnlColor_Click(object sender, EventArgs e)
+        {
+            SeleccionarColor();
+        }
+
+        private void txtColor_Click(object sender, EventArgs e)
+        {
+            SeleccionarColor();
+        }
+
+        private void lblColorPanel_MouseLeave(object sender, EventArgs e)
+        {
+            lblColorPanel.BackColor = Color.FromArgb(240, 253, 255);
+        }
+
+        private void lblColorPanel_MouseHover(object sender, EventArgs e)
+        {
+            lblColorPanel.BackColor = Color.FromArgb(192, 255, 255);
+        }
     }
 }

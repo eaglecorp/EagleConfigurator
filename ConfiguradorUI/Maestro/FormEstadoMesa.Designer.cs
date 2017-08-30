@@ -51,15 +51,20 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabEstadoMesa = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.pnlColor = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
             this.lblCodigo = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
+            this.lblColorPanel = new MetroFramework.Controls.MetroLabel();
+            this.txtColor = new MetroFramework.Controls.MetroTextBox();
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoMesa)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -74,7 +79,7 @@
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(181, 272);
+            this.lblNumInactivo.Location = new System.Drawing.Point(181, 317);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -87,7 +92,7 @@
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(101, 272);
+            this.lblNumActivo.Location = new System.Drawing.Point(101, 317);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -100,7 +105,7 @@
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(34, 272);
+            this.lblNumReg.Location = new System.Drawing.Point(34, 317);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -132,7 +137,7 @@
             this.dgvEstadoMesa.RowHeadersVisible = false;
             this.dgvEstadoMesa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvEstadoMesa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEstadoMesa.Size = new System.Drawing.Size(227, 132);
+            this.dgvEstadoMesa.Size = new System.Drawing.Size(227, 177);
             this.dgvEstadoMesa.TabIndex = 117;
             this.dgvEstadoMesa.SelectionChanged += new System.EventHandler(this.dgvEstadoMesa_SelectionChanged);
             // 
@@ -146,7 +151,7 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(314, 245);
+            this.panelFiltro.Location = new System.Drawing.Point(314, 290);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(542, 44);
             this.panelFiltro.TabIndex = 120;
@@ -362,29 +367,57 @@
             this.tabEstadoMesa.Location = new System.Drawing.Point(312, 102);
             this.tabEstadoMesa.Name = "tabEstadoMesa";
             this.tabEstadoMesa.SelectedIndex = 0;
-            this.tabEstadoMesa.Size = new System.Drawing.Size(560, 141);
+            this.tabEstadoMesa.Size = new System.Drawing.Size(560, 182);
             this.tabEstadoMesa.TabIndex = 118;
             this.tabEstadoMesa.UseSelectable = true;
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.metroLabel1);
+            this.tabPagGeneral.Controls.Add(this.pnlColor);
             this.tabPagGeneral.Controls.Add(this.panel2);
             this.tabPagGeneral.Controls.Add(this.chkActivo);
             this.tabPagGeneral.Controls.Add(this.txtCodigo);
             this.tabPagGeneral.Controls.Add(this.lblCodigo);
             this.tabPagGeneral.Controls.Add(this.txtNombre);
             this.tabPagGeneral.Controls.Add(this.lblNombre);
+            this.tabPagGeneral.Controls.Add(this.lblColorPanel);
+            this.tabPagGeneral.Controls.Add(this.txtColor);
             this.tabPagGeneral.HorizontalScrollbarBarColor = true;
             this.tabPagGeneral.HorizontalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(552, 99);
+            this.tabPagGeneral.Size = new System.Drawing.Size(552, 140);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel1.Location = new System.Drawing.Point(0, 81);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel1.TabIndex = 89;
+            this.metroLabel1.Text = "Color:";
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
+            // pnlColor
+            // 
+            this.pnlColor.BackColor = System.Drawing.Color.Transparent;
+            this.pnlColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlColor.Location = new System.Drawing.Point(102, 81);
+            this.pnlColor.Name = "pnlColor";
+            this.pnlColor.Size = new System.Drawing.Size(44, 21);
+            this.pnlColor.TabIndex = 87;
+            this.pnlColor.BackColorChanged += new System.EventHandler(this.CambioEnControl);
+            this.pnlColor.Click += new System.EventHandler(this.pnlColor_Click);
+            this.pnlColor.MouseHover += new System.EventHandler(this.lblColorPanel_MouseHover);
             // 
             // panel2
             // 
@@ -403,7 +436,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(2, 75);
+            this.chkActivo.Location = new System.Drawing.Point(3, 118);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 4;
@@ -500,6 +533,56 @@
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.UseCustomForeColor = true;
             // 
+            // lblColorPanel
+            // 
+            this.lblColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.lblColorPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblColorPanel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblColorPanel.ForeColor = System.Drawing.Color.Black;
+            this.lblColorPanel.Location = new System.Drawing.Point(74, 76);
+            this.lblColorPanel.Name = "lblColorPanel";
+            this.lblColorPanel.Size = new System.Drawing.Size(183, 30);
+            this.lblColorPanel.TabIndex = 88;
+            this.lblColorPanel.Text = "           Sin color";
+            this.lblColorPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblColorPanel.UseCustomBackColor = true;
+            this.lblColorPanel.UseCustomForeColor = true;
+            this.lblColorPanel.Click += new System.EventHandler(this.lblColorPanel_Click);
+            this.lblColorPanel.MouseLeave += new System.EventHandler(this.lblColorPanel_MouseLeave);
+            this.lblColorPanel.MouseHover += new System.EventHandler(this.lblColorPanel_MouseHover);
+            // 
+            // txtColor
+            // 
+            this.txtColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtColor.CustomButton.Image = null;
+            this.txtColor.CustomButton.Location = new System.Drawing.Point(156, 2);
+            this.txtColor.CustomButton.Name = "";
+            this.txtColor.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtColor.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtColor.CustomButton.TabIndex = 1;
+            this.txtColor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtColor.CustomButton.UseSelectable = true;
+            this.txtColor.CustomButton.Visible = false;
+            this.txtColor.Lines = new string[0];
+            this.txtColor.Location = new System.Drawing.Point(73, 75);
+            this.txtColor.MaxLength = 32767;
+            this.txtColor.Name = "txtColor";
+            this.txtColor.PasswordChar = '\0';
+            this.txtColor.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtColor.SelectedText = "";
+            this.txtColor.SelectionLength = 0;
+            this.txtColor.SelectionStart = 0;
+            this.txtColor.ShortcutsEnabled = true;
+            this.txtColor.Size = new System.Drawing.Size(186, 32);
+            this.txtColor.TabIndex = 90;
+            this.txtColor.UseCustomBackColor = true;
+            this.txtColor.UseSelectable = true;
+            this.txtColor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtColor.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
@@ -531,7 +614,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 330);
+            this.ClientSize = new System.Drawing.Size(900, 367);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -591,5 +674,10 @@
         private MetroFramework.Controls.MetroLink btnCerrar;
         private System.Windows.Forms.ErrorProvider errorProv;
         private MetroFramework.Controls.MetroLink lnkNuevo;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Panel pnlColor;
+        private MetroFramework.Controls.MetroLabel lblColorPanel;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private MetroFramework.Controls.MetroTextBox txtColor;
     }
 }
