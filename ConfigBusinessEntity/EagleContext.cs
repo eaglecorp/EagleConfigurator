@@ -11,7 +11,6 @@ namespace ConfigBusinessEntity
         {
         }
 
-
         public virtual DbSet<CLIt01_paciente> CLIt01_paciente { get; set; }
         public virtual DbSet<CLIt02_actividad> CLIt02_actividad { get; set; }
         public virtual DbSet<CLIt03_atencion> CLIt03_atencion { get; set; }

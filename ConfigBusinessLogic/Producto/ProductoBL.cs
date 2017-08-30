@@ -72,9 +72,14 @@ namespace ConfigBusinessLogic
             return new ProductoDA().ListaProductoXMod(id_modelo, id_estado);
         }
 
-        public IEnumerable<PROt09_producto> BuscarProducto(string cod, string cod02, string nombre, int snVenta, int snCompra, int idEstado)
+        public IEnumerable<PROt09_producto> BuscarProducto(string cod, string cod02, string nombre, int? snVenta, int? snCompra, int? idEstado, bool ocultarBlankReg = true)
         {
-            return new ProductoDA().BuscarProductos(cod, cod02, nombre, snVenta, snCompra, idEstado);
+            var lista = new ProductoDA().BuscarProductos(cod, cod02, nombre, snVenta, snCompra, idEstado);
+            if (ocultarBlankReg && lista != null && lista.Count() > 0)
+            {
+                return lista.Where(x => x.cod_producto != Parameter.BlankRegister);
+            }
+            return lista;
         }
 
 

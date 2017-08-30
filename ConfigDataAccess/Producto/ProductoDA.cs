@@ -288,7 +288,7 @@ namespace ConfigDataAccess
             return lista;
         }
 
-        public IEnumerable<PROt09_producto> BuscarProductos(string cod, string cod02, string nombre, int snVenta, int snCompra, int idEstado)
+        public IEnumerable<PROt09_producto> BuscarProductos(string cod, string cod02, string nombre, int? snVenta, int? snCompra, int? idEstado)
         {
             using (IDbConnection cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
@@ -302,7 +302,7 @@ namespace ConfigDataAccess
                 {
                     var log = new Log();
                     log.ArchiveLog("Buscar Productos: ", e.Message);
-                    return null;
+                    return new List<PROt09_producto>();
                 }
             }
         }

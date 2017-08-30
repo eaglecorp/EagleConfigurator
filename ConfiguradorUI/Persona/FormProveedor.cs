@@ -86,8 +86,8 @@ namespace ConfiguradorUI.Persona
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
 
-            cboTipoDocIdentidad.DropDownWidth = ControlExt.DropDownWidth(cboTipoDocIdentidad);
-            cboNacionalidad.DropDownWidth = ControlExt.DropDownWidth(cboNacionalidad);
+            cboTipoDocIdentidad.DropDownWidth = ControlHelper.DropDownWidth(cboTipoDocIdentidad);
+            cboNacionalidad.DropDownWidth = ControlHelper.DropDownWidth(cboNacionalidad);
 
         }
 

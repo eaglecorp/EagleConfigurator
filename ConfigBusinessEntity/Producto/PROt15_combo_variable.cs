@@ -16,7 +16,6 @@ namespace ConfigBusinessEntity
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_combo_variable { get; set; }
 
         [StringLength(10)]

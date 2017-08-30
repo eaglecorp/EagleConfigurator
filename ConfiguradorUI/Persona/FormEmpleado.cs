@@ -114,23 +114,23 @@ namespace ConfiguradorUI.Persona
             txtSalQuincenal.KeyPress += ValidarTxtDecimal;
             txtSalHora.KeyPress += ValidarTxtDecimal;
 
-            cboTipoDocIdentidad.DropDownWidth = ControlExt.DropDownWidth(cboTipoDocIdentidad);
-            cboNacionalidad.DropDownWidth = ControlExt.DropDownWidth(cboNacionalidad);
-            cboEntidadFinanciera.DropDownWidth = ControlExt.DropDownWidth(cboEntidadFinanciera);
-            cboTipoTrabajador.DropDownWidth = ControlExt.DropDownWidth(cboTipoTrabajador);
-            cboCondicionLaboral.DropDownWidth = ControlExt.DropDownWidth(cboCondicionLaboral);
+            cboTipoDocIdentidad.DropDownWidth = ControlHelper.DropDownWidth(cboTipoDocIdentidad);
+            cboNacionalidad.DropDownWidth = ControlHelper.DropDownWidth(cboNacionalidad);
+            cboEntidadFinanciera.DropDownWidth = ControlHelper.DropDownWidth(cboEntidadFinanciera);
+            cboTipoTrabajador.DropDownWidth = ControlHelper.DropDownWidth(cboTipoTrabajador);
+            cboCondicionLaboral.DropDownWidth = ControlHelper.DropDownWidth(cboCondicionLaboral);
             //cboOcupacion.DropDownWidth = ControlExt.DropDownWidth(cboOcupacion);
             cboOcupacion.DropDownWidth = 400;
-            cboRegPension.DropDownWidth = ControlExt.DropDownWidth(cboRegPension);
-            cboRegLaboral.DropDownWidth = ControlExt.DropDownWidth(cboRegLaboral);
-            cboRegSalud.DropDownWidth = ControlExt.DropDownWidth(cboRegSalud);
-            cboSaludEps.DropDownWidth = ControlExt.DropDownWidth(cboSaludEps);
-            cboSituacionEdu.DropDownWidth = ControlExt.DropDownWidth(cboSituacionEdu);
-            cboModalidadFormativa.DropDownWidth = ControlExt.DropDownWidth(cboModalidadFormativa);
-            cboEspcMedica.DropDownWidth = ControlExt.DropDownWidth(cboEspcMedica);
-            cboSituacion.DropDownWidth = ControlExt.DropDownWidth(cboSituacion);
-            cboMotivoBaja.DropDownWidth = ControlExt.DropDownWidth(cboMotivoBaja);
-            cboSuspLaboral.DropDownWidth = ControlExt.DropDownWidth(cboSuspLaboral);
+            cboRegPension.DropDownWidth = ControlHelper.DropDownWidth(cboRegPension);
+            cboRegLaboral.DropDownWidth = ControlHelper.DropDownWidth(cboRegLaboral);
+            cboRegSalud.DropDownWidth = ControlHelper.DropDownWidth(cboRegSalud);
+            cboSaludEps.DropDownWidth = ControlHelper.DropDownWidth(cboSaludEps);
+            cboSituacionEdu.DropDownWidth = ControlHelper.DropDownWidth(cboSituacionEdu);
+            cboModalidadFormativa.DropDownWidth = ControlHelper.DropDownWidth(cboModalidadFormativa);
+            cboEspcMedica.DropDownWidth = ControlHelper.DropDownWidth(cboEspcMedica);
+            cboSituacion.DropDownWidth = ControlHelper.DropDownWidth(cboSituacion);
+            cboMotivoBaja.DropDownWidth = ControlHelper.DropDownWidth(cboMotivoBaja);
+            cboSuspLaboral.DropDownWidth = ControlHelper.DropDownWidth(cboSuspLaboral);
 
 
 

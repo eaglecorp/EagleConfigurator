@@ -8,6 +8,8 @@ namespace ConfigUtilitarios
 {
     public class Estado
     {
+        public static int? Ignorar { get; } = null;
+
         public static int IdInactivo { get; } = 0;
         public static string TxtInactivo { get; } = "INACTIVO";
         public static int IdActivo { get; } = 1;

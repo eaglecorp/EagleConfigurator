@@ -24,7 +24,7 @@ namespace ConfigUtilitarios.HelperControl
             return MessageBox.Show(msj, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public static DialogResult YesNo_Ques(string msj, string title = "Mensaje")
+        public static DialogResult YesNo_Ques(string msj, string title = "Confirmación")
         {
             return MessageBox.Show(msj, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }

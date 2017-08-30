@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfigUtilitarios.KeyValues;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConfigUtilitarios
 {
-    public static class StringExtension
+    public static class StringExt
     {
         public static string RemoveDiacritics(this string s)
         {
@@ -34,6 +35,20 @@ namespace ConfigUtilitarios
         public static string RemoveTrailingZeros(this decimal dec)
         {
             return dec.ToString("0.########");
+        }
+
+        public static string RoundOut(this decimal? dec, int numDec = KeyAmounts.numDecDefault)
+        {
+            string ceros = "0.";
+            Enumerable.Range(1, numDec > 0 ? numDec : 1).ToList().ForEach(x => { ceros += "#"; });
+            return Math.Round((decimal)dec, numDec).ToString(ceros);
+        }
+
+        public static string RoundOut(this decimal dec, int numDec = KeyAmounts.numDecDefault)
+        {
+            string ceros = "0.";
+            Enumerable.Range(1, numDec > 0 ? numDec : 1).ToList().ForEach(x => { ceros += "#"; });
+            return Math.Round(dec, numDec).ToString(ceros);
         }
     }
 }

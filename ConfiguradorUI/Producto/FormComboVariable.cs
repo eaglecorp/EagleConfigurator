@@ -16,6 +16,7 @@ using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios.HelperControl;
 using ConfiguradorUI.Buscadores;
 using ConfigBusinessLogic;
+using ConfigUtilitarios.KeyValues;
 
 namespace ConfiguradorUI.Producto
 {
@@ -34,13 +35,8 @@ namespace ConfiguradorUI.Producto
 
         PROt09_producto item = null;
         List<PROt16_combo_variable_dtl> details = null;
+        int maxNumItems = 3;
         #endregion
-
-        /*
-         Validación txt entero
-         Validación min items
-         Validación para insert/ update precios no vacíos y decimales
-             */
 
         public FormComboVariable()
         {
@@ -49,19 +45,70 @@ namespace ConfiguradorUI.Producto
 
         #region Métodos de ventana
 
-
         #region Métodos Details
 
+        private void SetItem(PROt09_producto producto)
+        {
+            try
+            {
+                item = new PROt09_producto();
+                item = producto;
 
-        private void CleanProducto()
+                txtItemCod.Text = producto.cod_producto;
+                txtItemDesc.Text = producto.txt_desc;
+                txtItemPriceConImp.Text = producto.mto_pvpu_con_igv?.ToString();
+                txtItemPriceSinImp.Text = producto.mto_pvpu_sin_igv?.ToString();
+                txtItemQuantity.Focus();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo setear el producto. Excepción: " + e.Message, "Mensaje Eagle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private PROt16_combo_variable_dtl GetItem()
+        {
+            try
+            {
+                var detailItem = new PROt16_combo_variable_dtl();
+                detailItem.PROt09_producto = new PROt09_producto();
+
+                detailItem.id_producto = item.id_producto;
+                detailItem.cod_combo_variable_dtl = item.cod_producto;
+                detailItem.cantidad = decimal.Parse(txtItemQuantity.Text.Trim());
+                detailItem.mto_pvpu_sin_tax = decimal.Parse(txtItemPriceSinImp.Text.Trim());
+                detailItem.mto_pvpu_con_tax = decimal.Parse(txtItemPriceConImp.Text.Trim());
+                detailItem.id_estado = Estado.IdActivo;
+                detailItem.txt_estado = Estado.TxtActivo;
+
+                detailItem.PROt09_producto.txt_desc = txtItemDesc.Text.Trim();
+                return detailItem;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo obtener el producto. Excepción: " + e.Message, "Mensaje Eagle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        private void CleanItem(bool includeItem = false)
         {
             txtItemCod.Clear();
             txtItemDesc.Clear();
-            txtItemPrice.Clear();
+            txtItemPriceConImp.Clear();
+            txtItemPriceSinImp.Clear();
             txtItemQuantity.Clear();
+            if (includeItem) item = null;
         }
 
-        private bool BuscarProducto()
+        private void CleanDetail(bool includeDetails = false)
+        {
+            SetCabeceraGridDetail();
+            DefinirCabeceraGridDetail();
+            if (includeDetails) details = null;
+        }
+
+        private bool BuscarItem()
         {
             string codProd = txtItemCod.Text.Trim();
             //Si está vació el txt -> abre el form
@@ -69,7 +116,7 @@ namespace ConfiguradorUI.Producto
                 return false;
 
             //De lo contrario hace la búsqueda del producto
-            var list = new ProductoBL().BuscarProducto(codProd, "", "", Estado.IdActivo, 99, Estado.IdActivo);
+            var list = new ProductoBL().BuscarProducto(codProd, "", "", Estado.IdActivo, Estado.Ignorar, Estado.IdActivo);
             //Si solo hay un producto con ese filtro
             if (list != null && list.Count() == 1)
             {
@@ -78,8 +125,8 @@ namespace ConfiguradorUI.Producto
                     //Si el prouducto encontrado es distinto al prouducto ya cargado -> carga prod y no abre form
                     if (item == null || i.id_producto != item.id_producto)
                     {
-                        CleanProducto();
-                        //SetProducto(i);
+                        CleanItem();
+                        SetItem(i);
                         return true;
                     }
                 }
@@ -91,11 +138,215 @@ namespace ConfiguradorUI.Producto
                 return false;
         }
 
+        private bool ValidAmount(string amount)
+        {
+            return decimal.TryParse(amount, out decimal _amount) &&
+                    _amount > 0 &&
+                    _amount <= KeyAmounts.MaxAmount;
+
+        }
+
+        private bool ValidAmountRange(decimal amount)
+        {
+            return amount > 0 &&
+                    amount <= KeyAmounts.MaxAmount;
+
+        }
+
+        private bool ValidarItem()
+        {
+            errorProv.Clear();
+            var valid = true;
+
+            if (!(item != null && item.id_producto > 0))
+            {
+                valid = false;
+                Msj.Ok_Info("No se ha seleccionado a ningún producto. Presione Enter y seleccione.");
+                txtItemCod.Focus();
+            }
+            else
+            {
+                if (!ValidAmount(txtItemPriceSinImp.Text.Trim()))
+                {
+                    valid = false;
+                    errorProv.SetError(lblPrecioSinImp, ValidationMsj.Amount);
+                    txtItemPriceSinImp.Focus();
+                }
+                if (!ValidAmount(txtItemPriceConImp.Text.Trim()))
+                {
+                    valid = false;
+                    errorProv.SetError(lblPrecioConImp, ValidationMsj.Amount);
+                    txtItemPriceConImp.Focus();
+                }
+                if (!ValidAmount(txtItemQuantity.Text.Trim()))
+                {
+                    valid = false;
+                    errorProv.SetError(lblCantidad, ValidationMsj.Amount);
+                    txtItemQuantity.Focus();
+                }
+                if (txtItemDesc.Text.Trim() == "")
+                {
+                    valid = false;
+                    errorProv.SetError(lblProducto, ValidationMsj.Required);
+                    txtItemDesc.Focus();
+                }
+            }
+
+            return valid;
+        }
+
+        private void AddItem()
+        {
+            if (ValidarItem())
+            {
+                var _item = GetItem();
+                if (_item != null)
+                {
+                    if (details == null) details = new List<PROt16_combo_variable_dtl>();
+                    try
+                    {
+                        var index = details.FindIndex(x => x.id_producto == _item.id_producto);
+                        //Si el producto ya existe en el detalle -> edita item
+                        if (index != -1)
+                        {
+                            var oldItem = details[index];
+                            _item.cantidad += oldItem.cantidad;
+                            details[index] = _item;
+                            CargarGridProd(details);
+                        }
+                        //Si el producto no existe en el detalle -> agrega item
+                        else if (details.Count < maxNumItems)
+                        {
+                            details.Add(_item);
+                            CargarGridProd(details);
+                        }
+                        else
+                            Msj.Ok_Info($"No puede agregar más items. Ha alcanzado el número máximo de items({maxNumItems}).", "Mensaje Eagle");
+
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show($"No se pudo agregar el item. Excepción: {e.Message}", "Mensaje Eagle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        CleanItem(true);
+                        errorProv.Clear();
+                        txtItemCod.Focus();
+                    }
+                }
+            }
+        }
+
+        private void RemoveItem()
+        {
+            int id = 0;
+            try
+            {
+                //comprobante y obteniendo el id del producto
+                if (details != null &&
+                    dgvDetail.CurrentRow != null &&
+                    dgvDetail.SelectedRows.Count > 0 &&
+                    int.TryParse(dgvDetail.SelectedRows[0].Cells[0].Value.ToString(), out id))
+                {
+                    string item = dgvDetail.SelectedRows[0].Cells[1].Value != null ? dgvDetail.SelectedRows[0].Cells[1].Value.ToString() : "";
+
+                    if (Msj.YesNo_Ques($"¿Está seguro eliminar el item '{item}'?") == DialogResult.Yes)
+                    {
+                        int index = details.FindIndex(x => x.id_producto == id);
+                        if (index != -1)
+                        {
+                            details.RemoveAt(index);
+                            if (details.Count == 0) details = null;
+                            CargarGridProd(details);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Msj.Ok_Err($"No se pudo eliminar el item correctamente. Excepción: {e.Message}", "Excepción encontrada");
+            }
+            finally
+            {
+                dgvDetail.Focus();
+            }
+
+        }
+
+        private void CargarGridProd(IEnumerable<PROt16_combo_variable_dtl> list)
+        {
+            if (list != null)
+            {
+                dgvDetail.DataSource = list.Select(x => new
+                {
+                    ID_PROD = x.id_producto,
+                    PRODUCTO = x.PROt09_producto != null ? x.PROt09_producto.txt_desc : "NO SE PUEDE MOSTRAR",
+                    CANTIDAD = x.cantidad.RoundOut(),
+                    P_UNIT_C_TAX = x.mto_pvpu_con_tax.RoundOut(),
+                    P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RoundOut()
+                }).ToList();
+
+            }
+            else
+            {
+                SetCabeceraGridDetail();
+            }
+            DefinirCabeceraGridDetail();
+        }
+
+        #region útiles
+
+        private void SetCabeceraGridDetail()
+        {
+            var detailHeader = new List<PROt16_combo_variable_dtl>();
+            dgvDetail.DataSource = detailHeader.Select(x => new
+            {
+                ID_PROD = "",
+                PRODUCTO = "",
+                CANTIDAD = "",
+                P_UNIT_C_TAX = "",
+                P_UNIT_S_TAX = ""
+            }).ToList();
+        }
+
+        private void DefinirCabeceraGridDetail()
+        {
+            try
+            {
+                dgvDetail.Columns["ID_PROD"].Visible = false;
+
+                dgvDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgvDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
+                dgvDetail.Columns["P_UNIT_C_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDetail.Columns["P_UNIT_C_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgvDetail.Columns["P_UNIT_S_TAX"].HeaderText = "P. UNIT. S/I";
+                dgvDetail.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDetail.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgvDetail.Columns["PRODUCTO"].Width = 230;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"No se pudo definir la cabecera de la grilla de productos. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         #endregion
+
+        #endregion
+
+        #region Combo Master
 
         private void addHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
+            txtItemPriceConImp.KeyPress += ControlHelper.TxtValidDecimal;
+            txtItemQuantity.KeyPress += ControlHelper.TxtValidInteger;
+
             var txts = new[] { txtNombre, txtCodigo, txtPrecioCboConTax, txtPrecioCboSinTax };
             foreach (var txt in txts)
             {
@@ -134,11 +385,9 @@ namespace ConfiguradorUI.Producto
                 {
                     if (esValido())
                     {
-                        Msj.Ok_Info("Pasó la validación. Listo para grabar");
                         var obj = new PROt15_combo_variable();
                         obj = GetObjeto();
-                        //int id = new ComboVariableBL().InsertarComboVariable(obj);
-                        int id = 1;
+                        int id = new ComboVariableBL().InsertarComboVariable(obj);
                         if (id > 0)
                             actualizar = true;
                         ControlarEventosABM(id);
@@ -171,7 +420,7 @@ namespace ConfiguradorUI.Producto
                                 DialogResult rp = MessageBox.Show("¿Seguro de eliminar el registro?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (rp == DialogResult.Yes)
                                 {
-                                    bool validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Producto_ComboVariableDtl);
+                                    bool validDelete = new UtilBL().ValidarDelete(id, CodValDelete.ComboVariable_ComboFixedDtl);
                                     if (validDelete)
                                     {
                                         new ComboVariableBL().EliminarComboVariable(id);
@@ -278,11 +527,11 @@ namespace ConfiguradorUI.Producto
             {
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.cod_combo_variable = txtCodigo.Text.Trim();
-
+                obj.mto_pvpu_con_tax = decimal.Parse(txtPrecioCboConTax.Text.Trim());
+                obj.mto_pvpu_sin_tax = decimal.Parse(txtPrecioCboSinTax.Text.Trim());
+                obj.PROt16_combo_variable_dtl = details;
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
-
-
             }
             catch (Exception e)
             {
@@ -295,9 +544,6 @@ namespace ConfiguradorUI.Producto
         {
             try
             {
-                // Variable de la lógica de cambio.
-                // Indica que la asignación de los datos de un producto se está dando
-                // porque se cambió de fila.
                 isChangedRow = true;
                 LimpiarForm();
 
@@ -308,6 +554,9 @@ namespace ConfiguradorUI.Producto
 
                 txtNombre.Text = obj.txt_desc;
                 txtCodigo.Text = obj.cod_combo_variable;
+                txtPrecioCboConTax.Text = obj.mto_pvpu_con_tax.ToString();
+                txtPrecioCboSinTax.Text = obj.mto_pvpu_sin_tax.ToString();
+                CargarGridProd(obj.PROt16_combo_variable_dtl);
 
             }
             catch (Exception e)
@@ -329,6 +578,68 @@ namespace ConfiguradorUI.Producto
                 txtNombre.Focus();
                 no_error = false;
             }
+
+            if (!ValidAmount(txtPrecioCboSinTax.Text.Trim()))
+            {
+                errorProv.SetError(txtPrecioCboSinTax, ValidationMsj.Amount);
+                txtPrecioCboSinTax.Focus();
+                no_error = false;
+            }
+            if (!ValidAmount(txtPrecioCboConTax.Text.Trim()))
+            {
+                errorProv.SetError(txtPrecioCboConTax, ValidationMsj.Amount);
+                txtPrecioCboConTax.Focus();
+                no_error = false;
+            }
+
+            #region Validación Details
+            if (details == null || details.Count == 0)
+            {
+                errorProv.SetError(dgvDetail, "Se requiere al menos de un item.");
+                txtItemCod.Focus();
+                no_error = false;
+            }
+            else
+            {
+                var msjValid = "";
+                var numActivos = 0;
+                foreach (var item in details)
+                {
+                    if (!ValidAmountRange(item.cantidad))
+                    {
+                        no_error = false;
+                        msjValid += $"- La cantidad del producto:'{item.PROt09_producto.txt_desc}' " +
+                            $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
+                    }
+                    if (!ValidAmountRange(item.mto_pvpu_con_tax))
+                    {
+                        no_error = false;
+                        msjValid += $"- El precio de venta con impuesto del producto:'{item.PROt09_producto.txt_desc}' " +
+                            $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
+                    }
+
+                    if (!ValidAmountRange(item.mto_pvpu_sin_tax))
+                    {
+                        no_error = false;
+                        msjValid += $"- El precio de venta sin impuesto del producto:'{item.PROt09_producto.txt_desc}' " +
+                            $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
+                    }
+                    if (item.id_estado == Estado.IdActivo)
+                    {
+                        numActivos++;
+                    }
+                }
+                if (numActivos == 0)
+                {
+                    no_error = false;
+                    msjValid = "- Al menos un producto del combo debe estar activo.\n" + msjValid;
+                }
+                if (msjValid != "")
+                {
+                    Msj.Ok_Info(msjValid, "VALIDACIÓN DEL COMBO VARIABLE DETALLE");
+                }
+            }
+            #endregion
 
             #region código único
 
@@ -373,7 +684,7 @@ namespace ConfiguradorUI.Producto
                 if (int.TryParse(lblIdComboVariable.Text, out id))
                 {
                     bool validDelete = false;
-                    validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Producto_ComboVariableDtl);
+                    validDelete = new UtilBL().ValidarDelete(id, CodValDelete.ComboVariable_ComboFixedDtl);
                     if (!validDelete)
                     {
                         MessageBox.Show(this, "Este registro no se puede desactivar porque se usa en otro lado.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -540,6 +851,10 @@ namespace ConfiguradorUI.Producto
             codSelected = "";
             txtNombre.Clear();
             txtCodigo.Clear();
+            txtPrecioCboConTax.Clear();
+            txtPrecioCboSinTax.Clear();
+            CleanItem(true);
+            CleanDetail(true);
 
             if (TipoOperacion == TipoOperacionABM.Nuevo)
                 chkActivo.Enabled = false;
@@ -715,20 +1030,35 @@ namespace ConfiguradorUI.Producto
                 MessageBox.Show(this, $"Excepción el contar los estados: {e.Message}");
             }
         }
-        private void CerrarForm()
+        private void SetInit()
         {
-            Dispose();
-            Hide();
-            Close();
-        }
 
-        #endregion
-
-        #region Eventos de ventana
-
-        private void FormComboVariable_Load(object sender, EventArgs e)
-        {
+            #region Controls
             lblIdComboVariable.Visible = false;
+            txtItemDesc.ReadOnly = true;
+            txtItemPriceConImp.ReadOnly = true;
+            txtItemPriceSinImp.ReadOnly = true;
+            txtItemQuantity.TextAlign = HorizontalAlignment.Right;
+            txtPrecioCboConTax.TextAlign = HorizontalAlignment.Right;
+            txtPrecioCboSinTax.TextAlign = HorizontalAlignment.Right;
+
+            #region Dgv
+            var detailHeader = new List<PROt15_combo_variable>();
+            dgvDetail.DataSource = detailHeader.Select(x => new
+            {
+                ID_PROD = "",
+                PRODUCTO = "",
+                CANTIDAD = "",
+                P_UNIT_C_TAX = "",
+                P_UNIT_S_TAX = ""
+            }).ToList();
+            DefinirCabeceraGridDetail();
+            ControlHelper.DgvReadOnly(dgvDetail);
+            ControlHelper.DgvLightStyle(dgvDetail);
+            #endregion
+
+            #endregion
+
             SetMaxLengthTxt();
             ControlarEventosABM();
             LimpiarForm();
@@ -738,6 +1068,22 @@ namespace ConfiguradorUI.Producto
             addHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
+        }
+        private void CerrarForm()
+        {
+            Dispose();
+            Hide();
+            Close();
+        }
+        #endregion
+
+        #endregion
+
+        #region Eventos de ventana
+
+        private void FormComboVariable_Load(object sender, EventArgs e)
+        {
+            SetInit();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -776,6 +1122,11 @@ namespace ConfiguradorUI.Producto
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (item == null) Msj.Ok_Info("Item Es nulo");
+            else Msj.Ok_Info("Item No es nulo " + item.txt_desc);
+
+            if (details == null) Msj.Ok_Info("Details Es nulo");
+            else Msj.Ok_Info("Details No es nulo ");
             if (panelFiltro.Visible)
             {
                 panelFiltro.Visible = false;
@@ -1035,23 +1386,65 @@ namespace ConfiguradorUI.Producto
             }
         }
 
-        #endregion
-
         private void txtItemCod_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
             {
-                if (!BuscarProducto())
+                if (!BuscarItem())
                 {
                     var form = new FormBuscarProducto();
                     form.ShowDialog();
-                    //if (form.producto != null)
-                    //{
-                    //    CleanProducto();
-                    //    SetProducto(form.producto);
-                    //}
+                    if (form.producto != null)
+                    {
+                        CleanItem();
+                        SetItem(form.producto);
+                    }
                 }
             }
+        }
+        #endregion
+
+        private void txtItemQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
+            {
+                AddItem();
+            }
+        }
+
+        private void txtItemDesc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
+            {
+                if (!BuscarItem())
+                {
+                    var form = new FormBuscarProducto();
+                    form.ShowDialog();
+                    if (form.producto != null)
+                    {
+                        CleanItem();
+                        SetItem(form.producto);
+                    }
+                }
+            }
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            AddItem();
+        }
+
+        private void dgvDetail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Delete)
+            {
+                RemoveItem();
+            }
+        }
+
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            RemoveItem();
         }
     }
 }

@@ -29,5 +29,6 @@ namespace ConfigUtilitarios
         public static int Producto_ComboFixedDtl { get; } = 18;
         public static int Producto_ComboVariableDtl { get; } = 19;
         public static int ComboGrupo_Combo { get; } = 20;
+        public static int ComboVariable_ComboFixedDtl { get; } = 21;
     }
 }

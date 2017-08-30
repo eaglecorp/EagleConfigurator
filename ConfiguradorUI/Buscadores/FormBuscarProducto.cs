@@ -81,21 +81,21 @@ namespace ConfiguradorUI.Buscadores
 
         private void BuscarProducto(bool verTodos = false)
         {
-            var cod = ""; var cod02 = ""; var nombre = "";
-            int estado = 99;
-            int snVenta = Estado.IdActivo;
-            int snCompra = 99;
-            if (!verTodos)
+            var cod = txtCodigo.Text.Trim();
+            var cod02 = txtCodigo02.Text.Trim();
+            var nombre = txtDescripcionProd.Text.Trim();
+            int? estado = chkIncluirInactivos.Checked ? Estado.Ignorar : Estado.IdActivo;
+            int? snVenta = chkProdVenta.Checked ? Estado.IdActivo : Estado.Ignorar;
+            int? snCompra = chkProdCompra.Checked ? Estado.IdActivo : Estado.Ignorar;
+
+            if (verTodos)
             {
-                cod = txtCodigo.Text.Trim();
-                cod02 = txtCodigo02.Text.Trim();
-                nombre = txtDescripcionProd.Text.Trim();
-                if (!checkInactivos.Checked && checkActivos.Checked)
-                    estado = Estado.IdActivo;
-                else if (checkInactivos.Checked && !checkActivos.Checked)
-                    estado = Estado.IdInactivo;
-                else if (!checkInactivos.Checked && !checkActivos.Checked)
-                    estado = 100;
+                cod = "";
+                cod02 = "";
+                nombre = "";
+                estado = Estado.Ignorar;
+                snVenta = Estado.Ignorar;
+                snCompra = Estado.Ignorar;
             }
 
             var list = new ProductoBL().BuscarProducto(cod, cod02, nombre, snVenta, snCompra, estado);
@@ -134,7 +134,7 @@ namespace ConfiguradorUI.Buscadores
 
                 dgvProd.Columns["DESCRIPCION"].Width = 405;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show($"No se pudo definir la cabecera de la grilla. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -149,8 +149,9 @@ namespace ConfiguradorUI.Buscadores
 
             #region Checks
 
-            checkActivos.Checked = true;
-            checkInactivos.Checked = false;
+            chkIncluirInactivos.Checked = false;
+            chkProdVenta.Checked = true;
+            chkProdCompra.Checked = false;
 
             #endregion
 
@@ -179,7 +180,8 @@ namespace ConfiguradorUI.Buscadores
 
             }).ToList();
             DefinirCabeceraGrid();
-            ControlExt.ConfigurarGrilla(dgvProd);
+            ControlHelper.DgvReadOnly(dgvProd);
+            ControlHelper.DgvStyle(dgvProd);
             #endregion
 
         }
@@ -213,7 +215,7 @@ namespace ConfiguradorUI.Buscadores
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show($"No se pudo seleccionar el producto. Excepción: {e.Message}", "Excepción encontrada",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show($"No se pudo seleccionar el producto. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -248,13 +250,17 @@ namespace ConfiguradorUI.Buscadores
             SeleccionarProducto();
         }
 
-
-        private void checkInactivos_CheckedChanged(object sender, EventArgs e)
+        private void chkIncluirInactivos_CheckedChanged(object sender, EventArgs e)
         {
             BuscarProducto();
         }
 
-        private void checkActivos_CheckedChanged(object sender, EventArgs e)
+        private void chkProdVenta_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarProducto();
+        }
+
+        private void chkProdCompra_CheckedChanged(object sender, EventArgs e)
         {
             BuscarProducto();
         }
@@ -277,8 +283,8 @@ namespace ConfiguradorUI.Buscadores
             }
         }
 
-        #endregion
 
+        #endregion
 
     }
 }
