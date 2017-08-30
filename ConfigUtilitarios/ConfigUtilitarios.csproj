@@ -50,33 +50,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlphaNumericComparer.cs" />
-    <Compile Include="BackupRestore.cs" />
-    <Compile Include="CamWeb.cs" />
-    <Compile Include="CodValDelete.cs" />
-    <Compile Include="Connection.cs" />
-    <Compile Include="ConvertToTable.cs" />
-    <Compile Include="CursorWait.cs" />
-    <Compile Include="DateFormat.cs" />
-    <Compile Include="Email.cs" />
-    <Compile Include="Encription.cs" />
+    <Compile Include="HelperGeneric\List\AlphaNumericComparer.cs" />
+    <Compile Include="Security\BackupRestore.cs" />
+    <Compile Include="HelperMultimedia\CamWeb.cs" />
+    <Compile Include="KeyValues\CodValDelete.cs" />
+    <Compile Include="Security\Connection.cs" />
+    <Compile Include="HelperGeneric\List\ConvertToTable.cs" />
+    <Compile Include="HelperControl\CursorWait.cs" />
+    <Compile Include="HelperGeneric\DateFormat.cs" />
+    <Compile Include="HelperGeneric\Email.cs" />
+    <Compile Include="Security\Encription.cs" />
     <Compile Include="HelperControl\ControlHelper.cs" />
     <Compile Include="KeyValues\Estado.cs" />
-    <Compile Include="FileIO.cs" />
-    <Compile Include="FilePath.cs" />
-    <Compile Include="Filtro.cs" />
+    <Compile Include="HelperMultimedia\FileIO.cs" />
+    <Compile Include="HelperMultimedia\FilePath.cs" />
+    <Compile Include="HelperClass\Filtro.cs" />
     <Compile Include="HelperClass\ComboItem.cs" />
     <Compile Include="HelperControl\Msj.cs" />
     <Compile Include="KeyValues\KeyAmounts.cs" />
     <Compile Include="KeyValues\ValidationMsj.cs" />
-    <Compile Include="Log.cs" />
+    <Compile Include="Security\Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SendFTP.cs" />
+    <Compile Include="HelperMultimedia\SendFTP.cs" />
     <Compile Include="Extensions\StringExt.cs" />
-    <Compile Include="TipoOperacionABM.cs" />
-    <Compile Include="TopList.cs" />
-    <Compile Include="Validation.cs" />
-    <Compile Include="ZipArchive.cs" />
+    <Compile Include="KeyValues\TipoOperacionABM.cs" />
+    <Compile Include="KeyValues\TopList.cs" />
+    <Compile Include="HelperGeneric\Validation.cs" />
+    <Compile Include="HelperMultimedia\ZipArchive.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
