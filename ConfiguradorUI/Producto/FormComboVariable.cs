@@ -35,7 +35,7 @@ namespace ConfiguradorUI.Producto
 
         PROt09_producto item = null;
         List<PROt16_combo_variable_dtl> details = null;
-        int maxNumItems = 3;
+        int maxNumItems = 5;
         #endregion
 
         public FormComboVariable()
@@ -65,7 +65,6 @@ namespace ConfiguradorUI.Producto
                 MessageBox.Show("No se pudo setear el producto. Excepción: " + e.Message, "Mensaje Eagle", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private PROt16_combo_variable_dtl GetItem()
         {
             try
@@ -100,7 +99,6 @@ namespace ConfiguradorUI.Producto
             txtItemQuantity.Clear();
             if (includeItem) item = null;
         }
-
         private void CleanDetail(bool includeDetails = false)
         {
             SetCabeceraGridDetail();
@@ -126,6 +124,7 @@ namespace ConfiguradorUI.Producto
                     if (item == null || i.id_producto != item.id_producto)
                     {
                         CleanItem();
+                        errorProv.Clear();
                         SetItem(i);
                         return true;
                     }
@@ -137,7 +136,6 @@ namespace ConfiguradorUI.Producto
             else
                 return false;
         }
-
         private bool ValidAmount(string amount)
         {
             return decimal.TryParse(amount, out decimal _amount) &&
@@ -145,15 +143,13 @@ namespace ConfiguradorUI.Producto
                     _amount <= KeyAmounts.MaxAmount;
 
         }
-
         private bool ValidAmountRange(decimal amount)
         {
             return amount > 0 &&
                     amount <= KeyAmounts.MaxAmount;
 
         }
-
-        private bool ValidarItem()
+        private bool ValidItem()
         {
             errorProv.Clear();
             var valid = true;
@@ -161,7 +157,7 @@ namespace ConfiguradorUI.Producto
             if (!(item != null && item.id_producto > 0))
             {
                 valid = false;
-                Msj.Ok_Info("No se ha seleccionado a ningún producto. Presione Enter y seleccione.");
+                Msg.Ok_Info("No se ha seleccionado a ningún producto. Presione Enter y seleccione.");
                 txtItemCod.Focus();
             }
             else
@@ -197,31 +193,44 @@ namespace ConfiguradorUI.Producto
 
         private void AddItem()
         {
-            if (ValidarItem())
+            if (ValidItem())
             {
-                var _item = GetItem();
-                if (_item != null)
+                var itemObtained = GetItem();
+                if (itemObtained != null)
                 {
                     if (details == null) details = new List<PROt16_combo_variable_dtl>();
                     try
                     {
-                        var index = details.FindIndex(x => x.id_producto == _item.id_producto);
+                        var index = details.FindIndex(x => x.id_producto == itemObtained.id_producto);
                         //Si el producto ya existe en el detalle -> edita item
                         if (index != -1)
                         {
                             var oldItem = details[index];
-                            _item.cantidad += oldItem.cantidad;
-                            details[index] = _item;
+                            //Actualizamos los valores
+                            oldItem.cod_combo_variable_dtl = itemObtained.cod_combo_variable_dtl;
+                            oldItem.cantidad += itemObtained.cantidad;
+                            oldItem.mto_pvpu_con_tax = itemObtained.mto_pvpu_con_tax;
+                            oldItem.mto_pvpu_sin_tax = itemObtained.mto_pvpu_sin_tax;
+                            details[index] = oldItem;
                             CargarGridProd(details);
                         }
                         //Si el producto no existe en el detalle -> agrega item
                         else if (details.Count < maxNumItems)
                         {
-                            details.Add(_item);
+                            int idMaster = 0;
+                            //Si no se trata de inserción se asumo que 
+                            //que es una modificación y se trata de ingresar un item
+                            //en un master ya creado. Por tanto se debe traer su id.
+                            if (TipoOperacion != TipoOperacionABM.Nuevo)
+                            {
+                                int.TryParse(lblIdComboVariable.Text, out idMaster);
+                            }
+                            itemObtained.id_combo_variable = idMaster;
+                            details.Add(itemObtained);
                             CargarGridProd(details);
                         }
                         else
-                            Msj.Ok_Info($"No puede agregar más items. Ha alcanzado el número máximo de items({maxNumItems}).", "Mensaje Eagle");
+                            Msg.Ok_Info($"No puede agregar más items. Ha alcanzado el número máximo de items({maxNumItems}).", "Mensaje Eagle");
 
                     }
                     catch (Exception e)
@@ -237,41 +246,61 @@ namespace ConfiguradorUI.Producto
                 }
             }
         }
-
         private void RemoveItem()
         {
             int id = 0;
             try
             {
-                //comprobante y obteniendo el id del producto
                 if (details != null &&
-                    dgvDetail.CurrentRow != null &&
-                    dgvDetail.SelectedRows.Count > 0 &&
-                    int.TryParse(dgvDetail.SelectedRows[0].Cells[0].Value.ToString(), out id))
+                int.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetail, 0), out id))
                 {
-                    string item = dgvDetail.SelectedRows[0].Cells[1].Value != null ? dgvDetail.SelectedRows[0].Cells[1].Value.ToString() : "";
+                    var accionNuevo = false;
+                    string verboide = "DESACTIVAR";
 
-                    if (Msj.YesNo_Ques($"¿Está seguro eliminar el item '{item}'?") == DialogResult.Yes)
+                    if (TipoOperacion == TipoOperacionABM.Nuevo)
+                    {
+                        accionNuevo = true;
+                        verboide = "QUITAR";
+                    }
+
+                    string itemName = ControlHelper.DgvGetCellValueSelected(dgvDetail, 1);
+
+                    if (Msg.YesNo_Ques($"¿Está seguro de {verboide} el item '{itemName}'?") == DialogResult.Yes)
                     {
                         int index = details.FindIndex(x => x.id_producto == id);
                         if (index != -1)
                         {
-                            details.RemoveAt(index);
-                            if (details.Count == 0) details = null;
-                            CargarGridProd(details);
+                            //Se usa en el contexto de inserción
+                            if (accionNuevo)
+                            {
+                                details.RemoveAt(index);
+                                isChangedRow = false;
+                                if (details.Count == 0) details = null;
+                                CargarGridProd(details);
+                            }
+                            //Se usa en el contexto de modificación
+                            else
+                            {
+                                var oldItem = details[index];
+                                oldItem.id_estado = Estado.IdInactivo;
+                                oldItem.txt_estado = Estado.TxtInactivo;
+                                details[index] = oldItem;
+                                CargarGridProd(details);
+                            }
                         }
                     }
                 }
+                else
+                    Msg.Ok_Info($"No hay ningún item para eliminar.");
             }
             catch (Exception e)
             {
-                Msj.Ok_Err($"No se pudo eliminar el item correctamente. Excepción: {e.Message}", "Excepción encontrada");
+                Msg.Ok_Err($"No se pudo eliminar el item correctamente. Excepción: {e.Message}", "Excepción encontrada");
             }
             finally
             {
                 dgvDetail.Focus();
             }
-
         }
 
         private void CargarGridProd(IEnumerable<PROt16_combo_variable_dtl> list)
@@ -284,7 +313,8 @@ namespace ConfiguradorUI.Producto
                     PRODUCTO = x.PROt09_producto != null ? x.PROt09_producto.txt_desc : "NO SE PUEDE MOSTRAR",
                     CANTIDAD = x.cantidad.RoundOut(),
                     P_UNIT_C_TAX = x.mto_pvpu_con_tax.RoundOut(),
-                    P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RoundOut()
+                    P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RoundOut(),
+                    ACTIVO = x.id_estado == Estado.IdActivo ? true : false
                 }).ToList();
 
             }
@@ -294,6 +324,28 @@ namespace ConfiguradorUI.Producto
             }
             DefinirCabeceraGridDetail();
         }
+
+        #region Métodos para eventos
+
+        private void SearchAndSetItem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
+            {
+                if (!BuscarItem())
+                {
+                    var form = new FormBuscarProducto();
+                    form.ShowDialog();
+                    if (form.producto != null)
+                    {
+                        CleanItem();
+                        errorProv.Clear();
+                        SetItem(form.producto);
+                    }
+                }
+            }
+        }
+
+        #endregion
 
         #region útiles
 
@@ -306,7 +358,8 @@ namespace ConfiguradorUI.Producto
                 PRODUCTO = "",
                 CANTIDAD = "",
                 P_UNIT_C_TAX = "",
-                P_UNIT_S_TAX = ""
+                P_UNIT_S_TAX = "",
+                ACTIVO = true
             }).ToList();
         }
 
@@ -327,7 +380,10 @@ namespace ConfiguradorUI.Producto
                 dgvDetail.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvDetail.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvDetail.Columns["PRODUCTO"].Width = 230;
+                dgvDetail.Columns["PRODUCTO"].Width = 200;
+                dgvDetail.Columns["CANTIDAD"].Width = 80;
+                dgvDetail.Columns["ACTIVO"].Width = 55;
+
             }
             catch (Exception e)
             {
@@ -339,13 +395,15 @@ namespace ConfiguradorUI.Producto
 
         #endregion
 
-        #region Combo Master
+        #region Métodos Master
 
         private void addHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             txtItemPriceConImp.KeyPress += ControlHelper.TxtValidDecimal;
             txtItemQuantity.KeyPress += ControlHelper.TxtValidInteger;
+            txtItemCod.KeyPress += SearchAndSetItem_KeyPress;
+            txtItemDesc.KeyPress += SearchAndSetItem_KeyPress;
 
             var txts = new[] { txtNombre, txtCodigo, txtPrecioCboConTax, txtPrecioCboSinTax };
             foreach (var txt in txts)
@@ -360,6 +418,8 @@ namespace ConfiguradorUI.Producto
             {
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
+
+            dgvDetail.DataSourceChanged += new EventHandler(OnContentChanged);
 
         }
 
@@ -467,14 +527,14 @@ namespace ConfiguradorUI.Producto
                 {
                     if (esValido())
                     {
-                        Msj.Ok_Info("Pasó la validación. Listo para actualizar");
+                        Msg.Ok_Info("Pasó la validación. Listo para actualizar");
                         PROt15_combo_variable obj = new PROt15_combo_variable();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdComboVariable.Text, out id))
                         {
                             obj.id_combo_variable = id;
-                            //new ComboVariableBL().ActualizarComboVariable(obj);
+                            new ComboVariableBL().ActualizarComboVariable(obj);
                             actualizar = true;
                             ControlarEventosABM(obj.id_combo_variable);
                         }
@@ -498,7 +558,7 @@ namespace ConfiguradorUI.Producto
                 {
                     if (esValido())
                     {
-                        Msj.Ok_Info("Pasó la validación. Listo para actualizar en check");
+                        Msg.Ok_Info("Pasó la validación. Listo para actualizar en check");
                         PROt15_combo_variable obj = new PROt15_combo_variable();
                         obj = GetObjeto();
                         int id = 0;
@@ -529,9 +589,16 @@ namespace ConfiguradorUI.Producto
                 obj.cod_combo_variable = txtCodigo.Text.Trim();
                 obj.mto_pvpu_con_tax = decimal.Parse(txtPrecioCboConTax.Text.Trim());
                 obj.mto_pvpu_sin_tax = decimal.Parse(txtPrecioCboSinTax.Text.Trim());
-                obj.PROt16_combo_variable_dtl = details;
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
+
+                //IMPORTANTE
+                /*
+                 Colocar null al producto de cada detalle. De los contrario EF al
+                 momento de grabar insertería también estos productos.
+                 */
+                details.ForEach(x => x.PROt09_producto = null);
+                obj.PROt16_combo_variable_dtl = details;
             }
             catch (Exception e)
             {
@@ -556,6 +623,7 @@ namespace ConfiguradorUI.Producto
                 txtCodigo.Text = obj.cod_combo_variable;
                 txtPrecioCboConTax.Text = obj.mto_pvpu_con_tax.ToString();
                 txtPrecioCboSinTax.Text = obj.mto_pvpu_sin_tax.ToString();
+                details = obj.PROt16_combo_variable_dtl?.ToList();
                 CargarGridProd(obj.PROt16_combo_variable_dtl);
 
             }
@@ -636,7 +704,7 @@ namespace ConfiguradorUI.Producto
                 }
                 if (msjValid != "")
                 {
-                    Msj.Ok_Info(msjValid, "VALIDACIÓN DEL COMBO VARIABLE DETALLE");
+                    Msg.Ok_Info(msjValid, "VALIDACIÓN DEL COMBO VARIABLE DETALLE");
                 }
             }
             #endregion
@@ -785,7 +853,8 @@ namespace ConfiguradorUI.Producto
         private void SeleccionarRegistro()
         {
             isPending = false;
-            if (dgvComboVariable.RowCount > 0 && dgvComboVariable.SelectedRows.Count > 0 && dgvComboVariable.CurrentRow.Index != -1)
+            if (dgvComboVariable.RowCount > 0 &&
+                dgvComboVariable.SelectedRows.Count > 0)
             {
                 int id = 0;
                 if (int.TryParse(GetIdSelected(), out id))
@@ -1043,15 +1112,7 @@ namespace ConfiguradorUI.Producto
             txtPrecioCboSinTax.TextAlign = HorizontalAlignment.Right;
 
             #region Dgv
-            var detailHeader = new List<PROt15_combo_variable>();
-            dgvDetail.DataSource = detailHeader.Select(x => new
-            {
-                ID_PROD = "",
-                PRODUCTO = "",
-                CANTIDAD = "",
-                P_UNIT_C_TAX = "",
-                P_UNIT_S_TAX = ""
-            }).ToList();
+            SetCabeceraGridDetail();
             DefinirCabeceraGridDetail();
             ControlHelper.DgvReadOnly(dgvDetail);
             ControlHelper.DgvLightStyle(dgvDetail);
@@ -1122,11 +1183,6 @@ namespace ConfiguradorUI.Producto
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (item == null) Msj.Ok_Info("Item Es nulo");
-            else Msj.Ok_Info("Item No es nulo " + item.txt_desc);
-
-            if (details == null) Msj.Ok_Info("Details Es nulo");
-            else Msj.Ok_Info("Details No es nulo ");
             if (panelFiltro.Visible)
             {
                 panelFiltro.Visible = false;
@@ -1386,46 +1442,15 @@ namespace ConfiguradorUI.Producto
             }
         }
 
-        private void txtItemCod_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
-            {
-                if (!BuscarItem())
-                {
-                    var form = new FormBuscarProducto();
-                    form.ShowDialog();
-                    if (form.producto != null)
-                    {
-                        CleanItem();
-                        SetItem(form.producto);
-                    }
-                }
-            }
-        }
         #endregion
+
+
 
         private void txtItemQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
             {
                 AddItem();
-            }
-        }
-
-        private void txtItemDesc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
-            {
-                if (!BuscarItem())
-                {
-                    var form = new FormBuscarProducto();
-                    form.ShowDialog();
-                    if (form.producto != null)
-                    {
-                        CleanItem();
-                        SetItem(form.producto);
-                    }
-                }
             }
         }
 
@@ -1446,5 +1471,27 @@ namespace ConfiguradorUI.Producto
         {
             RemoveItem();
         }
+
+        //PARA FINES DE TEST
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (item == null) Msg.Ok_Info("Item Es nulo");
+            else Msg.Ok_Info("Item No es nulo " + item.txt_desc);
+
+            if (details == null) Msg.Ok_Info("Details Es nulo");
+            else Msg.Ok_Info("Details No es nulo ");
+
+
+            if (TipoOperacion == TipoOperacionABM.Nuevo)
+            {
+                Msg.Ok_Info("EN CONTEXTO DE INSETAR");
+            }
+            else if (TipoOperacion == TipoOperacionABM.Cambio)
+            {
+                Msg.Ok_Info("EN CONTEXTO DE MODIFICAR");
+            }
+            else Msg.Ok_Info("EN CONTEXTO DE NO MODIFICAR NI INSETAR");
+        }
     }
 }
+

@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ColorExt.cs" />
+    <Compile Include="HelperControl\Msg.cs" />
     <Compile Include="HelperGeneric\List\AlphaNumericComparer.cs" />
     <Compile Include="HelperGeneric\UtilString.cs" />
     <Compile Include="Security\BackupRestore.cs" />
@@ -68,7 +69,6 @@
     <Compile Include="HelperMultimedia\FilePath.cs" />
     <Compile Include="HelperClass\Filtro.cs" />
     <Compile Include="HelperClass\ComboItem.cs" />
-    <Compile Include="HelperControl\Msj.cs" />
     <Compile Include="KeyValues\KeyAmounts.cs" />
     <Compile Include="KeyValues\ValidationMsj.cs" />
     <Compile Include="Security\Log.cs" />

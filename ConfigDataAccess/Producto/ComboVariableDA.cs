@@ -14,6 +14,8 @@ namespace ConfigDataAccess.Producto
     {
         public List<PROt15_combo_variable> ListaComboVariable(int? id_estado = null)
         {
+
+
             var lista = new List<PROt15_combo_variable>();
             string sentencia = string.Empty;
             sentencia = (id_estado == null) ?
@@ -96,6 +98,24 @@ namespace ConfigDataAccess.Producto
                         if (original != null && original.id_combo_variable > 0)
                         {
                             ctx.Entry(original).CurrentValues.SetValues(actualizado);
+                            if (actualizado.PROt16_combo_variable_dtl != null)
+                                foreach (var newItem in actualizado.PROt16_combo_variable_dtl)
+                                {
+                                    //Edición 
+                                    if (newItem.id_combo_variable_dtl > 0)
+                                    {
+                                        var oldItem = ctx.PROt16_combo_variable_dtl.Find(newItem.id_combo_variable_dtl);
+                                        if (oldItem != null)
+                                        {
+                                            ctx.Entry(oldItem).CurrentValues.SetValues(newItem);
+                                        }
+                                    }
+                                    //Inserción
+                                    else
+                                    {
+                                        ctx.PROt16_combo_variable_dtl.Add(newItem);
+                                    }
+                                }
                             ctx.SaveChanges();
                             tns.Commit();
                         }

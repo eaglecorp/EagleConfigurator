@@ -78,7 +78,7 @@ namespace ConfigUtilitarios
             dgv.MultiSelect = false;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.BorderStyle = BorderStyle.None;
-            dgv.ReadOnly = true;
+            dgv.ReadOnly = false;
 
             #endregion
         }
@@ -131,6 +131,26 @@ namespace ConfigUtilitarios
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
 
             #endregion
+        }
+
+        public static string DgvGetCellValueSelected(DataGridView dgv, int indexColumn)
+        {
+            try
+            {
+                if (dgv.CurrentRow != null &&
+                       dgv.SelectedRows.Count > 0 &&
+                       dgv.SelectedRows[0].Cells[indexColumn].Value != null)
+                {
+                    return dgv.SelectedRows[0].Cells[indexColumn].Value.ToString();
+                }
+                else return null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+
         }
 
         #endregion

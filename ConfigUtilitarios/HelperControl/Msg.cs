@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ConfigUtilitarios.HelperControl
 {
-    public class Msj
+    public class Msg
     {
         public static DialogResult Ok_Info(string msj, string title = "Mensaje")
         {

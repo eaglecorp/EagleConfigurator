@@ -13,6 +13,7 @@ using ConfigBusinessLogic;
 using ConfigUtilitarios;
 using ConfiguradorUI.FormUtil;
 using ConfigBusinessLogic.Utiles;
+using ConfigUtilitarios.HelperControl;
 
 namespace ConfiguradorUI.Producto
 {
@@ -426,7 +427,9 @@ namespace ConfiguradorUI.Producto
         private void SeleccionarRegistro()
         {
             isPending = false;
-            if (dgvModelo.RowCount > 0 && dgvModelo.SelectedRows.Count > 0 && dgvModelo.CurrentRow.Index != -1)
+            if (dgvModelo.RowCount > 0 && 
+                dgvModelo.SelectedRows.Count > 0 &&
+                dgvModelo.CurrentRow.Index != -1)
             {
                 int id = 0;
                 if (int.TryParse(GetIdSelected(), out id))
@@ -1051,8 +1054,7 @@ namespace ConfiguradorUI.Producto
             }
         }
 
+
         #endregion
-
-
     }
 }
