@@ -130,6 +130,7 @@ namespace ConfigUtilitarios
             dgv.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
 
+
             #endregion
         }
 

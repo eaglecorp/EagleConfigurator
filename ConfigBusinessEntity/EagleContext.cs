@@ -7,7 +7,8 @@ namespace ConfigBusinessEntity
 
     public partial class EagleContext : DbContext
     {
-        public EagleContext(string connectionString) : base(connectionString)
+        public EagleContext(string connectionString) 
+            : base(connectionString)
         {
         }
 

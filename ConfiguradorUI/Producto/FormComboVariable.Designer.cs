@@ -49,6 +49,8 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabComboVariable = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.btnBuscarProducto = new MetroFramework.Controls.MetroLink();
+            this.btnProducto = new MetroFramework.Controls.MetroLink();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.txtItemCod = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -357,6 +359,8 @@
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.btnBuscarProducto);
+            this.tabPagGeneral.Controls.Add(this.btnProducto);
             this.tabPagGeneral.Controls.Add(this.dgvDetail);
             this.tabPagGeneral.Controls.Add(this.txtItemCod);
             this.tabPagGeneral.Controls.Add(this.metroLabel4);
@@ -395,8 +399,32 @@
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // btnBuscarProducto
+            // 
+            this.btnBuscarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarProducto.Image")));
+            this.btnBuscarProducto.ImageSize = 20;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(45, 79);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(31, 24);
+            this.btnBuscarProducto.TabIndex = 152;
+            this.btnBuscarProducto.UseSelectable = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnProducto.Image")));
+            this.btnProducto.ImageSize = 20;
+            this.btnProducto.Location = new System.Drawing.Point(186, 79);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(31, 24);
+            this.btnProducto.TabIndex = 151;
+            this.btnProducto.UseSelectable = true;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            // 
             // dgvDetail
             // 
+            this.dgvDetail.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetail.Location = new System.Drawing.Point(0, 134);
             this.dgvDetail.Name = "dgvDetail";
@@ -521,12 +549,13 @@
             this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItem.Image")));
             this.btnAddItem.Location = new System.Drawing.Point(501, 102);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(35, 26);
             this.btnAddItem.TabIndex = 5;
+            this.btnAddItem.Text = "Ad";
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
@@ -569,11 +598,12 @@
             this.btnRemoveItem.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveItem.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveItem.Image")));
+            this.btnRemoveItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveItem.Location = new System.Drawing.Point(501, 71);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(35, 25);
             this.btnRemoveItem.TabIndex = 6;
+            this.btnRemoveItem.Text = "-/+";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
             this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
@@ -761,9 +791,9 @@
             this.lblProducto.ForeColor = System.Drawing.Color.Navy;
             this.lblProducto.Location = new System.Drawing.Point(77, 83);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(156, 19);
+            this.lblProducto.Size = new System.Drawing.Size(112, 19);
             this.lblProducto.TabIndex = 131;
-            this.lblProducto.Text = "Descripción del producto";
+            this.lblProducto.Text = "Descripción Prod.";
             this.lblProducto.UseCustomForeColor = true;
             // 
             // metroLabel1
@@ -1036,5 +1066,7 @@
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.DataGridView dgvComboVariable;
         private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroLink btnProducto;
+        private MetroFramework.Controls.MetroLink btnBuscarProducto;
     }
 }

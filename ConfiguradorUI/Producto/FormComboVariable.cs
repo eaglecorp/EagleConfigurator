@@ -35,7 +35,7 @@ namespace ConfiguradorUI.Producto
 
         PROt09_producto item = null;
         List<PROt16_combo_variable_dtl> details = null;
-        int maxNumItems = 5;
+        int maxNumItems = 4;
         #endregion
 
         public FormComboVariable()
@@ -242,6 +242,7 @@ namespace ConfiguradorUI.Producto
                         CleanItem(true);
                         errorProv.Clear();
                         txtItemCod.Focus();
+
                     }
                 }
             }
@@ -254,41 +255,51 @@ namespace ConfiguradorUI.Producto
                 if (details != null &&
                 int.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetail, 0), out id))
                 {
-                    var accionNuevo = false;
-                    string verboide = "DESACTIVAR";
+                    int index = details.FindIndex(x => x.id_producto == id);
 
-                    if (TipoOperacion == TipoOperacionABM.Nuevo)
+                    if (index != -1 && details[index] != null)
                     {
-                        accionNuevo = true;
-                        verboide = "QUITAR";
-                    }
-
-                    string itemName = ControlHelper.DgvGetCellValueSelected(dgvDetail, 1);
-
-                    if (Msg.YesNo_Ques($"¿Está seguro de {verboide} el item '{itemName}'?") == DialogResult.Yes)
-                    {
-                        int index = details.FindIndex(x => x.id_producto == id);
-                        if (index != -1)
+                        var oldItem = details[index];
+                        var itemDesc = oldItem.PROt09_producto?.txt_desc;
+                        //Se usa en el contexto de inserción
+                        if (TipoOperacion == TipoOperacionABM.Nuevo)
                         {
-                            //Se usa en el contexto de inserción
-                            if (accionNuevo)
+                            if (Msg.YesNo_Ques($"¿Está seguro de QUITAR el item '{itemDesc}'?") == DialogResult.Yes)
                             {
                                 details.RemoveAt(index);
                                 isChangedRow = false;
                                 if (details.Count == 0) details = null;
                                 CargarGridProd(details);
                             }
-                            //Se usa en el contexto de modificación
+                        }
+                        //Se usa en el contexto de modificación
+                        else
+                        {
+                            //Para activar un item
+                            if (oldItem.id_estado != Estado.IdActivo)
+                            {
+                                if (Msg.YesNo_Ques($"¿Está seguro de ACTIVAR el item '{itemDesc}'?") == DialogResult.Yes)
+                                {
+                                    oldItem.id_estado = Estado.IdActivo;
+                                    oldItem.txt_estado = Estado.TxtActivo;
+                                    details[index] = oldItem;
+                                    CargarGridProd(details);
+                                }
+                            }
+                            //Para desactivar
                             else
                             {
-                                var oldItem = details[index];
-                                oldItem.id_estado = Estado.IdInactivo;
-                                oldItem.txt_estado = Estado.TxtInactivo;
-                                details[index] = oldItem;
-                                CargarGridProd(details);
+                                if (Msg.YesNo_Ques($"¿Está seguro de DESACTIVAR el item '{itemDesc}'?") == DialogResult.Yes)
+                                {
+                                    oldItem.id_estado = Estado.IdInactivo;
+                                    oldItem.txt_estado = Estado.TxtInactivo;
+                                    details[index] = oldItem;
+                                    CargarGridProd(details);
+                                }
                             }
                         }
                     }
+
                 }
                 else
                     Msg.Ok_Info($"No hay ningún item para eliminar.");
@@ -302,6 +313,20 @@ namespace ConfiguradorUI.Producto
                 dgvDetail.Focus();
             }
         }
+        private void SearchAndSetItem()
+        {
+            if (!BuscarItem())
+            {
+                var form = new FormBuscarProducto();
+                form.ShowDialog();
+                if (form.producto != null)
+                {
+                    CleanItem();
+                    errorProv.Clear();
+                    SetItem(form.producto);
+                }
+            }
+        }
 
         private void CargarGridProd(IEnumerable<PROt16_combo_variable_dtl> list)
         {
@@ -311,9 +336,9 @@ namespace ConfiguradorUI.Producto
                 {
                     ID_PROD = x.id_producto,
                     PRODUCTO = x.PROt09_producto != null ? x.PROt09_producto.txt_desc : "NO SE PUEDE MOSTRAR",
-                    CANTIDAD = x.cantidad.RoundOut(),
-                    P_UNIT_C_TAX = x.mto_pvpu_con_tax.RoundOut(),
-                    P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RoundOut(),
+                    CANTIDAD = x.cantidad.RemoveTrailingZeros(),
+                    P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
+                    P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
                     ACTIVO = x.id_estado == Estado.IdActivo ? true : false
                 }).ToList();
 
@@ -331,17 +356,7 @@ namespace ConfiguradorUI.Producto
         {
             if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
             {
-                if (!BuscarItem())
-                {
-                    var form = new FormBuscarProducto();
-                    form.ShowDialog();
-                    if (form.producto != null)
-                    {
-                        CleanItem();
-                        errorProv.Clear();
-                        SetItem(form.producto);
-                    }
-                }
+                SearchAndSetItem();
             }
         }
 
@@ -527,7 +542,6 @@ namespace ConfiguradorUI.Producto
                 {
                     if (esValido())
                     {
-                        Msg.Ok_Info("Pasó la validación. Listo para actualizar");
                         PROt15_combo_variable obj = new PROt15_combo_variable();
                         obj = GetObjeto();
                         int id = 0;
@@ -558,14 +572,13 @@ namespace ConfiguradorUI.Producto
                 {
                     if (esValido())
                     {
-                        Msg.Ok_Info("Pasó la validación. Listo para actualizar en check");
                         PROt15_combo_variable obj = new PROt15_combo_variable();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdComboVariable.Text, out id))
                         {
                             obj.id_combo_variable = id;
-                            //new ComboVariableBL().ActualizarComboVariable(obj);
+                            new ComboVariableBL().ActualizarComboVariable(obj);
                             actualizar = true;
                         }
                         isValid = true;
@@ -597,7 +610,8 @@ namespace ConfiguradorUI.Producto
                  Colocar null al producto de cada detalle. De los contrario EF al
                  momento de grabar insertería también estos productos.
                  */
-                details.ForEach(x => x.PROt09_producto = null);
+                if (details != null)
+                    details.ForEach(x => x.PROt09_producto = null);
                 obj.PROt16_combo_variable_dtl = details;
             }
             catch (Exception e)
@@ -621,8 +635,8 @@ namespace ConfiguradorUI.Producto
 
                 txtNombre.Text = obj.txt_desc;
                 txtCodigo.Text = obj.cod_combo_variable;
-                txtPrecioCboConTax.Text = obj.mto_pvpu_con_tax.ToString();
-                txtPrecioCboSinTax.Text = obj.mto_pvpu_sin_tax.ToString();
+                txtPrecioCboConTax.Text = obj.mto_pvpu_con_tax.RemoveTrailingZeros();
+                txtPrecioCboSinTax.Text = obj.mto_pvpu_sin_tax.RemoveTrailingZeros();
                 details = obj.PROt16_combo_variable_dtl?.ToList();
                 CargarGridProd(obj.PROt16_combo_variable_dtl);
 
@@ -1491,6 +1505,17 @@ namespace ConfiguradorUI.Producto
                 Msg.Ok_Info("EN CONTEXTO DE MODIFICAR");
             }
             else Msg.Ok_Info("EN CONTEXTO DE NO MODIFICAR NI INSETAR");
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            var form = new FormProducto();
+            form.ShowDialog();
+        }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            SearchAndSetItem();
         }
     }
 }
