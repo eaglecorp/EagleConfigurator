@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.tabPanel = new MetroFramework.Controls.MetroTabControl();
             this.tabPagProductos = new MetroFramework.Controls.MetroTabPage();
+            this.btnComboVariable = new System.Windows.Forms.Button();
             this.btnCombo = new System.Windows.Forms.Button();
             this.btnReceta = new System.Windows.Forms.Button();
             this.btnPrecio = new System.Windows.Forms.Button();
@@ -80,7 +81,7 @@
             this.toolStripFechaCronologica = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnComboVariable = new System.Windows.Forms.Button();
+            this.btnComboGrupo = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             // tabPagProductos
             // 
+            this.tabPagProductos.Controls.Add(this.btnComboGrupo);
             this.tabPagProductos.Controls.Add(this.btnComboVariable);
             this.tabPagProductos.Controls.Add(this.btnCombo);
             this.tabPagProductos.Controls.Add(this.btnReceta);
@@ -129,6 +131,26 @@
             this.tabPagProductos.VerticalScrollbarBarColor = true;
             this.tabPagProductos.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagProductos.VerticalScrollbarSize = 10;
+            // 
+            // btnComboVariable
+            // 
+            this.btnComboVariable.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnComboVariable.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnComboVariable.FlatAppearance.BorderSize = 0;
+            this.btnComboVariable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnComboVariable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnComboVariable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComboVariable.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.btnComboVariable.Image = ((System.Drawing.Image)(resources.GetObject("btnComboVariable.Image")));
+            this.btnComboVariable.Location = new System.Drawing.Point(281, 52);
+            this.btnComboVariable.Margin = new System.Windows.Forms.Padding(2);
+            this.btnComboVariable.Name = "btnComboVariable";
+            this.btnComboVariable.Size = new System.Drawing.Size(135, 37);
+            this.btnComboVariable.TabIndex = 11;
+            this.btnComboVariable.Text = "Cbos Variables";
+            this.btnComboVariable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnComboVariable.UseVisualStyleBackColor = false;
+            this.btnComboVariable.Click += new System.EventHandler(this.btnComboVariable_Click);
             // 
             // btnCombo
             // 
@@ -1014,25 +1036,25 @@
             this.panel3.Size = new System.Drawing.Size(673, 4);
             this.panel3.TabIndex = 66;
             // 
-            // btnComboVariable
+            // btnComboGrupo
             // 
-            this.btnComboVariable.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnComboVariable.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnComboVariable.FlatAppearance.BorderSize = 0;
-            this.btnComboVariable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnComboVariable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnComboVariable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComboVariable.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.btnComboVariable.Image = ((System.Drawing.Image)(resources.GetObject("btnComboVariable.Image")));
-            this.btnComboVariable.Location = new System.Drawing.Point(281, 52);
-            this.btnComboVariable.Margin = new System.Windows.Forms.Padding(2);
-            this.btnComboVariable.Name = "btnComboVariable";
-            this.btnComboVariable.Size = new System.Drawing.Size(135, 37);
-            this.btnComboVariable.TabIndex = 11;
-            this.btnComboVariable.Text = "Cbos Variables";
-            this.btnComboVariable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnComboVariable.UseVisualStyleBackColor = false;
-            this.btnComboVariable.Click += new System.EventHandler(this.btnComboVariable_Click);
+            this.btnComboGrupo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnComboGrupo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnComboGrupo.FlatAppearance.BorderSize = 0;
+            this.btnComboGrupo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnComboGrupo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnComboGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComboGrupo.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.btnComboGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnComboGrupo.Image")));
+            this.btnComboGrupo.Location = new System.Drawing.Point(281, 93);
+            this.btnComboGrupo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnComboGrupo.Name = "btnComboGrupo";
+            this.btnComboGrupo.Size = new System.Drawing.Size(135, 37);
+            this.btnComboGrupo.TabIndex = 12;
+            this.btnComboGrupo.Text = "Grupos Cbos";
+            this.btnComboGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnComboGrupo.UseVisualStyleBackColor = false;
+            this.btnComboGrupo.Click += new System.EventHandler(this.btnComboGrupo_Click);
             // 
             // MenuPrincipal
             // 
@@ -1121,6 +1143,7 @@
         private System.Windows.Forms.Button btnClaseEmp;
         private System.Windows.Forms.Button btnCategoriaEmp;
         private System.Windows.Forms.Button btnComboVariable;
+        private System.Windows.Forms.Button btnComboGrupo;
     }
 }
 

@@ -235,6 +235,12 @@
     <Compile Include="Producto\FormCombo.Designer.cs">
       <DependentUpon>FormCombo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\FormComboGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\FormComboGrupo.Designer.cs">
+      <DependentUpon>FormComboGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\FormComboVariable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -424,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\FormCombo.resx">
       <DependentUpon>FormCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\FormComboGrupo.resx">
+      <DependentUpon>FormComboGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\FormComboVariable.resx">
       <DependentUpon>FormComboVariable.cs</DependentUpon>
