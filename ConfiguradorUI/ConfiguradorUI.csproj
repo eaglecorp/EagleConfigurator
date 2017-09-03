@@ -217,6 +217,12 @@
     <Compile Include="Persona\FormProveedor.Designer.cs">
       <DependentUpon>FormProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\Auxiliares\FormComboVariableDtl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\Auxiliares\FormComboVariableDtl.Designer.cs">
+      <DependentUpon>FormComboVariableDtl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\FormClase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persona\FormProveedor.resx">
       <DependentUpon>FormProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\Auxiliares\FormComboVariableDtl.resx">
+      <DependentUpon>FormComboVariableDtl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\FormClase.resx">
       <DependentUpon>FormClase.cs</DependentUpon>

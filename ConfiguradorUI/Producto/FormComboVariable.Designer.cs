@@ -78,10 +78,11 @@
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
             this.lblNombreForm = new System.Windows.Forms.Label();
-            this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvComboVariable = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrar = new MetroFramework.Controls.MetroLink();
+            this.errorProvDtl = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabComboVariable.SuspendLayout();
@@ -89,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvDtl)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNumInactivo
@@ -431,6 +433,8 @@
             this.dgvDetail.Size = new System.Drawing.Size(536, 180);
             this.dgvDetail.TabIndex = 150;
             this.dgvDetail.DataSourceChanged += new System.EventHandler(this.CambioEnControl);
+            this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
+            this.dgvDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellDoubleClick);
             this.dgvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvDetail_KeyDown);
             // 
             // txtItemCod
@@ -544,18 +548,18 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnAddItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddItem.Location = new System.Drawing.Point(501, 102);
+            this.btnAddItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItem.Image")));
+            this.btnAddItem.Location = new System.Drawing.Point(501, 99);
             this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(35, 26);
+            this.btnAddItem.Size = new System.Drawing.Size(35, 29);
             this.btnAddItem.TabIndex = 5;
-            this.btnAddItem.Text = "Ad";
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
@@ -593,17 +597,17 @@
             // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnRemoveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnRemoveItem.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveItem.Location = new System.Drawing.Point(501, 71);
+            this.btnRemoveItem.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveItem.Image")));
+            this.btnRemoveItem.Location = new System.Drawing.Point(501, 67);
             this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(35, 25);
+            this.btnRemoveItem.Size = new System.Drawing.Size(35, 29);
             this.btnRemoveItem.TabIndex = 6;
-            this.btnRemoveItem.Text = "-/+";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
             this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
@@ -801,7 +805,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(0, 49);
+            this.metroLabel1.Location = new System.Drawing.Point(-2, 48);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(167, 19);
             this.metroLabel1.TabIndex = 130;
@@ -812,9 +816,9 @@
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(171, 57);
+            this.panel2.Location = new System.Drawing.Point(173, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(360, 6);
+            this.panel2.Size = new System.Drawing.Size(363, 6);
             this.panel2.TabIndex = 86;
             // 
             // chkActivo
@@ -933,18 +937,6 @@
             this.lblNombreForm.TabIndex = 136;
             this.lblNombreForm.Text = "Combos Variables";
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(27, 45);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 135;
-            this.btnCerrar.UseSelectable = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // errorProv
             // 
             this.errorProv.ContainerControl = this;
@@ -980,6 +972,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageSize = 48;
+            this.btnCerrar.Location = new System.Drawing.Point(27, 45);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
+            this.btnCerrar.TabIndex = 135;
+            this.btnCerrar.UseSelectable = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // errorProvDtl
+            // 
+            this.errorProvDtl.ContainerControl = this;
+            // 
             // FormComboVariable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1009,6 +1017,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvDtl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1068,5 +1077,6 @@
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroLink btnProducto;
         private MetroFramework.Controls.MetroLink btnBuscarProducto;
+        private System.Windows.Forms.ErrorProvider errorProvDtl;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfigUtilitarios.KeyValues;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,19 @@ namespace ConfigUtilitarios
             {
                 return false;
             }
+        }
+
+        public static bool PositiveAmount(string amount, decimal upperLimit = KeyAmounts.MaxAmount)
+        {
+            return decimal.TryParse(amount, out decimal _amount) &&
+                    _amount > 0 &&
+                    _amount <= upperLimit;
+
+        }
+        public static bool PositiveAmount(decimal amount, decimal upperLimit = KeyAmounts.MaxAmount)
+        {
+            return amount > 0 &&
+                    amount <= upperLimit;
         }
     }
 }
