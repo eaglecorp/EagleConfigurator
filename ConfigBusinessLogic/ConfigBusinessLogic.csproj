@@ -66,6 +66,7 @@
     <Compile Include="Persona\EmpleadoBL.cs" />
     <Compile Include="Persona\ProveedorBL.cs" />
     <Compile Include="Producto\ClaseProdBL.cs" />
+    <Compile Include="Producto\ComboGrupoBL.cs" />
     <Compile Include="Producto\ComboVariableBL.cs" />
     <Compile Include="Producto\FamiliaBL.cs" />
     <Compile Include="Producto\GrupoProdBL.cs" />

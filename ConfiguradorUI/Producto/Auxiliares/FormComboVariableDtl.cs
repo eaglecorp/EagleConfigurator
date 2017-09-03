@@ -218,11 +218,9 @@ namespace ConfiguradorUI.Producto.Auxiliares
             EditItem();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void CheckChange_Changed(object sender, EventArgs e)
         {
-            _item = null;
-            _itemEdited = false;
-            CloseForm();
+            CheckChange();
         }
 
         private void lblItemName_MouseHover(object sender, EventArgs e)
@@ -231,10 +229,13 @@ namespace ConfiguradorUI.Producto.Auxiliares
             tt.SetToolTip(lblItemName, lblItemName.Text);
         }
 
-        #endregion
-        private void CheckChange_Changed(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            CheckChange();
+            _item = null;
+            _itemEdited = false;
+            CloseForm();
         }
+
+        #endregion
     }
 }

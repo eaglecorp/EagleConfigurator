@@ -1480,10 +1480,7 @@ namespace ConfiguradorUI.Producto
             }
         }
 
-        #endregion
-
-
-
+        #region Eventos del Dtl
         private void txtItemQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
@@ -1566,7 +1563,12 @@ namespace ConfiguradorUI.Producto
                         Msg.Ok_Wng("No se pudo editar el item.");
                 }
             }
-        }
+        } 
+        #endregion
+        #endregion
+
+
+
     }
 }
 
