@@ -705,11 +705,11 @@
             // 
             this.lblPrecioCboSinTax.AutoSize = true;
             this.lblPrecioCboSinTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrecioCboSinTax.Location = new System.Drawing.Point(320, 351);
+            this.lblPrecioCboSinTax.Location = new System.Drawing.Point(267, 351);
             this.lblPrecioCboSinTax.Name = "lblPrecioCboSinTax";
-            this.lblPrecioCboSinTax.Size = new System.Drawing.Size(126, 19);
+            this.lblPrecioCboSinTax.Size = new System.Drawing.Size(177, 19);
             this.lblPrecioCboSinTax.TabIndex = 135;
-            this.lblPrecioCboSinTax.Text = "Precio sin impuesto:";
+            this.lblPrecioCboSinTax.Text = "Precio del cbo. sin impuesto:";
             this.lblPrecioCboSinTax.UseCustomForeColor = true;
             // 
             // txtPrecioCboConTax
@@ -750,11 +750,11 @@
             // 
             this.lblPrecioCboConTax.AutoSize = true;
             this.lblPrecioCboConTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrecioCboConTax.Location = new System.Drawing.Point(320, 322);
+            this.lblPrecioCboConTax.Location = new System.Drawing.Point(267, 322);
             this.lblPrecioCboConTax.Name = "lblPrecioCboConTax";
-            this.lblPrecioCboConTax.Size = new System.Drawing.Size(132, 19);
+            this.lblPrecioCboConTax.Size = new System.Drawing.Size(183, 19);
             this.lblPrecioCboConTax.TabIndex = 133;
-            this.lblPrecioCboConTax.Text = "Precio con impuesto:";
+            this.lblPrecioCboConTax.Text = "Precio del cbo. con impuesto:";
             this.lblPrecioCboConTax.UseCustomForeColor = true;
             // 
             // txtItemDesc

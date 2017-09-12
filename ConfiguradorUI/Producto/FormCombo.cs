@@ -18,7 +18,7 @@ namespace ConfiguradorUI.Producto
         {
             InitializeComponent();
             PROt13_combo s = new PROt13_combo();
-            PROt17_combo_grupo ss = new PROt17_combo_grupo();
+            PROt14_combo_fixed_dtl a = new PROt14_combo_fixed_dtl();
         }
 
 

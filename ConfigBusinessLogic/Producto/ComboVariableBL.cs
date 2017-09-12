@@ -14,11 +14,11 @@ namespace ConfigBusinessLogic.Producto
         {
             return new ComboVariableDA().ListaComboVariable(id_estado);
         }
-        public int InsertarComboVariable(PROt15_combo_variable obj)
+        public long InsertarComboVariable(PROt15_combo_variable obj)
         {
             return new ComboVariableDA().InsertarComboVariable(obj);
         }
-        public void EliminarComboVariable(int id)
+        public void EliminarComboVariable(long id)
         {
             new ComboVariableDA().EliminarComboVariable(id);
         }
@@ -26,7 +26,7 @@ namespace ConfigBusinessLogic.Producto
         {
             new ComboVariableDA().ActualizarComboVariable(actualizado);
         }
-        public PROt15_combo_variable ComboVariableXId(int id)
+        public PROt15_combo_variable ComboVariableXId(long id)
         {
            return new ComboVariableDA().ComboVariableXId(id);
         }

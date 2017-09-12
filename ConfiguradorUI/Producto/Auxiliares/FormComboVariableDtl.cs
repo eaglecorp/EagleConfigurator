@@ -182,7 +182,7 @@ namespace ConfiguradorUI.Producto.Auxiliares
 
         public void SetInit()
         {
-            txtItemCod.MaxLength = 10;
+            txtItemCod.MaxLength = 50;
 
             txtItemPriceConImp.ReadOnly = true;
             txtItemPriceSinImp.ReadOnly = true;

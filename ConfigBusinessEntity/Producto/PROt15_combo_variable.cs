@@ -16,7 +16,7 @@ namespace ConfigBusinessEntity
         }
 
         [Key]
-        public int id_combo_variable { get; set; }
+        public long id_combo_variable { get; set; }
 
         [StringLength(10)]
         public string cod_combo_variable { get; set; }

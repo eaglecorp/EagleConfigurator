@@ -55,7 +55,7 @@ namespace ConfiguradorUI.Producto
                 item = new PROt09_producto();
                 item = producto;
 
-                txtItemCod.Text = producto.cod_producto != null ? (item.cod_producto.Length <= 10 ? item.cod_producto : item.cod_producto.Substring(0, 10)) : "";
+                txtItemCod.Text = producto.cod_producto;
                 txtItemDesc.Text = producto.txt_desc;
                 txtItemPriceConImp.Text = producto.mto_pvpu_con_igv?.ToString();
                 txtItemPriceSinImp.Text = producto.mto_pvpu_sin_igv?.ToString();
@@ -152,13 +152,13 @@ namespace ConfiguradorUI.Producto
                         //Si el producto no existe en el detalle -> agrega item
                         else if (details.Count < maxNumItems)
                         {
-                            int idMaster = 0;
+                            long idMaster = 0;
                             //Si no se trata de inserción se asumo que 
                             //que es una modificación y se trata de ingresar un item
                             //en un master ya creado. Por tanto se debe traer su id.
                             if (TipoOperacion != TipoOperacionABM.Nuevo)
                             {
-                                int.TryParse(lblIdComboVariable.Text, out idMaster);
+                                long.TryParse(lblIdComboVariable.Text, out idMaster);
                             }
                             itemObtained.id_combo_variable = idMaster;
                             details.Add(itemObtained);
@@ -184,12 +184,10 @@ namespace ConfiguradorUI.Producto
         }
         private void RemoveItem()
         {
-            int id = 0;
+            long id = 0;
             try
             {
-
-                if (details != null &&
-                int.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetail, 0), out id))
+                if (details != null && long.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetail, 0), out id))
                 {
                     int index = details.FindIndex(x => x.id_producto == id);
 
@@ -265,7 +263,7 @@ namespace ConfiguradorUI.Producto
         }
         private PROt16_combo_variable_dtl GetItemSelected()
         {
-            if (int.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetail, 0), out int id))
+            if (long.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetail, 0), out long id))
             {
                 int index = details.FindIndex(x => x.id_producto == id);
                 if (index != -1 && details[index] != null)
@@ -481,7 +479,7 @@ namespace ConfiguradorUI.Producto
                     {
                         var obj = new PROt15_combo_variable();
                         obj = GetObjeto();
-                        int id = new ComboVariableBL().InsertarComboVariable(obj);
+                        long id = new ComboVariableBL().InsertarComboVariable(obj);
                         if (id > 0)
                             actualizar = true;
                         ControlarEventosABM(id);
@@ -508,8 +506,8 @@ namespace ConfiguradorUI.Producto
                     {
                         try
                         {
-                            int id = 0;
-                            if (int.TryParse(lblIdComboVariable.Text, out id) && id > 0)
+                            long id = 0;
+                            if (long.TryParse(lblIdComboVariable.Text, out id) && id > 0)
                             {
                                 DialogResult rp = MessageBox.Show("¿Seguro de eliminar el registro?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (rp == DialogResult.Yes)
@@ -563,8 +561,8 @@ namespace ConfiguradorUI.Producto
                     {
                         PROt15_combo_variable obj = new PROt15_combo_variable();
                         obj = GetObjeto();
-                        int id = 0;
-                        if (int.TryParse(lblIdComboVariable.Text, out id))
+                        long id = 0;
+                        if (long.TryParse(lblIdComboVariable.Text, out id))
                         {
                             obj.id_combo_variable = id;
                             new ComboVariableBL().ActualizarComboVariable(obj);
@@ -593,8 +591,8 @@ namespace ConfiguradorUI.Producto
                     {
                         PROt15_combo_variable obj = new PROt15_combo_variable();
                         obj = GetObjeto();
-                        int id = 0;
-                        if (int.TryParse(lblIdComboVariable.Text, out id))
+                        long id = 0;
+                        if (long.TryParse(lblIdComboVariable.Text, out id))
                         {
                             obj.id_combo_variable = id;
                             new ComboVariableBL().ActualizarComboVariable(obj);
@@ -783,8 +781,8 @@ namespace ConfiguradorUI.Producto
 
             if (no_error && !chkActivo.Checked && TipoOperacion == TipoOperacionABM.Modificar)
             {
-                int id = 0;
-                if (int.TryParse(lblIdComboVariable.Text, out id))
+                long id = 0;
+                if (long.TryParse(lblIdComboVariable.Text, out id))
                 {
                     bool validDelete = false;
                     validDelete = new UtilBL().ValidarDelete(id, CodValDelete.ComboVariable_ComboFixedDtl);
@@ -856,7 +854,7 @@ namespace ConfiguradorUI.Producto
                 MessageBox.Show(this, "Ocurrió una excepción al seleccionar el producto: " + e.Message, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void SeleccionarPorId(int id)
+        private void SeleccionarPorId(long id)
         {
             //Deberá ser capaz de buscar de posicionarse  en ese producto
             //si es que existe para los datos actuales de grilla
@@ -891,8 +889,8 @@ namespace ConfiguradorUI.Producto
             if (dgvComboVariable.RowCount > 0 &&
                 dgvComboVariable.SelectedRows.Count > 0)
             {
-                int id = 0;
-                if (int.TryParse(GetIdSelected(), out id))
+                long id = 0;
+                if (long.TryParse(GetIdSelected(), out id))
                 {
                     if (id > 0)
                     {
@@ -978,7 +976,7 @@ namespace ConfiguradorUI.Producto
             btnSearch.Enabled = eSearch;
             btnFilter.Enabled = eFilter;
         }
-        private void ControlarEventosABM(int? id = null)
+        private void ControlarEventosABM(long? id = null)
         {
 
             if (TipoOperacion == TipoOperacionABM.No_Action)
@@ -1008,7 +1006,7 @@ namespace ConfiguradorUI.Producto
 
                         if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
 
-                        int idInsertado = (int)id;
+                        long idInsertado = (long)id;
                         SeleccionarPorId(idInsertado);
                         tabComboVariable.SelectedTab = tabPagGeneral;
                         btnNuevo.Focus();
@@ -1062,7 +1060,7 @@ namespace ConfiguradorUI.Producto
 
                                         if (id != null)
                                         {
-                                            int idAct = (int)id;
+                                            long idAct = (long)id;
                                             SeleccionarPorId(idAct);
                                         }
                                         btnNuevo.Focus();
@@ -1116,9 +1114,8 @@ namespace ConfiguradorUI.Producto
         private void SetMaxLengthTxt()
         {
             txtCodigo.MaxLength = 10;
-            txtItemCod.MaxLength = 10;
+            txtItemCod.MaxLength = 50;
             txtNombre.MaxLength = 250;
-
         }
         private void ContarEstados(List<PROt15_combo_variable> lista)
         {
@@ -1298,7 +1295,7 @@ namespace ConfiguradorUI.Producto
                                 //por el indice que corresponde al seleccionado
                                 //que es diferente respecto quién está en el proceso.
                                 //manejar 
-                                SeleccionarPorId(int.Parse(idSelect));
+                                SeleccionarPorId(long.Parse(idSelect));
                             }
                         }
                         else
@@ -1333,7 +1330,7 @@ namespace ConfiguradorUI.Producto
                         isValid = Actualizar();
                         if (isValid)
                         {
-                            SeleccionarPorId(int.Parse(idSelect));
+                            SeleccionarPorId(long.Parse(idSelect));
                         }
                     }
                     else

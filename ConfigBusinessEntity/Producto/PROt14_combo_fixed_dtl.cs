@@ -11,7 +11,7 @@ namespace ConfigBusinessEntity
         [Key]
         public long id_combo_fixed_dtl { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string cod_combo_fixed_dtl { get; set; }
 
         public decimal? cantidad { get; set; }
@@ -30,7 +30,7 @@ namespace ConfigBusinessEntity
 
         public long id_combo { get; set; }
 
-        public int? id_combo_variable { get; set; }
+        public long? id_combo_variable { get; set; }
 
         public virtual PROt09_producto PROt09_producto { get; set; }
 

@@ -36,9 +36,9 @@ namespace ConfigDataAccess.Producto
             }
             return lista;
         }
-        public int InsertarComboVariable(PROt15_combo_variable obj)
+        public long InsertarComboVariable(PROt15_combo_variable obj)
         {
-            int id = 0;
+            long id = 0;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 using (var tns = ctx.Database.BeginTransaction())
@@ -61,7 +61,7 @@ namespace ConfigDataAccess.Producto
             }
             return id;
         }
-        public void EliminarComboVariable(int id)
+        public void EliminarComboVariable(long id)
         {
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
@@ -97,11 +97,14 @@ namespace ConfigDataAccess.Producto
                         var original = ctx.PROt15_combo_variable.Find(actualizado.id_combo_variable);
                         if (original != null && original.id_combo_variable > 0)
                         {
+                            //Actulización del master
                             ctx.Entry(original).CurrentValues.SetValues(actualizado);
+
+                            //Actualización del detail
                             if (actualizado.PROt16_combo_variable_dtl != null)
                                 foreach (var newItem in actualizado.PROt16_combo_variable_dtl)
                                 {
-                                    //Edición 
+                                    //Caso: Edición 
                                     if (newItem.id_combo_variable_dtl > 0)
                                     {
                                         var oldItem = ctx.PROt16_combo_variable_dtl.Find(newItem.id_combo_variable_dtl);
@@ -110,7 +113,7 @@ namespace ConfigDataAccess.Producto
                                             ctx.Entry(oldItem).CurrentValues.SetValues(newItem);
                                         }
                                     }
-                                    //Inserción
+                                    //Caso: Inserción
                                     else
                                     {
                                         ctx.PROt16_combo_variable_dtl.Add(newItem);
@@ -129,7 +132,7 @@ namespace ConfigDataAccess.Producto
                 }
             }
         }
-        public PROt15_combo_variable ComboVariableXId(int id)
+        public PROt15_combo_variable ComboVariableXId(long id)
         {
             var obj = new PROt15_combo_variable();
 
