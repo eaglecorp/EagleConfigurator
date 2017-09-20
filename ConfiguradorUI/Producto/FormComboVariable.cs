@@ -37,6 +37,8 @@ namespace ConfiguradorUI.Producto
         PROt09_producto item = null;
         List<PROt16_combo_variable_dtl> details = null;
         int maxNumItems = 6;
+
+        enum DeleteDtlAction { Remove, ActiveDesactive };
         #endregion
 
         public FormComboVariable()
@@ -182,61 +184,65 @@ namespace ConfiguradorUI.Producto
                 }
             }
         }
-        private void RemoveItem()
+
+        private void RemoveItem(DeleteDtlAction actionDeleteDtl)
         {
-            long id = 0;
             try
             {
-                if (details != null && long.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetail, 0), out id))
-                {
-                    int index = details.FindIndex(x => x.id_producto == id);
+                //Item1 : item selected
+                //Item2 : index
 
-                    if (index != -1 && details[index] != null)
+                var itemSelected_index = GetItemSelected();
+                if (details != null && itemSelected_index.Item1 != null)
+                {
+                    var oldItem = itemSelected_index.Item1;
+                    var itemDesc = oldItem.PROt09_producto?.txt_desc;
+
+                    if (actionDeleteDtl == DeleteDtlAction.Remove)
                     {
-                        var oldItem = details[index];
-                        var itemDesc = oldItem.PROt09_producto?.txt_desc;
-                        //Se usa en el contexto de inserción
-                        if (TipoOperacion == TipoOperacionABM.Nuevo)
+                        if (oldItem.id_combo_variable_dtl <= 0)
                         {
                             if (Msg.YesNo_Ques($"¿Está seguro de QUITAR el item '{itemDesc}'?") == DialogResult.Yes)
                             {
-                                details.RemoveAt(index);
+                                details.RemoveAt(itemSelected_index.Item2);
                                 isChangedRow = false;
                                 if (details.Count == 0) details = null;
                                 CargarGridProd(details);
                             }
                         }
-                        //Se usa en el contexto de modificación
                         else
                         {
-                            //Para activar un item
-                            if (oldItem.id_estado != Estado.IdActivo)
+                            Msg.Ok_Info($"No puede QUITAR un item que ha guardado. Puede activar/desactivar según sea el caso.");
+                        }
+                    }
+                    else if ((actionDeleteDtl == DeleteDtlAction.ActiveDesactive))
+                    {
+                        //Para activar
+                        if (oldItem.id_estado != Estado.IdActivo)
+                        {
+                            if (Msg.YesNo_Ques($"¿Está seguro de ACTIVAR el item '{itemDesc}'?") == DialogResult.Yes)
                             {
-                                if (Msg.YesNo_Ques($"¿Está seguro de ACTIVAR el item '{itemDesc}'?") == DialogResult.Yes)
-                                {
-                                    oldItem.id_estado = Estado.IdActivo;
-                                    oldItem.txt_estado = Estado.TxtActivo;
-                                    details[index] = oldItem;
-                                    CargarGridProd(details);
-                                }
+                                oldItem.id_estado = Estado.IdActivo;
+                                oldItem.txt_estado = Estado.TxtActivo;
+                                details[itemSelected_index.Item2] = oldItem;
+                                CargarGridProd(details);
                             }
-                            //Para desactivar
-                            else
+                        }
+                        //Para desactivar
+                        else
+                        {
+                            if (Msg.YesNo_Ques($"¿Está seguro de DESACTIVAR el item '{itemDesc}'?") == DialogResult.Yes)
                             {
-                                if (Msg.YesNo_Ques($"¿Está seguro de DESACTIVAR el item '{itemDesc}'?") == DialogResult.Yes)
-                                {
-                                    oldItem.id_estado = Estado.IdInactivo;
-                                    oldItem.txt_estado = Estado.TxtInactivo;
-                                    details[index] = oldItem;
-                                    CargarGridProd(details);
-                                }
+                                oldItem.id_estado = Estado.IdInactivo;
+                                oldItem.txt_estado = Estado.TxtInactivo;
+                                details[itemSelected_index.Item2] = oldItem;
+                                CargarGridProd(details);
                             }
                         }
                     }
-
                 }
                 else
-                    Msg.Ok_Info($"No hay ningún item para eliminar.");
+                    Msg.Ok_Info($"No hay ningún item .");
             }
             catch (Exception e)
             {
@@ -261,17 +267,17 @@ namespace ConfiguradorUI.Producto
                 }
             }
         }
-        private PROt16_combo_variable_dtl GetItemSelected()
+        private Tuple<PROt16_combo_variable_dtl, int> GetItemSelected()
         {
             if (long.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetail, 0), out long id))
             {
                 int index = details.FindIndex(x => x.id_producto == id);
                 if (index != -1 && details[index] != null)
                 {
-                    return details[index];
+                    return new Tuple<PROt16_combo_variable_dtl, int>(details[index], index);
                 }
             }
-            return null;
+            return new Tuple<PROt16_combo_variable_dtl, int>(null, -1);
         }
         private bool BuscarItem()
         {
@@ -1495,13 +1501,13 @@ namespace ConfiguradorUI.Producto
         {
             if (e.KeyData == Keys.Delete)
             {
-                RemoveItem();
+                RemoveItem(DeleteDtlAction.Remove);
             }
         }
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
-            RemoveItem();
+            RemoveItem(DeleteDtlAction.Remove);
         }
 
         //PARA FINES DE TEST
@@ -1541,16 +1547,16 @@ namespace ConfiguradorUI.Producto
             if (dgvDetail.CurrentCell != null &&
                 dgvDetail.CurrentCell.GetType() == typeof(DataGridViewCheckBoxCell))
             {
-                RemoveItem();
+                RemoveItem(DeleteDtlAction.ActiveDesactive);
             }
         }
 
         private void dgvDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var itemSelected = GetItemSelected();
-            if (itemSelected != null)
+            if (itemSelected.Item1 != null)
             {
-                var form = new FormComboVariableDtl(itemSelected);
+                var form = new FormComboVariableDtl(itemSelected.Item1);
                 form.ShowDialog();
                 if (form._itemEdited && form._item != null)
                 {
@@ -1560,7 +1566,7 @@ namespace ConfiguradorUI.Producto
                         Msg.Ok_Wng("No se pudo editar el item.");
                 }
             }
-        } 
+        }
         #endregion
         #endregion
 
