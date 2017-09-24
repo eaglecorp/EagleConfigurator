@@ -548,10 +548,10 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnAddItem.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAddItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -597,10 +597,10 @@
             // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnRemoveItem.BackColor = System.Drawing.Color.IndianRed;
             this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRemoveItem.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnRemoveItem.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveItem.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveItem.Image")));

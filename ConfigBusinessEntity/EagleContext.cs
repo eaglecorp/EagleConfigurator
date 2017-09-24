@@ -7,10 +7,13 @@ namespace ConfigBusinessEntity
 
     public partial class EagleContext : DbContext
     {
+
         public EagleContext(string connectionString)
-      : base(connectionString)
+            : base(connectionString)
         {
         }
+
+
 
         public virtual DbSet<CLIt01_paciente> CLIt01_paciente { get; set; }
         public virtual DbSet<CLIt02_actividad> CLIt02_actividad { get; set; }

@@ -108,6 +108,8 @@ namespace ConfigBusinessEntity
 
         public long? id_combo { get; set; }
 
+        public int sn_incluye_impto { get; set; }
+
         public virtual MSTt06_impuesto MSTt06_impuesto { get; set; }
 
         public virtual PROt02_modelo PROt02_modelo { get; set; }

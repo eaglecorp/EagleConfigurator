@@ -1570,8 +1570,6 @@ namespace ConfiguradorUI.Producto
         #endregion
         #endregion
 
-
-
     }
 }
 

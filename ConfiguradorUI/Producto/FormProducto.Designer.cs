@@ -151,7 +151,7 @@
             this.tabProducto.Controls.Add(this.tabPagPrecio);
             this.tabProducto.Location = new System.Drawing.Point(304, 113);
             this.tabProducto.Name = "tabProducto";
-            this.tabProducto.SelectedIndex = 0;
+            this.tabProducto.SelectedIndex = 1;
             this.tabProducto.Size = new System.Drawing.Size(564, 527);
             this.tabProducto.TabIndex = 1;
             this.tabProducto.UseSelectable = true;
@@ -1359,7 +1359,7 @@
             this.txtPvMiSinIGV.UseSelectable = true;
             this.txtPvMiSinIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPvMiSinIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMiSinIGV.TextChanged += new System.EventHandler(this.CambioEnControl);
+            this.txtPvMiSinIGV.TextChanged += new System.EventHandler(this.txtPvMiSinIGV_TextChanged);
             // 
             // lblPvMiSinIGV
             // 
@@ -1404,7 +1404,7 @@
             this.txtPvMaSinIGV.UseSelectable = true;
             this.txtPvMaSinIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPvMaSinIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMaSinIGV.TextChanged += new System.EventHandler(this.CambioEnControl);
+            this.txtPvMaSinIGV.TextChanged += new System.EventHandler(this.txtPvMaSinIGV_TextChanged);
             // 
             // lblPvMaSinIGV
             // 
@@ -1449,7 +1449,7 @@
             this.txtPvPuSinIGV.UseSelectable = true;
             this.txtPvPuSinIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPvPuSinIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvPuSinIGV.TextChanged += new System.EventHandler(this.CambioEnControl);
+            this.txtPvPuSinIGV.TextChanged += new System.EventHandler(this.txtPvPuSinIGV_TextChanged);
             // 
             // lblPvPuSinIGV
             // 
@@ -1603,6 +1603,7 @@
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
+            this.txtFiltro.PromptText = "Filtro";
             this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFiltro.SelectedText = "";
             this.txtFiltro.SelectionLength = 0;

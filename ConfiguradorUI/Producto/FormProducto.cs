@@ -289,12 +289,13 @@ namespace ConfiguradorUI.Producto
 
 
 
-                oProducto.sn_venta = chkProductoVenta.Checked ? 1 : 0;
-                oProducto.sn_compra = chkProductoCompra.Checked ? 1 : 0;
-                oProducto.sn_receta = chkReceta.Checked ? 1 : 0;
-                oProducto.sn_combo = chkCombo.Checked ? 1 : 0;
-                oProducto.sn_exento = chkExento.Checked ? 1 : 0;
-                oProducto.sn_inafecto = chkInafecto.Checked ? 1 : 0;
+                oProducto.sn_venta = chkProductoVenta.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                oProducto.sn_compra = chkProductoCompra.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                oProducto.sn_receta = chkReceta.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                oProducto.sn_combo = chkCombo.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                oProducto.sn_exento = chkExento.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                oProducto.sn_inafecto = chkInafecto.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                oProducto.sn_incluye_impto = chkIGV.Checked ? Estado.IdActivo : Estado.IdInactivo;
 
 
                 if (string.IsNullOrEmpty(txtPvPuSinIGV.Text.Trim()))
@@ -444,17 +445,17 @@ namespace ConfiguradorUI.Producto
             chkExento.Checked = obj.sn_exento == 1 ? true : false;
             chkInafecto.Checked = obj.sn_inafecto == 1 ? true : false;
 
-            if (obj.mto_pvpu_con_igv == null)
-            {
-                chkIGV.Checked = false;
-                grbSinIGV.Enabled = true;
-                grbConIGV.Enabled = false;
-            }
-            else
+            if (obj.sn_incluye_impto == Estado.IdActivo)
             {
                 chkIGV.Checked = true;
                 grbSinIGV.Enabled = false;
                 grbConIGV.Enabled = true;
+            }
+            else
+            {
+                chkIGV.Checked = false;
+                grbSinIGV.Enabled = true;
+                grbConIGV.Enabled = false;
             }
 
             //Importante el orden, sobreescribe las acciones del evento.
@@ -1061,9 +1062,10 @@ namespace ConfiguradorUI.Producto
             {
                 if (!chkIGV.Checked)
                 {
-                    txtPvPuConIGV.Clear();
-                    txtPvMiConIGV.Clear();
-                    txtPvMaConIGV.Clear();
+                    txtPvPuConIGV.Text = txtPvPuSinIGV.Text;
+                    txtPvMiConIGV.Text = txtPvMiSinIGV.Text;
+                    txtPvMaConIGV.Text = txtPvMaSinIGV.Text;
+
                     grbConIGV.Enabled = false;
                     grbSinIGV.Enabled = true;
                     txtPvPuSinIGV.Focus();
@@ -1550,7 +1552,6 @@ namespace ConfiguradorUI.Producto
                 {
                     txtPvPuSinIGV.Clear();
                 }
-
             }
             isChangedRow = false;
         }
@@ -2116,8 +2117,47 @@ namespace ConfiguradorUI.Producto
             }
         }
 
+
         #endregion
 
+        private void txtPvPuSinIGV_TextChanged(object sender, EventArgs e)
+        {
+           if (!chkIGV.Checked)
+            {
+                if (decimal.TryParse(txtPvPuSinIGV.Text, out decimal result))
+                {
+                    txtPvPuConIGV.Text = txtPvPuSinIGV.Text;
+                }
+                else txtPvPuConIGV.Clear();
+            }
+            isChangedRow = false;
+        }
 
+        private void txtPvMiSinIGV_TextChanged(object sender, EventArgs e)
+        {
+            if (!chkIGV.Checked)
+            {
+                if (decimal.TryParse(txtPvMiSinIGV.Text, out decimal result))
+                {
+                    txtPvMiConIGV.Text = txtPvMiSinIGV.Text;
+                }
+                else txtPvMiConIGV.Clear();
+            }
+            isChangedRow = false;
+        }
+
+        private void txtPvMaSinIGV_TextChanged(object sender, EventArgs e)
+        {
+            if (!chkIGV.Checked)
+            {
+                if (decimal.TryParse(txtPvMaSinIGV.Text, out decimal result))
+                {
+                    txtPvMaConIGV.Text = txtPvMaSinIGV.Text;
+                }
+                else txtPvMaConIGV.Clear();
+            }
+            isChangedRow = false;
+
+        }
     }
 }
