@@ -1590,6 +1590,46 @@ namespace ConfiguradorUI.Producto
             }
             isChangedRow = false;
         }
+
+        private void txtPvPuSinIGV_TextChanged(object sender, EventArgs e)
+        {
+            if (!chkIGV.Checked)
+            {
+                if (decimal.TryParse(txtPvPuSinIGV.Text, out decimal result))
+                {
+                    txtPvPuConIGV.Text = txtPvPuSinIGV.Text;
+                }
+                else txtPvPuConIGV.Clear();
+            }
+            isChangedRow = false;
+        }
+        private void txtPvMiSinIGV_TextChanged(object sender, EventArgs e)
+        {
+            if (!chkIGV.Checked)
+            {
+                if (decimal.TryParse(txtPvMiSinIGV.Text, out decimal result))
+                {
+                    txtPvMiConIGV.Text = txtPvMiSinIGV.Text;
+                }
+                else txtPvMiConIGV.Clear();
+            }
+            isChangedRow = false;
+        }
+        private void txtPvMaSinIGV_TextChanged(object sender, EventArgs e)
+        {
+            if (!chkIGV.Checked)
+            {
+                if (decimal.TryParse(txtPvMaSinIGV.Text, out decimal result))
+                {
+                    txtPvMaConIGV.Text = txtPvMaSinIGV.Text;
+                }
+                else txtPvMaConIGV.Clear();
+            }
+            isChangedRow = false;
+
+        }
+
+
         private void chkIGV_CheckedChanged(object sender, EventArgs e)
         {
             errorProv.Clear();
@@ -2120,44 +2160,5 @@ namespace ConfiguradorUI.Producto
 
         #endregion
 
-        private void txtPvPuSinIGV_TextChanged(object sender, EventArgs e)
-        {
-           if (!chkIGV.Checked)
-            {
-                if (decimal.TryParse(txtPvPuSinIGV.Text, out decimal result))
-                {
-                    txtPvPuConIGV.Text = txtPvPuSinIGV.Text;
-                }
-                else txtPvPuConIGV.Clear();
-            }
-            isChangedRow = false;
-        }
-
-        private void txtPvMiSinIGV_TextChanged(object sender, EventArgs e)
-        {
-            if (!chkIGV.Checked)
-            {
-                if (decimal.TryParse(txtPvMiSinIGV.Text, out decimal result))
-                {
-                    txtPvMiConIGV.Text = txtPvMiSinIGV.Text;
-                }
-                else txtPvMiConIGV.Clear();
-            }
-            isChangedRow = false;
-        }
-
-        private void txtPvMaSinIGV_TextChanged(object sender, EventArgs e)
-        {
-            if (!chkIGV.Checked)
-            {
-                if (decimal.TryParse(txtPvMaSinIGV.Text, out decimal result))
-                {
-                    txtPvMaConIGV.Text = txtPvMaSinIGV.Text;
-                }
-                else txtPvMaConIGV.Clear();
-            }
-            isChangedRow = false;
-
-        }
     }
 }

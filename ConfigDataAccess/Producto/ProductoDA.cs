@@ -80,6 +80,32 @@ namespace ConfigDataAccess
                 }
             }
         }
+
+        public void ActualizarPreciosCboVarDtl(long idProducto, decimal? nuevoPrecioConTax, decimal? nuevoPrecioSinTax)
+        {
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    int id_estado = Estado.IdInactivo;
+                    string txt_estado = Estado.TxtInactivo;
+                    using (SqlCommand cmd = cnn.CreateCommand())
+                    {
+                        cmd.CommandText = "UPDATE PROt16_combo_variable_dtl SET mto_pvpu_sin_tax = @pvpu_sin_tax, mto_pvpu_con_tax = @pvpu_con_tax Where id_producto=@id_producto";
+                        cmd.Parameters.AddWithValue("@pvpu_con_tax", nuevoPrecioConTax);
+                        cmd.Parameters.AddWithValue("@pvpu_sin_tax", nuevoPrecioSinTax);
+                        cmd.Parameters.AddWithValue("@id_producto", idProducto);
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Actualizar Precios Cbo var Dtl: ", e.Message);
+                }
+            }
+        }
         public void ActualizarProducto(PROt09_producto prodActualizado)
         {
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
@@ -89,6 +115,13 @@ namespace ConfigDataAccess
                     var original = ctx.PROt09_producto.Find(prodActualizado.id_producto);
                     if (original != null && original.id_producto > 0)
                     {
+                        if (prodActualizado.mto_pvpu_con_igv != original.mto_pvpu_con_igv ||
+                            prodActualizado.mto_pvpu_sin_igv != original.mto_pvpu_sin_igv)
+                        {
+                            //Actualizar precios en los cbo var dtl y cbo dtl
+                            ActualizarPreciosCboVarDtl(prodActualizado.id_producto, prodActualizado.mto_pvpu_con_igv, prodActualizado.mto_pvpu_sin_igv);
+
+                        }
                         ctx.Entry(original).CurrentValues.SetValues(prodActualizado);
                         ctx.SaveChanges();
                     }
@@ -305,6 +338,37 @@ namespace ConfigDataAccess
                     return new List<PROt09_producto>();
                 }
             }
+        }
+
+        public decimal GetPvPuConIgvProductoXId(long id)
+        {
+            decimal pvpuconigv = 0;
+            var queryString = @"SELECT mto_pvpu_con_igv from PROt09_producto WHERE id_producto = @id_producto";
+            using (var connection =
+                new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.AddWithValue("@id_producto", id);
+
+                try
+                {
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string column = reader["mto_pvpu_con_igv"].ToString();
+                            decimal.TryParse(column, out pvpuconigv);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Get Precio de venta por unidad con IGV por ID: ", e.Message);
+                }
+            }
+            return pvpuconigv;
         }
     }
 }
