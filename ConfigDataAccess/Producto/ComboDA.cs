@@ -159,8 +159,10 @@ namespace ConfigDataAccess.Producto
                             obj.PROt14_combo_fixed_dtl = combo_fixed_dtl;
                             foreach (var dtl in combo_fixed_dtl)
                             {
+                                //Si es un producto
                                 if (dtl.id_producto != null)
                                     dtl.PROt09_producto = cnn.Query<PROt09_producto>("SELECT txt_desc FROM PROt09_producto WHERE id_producto = @id_producto", new { id_producto = dtl.id_producto }).SingleOrDefault();
+                                //Si es un producto electivo
                                 else if (dtl.id_combo_variable != null)
                                 {
                                     dtl.PROt15_combo_variable = new ComboVariableDA().ComboVariableXId((int)dtl.id_combo_variable);

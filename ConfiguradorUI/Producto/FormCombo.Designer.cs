@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCombo));
             this.button1 = new System.Windows.Forms.Button();
             this.dgvCombo = new System.Windows.Forms.DataGridView();
@@ -49,13 +50,16 @@
             this.tglListarInactivos = new MetroFramework.Controls.MetroToggle();
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.lblNombreForm = new System.Windows.Forms.Label();
-            this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.tabCombo = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
             this.tabDetails = new System.Windows.Forms.TabControl();
             this.tabPagProductos = new System.Windows.Forms.TabPage();
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.dgvDetailProduct = new System.Windows.Forms.DataGridView();
             this.tabPagCboElectivo = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvDetailCboVariable = new System.Windows.Forms.DataGridView();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
@@ -86,8 +90,9 @@
             this.lblCodigo = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
-            this.btnAddItem = new System.Windows.Forms.Button();
-            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvDtl = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnCerrar = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombo)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -95,7 +100,12 @@
             this.tabPagGeneral.SuspendLayout();
             this.tabDetails.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailProduct)).BeginInit();
+            this.tabPagCboElectivo.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCboVariable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvDtl)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -106,6 +116,7 @@
             this.button1.TabIndex = 155;
             this.button1.Text = "TEST - VER ESTADO";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvCombo
             // 
@@ -117,7 +128,7 @@
             this.dgvCombo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCombo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCombo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCombo.Location = new System.Drawing.Point(41, 156);
+            this.dgvCombo.Location = new System.Drawing.Point(35, 156);
             this.dgvCombo.MultiSelect = false;
             this.dgvCombo.Name = "dgvCombo";
             this.dgvCombo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -126,6 +137,7 @@
             this.dgvCombo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCombo.Size = new System.Drawing.Size(222, 406);
             this.dgvCombo.TabIndex = 154;
+            this.dgvCombo.SelectionChanged += new System.EventHandler(this.dgvCombo_SelectionChanged);
             // 
             // lblNumInactivo
             // 
@@ -219,6 +231,7 @@
             this.btnFilter.Size = new System.Drawing.Size(37, 30);
             this.btnFilter.TabIndex = 1;
             this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // txtFiltro
             // 
@@ -251,6 +264,7 @@
             this.txtFiltro.WaterMark = "Filtro";
             this.txtFiltro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFiltro.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);
             // 
             // cboFiltro
             // 
@@ -262,6 +276,7 @@
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(183, 23);
             this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // panelMantenimiento
             // 
@@ -298,6 +313,7 @@
             this.btnSearch.Size = new System.Drawing.Size(40, 40);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnNuevo
             // 
@@ -312,6 +328,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 1;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnRollback
             // 
@@ -326,6 +343,7 @@
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
             this.btnRollback.TabIndex = 3;
             this.btnRollback.UseVisualStyleBackColor = false;
+            this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
             // btnCommit
             // 
@@ -340,6 +358,7 @@
             this.btnCommit.Size = new System.Drawing.Size(40, 40);
             this.btnCommit.TabIndex = 0;
             this.btnCommit.UseVisualStyleBackColor = false;
+            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 
             // btnDelete
             // 
@@ -354,6 +373,7 @@
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // tglListarInactivos
             // 
@@ -364,6 +384,7 @@
             this.tglListarInactivos.TabIndex = 147;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
+            this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
             // 
             // lblListarInactivos
             // 
@@ -384,17 +405,6 @@
             this.lblNombreForm.Size = new System.Drawing.Size(111, 37);
             this.lblNombreForm.TabIndex = 149;
             this.lblNombreForm.Text = "Combos";
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(29, 51);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 148;
-            this.btnCerrar.UseSelectable = true;
             // 
             // tabCombo
             // 
@@ -453,6 +463,39 @@
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // btnAddItem
+            // 
+            this.btnAddItem.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItem.Image")));
+            this.btnAddItem.Location = new System.Drawing.Point(501, 124);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(35, 29);
+            this.btnAddItem.TabIndex = 163;
+            this.btnAddItem.UseVisualStyleBackColor = false;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // btnRemoveItem
+            // 
+            this.btnRemoveItem.BackColor = System.Drawing.Color.IndianRed;
+            this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRemoveItem.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveItem.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveItem.Image")));
+            this.btnRemoveItem.Location = new System.Drawing.Point(501, 92);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(35, 29);
+            this.btnRemoveItem.TabIndex = 164;
+            this.btnRemoveItem.UseVisualStyleBackColor = false;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
+            // 
             // tabDetails
             // 
             this.tabDetails.Controls.Add(this.tabPagProductos);
@@ -462,10 +505,11 @@
             this.tabDetails.SelectedIndex = 0;
             this.tabDetails.Size = new System.Drawing.Size(536, 186);
             this.tabDetails.TabIndex = 156;
+            this.tabDetails.SelectedIndexChanged += new System.EventHandler(this.tabDetails_SelectedIndexChanged);
             // 
             // tabPagProductos
             // 
-            this.tabPagProductos.Controls.Add(this.dgvDetail);
+            this.tabPagProductos.Controls.Add(this.dgvDetailProduct);
             this.tabPagProductos.Location = new System.Drawing.Point(4, 22);
             this.tabPagProductos.Name = "tabPagProductos";
             this.tabPagProductos.Padding = new System.Windows.Forms.Padding(3);
@@ -474,19 +518,20 @@
             this.tabPagProductos.Text = "Productos";
             this.tabPagProductos.UseVisualStyleBackColor = true;
             // 
-            // dgvDetail
+            // dgvDetailProduct
             // 
-            this.dgvDetail.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetail.Location = new System.Drawing.Point(3, 3);
-            this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.Size = new System.Drawing.Size(522, 154);
-            this.dgvDetail.TabIndex = 150;
+            this.dgvDetailProduct.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvDetailProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvDetailProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetailProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetailProduct.Location = new System.Drawing.Point(3, 3);
+            this.dgvDetailProduct.Name = "dgvDetailProduct";
+            this.dgvDetailProduct.Size = new System.Drawing.Size(522, 154);
+            this.dgvDetailProduct.TabIndex = 150;
             // 
             // tabPagCboElectivo
             // 
+            this.tabPagCboElectivo.Controls.Add(this.tableLayoutPanel1);
             this.tabPagCboElectivo.Location = new System.Drawing.Point(4, 22);
             this.tabPagCboElectivo.Name = "tabPagCboElectivo";
             this.tabPagCboElectivo.Padding = new System.Windows.Forms.Padding(3);
@@ -494,6 +539,31 @@
             this.tabPagCboElectivo.TabIndex = 1;
             this.tabPagCboElectivo.Text = "Cbo. Electivo";
             this.tabPagCboElectivo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.46719F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.53281F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvDetailCboVariable, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(522, 154);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dgvDetailCboVariable
+            // 
+            this.dgvDetailCboVariable.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvDetailCboVariable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvDetailCboVariable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetailCboVariable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetailCboVariable.Location = new System.Drawing.Point(3, 3);
+            this.dgvDetailCboVariable.Name = "dgvDetailCboVariable";
+            this.dgvDetailCboVariable.Size = new System.Drawing.Size(351, 148);
+            this.dgvDetailCboVariable.TabIndex = 151;
             // 
             // metroLabel5
             // 
@@ -550,18 +620,18 @@
             this.btnComboGrupo.Size = new System.Drawing.Size(29, 27);
             this.btnComboGrupo.TabIndex = 155;
             this.btnComboGrupo.UseSelectable = true;
+            this.btnComboGrupo.Click += new System.EventHandler(this.btnComboGrupo_Click);
             // 
             // cboComboGrupo
             // 
             this.cboComboGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboComboGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboComboGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboComboGrupo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboComboGrupo.FormattingEnabled = true;
             this.cboComboGrupo.Location = new System.Drawing.Point(77, 47);
             this.cboComboGrupo.Name = "cboComboGrupo";
             this.cboComboGrupo.Size = new System.Drawing.Size(159, 23);
             this.cboComboGrupo.TabIndex = 154;
+            this.cboComboGrupo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblComboGrupo
             // 
@@ -822,6 +892,7 @@
             this.txtPrecioCboSinTax.UseSelectable = true;
             this.txtPrecioCboSinTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPrecioCboSinTax.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecioCboSinTax.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtPrecioCboConTax
             // 
@@ -855,6 +926,7 @@
             this.txtPrecioCboConTax.UseSelectable = true;
             this.txtPrecioCboConTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPrecioCboConTax.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecioCboConTax.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtItemDesc
             // 
@@ -894,9 +966,9 @@
             this.lblProducto.ForeColor = System.Drawing.Color.Navy;
             this.lblProducto.Location = new System.Drawing.Point(77, 108);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(112, 19);
+            this.lblProducto.Size = new System.Drawing.Size(76, 19);
             this.lblProducto.TabIndex = 131;
-            this.lblProducto.Text = "Descripción Prod.";
+            this.lblProducto.Text = "Descripción";
             this.lblProducto.UseCustomForeColor = true;
             // 
             // metroLabel1
@@ -967,6 +1039,7 @@
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCodigo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCodigo.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblCodigo
             // 
@@ -1010,6 +1083,7 @@
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNombre.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblNombre
             // 
@@ -1022,36 +1096,25 @@
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.UseCustomForeColor = true;
             // 
-            // btnAddItem
+            // errorProv
             // 
-            this.btnAddItem.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAddItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItem.Image")));
-            this.btnAddItem.Location = new System.Drawing.Point(501, 124);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(35, 29);
-            this.btnAddItem.TabIndex = 163;
-            this.btnAddItem.UseVisualStyleBackColor = false;
+            this.errorProv.ContainerControl = this;
             // 
-            // btnRemoveItem
+            // errorProvDtl
             // 
-            this.btnRemoveItem.BackColor = System.Drawing.Color.IndianRed;
-            this.btnRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRemoveItem.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
-            this.btnRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveItem.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveItem.Image")));
-            this.btnRemoveItem.Location = new System.Drawing.Point(501, 92);
-            this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(35, 29);
-            this.btnRemoveItem.TabIndex = 164;
-            this.btnRemoveItem.UseVisualStyleBackColor = false;
+            this.errorProvDtl.ContainerControl = this;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageSize = 48;
+            this.btnCerrar.Location = new System.Drawing.Point(29, 51);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
+            this.btnCerrar.TabIndex = 148;
+            this.btnCerrar.UseSelectable = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FormCombo
             // 
@@ -1082,7 +1145,12 @@
             this.tabPagGeneral.PerformLayout();
             this.tabDetails.ResumeLayout(false);
             this.tabPagProductos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailProduct)).EndInit();
+            this.tabPagCboElectivo.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCboVariable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvDtl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1115,7 +1183,7 @@
         private MetroFramework.Controls.MetroTabPage tabPagGeneral;
         private MetroFramework.Controls.MetroLink btnBuscarProducto;
         private MetroFramework.Controls.MetroLink btnProducto;
-        private System.Windows.Forms.DataGridView dgvDetail;
+        private System.Windows.Forms.DataGridView dgvDetailProduct;
         private MetroFramework.Controls.MetroTextBox txtItemCod;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
@@ -1149,5 +1217,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Button btnRemoveItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridView dgvDetailCboVariable;
+        private System.Windows.Forms.ErrorProvider errorProv;
+        private System.Windows.Forms.ErrorProvider errorProvDtl;
     }
 }

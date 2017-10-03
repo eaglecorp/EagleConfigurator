@@ -807,9 +807,9 @@
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel1.Location = new System.Drawing.Point(-2, 48);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(167, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(165, 19);
             this.metroLabel1.TabIndex = 130;
-            this.metroLabel1.Text = "Combo variable detalle";
+            this.metroLabel1.Text = "Combo electivo detalle";
             this.metroLabel1.UseCustomForeColor = true;
             // 
             // panel2
@@ -933,9 +933,9 @@
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblNombreForm.Location = new System.Drawing.Point(82, 53);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(217, 37);
+            this.lblNombreForm.Size = new System.Drawing.Size(205, 37);
             this.lblNombreForm.TabIndex = 136;
-            this.lblNombreForm.Text = "Combos Variables";
+            this.lblNombreForm.Text = "Combos Electivo";
             // 
             // errorProv
             // 

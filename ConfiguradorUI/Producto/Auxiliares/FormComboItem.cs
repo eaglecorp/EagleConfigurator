@@ -13,72 +13,89 @@ using ConfigUtilitarios.Extensions;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
+using ConfiguradorUI.ViewModels;
 
 namespace ConfiguradorUI.Producto.Auxiliares
 {
-    public partial class FormComboVariableDtl : MetroForm
+    public partial class FormComboItem : MetroForm
     {
         #region Variables
-        public PROt16_combo_variable_dtl _item = null;
+        public PROt16_combo_variable_dtl _itemVar = null;
+        public PROt14_combo_fixed_dtl _itemFix = null;
+
+        public ComboItem _item = null;
+
         public bool _itemEdited = false;
         #endregion
 
-        public FormComboVariableDtl(PROt16_combo_variable_dtl item)
+        public FormComboItem(PROt16_combo_variable_dtl item)
         {
             InitializeComponent();
-            _item = item;
+            _itemVar = item;
+            MapItem(item);
+            SetItem(_item);
+            AddEventListener();
+        }
+
+        public FormComboItem(PROt14_combo_fixed_dtl item)
+        {
+            InitializeComponent();
+            _itemFix = item;
+            MapItem(item);
             SetItem(_item);
             AddEventListener();
         }
 
         #region Métodos
-        public void SetItem(PROt16_combo_variable_dtl item)
+
+        public void MapItem(PROt16_combo_variable_dtl item)
         {
-            lblItemName.Text = item.PROt09_producto?.txt_desc;
-            txtItemCod.Text = item.cod_combo_variable_dtl;
+            _item = new ComboItem()
+            {
+                txt_desc_item    = item.PROt09_producto?.txt_desc,
+                cod_combo_item   = item.cod_combo_variable_dtl,
+                cantidad         = item.cantidad,
+                mto_pvpu_con_tax = item.mto_pvpu_con_tax,
+                mto_pvpu_sin_tax = item.mto_pvpu_sin_tax,
+                id_estado        = item.id_estado
+            };
+        }
+
+        public void MapItem(PROt14_combo_fixed_dtl item)
+        {
+            _item = new ComboItem()
+            {
+                txt_desc_item    = item.PROt09_producto?.txt_desc,
+                cod_combo_item   = item.cod_combo_fixed_dtl,
+                cantidad         = item.cantidad != null ? (decimal)item.cantidad : 0,
+                mto_pvpu_con_tax = item.mto_pvpu_con_tax,
+                mto_pvpu_sin_tax = item.mto_pvpu_sin_tax,
+                id_estado        = item.id_estado
+            };
+        }
+
+        public void SetItem(ComboItem item)
+        {
+            lblItemName.Text = item.txt_desc_item;
+            txtItemCod.Text = item.cod_combo_item;
             txtItemQuantity.Text = item.cantidad.RemoveTrailingZeros();
             txtItemPriceConImp.Text = item.mto_pvpu_con_tax.RemoveTrailingZeros();
             txtItemPriceSinImp.Text = item.mto_pvpu_sin_tax.RemoveTrailingZeros();
             chkActivo.Checked = item.id_estado == Estado.IdActivo ? true : false;
         }
 
-        public PROt16_combo_variable_dtl GetItem()
+        public ComboItem GetItem()
         {
             try
             {
-                //Lo que podrá editar
-                var detailItem = new PROt16_combo_variable_dtl()
+                var detailItem = new ComboItem()
                 {
-                    cod_combo_variable_dtl = txtItemCod.Text.Trim(),
+                    cod_combo_item = txtItemCod.Text.Trim(),
                     cantidad = decimal.Parse(txtItemQuantity.Text.Trim()),
                     mto_pvpu_sin_tax = decimal.Parse(txtItemPriceSinImp.Text.Trim()),
                     mto_pvpu_con_tax = decimal.Parse(txtItemPriceConImp.Text.Trim()),
                     id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo,
-                    txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo
-                };
-                return detailItem;
-            }
-            catch (Exception e)
-            {
-                Msg.Ok_Err($"No se pudo obtener el item. ERROR: {e.Message}");
-                return null;
-            }
-        }
-
-
-        public PROt16_combo_variable_dtl GetItemNow()
-        {
-            try
-            {
-                //Lo que podrá editar
-                var detailItem = new PROt16_combo_variable_dtl()
-                {
-                    cod_combo_variable_dtl = txtItemCod.Text.Trim(),
-                    cantidad = decimal.Parse(txtItemQuantity.Text.Trim()),
-                    mto_pvpu_sin_tax = decimal.Parse(txtItemPriceSinImp.Text.Trim()),
-                    mto_pvpu_con_tax = decimal.Parse(txtItemPriceConImp.Text.Trim()),
-                    id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo,
-                    txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo
+                    //txt_estado     = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo
                 };
                 return detailItem;
             }
@@ -98,17 +115,16 @@ namespace ConfiguradorUI.Producto.Auxiliares
             chkActivo.CheckedChanged += CheckChange_Changed;
         }
 
-        public bool ReallyChanged(PROt16_combo_variable_dtl itemChanged)
+        public bool ReallyChanged(ComboItem itemChanged)
         {
             if (itemChanged == null)
                 return false;
 
-            return !(_item.cod_combo_variable_dtl == itemChanged.cod_combo_variable_dtl &&
+            return !(_item.cod_combo_item == itemChanged.cod_combo_item &&
                     _item.cantidad == itemChanged.cantidad &&
                     _item.mto_pvpu_con_tax == itemChanged.mto_pvpu_con_tax &&
                     _item.mto_pvpu_sin_tax == itemChanged.mto_pvpu_sin_tax &&
-                    _item.id_estado == itemChanged.id_estado &&
-                    _item.txt_estado == itemChanged.txt_estado);
+                    _item.id_estado == itemChanged.id_estado);
         }
 
         private void EditItem()
@@ -118,12 +134,25 @@ namespace ConfiguradorUI.Producto.Auxiliares
                 var itemChanged = GetItem();
                 if (ReallyChanged(itemChanged))
                 {
-                    _item.cod_combo_variable_dtl = itemChanged.cod_combo_variable_dtl;
-                    _item.cantidad = itemChanged.cantidad;
-                    _item.mto_pvpu_con_tax = itemChanged.mto_pvpu_con_tax;
-                    _item.mto_pvpu_sin_tax = itemChanged.mto_pvpu_sin_tax;
-                    _item.id_estado = itemChanged.id_estado;
-                    _item.txt_estado = itemChanged.txt_estado;
+                    if (_itemVar != null)
+                    {
+                        _itemVar.cod_combo_variable_dtl = itemChanged.cod_combo_item;
+                        _itemVar.cantidad = itemChanged.cantidad;
+                        _itemVar.mto_pvpu_con_tax = itemChanged.mto_pvpu_con_tax;
+                        _itemVar.mto_pvpu_sin_tax = itemChanged.mto_pvpu_sin_tax;
+                        _itemVar.id_estado = itemChanged.id_estado;
+                        _itemVar.txt_estado = _itemVar.id_estado == Estado.IdActivo ? Estado.TxtActivo : Estado.TxtInactivo;
+                    }
+                    else if (_itemFix != null)
+                    {
+                        _itemFix.cod_combo_fixed_dtl = itemChanged.cod_combo_item;
+                        _itemFix.cantidad = itemChanged.cantidad;
+                        _itemFix.mto_pvpu_con_tax = itemChanged.mto_pvpu_con_tax;
+                        _itemFix.mto_pvpu_sin_tax = itemChanged.mto_pvpu_sin_tax;
+                        _itemFix.id_estado = itemChanged.id_estado;
+                        _itemFix.txt_estado = _itemVar.id_estado == Estado.IdActivo ? Estado.TxtActivo : Estado.TxtInactivo;
+                    }
+
                     _itemEdited = true;
                 }
                 CloseForm();
@@ -149,7 +178,7 @@ namespace ConfiguradorUI.Producto.Auxiliares
             errorProv.Clear();
             var valid = true;
 
-            if (!(_item != null && _item.id_producto > 0))
+            if (!(_item != null))
             {
                 valid = false;
                 Msg.Ok_Info("El item está vacío.");
@@ -231,7 +260,8 @@ namespace ConfiguradorUI.Producto.Auxiliares
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            _item = null;
+            _itemVar = null;
+            _itemFix = null;
             _itemEdited = false;
             CloseForm();
         }

@@ -225,5 +225,27 @@ namespace ConfigDataAccess.Producto
             }
             return obj;
         }
+
+
+        public IEnumerable<PROt15_combo_variable> BuscarComboVariable(string cod, string descripcion, int? id_estado)
+        {
+            var list = new List<PROt15_combo_variable>();
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    list = ctx.PROt15_combo_variable
+                              .AsNoTracking()
+                              .Where(x => x.cod_combo_variable.Contains(cod) || x.txt_desc.Contains(descripcion))
+                              .ToList();
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda Combo Variable por código, nombre y estado: ", e.Message);
+                }
+            }
+            return list;
+        }
     }
 }

@@ -34,5 +34,10 @@ namespace ConfigBusinessLogic.Producto
         {
            return new ComboVariableDA().ComboVariableXCod(cod);
         }
+
+        public IEnumerable<PROt15_combo_variable> BuscarComboVariable(string cod, string descripcion, int? id_estado)
+        {
+            return new ComboVariableDA().BuscarComboVariable(cod, descripcion, id_estado);
+        }
     }
 }

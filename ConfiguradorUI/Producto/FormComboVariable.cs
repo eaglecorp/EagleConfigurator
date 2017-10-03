@@ -1556,11 +1556,11 @@ namespace ConfiguradorUI.Producto
             var itemSelected = GetItemSelected();
             if (itemSelected.Item1 != null)
             {
-                var form = new FormComboVariableDtl(itemSelected.Item1);
+                var form = new FormComboItem(itemSelected.Item1);
                 form.ShowDialog();
-                if (form._itemEdited && form._item != null)
+                if (form._itemEdited && form._itemVar != null)
                 {
-                    if (EditItem(form._item))
+                    if (EditItem(form._itemVar))
                         CargarGridProd(details);
                     else
                         Msg.Ok_Wng("No se pudo editar el item.");

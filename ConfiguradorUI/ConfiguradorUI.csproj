@@ -88,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buscadores\FormBuscarComboVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FormBuscarComboVariable.Designer.cs">
+      <DependentUpon>FormBuscarComboVariable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Buscadores\FormBuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,11 +238,11 @@
     <Compile Include="Persona\FormProveedor.Designer.cs">
       <DependentUpon>FormProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Producto\Auxiliares\FormComboVariableDtl.cs">
+    <Compile Include="Producto\Auxiliares\FormComboItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Producto\Auxiliares\FormComboVariableDtl.Designer.cs">
-      <DependentUpon>FormComboVariableDtl.cs</DependentUpon>
+    <Compile Include="Producto\Auxiliares\FormComboItem.Designer.cs">
+      <DependentUpon>FormComboItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto\FormClase.cs">
       <SubType>Form</SubType>
@@ -365,6 +371,10 @@
     <Compile Include="splahScreen.Designer.cs">
       <DependentUpon>splahScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ComboItem.cs" />
+    <EmbeddedResource Include="Buscadores\FormBuscarComboVariable.resx">
+      <DependentUpon>FormBuscarComboVariable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Buscadores\FormBuscarProducto.resx">
       <DependentUpon>FormBuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -437,8 +447,8 @@
     <EmbeddedResource Include="Persona\FormProveedor.resx">
       <DependentUpon>FormProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Producto\Auxiliares\FormComboVariableDtl.resx">
-      <DependentUpon>FormComboVariableDtl.cs</DependentUpon>
+    <EmbeddedResource Include="Producto\Auxiliares\FormComboItem.resx">
+      <DependentUpon>FormComboItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\FormClase.resx">
       <DependentUpon>FormClase.cs</DependentUpon>

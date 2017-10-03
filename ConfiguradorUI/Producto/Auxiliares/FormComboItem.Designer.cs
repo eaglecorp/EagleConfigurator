@@ -1,6 +1,6 @@
 ﻿namespace ConfiguradorUI.Producto.Auxiliares
 {
-    partial class FormComboVariableDtl
+    partial class FormComboItem
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormComboVariableDtl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormComboItem));
             this.txtItemPriceConImp = new MetroFramework.Controls.MetroTextBox();
             this.txtItemPriceSinImp = new MetroFramework.Controls.MetroTextBox();
             this.txtItemQuantity = new MetroFramework.Controls.MetroTextBox();
@@ -147,9 +147,9 @@
             // 
             this.lblItemName.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblItemName.ForeColor = System.Drawing.Color.Navy;
-            this.lblItemName.Location = new System.Drawing.Point(84, 26);
+            this.lblItemName.Location = new System.Drawing.Point(93, 26);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(397, 22);
+            this.lblItemName.Size = new System.Drawing.Size(388, 22);
             this.lblItemName.TabIndex = 144;
             this.lblItemName.Text = "itemName";
             this.lblItemName.UseCustomForeColor = true;
@@ -215,9 +215,9 @@
             this.metroLabel5.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel5.Location = new System.Drawing.Point(222, 86);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(131, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(125, 19);
             this.metroLabel5.TabIndex = 148;
-            this.metroLabel5.Text = "P. unit. con impuesto:";
+            this.metroLabel5.Text = "P. unit. sin impuesto:";
             this.metroLabel5.UseCustomForeColor = true;
             // 
             // metroLabel6
@@ -299,12 +299,12 @@
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel1.Location = new System.Drawing.Point(16, 27);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
             this.metroLabel1.TabIndex = 153;
-            this.metroLabel1.Text = "Producto:";
+            this.metroLabel1.Text = "Descripción:";
             this.metroLabel1.UseCustomForeColor = true;
             // 
-            // FormComboVariableDtl
+            // FormComboItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -323,7 +323,7 @@
             this.Controls.Add(this.txtItemPriceConImp);
             this.Controls.Add(this.txtItemCod);
             this.MaximizeBox = false;
-            this.Name = "FormComboVariableDtl";
+            this.Name = "FormComboItem";
             this.Load += new System.EventHandler(this.FormComboVariableDtl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
