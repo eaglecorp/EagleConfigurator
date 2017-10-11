@@ -22,6 +22,10 @@ namespace ConfigBusinessLogic.Producto
         {
             new ComboVariableDA().EliminarComboVariable(id);
         }
+        public bool ActivarComboVariable(long id)
+        {
+            return new ComboVariableDA().ActivarComboVariable(id);
+        }
         public void ActualizarComboVariable(PROt15_combo_variable actualizado)
         {
             new ComboVariableDA().ActualizarComboVariable(actualizado);

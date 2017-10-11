@@ -38,11 +38,11 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.dgvComboVariable = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvComboVariableDtl = new System.Windows.Forms.DataGridView();
             this.gbxFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariableDtl)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxFiltro
@@ -68,7 +68,7 @@
             // 
             // 
             this.txtDescripcion.CustomButton.Image = null;
-            this.txtDescripcion.CustomButton.Location = new System.Drawing.Point(348, 1);
+            this.txtDescripcion.CustomButton.Location = new System.Drawing.Point(471, 1);
             this.txtDescripcion.CustomButton.Name = "";
             this.txtDescripcion.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDescripcion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -86,7 +86,7 @@
             this.txtDescripcion.SelectionLength = 0;
             this.txtDescripcion.SelectionStart = 0;
             this.txtDescripcion.ShortcutsEnabled = true;
-            this.txtDescripcion.Size = new System.Drawing.Size(370, 23);
+            this.txtDescripcion.Size = new System.Drawing.Size(493, 23);
             this.txtDescripcion.TabIndex = 5;
             this.txtDescripcion.UseSelectable = true;
             this.txtDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -129,7 +129,7 @@
             // 
             // 
             this.txtCodigo.CustomButton.Image = null;
-            this.txtCodigo.CustomButton.Location = new System.Drawing.Point(115, 1);
+            this.txtCodigo.CustomButton.Location = new System.Drawing.Point(117, 1);
             this.txtCodigo.CustomButton.Name = "";
             this.txtCodigo.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtCodigo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -147,7 +147,7 @@
             this.txtCodigo.SelectionLength = 0;
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
-            this.txtCodigo.Size = new System.Drawing.Size(137, 23);
+            this.txtCodigo.Size = new System.Drawing.Size(139, 23);
             this.txtCodigo.TabIndex = 3;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -167,7 +167,7 @@
             // 
             this.chkIncluirInactivos.AutoSize = true;
             this.chkIncluirInactivos.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkIncluirInactivos.Location = new System.Drawing.Point(341, 26);
+            this.chkIncluirInactivos.Location = new System.Drawing.Point(464, 26);
             this.chkIncluirInactivos.Name = "chkIncluirInactivos";
             this.chkIncluirInactivos.Size = new System.Drawing.Size(120, 19);
             this.chkIncluirInactivos.TabIndex = 8;
@@ -193,6 +193,7 @@
             this.dgvComboVariable.Size = new System.Drawing.Size(441, 263);
             this.dgvComboVariable.TabIndex = 13;
             this.dgvComboVariable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComboVariable_CellDoubleClick);
+            this.dgvComboVariable.SelectionChanged += new System.EventHandler(this.dgvComboVariable_SelectionChanged);
             this.dgvComboVariable.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvComboVariable_KeyDown);
             // 
             // tableLayoutPanel1
@@ -200,23 +201,24 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.96296F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.03704F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvComboVariableDtl, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvComboVariable, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 163);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 269);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
-            // dataGridView1
+            // dgvComboVariableDtl
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(450, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(257, 263);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvComboVariableDtl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComboVariableDtl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvComboVariableDtl.Location = new System.Drawing.Point(450, 3);
+            this.dgvComboVariableDtl.Name = "dgvComboVariableDtl";
+            this.dgvComboVariableDtl.Size = new System.Drawing.Size(257, 263);
+            this.dgvComboVariableDtl.TabIndex = 14;
             // 
             // FormBuscarComboVariable
             // 
@@ -226,13 +228,13 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.gbxFiltro);
             this.Name = "FormBuscarComboVariable";
-            this.Text = "Seleccionar combo variable";
+            this.Text = "Seleccionar combo electivo";
             this.Load += new System.EventHandler(this.FormBuscarComboVariable_Load);
             this.gbxFiltro.ResumeLayout(false);
             this.gbxFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariable)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariableDtl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,6 +251,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.DataGridView dgvComboVariable;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvComboVariableDtl;
     }
 }

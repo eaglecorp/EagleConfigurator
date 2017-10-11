@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -69,6 +70,7 @@
     <Compile Include="Producto\ComboBL.cs" />
     <Compile Include="Producto\ComboGrupoBL.cs" />
     <Compile Include="Producto\ComboVariableBL.cs" />
+    <Compile Include="Producto\ComboVariableDetalleBL.cs" />
     <Compile Include="Producto\FamiliaBL.cs" />
     <Compile Include="Producto\GrupoProdBL.cs" />
     <Compile Include="Producto\MarcaBL.cs" />

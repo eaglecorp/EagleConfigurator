@@ -26,20 +26,21 @@ namespace ConfiguradorUI.Producto
         bool isChangedRow = false;
         bool isPending = false;
         bool preguntar = true;
+        int maxNumItems = 6;
         public bool actualizar = false;
+        string codSelected = "";
+
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
+        enum DeleteDtlAction { Remove, ActiveDesactive };
         enum Detail { Producto, ComboVariable }
         Detail DetailView = Detail.Producto;
 
-        string codSelected = "";
 
         PROt09_producto product = null;
         PROt15_combo_variable cboVar = null;
         List<PROt14_combo_fixed_dtl> details = null;
-        int maxNumItems = 6;
 
-        enum DeleteDtlAction { Remove, ActiveDesactive };
         #endregion
 
         public FormCombo()
@@ -67,7 +68,6 @@ namespace ConfiguradorUI.Producto
                 MessageBox.Show("No se pudo cargar el producto. Excepción: " + e.Message, "Mensaje Eagle", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void SetItem(PROt15_combo_variable obj)
         {
             try
@@ -88,12 +88,11 @@ namespace ConfiguradorUI.Producto
 
         private PROt14_combo_fixed_dtl GetItem()
         {
+            var ventana = "producto";
             try
             {
                 var detailItem = new PROt14_combo_fixed_dtl();
-                detailItem.PROt09_producto = new PROt09_producto();
 
-                detailItem.id_producto = product.id_producto;
                 detailItem.cod_combo_fixed_dtl = txtItemCod.Text.Trim();
                 detailItem.cantidad = decimal.Parse(txtItemQuantity.Text.Trim());
                 detailItem.mto_pvpu_sin_tax = decimal.Parse(txtItemPriceSinImp.Text.Trim());
@@ -101,16 +100,33 @@ namespace ConfiguradorUI.Producto
                 detailItem.id_estado = Estado.IdActivo;
                 detailItem.txt_estado = Estado.TxtActivo;
 
-                detailItem.PROt09_producto.txt_desc = txtItemDesc.Text.Trim();
+                if (DetailView == Detail.Producto)
+                {
+                    detailItem.id_producto = product.id_producto;
+                    detailItem.PROt09_producto = new PROt09_producto()
+                    {
+                        txt_desc = txtItemDesc.Text.Trim()
+                    };
+                }
+                else if (DetailView == Detail.ComboVariable)
+                {
+                    ventana = "combo variable";
+                    detailItem.id_combo_variable = cboVar.id_combo_variable;
+                    detailItem.PROt15_combo_variable = new PROt15_combo_variable()
+                    {
+                        txt_desc = txtItemDesc.Text.Trim()
+                    };
+                }
+                else return null;
+
                 return detailItem;
             }
             catch (Exception e)
             {
-                MessageBox.Show("No se pudo obtener el producto. Excepción: " + e.Message, "Mensaje Eagle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"No se pudo obtener el {ventana}. Excepción: " + e.Message, "Mensaje Eagle", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
-
         private void CleanItem(bool includeItem = false)
         {
             txtItemCod.Clear();
@@ -124,7 +140,6 @@ namespace ConfiguradorUI.Producto
                 cboVar = null;
             }
         }
-
         private void CleanDetail(bool includeDetails = false)
         {
             SetCabeceraGridDetailProduct();
@@ -140,7 +155,13 @@ namespace ConfiguradorUI.Producto
         {
             try
             {
-                var index = details.FindIndex(x => x.id_producto == item.id_producto);
+                var index = -1;
+                if (DetailView == Detail.Producto)
+                    index = details.FindIndex(x => x.id_producto == item.id_producto);
+                else if (DetailView == Detail.ComboVariable)
+                    index = details.FindIndex(x => x.id_combo_variable == item.id_combo_variable);
+                else return false;
+
                 if (index != -1)
                 {
                     var oldItem = details[index];
@@ -174,24 +195,22 @@ namespace ConfiguradorUI.Producto
                     if (details == null) details = new List<PROt14_combo_fixed_dtl>();
                     try
                     {
+                        //Intenta editar
                         if (EditItem(itemObtained, true))
                         {
-                            CargarGridProd(details);
+                            CargarGridDetail(details);
                         }
-                        //Si el producto no existe en el detalle -> agrega item
+                        //Si no edita singfica que no está -> agrega
                         else if (details.Count < maxNumItems)
                         {
                             long idMaster = 0;
-                            //Si no se trata de inserción se asumo que 
-                            //que es una modificación y se trata de ingresar un item
-                            //en un master ya creado. Por tanto se debe traer su id.
                             if (TipoOperacion != TipoOperacionABM.Nuevo)
                             {
                                 long.TryParse(lblIdCombo.Text, out idMaster);
                             }
                             itemObtained.id_combo = idMaster;
                             details.Add(itemObtained);
-                            CargarGridProd(details);
+                            CargarGridDetail(details);
                         }
                         else
                             Msg.Ok_Info($"No puede agregar más items. Ha alcanzado el número máximo de items({maxNumItems}).", "Mensaje Eagle");
@@ -206,12 +225,10 @@ namespace ConfiguradorUI.Producto
                         CleanItem(true);
                         errorProvDtl.Clear();
                         txtItemCod.Focus();
-
                     }
                 }
             }
         }
-
         private void RemoveItem(DeleteDtlAction actionDeleteDtl)
         {
             try
@@ -234,7 +251,7 @@ namespace ConfiguradorUI.Producto
                                 details.RemoveAt(itemSelected_index.Item2);
                                 isChangedRow = false;
                                 if (details.Count == 0) details = null;
-                                CargarGridProd(details);
+                                CargarGridDetail(details);
                             }
                         }
                         else
@@ -252,7 +269,7 @@ namespace ConfiguradorUI.Producto
                                 oldItem.id_estado = Estado.IdActivo;
                                 oldItem.txt_estado = Estado.TxtActivo;
                                 details[itemSelected_index.Item2] = oldItem;
-                                CargarGridProd(details);
+                                CargarGridDetail(details);
                             }
                         }
                         //Para desactivar
@@ -263,7 +280,7 @@ namespace ConfiguradorUI.Producto
                                 oldItem.id_estado = Estado.IdInactivo;
                                 oldItem.txt_estado = Estado.TxtInactivo;
                                 details[itemSelected_index.Item2] = oldItem;
-                                CargarGridProd(details);
+                                CargarGridDetail(details);
                             }
                         }
                     }
@@ -277,7 +294,7 @@ namespace ConfiguradorUI.Producto
             }
             finally
             {
-                dgvDetailProduct.Focus();
+                dgvProductDetail.Focus();
             }
         }
         private void SearchAndSetItem()
@@ -311,7 +328,7 @@ namespace ConfiguradorUI.Producto
         }
         private Tuple<PROt14_combo_fixed_dtl, int> GetItemSelected()
         {
-            if (long.TryParse(ControlHelper.DgvGetCellValueSelected(dgvDetailProduct, 0), out long id))
+            if (long.TryParse(ControlHelper.DgvGetCellValueSelected(dgvProductDetail, 0), out long id))
             {
                 int index = details.FindIndex(x => x.id_producto == id);
                 if (index != -1 && details[index] != null)
@@ -378,36 +395,53 @@ namespace ConfiguradorUI.Producto
             errorProvDtl.Clear();
             var valid = true;
 
-            if (!(product != null && product.id_producto > 0))
+
+            if (DetailView == Detail.Producto)
             {
-                valid = false;
-                Msg.Ok_Info("No se ha seleccionado a ningún producto. Presione Enter y seleccione.");
-                txtItemCod.Focus();
+                if (!(product != null && product.id_producto > 0))
+                {
+                    valid = false;
+                    Msg.Ok_Info("No se ha seleccionado a ningún producto. Presione Enter y seleccione.");
+                    txtItemCod.Focus();
+                }
+            }
+            else if (DetailView == Detail.ComboVariable)
+            {
+                if (!(cboVar != null && cboVar.id_combo_variable > 0))
+                {
+                    valid = false;
+                    Msg.Ok_Info("No se ha seleccionado a ningún cbo. electivo. Presione Enter y seleccione.");
+                    txtItemCod.Focus();
+                }
             }
             else
+                valid = false;
+
+
+            if (valid)
             {
                 if (!Validation.PositiveAmount(txtItemPriceSinImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblPrecioSinImp, ValidationMsj.Amount);
+                    errorProvDtl.SetError(lblPrecioSinImp, ValidationMsg.Amount);
                     txtItemPriceSinImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemPriceConImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblPrecioConImp, ValidationMsj.Amount);
+                    errorProvDtl.SetError(lblPrecioConImp, ValidationMsg.Amount);
                     txtItemPriceConImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemQuantity.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblCantidad, ValidationMsj.Amount);
+                    errorProvDtl.SetError(lblCantidad, ValidationMsg.Amount);
                     txtItemQuantity.Focus();
                 }
                 if (txtItemDesc.Text.Trim() == "")
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblProducto, ValidationMsj.Required);
+                    errorProvDtl.SetError(lblItemDesc, ValidationMsg.Required);
                     txtItemDesc.Focus();
                 }
             }
@@ -415,46 +449,54 @@ namespace ConfiguradorUI.Producto
             return valid;
         }
 
-        private void CargarGridProd(IEnumerable<PROt14_combo_fixed_dtl> list)
+        private void CargarGridDetail(IEnumerable<PROt14_combo_fixed_dtl> list, bool refreshAllGrids = false)
         {
             if (list != null)
             {
-                dgvDetailProduct.DataSource = list.Select(x => new
-                {
-                    ID_PROD = x.id_producto,
-                    PRODUCTO = x.PROt09_producto != null ? x.PROt09_producto.txt_desc : "NO SE PUEDE MOSTRAR",
-                    CANTIDAD = x.cantidad.RemoveTrailingZeros(),
-                    P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
-                    P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
-                    ACTIVO = x.id_estado == Estado.IdActivo ? true : false
-                }).ToList();
+                var listProduct = list.Where(x => x.id_producto != null).ToList();
+                var listCboVar = list.Where(x => x.id_combo_variable != null).ToList();
 
+                if (listProduct != null)
+                    dgvProductDetail.DataSource = listProduct.Select(x => new
+                    {
+                        ID_PROD = x.id_producto,
+                        PRODUCTO = x.PROt09_producto != null ? x.PROt09_producto.txt_desc : "NO SE PUEDE MOSTRAR",
+                        CANTIDAD = x.cantidad.RemoveTrailingZeros(),
+                        P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
+                        P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
+                        ACTIVO = x.id_estado == Estado.IdActivo ? true : false
+                    }).ToList();
+                else
+                    SetCabeceraGridDetailProduct();
+                DefinirCabeceraGridDetailProduct();
+
+                if (listCboVar != null)
+                    dgvCboVariableDetail.DataSource = listCboVar.Select(x => new
+                    {
+                        ID_CBO_VAR = x.id_combo_variable,
+                        DESC = x.PROt15_combo_variable != null ? x.PROt15_combo_variable.txt_desc : "NO SE PUEDE MOSTRAR",
+                        CANTIDAD = x.cantidad.RemoveTrailingZeros(),
+                        P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
+                        P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
+                        ACTIVO = x.id_estado == Estado.IdActivo ? true : false
+                    }).ToList();
+                else
+                    SetCabeceraGridDetailCboVariable();
+                DefinirCabeceraGridDetailCboVariable();
             }
             else
             {
                 SetCabeceraGridDetailProduct();
-            }
-            DefinirCabeceraGridDetailProduct();
-        }
-
-        #region Métodos para eventos
-
-        private void SearchAndSetItem_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
-            {
-                SearchAndSetItem();
+                SetCabeceraGridDetailCboVariable();
+                DefinirCabeceraGridDetailProduct();
+                DefinirCabeceraGridDetailCboVariable();
             }
         }
-
-        #endregion
-
-        #region útiles
 
         private void SetCabeceraGridDetailCboVariable()
         {
             var detailHeader = new List<PROt14_combo_fixed_dtl>();
-            dgvDetailCboVariable.DataSource = detailHeader.Select(x => new
+            dgvCboVariableDetail.DataSource = detailHeader.Select(x => new
             {
                 ID_CBO_VAR = "",
                 DESC = "",
@@ -464,7 +506,6 @@ namespace ConfiguradorUI.Producto
                 ACTIVO = true
             }).ToList();
         }
-
         private void DefinirCabeceraGridDetailCboVariable()
         {
             try
@@ -474,26 +515,26 @@ namespace ConfiguradorUI.Producto
                 //s.id_combo_variable
 
 
-                dgvDetailCboVariable.Columns["ID_CBO_VAR"].Visible = false;
-                dgvDetailCboVariable.Columns["P_UNIT_S_TAX"].Visible = false;
+                dgvCboVariableDetail.Columns["ID_CBO_VAR"].Visible = false;
+                dgvCboVariableDetail.Columns["P_UNIT_S_TAX"].Visible = false;
 
-                dgvDetailCboVariable.Columns["DESC"].HeaderText = "CBO. ELECTIVO";
+                dgvCboVariableDetail.Columns["DESC"].HeaderText = "CBO. ELECTIVO";
 
-                dgvDetailCboVariable.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvDetailCboVariable.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvCboVariableDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvCboVariableDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvDetailCboVariable.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
-                dgvDetailCboVariable.Columns["P_UNIT_C_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvDetailCboVariable.Columns["P_UNIT_C_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvCboVariableDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
+                dgvCboVariableDetail.Columns["P_UNIT_C_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvCboVariableDetail.Columns["P_UNIT_C_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvDetailCboVariable.Columns["P_UNIT_S_TAX"].HeaderText = "P. UNIT. S/I";
-                dgvDetailCboVariable.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvDetailCboVariable.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvCboVariableDetail.Columns["P_UNIT_S_TAX"].HeaderText = "P. UNIT. S/I";
+                dgvCboVariableDetail.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvCboVariableDetail.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvDetailCboVariable.Columns["ACTIVO"].Width = 55;
-                dgvDetailCboVariable.Columns["CANTIDAD"].Width = 80;
-                dgvDetailCboVariable.Columns["DESC"].Width = 120;
-                dgvDetailCboVariable.Columns["P_UNIT_C_TAX"].Width = 90;
+                dgvCboVariableDetail.Columns["ACTIVO"].Width = 55;
+                dgvCboVariableDetail.Columns["CANTIDAD"].Width = 80;
+                dgvCboVariableDetail.Columns["DESC"].Width = 120;
+                dgvCboVariableDetail.Columns["P_UNIT_C_TAX"].Width = 90;
 
             }
             catch (Exception e)
@@ -505,7 +546,7 @@ namespace ConfiguradorUI.Producto
         private void SetCabeceraGridDetailProduct()
         {
             var detailHeader = new List<PROt14_combo_fixed_dtl>();
-            dgvDetailProduct.DataSource = detailHeader.Select(x => new
+            dgvProductDetail.DataSource = detailHeader.Select(x => new
             {
                 ID_PROD = "",
                 PRODUCTO = "",
@@ -515,34 +556,43 @@ namespace ConfiguradorUI.Producto
                 ACTIVO = true
             }).ToList();
         }
-
         private void DefinirCabeceraGridDetailProduct()
         {
             try
             {
-                dgvDetailProduct.Columns["ID_PROD"].Visible = false;
+                dgvProductDetail.Columns["ID_PROD"].Visible = false;
 
-                dgvDetailProduct.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvDetailProduct.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvProductDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvProductDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvDetailProduct.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
-                dgvDetailProduct.Columns["P_UNIT_C_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvDetailProduct.Columns["P_UNIT_C_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvProductDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
+                dgvProductDetail.Columns["P_UNIT_C_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvProductDetail.Columns["P_UNIT_C_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvDetailProduct.Columns["P_UNIT_S_TAX"].HeaderText = "P. UNIT. S/I";
-                dgvDetailProduct.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvDetailProduct.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvProductDetail.Columns["P_UNIT_S_TAX"].HeaderText = "P. UNIT. S/I";
+                dgvProductDetail.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvProductDetail.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvDetailProduct.Columns["PRODUCTO"].Width = 195;
-                dgvDetailProduct.Columns["P_UNIT_C_TAX"].Width = 95;
-                dgvDetailProduct.Columns["P_UNIT_S_TAX"].Width = 95;
-                dgvDetailProduct.Columns["CANTIDAD"].Width = 80;
-                dgvDetailProduct.Columns["ACTIVO"].Width = 55;
+                dgvProductDetail.Columns["PRODUCTO"].Width = 195;
+                dgvProductDetail.Columns["P_UNIT_C_TAX"].Width = 95;
+                dgvProductDetail.Columns["P_UNIT_S_TAX"].Width = 95;
+                dgvProductDetail.Columns["CANTIDAD"].Width = 80;
+                dgvProductDetail.Columns["ACTIVO"].Width = 55;
 
             }
             catch (Exception e)
             {
                 MessageBox.Show($"No se pudo definir la cabecera de la grilla de productos. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #region Métodos para eventos
+
+        private void SearchAndSetItem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
+            {
+                SearchAndSetItem();
             }
         }
 
@@ -574,7 +624,7 @@ namespace ConfiguradorUI.Producto
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
 
-            dgvDetailProduct.DataSourceChanged += new EventHandler(OnContentChanged);
+            dgvProductDetail.DataSourceChanged += new EventHandler(OnContentChanged);
 
         }
 
@@ -781,7 +831,7 @@ namespace ConfiguradorUI.Producto
                 txtPrecioCboConTax.Text = obj.mto_pvpu_con_tax.RemoveTrailingZeros();
                 txtPrecioCboSinTax.Text = obj.mto_pvpu_sin_tax.RemoveTrailingZeros();
                 details = obj.PROt14_combo_fixed_dtl?.ToList();
-                CargarGridProd(obj.PROt14_combo_fixed_dtl);
+                CargarGridDetail(obj.PROt14_combo_fixed_dtl);
 
             }
             catch (Exception e)
@@ -806,13 +856,13 @@ namespace ConfiguradorUI.Producto
 
             if (!Validation.PositiveAmount(txtPrecioCboSinTax.Text.Trim()))
             {
-                errorProv.SetError(txtPrecioCboSinTax, ValidationMsj.Amount);
+                errorProv.SetError(txtPrecioCboSinTax, ValidationMsg.Amount);
                 txtPrecioCboSinTax.Focus();
                 no_error = false;
             }
             if (!Validation.PositiveAmount(txtPrecioCboConTax.Text.Trim()))
             {
-                errorProv.SetError(txtPrecioCboConTax, ValidationMsj.Amount);
+                errorProv.SetError(txtPrecioCboConTax, ValidationMsg.Amount);
                 txtPrecioCboConTax.Focus();
                 no_error = false;
             }
@@ -820,7 +870,7 @@ namespace ConfiguradorUI.Producto
             #region Validación Details
             if (details == null || details.Count == 0)
             {
-                errorProvDtl.SetError(dgvDetailProduct, "Se requiere al menos de un item.");
+                errorProvDtl.SetError(dgvProductDetail, "Se requiere al menos de un item.");
                 txtItemCod.Focus();
                 no_error = false;
             }
@@ -1052,7 +1102,6 @@ namespace ConfiguradorUI.Producto
             return id;
         }
 
-        //Métodos utilitarios de lógica del Form
         private void CargarComboFiltro()
         {
             try
@@ -1262,12 +1311,17 @@ namespace ConfiguradorUI.Producto
             if (tabDetails.SelectedTab == tabDetails.TabPages["tabPagProductos"])
             {
                 DetailView = Detail.Producto;
+                lblItemDesc.Text = "Descrip. Producto";
+                btnItem.Location = new Point(187, 104);
             }
             else if (tabDetails.SelectedTab == tabDetails.TabPages["tabPagCboElectivo"])
             {
                 DetailView = Detail.ComboVariable;
+                lblItemDesc.Text = "Descrip. Cbo. Electivo";
+                btnItem.Location = new Point(207, 104);
             }
-            txtCodigo.Focus();
+            CleanItem(true);
+            errorProvDtl.Clear();
         }
         private void SetInit()
         {
@@ -1284,13 +1338,13 @@ namespace ConfiguradorUI.Producto
             #region Dgv
             SetCabeceraGridDetailProduct();
             DefinirCabeceraGridDetailProduct();
-            ControlHelper.DgvReadOnly(dgvDetailProduct);
-            ControlHelper.DgvLightStyle(dgvDetailProduct);
+            ControlHelper.DgvReadOnly(dgvProductDetail);
+            ControlHelper.DgvLightStyle(dgvProductDetail);
 
             SetCabeceraGridDetailCboVariable();
             DefinirCabeceraGridDetailCboVariable();
-            ControlHelper.DgvReadOnly(dgvDetailCboVariable);
-            ControlHelper.DgvLightStyle(dgvDetailCboVariable);
+            ControlHelper.DgvReadOnly(dgvCboVariableDetail);
+            ControlHelper.DgvLightStyle(dgvCboVariableDetail);
 
             #endregion
 
@@ -1652,7 +1706,7 @@ namespace ConfiguradorUI.Producto
             else Msg.Ok_Info("Producto No es nulo " + product.txt_desc);
 
             if (cboVar == null) Msg.Ok_Info("Cbo. variable es nulo");
-            else Msg.Ok_Info("Cbo. Variable No es nulo " + product.txt_desc);
+            else Msg.Ok_Info("Cbo. Variable No es nulo " + cboVar.txt_desc);
 
             if (details == null) Msg.Ok_Info("Details Es nulo");
             else Msg.Ok_Info("Details No es nulo ");
@@ -1702,7 +1756,7 @@ namespace ConfiguradorUI.Producto
                 if (form._itemEdited && form._itemFix != null)
                 {
                     if (EditItem(form._itemFix))
-                        CargarGridProd(details);
+                        CargarGridDetail(details);
                     else
                         Msg.Ok_Wng("No se pudo editar el item.");
                 }
@@ -1720,6 +1774,7 @@ namespace ConfiguradorUI.Producto
         private void tabDetails_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckChangeTab();
+            txtItemCod.Focus();
         }
     }
 }

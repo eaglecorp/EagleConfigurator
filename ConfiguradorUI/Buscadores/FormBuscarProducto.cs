@@ -12,6 +12,7 @@ using ConfigBusinessLogic.Producto;
 using ConfigBusinessEntity;
 using ConfigUtilitarios;
 using ConfigBusinessLogic;
+using ConfigUtilitarios.HelperControl;
 
 namespace ConfiguradorUI.Buscadores
 {
@@ -85,20 +86,15 @@ namespace ConfiguradorUI.Buscadores
             var cod02 = txtCodigo02.Text.Trim();
             var nombre = txtDescripcionProd.Text.Trim();
             int? estado = chkIncluirInactivos.Checked ? Estado.Ignorar : Estado.IdActivo;
-            int? snVenta = chkProdVenta.Checked ? Estado.IdActivo : Estado.Ignorar;
-            int? snCompra = chkProdCompra.Checked ? Estado.IdActivo : Estado.Ignorar;
-
             if (verTodos)
             {
                 cod = "";
                 cod02 = "";
                 nombre = "";
                 estado = Estado.Ignorar;
-                snVenta = Estado.Ignorar;
-                snCompra = Estado.Ignorar;
             }
 
-            var list = new ProductoBL().BuscarProducto(cod, cod02, nombre, snVenta, snCompra, estado);
+            var list = new ProductoBL().BuscarProducto(cod, cod02, nombre, Estado.IdActivo, Estado.Ignorar, estado);
             CargarGrid(list);
         }
 
@@ -150,8 +146,6 @@ namespace ConfiguradorUI.Buscadores
             #region Checks
 
             chkIncluirInactivos.Checked = false;
-            chkProdVenta.Checked = true;
-            chkProdCompra.Checked = false;
 
             #endregion
 
@@ -186,40 +180,91 @@ namespace ConfiguradorUI.Buscadores
 
         }
 
+        private PROt09_producto GetProducto()
+        {
+            try
+            {
+                var prod = new PROt09_producto()
+                {
+                    id_producto = long.Parse(dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["ID"].Value.ToString()),
+                    cod_producto = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["CODIGO"].Value.ToString(),
+                    cod_producto2 = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["CODIGO02"].Value.ToString(),
+                    txt_desc = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["DESCRIPCION"].Value.ToString(),
+                    txt_estado = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["ESTADO"].Value.ToString(),
+                    peso_prod = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PESO"].Value.ToString()
+                };
+
+                var pvpu_con_igv = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PVPU_CON_IGV"].Value;
+                var pvpu_sin_igv = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PVPU_SIN_IGV"].Value;
+                var por_impto = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["POR_IMPTO"].Value;
+                var id_um = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["UM"].Value;
+
+                if (pvpu_con_igv == null) prod.mto_pvpu_con_igv = null; else prod.mto_pvpu_con_igv = decimal.Parse(pvpu_con_igv.ToString());
+                if (pvpu_sin_igv == null) prod.mto_pvpu_sin_igv = null; else prod.mto_pvpu_sin_igv = decimal.Parse(pvpu_sin_igv.ToString());
+                if (por_impto == null) prod.por_impto = null; else prod.por_impto = decimal.Parse(por_impto.ToString());
+                if (id_um == null) prod.id_um = null; else prod.id_um = int.Parse(id_um.ToString());
+
+                return prod;
+            }
+            catch (Exception)
+            {
+                Msg.Ok_Err("No se pudo obtener el producto.", "Excepción encontrada");
+            }
+            return null;
+        }
+
         private void SeleccionarProducto()
         {
             if (dgvProd.CurrentRow != null)
             {
                 try
                 {
-                    producto = new PROt09_producto();
+                    var estado = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["ESTADO"].Value.ToString();
+                    var desc = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["DESCRIPCION"].Value.ToString();
 
-                    var pvpu_con_igv = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PVPU_CON_IGV"].Value;
-                    var pvpu_sin_igv = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PVPU_SIN_IGV"].Value;
-                    var por_impto = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["POR_IMPTO"].Value;
-                    var id_um = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["UM"].Value;
-
-                    producto.id_producto = long.Parse(dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["ID"].Value.ToString());
-                    producto.cod_producto = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["CODIGO"].Value.ToString();
-                    producto.cod_producto2 = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["CODIGO02"].Value.ToString();
-                    producto.txt_desc = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["DESCRIPCION"].Value.ToString();
-                    producto.txt_estado = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["ESTADO"].Value.ToString();
-                    if (pvpu_con_igv == null) producto.mto_pvpu_con_igv = null; else producto.mto_pvpu_con_igv = decimal.Parse(pvpu_con_igv.ToString());
-                    if (pvpu_sin_igv == null) producto.mto_pvpu_sin_igv = null; else producto.mto_pvpu_sin_igv = decimal.Parse(pvpu_sin_igv.ToString());
-                    if (por_impto == null) producto.por_impto = null; else producto.por_impto = decimal.Parse(por_impto.ToString());
-                    producto.peso_prod = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PESO"].Value.ToString();
-                    if (id_um == null) producto.id_um = null; else producto.id_um = int.Parse(id_um.ToString());
-
-                    Hide();
-                    Close();
+                    if (estado == Estado.TxtActivo)
+                    {
+                        producto = GetProducto();
+                        CerrarForm();
+                    }
+                    else
+                    {
+                        if (DialogResult.OK == Msg.OkCancel_Info($@"No puede seleccionar el producto '{desc}' porque NO ESTÁ ACTIVADO. ¿Desea activarlo y seleccionarlo?."))
+                        {
+                            if (long.TryParse(ControlHelper.DgvGetCellValueSelected(dgvProd, 0), out long id))
+                            {
+                                if (new ProductoBL().ActivarProducto(id))
+                                {
+                                    producto = GetProducto();
+                                    if (producto != null)
+                                    {
+                                        producto.id_estado = Estado.IdActivo;
+                                        producto.txt_estado = Estado.TxtActivo;
+                                    }
+                                    CerrarForm();
+                                }
+                                else
+                                    Msg.Ok_Err($"No se pudo activar el producto '{desc}'.");
+                            }
+                            else
+                                Msg.Ok_Err($"No se pudo activar el producto '{desc}'.");
+                        }
+                    }
                 }
                 catch (Exception e)
                 {
+                    producto = null;
                     MessageBox.Show($"No se pudo seleccionar el producto. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
+
+        private void CerrarForm()
+        {
+            Hide();
+            Close();
+        }
+
 
         #endregion
 

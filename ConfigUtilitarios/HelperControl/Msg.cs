@@ -37,5 +37,10 @@ namespace ConfigUtilitarios.HelperControl
         {
             return MessageBox.Show(msj, title, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
         }
+
+        public static DialogResult OkCancel_Info(string msj, string title = "Mensaje")
+        {
+            return MessageBox.Show(msj, title, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+        }
     }
 }

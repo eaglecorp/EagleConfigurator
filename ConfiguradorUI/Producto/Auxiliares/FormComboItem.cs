@@ -13,7 +13,7 @@ using ConfigUtilitarios.Extensions;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
-using ConfiguradorUI.ViewModels;
+using ConfigUtilitarios.ViewModels;
 
 namespace ConfiguradorUI.Producto.Auxiliares
 {
@@ -189,19 +189,19 @@ namespace ConfiguradorUI.Producto.Auxiliares
                 if (!Validation.PositiveAmount(txtItemPriceSinImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProv.SetError(txtItemPriceSinImp, ValidationMsj.Amount);
+                    errorProv.SetError(txtItemPriceSinImp, ValidationMsg.Amount);
                     txtItemPriceSinImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemPriceConImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProv.SetError(txtItemPriceConImp, ValidationMsj.Amount);
+                    errorProv.SetError(txtItemPriceConImp, ValidationMsg.Amount);
                     txtItemPriceConImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemQuantity.Text.Trim()))
                 {
                     valid = false;
-                    errorProv.SetError(txtItemQuantity, ValidationMsj.Amount);
+                    errorProv.SetError(txtItemQuantity, ValidationMsg.Amount);
                     txtItemQuantity.Focus();
                 }
             }

@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -371,7 +372,6 @@
     <Compile Include="splahScreen.Designer.cs">
       <DependentUpon>splahScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\ComboItem.cs" />
     <EmbeddedResource Include="Buscadores\FormBuscarComboVariable.resx">
       <DependentUpon>FormBuscarComboVariable.cs</DependentUpon>
     </EmbeddedResource>

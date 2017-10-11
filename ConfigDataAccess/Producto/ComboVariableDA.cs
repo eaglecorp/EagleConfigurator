@@ -14,8 +14,6 @@ namespace ConfigDataAccess.Producto
     {
         public List<PROt15_combo_variable> ListaComboVariable(int? id_estado = null)
         {
-
-
             var lista = new List<PROt15_combo_variable>();
             string sentencia = string.Empty;
             sentencia = (id_estado == null) ?
@@ -84,6 +82,35 @@ namespace ConfigDataAccess.Producto
                     var log = new Log();
                     log.ArchiveLog("Eliminar Combo Variable: ", e.Message);
                 }
+            }
+        }
+
+        public bool ActivarComboVariable(long id)
+        {
+            bool success = false;
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    int id_estado = Estado.IdActivo;
+                    string txt_estado = Estado.TxtActivo;
+                    using (SqlCommand cmd = cnn.CreateCommand())
+                    {
+                        cmd.CommandText = "UPDATE PROt15_combo_variable SET id_estado = @id_estado, txt_estado = @txt_estado Where id_combo_variable=@id";
+                        cmd.Parameters.AddWithValue("@id_estado", id_estado);
+                        cmd.Parameters.AddWithValue("@txt_estado", txt_estado);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+                        success = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Activar Combo Variable: ", e.Message);
+                }
+                return success;
             }
         }
         public void ActualizarComboVariable(PROt15_combo_variable actualizado)
@@ -176,34 +203,6 @@ namespace ConfigDataAccess.Producto
             }
             #endregion
 
-            #region EF
-            //using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
-            //{
-            //    try
-            //    {
-            //        ctx.PROt15_combo_variable.AsNoTracking().
-            //            Select(x => new PROt15_combo_variable {
-            //                id_combo_variable = x.id_combo_variable,
-            //                cod_combo_variable = x.cod_combo_variable,
-            //                mto_pvpu_con_tax = x.mto_pvpu_con_tax,
-            //                mto_pvpu_sin_tax = x.mto_pvpu_sin_tax,
-            //                txt_desc = x.txt_desc,
-            //                id_estado = x.id_estado,
-            //                txt_estado = x.txt_estado,
-            //                PROt16_combo_variable_dtl = ctx.PROt16_combo_variable_dtl.
-            //                                            AsNoTracking().
-            //                                            Where(d => d.id_combo_variable == id).ToList()
-            //            }).
-            //            Where(x => x.id_combo_variable == id);
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        var log = new Log();
-            //        log.ArchiveLog("Búsqueda Combo Variable por ID: ", e.Message);
-            //    }
-            //} 
-            #endregion
-
             return obj;
         }
         public PROt15_combo_variable ComboVariableXCod(string cod)
@@ -225,8 +224,6 @@ namespace ConfigDataAccess.Producto
             }
             return obj;
         }
-
-
         public IEnumerable<PROt15_combo_variable> BuscarComboVariable(string cod, string descripcion, int? id_estado)
         {
             var list = new List<PROt15_combo_variable>();
@@ -236,7 +233,9 @@ namespace ConfigDataAccess.Producto
                 {
                     list = ctx.PROt15_combo_variable
                               .AsNoTracking()
-                              .Where(x => x.cod_combo_variable.Contains(cod) || x.txt_desc.Contains(descripcion))
+                              .Where(x => x.cod_combo_variable.Contains(cod) &&
+                                    x.txt_desc.Contains(descripcion) &&
+                                    x.id_estado == (id_estado == null ? x.id_estado : id_estado))
                               .ToList();
                 }
                 catch (Exception e)

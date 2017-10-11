@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ConfigBusinessEntity;
-using System.Data.SqlClient;
-using Dapper;
-using System.Data.Entity;
+﻿using ConfigBusinessEntity;
 using ConfigUtilitarios;
+using Dapper;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace ConfigDataAccess
 {
@@ -80,6 +77,35 @@ namespace ConfigDataAccess
                 }
             }
         }
+        public bool ActivarProducto(long id)
+        {
+            bool success = false;
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    int id_estado = Estado.IdActivo;
+                    string txt_estado = Estado.TxtActivo;
+                    using (SqlCommand cmd = cnn.CreateCommand())
+                    {
+                        cmd.CommandText = "UPDATE PROt09_producto SET id_estado = @id_estado, txt_estado = @txt_estado Where id_producto=@id";
+                        cmd.Parameters.AddWithValue("@id_estado", id_estado);
+                        cmd.Parameters.AddWithValue("@txt_estado", txt_estado);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+                        success = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("ELiminar Producto: ", e.Message);
+                }
+            }
+            return success;
+        }
+
 
         public void ActualizarPreciosCboVarDtl(long idProducto, decimal? nuevoPrecioConTax, decimal? nuevoPrecioSinTax)
         {

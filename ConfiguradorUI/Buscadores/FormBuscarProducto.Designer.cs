@@ -31,7 +31,6 @@
             this.btnVerTodos = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.chkIncluirInactivos = new MetroFramework.Controls.MetroCheckBox();
-            this.chkProdVenta = new MetroFramework.Controls.MetroCheckBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.txtDescripcionProd = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -39,7 +38,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
             this.dgvProd = new System.Windows.Forms.DataGridView();
-            this.chkProdCompra = new MetroFramework.Controls.MetroCheckBox();
             this.gbxFiltro = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).BeginInit();
             this.gbxFiltro.SuspendLayout();
@@ -87,18 +85,6 @@
             this.chkIncluirInactivos.UseSelectable = true;
             this.chkIncluirInactivos.CheckedChanged += new System.EventHandler(this.chkIncluirInactivos_CheckedChanged);
             // 
-            // chkProdVenta
-            // 
-            this.chkProdVenta.AutoSize = true;
-            this.chkProdVenta.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkProdVenta.Location = new System.Drawing.Point(467, 55);
-            this.chkProdVenta.Name = "chkProdVenta";
-            this.chkProdVenta.Size = new System.Drawing.Size(60, 19);
-            this.chkProdVenta.TabIndex = 9;
-            this.chkProdVenta.Text = "Venta";
-            this.chkProdVenta.UseSelectable = true;
-            this.chkProdVenta.CheckedChanged += new System.EventHandler(this.chkProdVenta_CheckedChanged);
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
@@ -132,7 +118,7 @@
             this.txtDescripcionProd.SelectionLength = 0;
             this.txtDescripcionProd.SelectionStart = 0;
             this.txtDescripcionProd.ShortcutsEnabled = true;
-            this.txtDescripcionProd.Size = new System.Drawing.Size(370, 23);
+            this.txtDescripcionProd.Size = new System.Drawing.Size(496, 23);
             this.txtDescripcionProd.TabIndex = 5;
             this.txtDescripcionProd.UseSelectable = true;
             this.txtDescripcionProd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -142,7 +128,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(244, 26);
+            this.metroLabel2.Location = new System.Drawing.Point(239, 26);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(74, 19);
             this.metroLabel2.TabIndex = 6;
@@ -163,7 +149,7 @@
             this.txtCodigo02.CustomButton.UseSelectable = true;
             this.txtCodigo02.CustomButton.Visible = false;
             this.txtCodigo02.Lines = new string[0];
-            this.txtCodigo02.Location = new System.Drawing.Point(324, 24);
+            this.txtCodigo02.Location = new System.Drawing.Point(319, 24);
             this.txtCodigo02.MaxLength = 32767;
             this.txtCodigo02.Name = "txtCodigo02";
             this.txtCodigo02.PasswordChar = '\0';
@@ -229,30 +215,16 @@
             this.dgvProd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProd_CellDoubleClick);
             this.dgvProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProd_KeyDown);
             // 
-            // chkProdCompra
-            // 
-            this.chkProdCompra.AutoSize = true;
-            this.chkProdCompra.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkProdCompra.Location = new System.Drawing.Point(533, 55);
-            this.chkProdCompra.Name = "chkProdCompra";
-            this.chkProdCompra.Size = new System.Drawing.Size(74, 19);
-            this.chkProdCompra.TabIndex = 11;
-            this.chkProdCompra.Text = "Compra";
-            this.chkProdCompra.UseSelectable = true;
-            this.chkProdCompra.CheckedChanged += new System.EventHandler(this.chkProdCompra_CheckedChanged);
-            // 
             // gbxFiltro
             // 
             this.gbxFiltro.Controls.Add(this.txtDescripcionProd);
             this.gbxFiltro.Controls.Add(this.btnVerTodos);
-            this.gbxFiltro.Controls.Add(this.chkProdCompra);
             this.gbxFiltro.Controls.Add(this.btnSeleccionar);
             this.gbxFiltro.Controls.Add(this.txtCodigo);
             this.gbxFiltro.Controls.Add(this.metroLabel1);
             this.gbxFiltro.Controls.Add(this.txtCodigo02);
             this.gbxFiltro.Controls.Add(this.chkIncluirInactivos);
             this.gbxFiltro.Controls.Add(this.metroLabel2);
-            this.gbxFiltro.Controls.Add(this.chkProdVenta);
             this.gbxFiltro.Controls.Add(this.metroLabel3);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxFiltro.Location = new System.Drawing.Point(35, 71);
@@ -284,7 +256,6 @@
         private System.Windows.Forms.Button btnVerTodos;
         private System.Windows.Forms.Button btnSeleccionar;
         private MetroFramework.Controls.MetroCheckBox chkIncluirInactivos;
-        private MetroFramework.Controls.MetroCheckBox chkProdVenta;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox txtDescripcionProd;
         private MetroFramework.Controls.MetroLabel metroLabel2;
@@ -292,7 +263,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox txtCodigo;
         private System.Windows.Forms.DataGridView dgvProd;
-        private MetroFramework.Controls.MetroCheckBox chkProdCompra;
         private System.Windows.Forms.GroupBox gbxFiltro;
     }
 }

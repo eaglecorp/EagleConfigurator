@@ -2,6 +2,8 @@
 using ConfigBusinessLogic;
 using ConfigBusinessLogic.Producto;
 using ConfigUtilitarios;
+using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.ViewModels;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -39,9 +41,95 @@ namespace ConfiguradorUI.Buscadores
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void CargarGrid(IEnumerable<PROt15_combo_variable> list)
+        private string GetIdSelected()
+        {
+            string id = "-1";
+            try
+            {
+                if (dgvComboVariable.SelectedRows.Count > 0 && dgvComboVariable.Rows.Count > 0)
+                {
+                    id = dgvComboVariable.SelectedRows[0].Cells[0].Value.ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Excepción al capturar el id seleccionado: " + e.Message);
+            }
+            return id;
+        }
+
+        private void SetCabeceraGridDetail()
+        {
+            var detailHeader = new List<ComboItem>();
+            dgvComboVariableDtl.DataSource = detailHeader.Select(x => new
+            {
+                CANTIDAD = "",
+                DESC = "",
+                ESTADO = ""
+            }).ToList();
+        }
+        private void DefinirCabeceraGridDetail()
+        {
+            try
+            {
+                dgvComboVariableDtl.Columns["DESC"].HeaderText = "PRODUCTO";
+                dgvComboVariableDtl.Columns["CANTIDAD"].HeaderText = "CANT";
+                dgvComboVariableDtl.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvComboVariableDtl.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgvComboVariableDtl.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvComboVariableDtl.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgvComboVariableDtl.Columns["DESC"].Width = 145;
+                dgvComboVariableDtl.Columns["CANTIDAD"].Width = 50;
+                dgvComboVariableDtl.Columns["ESTADO"].Width = 65;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"No se pudo definir la cabecera de la grilla del detalle del cbo. eletivo. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarGridDetail(IEnumerable<ComboItem> list)
         {
             if (list != null)
+            {
+                dgvComboVariableDtl.DataSource = list.Select(x => new
+                {
+                    CANTIDAD = x.cantidad.RemoveTrailingZeros(),
+                    DESC = x.txt_desc_item,
+                    ESTADO = x.id_estado == Estado.IdActivo ? Estado.TxtActivo : Estado.TxtInactivo
+                }).ToList();
+
+            }
+            else
+            {
+                SetCabeceraGridDetail();
+            }
+            DefinirCabeceraGridDetail();
+        }
+
+        private void VerDetalleRegistro()
+        {
+            if (dgvComboVariable.RowCount > 0 && dgvComboVariable.SelectedRows.Count > 0 && dgvComboVariable.CurrentRow.Index != -1)
+            {
+                long id = 0;
+                if (long.TryParse(GetIdSelected(), out id) && id > 0)
+                {
+                    var details = new ComboVariableDetalleBL().ListaDetalleXCboVar(id);
+                    CargarGridDetail(details);
+                }
+                else
+                {
+                    MessageBox.Show(this, "No se pudo capturar el id en la grilla", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+        private void CargarGrid(IEnumerable<PROt15_combo_variable> list)
+        {
+            if (list != null && list.Count() > 0)
             {
                 dgvComboVariable.DataSource = list.Select(x => new
                 {
@@ -65,7 +153,13 @@ namespace ConfiguradorUI.Buscadores
                     PVPU_SIN_IGV = "",
                     ESTADO = ""
                 }).ToList();
+
+                //Limpia los productos del cbo variable seleccionado
+                SetCabeceraGridDetail();
+                DefinirCabeceraGridDetail();
             }
+
+
             DefinirCabeceraGrid();
         }
 
@@ -137,6 +231,12 @@ namespace ConfiguradorUI.Buscadores
             #endregion
 
             #region Grilla
+            SetCabeceraGridDetail();
+            DefinirCabeceraGridDetail();
+
+            ControlHelper.DgvReadOnly(dgvComboVariableDtl);
+            ControlHelper.DgvStyle(dgvComboVariableDtl, 9);
+
             var prodHeader = new List<TNSt05_comp_emitido_dtl>();
             dgvComboVariable.DataSource = prodHeader.Select(x => new
             {
@@ -150,39 +250,89 @@ namespace ConfiguradorUI.Buscadores
             DefinirCabeceraGrid();
             ControlHelper.DgvReadOnly(dgvComboVariable);
             ControlHelper.DgvStyle(dgvComboVariable);
+
+
+
             #endregion
 
         }
 
+        private PROt15_combo_variable GetComboVariable()
+        {
+            try
+            {
+                var cboVar = new PROt15_combo_variable()
+                {
+                    id_combo_variable = long.Parse(dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["ID"].Value.ToString()),
+                    cod_combo_variable = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["CODIGO"].Value.ToString(),
+                    txt_desc = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["DESCRIPCION"].Value.ToString(),
+                    txt_estado = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["ESTADO"].Value.ToString()
+                };
+                var pvpu_con_igv = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["PVPU_CON_IGV"].Value;
+                var pvpu_sin_igv = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["PVPU_SIN_IGV"].Value;
+                if (pvpu_con_igv != null) cboVar.mto_pvpu_con_tax = decimal.Parse(pvpu_con_igv.ToString());
+                if (pvpu_sin_igv != null) cboVar.mto_pvpu_sin_tax = decimal.Parse(pvpu_sin_igv.ToString());
+
+                return cboVar;
+            }
+            catch (Exception e)
+            {
+                Msg.Ok_Err("No se pudo obtener el combo variable.", "Excepción encontrada");
+            }
+            return null;
+        }
+        
         private void SeleccionarComboVariable()
         {
             if (dgvComboVariable.CurrentRow != null)
             {
                 try
                 {
-                    cboVariable = new PROt15_combo_variable();
+                    var estado = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["ESTADO"].Value.ToString();
+                    var desc = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["DESCRIPCION"].Value.ToString();
 
-                    var pvpu_con_igv = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["PVPU_CON_IGV"].Value;
-                    var pvpu_sin_igv = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["PVPU_SIN_IGV"].Value;
-
-                    cboVariable.id_combo_variable = long.Parse(dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["ID"].Value.ToString());
-                    cboVariable.cod_combo_variable = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["CODIGO"].Value.ToString();
-                    cboVariable.txt_desc = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["DESCRIPCION"].Value.ToString();
-                    cboVariable.txt_estado = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["ESTADO"].Value.ToString();
-                    if (pvpu_con_igv != null) cboVariable.mto_pvpu_con_tax = decimal.Parse(pvpu_con_igv.ToString());
-                    if (pvpu_sin_igv != null) cboVariable.mto_pvpu_sin_tax = decimal.Parse(pvpu_sin_igv.ToString());
-
-                    Hide();
-                    Close();
+                    if (estado == Estado.TxtActivo)
+                    {
+                        cboVariable = GetComboVariable();
+                        CerrarForm();
+                    }
+                    else
+                    {
+                        if (DialogResult.OK == Msg.OkCancel_Info($@"No puede seleccionar el combo '{desc}' porque NO ESTÁ ACTIVADO. ¿Desea activarlo y seleccionarlo?."))
+                        {
+                            if (long.TryParse(ControlHelper.DgvGetCellValueSelected(dgvComboVariable, 0), out long id))
+                            {
+                                if (new ComboVariableBL().ActivarComboVariable(id))
+                                {
+                                    cboVariable = GetComboVariable();
+                                    if(cboVariable!=null)
+                                    {
+                                        cboVariable.id_estado = Estado.IdActivo;
+                                        cboVariable.txt_estado = Estado.TxtActivo;
+                                    }
+                                    CerrarForm();
+                                }
+                                else
+                                    Msg.Ok_Err($"No se pudo activar el combo '{desc}'.");
+                            }
+                            else
+                                Msg.Ok_Err($"No se pudo activar el combo '{desc}'.");
+                        }
+                    }
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show($"No se pudo seleccionar el producto. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cboVariable = null;
+                    MessageBox.Show($"No se pudo seleccionar el combo. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
+        private void CerrarForm()
+        {
+            Hide();
+            Close();
+        }
         #endregion
 
         #region Eventos
@@ -222,6 +372,11 @@ namespace ConfiguradorUI.Buscadores
             BuscarComboVariable(true);
         }
 
+        private void dgvComboVariable_SelectionChanged(object sender, EventArgs e)
+        {
+            VerDetalleRegistro();
+        }
+
         private void dgvComboVariable_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -230,9 +385,7 @@ namespace ConfiguradorUI.Buscadores
             }
         }
 
-
         #endregion
-
 
     }
 }

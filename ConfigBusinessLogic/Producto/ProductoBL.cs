@@ -20,6 +20,11 @@ namespace ConfigBusinessLogic
             new ProductoDA().EliminarProducto(id);
         }
 
+        public bool ActivarProducto(long id)
+        {
+            return new ProductoDA().ActivarProducto(id);
+        }
+
         public void ActualizarProducto(PROt09_producto obj)
         {
             new ProductoDA().ActualizarProducto(obj);

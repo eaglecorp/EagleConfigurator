@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfiguradorUI.ViewModels
+namespace ConfigUtilitarios.ViewModels
 {
     public class ComboItem
     {
@@ -13,7 +12,6 @@ namespace ConfiguradorUI.ViewModels
 
         public string txt_desc_item { get; set; }
 
-        [StringLength(50)]
         public string cod_combo_item { get; set; }
 
         public decimal cantidad { get; set; }

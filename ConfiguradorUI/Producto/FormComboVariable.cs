@@ -155,9 +155,6 @@ namespace ConfiguradorUI.Producto
                         else if (details.Count < maxNumItems)
                         {
                             long idMaster = 0;
-                            //Si no se trata de inserción se asumo que 
-                            //que es una modificación y se trata de ingresar un item
-                            //en un master ya creado. Por tanto se debe traer su id.
                             if (TipoOperacion != TipoOperacionABM.Nuevo)
                             {
                                 long.TryParse(lblIdComboVariable.Text, out idMaster);
@@ -325,25 +322,25 @@ namespace ConfiguradorUI.Producto
                 if (!Validation.PositiveAmount(txtItemPriceSinImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblPrecioSinImp, ValidationMsj.Amount);
+                    errorProvDtl.SetError(lblPrecioSinImp, ValidationMsg.Amount);
                     txtItemPriceSinImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemPriceConImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblPrecioConImp, ValidationMsj.Amount);
+                    errorProvDtl.SetError(lblPrecioConImp, ValidationMsg.Amount);
                     txtItemPriceConImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemQuantity.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblCantidad, ValidationMsj.Amount);
+                    errorProvDtl.SetError(lblCantidad, ValidationMsg.Amount);
                     txtItemQuantity.Focus();
                 }
                 if (txtItemDesc.Text.Trim() == "")
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblProducto, ValidationMsj.Required);
+                    errorProvDtl.SetError(lblProducto, ValidationMsg.Required);
                     txtItemDesc.Focus();
                 }
             }
@@ -687,13 +684,13 @@ namespace ConfiguradorUI.Producto
 
             if (!Validation.PositiveAmount(txtPrecioCboSinTax.Text.Trim()))
             {
-                errorProv.SetError(txtPrecioCboSinTax, ValidationMsj.Amount);
+                errorProv.SetError(txtPrecioCboSinTax, ValidationMsg.Amount);
                 txtPrecioCboSinTax.Focus();
                 no_error = false;
             }
             if (!Validation.PositiveAmount(txtPrecioCboConTax.Text.Trim()))
             {
-                errorProv.SetError(txtPrecioCboConTax, ValidationMsj.Amount);
+                errorProv.SetError(txtPrecioCboConTax, ValidationMsg.Amount);
                 txtPrecioCboConTax.Focus();
                 no_error = false;
             }

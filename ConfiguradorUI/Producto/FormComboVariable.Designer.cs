@@ -416,7 +416,7 @@
             // 
             this.btnProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnProducto.Image")));
             this.btnProducto.ImageSize = 20;
-            this.btnProducto.Location = new System.Drawing.Point(186, 79);
+            this.btnProducto.Location = new System.Drawing.Point(188, 79);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(31, 24);
             this.btnProducto.TabIndex = 151;
@@ -795,9 +795,9 @@
             this.lblProducto.ForeColor = System.Drawing.Color.Navy;
             this.lblProducto.Location = new System.Drawing.Point(77, 83);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(112, 19);
+            this.lblProducto.Size = new System.Drawing.Size(113, 19);
             this.lblProducto.TabIndex = 131;
-            this.lblProducto.Text = "Descripción Prod.";
+            this.lblProducto.Text = "Descrip. Producto";
             this.lblProducto.UseCustomForeColor = true;
             // 
             // metroLabel1
