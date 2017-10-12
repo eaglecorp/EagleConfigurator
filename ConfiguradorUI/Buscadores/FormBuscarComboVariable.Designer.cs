@@ -190,8 +190,8 @@
             this.dgvComboVariable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComboVariable.Location = new System.Drawing.Point(3, 3);
             this.dgvComboVariable.Name = "dgvComboVariable";
-            this.dgvComboVariable.Size = new System.Drawing.Size(441, 263);
-            this.dgvComboVariable.TabIndex = 13;
+            this.dgvComboVariable.Size = new System.Drawing.Size(441, 277);
+            this.dgvComboVariable.TabIndex = 0;
             this.dgvComboVariable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComboVariable_CellDoubleClick);
             this.dgvComboVariable.SelectionChanged += new System.EventHandler(this.dgvComboVariable_SelectionChanged);
             this.dgvComboVariable.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvComboVariable_KeyDown);
@@ -208,7 +208,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 269);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 283);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // dgvComboVariableDtl
@@ -217,7 +217,7 @@
             this.dgvComboVariableDtl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComboVariableDtl.Location = new System.Drawing.Point(450, 3);
             this.dgvComboVariableDtl.Name = "dgvComboVariableDtl";
-            this.dgvComboVariableDtl.Size = new System.Drawing.Size(257, 263);
+            this.dgvComboVariableDtl.Size = new System.Drawing.Size(257, 277);
             this.dgvComboVariableDtl.TabIndex = 14;
             // 
             // FormBuscarComboVariable

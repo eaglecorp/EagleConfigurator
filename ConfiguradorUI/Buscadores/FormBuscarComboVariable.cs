@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,7 @@ namespace ConfiguradorUI.Buscadores
         public FormBuscarComboVariable()
         {
             InitializeComponent();
+            dgvComboVariable.Select();
         }
 
         #region Métodos
@@ -87,7 +89,7 @@ namespace ConfiguradorUI.Buscadores
             }
             catch (Exception e)
             {
-                MessageBox.Show($"No se pudo definir la cabecera de la grilla del detalle del cbo. eletivo. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"No se pudo definir la cabecera de la grilla de los productos del cbo. electivo. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -197,7 +199,7 @@ namespace ConfiguradorUI.Buscadores
                 dgvComboVariable.Columns["CODIGO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvComboVariable.Columns["CODIGO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvComboVariable.Columns["DESCRIPCION"].HeaderText = "DESCRIPCIÓN";
+                dgvComboVariable.Columns["DESCRIPCION"].HeaderText = "COMBO ELECTIVO";
 
                 dgvComboVariable.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvComboVariable.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -206,7 +208,7 @@ namespace ConfiguradorUI.Buscadores
             }
             catch (Exception e)
             {
-                MessageBox.Show($"No se pudo definir la cabecera de la grilla. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"No se pudo definir la cabecera de la grilla del combo electivo. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

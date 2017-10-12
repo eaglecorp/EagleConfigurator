@@ -1,18 +1,13 @@
-﻿using MetroFramework.Forms;
+﻿using ConfigBusinessEntity;
+using ConfigBusinessLogic;
+using ConfigUtilitarios;
+using ConfigUtilitarios.HelperControl;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ConfigBusinessLogic.Producto;
-using ConfigBusinessEntity;
-using ConfigUtilitarios;
-using ConfigBusinessLogic;
-using ConfigUtilitarios.HelperControl;
 
 namespace ConfiguradorUI.Buscadores
 {
@@ -26,7 +21,6 @@ namespace ConfiguradorUI.Buscadores
         {
             InitializeComponent();
         }
-
         #region Métodos
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -74,7 +68,6 @@ namespace ConfiguradorUI.Buscadores
                     POR_IMPTO = "",
                     PESO = "",
                     UM = ""
-
                 }).ToList();
             }
             DefinirCabeceraGrid();

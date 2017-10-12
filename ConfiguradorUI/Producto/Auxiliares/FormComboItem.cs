@@ -52,12 +52,12 @@ namespace ConfiguradorUI.Producto.Auxiliares
         {
             _item = new ComboItem()
             {
-                txt_desc_item    = item.PROt09_producto?.txt_desc,
-                cod_combo_item   = item.cod_combo_variable_dtl,
-                cantidad         = item.cantidad,
+                txt_desc_item = item.PROt09_producto?.txt_desc,
+                cod_combo_item = item.cod_combo_variable_dtl,
+                cantidad = item.cantidad,
                 mto_pvpu_con_tax = item.mto_pvpu_con_tax,
                 mto_pvpu_sin_tax = item.mto_pvpu_sin_tax,
-                id_estado        = item.id_estado
+                id_estado = item.id_estado
             };
         }
 
@@ -65,12 +65,12 @@ namespace ConfiguradorUI.Producto.Auxiliares
         {
             _item = new ComboItem()
             {
-                txt_desc_item    = item.PROt09_producto?.txt_desc,
-                cod_combo_item   = item.cod_combo_fixed_dtl,
-                cantidad         = item.cantidad != null ? (decimal)item.cantidad : 0,
+                txt_desc_item = item.id_producto != null ? item.PROt09_producto?.txt_desc : item.PROt15_combo_variable?.txt_desc,
+                cod_combo_item = item.cod_combo_fixed_dtl,
+                cantidad = item.cantidad != null ? (decimal)item.cantidad : 0,
                 mto_pvpu_con_tax = item.mto_pvpu_con_tax,
                 mto_pvpu_sin_tax = item.mto_pvpu_sin_tax,
-                id_estado        = item.id_estado
+                id_estado = item.id_estado
             };
         }
 
@@ -150,7 +150,7 @@ namespace ConfiguradorUI.Producto.Auxiliares
                         _itemFix.mto_pvpu_con_tax = itemChanged.mto_pvpu_con_tax;
                         _itemFix.mto_pvpu_sin_tax = itemChanged.mto_pvpu_sin_tax;
                         _itemFix.id_estado = itemChanged.id_estado;
-                        _itemFix.txt_estado = _itemVar.id_estado == Estado.IdActivo ? Estado.TxtActivo : Estado.TxtInactivo;
+                        _itemFix.txt_estado = _itemFix.id_estado == Estado.IdActivo ? Estado.TxtActivo : Estado.TxtInactivo;
                     }
 
                     _itemEdited = true;

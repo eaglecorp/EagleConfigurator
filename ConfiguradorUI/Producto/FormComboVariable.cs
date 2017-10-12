@@ -740,7 +740,7 @@ namespace ConfiguradorUI.Producto
                 }
                 if (msjValid != "")
                 {
-                    Msg.Ok_Info(msjValid, "VALIDACIÓN DEL COMBO VARIABLE DETALLE");
+                    Msg.Ok_Info(msjValid, "VALIDACIÓN DEL COMBO ELECTIVO");
                 }
             }
             #endregion

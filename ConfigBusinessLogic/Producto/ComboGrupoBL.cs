@@ -1,5 +1,6 @@
 ﻿using ConfigBusinessEntity;
 using ConfigDataAccess.Producto;
+using ConfigUtilitarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,21 @@ namespace ConfigBusinessLogic.Producto
 {
     public class ComboGrupoBL
     {
-        public List<PROt17_combo_grupo> ListaComboGrupo(int? id_estado = null)
+        public List<PROt17_combo_grupo> ListaComboGrupo(int? id_estado = null, bool ocultarBlankReg = false, bool enableTopList = false)
         {
-            return new ComboGrupoDA().ListaComboGrupo(id_estado);
+            var lista = new ComboGrupoDA().ListaComboGrupo(id_estado);
+
+            if (ocultarBlankReg && lista != null && lista.Count > 0)
+            {
+                var itemToRemove = lista.SingleOrDefault(x => x.cod_combo_grupo == Parameter.BlankRegister);
+                if (itemToRemove != null && itemToRemove.id_combo_grupo > 0)
+                    lista.Remove(itemToRemove);
+            }
+
+            if (enableTopList && lista != null)
+                return lista.OrderBy(x => x.cod_combo_grupo != TopList.ComboGrupo).ThenBy(x => x.txt_desc).ToList();
+
+            return lista;
         }
         public int InsertarComboGrupo(PROt17_combo_grupo obj)
         {

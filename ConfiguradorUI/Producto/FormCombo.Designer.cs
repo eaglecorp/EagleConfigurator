@@ -59,6 +59,7 @@
             this.dgvProductDetail = new System.Windows.Forms.DataGridView();
             this.tabPagCboElectivo = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvProductOfCboVarDetail = new System.Windows.Forms.DataGridView();
             this.dgvCboVariableDetail = new System.Windows.Forms.DataGridView();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
@@ -103,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductDetail)).BeginInit();
             this.tabPagCboElectivo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductOfCboVarDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCboVariableDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvDtl)).BeginInit();
@@ -528,6 +530,8 @@
             this.dgvProductDetail.Name = "dgvProductDetail";
             this.dgvProductDetail.Size = new System.Drawing.Size(522, 154);
             this.dgvProductDetail.TabIndex = 150;
+            this.dgvProductDetail.DataSourceChanged += new System.EventHandler(this.CambioEnControl);
+            this.dgvProductDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductDetail_CellDoubleClick);
             // 
             // tabPagCboElectivo
             // 
@@ -543,8 +547,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.51164F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.48836F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.86641F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.13359F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvProductOfCboVarDetail, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvCboVariableDetail, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -554,6 +559,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(522, 154);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // dgvProductOfCboVarDetail
+            // 
+            this.dgvProductOfCboVarDetail.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvProductOfCboVarDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvProductOfCboVarDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductOfCboVarDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductOfCboVarDetail.Location = new System.Drawing.Point(367, 3);
+            this.dgvProductOfCboVarDetail.Name = "dgvProductOfCboVarDetail";
+            this.dgvProductOfCboVarDetail.Size = new System.Drawing.Size(152, 148);
+            this.dgvProductOfCboVarDetail.TabIndex = 152;
+            // 
             // dgvCboVariableDetail
             // 
             this.dgvCboVariableDetail.BackgroundColor = System.Drawing.Color.WhiteSmoke;
@@ -562,8 +578,11 @@
             this.dgvCboVariableDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCboVariableDetail.Location = new System.Drawing.Point(3, 3);
             this.dgvCboVariableDetail.Name = "dgvCboVariableDetail";
-            this.dgvCboVariableDetail.Size = new System.Drawing.Size(294, 148);
+            this.dgvCboVariableDetail.Size = new System.Drawing.Size(358, 148);
             this.dgvCboVariableDetail.TabIndex = 151;
+            this.dgvCboVariableDetail.DataSourceChanged += new System.EventHandler(this.CambioEnControl);
+            this.dgvCboVariableDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCboVariableDetail_CellDoubleClick);
+            this.dgvCboVariableDetail.SelectionChanged += new System.EventHandler(this.dgvCboVariableDetail_SelectionChanged);
             // 
             // metroLabel5
             // 
@@ -653,6 +672,7 @@
             this.btnBuscarItem.Size = new System.Drawing.Size(31, 24);
             this.btnBuscarItem.TabIndex = 152;
             this.btnBuscarItem.UseSelectable = true;
+            this.btnBuscarItem.Click += new System.EventHandler(this.btnBuscarItem_Click);
             // 
             // btnItem
             // 
@@ -664,6 +684,7 @@
             this.btnItem.Size = new System.Drawing.Size(31, 24);
             this.btnItem.TabIndex = 151;
             this.btnItem.UseSelectable = true;
+            this.btnItem.Click += new System.EventHandler(this.btnItem_Click);
             // 
             // txtItemCod
             // 
@@ -1150,6 +1171,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductDetail)).EndInit();
             this.tabPagCboElectivo.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductOfCboVarDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCboVariableDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvDtl)).EndInit();
@@ -1223,5 +1245,6 @@
         private System.Windows.Forms.DataGridView dgvCboVariableDetail;
         private System.Windows.Forms.ErrorProvider errorProv;
         private System.Windows.Forms.ErrorProvider errorProvDtl;
+        private System.Windows.Forms.DataGridView dgvProductOfCboVarDetail;
     }
 }
