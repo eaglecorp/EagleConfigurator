@@ -611,7 +611,7 @@ namespace ConfiguradorUI.Producto
         {
             try
             {
-                var lista = new ComboGrupoBL().ListaComboGrupo(id_estado);
+                var lista = new ComboGrupoBL().ListaComboGrupo(id_estado,true);
                 var listaView = lista.Select(x => new { x.id_combo_grupo, CODIGO = x.cod_combo_grupo, NOMBRE = x.txt_desc })
                .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 

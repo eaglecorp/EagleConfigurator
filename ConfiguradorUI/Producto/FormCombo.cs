@@ -61,8 +61,8 @@ namespace ConfiguradorUI.Producto
                 product = producto;
                 txtItemCod.Text = producto.cod_producto;
                 txtItemDesc.Text = producto.txt_desc;
-                txtItemPriceConImp.Text = producto.mto_pvpu_con_igv?.ToString();
-                txtItemPriceSinImp.Text = producto.mto_pvpu_sin_igv?.ToString();
+                txtItemPriceConImp.Text = producto.mto_pvpu_con_igv?.RemoveTrailingZeros();
+                txtItemPriceSinImp.Text = producto.mto_pvpu_sin_igv?.RemoveTrailingZeros();
                 txtItemQuantity.Focus();
             }
             catch (Exception e)
@@ -78,8 +78,8 @@ namespace ConfiguradorUI.Producto
                 cboVar = obj;
                 txtItemCod.Text = obj.cod_combo_variable;
                 txtItemDesc.Text = obj.txt_desc;
-                txtItemPriceConImp.Text = obj.mto_pvpu_con_tax.ToString();
-                txtItemPriceSinImp.Text = obj.mto_pvpu_sin_tax.ToString();
+                txtItemPriceConImp.Text = obj.mto_pvpu_con_tax.RemoveTrailingZeros();
+                txtItemPriceSinImp.Text = obj.mto_pvpu_sin_tax.RemoveTrailingZeros();
                 txtItemQuantity.Focus();
             }
             catch (Exception e)
@@ -529,7 +529,7 @@ namespace ConfiguradorUI.Producto
                             P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
                             P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
                             ACTIVO = x.id_estado == Estado.IdActivo ? true : false
-                        }).ToList();
+                        }).OrderBy(x => x.PRODUCTO).ThenByDescending(x => x.ACTIVO).ToList();
                     else
                         SetCabeceraGridDetailProduct();
                     DefinirCabeceraGridDetailProduct();
@@ -548,7 +548,7 @@ namespace ConfiguradorUI.Producto
                             P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
                             P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
                             ACTIVO = x.id_estado == Estado.IdActivo ? true : false
-                        }).ToList();
+                        }).OrderBy(x => x.DESC).ThenByDescending(x => x.ACTIVO).ToList();
                     }
                     else
                     {
@@ -739,14 +739,11 @@ namespace ConfiguradorUI.Producto
 
             }
 
-            var chks = new[] { chkActivo };
-
-            foreach (var chk in chks)
-            {
-                chk.CheckedChanged += new EventHandler(OnContentChanged);
-            }
+            chkActivo.CheckedChanged += new EventHandler(OnContentChanged);
+            cboComboGrupo.SelectedIndexChanged += new EventHandler(OnContentChanged);
 
             dgvProductDetail.DataSourceChanged += new EventHandler(OnContentChanged);
+            dgvCboVariableDetail.DataSourceChanged += new EventHandler(OnContentChanged);
 
         }
 
@@ -956,7 +953,7 @@ namespace ConfiguradorUI.Producto
                 cboComboGrupo.SelectedValue = obj.id_combo_grupo;
 
                 details = obj.PROt14_combo_fixed_dtl?.ToList();
-                CargarGridDetail(obj.PROt14_combo_fixed_dtl,true);
+                CargarGridDetail(obj.PROt14_combo_fixed_dtl, true);
 
             }
             catch (Exception e)
@@ -1296,7 +1293,6 @@ namespace ConfiguradorUI.Producto
                 isPending = false;
                 ControlarBotones(true, true, false, false, true, true);
                 errorProv.Clear();
-                //tabProducto.SelectedTab = tabPagGeneral;
             }
             else
             {
@@ -1693,6 +1689,7 @@ namespace ConfiguradorUI.Producto
                     else if (rp == DialogResult.No)
                     {
                         SeleccionarRegistro();
+                        tabDetails.SelectedTab = tabPagProductos;
                         TipoOperacion = TipoOperacionABM.No_Action;
                         ControlarEventosABM();
                     }
@@ -1726,6 +1723,7 @@ namespace ConfiguradorUI.Producto
             else
             {
                 SeleccionarRegistro();
+                tabDetails.SelectedTab = tabPagProductos;
                 TipoOperacion = TipoOperacionABM.No_Action;
                 ControlarEventosABM();
             }
@@ -2004,8 +2002,16 @@ namespace ConfiguradorUI.Producto
 
         private void btnItem_Click(object sender, EventArgs e)
         {
-            var form = new FormProducto();
-            form.ShowDialog();
+            if (DetailView == Detail.Producto)
+            {
+                var form = new FormProducto();
+                form.ShowDialog();
+            }
+            else if (DetailView == Detail.ComboVariable)
+            {
+                var form = new FormComboVariable();
+                form.ShowDialog();
+            }
         }
 
         private void dgvProductDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

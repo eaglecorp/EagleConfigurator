@@ -352,6 +352,7 @@ namespace ConfiguradorUI.Producto
         {
             if (list != null)
             {
+
                 dgvDetail.DataSource = list.Select(x => new
                 {
                     ID_PROD = x.id_producto,
@@ -360,7 +361,7 @@ namespace ConfiguradorUI.Producto
                     P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
                     P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
                     ACTIVO = x.id_estado == Estado.IdActivo ? true : false
-                }).ToList();
+                }).OrderBy(x => x.PRODUCTO).ThenByDescending(x => x.ACTIVO).ToList();
 
             }
             else

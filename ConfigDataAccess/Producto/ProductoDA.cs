@@ -107,7 +107,7 @@ namespace ConfigDataAccess
         }
 
 
-        public void ActualizarPreciosCboVarDtl(long idProducto, decimal? nuevoPrecioConTax, decimal? nuevoPrecioSinTax)
+        public void ActualizarPrecioProdEnCboVarDtl(long idProducto, decimal? nuevoPrecioConTax, decimal? nuevoPrecioSinTax)
         {
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
@@ -128,7 +128,7 @@ namespace ConfigDataAccess
                 catch (Exception e)
                 {
                     var log = new Log();
-                    log.ArchiveLog("Actualizar Precios Cbo var Dtl: ", e.Message);
+                    log.ArchiveLog("Actualizar Precio de Prod. en Cbo. Var. Dtl: ", e.Message);
                 }
             }
         }
@@ -145,7 +145,7 @@ namespace ConfigDataAccess
                             prodActualizado.mto_pvpu_sin_igv != original.mto_pvpu_sin_igv)
                         {
                             //Actualizar precios en los cbo var dtl y cbo dtl
-                            ActualizarPreciosCboVarDtl(prodActualizado.id_producto, prodActualizado.mto_pvpu_con_igv, prodActualizado.mto_pvpu_sin_igv);
+                            ActualizarPrecioProdEnCboVarDtl(prodActualizado.id_producto, prodActualizado.mto_pvpu_con_igv, prodActualizado.mto_pvpu_sin_igv);
 
                         }
                         ctx.Entry(original).CurrentValues.SetValues(prodActualizado);

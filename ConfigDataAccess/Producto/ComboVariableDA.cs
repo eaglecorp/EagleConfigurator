@@ -124,6 +124,14 @@ namespace ConfigDataAccess.Producto
                         var original = ctx.PROt15_combo_variable.Find(actualizado.id_combo_variable);
                         if (original != null && original.id_combo_variable > 0)
                         {
+                            if (actualizado.mto_pvpu_con_tax != original.mto_pvpu_con_tax ||
+                            actualizado.mto_pvpu_sin_tax != original.mto_pvpu_sin_tax)
+                            {
+                                //Actualizar precios del cbo var en el cbo fix dtl
+                                ActualizarPrecioCboVarEnCbo(actualizado.id_combo_variable, actualizado.mto_pvpu_con_tax, actualizado.mto_pvpu_sin_tax);
+                    
+                            }
+
                             //Actulización del master
                             ctx.Entry(original).CurrentValues.SetValues(actualizado);
 
@@ -245,6 +253,32 @@ namespace ConfigDataAccess.Producto
                 }
             }
             return list;
+        }
+
+        public void ActualizarPrecioCboVarEnCbo(long idCboVar, decimal? nuevoPrecioConTax, decimal? nuevoPrecioSinTax)
+        {
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    int id_estado = Estado.IdInactivo;
+                    string txt_estado = Estado.TxtInactivo;
+                    using (SqlCommand cmd = cnn.CreateCommand())
+                    {
+                        cmd.CommandText = "UPDATE PROt14_combo_fixed_dtl SET mto_pvpu_sin_tax = @pvpu_sin_tax, mto_pvpu_con_tax = @pvpu_con_tax Where id_combo_variable=@id_combo_variable";
+                        cmd.Parameters.AddWithValue("@pvpu_con_tax", nuevoPrecioConTax);
+                        cmd.Parameters.AddWithValue("@pvpu_sin_tax", nuevoPrecioSinTax);
+                        cmd.Parameters.AddWithValue("@id_combo_variable", idCboVar);
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Actualizar Precio de Cbo. Var. en Cbo. Fix. Dtl: ", e.Message);
+                }
+            }
         }
     }
 }
