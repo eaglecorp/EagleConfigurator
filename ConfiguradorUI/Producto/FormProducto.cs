@@ -16,6 +16,7 @@ using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using System.Globalization;
 using ConfiguradorUI.Maestro;
+using ConfigUtilitarios.KeyValues;
 
 namespace ConfiguradorUI.Producto
 {
@@ -638,10 +639,11 @@ namespace ConfiguradorUI.Producto
                                 }
                                 else
                                 {
-                                    if (!(montoPv > 0 && montoPv < 10000000000))
+                                
+                                    if (!(montoPv > 0 && montoPv < Math.Round(KeyAmounts.MaxAmount)))
                                     {
                                         tabProducto.SelectedTab = tabPagPrecio;
-                                        errorProv.SetError(txtNum, "Este precio tiene que ser mayor que 0 y menor que 10000000000.");
+                                        errorProv.SetError(txtNum, $"Este precio tiene que ser mayor que 0 y menor que {Math.Round(KeyAmounts.MaxAmount)}.");
                                         txtNum.Focus();
                                         no_error = false;
                                         break;
@@ -734,10 +736,10 @@ namespace ConfiguradorUI.Producto
                                 }
                                 else
                                 {
-                                    if (!(montoPv > 0 && montoPv < 10000000000))
+                                    if (!(montoPv > 0 && montoPv < Math.Round(KeyAmounts.MaxAmount)))
                                     {
                                         tabProducto.SelectedTab = tabPagPrecio;
-                                        errorProv.SetError(txtNum, "Este precio tiene que ser mayor que 0 y menor que 10000000000.");
+                                        errorProv.SetError(txtNum, $"Este precio tiene que ser mayor que 0 y menor que {Math.Round(KeyAmounts.MaxAmount)}.");
                                         txtNum.Focus();
                                         no_error = false;
                                         break;
@@ -807,10 +809,10 @@ namespace ConfiguradorUI.Producto
                         }
                         else
                         {
-                            if (!(costo > 0 && costo < 10000000000))
+                            if (!(costo > 0 && costo < Math.Round(KeyAmounts.MaxAmount)))
                             {
                                 tabProducto.SelectedTab = tabPagPrecio;
-                                errorProv.SetError(txt, "El costo tiene que ser mayor que 0 y menor que 10000000000.");
+                                errorProv.SetError(txt, $"El costo tiene que ser mayor que 0 y menor que {Math.Round(KeyAmounts.MaxAmount)}.");
                                 txt.Focus();
                                 no_error = false;
                                 break;
@@ -833,6 +835,9 @@ namespace ConfiguradorUI.Producto
             }
 
             #endregion
+
+
+
 
             return no_error;
         }
@@ -1441,12 +1446,7 @@ namespace ConfiguradorUI.Producto
                 MessageBox.Show(this, $"Excepción el contar los estados: {e.Message}");
             }
         }
-
-        #endregion
-
-        #region Eventos de ventana
-
-        private void FormProducto_Load(object sender, EventArgs e)
+        private void SetInit()
         {
             lblIdProducto.Visible = false;
             SetMaxLengthTxt();
@@ -1459,6 +1459,15 @@ namespace ConfiguradorUI.Producto
             addHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
+        }
+
+        #endregion
+
+        #region Eventos de ventana
+
+        private void FormProducto_Load(object sender, EventArgs e)
+        {
+            SetInit();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

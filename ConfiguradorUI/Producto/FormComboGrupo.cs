@@ -446,8 +446,6 @@ namespace ConfiguradorUI.Producto
             return id;
         }
 
-
-
         private void CargarComboFiltro()
         {
             try

@@ -151,7 +151,7 @@
             this.tabProducto.Controls.Add(this.tabPagPrecio);
             this.tabProducto.Location = new System.Drawing.Point(304, 113);
             this.tabProducto.Name = "tabProducto";
-            this.tabProducto.SelectedIndex = 1;
+            this.tabProducto.SelectedIndex = 0;
             this.tabProducto.Size = new System.Drawing.Size(564, 527);
             this.tabProducto.TabIndex = 1;
             this.tabProducto.UseSelectable = true;

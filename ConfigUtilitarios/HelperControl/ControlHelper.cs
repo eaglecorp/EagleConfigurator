@@ -107,7 +107,7 @@ namespace ConfigUtilitarios
             #endregion
         }
 
-        public static void DgvLightStyle(DataGridView dgv)
+        public static void DgvLightStyle(DataGridView dgv, float recordFontSize = 9F, float headerFontSize = 9.5F)
         {
             dgv.ColumnHeadersHeight = 25;
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -127,8 +127,8 @@ namespace ConfigUtilitarios
 
             dgv.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#BDF1F6");
             dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgv.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
+            dgv.Font = new Font("Segoe UI", recordFontSize, FontStyle.Regular);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", headerFontSize, FontStyle.Regular);
 
 
             #endregion

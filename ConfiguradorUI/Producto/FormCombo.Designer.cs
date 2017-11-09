@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCombo));
-            this.button1 = new System.Windows.Forms.Button();
             this.dgvCombo = new System.Windows.Forms.DataGridView();
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.tabCombo = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.chkMostrarInactivos = new MetroFramework.Controls.MetroCheckBox();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.tabDetails = new System.Windows.Forms.TabControl();
@@ -59,6 +59,8 @@
             this.dgvProductDetail = new System.Windows.Forms.DataGridView();
             this.tabPagCboElectivo = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvProductOfCboVarDetail = new System.Windows.Forms.DataGridView();
             this.dgvCboVariableDetail = new System.Windows.Forms.DataGridView();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -104,21 +106,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductDetail)).BeginInit();
             this.tabPagCboElectivo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductOfCboVarDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCboVariableDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvDtl)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(25, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 155;
-            this.button1.Text = "TEST - VER ESTADO";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvCombo
             // 
@@ -130,7 +123,7 @@
             this.dgvCombo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCombo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCombo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCombo.Location = new System.Drawing.Point(35, 156);
+            this.dgvCombo.Location = new System.Drawing.Point(31, 156);
             this.dgvCombo.MultiSelect = false;
             this.dgvCombo.Name = "dgvCombo";
             this.dgvCombo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -147,7 +140,7 @@
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(179, 565);
+            this.lblNumInactivo.Location = new System.Drawing.Point(175, 565);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -160,7 +153,7 @@
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(99, 565);
+            this.lblNumActivo.Location = new System.Drawing.Point(95, 565);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -173,7 +166,7 @@
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(32, 565);
+            this.lblNumReg.Location = new System.Drawing.Point(28, 565);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -183,7 +176,7 @@
             // lblIdCombo
             // 
             this.lblIdCombo.AutoSize = true;
-            this.lblIdCombo.Location = new System.Drawing.Point(553, 36);
+            this.lblIdCombo.Location = new System.Drawing.Point(547, 36);
             this.lblIdCombo.Name = "lblIdCombo";
             this.lblIdCombo.Size = new System.Drawing.Size(0, 0);
             this.lblIdCombo.TabIndex = 150;
@@ -198,9 +191,9 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(313, 538);
+            this.panelFiltro.Location = new System.Drawing.Point(286, 538);
             this.panelFiltro.Name = "panelFiltro";
-            this.panelFiltro.Size = new System.Drawing.Size(544, 44);
+            this.panelFiltro.Size = new System.Drawing.Size(583, 44);
             this.panelFiltro.TabIndex = 145;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
@@ -228,7 +221,7 @@
             this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
-            this.btnFilter.Location = new System.Drawing.Point(499, 6);
+            this.btnFilter.Location = new System.Drawing.Point(539, 6);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(37, 30);
             this.btnFilter.TabIndex = 1;
@@ -250,7 +243,7 @@
             this.txtFiltro.CustomButton.UseSelectable = true;
             this.txtFiltro.CustomButton.Visible = false;
             this.txtFiltro.Lines = new string[0];
-            this.txtFiltro.Location = new System.Drawing.Point(291, 11);
+            this.txtFiltro.Location = new System.Drawing.Point(331, 11);
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
@@ -291,9 +284,9 @@
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(313, 59);
+            this.panelMantenimiento.Location = new System.Drawing.Point(286, 59);
             this.panelMantenimiento.Name = "panelMantenimiento";
-            this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
+            this.panelMantenimiento.Size = new System.Drawing.Size(597, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
             this.panelMantenimiento.TabIndex = 144;
             this.panelMantenimiento.UseCustomBackColor = true;
@@ -325,7 +318,7 @@
             this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(370, 5);
+            this.btnNuevo.Location = new System.Drawing.Point(425, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 1;
@@ -340,7 +333,7 @@
             this.btnRollback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnRollback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRollback.Image = ((System.Drawing.Image)(resources.GetObject("btnRollback.Image")));
-            this.btnRollback.Location = new System.Drawing.Point(496, 5);
+            this.btnRollback.Location = new System.Drawing.Point(551, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
             this.btnRollback.TabIndex = 3;
@@ -355,7 +348,7 @@
             this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
-            this.btnCommit.Location = new System.Drawing.Point(454, 5);
+            this.btnCommit.Location = new System.Drawing.Point(509, 5);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Size = new System.Drawing.Size(40, 40);
             this.btnCommit.TabIndex = 0;
@@ -370,7 +363,7 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(412, 5);
+            this.btnDelete.Location = new System.Drawing.Point(467, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
             this.btnDelete.TabIndex = 2;
@@ -380,7 +373,7 @@
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(139, 133);
+            this.tglListarInactivos.Location = new System.Drawing.Point(135, 133);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 147;
@@ -391,7 +384,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(41, 131);
+            this.lblListarInactivos.Location = new System.Drawing.Point(37, 131);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 146;
@@ -402,7 +395,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 20F);
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(84, 59);
+            this.lblNombreForm.Location = new System.Drawing.Point(80, 59);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(111, 37);
             this.lblNombreForm.TabIndex = 149;
@@ -411,15 +404,16 @@
             // tabCombo
             // 
             this.tabCombo.Controls.Add(this.tabPagGeneral);
-            this.tabCombo.Location = new System.Drawing.Point(313, 115);
+            this.tabCombo.Location = new System.Drawing.Point(286, 115);
             this.tabCombo.Name = "tabCombo";
             this.tabCombo.SelectedIndex = 0;
-            this.tabCombo.Size = new System.Drawing.Size(562, 417);
+            this.tabCombo.Size = new System.Drawing.Size(601, 417);
             this.tabCombo.TabIndex = 143;
             this.tabCombo.UseSelectable = true;
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.chkMostrarInactivos);
             this.tabPagGeneral.Controls.Add(this.btnAddItem);
             this.tabPagGeneral.Controls.Add(this.btnRemoveItem);
             this.tabPagGeneral.Controls.Add(this.tabDetails);
@@ -458,12 +452,26 @@
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(554, 375);
+            this.tabPagGeneral.Size = new System.Drawing.Size(593, 375);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // chkMostrarInactivos
+            // 
+            this.chkMostrarInactivos.AutoSize = true;
+            this.chkMostrarInactivos.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkMostrarInactivos.ForeColor = System.Drawing.Color.Navy;
+            this.chkMostrarInactivos.Location = new System.Drawing.Point(145, 162);
+            this.chkMostrarInactivos.Name = "chkMostrarInactivos";
+            this.chkMostrarInactivos.Size = new System.Drawing.Size(108, 15);
+            this.chkMostrarInactivos.TabIndex = 155;
+            this.chkMostrarInactivos.Text = "Mostrar inactivos";
+            this.chkMostrarInactivos.UseCustomForeColor = true;
+            this.chkMostrarInactivos.UseSelectable = true;
+            this.chkMostrarInactivos.CheckedChanged += new System.EventHandler(this.chkMostrarInactivos_CheckedChanged);
             // 
             // btnAddItem
             // 
@@ -475,7 +483,7 @@
             this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItem.Image")));
-            this.btnAddItem.Location = new System.Drawing.Point(501, 124);
+            this.btnAddItem.Location = new System.Drawing.Point(544, 124);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(35, 29);
             this.btnAddItem.TabIndex = 163;
@@ -491,7 +499,7 @@
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveItem.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveItem.Image")));
-            this.btnRemoveItem.Location = new System.Drawing.Point(501, 92);
+            this.btnRemoveItem.Location = new System.Drawing.Point(544, 92);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(35, 29);
             this.btnRemoveItem.TabIndex = 164;
@@ -505,7 +513,7 @@
             this.tabDetails.Location = new System.Drawing.Point(0, 159);
             this.tabDetails.Name = "tabDetails";
             this.tabDetails.SelectedIndex = 0;
-            this.tabDetails.Size = new System.Drawing.Size(536, 186);
+            this.tabDetails.Size = new System.Drawing.Size(578, 186);
             this.tabDetails.TabIndex = 156;
             this.tabDetails.SelectedIndexChanged += new System.EventHandler(this.tabDetails_SelectedIndexChanged);
             // 
@@ -515,7 +523,7 @@
             this.tabPagProductos.Location = new System.Drawing.Point(4, 22);
             this.tabPagProductos.Name = "tabPagProductos";
             this.tabPagProductos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagProductos.Size = new System.Drawing.Size(528, 160);
+            this.tabPagProductos.Size = new System.Drawing.Size(570, 160);
             this.tabPagProductos.TabIndex = 0;
             this.tabPagProductos.Text = "Productos";
             this.tabPagProductos.UseVisualStyleBackColor = true;
@@ -528,10 +536,12 @@
             this.dgvProductDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductDetail.Location = new System.Drawing.Point(3, 3);
             this.dgvProductDetail.Name = "dgvProductDetail";
-            this.dgvProductDetail.Size = new System.Drawing.Size(522, 154);
+            this.dgvProductDetail.Size = new System.Drawing.Size(564, 154);
             this.dgvProductDetail.TabIndex = 150;
-            this.dgvProductDetail.DataSourceChanged += new System.EventHandler(this.CambioEnControl);
+            this.dgvProductDetail.DataSourceChanged += new System.EventHandler(this.dgvProductDetail_DataSourceChanged);
+            this.dgvProductDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductDetail_CellContentClick);
             this.dgvProductDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductDetail_CellDoubleClick);
+            this.dgvProductDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProductDetail_KeyDown);
             // 
             // tabPagCboElectivo
             // 
@@ -539,7 +549,7 @@
             this.tabPagCboElectivo.Location = new System.Drawing.Point(4, 22);
             this.tabPagCboElectivo.Name = "tabPagCboElectivo";
             this.tabPagCboElectivo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagCboElectivo.Size = new System.Drawing.Size(528, 160);
+            this.tabPagCboElectivo.Size = new System.Drawing.Size(570, 160);
             this.tabPagCboElectivo.TabIndex = 1;
             this.tabPagCboElectivo.Text = "Cbo. Electivo";
             this.tabPagCboElectivo.UseVisualStyleBackColor = true;
@@ -547,27 +557,49 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.86641F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.13359F));
-            this.tableLayoutPanel1.Controls.Add(this.dgvProductOfCboVarDetail, 0, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.53982F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.46018F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvCboVariableDetail, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(522, 154);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 154F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(565, 154);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvProductOfCboVarDetail);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(361, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(201, 148);
+            this.panel1.TabIndex = 155;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Navy;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.label1.Size = new System.Drawing.Size(181, 23);
+            this.label1.TabIndex = 166;
+            this.label1.Text = "Productos del cbo. electivo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvProductOfCboVarDetail
             // 
             this.dgvProductOfCboVarDetail.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvProductOfCboVarDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProductOfCboVarDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductOfCboVarDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProductOfCboVarDetail.Location = new System.Drawing.Point(367, 3);
+            this.dgvProductOfCboVarDetail.Location = new System.Drawing.Point(0, 24);
             this.dgvProductOfCboVarDetail.Name = "dgvProductOfCboVarDetail";
-            this.dgvProductOfCboVarDetail.Size = new System.Drawing.Size(152, 148);
+            this.dgvProductOfCboVarDetail.Size = new System.Drawing.Size(200, 124);
             this.dgvProductOfCboVarDetail.TabIndex = 152;
             // 
             // dgvCboVariableDetail
@@ -578,17 +610,19 @@
             this.dgvCboVariableDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCboVariableDetail.Location = new System.Drawing.Point(3, 3);
             this.dgvCboVariableDetail.Name = "dgvCboVariableDetail";
-            this.dgvCboVariableDetail.Size = new System.Drawing.Size(358, 148);
+            this.dgvCboVariableDetail.Size = new System.Drawing.Size(352, 148);
             this.dgvCboVariableDetail.TabIndex = 151;
             this.dgvCboVariableDetail.DataSourceChanged += new System.EventHandler(this.CambioEnControl);
+            this.dgvCboVariableDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCboVariableDetail_CellContentClick);
             this.dgvCboVariableDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCboVariableDetail_CellDoubleClick);
             this.dgvCboVariableDetail.SelectionChanged += new System.EventHandler(this.dgvCboVariableDetail_SelectionChanged);
+            this.dgvCboVariableDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCboVariableDetail_KeyDown);
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel5.Location = new System.Drawing.Point(165, 343);
+            this.metroLabel5.Location = new System.Drawing.Point(178, 342);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(75, 19);
             this.metroLabel5.TabIndex = 162;
@@ -599,7 +633,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel6.Location = new System.Drawing.Point(165, 357);
+            this.metroLabel6.Location = new System.Drawing.Point(178, 356);
             this.metroLabel6.MaximumSize = new System.Drawing.Size(100, 50);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(85, 19);
@@ -611,7 +645,7 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel7.Location = new System.Drawing.Point(356, 342);
+            this.metroLabel7.Location = new System.Drawing.Point(377, 341);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(75, 19);
             this.metroLabel7.TabIndex = 160;
@@ -622,7 +656,7 @@
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel8.Location = new System.Drawing.Point(356, 356);
+            this.metroLabel8.Location = new System.Drawing.Point(377, 355);
             this.metroLabel8.MaximumSize = new System.Drawing.Size(100, 50);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(91, 19);
@@ -634,7 +668,7 @@
             // 
             this.btnComboGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnComboGrupo.Image")));
             this.btnComboGrupo.ImageSize = 24;
-            this.btnComboGrupo.Location = new System.Drawing.Point(239, 43);
+            this.btnComboGrupo.Location = new System.Drawing.Point(244, 43);
             this.btnComboGrupo.Name = "btnComboGrupo";
             this.btnComboGrupo.Size = new System.Drawing.Size(29, 27);
             this.btnComboGrupo.TabIndex = 155;
@@ -648,7 +682,7 @@
             this.cboComboGrupo.FormattingEnabled = true;
             this.cboComboGrupo.Location = new System.Drawing.Point(77, 47);
             this.cboComboGrupo.Name = "cboComboGrupo";
-            this.cboComboGrupo.Size = new System.Drawing.Size(159, 23);
+            this.cboComboGrupo.Size = new System.Drawing.Size(166, 23);
             this.cboComboGrupo.TabIndex = 154;
             this.cboComboGrupo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -722,7 +756,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel4.Location = new System.Drawing.Point(421, 92);
+            this.metroLabel4.Location = new System.Drawing.Point(464, 92);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(65, 19);
             this.metroLabel4.TabIndex = 149;
@@ -733,7 +767,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel3.Location = new System.Drawing.Point(344, 92);
+            this.metroLabel3.Location = new System.Drawing.Point(387, 92);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(71, 19);
             this.metroLabel3.TabIndex = 148;
@@ -744,7 +778,7 @@
             // 
             this.lblPrecioSinImp.AutoSize = true;
             this.lblPrecioSinImp.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrecioSinImp.Location = new System.Drawing.Point(421, 108);
+            this.lblPrecioSinImp.Location = new System.Drawing.Point(464, 108);
             this.lblPrecioSinImp.MaximumSize = new System.Drawing.Size(100, 50);
             this.lblPrecioSinImp.Name = "lblPrecioSinImp";
             this.lblPrecioSinImp.Size = new System.Drawing.Size(63, 19);
@@ -768,7 +802,7 @@
             this.txtItemPriceSinImp.CustomButton.UseSelectable = true;
             this.txtItemPriceSinImp.CustomButton.Visible = false;
             this.txtItemPriceSinImp.Lines = new string[0];
-            this.txtItemPriceSinImp.Location = new System.Drawing.Point(424, 130);
+            this.txtItemPriceSinImp.Location = new System.Drawing.Point(467, 130);
             this.txtItemPriceSinImp.MaxLength = 32767;
             this.txtItemPriceSinImp.Name = "txtItemPriceSinImp";
             this.txtItemPriceSinImp.PasswordChar = '\0';
@@ -811,7 +845,7 @@
             this.txtItemPriceConImp.CustomButton.UseSelectable = true;
             this.txtItemPriceConImp.CustomButton.Visible = false;
             this.txtItemPriceConImp.Lines = new string[0];
-            this.txtItemPriceConImp.Location = new System.Drawing.Point(347, 130);
+            this.txtItemPriceConImp.Location = new System.Drawing.Point(390, 130);
             this.txtItemPriceConImp.MaxLength = 32767;
             this.txtItemPriceConImp.Name = "txtItemPriceConImp";
             this.txtItemPriceConImp.PasswordChar = '\0';
@@ -831,7 +865,7 @@
             // 
             this.lblPrecioConImp.AutoSize = true;
             this.lblPrecioConImp.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrecioConImp.Location = new System.Drawing.Point(344, 108);
+            this.lblPrecioConImp.Location = new System.Drawing.Point(387, 108);
             this.lblPrecioConImp.MaximumSize = new System.Drawing.Size(100, 50);
             this.lblPrecioConImp.Name = "lblPrecioConImp";
             this.lblPrecioConImp.Size = new System.Drawing.Size(63, 19);
@@ -855,7 +889,7 @@
             this.txtItemQuantity.CustomButton.UseSelectable = true;
             this.txtItemQuantity.CustomButton.Visible = false;
             this.txtItemQuantity.Lines = new string[0];
-            this.txtItemQuantity.Location = new System.Drawing.Point(270, 130);
+            this.txtItemQuantity.Location = new System.Drawing.Point(313, 130);
             this.txtItemQuantity.MaxLength = 32767;
             this.txtItemQuantity.Name = "txtItemQuantity";
             this.txtItemQuantity.PasswordChar = '\0';
@@ -876,7 +910,7 @@
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.ForeColor = System.Drawing.Color.Navy;
-            this.lblCantidad.Location = new System.Drawing.Point(267, 108);
+            this.lblCantidad.Location = new System.Drawing.Point(310, 108);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(62, 19);
             this.lblCantidad.TabIndex = 137;
@@ -900,7 +934,7 @@
             this.txtPrecioCboSinTax.CustomButton.Visible = false;
             this.txtPrecioCboSinTax.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtPrecioCboSinTax.Lines = new string[0];
-            this.txtPrecioCboSinTax.Location = new System.Drawing.Point(256, 352);
+            this.txtPrecioCboSinTax.Location = new System.Drawing.Point(267, 349);
             this.txtPrecioCboSinTax.MaxLength = 32767;
             this.txtPrecioCboSinTax.Name = "txtPrecioCboSinTax";
             this.txtPrecioCboSinTax.PasswordChar = '\0';
@@ -909,7 +943,7 @@
             this.txtPrecioCboSinTax.SelectionLength = 0;
             this.txtPrecioCboSinTax.SelectionStart = 0;
             this.txtPrecioCboSinTax.ShortcutsEnabled = true;
-            this.txtPrecioCboSinTax.Size = new System.Drawing.Size(82, 23);
+            this.txtPrecioCboSinTax.Size = new System.Drawing.Size(103, 23);
             this.txtPrecioCboSinTax.TabIndex = 136;
             this.txtPrecioCboSinTax.UseCustomBackColor = true;
             this.txtPrecioCboSinTax.UseSelectable = true;
@@ -934,7 +968,7 @@
             this.txtPrecioCboConTax.CustomButton.Visible = false;
             this.txtPrecioCboConTax.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtPrecioCboConTax.Lines = new string[0];
-            this.txtPrecioCboConTax.Location = new System.Drawing.Point(450, 352);
+            this.txtPrecioCboConTax.Location = new System.Drawing.Point(474, 349);
             this.txtPrecioCboConTax.MaxLength = 32767;
             this.txtPrecioCboConTax.Name = "txtPrecioCboConTax";
             this.txtPrecioCboConTax.PasswordChar = '\0';
@@ -943,7 +977,7 @@
             this.txtPrecioCboConTax.SelectionLength = 0;
             this.txtPrecioCboConTax.SelectionStart = 0;
             this.txtPrecioCboConTax.ShortcutsEnabled = true;
-            this.txtPrecioCboConTax.Size = new System.Drawing.Size(82, 23);
+            this.txtPrecioCboConTax.Size = new System.Drawing.Size(103, 23);
             this.txtPrecioCboConTax.TabIndex = 134;
             this.txtPrecioCboConTax.UseCustomBackColor = true;
             this.txtPrecioCboConTax.UseSelectable = true;
@@ -958,7 +992,7 @@
             // 
             // 
             this.txtItemDesc.CustomButton.Image = null;
-            this.txtItemDesc.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtItemDesc.CustomButton.Location = new System.Drawing.Point(205, 1);
             this.txtItemDesc.CustomButton.Name = "";
             this.txtItemDesc.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtItemDesc.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -976,7 +1010,7 @@
             this.txtItemDesc.SelectionLength = 0;
             this.txtItemDesc.SelectionStart = 0;
             this.txtItemDesc.ShortcutsEnabled = true;
-            this.txtItemDesc.Size = new System.Drawing.Size(184, 23);
+            this.txtItemDesc.Size = new System.Drawing.Size(227, 23);
             this.txtItemDesc.TabIndex = 132;
             this.txtItemDesc.UseCustomBackColor = true;
             this.txtItemDesc.UseSelectable = true;
@@ -1010,9 +1044,9 @@
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(116, 82);
+            this.panel2.Location = new System.Drawing.Point(116, 81);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(420, 6);
+            this.panel2.Size = new System.Drawing.Size(462, 6);
             this.panel2.TabIndex = 86;
             // 
             // chkActivo
@@ -1030,6 +1064,7 @@
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
+            this.chkActivo.CheckedChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtCodigo
             // 
@@ -1038,7 +1073,7 @@
             // 
             // 
             this.txtCodigo.CustomButton.Image = null;
-            this.txtCodigo.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtCodigo.CustomButton.Location = new System.Drawing.Point(168, 1);
             this.txtCodigo.CustomButton.Name = "";
             this.txtCodigo.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtCodigo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1047,7 +1082,7 @@
             this.txtCodigo.CustomButton.UseSelectable = true;
             this.txtCodigo.CustomButton.Visible = false;
             this.txtCodigo.Lines = new string[0];
-            this.txtCodigo.Location = new System.Drawing.Point(352, 14);
+            this.txtCodigo.Location = new System.Drawing.Point(389, 14);
             this.txtCodigo.MaxLength = 32767;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -1056,7 +1091,7 @@
             this.txtCodigo.SelectionLength = 0;
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
-            this.txtCodigo.Size = new System.Drawing.Size(184, 23);
+            this.txtCodigo.Size = new System.Drawing.Size(190, 23);
             this.txtCodigo.TabIndex = 3;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
@@ -1068,7 +1103,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.ForeColor = System.Drawing.Color.Navy;
-            this.lblCodigo.Location = new System.Drawing.Point(287, 16);
+            this.lblCodigo.Location = new System.Drawing.Point(324, 16);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(56, 19);
             this.lblCodigo.TabIndex = 2;
@@ -1082,7 +1117,7 @@
             // 
             // 
             this.txtNombre.CustomButton.Image = null;
-            this.txtNombre.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtNombre.CustomButton.Location = new System.Drawing.Point(168, 1);
             this.txtNombre.CustomButton.Name = "";
             this.txtNombre.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNombre.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1100,7 +1135,7 @@
             this.txtNombre.SelectionLength = 0;
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
-            this.txtNombre.Size = new System.Drawing.Size(184, 23);
+            this.txtNombre.Size = new System.Drawing.Size(190, 23);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
@@ -1132,7 +1167,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(29, 51);
+            this.btnCerrar.Location = new System.Drawing.Point(25, 51);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 148;
@@ -1143,8 +1178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 615);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(910, 615);
             this.Controls.Add(this.dgvCombo);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -1171,6 +1205,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductDetail)).EndInit();
             this.tabPagCboElectivo.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductOfCboVarDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCboVariableDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
@@ -1181,8 +1217,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvCombo;
         private System.Windows.Forms.Label lblNumInactivo;
         private System.Windows.Forms.Label lblNumActivo;
@@ -1246,5 +1280,8 @@
         private System.Windows.Forms.ErrorProvider errorProv;
         private System.Windows.Forms.ErrorProvider errorProvDtl;
         private System.Windows.Forms.DataGridView dgvProductOfCboVarDetail;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroCheckBox chkMostrarInactivos;
     }
 }

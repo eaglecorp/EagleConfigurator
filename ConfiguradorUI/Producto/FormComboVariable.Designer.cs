@@ -80,9 +80,9 @@
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvComboVariable = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProvDtl = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkMostrarInactivos = new MetroFramework.Controls.MetroCheckBox();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabComboVariable.SuspendLayout();
@@ -361,6 +361,7 @@
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.chkMostrarInactivos);
             this.tabPagGeneral.Controls.Add(this.btnBuscarProducto);
             this.tabPagGeneral.Controls.Add(this.btnProducto);
             this.tabPagGeneral.Controls.Add(this.dgvDetail);
@@ -428,9 +429,9 @@
             this.dgvDetail.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetail.Location = new System.Drawing.Point(0, 134);
+            this.dgvDetail.Location = new System.Drawing.Point(0, 151);
             this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.Size = new System.Drawing.Size(536, 180);
+            this.dgvDetail.Size = new System.Drawing.Size(536, 163);
             this.dgvDetail.TabIndex = 150;
             this.dgvDetail.DataSourceChanged += new System.EventHandler(this.CambioEnControl);
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
@@ -684,7 +685,7 @@
             this.txtPrecioCboSinTax.CustomButton.Visible = false;
             this.txtPrecioCboSinTax.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtPrecioCboSinTax.Lines = new string[0];
-            this.txtPrecioCboSinTax.Location = new System.Drawing.Point(454, 349);
+            this.txtPrecioCboSinTax.Location = new System.Drawing.Point(433, 349);
             this.txtPrecioCboSinTax.MaxLength = 32767;
             this.txtPrecioCboSinTax.Name = "txtPrecioCboSinTax";
             this.txtPrecioCboSinTax.PasswordChar = '\0';
@@ -693,7 +694,7 @@
             this.txtPrecioCboSinTax.SelectionLength = 0;
             this.txtPrecioCboSinTax.SelectionStart = 0;
             this.txtPrecioCboSinTax.ShortcutsEnabled = true;
-            this.txtPrecioCboSinTax.Size = new System.Drawing.Size(82, 23);
+            this.txtPrecioCboSinTax.Size = new System.Drawing.Size(103, 23);
             this.txtPrecioCboSinTax.TabIndex = 136;
             this.txtPrecioCboSinTax.UseCustomBackColor = true;
             this.txtPrecioCboSinTax.UseSelectable = true;
@@ -705,7 +706,7 @@
             // 
             this.lblPrecioCboSinTax.AutoSize = true;
             this.lblPrecioCboSinTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrecioCboSinTax.Location = new System.Drawing.Point(267, 351);
+            this.lblPrecioCboSinTax.Location = new System.Drawing.Point(250, 351);
             this.lblPrecioCboSinTax.Name = "lblPrecioCboSinTax";
             this.lblPrecioCboSinTax.Size = new System.Drawing.Size(177, 19);
             this.lblPrecioCboSinTax.TabIndex = 135;
@@ -729,7 +730,7 @@
             this.txtPrecioCboConTax.CustomButton.Visible = false;
             this.txtPrecioCboConTax.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtPrecioCboConTax.Lines = new string[0];
-            this.txtPrecioCboConTax.Location = new System.Drawing.Point(454, 320);
+            this.txtPrecioCboConTax.Location = new System.Drawing.Point(433, 320);
             this.txtPrecioCboConTax.MaxLength = 32767;
             this.txtPrecioCboConTax.Name = "txtPrecioCboConTax";
             this.txtPrecioCboConTax.PasswordChar = '\0';
@@ -738,7 +739,7 @@
             this.txtPrecioCboConTax.SelectionLength = 0;
             this.txtPrecioCboConTax.SelectionStart = 0;
             this.txtPrecioCboConTax.ShortcutsEnabled = true;
-            this.txtPrecioCboConTax.Size = new System.Drawing.Size(82, 23);
+            this.txtPrecioCboConTax.Size = new System.Drawing.Size(103, 23);
             this.txtPrecioCboConTax.TabIndex = 134;
             this.txtPrecioCboConTax.UseCustomBackColor = true;
             this.txtPrecioCboConTax.UseSelectable = true;
@@ -750,7 +751,7 @@
             // 
             this.lblPrecioCboConTax.AutoSize = true;
             this.lblPrecioCboConTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrecioCboConTax.Location = new System.Drawing.Point(267, 322);
+            this.lblPrecioCboConTax.Location = new System.Drawing.Point(250, 322);
             this.lblPrecioCboConTax.Name = "lblPrecioCboConTax";
             this.lblPrecioCboConTax.Size = new System.Drawing.Size(183, 19);
             this.lblPrecioCboConTax.TabIndex = 133;
@@ -962,16 +963,6 @@
             this.dgvComboVariable.TabIndex = 141;
             this.dgvComboVariable.SelectionChanged += new System.EventHandler(this.dgvComboVariable_SelectionChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(23, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 142;
-            this.button1.Text = "TEST - VER ESTADO";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -988,12 +979,25 @@
             // 
             this.errorProvDtl.ContainerControl = this;
             // 
+            // chkMostrarInactivos
+            // 
+            this.chkMostrarInactivos.AutoSize = true;
+            this.chkMostrarInactivos.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkMostrarInactivos.ForeColor = System.Drawing.Color.Navy;
+            this.chkMostrarInactivos.Location = new System.Drawing.Point(2, 132);
+            this.chkMostrarInactivos.Name = "chkMostrarInactivos";
+            this.chkMostrarInactivos.Size = new System.Drawing.Size(108, 15);
+            this.chkMostrarInactivos.TabIndex = 156;
+            this.chkMostrarInactivos.Text = "Mostrar inactivos";
+            this.chkMostrarInactivos.UseCustomForeColor = true;
+            this.chkMostrarInactivos.UseSelectable = true;
+            this.chkMostrarInactivos.CheckedChanged += new System.EventHandler(this.chkMostrarInactivos_CheckedChanged);
+            // 
             // FormComboVariable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 615);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvComboVariable);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -1074,9 +1078,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.DataGridView dgvComboVariable;
-        private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroLink btnProducto;
         private MetroFramework.Controls.MetroLink btnBuscarProducto;
         private System.Windows.Forms.ErrorProvider errorProvDtl;
+        private MetroFramework.Controls.MetroCheckBox chkMostrarInactivos;
     }
 }
