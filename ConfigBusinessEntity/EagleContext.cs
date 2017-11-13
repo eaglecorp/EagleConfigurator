@@ -13,8 +13,6 @@ namespace ConfigBusinessEntity
         {
         }
 
-
-
         public virtual DbSet<CLIt01_paciente> CLIt01_paciente { get; set; }
         public virtual DbSet<CLIt02_actividad> CLIt02_actividad { get; set; }
         public virtual DbSet<CLIt03_atencion> CLIt03_atencion { get; set; }
@@ -715,7 +713,35 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<MSTt06_impuesto>()
-                .Property(e => e.por_impto)
+                .Property(e => e.por_impto01)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<MSTt06_impuesto>()
+                .Property(e => e.por_impto02)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<MSTt06_impuesto>()
+                .Property(e => e.por_impto03)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<MSTt06_impuesto>()
+                .Property(e => e.por_impto04)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<MSTt06_impuesto>()
+                .Property(e => e.por_impto05)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<MSTt06_impuesto>()
+                .Property(e => e.por_impto06)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<MSTt06_impuesto>()
+                .Property(e => e.por_impto07)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<MSTt06_impuesto>()
+                .Property(e => e.por_impto08)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<MSTt06_impuesto>()

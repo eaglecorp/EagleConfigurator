@@ -240,7 +240,7 @@
             this.txtDiametro.CustomButton.UseSelectable = true;
             this.txtDiametro.CustomButton.Visible = false;
             this.txtDiametro.Lines = new string[0];
-            this.txtDiametro.Location = new System.Drawing.Point(259, 461);
+            this.txtDiametro.Location = new System.Drawing.Point(75, 461);
             this.txtDiametro.MaxLength = 32767;
             this.txtDiametro.Name = "txtDiametro";
             this.txtDiametro.PasswordChar = '\0';
@@ -261,7 +261,7 @@
             // 
             this.lblDiametro.AutoSize = true;
             this.lblDiametro.ForeColor = System.Drawing.Color.Navy;
-            this.lblDiametro.Location = new System.Drawing.Point(196, 463);
+            this.lblDiametro.Location = new System.Drawing.Point(5, 463);
             this.lblDiametro.Name = "lblDiametro";
             this.lblDiametro.Size = new System.Drawing.Size(67, 19);
             this.lblDiametro.TabIndex = 41;
@@ -453,7 +453,7 @@
             this.txtAltura.CustomButton.UseSelectable = true;
             this.txtAltura.CustomButton.Visible = false;
             this.txtAltura.Lines = new string[0];
-            this.txtAltura.Location = new System.Drawing.Point(75, 461);
+            this.txtAltura.Location = new System.Drawing.Point(257, 427);
             this.txtAltura.MaxLength = 32767;
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.PasswordChar = '\0';
@@ -507,7 +507,7 @@
             // 
             this.lblAltura.AutoSize = true;
             this.lblAltura.ForeColor = System.Drawing.Color.Navy;
-            this.lblAltura.Location = new System.Drawing.Point(-1, 463);
+            this.lblAltura.Location = new System.Drawing.Point(204, 429);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(47, 19);
             this.lblAltura.TabIndex = 39;
@@ -518,7 +518,7 @@
             // 
             this.lblLargo.AutoSize = true;
             this.lblLargo.ForeColor = System.Drawing.Color.Navy;
-            this.lblLargo.Location = new System.Drawing.Point(378, 429);
+            this.lblLargo.Location = new System.Drawing.Point(379, 429);
             this.lblLargo.Name = "lblLargo";
             this.lblLargo.Size = new System.Drawing.Size(46, 19);
             this.lblLargo.TabIndex = 37;
@@ -541,7 +541,7 @@
             this.txtAncho.CustomButton.UseSelectable = true;
             this.txtAncho.CustomButton.Visible = false;
             this.txtAncho.Lines = new string[0];
-            this.txtAncho.Location = new System.Drawing.Point(259, 427);
+            this.txtAncho.Location = new System.Drawing.Point(75, 427);
             this.txtAncho.MaxLength = 32767;
             this.txtAncho.Name = "txtAncho";
             this.txtAncho.PasswordChar = '\0';
@@ -574,7 +574,7 @@
             this.txtReferencia.CustomButton.UseSelectable = true;
             this.txtReferencia.CustomButton.Visible = false;
             this.txtReferencia.Lines = new string[0];
-            this.txtReferencia.Location = new System.Drawing.Point(76, 371);
+            this.txtReferencia.Location = new System.Drawing.Point(75, 371);
             this.txtReferencia.MaxLength = 32767;
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.PasswordChar = '\0';
@@ -583,7 +583,7 @@
             this.txtReferencia.SelectionLength = 0;
             this.txtReferencia.SelectionStart = 0;
             this.txtReferencia.ShortcutsEnabled = true;
-            this.txtReferencia.Size = new System.Drawing.Size(461, 23);
+            this.txtReferencia.Size = new System.Drawing.Size(462, 23);
             this.txtReferencia.TabIndex = 32;
             this.txtReferencia.UseCustomBackColor = true;
             this.txtReferencia.UseSelectable = true;
@@ -607,7 +607,7 @@
             this.txtPeso.CustomButton.UseSelectable = true;
             this.txtPeso.CustomButton.Visible = false;
             this.txtPeso.Lines = new string[0];
-            this.txtPeso.Location = new System.Drawing.Point(75, 427);
+            this.txtPeso.Location = new System.Drawing.Point(257, 461);
             this.txtPeso.MaxLength = 32767;
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.PasswordChar = '\0';
@@ -654,7 +654,7 @@
             // 
             this.lblAncho.AutoSize = true;
             this.lblAncho.ForeColor = System.Drawing.Color.Navy;
-            this.lblAncho.Location = new System.Drawing.Point(195, 429);
+            this.lblAncho.Location = new System.Drawing.Point(5, 429);
             this.lblAncho.Name = "lblAncho";
             this.lblAncho.Size = new System.Drawing.Size(49, 19);
             this.lblAncho.TabIndex = 35;
@@ -697,7 +697,7 @@
             // 
             this.lblPeso.AutoSize = true;
             this.lblPeso.ForeColor = System.Drawing.Color.Navy;
-            this.lblPeso.Location = new System.Drawing.Point(-2, 429);
+            this.lblPeso.Location = new System.Drawing.Point(204, 463);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(39, 19);
             this.lblPeso.TabIndex = 33;
@@ -979,9 +979,9 @@
             this.lblCodBarra.ForeColor = System.Drawing.Color.Navy;
             this.lblCodBarra.Location = new System.Drawing.Point(281, 13);
             this.lblCodBarra.Name = "lblCodBarra";
-            this.lblCodBarra.Size = new System.Drawing.Size(73, 19);
+            this.lblCodBarra.Size = new System.Drawing.Size(76, 19);
             this.lblCodBarra.TabIndex = 2;
-            this.lblCodBarra.Text = "Cod Barra:";
+            this.lblCodBarra.Text = "Cód. Barra:";
             this.lblCodBarra.UseCustomForeColor = true;
             // 
             // txtCodigo01

@@ -14,7 +14,7 @@ namespace ConfigBusinessEntity
         [StringLength(50)]
         public string cod_combo_fixed_dtl { get; set; }
 
-        public decimal? cantidad { get; set; }
+        public decimal cantidad { get; set; }
 
         public decimal mto_pvpu_sin_tax { get; set; }
 

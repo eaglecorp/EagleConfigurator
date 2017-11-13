@@ -333,7 +333,7 @@ namespace ConfiguradorUI.Producto
                     oProducto.id_impuesto = int.Parse(cboImpuesto.SelectedValue.ToString());
                     try
                     {
-                        oProducto.por_impto = lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto;
+                        oProducto.por_impto = lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto01;
                     }
                     catch (Exception e)
                     {
@@ -970,7 +970,7 @@ namespace ConfiguradorUI.Producto
                 decimal precio_con_impto = decimal.Parse(txt_precio_con_impto);
                 decimal por_impto = 0;
                 if (cboImpuesto.SelectedValue != null)
-                    por_impto = lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto;
+                    por_impto = (decimal)lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto01;
 
                 if (por_impto == 0)
                 {
@@ -996,7 +996,7 @@ namespace ConfiguradorUI.Producto
                 decimal precio_sin_impto = decimal.Parse(txt_precio_sin_impto);
                 decimal por_impto = 0;
                 if (cboImpuesto.SelectedValue != null)
-                    por_impto = lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto;
+                    por_impto = (decimal)lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto01;
                 if (por_impto == 0)
                 {
                     precio_con_impt = precio_sin_impto.RemoveTrailingZeros();

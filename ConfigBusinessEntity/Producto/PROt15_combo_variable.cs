@@ -35,6 +35,12 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
+        public int sn_incluye_impto { get; set; }
+
+        public int? id_impuesto { get; set; }
+
+        public virtual MSTt06_impuesto MSTt06_impuesto { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROt14_combo_fixed_dtl> PROt14_combo_fixed_dtl { get; set; }
 

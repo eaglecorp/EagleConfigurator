@@ -251,7 +251,7 @@ namespace ConfiguradorUI.Maestro
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.txt_abrv = txtAbreviacion.Text.Trim();
                 obj.cod_impuesto = txtCodigo.Text.Trim();
-                obj.por_impto = decimal.Parse(txtPorcentaje.Text);
+                obj.por_impto01 = decimal.Parse(txtPorcentaje.Text);
 
             }
             catch (Exception e)
@@ -279,7 +279,7 @@ namespace ConfiguradorUI.Maestro
                 txtNombre.Text = obj.txt_desc;
                 txtAbreviacion.Text = obj.txt_abrv;
                 txtCodigo.Text = obj.cod_impuesto;
-                txtPorcentaje.Text = obj.por_impto.RemoveTrailingZeros();
+                txtPorcentaje.Text = obj.por_impto01.RemoveTrailingZeros();
             }
             catch (Exception e)
             {

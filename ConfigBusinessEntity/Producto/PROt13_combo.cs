@@ -37,6 +37,14 @@ namespace ConfigBusinessEntity
 
         public int id_combo_grupo { get; set; }
 
+        public int? id_impuesto { get; set; }
+
+        public int sn_incluye_impto { get; set; }
+
+        public int sn_precio_acumulado { get; set; }
+
+        public virtual MSTt06_impuesto MSTt06_impuesto { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROt09_producto> PROt09_producto { get; set; }
 

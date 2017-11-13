@@ -196,6 +196,11 @@ namespace ConfigBusinessEntity
 
         public decimal? info_mto05 { get; set; }
 
+        public int? post { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? post_date { get; set; }
+
         public int? num_comensales { get; set; }
 
         public long? id_usuario { get; set; }

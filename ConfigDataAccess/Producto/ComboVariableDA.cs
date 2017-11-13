@@ -84,7 +84,6 @@ namespace ConfigDataAccess.Producto
                 }
             }
         }
-
         public bool ActivarComboVariable(long id)
         {
             bool success = false;
@@ -129,7 +128,7 @@ namespace ConfigDataAccess.Producto
                             {
                                 //Actualizar precios del cbo var en el cbo fix dtl
                                 ActualizarPrecioCboVarEnCbo(actualizado.id_combo_variable, actualizado.mto_pvpu_con_tax, actualizado.mto_pvpu_sin_tax);
-                    
+
                             }
 
                             //Actulización del master
@@ -167,13 +166,56 @@ namespace ConfigDataAccess.Producto
                 }
             }
         }
+
+        public PROt15_combo_variable ComboVariableXIdTest(long id)
+        {
+            var obj = new PROt15_combo_variable();
+
+            string sentencia = "SELECT * FROM PROt15_combo_variable WHERE id_combo_variable=@id";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    obj = cnn.Query<PROt15_combo_variable>(sentencia, new { id }).FirstOrDefault();
+
+                    if(obj!=null)
+                    {
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda Combo Variable por ID Test: ", e.Message);
+                }
+            }
+            return obj;
+        }
+
         public PROt15_combo_variable ComboVariableXId(long id)
         {
             var obj = new PROt15_combo_variable();
 
             #region Con Dapper
-            string sql = @"SELECT * FROM PROt15_combo_variable WHERE id_combo_variable=@id; 
-                            SELECT  [id_combo_variable_dtl]
+         //   string sql2 = @"SELECT * FROM PROt15_combo_variable WHERE id_combo_variable=@id; 
+         //                      SELECT  dtl.[id_combo_variable_dtl]
+         //                         ,dtl.[cod_combo_variable_dtl]
+								 // ,pro.[txt_desc] as txt_desc
+         //                         ,dtl.[cantidad]
+         //                         ,dtl.[mto_pvpu_sin_tax]
+         //                         ,dtl.[mto_pvpu_con_tax]
+         //                         ,dtl.[id_estado]
+         //                         ,dtl.[txt_estado]
+         //                         ,dtl.[id_combo_variable]
+         //                         ,dtl.[id_producto]
+         //                     FROM [PROt16_combo_variable_dtl] dtl
+							  //INNER JOIN PROt09_producto pro 
+							  //ON dtl.id_producto = pro.id_producto
+							  //WHERE dtl.id_combo_variable = @id;";
+
+            var sql = @"SELECT * FROM PROt15_combo_variable WHERE id_combo_variable=@id; 
+                            SELECT[id_combo_variable_dtl]
                                   ,[cod_combo_variable_dtl]
                                   ,[cantidad]
                                   ,[mto_pvpu_sin_tax]
@@ -182,7 +224,7 @@ namespace ConfigDataAccess.Producto
                                   ,[txt_estado]
                                   ,[id_combo_variable]
                                   ,[id_producto]
-                              FROM [PROt16_combo_variable_dtl] WHERE id_combo_variable = @id;";
+                                    FROM [PROt16_combo_variable_dtl] WHERE id_combo_variable = @id;";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
@@ -193,7 +235,7 @@ namespace ConfigDataAccess.Producto
                         obj = multi.Read<PROt15_combo_variable>().SingleOrDefault();
                         var combo_var_dtl = multi.Read<PROt16_combo_variable_dtl>().ToList();
 
-                        if (combo_var_dtl != null)
+                        if (obj != null && combo_var_dtl != null)
                         {
                             obj.PROt16_combo_variable_dtl = combo_var_dtl;
                             foreach (var dtl in combo_var_dtl)
@@ -213,6 +255,30 @@ namespace ConfigDataAccess.Producto
 
             return obj;
         }
+
+        public PROt15_combo_variable ComboVariableXIdEF(long id)
+        {
+            var obj = new PROt15_combo_variable();
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+
+                try
+                {
+
+                    //Cambiar aaquí.
+                    //obj = ctx.PROt16_combo_variable_dtl.SingleOrDefault();
+                  
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Combo var EF Combo Variable: ", e.Message);
+                }
+            }
+            return obj;
+        }
+
+
         public PROt15_combo_variable ComboVariableXCod(string cod)
         {
             var obj = new PROt15_combo_variable();

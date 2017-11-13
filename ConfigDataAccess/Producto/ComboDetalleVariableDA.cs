@@ -36,5 +36,8 @@ namespace ConfigDataAccess.Producto
             }
             return lista;
         }
+
+
+
     }
 }
