@@ -306,6 +306,7 @@
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
+            this.txtFiltro.PromptText = "Filtro";
             this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFiltro.SelectedText = "";
             this.txtFiltro.SelectionLength = 0;
@@ -434,7 +435,7 @@
             this.tabDescuento.Controls.Add(this.tabPagPeriodoDia);
             this.tabDescuento.Location = new System.Drawing.Point(308, 107);
             this.tabDescuento.Name = "tabDescuento";
-            this.tabDescuento.SelectedIndex = 0;
+            this.tabDescuento.SelectedIndex = 1;
             this.tabDescuento.Size = new System.Drawing.Size(582, 520);
             this.tabDescuento.TabIndex = 1;
             this.tabDescuento.UseSelectable = true;
@@ -942,9 +943,9 @@
             this.lblSabHi.ForeColor = System.Drawing.Color.Navy;
             this.lblSabHi.Location = new System.Drawing.Point(204, 300);
             this.lblSabHi.Name = "lblSabHi";
-            this.lblSabHi.Size = new System.Drawing.Size(72, 19);
+            this.lblSabHi.Size = new System.Drawing.Size(75, 19);
             this.lblSabHi.TabIndex = 31;
-            this.lblSabHi.Text = "Hora Inico:";
+            this.lblSabHi.Text = "Hora Inicio:";
             this.lblSabHi.UseCustomForeColor = true;
             // 
             // cboSabHi
@@ -990,9 +991,9 @@
             this.lblVieHi.ForeColor = System.Drawing.Color.Navy;
             this.lblVieHi.Location = new System.Drawing.Point(204, 258);
             this.lblVieHi.Name = "lblVieHi";
-            this.lblVieHi.Size = new System.Drawing.Size(72, 19);
+            this.lblVieHi.Size = new System.Drawing.Size(75, 19);
             this.lblVieHi.TabIndex = 26;
-            this.lblVieHi.Text = "Hora Inico:";
+            this.lblVieHi.Text = "Hora Inicio:";
             this.lblVieHi.UseCustomForeColor = true;
             // 
             // cboVieHi
@@ -1038,9 +1039,9 @@
             this.lblJueHi.ForeColor = System.Drawing.Color.Navy;
             this.lblJueHi.Location = new System.Drawing.Point(204, 216);
             this.lblJueHi.Name = "lblJueHi";
-            this.lblJueHi.Size = new System.Drawing.Size(72, 19);
+            this.lblJueHi.Size = new System.Drawing.Size(75, 19);
             this.lblJueHi.TabIndex = 21;
-            this.lblJueHi.Text = "Hora Inico:";
+            this.lblJueHi.Text = "Hora Inicio:";
             this.lblJueHi.UseCustomForeColor = true;
             // 
             // cboJueHi
@@ -1086,9 +1087,9 @@
             this.lblMieHi.ForeColor = System.Drawing.Color.Navy;
             this.lblMieHi.Location = new System.Drawing.Point(204, 174);
             this.lblMieHi.Name = "lblMieHi";
-            this.lblMieHi.Size = new System.Drawing.Size(72, 19);
+            this.lblMieHi.Size = new System.Drawing.Size(75, 19);
             this.lblMieHi.TabIndex = 16;
-            this.lblMieHi.Text = "Hora Inico:";
+            this.lblMieHi.Text = "Hora Inicio:";
             this.lblMieHi.UseCustomForeColor = true;
             // 
             // cboMieHi
@@ -1134,9 +1135,9 @@
             this.lblMarHi.ForeColor = System.Drawing.Color.Navy;
             this.lblMarHi.Location = new System.Drawing.Point(204, 132);
             this.lblMarHi.Name = "lblMarHi";
-            this.lblMarHi.Size = new System.Drawing.Size(72, 19);
+            this.lblMarHi.Size = new System.Drawing.Size(75, 19);
             this.lblMarHi.TabIndex = 11;
-            this.lblMarHi.Text = "Hora Inico:";
+            this.lblMarHi.Text = "Hora Inicio:";
             this.lblMarHi.UseCustomForeColor = true;
             // 
             // cboMarHi
@@ -1182,9 +1183,9 @@
             this.lblLunHi.ForeColor = System.Drawing.Color.Navy;
             this.lblLunHi.Location = new System.Drawing.Point(204, 90);
             this.lblLunHi.Name = "lblLunHi";
-            this.lblLunHi.Size = new System.Drawing.Size(72, 19);
+            this.lblLunHi.Size = new System.Drawing.Size(75, 19);
             this.lblLunHi.TabIndex = 6;
-            this.lblLunHi.Text = "Hora Inico:";
+            this.lblLunHi.Text = "Hora Inicio:";
             this.lblLunHi.UseCustomForeColor = true;
             // 
             // cboLunHi
@@ -1258,9 +1259,9 @@
             this.lblDomHi.ForeColor = System.Drawing.Color.Navy;
             this.lblDomHi.Location = new System.Drawing.Point(204, 52);
             this.lblDomHi.Name = "lblDomHi";
-            this.lblDomHi.Size = new System.Drawing.Size(72, 19);
+            this.lblDomHi.Size = new System.Drawing.Size(75, 19);
             this.lblDomHi.TabIndex = 1;
-            this.lblDomHi.Text = "Hora Inico:";
+            this.lblDomHi.Text = "Hora Inicio:";
             this.lblDomHi.UseCustomForeColor = true;
             // 
             // chkJueves

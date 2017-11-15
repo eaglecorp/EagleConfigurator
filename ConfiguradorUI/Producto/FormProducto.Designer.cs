@@ -87,26 +87,28 @@
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
             this.tabPagPrecio = new MetroFramework.Controls.MetroTabPage();
+            this.lblPorcentajeAcumuladoImpto = new System.Windows.Forms.Label();
+            this.lblSimboloPorcentaje = new System.Windows.Forms.Label();
             this.grbCostoProd = new System.Windows.Forms.GroupBox();
             this.txtCostoProd = new MetroFramework.Controls.MetroTextBox();
             this.lblCosto = new MetroFramework.Controls.MetroLabel();
-            this.grbConIGV = new System.Windows.Forms.GroupBox();
-            this.txtPvMiConIGV = new MetroFramework.Controls.MetroTextBox();
+            this.grbConImpto = new System.Windows.Forms.GroupBox();
+            this.txtPvMiConImpto = new MetroFramework.Controls.MetroTextBox();
             this.lblPvMiConIGV = new MetroFramework.Controls.MetroLabel();
-            this.txtPvMaConIGV = new MetroFramework.Controls.MetroTextBox();
+            this.txtPvMaConImpto = new MetroFramework.Controls.MetroTextBox();
             this.lblPvMaConIGV = new MetroFramework.Controls.MetroLabel();
-            this.txtPvPuConIGV = new MetroFramework.Controls.MetroTextBox();
+            this.txtPvPuConImpto = new MetroFramework.Controls.MetroTextBox();
             this.lblPvPuConIGV = new MetroFramework.Controls.MetroLabel();
-            this.grbSinIGV = new System.Windows.Forms.GroupBox();
-            this.txtPvMiSinIGV = new MetroFramework.Controls.MetroTextBox();
+            this.grbSinImpto = new System.Windows.Forms.GroupBox();
+            this.txtPvMiSinImpto = new MetroFramework.Controls.MetroTextBox();
             this.lblPvMiSinIGV = new MetroFramework.Controls.MetroLabel();
-            this.txtPvMaSinIGV = new MetroFramework.Controls.MetroTextBox();
+            this.txtPvMaSinImpto = new MetroFramework.Controls.MetroTextBox();
             this.lblPvMaSinIGV = new MetroFramework.Controls.MetroLabel();
-            this.txtPvPuSinIGV = new MetroFramework.Controls.MetroTextBox();
+            this.txtPvPuSinImpto = new MetroFramework.Controls.MetroTextBox();
             this.lblPvPuSinIGV = new MetroFramework.Controls.MetroLabel();
             this.chkInafecto = new MetroFramework.Controls.MetroCheckBox();
             this.chkExento = new MetroFramework.Controls.MetroCheckBox();
-            this.chkIGV = new MetroFramework.Controls.MetroCheckBox();
+            this.chkImpto = new MetroFramework.Controls.MetroCheckBox();
             this.cboImpuesto = new System.Windows.Forms.ComboBox();
             this.cboTipoMoneda = new System.Windows.Forms.ComboBox();
             this.lblImpuesto = new MetroFramework.Controls.MetroLabel();
@@ -137,8 +139,8 @@
             this.tabPagGeneral.SuspendLayout();
             this.tabPagPrecio.SuspendLayout();
             this.grbCostoProd.SuspendLayout();
-            this.grbConIGV.SuspendLayout();
-            this.grbSinIGV.SuspendLayout();
+            this.grbConImpto.SuspendLayout();
+            this.grbSinImpto.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.panelFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
@@ -149,7 +151,7 @@
             // 
             this.tabProducto.Controls.Add(this.tabPagGeneral);
             this.tabProducto.Controls.Add(this.tabPagPrecio);
-            this.tabProducto.Location = new System.Drawing.Point(304, 113);
+            this.tabProducto.Location = new System.Drawing.Point(304, 117);
             this.tabProducto.Name = "tabProducto";
             this.tabProducto.SelectedIndex = 0;
             this.tabProducto.Size = new System.Drawing.Size(564, 527);
@@ -240,7 +242,7 @@
             this.txtDiametro.CustomButton.UseSelectable = true;
             this.txtDiametro.CustomButton.Visible = false;
             this.txtDiametro.Lines = new string[0];
-            this.txtDiametro.Location = new System.Drawing.Point(75, 461);
+            this.txtDiametro.Location = new System.Drawing.Point(75, 460);
             this.txtDiametro.MaxLength = 32767;
             this.txtDiametro.Name = "txtDiametro";
             this.txtDiametro.PasswordChar = '\0';
@@ -261,7 +263,7 @@
             // 
             this.lblDiametro.AutoSize = true;
             this.lblDiametro.ForeColor = System.Drawing.Color.Navy;
-            this.lblDiametro.Location = new System.Drawing.Point(5, 463);
+            this.lblDiametro.Location = new System.Drawing.Point(5, 462);
             this.lblDiametro.Name = "lblDiametro";
             this.lblDiametro.Size = new System.Drawing.Size(67, 19);
             this.lblDiametro.TabIndex = 41;
@@ -453,7 +455,7 @@
             this.txtAltura.CustomButton.UseSelectable = true;
             this.txtAltura.CustomButton.Visible = false;
             this.txtAltura.Lines = new string[0];
-            this.txtAltura.Location = new System.Drawing.Point(257, 427);
+            this.txtAltura.Location = new System.Drawing.Point(257, 426);
             this.txtAltura.MaxLength = 32767;
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.PasswordChar = '\0';
@@ -486,7 +488,7 @@
             this.txtLargo.CustomButton.UseSelectable = true;
             this.txtLargo.CustomButton.Visible = false;
             this.txtLargo.Lines = new string[0];
-            this.txtLargo.Location = new System.Drawing.Point(433, 427);
+            this.txtLargo.Location = new System.Drawing.Point(433, 426);
             this.txtLargo.MaxLength = 32767;
             this.txtLargo.Name = "txtLargo";
             this.txtLargo.PasswordChar = '\0';
@@ -507,7 +509,7 @@
             // 
             this.lblAltura.AutoSize = true;
             this.lblAltura.ForeColor = System.Drawing.Color.Navy;
-            this.lblAltura.Location = new System.Drawing.Point(204, 429);
+            this.lblAltura.Location = new System.Drawing.Point(204, 428);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(47, 19);
             this.lblAltura.TabIndex = 39;
@@ -518,7 +520,7 @@
             // 
             this.lblLargo.AutoSize = true;
             this.lblLargo.ForeColor = System.Drawing.Color.Navy;
-            this.lblLargo.Location = new System.Drawing.Point(379, 429);
+            this.lblLargo.Location = new System.Drawing.Point(379, 428);
             this.lblLargo.Name = "lblLargo";
             this.lblLargo.Size = new System.Drawing.Size(46, 19);
             this.lblLargo.TabIndex = 37;
@@ -541,7 +543,7 @@
             this.txtAncho.CustomButton.UseSelectable = true;
             this.txtAncho.CustomButton.Visible = false;
             this.txtAncho.Lines = new string[0];
-            this.txtAncho.Location = new System.Drawing.Point(75, 427);
+            this.txtAncho.Location = new System.Drawing.Point(75, 426);
             this.txtAncho.MaxLength = 32767;
             this.txtAncho.Name = "txtAncho";
             this.txtAncho.PasswordChar = '\0';
@@ -565,7 +567,7 @@
             // 
             // 
             this.txtReferencia.CustomButton.Image = null;
-            this.txtReferencia.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.txtReferencia.CustomButton.Location = new System.Drawing.Point(440, 1);
             this.txtReferencia.CustomButton.Name = "";
             this.txtReferencia.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtReferencia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -607,7 +609,7 @@
             this.txtPeso.CustomButton.UseSelectable = true;
             this.txtPeso.CustomButton.Visible = false;
             this.txtPeso.Lines = new string[0];
-            this.txtPeso.Location = new System.Drawing.Point(257, 461);
+            this.txtPeso.Location = new System.Drawing.Point(257, 460);
             this.txtPeso.MaxLength = 32767;
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.PasswordChar = '\0';
@@ -654,7 +656,7 @@
             // 
             this.lblAncho.AutoSize = true;
             this.lblAncho.ForeColor = System.Drawing.Color.Navy;
-            this.lblAncho.Location = new System.Drawing.Point(5, 429);
+            this.lblAncho.Location = new System.Drawing.Point(5, 428);
             this.lblAncho.Name = "lblAncho";
             this.lblAncho.Size = new System.Drawing.Size(49, 19);
             this.lblAncho.TabIndex = 35;
@@ -697,7 +699,7 @@
             // 
             this.lblPeso.AutoSize = true;
             this.lblPeso.ForeColor = System.Drawing.Color.Navy;
-            this.lblPeso.Location = new System.Drawing.Point(204, 463);
+            this.lblPeso.Location = new System.Drawing.Point(204, 462);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(39, 19);
             this.lblPeso.TabIndex = 33;
@@ -1074,12 +1076,14 @@
             // 
             // tabPagPrecio
             // 
+            this.tabPagPrecio.Controls.Add(this.lblPorcentajeAcumuladoImpto);
+            this.tabPagPrecio.Controls.Add(this.lblSimboloPorcentaje);
             this.tabPagPrecio.Controls.Add(this.grbCostoProd);
-            this.tabPagPrecio.Controls.Add(this.grbConIGV);
-            this.tabPagPrecio.Controls.Add(this.grbSinIGV);
+            this.tabPagPrecio.Controls.Add(this.grbConImpto);
+            this.tabPagPrecio.Controls.Add(this.grbSinImpto);
             this.tabPagPrecio.Controls.Add(this.chkInafecto);
             this.tabPagPrecio.Controls.Add(this.chkExento);
-            this.tabPagPrecio.Controls.Add(this.chkIGV);
+            this.tabPagPrecio.Controls.Add(this.chkImpto);
             this.tabPagPrecio.Controls.Add(this.cboImpuesto);
             this.tabPagPrecio.Controls.Add(this.cboTipoMoneda);
             this.tabPagPrecio.Controls.Add(this.lblImpuesto);
@@ -1097,6 +1101,31 @@
             this.tabPagPrecio.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagPrecio.VerticalScrollbarSize = 10;
             // 
+            // lblPorcentajeAcumuladoImpto
+            // 
+            this.lblPorcentajeAcumuladoImpto.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeAcumuladoImpto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPorcentajeAcumuladoImpto.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeAcumuladoImpto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPorcentajeAcumuladoImpto.Location = new System.Drawing.Point(348, 35);
+            this.lblPorcentajeAcumuladoImpto.Name = "lblPorcentajeAcumuladoImpto";
+            this.lblPorcentajeAcumuladoImpto.Size = new System.Drawing.Size(147, 17);
+            this.lblPorcentajeAcumuladoImpto.TabIndex = 56;
+            this.lblPorcentajeAcumuladoImpto.Text = "0";
+            this.lblPorcentajeAcumuladoImpto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSimboloPorcentaje
+            // 
+            this.lblSimboloPorcentaje.AutoSize = true;
+            this.lblSimboloPorcentaje.BackColor = System.Drawing.Color.Transparent;
+            this.lblSimboloPorcentaje.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSimboloPorcentaje.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorcentaje.Location = new System.Drawing.Point(495, 35);
+            this.lblSimboloPorcentaje.Name = "lblSimboloPorcentaje";
+            this.lblSimboloPorcentaje.Size = new System.Drawing.Size(19, 17);
+            this.lblSimboloPorcentaje.TabIndex = 55;
+            this.lblSimboloPorcentaje.Text = "%";
+            // 
             // grbCostoProd
             // 
             this.grbCostoProd.BackColor = System.Drawing.Color.Transparent;
@@ -1105,7 +1134,7 @@
             this.grbCostoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbCostoProd.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbCostoProd.ForeColor = System.Drawing.Color.Black;
-            this.grbCostoProd.Location = new System.Drawing.Point(9, 284);
+            this.grbCostoProd.Location = new System.Drawing.Point(9, 267);
             this.grbCostoProd.Name = "grbCostoProd";
             this.grbCostoProd.Size = new System.Drawing.Size(251, 81);
             this.grbCostoProd.TabIndex = 9;
@@ -1157,55 +1186,55 @@
             this.lblCosto.Text = "Costo: ";
             this.lblCosto.UseCustomForeColor = true;
             // 
-            // grbConIGV
+            // grbConImpto
             // 
-            this.grbConIGV.BackColor = System.Drawing.Color.Transparent;
-            this.grbConIGV.Controls.Add(this.txtPvMiConIGV);
-            this.grbConIGV.Controls.Add(this.lblPvMiConIGV);
-            this.grbConIGV.Controls.Add(this.txtPvMaConIGV);
-            this.grbConIGV.Controls.Add(this.lblPvMaConIGV);
-            this.grbConIGV.Controls.Add(this.txtPvPuConIGV);
-            this.grbConIGV.Controls.Add(this.lblPvPuConIGV);
-            this.grbConIGV.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbConIGV.Location = new System.Drawing.Point(287, 105);
-            this.grbConIGV.Name = "grbConIGV";
-            this.grbConIGV.Size = new System.Drawing.Size(251, 160);
-            this.grbConIGV.TabIndex = 8;
-            this.grbConIGV.TabStop = false;
-            this.grbConIGV.Text = "Precio con IGV";
+            this.grbConImpto.BackColor = System.Drawing.Color.Transparent;
+            this.grbConImpto.Controls.Add(this.txtPvMiConImpto);
+            this.grbConImpto.Controls.Add(this.lblPvMiConIGV);
+            this.grbConImpto.Controls.Add(this.txtPvMaConImpto);
+            this.grbConImpto.Controls.Add(this.lblPvMaConIGV);
+            this.grbConImpto.Controls.Add(this.txtPvPuConImpto);
+            this.grbConImpto.Controls.Add(this.lblPvPuConIGV);
+            this.grbConImpto.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbConImpto.Location = new System.Drawing.Point(287, 88);
+            this.grbConImpto.Name = "grbConImpto";
+            this.grbConImpto.Size = new System.Drawing.Size(251, 160);
+            this.grbConImpto.TabIndex = 8;
+            this.grbConImpto.TabStop = false;
+            this.grbConImpto.Text = "Precio con impuesto";
             // 
-            // txtPvMiConIGV
+            // txtPvMiConImpto
             // 
-            this.txtPvMiConIGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvMiConImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvMiConIGV.CustomButton.Image = null;
-            this.txtPvMiConIGV.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvMiConIGV.CustomButton.Name = "";
-            this.txtPvMiConIGV.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvMiConIGV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvMiConIGV.CustomButton.TabIndex = 1;
-            this.txtPvMiConIGV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvMiConIGV.CustomButton.UseSelectable = true;
-            this.txtPvMiConIGV.CustomButton.Visible = false;
-            this.txtPvMiConIGV.Lines = new string[0];
-            this.txtPvMiConIGV.Location = new System.Drawing.Point(100, 69);
-            this.txtPvMiConIGV.MaxLength = 32767;
-            this.txtPvMiConIGV.Name = "txtPvMiConIGV";
-            this.txtPvMiConIGV.PasswordChar = '\0';
-            this.txtPvMiConIGV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvMiConIGV.SelectedText = "";
-            this.txtPvMiConIGV.SelectionLength = 0;
-            this.txtPvMiConIGV.SelectionStart = 0;
-            this.txtPvMiConIGV.ShortcutsEnabled = true;
-            this.txtPvMiConIGV.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMiConIGV.TabIndex = 3;
-            this.txtPvMiConIGV.UseCustomBackColor = true;
-            this.txtPvMiConIGV.UseSelectable = true;
-            this.txtPvMiConIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvMiConIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMiConIGV.TextChanged += new System.EventHandler(this.txtPvMiConIGV_TextChanged);
+            this.txtPvMiConImpto.CustomButton.Image = null;
+            this.txtPvMiConImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvMiConImpto.CustomButton.Name = "";
+            this.txtPvMiConImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvMiConImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvMiConImpto.CustomButton.TabIndex = 1;
+            this.txtPvMiConImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvMiConImpto.CustomButton.UseSelectable = true;
+            this.txtPvMiConImpto.CustomButton.Visible = false;
+            this.txtPvMiConImpto.Lines = new string[0];
+            this.txtPvMiConImpto.Location = new System.Drawing.Point(100, 69);
+            this.txtPvMiConImpto.MaxLength = 32767;
+            this.txtPvMiConImpto.Name = "txtPvMiConImpto";
+            this.txtPvMiConImpto.PasswordChar = '\0';
+            this.txtPvMiConImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvMiConImpto.SelectedText = "";
+            this.txtPvMiConImpto.SelectionLength = 0;
+            this.txtPvMiConImpto.SelectionStart = 0;
+            this.txtPvMiConImpto.ShortcutsEnabled = true;
+            this.txtPvMiConImpto.Size = new System.Drawing.Size(126, 23);
+            this.txtPvMiConImpto.TabIndex = 3;
+            this.txtPvMiConImpto.UseCustomBackColor = true;
+            this.txtPvMiConImpto.UseSelectable = true;
+            this.txtPvMiConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvMiConImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvMiConImpto.TextChanged += new System.EventHandler(this.txtPvMiConImpto_TextChanged);
             // 
             // lblPvMiConIGV
             // 
@@ -1219,38 +1248,38 @@
             this.lblPvMiConIGV.Text = "P. Mínimo:";
             this.lblPvMiConIGV.UseCustomForeColor = true;
             // 
-            // txtPvMaConIGV
+            // txtPvMaConImpto
             // 
-            this.txtPvMaConIGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvMaConImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvMaConIGV.CustomButton.Image = null;
-            this.txtPvMaConIGV.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvMaConIGV.CustomButton.Name = "";
-            this.txtPvMaConIGV.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvMaConIGV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvMaConIGV.CustomButton.TabIndex = 1;
-            this.txtPvMaConIGV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvMaConIGV.CustomButton.UseSelectable = true;
-            this.txtPvMaConIGV.CustomButton.Visible = false;
-            this.txtPvMaConIGV.Lines = new string[0];
-            this.txtPvMaConIGV.Location = new System.Drawing.Point(100, 110);
-            this.txtPvMaConIGV.MaxLength = 32767;
-            this.txtPvMaConIGV.Name = "txtPvMaConIGV";
-            this.txtPvMaConIGV.PasswordChar = '\0';
-            this.txtPvMaConIGV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvMaConIGV.SelectedText = "";
-            this.txtPvMaConIGV.SelectionLength = 0;
-            this.txtPvMaConIGV.SelectionStart = 0;
-            this.txtPvMaConIGV.ShortcutsEnabled = true;
-            this.txtPvMaConIGV.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMaConIGV.TabIndex = 5;
-            this.txtPvMaConIGV.UseCustomBackColor = true;
-            this.txtPvMaConIGV.UseSelectable = true;
-            this.txtPvMaConIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvMaConIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMaConIGV.TextChanged += new System.EventHandler(this.txtPvMaConIGV_TextChanged);
+            this.txtPvMaConImpto.CustomButton.Image = null;
+            this.txtPvMaConImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvMaConImpto.CustomButton.Name = "";
+            this.txtPvMaConImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvMaConImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvMaConImpto.CustomButton.TabIndex = 1;
+            this.txtPvMaConImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvMaConImpto.CustomButton.UseSelectable = true;
+            this.txtPvMaConImpto.CustomButton.Visible = false;
+            this.txtPvMaConImpto.Lines = new string[0];
+            this.txtPvMaConImpto.Location = new System.Drawing.Point(100, 110);
+            this.txtPvMaConImpto.MaxLength = 32767;
+            this.txtPvMaConImpto.Name = "txtPvMaConImpto";
+            this.txtPvMaConImpto.PasswordChar = '\0';
+            this.txtPvMaConImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvMaConImpto.SelectedText = "";
+            this.txtPvMaConImpto.SelectionLength = 0;
+            this.txtPvMaConImpto.SelectionStart = 0;
+            this.txtPvMaConImpto.ShortcutsEnabled = true;
+            this.txtPvMaConImpto.Size = new System.Drawing.Size(126, 23);
+            this.txtPvMaConImpto.TabIndex = 5;
+            this.txtPvMaConImpto.UseCustomBackColor = true;
+            this.txtPvMaConImpto.UseSelectable = true;
+            this.txtPvMaConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvMaConImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvMaConImpto.TextChanged += new System.EventHandler(this.txtPvMaConImpto_TextChanged);
             // 
             // lblPvMaConIGV
             // 
@@ -1264,38 +1293,38 @@
             this.lblPvMaConIGV.Text = "P. Máximo:";
             this.lblPvMaConIGV.UseCustomForeColor = true;
             // 
-            // txtPvPuConIGV
+            // txtPvPuConImpto
             // 
-            this.txtPvPuConIGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvPuConImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvPuConIGV.CustomButton.Image = null;
-            this.txtPvPuConIGV.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvPuConIGV.CustomButton.Name = "";
-            this.txtPvPuConIGV.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvPuConIGV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvPuConIGV.CustomButton.TabIndex = 1;
-            this.txtPvPuConIGV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvPuConIGV.CustomButton.UseSelectable = true;
-            this.txtPvPuConIGV.CustomButton.Visible = false;
-            this.txtPvPuConIGV.Lines = new string[0];
-            this.txtPvPuConIGV.Location = new System.Drawing.Point(100, 28);
-            this.txtPvPuConIGV.MaxLength = 32767;
-            this.txtPvPuConIGV.Name = "txtPvPuConIGV";
-            this.txtPvPuConIGV.PasswordChar = '\0';
-            this.txtPvPuConIGV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvPuConIGV.SelectedText = "";
-            this.txtPvPuConIGV.SelectionLength = 0;
-            this.txtPvPuConIGV.SelectionStart = 0;
-            this.txtPvPuConIGV.ShortcutsEnabled = true;
-            this.txtPvPuConIGV.Size = new System.Drawing.Size(126, 23);
-            this.txtPvPuConIGV.TabIndex = 1;
-            this.txtPvPuConIGV.UseCustomBackColor = true;
-            this.txtPvPuConIGV.UseSelectable = true;
-            this.txtPvPuConIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvPuConIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvPuConIGV.TextChanged += new System.EventHandler(this.txtPvPuConIGV_TextChanged);
+            this.txtPvPuConImpto.CustomButton.Image = null;
+            this.txtPvPuConImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvPuConImpto.CustomButton.Name = "";
+            this.txtPvPuConImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvPuConImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvPuConImpto.CustomButton.TabIndex = 1;
+            this.txtPvPuConImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvPuConImpto.CustomButton.UseSelectable = true;
+            this.txtPvPuConImpto.CustomButton.Visible = false;
+            this.txtPvPuConImpto.Lines = new string[0];
+            this.txtPvPuConImpto.Location = new System.Drawing.Point(100, 28);
+            this.txtPvPuConImpto.MaxLength = 32767;
+            this.txtPvPuConImpto.Name = "txtPvPuConImpto";
+            this.txtPvPuConImpto.PasswordChar = '\0';
+            this.txtPvPuConImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvPuConImpto.SelectedText = "";
+            this.txtPvPuConImpto.SelectionLength = 0;
+            this.txtPvPuConImpto.SelectionStart = 0;
+            this.txtPvPuConImpto.ShortcutsEnabled = true;
+            this.txtPvPuConImpto.Size = new System.Drawing.Size(126, 23);
+            this.txtPvPuConImpto.TabIndex = 1;
+            this.txtPvPuConImpto.UseCustomBackColor = true;
+            this.txtPvPuConImpto.UseSelectable = true;
+            this.txtPvPuConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvPuConImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvPuConImpto.TextChanged += new System.EventHandler(this.txtPvPuConImpto_TextChanged);
             // 
             // lblPvPuConIGV
             // 
@@ -1309,57 +1338,57 @@
             this.lblPvPuConIGV.Text = "P. Unitario:";
             this.lblPvPuConIGV.UseCustomForeColor = true;
             // 
-            // grbSinIGV
+            // grbSinImpto
             // 
-            this.grbSinIGV.BackColor = System.Drawing.Color.Transparent;
-            this.grbSinIGV.Controls.Add(this.txtPvMiSinIGV);
-            this.grbSinIGV.Controls.Add(this.lblPvMiSinIGV);
-            this.grbSinIGV.Controls.Add(this.txtPvMaSinIGV);
-            this.grbSinIGV.Controls.Add(this.lblPvMaSinIGV);
-            this.grbSinIGV.Controls.Add(this.txtPvPuSinIGV);
-            this.grbSinIGV.Controls.Add(this.lblPvPuSinIGV);
-            this.grbSinIGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbSinIGV.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSinIGV.ForeColor = System.Drawing.Color.Black;
-            this.grbSinIGV.Location = new System.Drawing.Point(9, 105);
-            this.grbSinIGV.Name = "grbSinIGV";
-            this.grbSinIGV.Size = new System.Drawing.Size(251, 160);
-            this.grbSinIGV.TabIndex = 7;
-            this.grbSinIGV.TabStop = false;
-            this.grbSinIGV.Text = "Precio sin IGV";
+            this.grbSinImpto.BackColor = System.Drawing.Color.Transparent;
+            this.grbSinImpto.Controls.Add(this.txtPvMiSinImpto);
+            this.grbSinImpto.Controls.Add(this.lblPvMiSinIGV);
+            this.grbSinImpto.Controls.Add(this.txtPvMaSinImpto);
+            this.grbSinImpto.Controls.Add(this.lblPvMaSinIGV);
+            this.grbSinImpto.Controls.Add(this.txtPvPuSinImpto);
+            this.grbSinImpto.Controls.Add(this.lblPvPuSinIGV);
+            this.grbSinImpto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbSinImpto.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSinImpto.ForeColor = System.Drawing.Color.Black;
+            this.grbSinImpto.Location = new System.Drawing.Point(9, 88);
+            this.grbSinImpto.Name = "grbSinImpto";
+            this.grbSinImpto.Size = new System.Drawing.Size(251, 160);
+            this.grbSinImpto.TabIndex = 7;
+            this.grbSinImpto.TabStop = false;
+            this.grbSinImpto.Text = "Precio sin impuesto";
             // 
-            // txtPvMiSinIGV
+            // txtPvMiSinImpto
             // 
-            this.txtPvMiSinIGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvMiSinImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvMiSinIGV.CustomButton.Image = null;
-            this.txtPvMiSinIGV.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvMiSinIGV.CustomButton.Name = "";
-            this.txtPvMiSinIGV.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvMiSinIGV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvMiSinIGV.CustomButton.TabIndex = 1;
-            this.txtPvMiSinIGV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvMiSinIGV.CustomButton.UseSelectable = true;
-            this.txtPvMiSinIGV.CustomButton.Visible = false;
-            this.txtPvMiSinIGV.Lines = new string[0];
-            this.txtPvMiSinIGV.Location = new System.Drawing.Point(98, 74);
-            this.txtPvMiSinIGV.MaxLength = 32767;
-            this.txtPvMiSinIGV.Name = "txtPvMiSinIGV";
-            this.txtPvMiSinIGV.PasswordChar = '\0';
-            this.txtPvMiSinIGV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvMiSinIGV.SelectedText = "";
-            this.txtPvMiSinIGV.SelectionLength = 0;
-            this.txtPvMiSinIGV.SelectionStart = 0;
-            this.txtPvMiSinIGV.ShortcutsEnabled = true;
-            this.txtPvMiSinIGV.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMiSinIGV.TabIndex = 3;
-            this.txtPvMiSinIGV.UseCustomBackColor = true;
-            this.txtPvMiSinIGV.UseSelectable = true;
-            this.txtPvMiSinIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvMiSinIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMiSinIGV.TextChanged += new System.EventHandler(this.txtPvMiSinIGV_TextChanged);
+            this.txtPvMiSinImpto.CustomButton.Image = null;
+            this.txtPvMiSinImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvMiSinImpto.CustomButton.Name = "";
+            this.txtPvMiSinImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvMiSinImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvMiSinImpto.CustomButton.TabIndex = 1;
+            this.txtPvMiSinImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvMiSinImpto.CustomButton.UseSelectable = true;
+            this.txtPvMiSinImpto.CustomButton.Visible = false;
+            this.txtPvMiSinImpto.Lines = new string[0];
+            this.txtPvMiSinImpto.Location = new System.Drawing.Point(98, 74);
+            this.txtPvMiSinImpto.MaxLength = 32767;
+            this.txtPvMiSinImpto.Name = "txtPvMiSinImpto";
+            this.txtPvMiSinImpto.PasswordChar = '\0';
+            this.txtPvMiSinImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvMiSinImpto.SelectedText = "";
+            this.txtPvMiSinImpto.SelectionLength = 0;
+            this.txtPvMiSinImpto.SelectionStart = 0;
+            this.txtPvMiSinImpto.ShortcutsEnabled = true;
+            this.txtPvMiSinImpto.Size = new System.Drawing.Size(126, 23);
+            this.txtPvMiSinImpto.TabIndex = 3;
+            this.txtPvMiSinImpto.UseCustomBackColor = true;
+            this.txtPvMiSinImpto.UseSelectable = true;
+            this.txtPvMiSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvMiSinImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvMiSinImpto.TextChanged += new System.EventHandler(this.txtPvMiSinImpto_TextChanged);
             // 
             // lblPvMiSinIGV
             // 
@@ -1373,38 +1402,38 @@
             this.lblPvMiSinIGV.Text = "P. Mínimo:";
             this.lblPvMiSinIGV.UseCustomForeColor = true;
             // 
-            // txtPvMaSinIGV
+            // txtPvMaSinImpto
             // 
-            this.txtPvMaSinIGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvMaSinImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvMaSinIGV.CustomButton.Image = null;
-            this.txtPvMaSinIGV.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvMaSinIGV.CustomButton.Name = "";
-            this.txtPvMaSinIGV.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvMaSinIGV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvMaSinIGV.CustomButton.TabIndex = 1;
-            this.txtPvMaSinIGV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvMaSinIGV.CustomButton.UseSelectable = true;
-            this.txtPvMaSinIGV.CustomButton.Visible = false;
-            this.txtPvMaSinIGV.Lines = new string[0];
-            this.txtPvMaSinIGV.Location = new System.Drawing.Point(98, 115);
-            this.txtPvMaSinIGV.MaxLength = 32767;
-            this.txtPvMaSinIGV.Name = "txtPvMaSinIGV";
-            this.txtPvMaSinIGV.PasswordChar = '\0';
-            this.txtPvMaSinIGV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvMaSinIGV.SelectedText = "";
-            this.txtPvMaSinIGV.SelectionLength = 0;
-            this.txtPvMaSinIGV.SelectionStart = 0;
-            this.txtPvMaSinIGV.ShortcutsEnabled = true;
-            this.txtPvMaSinIGV.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMaSinIGV.TabIndex = 5;
-            this.txtPvMaSinIGV.UseCustomBackColor = true;
-            this.txtPvMaSinIGV.UseSelectable = true;
-            this.txtPvMaSinIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvMaSinIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMaSinIGV.TextChanged += new System.EventHandler(this.txtPvMaSinIGV_TextChanged);
+            this.txtPvMaSinImpto.CustomButton.Image = null;
+            this.txtPvMaSinImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvMaSinImpto.CustomButton.Name = "";
+            this.txtPvMaSinImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvMaSinImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvMaSinImpto.CustomButton.TabIndex = 1;
+            this.txtPvMaSinImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvMaSinImpto.CustomButton.UseSelectable = true;
+            this.txtPvMaSinImpto.CustomButton.Visible = false;
+            this.txtPvMaSinImpto.Lines = new string[0];
+            this.txtPvMaSinImpto.Location = new System.Drawing.Point(98, 115);
+            this.txtPvMaSinImpto.MaxLength = 32767;
+            this.txtPvMaSinImpto.Name = "txtPvMaSinImpto";
+            this.txtPvMaSinImpto.PasswordChar = '\0';
+            this.txtPvMaSinImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvMaSinImpto.SelectedText = "";
+            this.txtPvMaSinImpto.SelectionLength = 0;
+            this.txtPvMaSinImpto.SelectionStart = 0;
+            this.txtPvMaSinImpto.ShortcutsEnabled = true;
+            this.txtPvMaSinImpto.Size = new System.Drawing.Size(126, 23);
+            this.txtPvMaSinImpto.TabIndex = 5;
+            this.txtPvMaSinImpto.UseCustomBackColor = true;
+            this.txtPvMaSinImpto.UseSelectable = true;
+            this.txtPvMaSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvMaSinImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvMaSinImpto.TextChanged += new System.EventHandler(this.txtPvMaSinImpto_TextChanged);
             // 
             // lblPvMaSinIGV
             // 
@@ -1418,38 +1447,38 @@
             this.lblPvMaSinIGV.Text = "P. Máximo:";
             this.lblPvMaSinIGV.UseCustomForeColor = true;
             // 
-            // txtPvPuSinIGV
+            // txtPvPuSinImpto
             // 
-            this.txtPvPuSinIGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvPuSinImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvPuSinIGV.CustomButton.Image = null;
-            this.txtPvPuSinIGV.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvPuSinIGV.CustomButton.Name = "";
-            this.txtPvPuSinIGV.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvPuSinIGV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvPuSinIGV.CustomButton.TabIndex = 1;
-            this.txtPvPuSinIGV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvPuSinIGV.CustomButton.UseSelectable = true;
-            this.txtPvPuSinIGV.CustomButton.Visible = false;
-            this.txtPvPuSinIGV.Lines = new string[0];
-            this.txtPvPuSinIGV.Location = new System.Drawing.Point(98, 33);
-            this.txtPvPuSinIGV.MaxLength = 32767;
-            this.txtPvPuSinIGV.Name = "txtPvPuSinIGV";
-            this.txtPvPuSinIGV.PasswordChar = '\0';
-            this.txtPvPuSinIGV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvPuSinIGV.SelectedText = "";
-            this.txtPvPuSinIGV.SelectionLength = 0;
-            this.txtPvPuSinIGV.SelectionStart = 0;
-            this.txtPvPuSinIGV.ShortcutsEnabled = true;
-            this.txtPvPuSinIGV.Size = new System.Drawing.Size(126, 23);
-            this.txtPvPuSinIGV.TabIndex = 1;
-            this.txtPvPuSinIGV.UseCustomBackColor = true;
-            this.txtPvPuSinIGV.UseSelectable = true;
-            this.txtPvPuSinIGV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvPuSinIGV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvPuSinIGV.TextChanged += new System.EventHandler(this.txtPvPuSinIGV_TextChanged);
+            this.txtPvPuSinImpto.CustomButton.Image = null;
+            this.txtPvPuSinImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvPuSinImpto.CustomButton.Name = "";
+            this.txtPvPuSinImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvPuSinImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvPuSinImpto.CustomButton.TabIndex = 1;
+            this.txtPvPuSinImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvPuSinImpto.CustomButton.UseSelectable = true;
+            this.txtPvPuSinImpto.CustomButton.Visible = false;
+            this.txtPvPuSinImpto.Lines = new string[0];
+            this.txtPvPuSinImpto.Location = new System.Drawing.Point(98, 33);
+            this.txtPvPuSinImpto.MaxLength = 32767;
+            this.txtPvPuSinImpto.Name = "txtPvPuSinImpto";
+            this.txtPvPuSinImpto.PasswordChar = '\0';
+            this.txtPvPuSinImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvPuSinImpto.SelectedText = "";
+            this.txtPvPuSinImpto.SelectionLength = 0;
+            this.txtPvPuSinImpto.SelectionStart = 0;
+            this.txtPvPuSinImpto.ShortcutsEnabled = true;
+            this.txtPvPuSinImpto.Size = new System.Drawing.Size(126, 23);
+            this.txtPvPuSinImpto.TabIndex = 1;
+            this.txtPvPuSinImpto.UseCustomBackColor = true;
+            this.txtPvPuSinImpto.UseSelectable = true;
+            this.txtPvPuSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvPuSinImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvPuSinImpto.TextChanged += new System.EventHandler(this.txtPvPuSinImpto_TextChanged);
             // 
             // lblPvPuSinIGV
             // 
@@ -1470,7 +1499,7 @@
             this.chkInafecto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkInafecto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkInafecto.ForeColor = System.Drawing.Color.Navy;
-            this.chkInafecto.Location = new System.Drawing.Point(306, 62);
+            this.chkInafecto.Location = new System.Drawing.Point(317, 56);
             this.chkInafecto.Name = "chkInafecto";
             this.chkInafecto.Size = new System.Drawing.Size(129, 19);
             this.chkInafecto.TabIndex = 6;
@@ -1486,7 +1515,7 @@
             this.chkExento.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkExento.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkExento.ForeColor = System.Drawing.Color.Navy;
-            this.chkExento.Location = new System.Drawing.Point(172, 62);
+            this.chkExento.Location = new System.Drawing.Point(189, 56);
             this.chkExento.Name = "chkExento";
             this.chkExento.Size = new System.Drawing.Size(122, 19);
             this.chkExento.TabIndex = 5;
@@ -1495,21 +1524,21 @@
             this.chkExento.UseSelectable = true;
             this.chkExento.CheckedChanged += new System.EventHandler(this.CambioEnControl);
             // 
-            // chkIGV
+            // chkImpto
             // 
-            this.chkIGV.AutoSize = true;
-            this.chkIGV.BackColor = System.Drawing.Color.Transparent;
-            this.chkIGV.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkIGV.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkIGV.ForeColor = System.Drawing.Color.Navy;
-            this.chkIGV.Location = new System.Drawing.Point(11, 62);
-            this.chkIGV.Name = "chkIGV";
-            this.chkIGV.Size = new System.Drawing.Size(141, 19);
-            this.chkIGV.TabIndex = 4;
-            this.chkIGV.Text = "Precios incluyen IGV";
-            this.chkIGV.UseCustomForeColor = true;
-            this.chkIGV.UseSelectable = true;
-            this.chkIGV.CheckedChanged += new System.EventHandler(this.chkIGV_CheckedChanged);
+            this.chkImpto.AutoSize = true;
+            this.chkImpto.BackColor = System.Drawing.Color.Transparent;
+            this.chkImpto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkImpto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkImpto.ForeColor = System.Drawing.Color.Navy;
+            this.chkImpto.Location = new System.Drawing.Point(8, 56);
+            this.chkImpto.Name = "chkImpto";
+            this.chkImpto.Size = new System.Drawing.Size(175, 19);
+            this.chkImpto.TabIndex = 4;
+            this.chkImpto.Text = "Precios incluyen impuesto";
+            this.chkImpto.UseCustomForeColor = true;
+            this.chkImpto.UseSelectable = true;
+            this.chkImpto.CheckedChanged += new System.EventHandler(this.chkImpto_CheckedChanged);
             // 
             // cboImpuesto
             // 
@@ -1518,9 +1547,9 @@
             this.cboImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboImpuesto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboImpuesto.FormattingEnabled = true;
-            this.cboImpuesto.Location = new System.Drawing.Point(362, 20);
+            this.cboImpuesto.Location = new System.Drawing.Point(348, 12);
             this.cboImpuesto.Name = "cboImpuesto";
-            this.cboImpuesto.Size = new System.Drawing.Size(152, 23);
+            this.cboImpuesto.Size = new System.Drawing.Size(166, 23);
             this.cboImpuesto.TabIndex = 3;
             this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
             // 
@@ -1531,7 +1560,7 @@
             this.cboTipoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoMoneda.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoMoneda.FormattingEnabled = true;
-            this.cboTipoMoneda.Location = new System.Drawing.Point(78, 20);
+            this.cboTipoMoneda.Location = new System.Drawing.Point(78, 12);
             this.cboTipoMoneda.Name = "cboTipoMoneda";
             this.cboTipoMoneda.Size = new System.Drawing.Size(182, 23);
             this.cboTipoMoneda.TabIndex = 1;
@@ -1542,7 +1571,7 @@
             this.lblImpuesto.AutoSize = true;
             this.lblImpuesto.BackColor = System.Drawing.Color.Transparent;
             this.lblImpuesto.ForeColor = System.Drawing.Color.Navy;
-            this.lblImpuesto.Location = new System.Drawing.Point(286, 22);
+            this.lblImpuesto.Location = new System.Drawing.Point(286, 14);
             this.lblImpuesto.Name = "lblImpuesto";
             this.lblImpuesto.Size = new System.Drawing.Size(66, 19);
             this.lblImpuesto.TabIndex = 2;
@@ -1554,7 +1583,7 @@
             this.lblTipoMoneda.AutoSize = true;
             this.lblTipoMoneda.BackColor = System.Drawing.Color.Transparent;
             this.lblTipoMoneda.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoMoneda.Location = new System.Drawing.Point(1, 22);
+            this.lblTipoMoneda.Location = new System.Drawing.Point(1, 14);
             this.lblTipoMoneda.Name = "lblTipoMoneda";
             this.lblTipoMoneda.Size = new System.Drawing.Size(61, 19);
             this.lblTipoMoneda.TabIndex = 0;
@@ -1565,7 +1594,7 @@
             // 
             this.btnImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuesto.Image")));
             this.btnImpuesto.ImageSize = 24;
-            this.btnImpuesto.Location = new System.Drawing.Point(517, 16);
+            this.btnImpuesto.Location = new System.Drawing.Point(517, 8);
             this.btnImpuesto.Name = "btnImpuesto";
             this.btnImpuesto.Size = new System.Drawing.Size(29, 27);
             this.btnImpuesto.TabIndex = 54;
@@ -1762,9 +1791,9 @@
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(13, 13);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(56, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Criterio:";
+            this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
@@ -1908,10 +1937,10 @@
             this.tabPagPrecio.PerformLayout();
             this.grbCostoProd.ResumeLayout(false);
             this.grbCostoProd.PerformLayout();
-            this.grbConIGV.ResumeLayout(false);
-            this.grbConIGV.PerformLayout();
-            this.grbSinIGV.ResumeLayout(false);
-            this.grbSinIGV.PerformLayout();
+            this.grbConImpto.ResumeLayout(false);
+            this.grbConImpto.PerformLayout();
+            this.grbSinImpto.ResumeLayout(false);
+            this.grbSinImpto.PerformLayout();
             this.panelMantenimiento.ResumeLayout(false);
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();
@@ -1990,22 +2019,22 @@
         private System.Windows.Forms.ComboBox cboTipoMoneda;
         private MetroFramework.Controls.MetroLabel lblImpuesto;
         private MetroFramework.Controls.MetroLabel lblTipoMoneda;
-        private System.Windows.Forms.GroupBox grbConIGV;
-        private System.Windows.Forms.GroupBox grbSinIGV;
+        private System.Windows.Forms.GroupBox grbConImpto;
+        private System.Windows.Forms.GroupBox grbSinImpto;
         private MetroFramework.Controls.MetroCheckBox chkInafecto;
         private MetroFramework.Controls.MetroCheckBox chkExento;
-        private MetroFramework.Controls.MetroCheckBox chkIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvMiConIGV;
+        private MetroFramework.Controls.MetroCheckBox chkImpto;
+        private MetroFramework.Controls.MetroTextBox txtPvMiConImpto;
         private MetroFramework.Controls.MetroLabel lblPvMiConIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvMaConIGV;
+        private MetroFramework.Controls.MetroTextBox txtPvMaConImpto;
         private MetroFramework.Controls.MetroLabel lblPvMaConIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvPuConIGV;
+        private MetroFramework.Controls.MetroTextBox txtPvPuConImpto;
         private MetroFramework.Controls.MetroLabel lblPvPuConIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvMiSinIGV;
+        private MetroFramework.Controls.MetroTextBox txtPvMiSinImpto;
         private MetroFramework.Controls.MetroLabel lblPvMiSinIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvMaSinIGV;
+        private MetroFramework.Controls.MetroTextBox txtPvMaSinImpto;
         private MetroFramework.Controls.MetroLabel lblPvMaSinIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvPuSinIGV;
+        private MetroFramework.Controls.MetroTextBox txtPvPuSinImpto;
         private MetroFramework.Controls.MetroLabel lblPvPuSinIGV;
         private System.Windows.Forms.ComboBox cboUnidadMedida;
         private MetroFramework.Controls.MetroLabel lblUnidadMedida;
@@ -2026,5 +2055,7 @@
         private System.Windows.Forms.Label lblNumInactivo;
         private System.Windows.Forms.Label lblNumActivo;
         private System.Windows.Forms.Label lblNumReg;
+        private System.Windows.Forms.Label lblPorcentajeAcumuladoImpto;
+        private System.Windows.Forms.Label lblSimboloPorcentaje;
     }
 }

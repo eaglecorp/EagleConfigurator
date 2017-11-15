@@ -17,6 +17,7 @@ using ConfigUtilitarios;
 using System.Globalization;
 using ConfiguradorUI.Maestro;
 using ConfigUtilitarios.KeyValues;
+using ConfigBusinessLogic.Utiles;
 
 namespace ConfiguradorUI.Producto
 {
@@ -29,8 +30,6 @@ namespace ConfiguradorUI.Producto
         bool isPending = false;
         bool preguntar = true;
         private int TipoOperacion = TipoOperacionABM.No_Action;
-        private List<MSTt06_impuesto> lstImpuesto = null;
-
 
         string codBarraSelected = "";
         string cod1Selected = "";
@@ -43,13 +42,14 @@ namespace ConfiguradorUI.Producto
         }
 
         #region Métodos de ventana
+
         private void addHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             var txts = new[] {  txtNombre, txtCodBarra, txtCodigo01,txtCodigo02,
                                 txtReferencia,txtAltura,txtAncho,txtLargo,txtPeso,txtDiametro,
-                                txtPvPuSinIGV,txtPvMiSinIGV,txtPvMaSinIGV,
-                                txtPvPuConIGV,txtPvMiConIGV,txtPvMaConIGV,txtCostoProd};
+                                txtPvPuSinImpto,txtPvMiSinImpto,txtPvMaSinImpto,
+                                txtPvPuConImpto,txtPvMiConImpto,txtPvMaConImpto,txtCostoProd};
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
@@ -66,7 +66,7 @@ namespace ConfiguradorUI.Producto
 
 
             var chks = new[] {chkProductoVenta,chkProductoCompra,chkCombo,chkReceta,
-                                chkActivo,chkIGV, chkExento,chkInafecto};
+                                chkActivo,chkImpto, chkExento,chkInafecto};
 
             foreach (var chk in chks)
             {
@@ -74,19 +74,17 @@ namespace ConfiguradorUI.Producto
             }
 
 
-            txtPvPuSinIGV.KeyPress += ValidarTxtDecimal;
-            txtPvMiSinIGV.KeyPress += ValidarTxtDecimal;
-            txtPvMaSinIGV.KeyPress += ValidarTxtDecimal;
+            txtPvPuSinImpto.KeyPress += ValidarTxtDecimal;
+            txtPvMiSinImpto.KeyPress += ValidarTxtDecimal;
+            txtPvMaSinImpto.KeyPress += ValidarTxtDecimal;
 
-            txtPvPuConIGV.KeyPress += ValidarTxtDecimal;
-            txtPvMiConIGV.KeyPress += ValidarTxtDecimal;
-            txtPvMaConIGV.KeyPress += ValidarTxtDecimal;
+            txtPvPuConImpto.KeyPress += ValidarTxtDecimal;
+            txtPvMiConImpto.KeyPress += ValidarTxtDecimal;
+            txtPvMaConImpto.KeyPress += ValidarTxtDecimal;
 
             txtCostoProd.KeyPress += ValidarTxtDecimal;
 
         }
-
-
         protected void OnContentChanged(object sender, EventArgs e)
         {
             if (isSelected && isChangedRow == false && TipoOperacion != TipoOperacionABM.Cambio)
@@ -163,6 +161,18 @@ namespace ConfiguradorUI.Producto
                                 {
                                     new ProductoBL().EliminarProducto(id);
                                     ControlarEventosABM();
+
+                                    if (EsEliminacionValida(id))
+                                    {
+                                        new ProductoBL().EliminarProducto(id);
+                                        ControlarEventosABM();
+                                    }
+                                    else
+                                    {
+                                        TipoOperacion = TipoOperacionABM.No_Action;
+                                        ControlarEventosABM();
+                                        MessageBox.Show(this, "Este registro no se puede eliminar porque se usa en otro lado.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
                                 }
                             }
                             else
@@ -296,49 +306,41 @@ namespace ConfiguradorUI.Producto
                 oProducto.sn_combo = chkCombo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 oProducto.sn_exento = chkExento.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 oProducto.sn_inafecto = chkInafecto.Checked ? Estado.IdActivo : Estado.IdInactivo;
-                oProducto.sn_incluye_impto = chkIGV.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                oProducto.sn_incluye_impto = chkImpto.Checked ? Estado.IdActivo : Estado.IdInactivo;
 
 
-                if (string.IsNullOrEmpty(txtPvPuSinIGV.Text.Trim()))
+                if (string.IsNullOrEmpty(txtPvPuSinImpto.Text.Trim()))
                     oProducto.mto_pvpu_sin_igv = null;
-                else oProducto.mto_pvpu_sin_igv = decimal.Parse(txtPvPuSinIGV.Text);
+                else oProducto.mto_pvpu_sin_igv = decimal.Parse(txtPvPuSinImpto.Text);
 
-                if (string.IsNullOrEmpty(txtPvMiSinIGV.Text.Trim()))
+                if (string.IsNullOrEmpty(txtPvMiSinImpto.Text.Trim()))
                     oProducto.mto_pvmi_sin_igv = null;
-                else oProducto.mto_pvmi_sin_igv = decimal.Parse(txtPvMiSinIGV.Text);
+                else oProducto.mto_pvmi_sin_igv = decimal.Parse(txtPvMiSinImpto.Text);
 
-                if (string.IsNullOrEmpty(txtPvMaSinIGV.Text.Trim()))
+                if (string.IsNullOrEmpty(txtPvMaSinImpto.Text.Trim()))
                     oProducto.mto_pvma_sin_igv = null;
-                else oProducto.mto_pvma_sin_igv = decimal.Parse(txtPvMaSinIGV.Text);
+                else oProducto.mto_pvma_sin_igv = decimal.Parse(txtPvMaSinImpto.Text);
 
-                if (string.IsNullOrEmpty(txtPvPuConIGV.Text.Trim()))
+                if (string.IsNullOrEmpty(txtPvPuConImpto.Text.Trim()))
                     oProducto.mto_pvpu_con_igv = null;
-                else oProducto.mto_pvpu_con_igv = decimal.Parse(txtPvPuConIGV.Text);
+                else oProducto.mto_pvpu_con_igv = decimal.Parse(txtPvPuConImpto.Text);
 
-                if (string.IsNullOrEmpty(txtPvMiConIGV.Text.Trim()))
+                if (string.IsNullOrEmpty(txtPvMiConImpto.Text.Trim()))
                     oProducto.mto_pvmi_con_igv = null;
-                else oProducto.mto_pvmi_con_igv = decimal.Parse(txtPvMiConIGV.Text);
+                else oProducto.mto_pvmi_con_igv = decimal.Parse(txtPvMiConImpto.Text);
 
-                if (string.IsNullOrEmpty(txtPvMaConIGV.Text.Trim()))
+                if (string.IsNullOrEmpty(txtPvMaConImpto.Text.Trim()))
                     oProducto.mto_pvma_con_igv = null;
-                else oProducto.mto_pvma_con_igv = decimal.Parse(txtPvMaConIGV.Text);
+                else oProducto.mto_pvma_con_igv = decimal.Parse(txtPvMaConImpto.Text);
 
                 if (string.IsNullOrEmpty(txtCostoProd.Text.Trim()))
                     oProducto.costo_prod = null;
                 else oProducto.costo_prod = decimal.Parse(txtCostoProd.Text);
 
-
-                if (cboImpuesto.SelectedValue != null && cboImpuesto.SelectedValue.ToString() != "")
+                if (int.TryParse(cboImpuesto.SelectedValue?.ToString(), out int id_impto))
                 {
-                    oProducto.id_impuesto = int.Parse(cboImpuesto.SelectedValue.ToString());
-                    try
-                    {
-                        oProducto.por_impto = lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto01;
-                    }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show(this, "No se pudo obtener el porcentaje del impuesto seleccionado. " + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    oProducto.id_impuesto = id_impto;
+                    oProducto.por_impto = GetPorcentajeImpuesto();
                 }
                 else
                 {
@@ -443,30 +445,31 @@ namespace ConfiguradorUI.Producto
             else
                 cboImpuesto.SelectedIndex = -1;
 
+            lblPorcentajeAcumuladoImpto.Text = obj.por_impto == null ? "-" : obj.por_impto.RemoveTrailingZeros();
             chkExento.Checked = obj.sn_exento == 1 ? true : false;
             chkInafecto.Checked = obj.sn_inafecto == 1 ? true : false;
 
             if (obj.sn_incluye_impto == Estado.IdActivo)
             {
-                chkIGV.Checked = true;
-                grbSinIGV.Enabled = false;
-                grbConIGV.Enabled = true;
+                chkImpto.Checked = true;
+                grbSinImpto.Enabled = false;
+                grbConImpto.Enabled = true;
             }
             else
             {
-                chkIGV.Checked = false;
-                grbSinIGV.Enabled = true;
-                grbConIGV.Enabled = false;
+                chkImpto.Checked = false;
+                grbSinImpto.Enabled = true;
+                grbConImpto.Enabled = false;
             }
 
             //Importante el orden, sobreescribe las acciones del evento.
-            txtPvPuConIGV.Text = (obj.mto_pvpu_con_igv == null) ? "" : obj.mto_pvpu_con_igv.RemoveTrailingZeros();
-            txtPvMiConIGV.Text = (obj.mto_pvmi_con_igv == null) ? "" : obj.mto_pvmi_con_igv.RemoveTrailingZeros();
-            txtPvMaConIGV.Text = (obj.mto_pvma_con_igv == null) ? "" : obj.mto_pvma_con_igv.RemoveTrailingZeros();
+            txtPvPuConImpto.Text = (obj.mto_pvpu_con_igv == null) ? "" : obj.mto_pvpu_con_igv.RemoveTrailingZeros();
+            txtPvMiConImpto.Text = (obj.mto_pvmi_con_igv == null) ? "" : obj.mto_pvmi_con_igv.RemoveTrailingZeros();
+            txtPvMaConImpto.Text = (obj.mto_pvma_con_igv == null) ? "" : obj.mto_pvma_con_igv.RemoveTrailingZeros();
 
-            txtPvPuSinIGV.Text = (obj.mto_pvpu_sin_igv == null) ? "" : obj.mto_pvpu_sin_igv.RemoveTrailingZeros();
-            txtPvMiSinIGV.Text = (obj.mto_pvmi_sin_igv == null) ? "" : obj.mto_pvmi_sin_igv.RemoveTrailingZeros();
-            txtPvMaSinIGV.Text = (obj.mto_pvma_sin_igv == null) ? "" : obj.mto_pvma_sin_igv.RemoveTrailingZeros();
+            txtPvPuSinImpto.Text = (obj.mto_pvpu_sin_igv == null) ? "" : obj.mto_pvpu_sin_igv.RemoveTrailingZeros();
+            txtPvMiSinImpto.Text = (obj.mto_pvmi_sin_igv == null) ? "" : obj.mto_pvmi_sin_igv.RemoveTrailingZeros();
+            txtPvMaSinImpto.Text = (obj.mto_pvma_sin_igv == null) ? "" : obj.mto_pvma_sin_igv.RemoveTrailingZeros();
 
             txtCostoProd.Text = (obj.costo_prod == null) ? "" : obj.costo_prod.RemoveTrailingZeros();
         }
@@ -594,17 +597,17 @@ namespace ConfiguradorUI.Producto
 
             if (no_error)
             {
-                if ((chkIGV.Checked && grbSinIGV.Enabled == false))
+                if ((chkImpto.Checked && grbSinImpto.Enabled == false))
                 {
                     decimal nro = 0;
 
-                    if (txtPvPuConIGV.Text.Length > 0)
+                    if (txtPvPuConImpto.Text.Length > 0)
                     {
-                        if (!decimal.TryParse(txtPvPuConIGV.Text, out nro))
+                        if (!decimal.TryParse(txtPvPuConImpto.Text, out nro))
                         {
                             tabProducto.SelectedTab = tabPagPrecio;
-                            errorProv.SetError(txtPvPuConIGV, "Tiene que ingresar un número.");
-                            txtPvPuConIGV.Focus();
+                            errorProv.SetError(txtPvPuConImpto, "Tiene que ingresar un número.");
+                            txtPvPuConImpto.Focus();
                             no_error = false;
                         }
                     }
@@ -613,15 +616,15 @@ namespace ConfiguradorUI.Producto
                         if (chkProductoVenta.Checked || (chkProductoVenta.Checked == false && chkProductoCompra.Checked == false && txtCostoProd.Text.Length <= 0))
                         {
                             tabProducto.SelectedTab = tabPagPrecio;
-                            errorProv.SetError(txtPvPuConIGV, "Este campo es requerido.");
-                            txtPvPuConIGV.Focus();
+                            errorProv.SetError(txtPvPuConImpto, "Este campo es requerido.");
+                            txtPvPuConImpto.Focus();
                             no_error = false;
                         }
                     }
 
                     if (no_error)
                     {
-                        var txtsNumericos = new[] { txtPvMiConIGV, txtPvMaConIGV };
+                        var txtsNumericos = new[] { txtPvMiConImpto, txtPvMaConImpto };
                         foreach (var txtNum in txtsNumericos)
                         {
 
@@ -639,7 +642,7 @@ namespace ConfiguradorUI.Producto
                                 }
                                 else
                                 {
-                                
+
                                     if (!(montoPv > 0 && montoPv < Math.Round(KeyAmounts.MaxAmount)))
                                     {
                                         tabProducto.SelectedTab = tabPagPrecio;
@@ -657,16 +660,16 @@ namespace ConfiguradorUI.Producto
                     {
                         decimal pvMa = 0, pvMi = 0, pvUn = 0;
 
-                        if (txtPvMaConIGV.Text.Length > 0) pvMa = decimal.Parse(txtPvMaConIGV.Text);
-                        if (txtPvMiConIGV.Text.Length > 0) pvMi = decimal.Parse(txtPvMiConIGV.Text);
-                        if (txtPvPuConIGV.Text.Length > 0) pvUn = decimal.Parse(txtPvPuConIGV.Text);
+                        if (txtPvMaConImpto.Text.Length > 0) pvMa = decimal.Parse(txtPvMaConImpto.Text);
+                        if (txtPvMiConImpto.Text.Length > 0) pvMi = decimal.Parse(txtPvMiConImpto.Text);
+                        if (txtPvPuConImpto.Text.Length > 0) pvUn = decimal.Parse(txtPvPuConImpto.Text);
 
                         if (pvMa != 0 && pvUn != 0 && pvUn >= pvMa)
                         {
                             tabProducto.SelectedTab = tabPagPrecio;
                             MessageBox.Show("El precio unitario no puede ser mayor o igual al máximo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            errorProv.SetError(txtPvPuConIGV, "El precio unitario no puede ser mayor o igual al precio máximo.");
-                            txtPvPuConIGV.Focus();
+                            errorProv.SetError(txtPvPuConImpto, "El precio unitario no puede ser mayor o igual al precio máximo.");
+                            txtPvPuConImpto.Focus();
                             no_error = false;
                         }
                         else
@@ -675,33 +678,33 @@ namespace ConfiguradorUI.Producto
                             {
                                 tabProducto.SelectedTab = tabPagPrecio;
                                 MessageBox.Show("El precio mínimo no puede ser mayor o igual al precio máximo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                errorProv.SetError(txtPvMiConIGV, "El precio mínimo no puede ser mayor o igual al precio máximo.");
-                                txtPvMiConIGV.Focus();
+                                errorProv.SetError(txtPvMiConImpto, "El precio mínimo no puede ser mayor o igual al precio máximo.");
+                                txtPvMiConImpto.Focus();
                                 no_error = false;
                             }
                             else if (pvUn != 0 && pvMi != 0 && pvMi >= pvUn)
                             {
                                 tabProducto.SelectedTab = tabPagPrecio;
                                 MessageBox.Show("El precio mínimo no puede ser mayor o igual al precio unitario.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                errorProv.SetError(txtPvMiConIGV, "El precio mínimo no puede ser mayor o igual al precio unitario.");
-                                txtPvMiConIGV.Focus();
+                                errorProv.SetError(txtPvMiConImpto, "El precio mínimo no puede ser mayor o igual al precio unitario.");
+                                txtPvMiConImpto.Focus();
                                 no_error = false;
                             }
 
                         }
                     }
                 }
-                else if (chkIGV.Checked == false && grbConIGV.Enabled == false)
+                else if (chkImpto.Checked == false && grbConImpto.Enabled == false)
                 {
                     decimal num = 0;
 
-                    if (txtPvPuSinIGV.Text.Length > 0)
+                    if (txtPvPuSinImpto.Text.Length > 0)
                     {
-                        if (!decimal.TryParse(txtPvPuSinIGV.Text, out num))
+                        if (!decimal.TryParse(txtPvPuSinImpto.Text, out num))
                         {
                             tabProducto.SelectedTab = tabPagPrecio;
-                            errorProv.SetError(txtPvPuSinIGV, "Tiene que ingresar un número.");
-                            txtPvPuSinIGV.Focus();
+                            errorProv.SetError(txtPvPuSinImpto, "Tiene que ingresar un número.");
+                            txtPvPuSinImpto.Focus();
                             no_error = false;
                         }
                     }
@@ -710,15 +713,15 @@ namespace ConfiguradorUI.Producto
                         if (chkProductoVenta.Checked || (chkProductoVenta.Checked == false && chkProductoCompra.Checked == false && txtCostoProd.Text.Length <= 0))
                         {
                             tabProducto.SelectedTab = tabPagPrecio;
-                            errorProv.SetError(txtPvPuSinIGV, "Este campo es requerido.");
-                            txtPvPuSinIGV.Focus();
+                            errorProv.SetError(txtPvPuSinImpto, "Este campo es requerido.");
+                            txtPvPuSinImpto.Focus();
                             no_error = false;
                         }
                     }
 
                     if (no_error)
                     {
-                        var txtsNumericos = new[] { txtPvMiSinIGV, txtPvMaSinIGV };
+                        var txtsNumericos = new[] { txtPvMiSinImpto, txtPvMaSinImpto };
                         foreach (var txtNum in txtsNumericos)
                         {
 
@@ -754,16 +757,16 @@ namespace ConfiguradorUI.Producto
                     {
                         decimal pvMa = 0, pvMi = 0, pvUn = 0;
 
-                        if (txtPvMaSinIGV.Text.Length > 0) pvMa = decimal.Parse(txtPvMaSinIGV.Text);
-                        if (txtPvMiSinIGV.Text.Length > 0) pvMi = decimal.Parse(txtPvMiSinIGV.Text);
-                        if (txtPvPuSinIGV.Text.Length > 0) pvUn = decimal.Parse(txtPvPuSinIGV.Text);
+                        if (txtPvMaSinImpto.Text.Length > 0) pvMa = decimal.Parse(txtPvMaSinImpto.Text);
+                        if (txtPvMiSinImpto.Text.Length > 0) pvMi = decimal.Parse(txtPvMiSinImpto.Text);
+                        if (txtPvPuSinImpto.Text.Length > 0) pvUn = decimal.Parse(txtPvPuSinImpto.Text);
 
                         if (pvMa != 0 && pvUn != 0 && pvUn >= pvMa)
                         {
                             tabProducto.SelectedTab = tabPagPrecio;
                             MessageBox.Show("El precio unitario no puede ser mayor o igual al máximo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            errorProv.SetError(txtPvPuSinIGV, "El precio unitario no puede ser mayor o igual al precio máximo.");
-                            txtPvPuSinIGV.Focus();
+                            errorProv.SetError(txtPvPuSinImpto, "El precio unitario no puede ser mayor o igual al precio máximo.");
+                            txtPvPuSinImpto.Focus();
                             no_error = false;
                         }
                         else
@@ -772,16 +775,16 @@ namespace ConfiguradorUI.Producto
                             {
                                 tabProducto.SelectedTab = tabPagPrecio;
                                 MessageBox.Show("El precio mínimo no puede ser mayor o igual al precio máximo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                errorProv.SetError(txtPvMiSinIGV, "El precio mínimo no puede ser mayor o igual al precio máximo.");
-                                txtPvMiSinIGV.Focus();
+                                errorProv.SetError(txtPvMiSinImpto, "El precio mínimo no puede ser mayor o igual al precio máximo.");
+                                txtPvMiSinImpto.Focus();
                                 no_error = false;
                             }
                             else if (pvUn != 0 && pvMi != 0 && pvMi >= pvUn)
                             {
                                 tabProducto.SelectedTab = tabPagPrecio;
                                 MessageBox.Show("El precio mínimo no puede ser mayor o igual al precio unitario.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                errorProv.SetError(txtPvMiSinIGV, "El precio mínimo no puede ser mayor o igual al precio unitario.");
-                                txtPvMiSinIGV.Focus();
+                                errorProv.SetError(txtPvMiSinImpto, "El precio mínimo no puede ser mayor o igual al precio unitario.");
+                                txtPvMiSinImpto.Focus();
                                 no_error = false;
                             }
 
@@ -833,14 +836,42 @@ namespace ConfiguradorUI.Producto
                     }
                 }
             }
-
             #endregion
 
-
-
+            if (no_error && !chkActivo.Checked && TipoOperacion == TipoOperacionABM.Modificar)
+            {
+                long id = 0;
+                if (long.TryParse(lblIdProducto.Text, out id))
+                {
+                    if (!EsEliminacionValida(id))
+                    {
+                        MessageBox.Show(this, "Este registro no se puede desactivar porque se usa en otro lado.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        tabProducto.SelectedTab = tabPagGeneral;
+                        errorProv.SetError(chkActivo, "No puede desactivarlo, está usándose en otro lado.");
+                        chkActivo.Focus();
+                        no_error = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(this, "No se pudo obtener el id para verificar la validación.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    no_error = false;
+                }
+            }
 
             return no_error;
         }
+
+        private bool EsEliminacionValida(long id)
+        {
+            bool validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Producto_ComboFixedDtl);
+            if (validDelete)
+            {
+                validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Producto_ComboVariableDtl);
+            }
+            return validDelete;
+        }
+
         private void Filtrar(int criterio, string filtro)
         {
             int index = 0;
@@ -960,127 +991,106 @@ namespace ConfiguradorUI.Producto
             return id;
         }
 
-
-        private string CalPrecioSinImpuesto(string txt_precio_con_impto)
+        private string CalPrecioSinImpuesto(decimal precio_con_impto)
         {
-            //ver -1
             string precio_sin_impt = "0";
             try
             {
-                decimal precio_con_impto = decimal.Parse(txt_precio_con_impto);
-                decimal por_impto = 0;
-                if (cboImpuesto.SelectedValue != null)
-                    por_impto = (decimal)lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto01;
-
-                if (por_impto == 0)
-                {
-                    precio_sin_impt = precio_con_impto.RemoveTrailingZeros();
-                }
-                else
-                {
-                    precio_sin_impt = ((100 * precio_con_impto) / (100 + por_impto)).RemoveTrailingZeros();
-                }
-
+                decimal por_impto = GetPorcentajeImpuesto();
+                precio_sin_impt = por_impto == 0 ? precio_con_impto.RemoveTrailingZeros() :
+                                                    ((100 * precio_con_impto) / (100 + por_impto)).RemoveTrailingZeros();
             }
             catch (Exception e)
             {
-                MessageBox.Show(this, "Excepción: No se puedo calcular el precio sin impuesto. " + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "No se puedo calcular el precio sin impuesto. Excepción:" + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             return precio_sin_impt;
         }
-        private string CalPrecioConImpuesto(string txt_precio_sin_impto)
+        private string CalPrecioConImpuesto(decimal precio_sin_impto)
         {
             string precio_con_impt = "0";
             try
             {
-                decimal precio_sin_impto = decimal.Parse(txt_precio_sin_impto);
-                decimal por_impto = 0;
-                if (cboImpuesto.SelectedValue != null)
-                    por_impto = (decimal)lstImpuesto.SingleOrDefault(x => x.id_impuesto == int.Parse(cboImpuesto.SelectedValue.ToString())).por_impto01;
-                if (por_impto == 0)
-                {
-                    precio_con_impt = precio_sin_impto.RemoveTrailingZeros();
-                }
-                else
-                {
-                    precio_con_impt = (precio_sin_impto * (1 + (por_impto / 100))).RemoveTrailingZeros();
-                }
-
+                decimal por_impto = GetPorcentajeImpuesto();
+                precio_con_impt = por_impto == 0 ? precio_sin_impto.RemoveTrailingZeros() :
+                                                    (precio_sin_impto * (1 + (por_impto / 100))).RemoveTrailingZeros();
             }
             catch (Exception e)
             {
-                MessageBox.Show(this, "Excepción: No se puedo calcular el precio con impuesto. " + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "No se puedo calcular el precio con impuesto. Excepción:" + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             return precio_con_impt;
         }
-        private void ActualizarPreciosSinIGV()
+
+        private decimal GetPorcentajeImpuesto()
         {
-            decimal a = 0, b = 0, c = 0;
+            decimal.TryParse(lblPorcentajeAcumuladoImpto.Text, out decimal porcentaje);
+            return porcentaje;
+        }
 
-            if (decimal.TryParse(txtPvPuConIGV.Text, out a))
+        private void ActualizarPreciosSinImpto()
+        {
+            if (decimal.TryParse(txtPvPuConImpto.Text, out decimal pvPuConImpto))
             {
-                txtPvPuSinIGV.Text = CalPrecioSinImpuesto(txtPvPuConIGV.Text);
+                txtPvPuSinImpto.Text = CalPrecioSinImpuesto(pvPuConImpto);
             }
-            if (decimal.TryParse(txtPvMiConIGV.Text, out b))
+            if (decimal.TryParse(txtPvMiConImpto.Text, out decimal pvMiConImpto))
             {
-                txtPvMiSinIGV.Text = CalPrecioSinImpuesto(txtPvMiConIGV.Text);
+                txtPvMiSinImpto.Text = CalPrecioSinImpuesto(pvMiConImpto);
             }
-
-            if (decimal.TryParse(txtPvMaConIGV.Text, out c))
+            if (decimal.TryParse(txtPvMaConImpto.Text, out decimal pvMaConImpto))
             {
-                txtPvMaSinIGV.Text = CalPrecioSinImpuesto(txtPvMaConIGV.Text);
+                txtPvMaSinImpto.Text = CalPrecioSinImpuesto(pvMaConImpto);
             }
         }
-        private void ActualizarPreciosConIGV()
+        private void ActualizarPreciosConImpto()
         {
-            decimal a = 0, b = 0, c = 0;
-
-            if (decimal.TryParse(txtPvPuSinIGV.Text, out a))
+            if (decimal.TryParse(txtPvPuSinImpto.Text, out decimal pvPuSinImpto))
             {
-                txtPvPuConIGV.Text = CalPrecioConImpuesto(txtPvPuSinIGV.Text);
+                txtPvPuConImpto.Text = CalPrecioConImpuesto(pvPuSinImpto);
             }
             else
             {
-                txtPvPuSinIGV.Clear();
+                txtPvPuSinImpto.Clear();
             }
-            if (decimal.TryParse(txtPvMiSinIGV.Text, out b))
+            if (decimal.TryParse(txtPvMiSinImpto.Text, out decimal pvMiSinImpto))
             {
-                txtPvMiConIGV.Text = CalPrecioConImpuesto(txtPvMiSinIGV.Text);
+                txtPvMiConImpto.Text = CalPrecioConImpuesto(pvMiSinImpto);
             }
             else
             {
-                txtPvMiSinIGV.Clear();
+                txtPvMiSinImpto.Clear();
             }
 
-            if (decimal.TryParse(txtPvMaSinIGV.Text, out c))
+            if (decimal.TryParse(txtPvMaSinImpto.Text, out decimal pvMaSinImpto))
             {
-                txtPvMaConIGV.Text = CalPrecioConImpuesto(txtPvMaSinIGV.Text);
+                txtPvMaConImpto.Text = CalPrecioConImpuesto(pvMaSinImpto);
             }
             else
             {
-                txtPvMaSinIGV.Clear();
+                txtPvMaSinImpto.Clear();
             }
         }
-        private void ControlarCheckIGV()
+        private void ControlarCheckImpto()
         {
             try
             {
-                if (!chkIGV.Checked)
+                if (!chkImpto.Checked)
                 {
-                    txtPvPuConIGV.Text = txtPvPuSinIGV.Text;
-                    txtPvMiConIGV.Text = txtPvMiSinIGV.Text;
-                    txtPvMaConIGV.Text = txtPvMaSinIGV.Text;
+                    txtPvPuConImpto.Text = txtPvPuSinImpto.Text;
+                    txtPvMiConImpto.Text = txtPvMiSinImpto.Text;
+                    txtPvMaConImpto.Text = txtPvMaSinImpto.Text;
 
-                    grbConIGV.Enabled = false;
-                    grbSinIGV.Enabled = true;
-                    txtPvPuSinIGV.Focus();
+                    grbConImpto.Enabled = false;
+                    grbSinImpto.Enabled = true;
+                    txtPvPuSinImpto.Focus();
                 }
                 else
                 {
-                    grbSinIGV.Enabled = false;
-                    grbConIGV.Enabled = true;
-                    ActualizarPreciosConIGV();
-                    txtPvPuConIGV.Focus();
+                    grbSinImpto.Enabled = false;
+                    grbConImpto.Enabled = true;
+                    ActualizarPreciosConImpto();
+                    txtPvPuConImpto.Focus();
 
                 }
             }
@@ -1161,18 +1171,18 @@ namespace ConfiguradorUI.Producto
             chkExento.Checked = false;
             chkInafecto.Checked = false;
 
-            txtPvPuConIGV.Clear();
-            txtPvMiConIGV.Clear();
-            txtPvMaConIGV.Clear();
+            txtPvPuConImpto.Clear();
+            txtPvMiConImpto.Clear();
+            txtPvMaConImpto.Clear();
 
-            chkIGV.Checked = false;
+            chkImpto.Checked = false;
 
-            grbSinIGV.Enabled = true;
-            grbConIGV.Enabled = false;
+            grbSinImpto.Enabled = true;
+            grbConImpto.Enabled = false;
 
-            txtPvPuSinIGV.Clear();
-            txtPvMiSinIGV.Clear();
-            txtPvMaSinIGV.Clear();
+            txtPvPuSinImpto.Clear();
+            txtPvMiSinImpto.Clear();
+            txtPvMaSinImpto.Clear();
 
             txtCostoProd.Clear();
         }
@@ -1357,12 +1367,10 @@ namespace ConfiguradorUI.Producto
                 cboTipoMoneda.ValueMember = "id_tipo_moneda";
                 cboTipoMoneda.DataSource = new TipoMonedaBL().ListaTipoMoneda(Estado.IdActivo, true);
 
-
-                lstImpuesto = new List<MSTt06_impuesto>();
                 cboImpuesto.DataSource = null;
                 cboImpuesto.DisplayMember = "txt_abrv";
                 cboImpuesto.ValueMember = "id_impuesto";
-                cboImpuesto.DataSource = lstImpuesto = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
+                cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
             }
             catch (Exception e)
             {
@@ -1408,18 +1416,28 @@ namespace ConfiguradorUI.Producto
 
             dgvProducto.EnableHeadersVisualStyles = false;
         }
-        private void SetMaxLengthTxt()
+        private void ConfigurarControles()
         {
+            txtPvPuConImpto.TextAlign = HorizontalAlignment.Right;
+            txtPvMiConImpto.TextAlign = HorizontalAlignment.Right;
+            txtPvMaConImpto.TextAlign = HorizontalAlignment.Right;
+
+            txtPvPuSinImpto.TextAlign = HorizontalAlignment.Right;
+            txtPvMiSinImpto.TextAlign = HorizontalAlignment.Right;
+            txtPvMaSinImpto.TextAlign = HorizontalAlignment.Right;
+
+            txtCostoProd.TextAlign = HorizontalAlignment.Right;
+
             txtCodigo01.MaxLength = 50;
             txtCodigo02.MaxLength = 50;
             txtCodBarra.MaxLength = 20;
             txtNombre.MaxLength = 350;
-            txtPvPuConIGV.MaxLength = 19;
-            txtPvMiConIGV.MaxLength = 19;
-            txtPvMaConIGV.MaxLength = 19;
-            txtPvPuSinIGV.MaxLength = 19;
-            txtPvMaSinIGV.MaxLength = 19;
-            txtPvMiSinIGV.MaxLength = 19;
+            txtPvPuConImpto.MaxLength = 19;
+            txtPvMiConImpto.MaxLength = 19;
+            txtPvMaConImpto.MaxLength = 19;
+            txtPvPuSinImpto.MaxLength = 19;
+            txtPvMaSinImpto.MaxLength = 19;
+            txtPvMiSinImpto.MaxLength = 19;
             txtCostoProd.MaxLength = 19;
             txtPeso.MaxLength = 10;
             txtLargo.MaxLength = 10;
@@ -1449,7 +1467,7 @@ namespace ConfiguradorUI.Producto
         private void SetInit()
         {
             lblIdProducto.Visible = false;
-            SetMaxLengthTxt();
+            ConfigurarControles();
             ControlarEventosABM();
             CargarCombos();
             LimpiarForm();
@@ -1548,110 +1566,123 @@ namespace ConfiguradorUI.Producto
             txtFiltro.Focus();
         }
 
-        private void txtPvPuConIGV_TextChanged(object sender, EventArgs e)
+        #region Eventos de Cálculos
+        private void txtPvPuConImpto_TextChanged(object sender, EventArgs e)
         {
-            if (chkIGV.Checked)
+            if (chkImpto.Checked)
             {
-                decimal mto = 0;
-                if (decimal.TryParse(txtPvPuConIGV.Text, out mto))
+                if (decimal.TryParse(txtPvPuConImpto.Text, out decimal pvPuConImpto))
                 {
-                    txtPvPuSinIGV.Text = CalPrecioSinImpuesto(mto.ToString());
+                    txtPvPuSinImpto.Text = CalPrecioSinImpuesto(pvPuConImpto);
                 }
                 else
                 {
-                    txtPvPuSinIGV.Clear();
+                    txtPvPuSinImpto.Clear();
                 }
             }
             isChangedRow = false;
         }
-        private void txtPvMiConIGV_TextChanged(object sender, EventArgs e)
+        private void txtPvMiConImpto_TextChanged(object sender, EventArgs e)
         {
-
-            if (chkIGV.Checked)
+            if (chkImpto.Checked)
             {
-                decimal mto = 0;
-                if (decimal.TryParse(txtPvMiConIGV.Text, out mto))
+                if (decimal.TryParse(txtPvMiConImpto.Text, out decimal pvMiConImpto))
                 {
-                    txtPvMiSinIGV.Text = CalPrecioSinImpuesto(mto.ToString());
+                    txtPvMiSinImpto.Text = CalPrecioSinImpuesto(pvMiConImpto);
                 }
                 else
                 {
-                    txtPvMiSinIGV.Clear();
+                    txtPvMiSinImpto.Clear();
                 }
-
             }
             isChangedRow = false;
         }
-        private void txtPvMaConIGV_TextChanged(object sender, EventArgs e)
+        private void txtPvMaConImpto_TextChanged(object sender, EventArgs e)
         {
-
-            if (chkIGV.Checked)
+            if (chkImpto.Checked)
             {
-                decimal mto = 0;
-                if (decimal.TryParse(txtPvMaConIGV.Text, out mto))
+                if (decimal.TryParse(txtPvMaConImpto.Text, out decimal pvMaConImpto))
                 {
-                    txtPvMaSinIGV.Text = CalPrecioSinImpuesto(mto.ToString());
+                    txtPvMaSinImpto.Text = CalPrecioSinImpuesto(pvMaConImpto);
                 }
                 else
                 {
-                    txtPvMaSinIGV.Clear();
+                    txtPvMaSinImpto.Clear();
                 }
             }
             isChangedRow = false;
         }
 
-        private void txtPvPuSinIGV_TextChanged(object sender, EventArgs e)
+        private void txtPvPuSinImpto_TextChanged(object sender, EventArgs e)
         {
-            if (!chkIGV.Checked)
+            if (!chkImpto.Checked)
             {
-                if (decimal.TryParse(txtPvPuSinIGV.Text, out decimal result))
+                if (decimal.TryParse(txtPvPuSinImpto.Text, out decimal pvPuSinImpto))
                 {
-                    txtPvPuConIGV.Text = txtPvPuSinIGV.Text;
+                    txtPvPuConImpto.Text = txtPvPuSinImpto.Text;
                 }
-                else txtPvPuConIGV.Clear();
+                else
+                {
+                    txtPvPuConImpto.Clear();
+                }
             }
             isChangedRow = false;
         }
-        private void txtPvMiSinIGV_TextChanged(object sender, EventArgs e)
+        private void txtPvMiSinImpto_TextChanged(object sender, EventArgs e)
         {
-            if (!chkIGV.Checked)
+            if (!chkImpto.Checked)
             {
-                if (decimal.TryParse(txtPvMiSinIGV.Text, out decimal result))
+                if (decimal.TryParse(txtPvMiSinImpto.Text, out decimal pvMiSinImpto))
                 {
-                    txtPvMiConIGV.Text = txtPvMiSinIGV.Text;
+                    txtPvMiConImpto.Text = txtPvMiSinImpto.Text;
                 }
-                else txtPvMiConIGV.Clear();
+                else
+                {
+                    txtPvMiConImpto.Clear();
+                }
             }
             isChangedRow = false;
         }
-        private void txtPvMaSinIGV_TextChanged(object sender, EventArgs e)
+        private void txtPvMaSinImpto_TextChanged(object sender, EventArgs e)
         {
-            if (!chkIGV.Checked)
+            if (!chkImpto.Checked)
             {
-                if (decimal.TryParse(txtPvMaSinIGV.Text, out decimal result))
+                if (decimal.TryParse(txtPvMaSinImpto.Text, out decimal pvMaSinImpto))
                 {
-                    txtPvMaConIGV.Text = txtPvMaSinIGV.Text;
+                    txtPvMaConImpto.Text = txtPvMaSinImpto.Text;
                 }
-                else txtPvMaConIGV.Clear();
+                else
+                {
+                    txtPvMaConImpto.Clear();
+                }
             }
             isChangedRow = false;
-
         }
 
-
-        private void chkIGV_CheckedChanged(object sender, EventArgs e)
+        private void chkImpto_CheckedChanged(object sender, EventArgs e)
         {
             errorProv.Clear();
-            ControlarCheckIGV();
+            ControlarCheckImpto();
             isChangedRow = false;
         }
+        #endregion
 
         private void cboImpuesto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (chkIGV.Checked)
+            decimal? porcentajeAcumulado = null;
+
+            if (int.TryParse(cboImpuesto.SelectedValue?.ToString(), out int id))
             {
-                ActualizarPreciosSinIGV();
+                porcentajeAcumulado = new ImpuestoBL().GetPorcentajeAcumulado(id);
             }
+
+            lblPorcentajeAcumuladoImpto.Text = porcentajeAcumulado == null ? "-" : porcentajeAcumulado.RemoveTrailingZeros();
+
+            if (chkImpto.Checked)
+            {
+                ActualizarPreciosSinImpto();
+            }
+
             isChangedRow = false;
         }
 
@@ -2096,7 +2127,7 @@ namespace ConfiguradorUI.Producto
                     cboImpuesto.DataSource = null;
                     cboImpuesto.DisplayMember = "txt_abrv";
                     cboImpuesto.ValueMember = "id_impuesto";
-                    cboImpuesto.DataSource = lstImpuesto = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
+                    cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
 
                     cboImpuesto.SelectedValue = oldValue;
                     TipoOperacion = op;
@@ -2166,8 +2197,6 @@ namespace ConfiguradorUI.Producto
             }
         }
 
-
         #endregion
-
     }
 }

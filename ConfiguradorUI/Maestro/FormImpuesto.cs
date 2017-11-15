@@ -3,6 +3,8 @@ using ConfigBusinessLogic;
 using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -40,13 +42,28 @@ namespace ConfiguradorUI.Maestro
         private void addHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
-            var txts = new[] { txtNombre, txtAbreviacion, txtCodigo, txtPorcentaje };
+            var decimalsTxt = new[]{ txtPorcentaje01,
+                                txtPorcentaje02,
+                                txtPorcentaje03,
+                                txtPorcentaje04,
+                                txtPorcentaje05,
+                                txtPorcentaje06,
+                                txtPorcentaje07,
+                                txtPorcentaje08 };
+
+
+            var txts = new[] { txtNombre,
+                                txtAbreviacion,
+                                txtCodigo };
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
-
             }
-
+            foreach (var txt in decimalsTxt)
+            {
+                txt.TextChanged += new EventHandler(OnContentChanged);
+                txt.KeyPress += ValidarTxtDecimal;
+            }
 
             var chks = new[] { chkActivo };
 
@@ -54,30 +71,54 @@ namespace ConfiguradorUI.Maestro
             {
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
-
-            txtPorcentaje.KeyPress += ValidarTxtDecimal;
-
         }
 
         protected void OnContentChanged(object sender, EventArgs e)
         {
-            //Eliminar y agregar eventos... etc etc..
-            //TipoOperacion = TipoOperacionABM.Cambio;
-            //ControlarEventosABM();
-            //if (ContentChanged != null)
-            //{
-            //    ContentChanged(this, new EventArgs());
-            //}
             if (isSelected && isChangedRow == false && TipoOperacion != TipoOperacionABM.Cambio)
             {
                 TipoOperacion = TipoOperacionABM.Cambio;
                 ControlarEventosABM();
             }
         }
+
         private void CambioEnControl(object sender, EventArgs e)
         {
             //invocado con el IDE (por repetición).
             isChangedRow = false;
+        }
+
+        private void CambioEnControlYCalcularAcumulado(object sender, EventArgs e)
+        {
+
+            isChangedRow = false;
+
+            var decimalsTxt = new[]{ txtPorcentaje01,
+                                txtPorcentaje02,
+                                txtPorcentaje03,
+                                txtPorcentaje04,
+                                txtPorcentaje05,
+                                txtPorcentaje06,
+                                txtPorcentaje07,
+                                txtPorcentaje08 };
+
+            try
+            {
+                decimal porcentajeAcumulado = 0;
+                foreach (var txt in decimalsTxt)
+                {
+                    if (decimal.TryParse(txt.Text, out decimal porc))
+                    {
+                        porcentajeAcumulado += porc;
+                    }
+                }
+                lblPorcentajeAcumulado.Text = porcentajeAcumulado + " %";
+            }
+            catch (Exception ex)
+            {
+                lblPorcentajeAcumulado.Text ="0 %";
+                Msg.Ok_Err($"No se pudo calcular el porcentaje acumulado. ERROR: {ex.Message}");
+            }
         }
         private void ValidarTxtDecimal(object sender, KeyPressEventArgs e)
         {
@@ -142,8 +183,7 @@ namespace ConfiguradorUI.Maestro
                                 DialogResult rp = MessageBox.Show("¿Seguro de eliminar el registro?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (rp == DialogResult.Yes)
                                 {
-                                    bool validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Impuesto_Producto);
-                                    if (validDelete)
+                                    if (EsEliminacionValida(id))
                                     {
                                         new ImpuestoBL().EliminarImpuesto(id);
                                         actualizar = true;
@@ -251,7 +291,23 @@ namespace ConfiguradorUI.Maestro
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.txt_abrv = txtAbreviacion.Text.Trim();
                 obj.cod_impuesto = txtCodigo.Text.Trim();
-                obj.por_impto01 = decimal.Parse(txtPorcentaje.Text);
+
+                if (decimal.TryParse(txtPorcentaje01.Text, out decimal porc01))
+                { obj.por_impto01 = porc01; }
+                if (decimal.TryParse(txtPorcentaje02.Text, out decimal porc02))
+                { obj.por_impto02 = porc02; }
+                if (decimal.TryParse(txtPorcentaje03.Text, out decimal porc03))
+                { obj.por_impto03 = porc03; }
+                if (decimal.TryParse(txtPorcentaje04.Text, out decimal porc04))
+                { obj.por_impto04 = porc04; }
+                if (decimal.TryParse(txtPorcentaje05.Text, out decimal porc05))
+                { obj.por_impto05 = porc05; }
+                if (decimal.TryParse(txtPorcentaje06.Text, out decimal porc06))
+                { obj.por_impto06 = porc06; }
+                if (decimal.TryParse(txtPorcentaje07.Text, out decimal porc07))
+                { obj.por_impto07 = porc07; }
+                if (decimal.TryParse(txtPorcentaje08.Text, out decimal porc08))
+                { obj.por_impto08 = porc08; }
 
             }
             catch (Exception e)
@@ -279,7 +335,15 @@ namespace ConfiguradorUI.Maestro
                 txtNombre.Text = obj.txt_desc;
                 txtAbreviacion.Text = obj.txt_abrv;
                 txtCodigo.Text = obj.cod_impuesto;
-                txtPorcentaje.Text = obj.por_impto01.RemoveTrailingZeros();
+
+                txtPorcentaje01.Text = obj.por_impto01?.RemoveTrailingZeros();
+                txtPorcentaje02.Text = obj.por_impto02?.RemoveTrailingZeros();
+                txtPorcentaje03.Text = obj.por_impto03?.RemoveTrailingZeros();
+                txtPorcentaje04.Text = obj.por_impto04?.RemoveTrailingZeros();
+                txtPorcentaje05.Text = obj.por_impto05?.RemoveTrailingZeros();
+                txtPorcentaje06.Text = obj.por_impto06?.RemoveTrailingZeros();
+                txtPorcentaje07.Text = obj.por_impto07?.RemoveTrailingZeros();
+                txtPorcentaje08.Text = obj.por_impto08?.RemoveTrailingZeros();
             }
             catch (Exception e)
             {
@@ -300,6 +364,14 @@ namespace ConfiguradorUI.Maestro
                 tabImpuesto.SelectedTab = tabPagGeneral;
                 errorProv.SetError(txtAbreviacion, "Este campo es requerido.");
                 txtAbreviacion.Focus();
+                no_error = false;
+            }
+
+            if (txtNombre.Text.Trim().Length == 0)
+            {
+                tabImpuesto.SelectedTab = tabPagGeneral;
+                errorProv.SetError(txtNombre, "Este campo es requerido.");
+                txtNombre.Focus();
                 no_error = false;
             }
 
@@ -338,37 +410,57 @@ namespace ConfiguradorUI.Maestro
 
             #endregion
 
-            #region validación numércia
+            #region validación numérica
 
-            if (no_error == true)
+            if (no_error)
             {
-                if (txtPorcentaje.Text.Trim().Length > 0)
-                {
-                    decimal num = 0;
+                /*
+                 Item1 : caja de texto del porcentaje
+                 Item2: label del símbolo del porcentaje(%) del textbox
+                 */
+                var decimalsTxt = new List<Tuple<MetroTextBox, MetroLabel>>{
+                               new Tuple<MetroTextBox, MetroLabel>(txtPorcentaje08,lblSimboloPorc08),
+                               new Tuple<MetroTextBox, MetroLabel>(txtPorcentaje07,lblSimboloPorc07),
+                               new Tuple<MetroTextBox, MetroLabel>(txtPorcentaje06,lblSimboloPorc06),
+                               new Tuple<MetroTextBox, MetroLabel>(txtPorcentaje05,lblSimboloPorc05),
+                               new Tuple<MetroTextBox, MetroLabel>(txtPorcentaje04,lblSimboloPorc04),
+                               new Tuple<MetroTextBox, MetroLabel>(txtPorcentaje03,lblSimboloPorc03),
+                               new Tuple<MetroTextBox, MetroLabel>(txtPorcentaje02,lblSimboloPorc02),
+                               new Tuple<MetroTextBox, MetroLabel>(txtPorcentaje01,lblSimboloPorc01),
+                                };
 
-                    if (!decimal.TryParse(txtPorcentaje.Text, out num))
+                var esVacio = true;
+                foreach (var txt in decimalsTxt)
+                {
+                    if (txt.Item1.Text.Trim().Length > 0)
                     {
-                        tabImpuesto.SelectedTab = tabPagGeneral;
-                        errorProv.SetError(txtPorcentaje, "Tiene que ingresar un número.");
-                        txtPorcentaje.Focus();
-                        no_error = false;
-                    }
-                    else
-                    {
-                        if (!(num > 0 && num < 10000000000))
+                        decimal num = 0;
+                        esVacio = false;
+
+                        if (!decimal.TryParse(txt.Item1.Text, out num))
                         {
                             tabImpuesto.SelectedTab = tabPagGeneral;
-                            errorProv.SetError(txtPorcentaje, "El porcentaje tiene que ser mayor que 0 y menor que 10000000000.");
-                            txtPorcentaje.Focus();
+                            errorProv.SetError(txt.Item2, "Tiene que ingresar un número.");
+                            txt.Item1.Focus();
                             no_error = false;
+                        }
+                        else
+                        {
+                            if (!(num > 0 && num <= KeyAmounts.MaxAmount))
+                            {
+                                tabImpuesto.SelectedTab = tabPagGeneral;
+                                errorProv.SetError(txt.Item2, "El porcentaje tiene que ser mayor que 0 y menor que 10000000000.");
+                                txt.Item1.Focus();
+                                no_error = false;
+                            }
                         }
                     }
                 }
-                else
+
+                if (esVacio)
                 {
-                    tabImpuesto.SelectedTab = tabPagGeneral;
-                    errorProv.SetError(txtPorcentaje, "Tiene que ingresar un número.");
-                    txtPorcentaje.Focus();
+                    Msg.Ok_Wng("Por lo menos, debe ingresar un porcentaje de impuesto.", "Validación");
+                    txtPorcentaje01.Focus();
                     no_error = false;
                 }
             }
@@ -382,9 +474,7 @@ namespace ConfiguradorUI.Maestro
                 int id = 0;
                 if (int.TryParse(lblIdImpuesto.Text, out id))
                 {
-                    bool validDelete = false;
-                    validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Impuesto_Producto);
-                    if (!validDelete)
+                    if (!EsEliminacionValida(id))
                     {
                         MessageBox.Show(this, "Este registro no se puede desactivar porque se usa en otro lado.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         tabImpuesto.SelectedTab = tabPagGeneral;
@@ -403,6 +493,21 @@ namespace ConfiguradorUI.Maestro
 
             return no_error;
         }
+
+        private bool EsEliminacionValida(int id)
+        {
+            bool validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Impuesto_Producto);
+            if (validDelete)
+            {
+                validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Impuesto_ComboVariable);
+            }
+            if (validDelete)
+            {
+                validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Impuesto_Combo);
+            }
+            return validDelete;
+        }
+
         private void Filtrar(int criterio, string filtro)
         {
             int index = 0;
@@ -517,7 +622,6 @@ namespace ConfiguradorUI.Maestro
             return id;
         }
 
-
         //Métodos utilitarios de lógica del Form
         private void CargarComboFiltro()
         {
@@ -552,9 +656,14 @@ namespace ConfiguradorUI.Maestro
             txtNombre.Clear();
             txtAbreviacion.Clear();
             txtCodigo.Clear();
-            txtPorcentaje.Clear();
-
-
+            txtPorcentaje01.Clear();
+            txtPorcentaje02.Clear();
+            txtPorcentaje03.Clear();
+            txtPorcentaje04.Clear();
+            txtPorcentaje05.Clear();
+            txtPorcentaje06.Clear();
+            txtPorcentaje07.Clear();
+            txtPorcentaje08.Clear();
         }
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
         {
@@ -698,12 +807,32 @@ namespace ConfiguradorUI.Maestro
             //Para que no sobreescriba los estilos de cabecera
             dgvImpuesto.EnableHeadersVisualStyles = false;
         }
-        private void SetMaxLengthTxt()
+        private void ConfigurarControles()
         {
+            #region txts
+
             txtCodigo.MaxLength = 10;
-            txtNombre.MaxLength = 150;
-            txtAbreviacion.MaxLength = 30;
-            txtPorcentaje.MaxLength = 19;
+            txtNombre.MaxLength = 500;
+            txtAbreviacion.MaxLength = 100;
+            txtPorcentaje01.MaxLength = 19;
+            txtPorcentaje02.MaxLength = 19;
+            txtPorcentaje03.MaxLength = 19;
+            txtPorcentaje04.MaxLength = 19;
+            txtPorcentaje05.MaxLength = 19;
+            txtPorcentaje06.MaxLength = 19;
+            txtPorcentaje07.MaxLength = 19;
+            txtPorcentaje08.MaxLength = 19;
+
+            txtPorcentaje01.TextAlign = HorizontalAlignment.Right;
+            txtPorcentaje02.TextAlign = HorizontalAlignment.Right;
+            txtPorcentaje03.TextAlign = HorizontalAlignment.Right;
+            txtPorcentaje04.TextAlign = HorizontalAlignment.Right;
+            txtPorcentaje05.TextAlign = HorizontalAlignment.Right;
+            txtPorcentaje06.TextAlign = HorizontalAlignment.Right;
+            txtPorcentaje07.TextAlign = HorizontalAlignment.Right;
+            txtPorcentaje08.TextAlign = HorizontalAlignment.Right;
+
+            #endregion
         }
         private void ContarEstados(List<MSTt06_impuesto> lista)
         {
@@ -722,6 +851,22 @@ namespace ConfiguradorUI.Maestro
                 MessageBox.Show(this, $"Excepción el contar los estados: {e.Message}");
             }
         }
+
+
+        private void SetInit()
+        {
+            lblIdImpuesto.Visible = false;
+            ConfigurarControles();
+            ControlarEventosABM();
+            LimpiarForm();
+            CargarGrilla(Estado.IdActivo);
+            CargarComboFiltro();
+            panelFiltro.Visible = false;
+            addHandlers();
+            tglListarInactivos.AutoCheck = false;
+            ConfigurarGrilla();
+        }
+
         private void CerrarForm()
         {
             Dispose();
@@ -735,17 +880,9 @@ namespace ConfiguradorUI.Maestro
 
         private void FormImpuesto_Load(object sender, EventArgs e)
         {
-            lblIdImpuesto.Visible = false;
-            SetMaxLengthTxt();
-            ControlarEventosABM();
-            LimpiarForm();
-            CargarGrilla(Estado.IdActivo);
-            CargarComboFiltro();
-            panelFiltro.Visible = false;
-            addHandlers();
-            tglListarInactivos.AutoCheck = false;
-            ConfigurarGrilla();
+            SetInit();
         }
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -1043,6 +1180,5 @@ namespace ConfiguradorUI.Maestro
         }
 
         #endregion
-
     }
 }

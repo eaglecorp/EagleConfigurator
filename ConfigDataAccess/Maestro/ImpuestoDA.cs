@@ -136,6 +136,39 @@ namespace ConfigDataAccess
             }
             return obj;
         }
+        public decimal? GetPorcentajeAcumulado(int id)
+        {
+            decimal? porcentajeAcumulado = 0;
+            #region query
+
+            string query = @"select (isnull(impto.por_impto01,0) +
+		                    isnull(impto.por_impto02,0) +
+		                    isnull(impto.por_impto03,0) +
+		                    isnull(impto.por_impto04,0) +
+		                    isnull(impto.por_impto05,0) +
+		                    isnull(impto.por_impto06,0) +
+		                    isnull(impto.por_impto07,0) +
+		                    isnull(impto.por_impto08,0))
+		                    as por_acumulado
+		                      from dbo.MSTt06_impuesto impto
+		                      where impto.id_impuesto = @id"; 
+            #endregion
+
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    porcentajeAcumulado = cnn.Query<decimal?>(query, new { id }).SingleOrDefault();
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Get Porcentaje Acumulado: ", e.Message);
+                }
+            }
+            return porcentajeAcumulado;
+        }
 
     }
 }

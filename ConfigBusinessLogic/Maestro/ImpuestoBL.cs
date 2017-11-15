@@ -52,5 +52,11 @@ namespace ConfigBusinessLogic
 
             return lista;
         }
+
+
+        public decimal? GetPorcentajeAcumulado(int id)
+        {
+            return new ImpuestoDA().GetPorcentajeAcumulado(id);
+        }
     }
 }

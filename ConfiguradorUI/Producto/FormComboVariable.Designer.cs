@@ -49,6 +49,7 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabComboVariable = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.chkMostrarInactivos = new MetroFramework.Controls.MetroCheckBox();
             this.btnBuscarProducto = new MetroFramework.Controls.MetroLink();
             this.btnProducto = new MetroFramework.Controls.MetroLink();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
@@ -82,7 +83,6 @@
             this.dgvComboVariable = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProvDtl = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkMostrarInactivos = new MetroFramework.Controls.MetroCheckBox();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabComboVariable.SuspendLayout();
@@ -166,9 +166,9 @@
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(13, 13);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(56, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Criterio:";
+            this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
@@ -401,6 +401,20 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // chkMostrarInactivos
+            // 
+            this.chkMostrarInactivos.AutoSize = true;
+            this.chkMostrarInactivos.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkMostrarInactivos.ForeColor = System.Drawing.Color.Navy;
+            this.chkMostrarInactivos.Location = new System.Drawing.Point(2, 132);
+            this.chkMostrarInactivos.Name = "chkMostrarInactivos";
+            this.chkMostrarInactivos.Size = new System.Drawing.Size(108, 15);
+            this.chkMostrarInactivos.TabIndex = 156;
+            this.chkMostrarInactivos.Text = "Mostrar inactivos";
+            this.chkMostrarInactivos.UseCustomForeColor = true;
+            this.chkMostrarInactivos.UseSelectable = true;
+            this.chkMostrarInactivos.CheckedChanged += new System.EventHandler(this.chkMostrarInactivos_CheckedChanged);
             // 
             // btnBuscarProducto
             // 
@@ -675,7 +689,7 @@
             // 
             // 
             this.txtPrecioCboSinTax.CustomButton.Image = null;
-            this.txtPrecioCboSinTax.CustomButton.Location = new System.Drawing.Point(60, 1);
+            this.txtPrecioCboSinTax.CustomButton.Location = new System.Drawing.Point(81, 1);
             this.txtPrecioCboSinTax.CustomButton.Name = "";
             this.txtPrecioCboSinTax.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtPrecioCboSinTax.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -720,7 +734,7 @@
             // 
             // 
             this.txtPrecioCboConTax.CustomButton.Image = null;
-            this.txtPrecioCboConTax.CustomButton.Location = new System.Drawing.Point(60, 1);
+            this.txtPrecioCboConTax.CustomButton.Location = new System.Drawing.Point(81, 1);
             this.txtPrecioCboConTax.CustomButton.Name = "";
             this.txtPrecioCboConTax.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtPrecioCboConTax.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -978,20 +992,6 @@
             // errorProvDtl
             // 
             this.errorProvDtl.ContainerControl = this;
-            // 
-            // chkMostrarInactivos
-            // 
-            this.chkMostrarInactivos.AutoSize = true;
-            this.chkMostrarInactivos.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkMostrarInactivos.ForeColor = System.Drawing.Color.Navy;
-            this.chkMostrarInactivos.Location = new System.Drawing.Point(2, 132);
-            this.chkMostrarInactivos.Name = "chkMostrarInactivos";
-            this.chkMostrarInactivos.Size = new System.Drawing.Size(108, 15);
-            this.chkMostrarInactivos.TabIndex = 156;
-            this.chkMostrarInactivos.Text = "Mostrar inactivos";
-            this.chkMostrarInactivos.UseCustomForeColor = true;
-            this.chkMostrarInactivos.UseSelectable = true;
-            this.chkMostrarInactivos.CheckedChanged += new System.EventHandler(this.chkMostrarInactivos_CheckedChanged);
             // 
             // FormComboVariable
             // 
