@@ -1,23 +1,18 @@
-﻿using System;
+﻿using ConfigBusinessEntity;
+using ConfigBusinessLogic;
+using ConfigBusinessLogic.Utiles;
+using ConfiguradorUI.FormUtil;
+using ConfiguradorUI.Maestro;
+using ConfigUtilitarios;
+using ConfigUtilitarios.KeyValues;
+using MetroFramework.Controls;
+using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Forms;
-using ConfigBusinessEntity;
-using ConfigBusinessLogic;
-using MetroFramework;
-using MetroFramework.Controls;
-using ConfiguradorUI.FormUtil;
-using ConfigUtilitarios;
-using System.Globalization;
-using ConfiguradorUI.Maestro;
-using ConfigUtilitarios.KeyValues;
-using ConfigBusinessLogic.Utiles;
 
 namespace ConfiguradorUI.Producto
 {
@@ -159,9 +154,6 @@ namespace ConfiguradorUI.Producto
                                 DialogResult rp = MessageBox.Show("¿Seguro de eliminar el producto?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (rp == DialogResult.Yes)
                                 {
-                                    new ProductoBL().EliminarProducto(id);
-                                    ControlarEventosABM();
-
                                     if (EsEliminacionValida(id))
                                     {
                                         new ProductoBL().EliminarProducto(id);
@@ -1096,7 +1088,7 @@ namespace ConfiguradorUI.Producto
             }
             catch (Exception e)
             {
-                MessageBox.Show(this, "Ocurrió un error reseteando el chkIGV. " + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Ocurrió un error reseteando el check. " + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1145,22 +1137,22 @@ namespace ConfiguradorUI.Producto
             txtDiametro.Clear();
 
 
-            cboUnidadMedida.SelectedIndex = (cboUnidadMedida.Items.Count > 0) ? 0 : -1;
+            cboUnidadMedida.SelectedIndex   = (cboUnidadMedida.Items.Count > 0) ? 0 : -1;
 
-            cboFamilia.SelectedIndex = (cboFamilia.Items.Count > 0) ? 0 : -1;
-            cboSubFamilia.SelectedIndex = (cboSubFamilia.Items.Count > 0) ? 0 : -1;
+            cboFamilia.SelectedIndex        = (cboFamilia.Items.Count > 0) ? 0 : -1;
+            cboSubFamilia.SelectedIndex     = (cboSubFamilia.Items.Count > 0) ? 0 : -1;
 
-            cboMarca.SelectedIndex = (cboMarca.Items.Count > 0) ? 0 : -1;
-            cboModelo.SelectedIndex = (cboModelo.Items.Count > 0) ? 0 : -1;
+            cboMarca.SelectedIndex          = (cboMarca.Items.Count > 0) ? 0 : -1;
+            cboModelo.SelectedIndex         = (cboModelo.Items.Count > 0) ? 0 : -1;
 
-            cboTipoProd.SelectedIndex = (cboTipoProd.Items.Count > 0) ? 0 : -1;
+            cboTipoProd.SelectedIndex       = (cboTipoProd.Items.Count > 0) ? 0 : -1;
             cboTipoExistencia.SelectedIndex = (cboTipoExistencia.Items.Count > 0) ? 0 : -1;
 
-            cboGrupoProd.SelectedIndex = (cboGrupoProd.Items.Count > 0) ? 0 : -1;
-            cboClaseProd.SelectedIndex = (cboClaseProd.Items.Count > 0) ? 0 : -1;
+            cboGrupoProd.SelectedIndex      = (cboGrupoProd.Items.Count > 0) ? 0 : -1;
+            cboClaseProd.SelectedIndex      = (cboClaseProd.Items.Count > 0) ? 0 : -1;
 
-            cboTipoMoneda.SelectedIndex = (cboTipoMoneda.Items.Count > 0) ? 0 : -1;
-            cboImpuesto.SelectedIndex = (cboImpuesto.Items.Count > 0) ? 0 : -1;
+            cboTipoMoneda.SelectedIndex     = (cboTipoMoneda.Items.Count > 0) ? 0 : -1;
+            cboImpuesto.SelectedIndex       = (cboImpuesto.Items.Count > 0) ? 0 : -1;
 
 
             chkProductoVenta.Checked = true;
@@ -1487,6 +1479,7 @@ namespace ConfiguradorUI.Producto
         {
             SetInit();
         }
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {

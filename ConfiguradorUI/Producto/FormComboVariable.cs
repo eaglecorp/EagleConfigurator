@@ -18,6 +18,7 @@ using ConfiguradorUI.Buscadores;
 using ConfigBusinessLogic;
 using ConfigUtilitarios.KeyValues;
 using ConfiguradorUI.Producto.Auxiliares;
+using ConfiguradorUI.Maestro;
 
 namespace ConfiguradorUI.Producto
 {
@@ -322,25 +323,25 @@ namespace ConfiguradorUI.Producto
                 if (!Validation.PositiveAmount(txtItemPriceSinImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblPrecioSinImp, ValidationMsg.Amount);
+                    errorProvDtl.SetError(txtItemPriceSinImp, ValidationMsg.Amount);
                     txtItemPriceSinImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemPriceConImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblPrecioConImp, ValidationMsg.Amount);
+                    errorProvDtl.SetError(txtItemPriceConImp, ValidationMsg.Amount);
                     txtItemPriceConImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemQuantity.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblCantidad, ValidationMsg.Amount);
+                    errorProvDtl.SetError(txtItemQuantity, ValidationMsg.Amount);
                     txtItemQuantity.Focus();
                 }
                 if (txtItemDesc.Text.Trim() == "")
                 {
                     valid = false;
-                    errorProvDtl.SetError(lblProducto, ValidationMsg.Required);
+                    errorProvDtl.SetError(txtItemDesc, ValidationMsg.Required);
                     txtItemDesc.Focus();
                 }
             }
@@ -418,7 +419,7 @@ namespace ConfiguradorUI.Producto
                 dgvDetail.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvDetail.Columns["PRODUCTO"].Width = 200;
-                dgvDetail.Columns["CANTIDAD"].Width = 80;
+                dgvDetail.Columns["CANTIDAD"].Width = 70;
                 dgvDetail.Columns["P_UNIT_C_TAX"].Width = 97;
                 dgvDetail.Columns["P_UNIT_S_TAX"].Width = 97;
                 dgvDetail.Columns["ACTIVO"].Width = 54;
@@ -441,6 +442,10 @@ namespace ConfiguradorUI.Producto
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             txtItemPriceConImp.KeyPress += ControlHelper.TxtValidDecimal;
             txtItemQuantity.KeyPress += ControlHelper.TxtValidInteger;
+
+            txtPrecioCboSinTax.KeyPress += ControlHelper.TxtValidDecimal;
+            txtPrecioCboConTax.KeyPress += ControlHelper.TxtValidDecimal;
+
             txtItemCod.KeyPress += SearchAndSetItem_KeyPress;
             txtItemDesc.KeyPress += SearchAndSetItem_KeyPress;
 
@@ -451,13 +456,14 @@ namespace ConfiguradorUI.Producto
 
             }
 
-            var chks = new[] { chkActivo };
+            var chks = new[] { chkActivo, chkIncluyeImpto };
 
             foreach (var chk in chks)
             {
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
 
+            cboImpuesto.SelectedIndexChanged += new EventHandler(OnContentChanged);
             dgvDetail.DataSourceChanged += new EventHandler(OnContentChanged);
 
         }
@@ -629,6 +635,7 @@ namespace ConfiguradorUI.Producto
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
+                obj.sn_incluye_impto = chkIncluyeImpto.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 //IMPORTANTE
                 /*
                  Colocar null al producto de cada detalle. De los contrario EF al
@@ -637,6 +644,12 @@ namespace ConfiguradorUI.Producto
                 if (details != null)
                     details.ForEach(x => x.PROt09_producto = null);
                 obj.PROt16_combo_variable_dtl = details;
+
+
+                if (cboImpuesto.SelectedValue != null)
+                    obj.id_impuesto = int.Parse(cboImpuesto.SelectedValue.ToString());
+
+
             }
             catch (Exception e)
             {
@@ -659,10 +672,34 @@ namespace ConfiguradorUI.Producto
 
                 txtNombre.Text = obj.txt_desc;
                 txtCodigo.Text = obj.cod_combo_variable;
+
+                if (obj.sn_incluye_impto == Estado.IdActivo)
+                {
+                    chkIncluyeImpto.Checked = true;
+                    txtPrecioCboConTax.Enabled = true;
+                    txtPrecioCboSinTax.Enabled = false;
+                    cboImpuesto.Enabled = true;
+                }
+                else
+                {
+                    chkIncluyeImpto.Checked = false;
+                    txtPrecioCboConTax.Enabled = false;
+                    txtPrecioCboSinTax.Enabled = true;
+                    cboImpuesto.Enabled = false;
+                }
+
+                if (obj.id_impuesto != null)
+                    cboImpuesto.SelectedValue = obj.id_impuesto;
+                else
+                    cboImpuesto.SelectedIndex = -1;
+
                 txtPrecioCboConTax.Text = obj.mto_pvpu_con_tax.RemoveTrailingZeros();
                 txtPrecioCboSinTax.Text = obj.mto_pvpu_sin_tax.RemoveTrailingZeros();
+
                 details = obj.PROt16_combo_variable_dtl?.ToList();
-                CargarGridProd(obj.PROt16_combo_variable_dtl,chkMostrarInactivos.Checked);
+                CargarGridProd(obj.PROt16_combo_variable_dtl, chkMostrarInactivos.Checked);
+
+                dgvComboVariable.Focus();
 
             }
             catch (Exception e)
@@ -686,13 +723,13 @@ namespace ConfiguradorUI.Producto
                 no_error = false;
             }
 
-            if (!Validation.PositiveAmount(txtPrecioCboSinTax.Text.Trim()))
+            if (!chkIncluyeImpto.Checked && !Validation.PositiveAmount(txtPrecioCboSinTax.Text.Trim()))
             {
                 errorProv.SetError(txtPrecioCboSinTax, ValidationMsg.Amount);
                 txtPrecioCboSinTax.Focus();
                 no_error = false;
             }
-            if (!Validation.PositiveAmount(txtPrecioCboConTax.Text.Trim()))
+            else if (!Validation.PositiveAmount(txtPrecioCboConTax.Text.Trim()))
             {
                 errorProv.SetError(txtPrecioCboConTax, ValidationMsg.Amount);
                 txtPrecioCboConTax.Focus();
@@ -936,6 +973,95 @@ namespace ConfiguradorUI.Producto
         }
 
 
+        //Métodos para calcular precios
+        private decimal GetPorcentajeImpuesto()
+        {
+            decimal.TryParse(lblPorcentajeAcumuladoImpto.Text, out decimal porcentaje);
+            return porcentaje;
+        }
+        private string CalPrecioConImpuesto(decimal precio_sin_impto)
+        {
+            string precio_con_impt = "0";
+            try
+            {
+                decimal por_impto = GetPorcentajeImpuesto();
+                precio_con_impt = por_impto == 0 ? precio_sin_impto.RemoveTrailingZeros() :
+                                                    (precio_sin_impto * (1 + (por_impto / 100))).RemoveTrailingZeros();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(this, "No se puedo calcular el precio con impuesto. Excepción:" + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            return precio_con_impt;
+        }
+        private string CalPrecioSinImpuesto(decimal precio_con_impto)
+        {
+            string precio_sin_impt = "0";
+            try
+            {
+                decimal por_impto = GetPorcentajeImpuesto();
+                precio_sin_impt = por_impto == 0 ? precio_con_impto.RemoveTrailingZeros() :
+                                                    ((100 * precio_con_impto) / (100 + por_impto)).RemoveTrailingZeros();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(this, "No se puedo calcular el precio sin impuesto. Excepción:" + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            return precio_sin_impt;
+        }
+        private void ActualizarPreciosConImpto()
+        {
+            if (decimal.TryParse(txtPrecioCboSinTax.Text, out decimal pvPuSinImpto))
+            {
+                txtPrecioCboConTax.Text = CalPrecioConImpuesto(pvPuSinImpto);
+            }
+            else
+            {
+                txtPrecioCboSinTax.Clear();
+            }
+        }
+        private void ActualizarPreciosSinImpto()
+        {
+            if (decimal.TryParse(txtPrecioCboConTax.Text, out decimal pvPuConImpto))
+            {
+                txtPrecioCboSinTax.Text = CalPrecioSinImpuesto(pvPuConImpto);
+            }
+        }
+        private void ControlarCheckImpto()
+        {
+            try
+            {
+                if (!chkIncluyeImpto.Checked)
+                {
+                    txtPrecioCboConTax.Text = txtPrecioCboSinTax.Text;
+
+                    txtPrecioCboConTax.Enabled = false;
+                    txtPrecioCboSinTax.Enabled = true;
+
+                    cboImpuesto.Enabled = false;
+                    cboImpuesto.SelectedIndex = cboImpuesto.Items.Count > 0 ? 0 : -1;
+
+                    txtPrecioCboSinTax.Focus();
+                }
+                else
+                {
+                    txtPrecioCboConTax.Enabled = true;
+                    txtPrecioCboSinTax.Enabled = false;
+
+                    cboImpuesto.Enabled = true;
+                    cboImpuesto.SelectedIndex = cboImpuesto.Items.Count > 0 ? 0 : -1;
+
+                    ActualizarPreciosConImpto();
+
+                    txtPrecioCboConTax.Focus();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(this, "Ocurrió un error reseteando el check. " + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         //Métodos utilitarios de lógica del Form
         private void CargarComboFiltro()
         {
@@ -956,23 +1082,41 @@ namespace ConfiguradorUI.Producto
         private void LimpiarForm()
         {
             isSelected = false;
-            lblIdComboVariable.Text = 0 + "";
-            codSelected = "";
-            txtNombre.Clear();
-            txtCodigo.Clear();
-            txtPrecioCboConTax.Clear();
-            txtPrecioCboSinTax.Clear();
-            errorProvDtl.Clear();
-            CleanItem(true);
-            CleanDetail(true);
-
-
             if (TipoOperacion == TipoOperacionABM.Nuevo)
                 chkActivo.Enabled = false;
             else
                 chkActivo.Enabled = true;
 
+            lblIdComboVariable.Text = 0 + "";
+
             chkActivo.Checked = true;
+            chkIncluyeImpto.Checked = true;
+            codSelected = "";
+            txtNombre.Clear();
+            txtCodigo.Clear();
+            errorProvDtl.Clear();
+            CleanItem(true);
+            CleanDetail(true);
+
+            cboImpuesto.SelectedIndex = (cboImpuesto.Items.Count > 0) ? 0 : -1;
+
+            txtPrecioCboConTax.Clear();
+            txtPrecioCboSinTax.Clear();
+
+        }
+        private void CargarCombos()
+        {
+            try
+            {
+                cboImpuesto.DataSource = null;
+                cboImpuesto.DisplayMember = "txt_abrv";
+                cboImpuesto.ValueMember = "id_impuesto";
+                cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(this, "Ocurrió una excepción al cargar los combos aquí: " + e.Message, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
         {
@@ -1079,6 +1223,28 @@ namespace ConfiguradorUI.Producto
                 }
             }
         }
+        private void MantenerEstadoABM()
+        {
+            if (TipoOperacion == TipoOperacionABM.Nuevo)
+            {
+                ControlarBotones(false, false, true, true, false, false);
+            }
+            else if (TipoOperacion == TipoOperacionABM.Cambio)
+            {
+                ControlarBotones(false, false, true, true, false, false);
+                isPending = true;
+            }
+            else if (TipoOperacion == TipoOperacionABM.No_Action)
+            {
+                isPending = false;
+                ControlarBotones(true, true, false, false, true, true);
+            }
+            else
+            {
+                isPending = false;
+                ControlarBotones(true, true, false, false, true, true);
+            }
+        }
         private void CargarGrilla(int? id_estado = null)
         {
             try
@@ -1152,6 +1318,12 @@ namespace ConfiguradorUI.Producto
             txtItemQuantity.TextAlign = HorizontalAlignment.Right;
             txtPrecioCboConTax.TextAlign = HorizontalAlignment.Right;
             txtPrecioCboSinTax.TextAlign = HorizontalAlignment.Right;
+            txtItemPriceConImp.TextAlign = HorizontalAlignment.Right;
+            txtItemPriceSinImp.TextAlign = HorizontalAlignment.Right;
+
+            txtPrecioCboConTax.MaxLength = 19;
+            txtPrecioCboSinTax.MaxLength = 19;
+
             chkActivo.Checked = false;
 
             #region Dgv
@@ -1163,12 +1335,18 @@ namespace ConfiguradorUI.Producto
             DefinirCabeceraGridDetail();
             ControlHelper.DgvReadOnly(dgvDetail);
             ControlHelper.DgvLightStyle(dgvDetail);
+
+            chkIncluyeImpto.Enabled = true;
+            cboImpuesto.Enabled = true;
+            txtPrecioCboSinTax.Enabled = false;
+            txtPrecioCboConTax.Enabled = true;
             #endregion
 
             #endregion
 
             SetMaxLengthTxt();
             ControlarEventosABM();
+            CargarCombos();
             LimpiarForm();
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
@@ -1443,6 +1621,98 @@ namespace ConfiguradorUI.Producto
             }
         }
 
+
+        private void chkIncluyeImpto_CheckedChanged(object sender, EventArgs e)
+        {
+            errorProv.Clear();
+            ControlarCheckImpto();
+            isChangedRow = false;
+        }
+
+        private void cboImpuesto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            decimal? porcentajeAcumulado = null;
+
+            if (int.TryParse(cboImpuesto.SelectedValue?.ToString(), out int id))
+            {
+                porcentajeAcumulado = new ImpuestoBL().GetPorcentajeAcumulado(id);
+            }
+
+            lblPorcentajeAcumuladoImpto.Text = porcentajeAcumulado == null ? "-" : porcentajeAcumulado.RemoveTrailingZeros();
+
+            if (chkIncluyeImpto.Checked)
+            {
+                ActualizarPreciosSinImpto();
+            }
+
+            isChangedRow = false;
+        }
+
+        private void txtPrecioCboSinTax_TextChanged(object sender, EventArgs e)
+        {
+            if (!chkIncluyeImpto.Checked)
+            {
+                if (decimal.TryParse(txtPrecioCboSinTax.Text, out decimal pvPuSinImpto))
+                {
+                    txtPrecioCboConTax.Text = txtPrecioCboSinTax.Text;
+                }
+                else
+                {
+                    txtPrecioCboConTax.Clear();
+                }
+            }
+            isChangedRow = false;
+        }
+
+        private void txtPrecioCboConTax_TextChanged(object sender, EventArgs e)
+        {
+            if (chkIncluyeImpto.Checked)
+            {
+                if (decimal.TryParse(txtPrecioCboConTax.Text, out decimal pvPuConImpto))
+                {
+                    txtPrecioCboSinTax.Text = CalPrecioSinImpuesto(pvPuConImpto);
+                }
+                else
+                {
+                    txtPrecioCboSinTax.Clear();
+                }
+            }
+            isChangedRow = false;
+        }
+
+        private void btnImpuesto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int oldValue = 0;
+                int op = TipoOperacion;
+
+                if (cboImpuesto.SelectedValue != null)
+                    oldValue = int.Parse(cboImpuesto.SelectedValue.ToString());
+
+                var frm = new FormImpuesto();
+                frm.ShowDialog();
+
+                if (frm.actualizar)
+                {
+                    cboImpuesto.DataSource = null;
+                    cboImpuesto.DisplayMember = "txt_abrv";
+                    cboImpuesto.ValueMember = "id_impuesto";
+                    cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
+
+                    cboImpuesto.SelectedValue = oldValue;
+                    TipoOperacion = op;
+                    MantenerEstadoABM();
+                }
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if (isPending)
@@ -1490,6 +1760,7 @@ namespace ConfiguradorUI.Producto
         }
 
         #region Eventos del Dtl
+
         private void txtItemQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
@@ -1570,6 +1841,12 @@ namespace ConfiguradorUI.Producto
                 dgvDetail.DataSourceChanged += new EventHandler(OnContentChanged);
             }
         }
+
+        private void dgvDetail_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
+        }
+
         #endregion
 
         #endregion

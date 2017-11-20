@@ -276,7 +276,7 @@
             this.chkReceta.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkReceta.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkReceta.ForeColor = System.Drawing.Color.Navy;
-            this.chkReceta.Location = new System.Drawing.Point(293, 338);
+            this.chkReceta.Location = new System.Drawing.Point(371, 338);
             this.chkReceta.Name = "chkReceta";
             this.chkReceta.Size = new System.Drawing.Size(64, 19);
             this.chkReceta.TabIndex = 28;
@@ -353,7 +353,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(482, 338);
+            this.chkActivo.Location = new System.Drawing.Point(5, 338);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 30;
@@ -643,7 +643,7 @@
             this.chkCombo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkCombo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkCombo.ForeColor = System.Drawing.Color.Navy;
-            this.chkCombo.Location = new System.Drawing.Point(397, 338);
+            this.chkCombo.Location = new System.Drawing.Point(455, 338);
             this.chkCombo.Name = "chkCombo";
             this.chkCombo.Size = new System.Drawing.Size(70, 19);
             this.chkCombo.TabIndex = 29;
@@ -669,7 +669,7 @@
             this.chkProductoCompra.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkProductoCompra.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkProductoCompra.ForeColor = System.Drawing.Color.Navy;
-            this.chkProductoCompra.Location = new System.Drawing.Point(134, 338);
+            this.chkProductoCompra.Location = new System.Drawing.Point(223, 338);
             this.chkProductoCompra.Name = "chkProductoCompra";
             this.chkProductoCompra.Size = new System.Drawing.Size(132, 19);
             this.chkProductoCompra.TabIndex = 27;
@@ -686,7 +686,7 @@
             this.chkProductoVenta.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkProductoVenta.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkProductoVenta.ForeColor = System.Drawing.Color.Navy;
-            this.chkProductoVenta.Location = new System.Drawing.Point(3, 338);
+            this.chkProductoVenta.Location = new System.Drawing.Point(87, 338);
             this.chkProductoVenta.Name = "chkProductoVenta";
             this.chkProductoVenta.Size = new System.Drawing.Size(115, 19);
             this.chkProductoVenta.TabIndex = 26;
@@ -1857,14 +1857,14 @@
             this.dgvProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvProducto.Location = new System.Drawing.Point(40, 151);
+            this.dgvProducto.Location = new System.Drawing.Point(40, 155);
             this.dgvProducto.MultiSelect = false;
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProducto.RowHeadersVisible = false;
             this.dgvProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducto.Size = new System.Drawing.Size(222, 518);
+            this.dgvProducto.Size = new System.Drawing.Size(222, 514);
             this.dgvProducto.TabIndex = 0;
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
             // 

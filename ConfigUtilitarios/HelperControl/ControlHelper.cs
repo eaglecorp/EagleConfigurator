@@ -83,6 +83,11 @@ namespace ConfigUtilitarios
             #endregion
         }
 
+        public static void DgvSetColorBorder(object sender, PaintEventArgs e, Color color)
+        {
+            e.Graphics.DrawRectangle(new Pen(color), new Rectangle(0, 0, ((DataGridView)sender).Width - 1, ((DataGridView)sender).Height - 1));
+        }
+
         public static void DgvStyle(DataGridView dgv, float fontSize = 9.75F, FontStyle fontStyle = FontStyle.Regular, Color? colorLetter = null)
         {
             dgv.ColumnHeadersHeight = 30;

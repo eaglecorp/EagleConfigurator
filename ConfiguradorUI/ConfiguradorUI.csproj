@@ -538,6 +538,7 @@
     <Content Include="Resources\FotosDefault\login.jpg" />
     <Content Include="Resources\FotosDefault\logo.jpg" />
     <Content Include="Resources\FotosDefault\splash.jpg" />
+    <Content Include="Resources\icons\add_dtl.png" />
     <Content Include="Resources\icons\backup.png" />
     <Content Include="Resources\icons\backupRestore.png" />
     <Content Include="Resources\icons\backupx16.png" />
@@ -550,6 +551,7 @@
     <Content Include="Resources\icons\combo_selectx24.png" />
     <Content Include="Resources\icons\connection.png" />
     <Content Include="Resources\icons\databases-symbol.png" />
+    <Content Include="Resources\icons\delete_dtl.png" />
     <Content Include="Resources\icons\login_passwordx16.png" />
     <Content Include="Resources\icons\login_passwordx24.png" />
     <Content Include="Resources\icons\login_userx16.png" />
