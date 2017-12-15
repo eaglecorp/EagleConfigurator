@@ -106,6 +106,7 @@ namespace ConfiguradorUI
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
+            
             try
             {
                 var oFormLogin = new FormLogin();
@@ -132,8 +133,7 @@ namespace ConfiguradorUI
                 else
                 {
                     closeWindows = true;
-                    Close();
-                    return;
+                    Application.Exit();
                 }
 
             }
@@ -156,9 +156,6 @@ namespace ConfiguradorUI
                 {
                     var oLog = new Log();
                     oLog.ArchiveLog("Cerrar Login", "Cerró desde el login. No ingresó al aplicativo.");
-                    //Dispose();
-                    //Hide();
-                    //Close();
                 }
                 else
                 {
@@ -176,8 +173,6 @@ namespace ConfiguradorUI
             catch (Exception exc)
             {
                 MessageBox.Show("Excepción en el evento FormClosing. " + exc.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Hide();
-                Close();
                 Dispose();
             }
         }
@@ -428,5 +423,7 @@ namespace ConfiguradorUI
             var form = new FormComboGrupo();
             form.ShowDialog();
         }
+
+
     }
 }

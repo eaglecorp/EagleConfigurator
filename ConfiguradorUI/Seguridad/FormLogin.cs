@@ -292,7 +292,7 @@ namespace ConfiguradorUI.Seguridad
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             result = false;
-            Hide();
+            //Hide();
             Close();
             //Dispose();
         }
