@@ -77,7 +77,7 @@
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(141, 113);
+            this.tglListarInactivos.Location = new System.Drawing.Point(140, 110);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -88,7 +88,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(43, 111);
+            this.lblListarInactivos.Location = new System.Drawing.Point(42, 108);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;

@@ -275,7 +275,6 @@ namespace ConfiguradorUI.Seguridad
                     {
                         result = false;
                         Hide();
-                        Dispose();
                         Close();
                     }
                     else
@@ -295,7 +294,7 @@ namespace ConfiguradorUI.Seguridad
             result = false;
             Hide();
             Close();
-            Dispose();
+            //Dispose();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

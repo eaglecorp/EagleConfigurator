@@ -578,9 +578,13 @@ namespace ConfiguradorUI.Producto
                         if (long.TryParse(lblIdComboVariable.Text, out id))
                         {
                             obj.id_combo_variable = id;
-                            new ComboVariableBL().ActualizarComboVariable(obj);
+                            bool success = new ComboVariableBL().ActualizarComboVariable(obj);
                             actualizar = true;
                             ControlarEventosABM(obj.id_combo_variable);
+                            if (!success)
+                            {
+                                MessageBox.Show("No se pudo actualizar el combo electivo.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         isValid = true;
                     }
@@ -608,8 +612,12 @@ namespace ConfiguradorUI.Producto
                         if (long.TryParse(lblIdComboVariable.Text, out id))
                         {
                             obj.id_combo_variable = id;
-                            new ComboVariableBL().ActualizarComboVariable(obj);
+                            bool success = new ComboVariableBL().ActualizarComboVariable(obj);
                             actualizar = true;
+                            if (!success)
+                            {
+                                MessageBox.Show("No se pudo actualizar el combo electivo.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         isValid = true;
                     }

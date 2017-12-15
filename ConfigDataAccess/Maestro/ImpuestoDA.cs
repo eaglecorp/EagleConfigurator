@@ -7,6 +7,7 @@ using ConfigBusinessEntity;
 using Dapper;
 using System.Data.SqlClient;
 using ConfigUtilitarios;
+using System.Data;
 
 namespace ConfigDataAccess
 {
@@ -78,8 +79,50 @@ namespace ConfigDataAccess
                 }
             }
         }
-        public void ActualizarImpuesto(MSTt06_impuesto actualizado)
+
+        public decimal SumarImpuestos(MSTt06_impuesto impto)
         {
+            decimal porcImpto = 0;
+
+            if(impto.por_impto01!=null)
+            {
+                porcImpto += (decimal)impto.por_impto01;
+            }
+            if (impto.por_impto02 != null)
+            {
+                porcImpto += (decimal)impto.por_impto02;
+            }
+            if (impto.por_impto03 != null)
+            {
+                porcImpto += (decimal)impto.por_impto03;
+            }
+            if (impto.por_impto04 != null)
+            {
+                porcImpto += (decimal)impto.por_impto04;
+            }
+            if (impto.por_impto05 != null)
+            {
+                porcImpto += (decimal)impto.por_impto05;
+            }
+            if (impto.por_impto06 != null)
+            {
+                porcImpto += (decimal)impto.por_impto06;
+            }
+            if (impto.por_impto07 != null)
+            {
+                porcImpto += (decimal)impto.por_impto07;
+            }
+            if (impto.por_impto08 != null)
+            {
+                porcImpto += (decimal)impto.por_impto08;
+            }
+
+            return porcImpto;
+        }
+
+        public bool ActualizarImpuesto(MSTt06_impuesto actualizado)
+        {
+            bool success = false;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
@@ -87,8 +130,20 @@ namespace ConfigDataAccess
                     var original = ctx.MSTt06_impuesto.Find(actualizado.id_impuesto);
                     if (original != null && original.id_impuesto > 0)
                     {
-                        ctx.Entry(original).CurrentValues.SetValues(actualizado);
-                        ctx.SaveChanges();
+                        bool actualizarPrecioCascada = true;
+                        decimal nuevoPorcImpto = SumarImpuestos(actualizado);
+
+                        if (SumarImpuestos(original) != nuevoPorcImpto )
+                        {
+                            actualizarPrecioCascada = ActualizarEnCascadaPreciosPorImpto(actualizado.id_impuesto, nuevoPorcImpto);
+                        }
+
+                        if (actualizarPrecioCascada)
+                        {
+                            ctx.Entry(original).CurrentValues.SetValues(actualizado);
+                            ctx.SaveChanges();
+                            success = true;
+                        }
                     }
                 }
                 catch (Exception e)
@@ -97,6 +152,7 @@ namespace ConfigDataAccess
                     log.ArchiveLog("Actualizar Impuesto: ", e.Message);
                 }
             }
+            return success;
         }
         public MSTt06_impuesto ImpuestoXId(int id)
         {
@@ -170,5 +226,49 @@ namespace ConfigDataAccess
             return porcentajeAcumulado;
         }
 
+        public bool ActualizarEnCascadaPreciosPorImpto(int id_impto, decimal nuevoPorcImpto)
+        {
+            bool success = false;
+
+            using (var conexion = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    using (var cmd = new SqlCommand("SP_CASCADE_UPDATE_IMPTO", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@id_impuesto", id_impto));
+                        cmd.Parameters.Add(new SqlParameter("@nuevoPorc", nuevoPorcImpto));
+                        cmd.Parameters.Add(new SqlParameter("@sn_incluye_impto", Estado.IdActivo));
+
+                        var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Bit);
+                        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+                        conexion.Open();
+                        cmd.ExecuteNonQuery();
+
+                        #region Evaluando retorno
+                        if (int.TryParse(returnParameter.Value.ToString(), out int result) && result == 1)
+                        {
+                            success = true;
+                        }
+                        else
+                        {
+                            var log = new Log();
+                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "SP_CASCADE_UPDATE_IMPTO");
+                        }
+                        #endregion
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Actualizar En Cascada Precio por Impuesto: ", e.Message);
+                }
+            }
+            return success;
+        }
     }
 }

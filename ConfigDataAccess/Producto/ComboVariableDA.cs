@@ -3,6 +3,7 @@ using ConfigUtilitarios;
 using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -112,8 +113,9 @@ namespace ConfigDataAccess.Producto
                 return success;
             }
         }
-        public void ActualizarComboVariable(PROt15_combo_variable actualizado)
+        public bool ActualizarComboVariable(PROt15_combo_variable actualizado)
         {
+            bool success = false;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 using (var tns = ctx.Database.BeginTransaction())
@@ -123,38 +125,43 @@ namespace ConfigDataAccess.Producto
                         var original = ctx.PROt15_combo_variable.Find(actualizado.id_combo_variable);
                         if (original != null && original.id_combo_variable > 0)
                         {
+                            bool actualizarPrecioCascada = true;
+
                             if (actualizado.mto_pvpu_con_tax != original.mto_pvpu_con_tax ||
                             actualizado.mto_pvpu_sin_tax != original.mto_pvpu_sin_tax)
                             {
-                                //Actualizar precios del cbo var en el cbo fix dtl
-                                ActualizarPrecioCboVarEnCbo(actualizado.id_combo_variable, actualizado.mto_pvpu_con_tax, actualizado.mto_pvpu_sin_tax);
-
+                                //Actualizar En cascada
+                                actualizarPrecioCascada = ActualizarEnCascadaPrecioCboVar(actualizado.id_combo_variable, actualizado.mto_pvpu_con_tax, actualizado.mto_pvpu_sin_tax);
                             }
 
-                            //Actulización del master
-                            ctx.Entry(original).CurrentValues.SetValues(actualizado);
+                            if (actualizarPrecioCascada)
+                            {
+                                //Actualización del master
+                                ctx.Entry(original).CurrentValues.SetValues(actualizado);
 
-                            //Actualización del detail
-                            if (actualizado.PROt16_combo_variable_dtl != null)
-                                foreach (var newItem in actualizado.PROt16_combo_variable_dtl)
-                                {
-                                    //Caso: Edición 
-                                    if (newItem.id_combo_variable_dtl > 0)
+                                //Actualización del detail
+                                if (actualizado.PROt16_combo_variable_dtl != null)
+                                    foreach (var newItem in actualizado.PROt16_combo_variable_dtl)
                                     {
-                                        var oldItem = ctx.PROt16_combo_variable_dtl.Find(newItem.id_combo_variable_dtl);
-                                        if (oldItem != null)
+                                        //Caso: Edición 
+                                        if (newItem.id_combo_variable_dtl > 0)
                                         {
-                                            ctx.Entry(oldItem).CurrentValues.SetValues(newItem);
+                                            var oldItem = ctx.PROt16_combo_variable_dtl.Find(newItem.id_combo_variable_dtl);
+                                            if (oldItem != null)
+                                            {
+                                                ctx.Entry(oldItem).CurrentValues.SetValues(newItem);
+                                            }
+                                        }
+                                        //Caso: Inserción
+                                        else
+                                        {
+                                            ctx.PROt16_combo_variable_dtl.Add(newItem);
                                         }
                                     }
-                                    //Caso: Inserción
-                                    else
-                                    {
-                                        ctx.PROt16_combo_variable_dtl.Add(newItem);
-                                    }
-                                }
-                            ctx.SaveChanges();
-                            tns.Commit();
+                                ctx.SaveChanges();
+                                tns.Commit();
+                                success = true;
+                            }
                         }
                     }
                     catch (Exception e)
@@ -165,6 +172,7 @@ namespace ConfigDataAccess.Producto
                     }
                 }
             }
+            return success;
         }
 
         public PROt15_combo_variable ComboVariableXIdTest(long id)
@@ -179,7 +187,7 @@ namespace ConfigDataAccess.Producto
                     cnn.Open();
                     obj = cnn.Query<PROt15_combo_variable>(sentencia, new { id }).FirstOrDefault();
 
-                    if(obj!=null)
+                    if (obj != null)
                     {
 
                     }
@@ -198,21 +206,21 @@ namespace ConfigDataAccess.Producto
             var obj = new PROt15_combo_variable();
 
             #region Con Dapper
-         //   string sql2 = @"SELECT * FROM PROt15_combo_variable WHERE id_combo_variable=@id; 
-         //                      SELECT  dtl.[id_combo_variable_dtl]
-         //                         ,dtl.[cod_combo_variable_dtl]
-								 // ,pro.[txt_desc] as txt_desc
-         //                         ,dtl.[cantidad]
-         //                         ,dtl.[mto_pvpu_sin_tax]
-         //                         ,dtl.[mto_pvpu_con_tax]
-         //                         ,dtl.[id_estado]
-         //                         ,dtl.[txt_estado]
-         //                         ,dtl.[id_combo_variable]
-         //                         ,dtl.[id_producto]
-         //                     FROM [PROt16_combo_variable_dtl] dtl
-							  //INNER JOIN PROt09_producto pro 
-							  //ON dtl.id_producto = pro.id_producto
-							  //WHERE dtl.id_combo_variable = @id;";
+            //   string sql2 = @"SELECT * FROM PROt15_combo_variable WHERE id_combo_variable=@id; 
+            //                      SELECT  dtl.[id_combo_variable_dtl]
+            //                         ,dtl.[cod_combo_variable_dtl]
+            // ,pro.[txt_desc] as txt_desc
+            //                         ,dtl.[cantidad]
+            //                         ,dtl.[mto_pvpu_sin_tax]
+            //                         ,dtl.[mto_pvpu_con_tax]
+            //                         ,dtl.[id_estado]
+            //                         ,dtl.[txt_estado]
+            //                         ,dtl.[id_combo_variable]
+            //                         ,dtl.[id_producto]
+            //                     FROM [PROt16_combo_variable_dtl] dtl
+            //INNER JOIN PROt09_producto pro 
+            //ON dtl.id_producto = pro.id_producto
+            //WHERE dtl.id_combo_variable = @id;";
 
             var sql = @"SELECT * FROM PROt15_combo_variable WHERE id_combo_variable=@id; 
                             SELECT[id_combo_variable_dtl]
@@ -267,7 +275,7 @@ namespace ConfigDataAccess.Producto
 
                     //Cambiar aaquí.
                     //obj = ctx.PROt16_combo_variable_dtl.SingleOrDefault();
-                  
+
                 }
                 catch (Exception e)
                 {
@@ -321,30 +329,50 @@ namespace ConfigDataAccess.Producto
             return list;
         }
 
-        public void ActualizarPrecioCboVarEnCbo(long idCboVar, decimal? nuevoPrecioConTax, decimal? nuevoPrecioSinTax)
+
+        public bool ActualizarEnCascadaPrecioCboVar(long idCboVar, decimal nuevoPrecioConTax, decimal nuevoPrecioSinTax)
         {
-            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            bool success = false;
+
+            using (var conexion = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    int id_estado = Estado.IdInactivo;
-                    string txt_estado = Estado.TxtInactivo;
-                    using (SqlCommand cmd = cnn.CreateCommand())
+                    using (var cmd = new SqlCommand("SP_CASCADE_UPDATE_PRICE_CBO_VAR", conexion))
                     {
-                        cmd.CommandText = "UPDATE PROt14_combo_fixed_dtl SET mto_pvpu_sin_tax = @pvpu_sin_tax, mto_pvpu_con_tax = @pvpu_con_tax Where id_combo_variable=@id_combo_variable";
-                        cmd.Parameters.AddWithValue("@pvpu_con_tax", nuevoPrecioConTax);
-                        cmd.Parameters.AddWithValue("@pvpu_sin_tax", nuevoPrecioSinTax);
-                        cmd.Parameters.AddWithValue("@id_combo_variable", idCboVar);
-                        cnn.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@id_combo_var", idCboVar));
+                        cmd.Parameters.Add(new SqlParameter("@nuevo_pvpu_con_tax", nuevoPrecioConTax));
+                        cmd.Parameters.Add(new SqlParameter("@nuevo_pvpu_sin_tax", nuevoPrecioSinTax));
+
+                        var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Bit);
+                        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+                        conexion.Open();
                         cmd.ExecuteNonQuery();
+
+                        #region Evaluando retorno
+                        if (int.TryParse(returnParameter.Value.ToString(), out int result) && result == 1)
+                        {
+                            success = true;
+                        }
+                        else
+                        {
+                            var log = new Log();
+                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "SP_CASCADE_UPDATE_PRICE_CBO_VAR");
+                        }
+                        #endregion
                     }
+
                 }
                 catch (Exception e)
                 {
                     var log = new Log();
-                    log.ArchiveLog("Actualizar Precio de Cbo. Var. en Cbo. Fix. Dtl: ", e.Message);
+                    log.ArchiveLog("Actualizar En Cascada Precio Cbo. Var: ", e.Message);
                 }
             }
+            return success;
         }
     }
 }

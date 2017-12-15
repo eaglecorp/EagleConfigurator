@@ -22,9 +22,9 @@ namespace ConfigBusinessLogic
             new ImpuestoDA().EliminarImpuesto(id);
         }
 
-        public void ActualizarImpuesto(MSTt06_impuesto obj)
+        public bool ActualizarImpuesto(MSTt06_impuesto obj)
         {
-            new ImpuestoDA().ActualizarImpuesto(obj);
+            return new ImpuestoDA().ActualizarImpuesto(obj);
         }
 
         public MSTt06_impuesto ImpuestoXId(int id)

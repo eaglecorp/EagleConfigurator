@@ -336,7 +336,7 @@
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(137, 127);
+            this.tglListarInactivos.Location = new System.Drawing.Point(139, 123);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 134;
@@ -347,7 +347,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(39, 125);
+            this.lblListarInactivos.Location = new System.Drawing.Point(41, 121);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 133;
@@ -462,7 +462,6 @@
             this.chkMostrarInactivos.TabIndex = 156;
             this.chkMostrarInactivos.Text = "Ver inactivos";
             this.chkMostrarInactivos.UseCustomBackColor = true;
-            this.chkMostrarInactivos.UseCustomForeColor = true;
             this.chkMostrarInactivos.UseSelectable = true;
             this.chkMostrarInactivos.CheckedChanged += new System.EventHandler(this.chkMostrarInactivos_CheckedChanged);
             // 

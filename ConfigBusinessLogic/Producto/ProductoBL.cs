@@ -25,9 +25,9 @@ namespace ConfigBusinessLogic
             return new ProductoDA().ActivarProducto(id);
         }
 
-        public void ActualizarProducto(PROt09_producto obj)
+        public bool ActualizarProducto(PROt09_producto obj)
         {
-            new ProductoDA().ActualizarProducto(obj);
+            return new ProductoDA().ActualizarProducto(obj);
         }
 
         public List<PROt09_producto> ListaProducto(int? id_estado = null, bool ocultarBlankReg = false)

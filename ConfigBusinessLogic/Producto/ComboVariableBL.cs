@@ -26,9 +26,9 @@ namespace ConfigBusinessLogic.Producto
         {
             return new ComboVariableDA().ActivarComboVariable(id);
         }
-        public void ActualizarComboVariable(PROt15_combo_variable actualizado)
+        public bool ActualizarComboVariable(PROt15_combo_variable actualizado)
         {
-            new ComboVariableDA().ActualizarComboVariable(actualizado);
+            return new ComboVariableDA().ActualizarComboVariable(actualizado);
         }
         public PROt15_combo_variable ComboVariableXId(long id)
         {

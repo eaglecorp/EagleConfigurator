@@ -237,7 +237,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(45, 116);
+            this.lblListarInactivos.Location = new System.Drawing.Point(49, 113);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;
@@ -246,7 +246,7 @@
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(143, 118);
+            this.tglListarInactivos.Location = new System.Drawing.Point(147, 115);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -320,7 +320,7 @@
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
-            this.txtFiltro.WaterMark = "Filtro";
+            this.txtFiltro.PromptText = "Filtro";
             this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFiltro.SelectedText = "";
             this.txtFiltro.SelectionLength = 0;

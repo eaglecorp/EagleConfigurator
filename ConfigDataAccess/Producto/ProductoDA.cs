@@ -107,33 +107,89 @@ namespace ConfigDataAccess
         }
 
 
-        public void ActualizarPrecioProdEnCboVarDtl(long idProducto, decimal? nuevoPrecioConTax, decimal? nuevoPrecioSinTax)
+        #region Actualización de precios prod, cbo. elec., cbo
+
+        public bool ActualizarEnCascadaPrecioProducto(long idProducto, decimal? nuevoPrecioConTax, decimal? nuevoPrecioSinTax)
         {
-            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            bool success = false;
+
+            using (var conexion = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    int id_estado = Estado.IdInactivo;
-                    string txt_estado = Estado.TxtInactivo;
-                    using (SqlCommand cmd = cnn.CreateCommand())
+                    using (var cmd = new SqlCommand("SP_CASCADE_UPDATE_PRICE_PRODUCTO", conexion))
                     {
-                        cmd.CommandText = "UPDATE PROt16_combo_variable_dtl SET mto_pvpu_sin_tax = @pvpu_sin_tax, mto_pvpu_con_tax = @pvpu_con_tax Where id_producto=@id_producto";
-                        cmd.Parameters.AddWithValue("@pvpu_con_tax", nuevoPrecioConTax);
-                        cmd.Parameters.AddWithValue("@pvpu_sin_tax", nuevoPrecioSinTax);
-                        cmd.Parameters.AddWithValue("@id_producto", idProducto);
-                        cnn.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@id_producto", idProducto));
+                        cmd.Parameters.Add(new SqlParameter("@nuevo_pvpu_con_tax", nuevoPrecioConTax));
+                        cmd.Parameters.Add(new SqlParameter("@nuevo_pvpu_sin_tax", nuevoPrecioSinTax));
+
+                        var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Bit);
+                        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+                        conexion.Open();
                         cmd.ExecuteNonQuery();
+
+                        #region Evaluando retorno
+                        if (int.TryParse(returnParameter.Value.ToString(), out int result) && result == 1)
+                        {
+                            success = true;
+                        }
+                        else
+                        {
+                            var log = new Log();
+                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "SP_CASCADE_UPDATE_PRICE_PRODUCTO");
+                        }
+                        #endregion
                     }
                 }
                 catch (Exception e)
                 {
                     var log = new Log();
-                    log.ArchiveLog("Actualizar Precio de Prod. en Cbo. Var. Dtl: ", e.Message);
+                    log.ArchiveLog("Actualizar En Cascada Precio Producto: ", e.Message);
                 }
             }
+            return success;
         }
-        public void ActualizarProducto(PROt09_producto prodActualizado)
+
+
+        public List<PROt09_producto> ListaPreciosDeProductos(int id_impuesto)
         {
+            var lista = new List<PROt09_producto>();
+            string sentencia = @"SELECT [id_producto]
+                                      ,[mto_pvpu_con_igv]
+                                      ,[mto_pvmi_con_igv]
+                                      ,[mto_pvma_con_igv]
+                                      ,[mto_pvpu_sin_igv]
+                                      ,[mto_pvmi_sin_igv]
+                                      ,[mto_pvma_sin_igv]     
+                                      FROM [PROt09_producto] prod
+                                      WHERE prod.id_impuesto = @id_impuesto  
+                                      AND prod.sn_incluye_impto = @sn_incluye_impto";
+
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    lista = cnn.Query<PROt09_producto>(sentencia, new { id_impuesto, sn_incluye_impto = Estado.IdActivo }).ToList();
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Lista Precios de Productos: ", e.Message);
+                }
+            }
+            return lista;
+        }
+        #endregion
+
+
+
+        public bool ActualizarProducto(PROt09_producto prodActualizado)
+        {
+            bool success = false;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
@@ -141,15 +197,19 @@ namespace ConfigDataAccess
                     var original = ctx.PROt09_producto.Find(prodActualizado.id_producto);
                     if (original != null && original.id_producto > 0)
                     {
+                        bool actualizarPrecioCascada = true;
+
                         if (prodActualizado.mto_pvpu_con_igv != original.mto_pvpu_con_igv ||
                             prodActualizado.mto_pvpu_sin_igv != original.mto_pvpu_sin_igv)
                         {
-                            //Actualizar precios en los cbo var dtl y cbo dtl
-                            ActualizarPrecioProdEnCboVarDtl(prodActualizado.id_producto, prodActualizado.mto_pvpu_con_igv, prodActualizado.mto_pvpu_sin_igv);
-
+                            actualizarPrecioCascada = ActualizarEnCascadaPrecioProducto(prodActualizado.id_producto, prodActualizado.mto_pvpu_con_igv, prodActualizado.mto_pvpu_sin_igv);
                         }
-                        ctx.Entry(original).CurrentValues.SetValues(prodActualizado);
-                        ctx.SaveChanges();
+                        if (actualizarPrecioCascada)
+                        {
+                            ctx.Entry(original).CurrentValues.SetValues(prodActualizado);
+                            ctx.SaveChanges();
+                            success = true;
+                        }
                     }
                 }
                 catch (Exception e)
@@ -158,6 +218,7 @@ namespace ConfigDataAccess
                     log.ArchiveLog("Actualizar Producto: ", e.Message);
                 }
             }
+            return success;
         }
         public PROt09_producto ProductoXId(long id)
         {

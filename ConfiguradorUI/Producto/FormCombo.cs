@@ -1429,8 +1429,8 @@ namespace ConfiguradorUI.Producto
                 chkActivo.Enabled = true;
 
             chkActivo.Checked = true;
-            chkIncluyeImpto.Checked = true;
             chkPrecioAcumulado.Checked = false;
+            chkIncluyeImpto.Checked = true;
             lblIdCombo.Text = 0 + "";
             codSelected = "";
             txtNombre.Clear();
@@ -1665,13 +1665,13 @@ namespace ConfiguradorUI.Producto
             {
                 DetailView = Detail.Producto;
                 lblItemDesc.Text = "Descrip. Producto";
-                btnItem.Location = new Point(187, 104);
+                btnItem.Location = new Point(187, 111);
             }
             else if (tabDetails.SelectedTab == tabDetails.TabPages["tabPagCboElectivo"])
             {
                 DetailView = Detail.ComboVariable;
                 lblItemDesc.Text = "Descrip. Cbo. Electivo";
-                btnItem.Location = new Point(207, 104);
+                btnItem.Location = new Point(207, 111);
             }
             CleanItem(true);
 
@@ -2178,9 +2178,7 @@ namespace ConfiguradorUI.Producto
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
-
-            tabDetails.SelectedTab = tabPagCboElectivo;
-            //RemoveItem(DeleteDtlAction.Remove);
+           RemoveItem(DeleteDtlAction.Remove);
         }
 
         private void btnProducto_Click(object sender, EventArgs e)

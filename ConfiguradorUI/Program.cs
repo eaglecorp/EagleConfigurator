@@ -18,7 +18,15 @@ namespace ConfiguradorUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new splahScreen(3));
+            try
+            {
             Application.Run(new MenuPrincipal());
+
+            }
+            catch(Exception e)
+            {
+
+            }
             //Application.Run(new FormTurno());
         }
     }

@@ -99,12 +99,6 @@ namespace ConfiguradorUI
             }
         }
 
-        private void Cerrar()
-        {
-            Hide();
-            Dispose();
-            Close();
-        }
 
         #endregion
 
@@ -138,9 +132,8 @@ namespace ConfiguradorUI
                 else
                 {
                     closeWindows = true;
-                    //Hide();
-                    ////Close();
-                    //Dispose();
+                    Close();
+                    return;
                 }
 
             }
@@ -165,7 +158,7 @@ namespace ConfiguradorUI
                     oLog.ArchiveLog("Cerrar Login", "Cerró desde el login. No ingresó al aplicativo.");
                     //Dispose();
                     //Hide();
-                    Close();
+                    //Close();
                 }
                 else
                 {
@@ -184,8 +177,8 @@ namespace ConfiguradorUI
             {
                 MessageBox.Show("Excepción en el evento FormClosing. " + exc.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Hide();
-                Dispose();
                 Close();
+                Dispose();
             }
         }
 

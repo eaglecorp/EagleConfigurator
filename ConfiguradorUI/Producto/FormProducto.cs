@@ -205,8 +205,12 @@ namespace ConfiguradorUI.Producto
                         if (long.TryParse(lblIdProducto.Text, out id))
                         {
                             oProducto.id_producto = id;
-                            new ProductoBL().ActualizarProducto(oProducto);
+                            bool success = new ProductoBL().ActualizarProducto(oProducto);
                             ControlarEventosABM(oProducto.id_producto);
+                            if (!success)
+                            {
+                                MessageBox.Show("No se pudo actualizar el producto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         isValid = true;
                     }
@@ -234,7 +238,11 @@ namespace ConfiguradorUI.Producto
                         if (long.TryParse(lblIdProducto.Text, out id))
                         {
                             oProducto.id_producto = id;
-                            new ProductoBL().ActualizarProducto(oProducto);
+                            bool success = new ProductoBL().ActualizarProducto(oProducto);
+                            if (!success)
+                            {
+                                MessageBox.Show("No se pudo actualizar el producto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         isValid = true;
                     }
@@ -1137,22 +1145,22 @@ namespace ConfiguradorUI.Producto
             txtDiametro.Clear();
 
 
-            cboUnidadMedida.SelectedIndex   = (cboUnidadMedida.Items.Count > 0) ? 0 : -1;
+            cboUnidadMedida.SelectedIndex = (cboUnidadMedida.Items.Count > 0) ? 0 : -1;
 
-            cboFamilia.SelectedIndex        = (cboFamilia.Items.Count > 0) ? 0 : -1;
-            cboSubFamilia.SelectedIndex     = (cboSubFamilia.Items.Count > 0) ? 0 : -1;
+            cboFamilia.SelectedIndex = (cboFamilia.Items.Count > 0) ? 0 : -1;
+            cboSubFamilia.SelectedIndex = (cboSubFamilia.Items.Count > 0) ? 0 : -1;
 
-            cboMarca.SelectedIndex          = (cboMarca.Items.Count > 0) ? 0 : -1;
-            cboModelo.SelectedIndex         = (cboModelo.Items.Count > 0) ? 0 : -1;
+            cboMarca.SelectedIndex = (cboMarca.Items.Count > 0) ? 0 : -1;
+            cboModelo.SelectedIndex = (cboModelo.Items.Count > 0) ? 0 : -1;
 
-            cboTipoProd.SelectedIndex       = (cboTipoProd.Items.Count > 0) ? 0 : -1;
+            cboTipoProd.SelectedIndex = (cboTipoProd.Items.Count > 0) ? 0 : -1;
             cboTipoExistencia.SelectedIndex = (cboTipoExistencia.Items.Count > 0) ? 0 : -1;
 
-            cboGrupoProd.SelectedIndex      = (cboGrupoProd.Items.Count > 0) ? 0 : -1;
-            cboClaseProd.SelectedIndex      = (cboClaseProd.Items.Count > 0) ? 0 : -1;
+            cboGrupoProd.SelectedIndex = (cboGrupoProd.Items.Count > 0) ? 0 : -1;
+            cboClaseProd.SelectedIndex = (cboClaseProd.Items.Count > 0) ? 0 : -1;
 
-            cboTipoMoneda.SelectedIndex     = (cboTipoMoneda.Items.Count > 0) ? 0 : -1;
-            cboImpuesto.SelectedIndex       = (cboImpuesto.Items.Count > 0) ? 0 : -1;
+            cboTipoMoneda.SelectedIndex = (cboTipoMoneda.Items.Count > 0) ? 0 : -1;
+            cboImpuesto.SelectedIndex = (cboImpuesto.Items.Count > 0) ? 0 : -1;
 
 
             chkProductoVenta.Checked = true;

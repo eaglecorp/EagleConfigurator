@@ -234,9 +234,13 @@ namespace ConfiguradorUI.Maestro
                         if (int.TryParse(lblIdImpuesto.Text, out id))
                         {
                             obj.id_impuesto = id;
-                            new ImpuestoBL().ActualizarImpuesto(obj);
+                            bool success = new ImpuestoBL().ActualizarImpuesto(obj);
                             actualizar = true;
                             ControlarEventosABM(obj.id_impuesto);
+                            if (!success)
+                            {
+                                MessageBox.Show("No se pudo actualizar el impuesto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         isValid = true;
                     }
@@ -264,8 +268,12 @@ namespace ConfiguradorUI.Maestro
                         if (int.TryParse(lblIdImpuesto.Text, out id))
                         {
                             obj.id_impuesto = id;
-                            new ImpuestoBL().ActualizarImpuesto(obj);
+                            bool success = new ImpuestoBL().ActualizarImpuesto(obj);
                             actualizar = true;
+                            if (!success)
+                            {
+                                MessageBox.Show("No se pudo actualizar el impuesto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         isValid = true;
                     }
