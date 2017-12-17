@@ -50,22 +50,23 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabCaja = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboImpresora06 = new MetroFramework.Controls.MetroComboBox();
+            this.cboImpresora06 = new System.Windows.Forms.ComboBox();
+            this.cboImpresora05 = new System.Windows.Forms.ComboBox();
+            this.cboImpresora04 = new System.Windows.Forms.ComboBox();
+            this.cboImpresora03 = new System.Windows.Forms.ComboBox();
+            this.cboImpresora02 = new System.Windows.Forms.ComboBox();
+            this.cboImpresora = new System.Windows.Forms.ComboBox();
+            this.lblImpresoras = new MetroFramework.Controls.MetroLabel();
             this.btnImpresora06 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora06 = new MetroFramework.Controls.MetroLabel();
-            this.cboImpresora05 = new MetroFramework.Controls.MetroComboBox();
             this.btnImpresora05 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora05 = new MetroFramework.Controls.MetroLabel();
-            this.cboImpresora04 = new MetroFramework.Controls.MetroComboBox();
             this.btnImpresora04 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora04 = new MetroFramework.Controls.MetroLabel();
-            this.cboImpresora03 = new MetroFramework.Controls.MetroComboBox();
             this.btnImpresora03 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora03 = new MetroFramework.Controls.MetroLabel();
-            this.cboImpresora02 = new MetroFramework.Controls.MetroComboBox();
             this.btnImpresora02 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora02 = new MetroFramework.Controls.MetroLabel();
-            this.cboImpresora = new MetroFramework.Controls.MetroComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtIp = new MetroFramework.Controls.MetroTextBox();
             this.lblIp = new MetroFramework.Controls.MetroLabel();
@@ -85,7 +86,6 @@
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblImpresoras = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaja)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -188,9 +188,9 @@
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(13, 13);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(56, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Criterio:";
+            this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
@@ -248,9 +248,9 @@
             this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(84, 11);
+            this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(183, 23);
+            this.cboFiltro.Size = new System.Drawing.Size(172, 23);
             this.cboFiltro.TabIndex = 3;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
@@ -383,23 +383,23 @@
             // 
             // tabPagGeneral
             // 
-            this.tabPagGeneral.Controls.Add(this.lblImpresoras);
             this.tabPagGeneral.Controls.Add(this.cboImpresora06);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora05);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora04);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora03);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora02);
+            this.tabPagGeneral.Controls.Add(this.cboImpresora);
+            this.tabPagGeneral.Controls.Add(this.lblImpresoras);
             this.tabPagGeneral.Controls.Add(this.btnImpresora06);
             this.tabPagGeneral.Controls.Add(this.lblImpresora06);
-            this.tabPagGeneral.Controls.Add(this.cboImpresora05);
             this.tabPagGeneral.Controls.Add(this.btnImpresora05);
             this.tabPagGeneral.Controls.Add(this.lblImpresora05);
-            this.tabPagGeneral.Controls.Add(this.cboImpresora04);
             this.tabPagGeneral.Controls.Add(this.btnImpresora04);
             this.tabPagGeneral.Controls.Add(this.lblImpresora04);
-            this.tabPagGeneral.Controls.Add(this.cboImpresora03);
             this.tabPagGeneral.Controls.Add(this.btnImpresora03);
             this.tabPagGeneral.Controls.Add(this.lblImpresora03);
-            this.tabPagGeneral.Controls.Add(this.cboImpresora02);
             this.tabPagGeneral.Controls.Add(this.btnImpresora02);
             this.tabPagGeneral.Controls.Add(this.lblImpresora02);
-            this.tabPagGeneral.Controls.Add(this.cboImpresora);
             this.tabPagGeneral.Controls.Add(this.panel1);
             this.tabPagGeneral.Controls.Add(this.txtIp);
             this.tabPagGeneral.Controls.Add(this.lblIp);
@@ -431,16 +431,92 @@
             // cboImpresora06
             // 
             this.cboImpresora06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboImpresora06.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cboImpresora06.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboImpresora06.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboImpresora06.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboImpresora06.FormattingEnabled = true;
-            this.cboImpresora06.ItemHeight = 19;
-            this.cboImpresora06.Location = new System.Drawing.Point(348, 246);
+            this.cboImpresora06.Location = new System.Drawing.Point(348, 245);
             this.cboImpresora06.Name = "cboImpresora06";
-            this.cboImpresora06.Size = new System.Drawing.Size(155, 25);
-            this.cboImpresora06.TabIndex = 117;
-            this.cboImpresora06.UseCustomBackColor = true;
-            this.cboImpresora06.UseSelectable = true;
+            this.cboImpresora06.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora06.TabIndex = 10;
             this.cboImpresora06.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboImpresora05
+            // 
+            this.cboImpresora05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora05.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboImpresora05.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboImpresora05.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboImpresora05.FormattingEnabled = true;
+            this.cboImpresora05.Location = new System.Drawing.Point(77, 248);
+            this.cboImpresora05.Name = "cboImpresora05";
+            this.cboImpresora05.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora05.TabIndex = 9;
+            this.cboImpresora05.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboImpresora04
+            // 
+            this.cboImpresora04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora04.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboImpresora04.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboImpresora04.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboImpresora04.FormattingEnabled = true;
+            this.cboImpresora04.Location = new System.Drawing.Point(348, 206);
+            this.cboImpresora04.Name = "cboImpresora04";
+            this.cboImpresora04.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora04.TabIndex = 8;
+            this.cboImpresora04.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboImpresora03
+            // 
+            this.cboImpresora03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora03.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboImpresora03.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboImpresora03.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboImpresora03.FormattingEnabled = true;
+            this.cboImpresora03.Location = new System.Drawing.Point(77, 209);
+            this.cboImpresora03.Name = "cboImpresora03";
+            this.cboImpresora03.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora03.TabIndex = 7;
+            this.cboImpresora03.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboImpresora02
+            // 
+            this.cboImpresora02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora02.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboImpresora02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboImpresora02.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboImpresora02.FormattingEnabled = true;
+            this.cboImpresora02.Location = new System.Drawing.Point(348, 167);
+            this.cboImpresora02.Name = "cboImpresora02";
+            this.cboImpresora02.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora02.TabIndex = 6;
+            this.cboImpresora02.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboImpresora
+            // 
+            this.cboImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpresora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboImpresora.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboImpresora.FormattingEnabled = true;
+            this.cboImpresora.Location = new System.Drawing.Point(77, 170);
+            this.cboImpresora.Name = "cboImpresora";
+            this.cboImpresora.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora.TabIndex = 5;
+            this.cboImpresora.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblImpresoras
+            // 
+            this.lblImpresoras.AutoSize = true;
+            this.lblImpresoras.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblImpresoras.ForeColor = System.Drawing.Color.Navy;
+            this.lblImpresoras.Location = new System.Drawing.Point(4, 138);
+            this.lblImpresoras.Name = "lblImpresoras";
+            this.lblImpresoras.Size = new System.Drawing.Size(84, 19);
+            this.lblImpresoras.TabIndex = 118;
+            this.lblImpresoras.Text = "Impresoras";
+            this.lblImpresoras.UseCustomForeColor = true;
             // 
             // btnImpresora06
             // 
@@ -464,20 +540,6 @@
             this.lblImpresora06.Text = "Impr. 06:";
             this.lblImpresora06.UseCustomForeColor = true;
             // 
-            // cboImpresora05
-            // 
-            this.cboImpresora05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboImpresora05.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cboImpresora05.FormattingEnabled = true;
-            this.cboImpresora05.ItemHeight = 19;
-            this.cboImpresora05.Location = new System.Drawing.Point(77, 246);
-            this.cboImpresora05.Name = "cboImpresora05";
-            this.cboImpresora05.Size = new System.Drawing.Size(155, 25);
-            this.cboImpresora05.TabIndex = 114;
-            this.cboImpresora05.UseCustomBackColor = true;
-            this.cboImpresora05.UseSelectable = true;
-            this.cboImpresora05.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
             // btnImpresora05
             // 
             this.btnImpresora05.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora05.Image")));
@@ -499,20 +561,6 @@
             this.lblImpresora05.TabIndex = 112;
             this.lblImpresora05.Text = "Impr. 05:";
             this.lblImpresora05.UseCustomForeColor = true;
-            // 
-            // cboImpresora04
-            // 
-            this.cboImpresora04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboImpresora04.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cboImpresora04.FormattingEnabled = true;
-            this.cboImpresora04.ItemHeight = 19;
-            this.cboImpresora04.Location = new System.Drawing.Point(348, 207);
-            this.cboImpresora04.Name = "cboImpresora04";
-            this.cboImpresora04.Size = new System.Drawing.Size(155, 25);
-            this.cboImpresora04.TabIndex = 111;
-            this.cboImpresora04.UseCustomBackColor = true;
-            this.cboImpresora04.UseSelectable = true;
-            this.cboImpresora04.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // btnImpresora04
             // 
@@ -536,20 +584,6 @@
             this.lblImpresora04.Text = "Impr. 04:";
             this.lblImpresora04.UseCustomForeColor = true;
             // 
-            // cboImpresora03
-            // 
-            this.cboImpresora03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboImpresora03.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cboImpresora03.FormattingEnabled = true;
-            this.cboImpresora03.ItemHeight = 19;
-            this.cboImpresora03.Location = new System.Drawing.Point(77, 207);
-            this.cboImpresora03.Name = "cboImpresora03";
-            this.cboImpresora03.Size = new System.Drawing.Size(155, 25);
-            this.cboImpresora03.TabIndex = 108;
-            this.cboImpresora03.UseCustomBackColor = true;
-            this.cboImpresora03.UseSelectable = true;
-            this.cboImpresora03.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
             // btnImpresora03
             // 
             this.btnImpresora03.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora03.Image")));
@@ -572,20 +606,6 @@
             this.lblImpresora03.Text = "Impr. 03:";
             this.lblImpresora03.UseCustomForeColor = true;
             // 
-            // cboImpresora02
-            // 
-            this.cboImpresora02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboImpresora02.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cboImpresora02.FormattingEnabled = true;
-            this.cboImpresora02.ItemHeight = 19;
-            this.cboImpresora02.Location = new System.Drawing.Point(348, 168);
-            this.cboImpresora02.Name = "cboImpresora02";
-            this.cboImpresora02.Size = new System.Drawing.Size(155, 25);
-            this.cboImpresora02.TabIndex = 105;
-            this.cboImpresora02.UseCustomBackColor = true;
-            this.cboImpresora02.UseSelectable = true;
-            this.cboImpresora02.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
             // btnImpresora02
             // 
             this.btnImpresora02.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora02.Image")));
@@ -607,20 +627,6 @@
             this.lblImpresora02.TabIndex = 103;
             this.lblImpresora02.Text = "Impr. 02:";
             this.lblImpresora02.UseCustomForeColor = true;
-            // 
-            // cboImpresora
-            // 
-            this.cboImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboImpresora.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cboImpresora.FormattingEnabled = true;
-            this.cboImpresora.ItemHeight = 19;
-            this.cboImpresora.Location = new System.Drawing.Point(77, 168);
-            this.cboImpresora.Name = "cboImpresora";
-            this.cboImpresora.Size = new System.Drawing.Size(155, 25);
-            this.cboImpresora.TabIndex = 102;
-            this.cboImpresora.UseCustomBackColor = true;
-            this.cboImpresora.UseSelectable = true;
-            this.cboImpresora.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // panel1
             // 
@@ -657,7 +663,7 @@
             this.txtIp.SelectionStart = 0;
             this.txtIp.ShortcutsEnabled = true;
             this.txtIp.Size = new System.Drawing.Size(184, 23);
-            this.txtIp.TabIndex = 100;
+            this.txtIp.TabIndex = 2;
             this.txtIp.UseCustomBackColor = true;
             this.txtIp.UseSelectable = true;
             this.txtIp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -723,7 +729,7 @@
             this.txtInfo01.SelectionStart = 0;
             this.txtInfo01.ShortcutsEnabled = true;
             this.txtInfo01.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo01.TabIndex = 95;
+            this.txtInfo01.TabIndex = 3;
             this.txtInfo01.UseCustomBackColor = true;
             this.txtInfo01.UseSelectable = true;
             this.txtInfo01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -756,7 +762,7 @@
             this.txtInfo02.SelectionStart = 0;
             this.txtInfo02.ShortcutsEnabled = true;
             this.txtInfo02.Size = new System.Drawing.Size(455, 23);
-            this.txtInfo02.TabIndex = 94;
+            this.txtInfo02.TabIndex = 4;
             this.txtInfo02.UseCustomBackColor = true;
             this.txtInfo02.UseSelectable = true;
             this.txtInfo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -814,7 +820,7 @@
             this.chkActivo.Location = new System.Drawing.Point(9, 300);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 6;
+            this.chkActivo.TabIndex = 11;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -846,7 +852,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -890,7 +896,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(184, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -934,18 +940,6 @@
             // errorProv
             // 
             this.errorProv.ContainerControl = this;
-            // 
-            // lblImpresoras
-            // 
-            this.lblImpresoras.AutoSize = true;
-            this.lblImpresoras.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblImpresoras.ForeColor = System.Drawing.Color.Navy;
-            this.lblImpresoras.Location = new System.Drawing.Point(4, 138);
-            this.lblImpresoras.Name = "lblImpresoras";
-            this.lblImpresoras.Size = new System.Drawing.Size(84, 19);
-            this.lblImpresoras.TabIndex = 118;
-            this.lblImpresoras.Text = "Impresoras";
-            this.lblImpresoras.UseCustomForeColor = true;
             // 
             // FormCaja
             // 
@@ -1016,26 +1010,26 @@
         private MetroFramework.Controls.MetroLink btnCerrar;
         private MetroFramework.Controls.MetroLink btnImpresora;
         private MetroFramework.Controls.MetroLabel lblImpresora;
-        private MetroFramework.Controls.MetroComboBox cboImpresora06;
         private MetroFramework.Controls.MetroLink btnImpresora06;
         private MetroFramework.Controls.MetroLabel lblImpresora06;
-        private MetroFramework.Controls.MetroComboBox cboImpresora05;
         private MetroFramework.Controls.MetroLink btnImpresora05;
         private MetroFramework.Controls.MetroLabel lblImpresora05;
-        private MetroFramework.Controls.MetroComboBox cboImpresora04;
         private MetroFramework.Controls.MetroLink btnImpresora04;
         private MetroFramework.Controls.MetroLabel lblImpresora04;
-        private MetroFramework.Controls.MetroComboBox cboImpresora03;
         private MetroFramework.Controls.MetroLink btnImpresora03;
         private MetroFramework.Controls.MetroLabel lblImpresora03;
-        private MetroFramework.Controls.MetroComboBox cboImpresora02;
         private MetroFramework.Controls.MetroLink btnImpresora02;
         private MetroFramework.Controls.MetroLabel lblImpresora02;
-        private MetroFramework.Controls.MetroComboBox cboImpresora;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroTextBox txtIp;
         private MetroFramework.Controls.MetroLabel lblIp;
         private System.Windows.Forms.ErrorProvider errorProv;
         private MetroFramework.Controls.MetroLabel lblImpresoras;
+        private System.Windows.Forms.ComboBox cboImpresora;
+        private System.Windows.Forms.ComboBox cboImpresora06;
+        private System.Windows.Forms.ComboBox cboImpresora05;
+        private System.Windows.Forms.ComboBox cboImpresora04;
+        private System.Windows.Forms.ComboBox cboImpresora03;
+        private System.Windows.Forms.ComboBox cboImpresora02;
     }
 }

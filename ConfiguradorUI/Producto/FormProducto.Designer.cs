@@ -328,7 +328,7 @@
             this.cboUnidadMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboUnidadMedida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUnidadMedida.FormattingEnabled = true;
-            this.cboUnidadMedida.Location = new System.Drawing.Point(76, 81);
+            this.cboUnidadMedida.Location = new System.Drawing.Point(354, 83);
             this.cboUnidadMedida.Name = "cboUnidadMedida";
             this.cboUnidadMedida.Size = new System.Drawing.Size(183, 23);
             this.cboUnidadMedida.TabIndex = 9;
@@ -338,7 +338,7 @@
             // 
             this.lblUnidadMedida.AutoSize = true;
             this.lblUnidadMedida.ForeColor = System.Drawing.Color.Navy;
-            this.lblUnidadMedida.Location = new System.Drawing.Point(1, 83);
+            this.lblUnidadMedida.Location = new System.Drawing.Point(281, 85);
             this.lblUnidadMedida.Name = "lblUnidadMedida";
             this.lblUnidadMedida.Size = new System.Drawing.Size(67, 19);
             this.lblUnidadMedida.TabIndex = 8;
@@ -924,7 +924,7 @@
             this.txtCodigo02.SelectionStart = 0;
             this.txtCodigo02.ShortcutsEnabled = true;
             this.txtCodigo02.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo02.TabIndex = 7;
+            this.txtCodigo02.TabIndex = 5;
             this.txtCodigo02.UseCustomBackColor = true;
             this.txtCodigo02.UseSelectable = true;
             this.txtCodigo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -938,7 +938,7 @@
             this.lblCodigo02.Location = new System.Drawing.Point(281, 49);
             this.lblCodigo02.Name = "lblCodigo02";
             this.lblCodigo02.Size = new System.Drawing.Size(74, 19);
-            this.lblCodigo02.TabIndex = 6;
+            this.lblCodigo02.TabIndex = 4;
             this.lblCodigo02.Text = "Código 02:";
             this.lblCodigo02.UseCustomForeColor = true;
             // 
@@ -958,7 +958,7 @@
             this.txtCodBarra.CustomButton.UseSelectable = true;
             this.txtCodBarra.CustomButton.Visible = false;
             this.txtCodBarra.Lines = new string[0];
-            this.txtCodBarra.Location = new System.Drawing.Point(353, 11);
+            this.txtCodBarra.Location = new System.Drawing.Point(75, 83);
             this.txtCodBarra.MaxLength = 32767;
             this.txtCodBarra.Name = "txtCodBarra";
             this.txtCodBarra.PasswordChar = '\0';
@@ -968,7 +968,7 @@
             this.txtCodBarra.SelectionStart = 0;
             this.txtCodBarra.ShortcutsEnabled = true;
             this.txtCodBarra.Size = new System.Drawing.Size(184, 23);
-            this.txtCodBarra.TabIndex = 3;
+            this.txtCodBarra.TabIndex = 7;
             this.txtCodBarra.UseCustomBackColor = true;
             this.txtCodBarra.UseSelectable = true;
             this.txtCodBarra.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -979,10 +979,10 @@
             // 
             this.lblCodBarra.AutoSize = true;
             this.lblCodBarra.ForeColor = System.Drawing.Color.Navy;
-            this.lblCodBarra.Location = new System.Drawing.Point(281, 13);
+            this.lblCodBarra.Location = new System.Drawing.Point(3, 85);
             this.lblCodBarra.Name = "lblCodBarra";
             this.lblCodBarra.Size = new System.Drawing.Size(76, 19);
-            this.lblCodBarra.TabIndex = 2;
+            this.lblCodBarra.TabIndex = 6;
             this.lblCodBarra.Text = "Cód. Barra:";
             this.lblCodBarra.UseCustomForeColor = true;
             // 
@@ -1012,7 +1012,7 @@
             this.txtCodigo01.SelectionStart = 0;
             this.txtCodigo01.ShortcutsEnabled = true;
             this.txtCodigo01.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo01.TabIndex = 5;
+            this.txtCodigo01.TabIndex = 3;
             this.txtCodigo01.UseCustomBackColor = true;
             this.txtCodigo01.UseSelectable = true;
             this.txtCodigo01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1026,7 +1026,7 @@
             this.lblCodigo01.Location = new System.Drawing.Point(1, 49);
             this.lblCodigo01.Name = "lblCodigo01";
             this.lblCodigo01.Size = new System.Drawing.Size(72, 19);
-            this.lblCodigo01.TabIndex = 4;
+            this.lblCodigo01.TabIndex = 2;
             this.lblCodigo01.Text = "Código 01:";
             this.lblCodigo01.UseCustomForeColor = true;
             // 
@@ -1037,7 +1037,7 @@
             // 
             // 
             this.txtNombre.CustomButton.Image = null;
-            this.txtNombre.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtNombre.CustomButton.Location = new System.Drawing.Point(440, 1);
             this.txtNombre.CustomButton.Name = "";
             this.txtNombre.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNombre.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1055,7 +1055,7 @@
             this.txtNombre.SelectionLength = 0;
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
-            this.txtNombre.Size = new System.Drawing.Size(184, 23);
+            this.txtNombre.Size = new System.Drawing.Size(462, 23);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;

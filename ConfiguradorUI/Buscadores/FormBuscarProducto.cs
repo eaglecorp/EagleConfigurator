@@ -6,6 +6,7 @@ using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -108,7 +109,7 @@ namespace ConfiguradorUI.Buscadores
                 dgvProd.Columns["PESO"].Visible = false;
                 dgvProd.Columns["UM"].Visible = false;
 
-                dgvProd.Columns["CODIGO"].HeaderText = "CÓDIGO";
+                dgvProd.Columns["CODIGO"].HeaderText = "CÓDIGO 01";
                 dgvProd.Columns["CODIGO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvProd.Columns["CODIGO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -121,7 +122,7 @@ namespace ConfiguradorUI.Buscadores
                 dgvProd.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvProd.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvProd.Columns["DESCRIPCION"].Width = 405;
+                dgvProd.Columns["DESCRIPCION"].Width = 387;
             }
             catch (Exception e)
             {
@@ -324,5 +325,9 @@ namespace ConfiguradorUI.Buscadores
 
         #endregion
 
+        private void dgvProd_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
+        }
     }
 }

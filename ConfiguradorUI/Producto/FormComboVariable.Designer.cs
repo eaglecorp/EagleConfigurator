@@ -406,7 +406,7 @@
             this.chkIncluyeImpto.Location = new System.Drawing.Point(5, 405);
             this.chkIncluyeImpto.Name = "chkIncluyeImpto";
             this.chkIncluyeImpto.Size = new System.Drawing.Size(163, 19);
-            this.chkIncluyeImpto.TabIndex = 159;
+            this.chkIncluyeImpto.TabIndex = 5;
             this.chkIncluyeImpto.Text = "Precio incluye impuesto";
             this.chkIncluyeImpto.UseCustomForeColor = true;
             this.chkIncluyeImpto.UseSelectable = true;
@@ -447,7 +447,7 @@
             this.cboImpuesto.Location = new System.Drawing.Point(77, 356);
             this.cboImpuesto.Name = "cboImpuesto";
             this.cboImpuesto.Size = new System.Drawing.Size(137, 23);
-            this.cboImpuesto.TabIndex = 143;
+            this.cboImpuesto.TabIndex = 4;
             this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
             // 
             // chkMostrarInactivos
@@ -573,7 +573,7 @@
             this.txtPrecioCboConTax.SelectionStart = 0;
             this.txtPrecioCboConTax.ShortcutsEnabled = true;
             this.txtPrecioCboConTax.Size = new System.Drawing.Size(126, 23);
-            this.txtPrecioCboConTax.TabIndex = 134;
+            this.txtPrecioCboConTax.TabIndex = 3;
             this.txtPrecioCboConTax.UseCustomBackColor = true;
             this.txtPrecioCboConTax.UseSelectable = true;
             this.txtPrecioCboConTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -634,7 +634,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -678,7 +678,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(184, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -698,7 +698,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnBuscarProducto);
             this.groupBox1.Controls.Add(this.metroLabel2);
             this.groupBox1.Controls.Add(this.txtItemCod);
@@ -718,7 +718,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(536, 129);
-            this.groupBox1.TabIndex = 158;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle del combo electivo";
             // 
@@ -750,7 +750,7 @@
             // 
             // txtItemCod
             // 
-            this.txtItemCod.BackColor = System.Drawing.Color.White;
+            this.txtItemCod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -774,7 +774,7 @@
             this.txtItemCod.SelectionStart = 0;
             this.txtItemCod.ShortcutsEnabled = true;
             this.txtItemCod.Size = new System.Drawing.Size(126, 23);
-            this.txtItemCod.TabIndex = 143;
+            this.txtItemCod.TabIndex = 0;
             this.txtItemCod.UseCustomBackColor = true;
             this.txtItemCod.UseSelectable = true;
             this.txtItemCod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -782,12 +782,12 @@
             // 
             // txtItemDesc
             // 
-            this.txtItemDesc.BackColor = System.Drawing.Color.White;
+            this.txtItemDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.txtItemDesc.CustomButton.Image = null;
-            this.txtItemDesc.CustomButton.Location = new System.Drawing.Point(341, 1);
+            this.txtItemDesc.CustomButton.Location = new System.Drawing.Point(373, 1);
             this.txtItemDesc.CustomButton.Name = "";
             this.txtItemDesc.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtItemDesc.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -805,7 +805,7 @@
             this.txtItemDesc.SelectionLength = 0;
             this.txtItemDesc.SelectionStart = 0;
             this.txtItemDesc.ShortcutsEnabled = true;
-            this.txtItemDesc.Size = new System.Drawing.Size(363, 23);
+            this.txtItemDesc.Size = new System.Drawing.Size(395, 23);
             this.txtItemDesc.TabIndex = 132;
             this.txtItemDesc.UseCustomBackColor = true;
             this.txtItemDesc.UseSelectable = true;
@@ -814,7 +814,7 @@
             // 
             // txtItemQuantity
             // 
-            this.txtItemQuantity.BackColor = System.Drawing.Color.White;
+            this.txtItemQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -838,7 +838,7 @@
             this.txtItemQuantity.SelectionStart = 0;
             this.txtItemQuantity.ShortcutsEnabled = true;
             this.txtItemQuantity.Size = new System.Drawing.Size(126, 23);
-            this.txtItemQuantity.TabIndex = 138;
+            this.txtItemQuantity.TabIndex = 1;
             this.txtItemQuantity.UseCustomBackColor = true;
             this.txtItemQuantity.UseSelectable = true;
             this.txtItemQuantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -847,7 +847,7 @@
             // 
             // txtItemPriceConImp
             // 
-            this.txtItemPriceConImp.BackColor = System.Drawing.Color.White;
+            this.txtItemPriceConImp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -879,7 +879,7 @@
             // 
             // txtItemPriceSinImp
             // 
-            this.txtItemPriceSinImp.BackColor = System.Drawing.Color.White;
+            this.txtItemPriceSinImp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 

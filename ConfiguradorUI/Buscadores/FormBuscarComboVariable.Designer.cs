@@ -64,6 +64,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -88,6 +89,7 @@
             this.txtDescripcion.ShortcutsEnabled = true;
             this.txtDescripcion.Size = new System.Drawing.Size(493, 23);
             this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.UseCustomBackColor = true;
             this.txtDescripcion.UseSelectable = true;
             this.txtDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDescripcion.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -125,6 +127,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -149,6 +152,7 @@
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(139, 23);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCodigo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -157,32 +161,38 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel1.Location = new System.Drawing.Point(6, 26);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(56, 19);
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Código:";
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // chkIncluirInactivos
             // 
             this.chkIncluirInactivos.AutoSize = true;
             this.chkIncluirInactivos.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkIncluirInactivos.ForeColor = System.Drawing.Color.Navy;
             this.chkIncluirInactivos.Location = new System.Drawing.Point(464, 26);
             this.chkIncluirInactivos.Name = "chkIncluirInactivos";
             this.chkIncluirInactivos.Size = new System.Drawing.Size(120, 19);
             this.chkIncluirInactivos.TabIndex = 8;
             this.chkIncluirInactivos.Text = "Incluir Inactivos";
+            this.chkIncluirInactivos.UseCustomForeColor = true;
             this.chkIncluirInactivos.UseSelectable = true;
             this.chkIncluirInactivos.CheckedChanged += new System.EventHandler(this.chkIncluirInactivos_CheckedChanged);
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel3.Location = new System.Drawing.Point(6, 55);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(79, 19);
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Descripción:";
+            this.metroLabel3.UseCustomForeColor = true;
             // 
             // dgvComboVariable
             // 
@@ -190,17 +200,18 @@
             this.dgvComboVariable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComboVariable.Location = new System.Drawing.Point(3, 3);
             this.dgvComboVariable.Name = "dgvComboVariable";
-            this.dgvComboVariable.Size = new System.Drawing.Size(441, 277);
+            this.dgvComboVariable.Size = new System.Drawing.Size(417, 286);
             this.dgvComboVariable.TabIndex = 0;
             this.dgvComboVariable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComboVariable_CellDoubleClick);
             this.dgvComboVariable.SelectionChanged += new System.EventHandler(this.dgvComboVariable_SelectionChanged);
+            this.dgvComboVariable.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvComboVariable_Paint);
             this.dgvComboVariable.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvComboVariable_KeyDown);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.96296F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.03704F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.57747F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.42253F));
             this.tableLayoutPanel1.Controls.Add(this.dgvComboVariableDtl, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvComboVariable, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 163);
@@ -208,17 +219,18 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 283);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 292);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // dgvComboVariableDtl
             // 
             this.dgvComboVariableDtl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComboVariableDtl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvComboVariableDtl.Location = new System.Drawing.Point(450, 3);
+            this.dgvComboVariableDtl.Location = new System.Drawing.Point(426, 3);
             this.dgvComboVariableDtl.Name = "dgvComboVariableDtl";
-            this.dgvComboVariableDtl.Size = new System.Drawing.Size(257, 277);
+            this.dgvComboVariableDtl.Size = new System.Drawing.Size(281, 286);
             this.dgvComboVariableDtl.TabIndex = 14;
+            this.dgvComboVariableDtl.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvComboVariableDtl_Paint);
             // 
             // FormBuscarComboVariable
             // 
@@ -227,6 +239,7 @@
             this.ClientSize = new System.Drawing.Size(780, 478);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.gbxFiltro);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "FormBuscarComboVariable";
             this.Text = "Seleccionar combo electivo";
             this.Load += new System.EventHandler(this.FormBuscarComboVariable_Load);

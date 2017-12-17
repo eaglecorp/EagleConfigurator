@@ -49,6 +49,7 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabImpresora = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.cboTipoImpresora = new System.Windows.Forms.ComboBox();
             this.txtIp = new MetroFramework.Controls.MetroTextBox();
             this.txtInfo01 = new MetroFramework.Controls.MetroTextBox();
             this.lblInfo01 = new MetroFramework.Controls.MetroLabel();
@@ -70,7 +71,6 @@
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.lblIdImpresora = new MetroFramework.Controls.MetroLabel();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cboTipoImpresora = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImpresora)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -165,9 +165,9 @@
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(13, 13);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(56, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Criterio:";
+            this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
@@ -225,9 +225,9 @@
             this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(84, 11);
+            this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(183, 23);
+            this.cboFiltro.Size = new System.Drawing.Size(172, 23);
             this.cboFiltro.TabIndex = 3;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
@@ -390,6 +390,19 @@
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // cboTipoImpresora
+            // 
+            this.cboTipoImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTipoImpresora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoImpresora.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoImpresora.FormattingEnabled = true;
+            this.cboTipoImpresora.Location = new System.Drawing.Point(77, 72);
+            this.cboTipoImpresora.Name = "cboTipoImpresora";
+            this.cboTipoImpresora.Size = new System.Drawing.Size(156, 23);
+            this.cboTipoImpresora.TabIndex = 2;
+            this.cboTipoImpresora.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // txtIp
             // 
             this.txtIp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
@@ -416,7 +429,7 @@
             this.txtIp.SelectionStart = 0;
             this.txtIp.ShortcutsEnabled = true;
             this.txtIp.Size = new System.Drawing.Size(184, 23);
-            this.txtIp.TabIndex = 95;
+            this.txtIp.TabIndex = 3;
             this.txtIp.UseCustomBackColor = true;
             this.txtIp.UseSelectable = true;
             this.txtIp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -449,7 +462,7 @@
             this.txtInfo01.SelectionStart = 0;
             this.txtInfo01.ShortcutsEnabled = true;
             this.txtInfo01.Size = new System.Drawing.Size(455, 23);
-            this.txtInfo01.TabIndex = 94;
+            this.txtInfo01.TabIndex = 6;
             this.txtInfo01.UseCustomBackColor = true;
             this.txtInfo01.UseSelectable = true;
             this.txtInfo01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -493,7 +506,7 @@
             this.txtModelo.SelectionStart = 0;
             this.txtModelo.ShortcutsEnabled = true;
             this.txtModelo.Size = new System.Drawing.Size(184, 23);
-            this.txtModelo.TabIndex = 92;
+            this.txtModelo.TabIndex = 5;
             this.txtModelo.UseCustomBackColor = true;
             this.txtModelo.UseSelectable = true;
             this.txtModelo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -537,7 +550,7 @@
             this.txtMarca.SelectionStart = 0;
             this.txtMarca.ShortcutsEnabled = true;
             this.txtMarca.Size = new System.Drawing.Size(184, 23);
-            this.txtMarca.TabIndex = 90;
+            this.txtMarca.TabIndex = 4;
             this.txtMarca.UseCustomBackColor = true;
             this.txtMarca.UseSelectable = true;
             this.txtMarca.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -606,7 +619,7 @@
             this.chkActivo.Location = new System.Drawing.Point(5, 193);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 6;
+            this.chkActivo.TabIndex = 7;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -649,7 +662,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -693,7 +706,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(184, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -745,20 +758,6 @@
             // errorProv
             // 
             this.errorProv.ContainerControl = this;
-            // 
-            // cboTipoImpresora
-            // 
-            this.cboTipoImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoImpresora.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cboTipoImpresora.FormattingEnabled = true;
-            this.cboTipoImpresora.ItemHeight = 19;
-            this.cboTipoImpresora.Location = new System.Drawing.Point(77, 70);
-            this.cboTipoImpresora.Name = "cboTipoImpresora";
-            this.cboTipoImpresora.Size = new System.Drawing.Size(160, 25);
-            this.cboTipoImpresora.TabIndex = 129;
-            this.cboTipoImpresora.UseCustomBackColor = true;
-            this.cboTipoImpresora.UseSelectable = true;
-            this.cboTipoImpresora.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // FormImpresora
             // 
@@ -834,6 +833,6 @@
         private MetroFramework.Controls.MetroLabel lblMarca;
         private System.Windows.Forms.ErrorProvider errorProv;
         private MetroFramework.Controls.MetroTextBox txtIp;
-        private MetroFramework.Controls.MetroComboBox cboTipoImpresora;
+        private System.Windows.Forms.ComboBox cboTipoImpresora;
     }
 }

@@ -82,8 +82,8 @@ namespace ConfiguradorUI.Buscadores
                 dgvComboVariableDtl.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvComboVariableDtl.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvComboVariableDtl.Columns["DESC"].Width = 145;
-                dgvComboVariableDtl.Columns["CANTIDAD"].Width = 50;
+                dgvComboVariableDtl.Columns["DESC"].Width = 155;
+                dgvComboVariableDtl.Columns["CANTIDAD"].Width = 45;
                 dgvComboVariableDtl.Columns["ESTADO"].Width = 65;
 
             }
@@ -204,7 +204,8 @@ namespace ConfiguradorUI.Buscadores
                 dgvComboVariable.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvComboVariable.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvComboVariable.Columns["DESCRIPCION"].Width = 245;
+                dgvComboVariable.Columns["DESCRIPCION"].Width = 232;
+                dgvComboVariable.Columns["ESTADO"].Width = 65;
             }
             catch (Exception e)
             {
@@ -389,5 +390,14 @@ namespace ConfiguradorUI.Buscadores
 
         #endregion
 
+        private void dgvComboVariable_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
+        }
+
+        private void dgvComboVariableDtl_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
+        }
     }
 }

@@ -134,8 +134,6 @@ namespace ConfigUtilitarios
             dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.Font = new Font("Segoe UI", recordFontSize, FontStyle.Regular);
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", headerFontSize, FontStyle.Regular);
-
-
             #endregion
         }
 

@@ -266,9 +266,9 @@
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(12, 17);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(57, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(77, 19);
             this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Criterio:";
+            this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
@@ -326,9 +326,9 @@
             this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(83, 15);
+            this.cboFiltro.Location = new System.Drawing.Point(95, 15);
             this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(189, 23);
+            this.cboFiltro.Size = new System.Drawing.Size(177, 23);
             this.cboFiltro.TabIndex = 3;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
@@ -435,7 +435,7 @@
             this.tabDescuento.Controls.Add(this.tabPagPeriodoDia);
             this.tabDescuento.Location = new System.Drawing.Point(308, 107);
             this.tabDescuento.Name = "tabDescuento";
-            this.tabDescuento.SelectedIndex = 1;
+            this.tabDescuento.SelectedIndex = 0;
             this.tabDescuento.Size = new System.Drawing.Size(582, 520);
             this.tabDescuento.TabIndex = 1;
             this.tabDescuento.UseSelectable = true;

@@ -33,7 +33,7 @@ namespace ConfigUtilitarios
         public static string Departamento { get; } = "0";
         public static string Provincia { get; } = "0";
         public static string Distrito { get; } = "0";
-
+    
         public static string EspcMedica { get; } = "0";
         public static string TipoEspcMedica { get; } = "0";
 
@@ -49,18 +49,17 @@ namespace ConfigUtilitarios
         public static string TipoLocation { get; } = "0";
         public static string CanalVenta { get; } = "0";
 
-        public static string CategoriaReporte { get; } = "0";
+        public static string CategoriaReporte { get; } = "0"; 
 
         public static string TipoImpresora { get; } = "0";
         public static string Impresora { get; } = "0";
-        public static string EstadoMesa { get; } = "0";
+        public static string EstadoMesa { get; } = "0"; 
         public static string Mesa { get; } = "0";
-        public static string Turno { get; } = "0";
 
         public static string CategoriaEmp { get; } = "0";
-        public static string ClaseEmp { get; } = "0";
+        public static string ClaseEmp { get; } = "0"; 
 
-        public static string ComboGrupo { get; } = "0";
+        public static string ComboGrupo { get; } = "0"; 
 
     }
 }

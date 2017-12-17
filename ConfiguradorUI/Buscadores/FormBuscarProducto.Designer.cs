@@ -77,30 +77,35 @@
             // 
             this.chkIncluirInactivos.AutoSize = true;
             this.chkIncluirInactivos.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkIncluirInactivos.ForeColor = System.Drawing.Color.Navy;
             this.chkIncluirInactivos.Location = new System.Drawing.Point(467, 26);
             this.chkIncluirInactivos.Name = "chkIncluirInactivos";
             this.chkIncluirInactivos.Size = new System.Drawing.Size(120, 19);
             this.chkIncluirInactivos.TabIndex = 8;
             this.chkIncluirInactivos.Text = "Incluir Inactivos";
+            this.chkIncluirInactivos.UseCustomForeColor = true;
             this.chkIncluirInactivos.UseSelectable = true;
             this.chkIncluirInactivos.CheckedChanged += new System.EventHandler(this.chkIncluirInactivos_CheckedChanged);
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel3.Location = new System.Drawing.Point(6, 55);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(79, 19);
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Descripción:";
+            this.metroLabel3.UseCustomForeColor = true;
             // 
             // txtDescripcionProd
             // 
+            this.txtDescripcionProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.txtDescripcionProd.CustomButton.Image = null;
-            this.txtDescripcionProd.CustomButton.Location = new System.Drawing.Point(348, 1);
+            this.txtDescripcionProd.CustomButton.Location = new System.Drawing.Point(474, 1);
             this.txtDescripcionProd.CustomButton.Name = "";
             this.txtDescripcionProd.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDescripcionProd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -120,6 +125,7 @@
             this.txtDescripcionProd.ShortcutsEnabled = true;
             this.txtDescripcionProd.Size = new System.Drawing.Size(496, 23);
             this.txtDescripcionProd.TabIndex = 5;
+            this.txtDescripcionProd.UseCustomBackColor = true;
             this.txtDescripcionProd.UseSelectable = true;
             this.txtDescripcionProd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDescripcionProd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -128,14 +134,17 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
+            this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel2.Location = new System.Drawing.Point(239, 26);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(74, 19);
             this.metroLabel2.TabIndex = 6;
             this.metroLabel2.Text = "Código 02:";
+            this.metroLabel2.UseCustomForeColor = true;
             // 
             // txtCodigo02
             // 
+            this.txtCodigo02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -160,6 +169,7 @@
             this.txtCodigo02.ShortcutsEnabled = true;
             this.txtCodigo02.Size = new System.Drawing.Size(137, 23);
             this.txtCodigo02.TabIndex = 7;
+            this.txtCodigo02.UseCustomBackColor = true;
             this.txtCodigo02.UseSelectable = true;
             this.txtCodigo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCodigo02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -168,14 +178,17 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel1.Location = new System.Drawing.Point(6, 26);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(72, 19);
             this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Código:";
+            this.metroLabel1.Text = "Código 01:";
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -200,6 +213,7 @@
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(137, 23);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCodigo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -213,6 +227,7 @@
             this.dgvProd.Size = new System.Drawing.Size(710, 277);
             this.dgvProd.TabIndex = 0;
             this.dgvProd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProd_CellDoubleClick);
+            this.dgvProd.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvProd_Paint);
             this.dgvProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProd_KeyDown);
             // 
             // gbxFiltro

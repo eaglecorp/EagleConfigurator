@@ -335,6 +335,7 @@ namespace ConfiguradorUI.Seguridad
         private void backWorkerLogin_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
         }
+
         #endregion
 
     }

@@ -44,8 +44,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tabMesa = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboCanalVenta = new MetroFramework.Controls.MetroComboBox();
-            this.cboEstadoMesa = new MetroFramework.Controls.MetroComboBox();
+            this.cboEstadoMesa = new System.Windows.Forms.ComboBox();
+            this.cboCanalVenta = new System.Windows.Forms.ComboBox();
             this.txtCapacidad = new MetroFramework.Controls.MetroTextBox();
             this.lblCapacidad = new MetroFramework.Controls.MetroLabel();
             this.btnCanalVenta = new MetroFramework.Controls.MetroLink();
@@ -116,9 +116,9 @@
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(13, 13);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(56, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Criterio:";
+            this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
@@ -176,9 +176,9 @@
             this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(84, 11);
+            this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(183, 23);
+            this.cboFiltro.Size = new System.Drawing.Size(172, 23);
             this.cboFiltro.TabIndex = 3;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
@@ -291,8 +291,8 @@
             // 
             // tabPagGeneral
             // 
-            this.tabPagGeneral.Controls.Add(this.cboCanalVenta);
             this.tabPagGeneral.Controls.Add(this.cboEstadoMesa);
+            this.tabPagGeneral.Controls.Add(this.cboCanalVenta);
             this.tabPagGeneral.Controls.Add(this.txtCapacidad);
             this.tabPagGeneral.Controls.Add(this.lblCapacidad);
             this.tabPagGeneral.Controls.Add(this.btnCanalVenta);
@@ -316,33 +316,31 @@
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
-            // cboCanalVenta
-            // 
-            this.cboCanalVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboCanalVenta.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cboCanalVenta.FormattingEnabled = true;
-            this.cboCanalVenta.ItemHeight = 19;
-            this.cboCanalVenta.Location = new System.Drawing.Point(348, 75);
-            this.cboCanalVenta.Name = "cboCanalVenta";
-            this.cboCanalVenta.Size = new System.Drawing.Size(160, 25);
-            this.cboCanalVenta.TabIndex = 131;
-            this.cboCanalVenta.UseCustomBackColor = true;
-            this.cboCanalVenta.UseSelectable = true;
-            this.cboCanalVenta.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
             // cboEstadoMesa
             // 
             this.cboEstadoMesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboEstadoMesa.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cboEstadoMesa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstadoMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboEstadoMesa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEstadoMesa.FormattingEnabled = true;
-            this.cboEstadoMesa.ItemHeight = 19;
-            this.cboEstadoMesa.Location = new System.Drawing.Point(80, 113);
+            this.cboEstadoMesa.Location = new System.Drawing.Point(80, 115);
             this.cboEstadoMesa.Name = "cboEstadoMesa";
-            this.cboEstadoMesa.Size = new System.Drawing.Size(160, 25);
-            this.cboEstadoMesa.TabIndex = 130;
-            this.cboEstadoMesa.UseCustomBackColor = true;
-            this.cboEstadoMesa.UseSelectable = true;
+            this.cboEstadoMesa.Size = new System.Drawing.Size(161, 23);
+            this.cboEstadoMesa.TabIndex = 4;
             this.cboEstadoMesa.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboCanalVenta
+            // 
+            this.cboCanalVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboCanalVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCanalVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboCanalVenta.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCanalVenta.FormattingEnabled = true;
+            this.cboCanalVenta.Location = new System.Drawing.Point(348, 77);
+            this.cboCanalVenta.Name = "cboCanalVenta";
+            this.cboCanalVenta.Size = new System.Drawing.Size(161, 23);
+            this.cboCanalVenta.TabIndex = 3;
+            this.cboCanalVenta.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtCapacidad
             // 
@@ -370,7 +368,7 @@
             this.txtCapacidad.SelectionStart = 0;
             this.txtCapacidad.ShortcutsEnabled = true;
             this.txtCapacidad.Size = new System.Drawing.Size(184, 23);
-            this.txtCapacidad.TabIndex = 70;
+            this.txtCapacidad.TabIndex = 2;
             this.txtCapacidad.UseCustomBackColor = true;
             this.txtCapacidad.UseSelectable = true;
             this.txtCapacidad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -467,7 +465,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -511,7 +509,7 @@
             this.txtNumero.SelectionStart = 0;
             this.txtNumero.ShortcutsEnabled = true;
             this.txtNumero.Size = new System.Drawing.Size(184, 23);
-            this.txtNumero.TabIndex = 1;
+            this.txtNumero.TabIndex = 0;
             this.txtNumero.UseCustomBackColor = true;
             this.txtNumero.UseSelectable = true;
             this.txtNumero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -568,7 +566,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 391);
+            this.ClientSize = new System.Drawing.Size(900, 379);
             this.Controls.Add(this.lblIdMesa);
             this.Controls.Add(this.dgvMesa);
             this.Controls.Add(this.panelFiltro);
@@ -620,8 +618,8 @@
         private MetroFramework.Controls.MetroLabel lblCapacidad;
         private MetroFramework.Controls.MetroLink btnCanalVenta;
         private MetroFramework.Controls.MetroLabel lblCanalVenta;
-        private MetroFramework.Controls.MetroComboBox cboEstadoMesa;
-        private MetroFramework.Controls.MetroComboBox cboCanalVenta;
         private System.Windows.Forms.ErrorProvider errorProv;
+        private System.Windows.Forms.ComboBox cboEstadoMesa;
+        private System.Windows.Forms.ComboBox cboCanalVenta;
     }
 }

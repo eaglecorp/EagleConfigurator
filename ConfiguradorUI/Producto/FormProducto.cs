@@ -963,6 +963,7 @@ namespace ConfiguradorUI.Producto
                         {
                             isSelected = false;
                             SetProducto(oProducto);
+                            dgvProducto.Focus();
                             isChangedRow = true;
                             isSelected = true;
                         }

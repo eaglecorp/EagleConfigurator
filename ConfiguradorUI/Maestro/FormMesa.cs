@@ -458,7 +458,7 @@ namespace ConfiguradorUI.Maestro
         }
 
 
-        void setValueInCbo(MetroComboBox cbo, int? id)
+        void setValueInCbo(ComboBox cbo, int? id)
         {
             if (id != null)
                 cbo.SelectedValue = id;

@@ -718,9 +718,9 @@ namespace ConfiguradorUI.Producto
         }
         private void CerrarForm()
         {
-            Dispose();
             Hide();
             Close();
+            Dispose();
         }
 
         #endregion

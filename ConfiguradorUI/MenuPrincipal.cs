@@ -47,8 +47,7 @@ namespace ConfiguradorUI
             NombreUsuario();
             RunTimer();
             btnPrecio.Enabled = false;
-            //btnReceta.Enabled = false;
-            //btnCombo.Enabled = false;
+            btnReceta.Enabled = false;
         }
 
         private void NombreUsuario()

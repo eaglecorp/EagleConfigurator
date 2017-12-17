@@ -172,9 +172,9 @@
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(13, 16);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(56, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Criterio:";
+            this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
@@ -232,9 +232,9 @@
             this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(84, 14);
+            this.cboFiltro.Location = new System.Drawing.Point(95, 14);
             this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(183, 23);
+            this.cboFiltro.Size = new System.Drawing.Size(172, 23);
             this.cboFiltro.TabIndex = 3;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
@@ -406,7 +406,7 @@
             this.cboHoraSalidaTT.Location = new System.Drawing.Point(432, 124);
             this.cboHoraSalidaTT.Name = "cboHoraSalidaTT";
             this.cboHoraSalidaTT.Size = new System.Drawing.Size(55, 29);
-            this.cboHoraSalidaTT.TabIndex = 95;
+            this.cboHoraSalidaTT.TabIndex = 8;
             this.cboHoraSalidaTT.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboHoraSalidaMM
@@ -419,7 +419,7 @@
             this.cboHoraSalidaMM.Location = new System.Drawing.Point(380, 124);
             this.cboHoraSalidaMM.Name = "cboHoraSalidaMM";
             this.cboHoraSalidaMM.Size = new System.Drawing.Size(50, 29);
-            this.cboHoraSalidaMM.TabIndex = 94;
+            this.cboHoraSalidaMM.TabIndex = 7;
             this.cboHoraSalidaMM.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboHoraSalidaHH
@@ -432,7 +432,7 @@
             this.cboHoraSalidaHH.Location = new System.Drawing.Point(328, 124);
             this.cboHoraSalidaHH.Name = "cboHoraSalidaHH";
             this.cboHoraSalidaHH.Size = new System.Drawing.Size(50, 29);
-            this.cboHoraSalidaHH.TabIndex = 93;
+            this.cboHoraSalidaHH.TabIndex = 6;
             this.cboHoraSalidaHH.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboHoraEntradaTT
@@ -445,7 +445,7 @@
             this.cboHoraEntradaTT.Location = new System.Drawing.Point(179, 124);
             this.cboHoraEntradaTT.Name = "cboHoraEntradaTT";
             this.cboHoraEntradaTT.Size = new System.Drawing.Size(55, 29);
-            this.cboHoraEntradaTT.TabIndex = 92;
+            this.cboHoraEntradaTT.TabIndex = 5;
             this.cboHoraEntradaTT.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboHoraEntradaMM
@@ -458,7 +458,7 @@
             this.cboHoraEntradaMM.Location = new System.Drawing.Point(126, 124);
             this.cboHoraEntradaMM.Name = "cboHoraEntradaMM";
             this.cboHoraEntradaMM.Size = new System.Drawing.Size(50, 29);
-            this.cboHoraEntradaMM.TabIndex = 91;
+            this.cboHoraEntradaMM.TabIndex = 4;
             this.cboHoraEntradaMM.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboHoraEntradaHH
@@ -471,7 +471,7 @@
             this.cboHoraEntradaHH.Location = new System.Drawing.Point(74, 124);
             this.cboHoraEntradaHH.Name = "cboHoraEntradaHH";
             this.cboHoraEntradaHH.Size = new System.Drawing.Size(50, 29);
-            this.cboHoraEntradaHH.TabIndex = 90;
+            this.cboHoraEntradaHH.TabIndex = 3;
             this.cboHoraEntradaHH.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // metroLabel2
@@ -533,7 +533,7 @@
             this.txtAbreviacion.SelectionStart = 0;
             this.txtAbreviacion.ShortcutsEnabled = true;
             this.txtAbreviacion.Size = new System.Drawing.Size(184, 23);
-            this.txtAbreviacion.TabIndex = 5;
+            this.txtAbreviacion.TabIndex = 2;
             this.txtAbreviacion.UseCustomBackColor = true;
             this.txtAbreviacion.UseSelectable = true;
             this.txtAbreviacion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -571,7 +571,7 @@
             this.chkActivo.Location = new System.Drawing.Point(7, 186);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 6;
+            this.chkActivo.TabIndex = 9;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -603,7 +603,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -647,7 +647,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(184, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

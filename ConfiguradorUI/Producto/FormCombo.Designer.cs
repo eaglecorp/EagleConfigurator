@@ -136,7 +136,7 @@
             this.dgvCombo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCombo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCombo.Size = new System.Drawing.Size(222, 502);
-            this.dgvCombo.TabIndex = 154;
+            this.dgvCombo.TabIndex = 0;
             this.dgvCombo.SelectionChanged += new System.EventHandler(this.dgvCombo_SelectionChanged);
             // 
             // lblNumInactivo
@@ -181,7 +181,7 @@
             // lblIdCombo
             // 
             this.lblIdCombo.AutoSize = true;
-            this.lblIdCombo.Location = new System.Drawing.Point(547, 36);
+            this.lblIdCombo.Location = new System.Drawing.Point(515, 59);
             this.lblIdCombo.Name = "lblIdCombo";
             this.lblIdCombo.Size = new System.Drawing.Size(0, 0);
             this.lblIdCombo.TabIndex = 150;
@@ -420,6 +420,7 @@
             // 
             this.tabPagGeneral.Controls.Add(this.chkPrecioAcumulado);
             this.tabPagGeneral.Controls.Add(this.chkIncluyeImpto);
+            this.tabPagGeneral.Controls.Add(this.lblIdCombo);
             this.tabPagGeneral.Controls.Add(this.lblPorcentajeAcumuladoImpto);
             this.tabPagGeneral.Controls.Add(this.lblSimboloPorcentaje);
             this.tabPagGeneral.Controls.Add(this.cboImpuesto);
@@ -428,12 +429,12 @@
             this.tabPagGeneral.Controls.Add(this.lblPrecioCboSinTax);
             this.tabPagGeneral.Controls.Add(this.lblPrecioCboConTax);
             this.tabPagGeneral.Controls.Add(this.chkMostrarInactivos);
+            this.tabPagGeneral.Controls.Add(this.btnComboGrupo);
+            this.tabPagGeneral.Controls.Add(this.lblComboGrupo);
             this.tabPagGeneral.Controls.Add(this.btnAddItem);
+            this.tabPagGeneral.Controls.Add(this.cboComboGrupo);
             this.tabPagGeneral.Controls.Add(this.btnRemoveItem);
             this.tabPagGeneral.Controls.Add(this.tabDetails);
-            this.tabPagGeneral.Controls.Add(this.btnComboGrupo);
-            this.tabPagGeneral.Controls.Add(this.cboComboGrupo);
-            this.tabPagGeneral.Controls.Add(this.lblComboGrupo);
             this.tabPagGeneral.Controls.Add(this.btnBuscarItem);
             this.tabPagGeneral.Controls.Add(this.btnItem);
             this.tabPagGeneral.Controls.Add(this.txtItemCod);
@@ -480,7 +481,7 @@
             this.chkPrecioAcumulado.Location = new System.Drawing.Point(0, 430);
             this.chkPrecioAcumulado.Name = "chkPrecioAcumulado";
             this.chkPrecioAcumulado.Size = new System.Drawing.Size(131, 19);
-            this.chkPrecioAcumulado.TabIndex = 173;
+            this.chkPrecioAcumulado.TabIndex = 8;
             this.chkPrecioAcumulado.Text = "Precio acumulado";
             this.chkPrecioAcumulado.UseCustomForeColor = true;
             this.chkPrecioAcumulado.UseSelectable = true;
@@ -497,7 +498,7 @@
             this.chkIncluyeImpto.Location = new System.Drawing.Point(0, 409);
             this.chkIncluyeImpto.Name = "chkIncluyeImpto";
             this.chkIncluyeImpto.Size = new System.Drawing.Size(163, 19);
-            this.chkIncluyeImpto.TabIndex = 172;
+            this.chkIncluyeImpto.TabIndex = 7;
             this.chkIncluyeImpto.Text = "Precio incluye impuesto";
             this.chkIncluyeImpto.UseCustomForeColor = true;
             this.chkIncluyeImpto.UseSelectable = true;
@@ -538,7 +539,7 @@
             this.cboImpuesto.Location = new System.Drawing.Point(77, 360);
             this.cboImpuesto.Name = "cboImpuesto";
             this.cboImpuesto.Size = new System.Drawing.Size(137, 23);
-            this.cboImpuesto.TabIndex = 168;
+            this.cboImpuesto.TabIndex = 6;
             this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
             // 
             // lblImpuesto
@@ -591,7 +592,7 @@
             this.chkMostrarInactivos.AutoSize = true;
             this.chkMostrarInactivos.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkMostrarInactivos.ForeColor = System.Drawing.Color.Navy;
-            this.chkMostrarInactivos.Location = new System.Drawing.Point(138, 169);
+            this.chkMostrarInactivos.Location = new System.Drawing.Point(143, 169);
             this.chkMostrarInactivos.Name = "chkMostrarInactivos";
             this.chkMostrarInactivos.Size = new System.Drawing.Size(108, 15);
             this.chkMostrarInactivos.TabIndex = 155;
@@ -613,7 +614,7 @@
             this.btnAddItem.Location = new System.Drawing.Point(544, 131);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(33, 29);
-            this.btnAddItem.TabIndex = 163;
+            this.btnAddItem.TabIndex = 5;
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
@@ -749,7 +750,7 @@
             // 
             this.btnComboGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnComboGrupo.Image")));
             this.btnComboGrupo.ImageSize = 24;
-            this.btnComboGrupo.Location = new System.Drawing.Point(272, 44);
+            this.btnComboGrupo.Location = new System.Drawing.Point(551, 45);
             this.btnComboGrupo.Name = "btnComboGrupo";
             this.btnComboGrupo.Size = new System.Drawing.Size(29, 27);
             this.btnComboGrupo.TabIndex = 155;
@@ -759,19 +760,21 @@
             // cboComboGrupo
             // 
             this.cboComboGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboComboGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboComboGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboComboGrupo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboComboGrupo.FormattingEnabled = true;
-            this.cboComboGrupo.Location = new System.Drawing.Point(77, 46);
+            this.cboComboGrupo.Location = new System.Drawing.Point(366, 49);
             this.cboComboGrupo.Name = "cboComboGrupo";
-            this.cboComboGrupo.Size = new System.Drawing.Size(190, 23);
-            this.cboComboGrupo.TabIndex = 154;
+            this.cboComboGrupo.Size = new System.Drawing.Size(179, 23);
+            this.cboComboGrupo.TabIndex = 2;
             this.cboComboGrupo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblComboGrupo
             // 
             this.lblComboGrupo.AutoSize = true;
             this.lblComboGrupo.ForeColor = System.Drawing.Color.Navy;
-            this.lblComboGrupo.Location = new System.Drawing.Point(-1, 48);
+            this.lblComboGrupo.Location = new System.Drawing.Point(290, 51);
             this.lblComboGrupo.Name = "lblComboGrupo";
             this.lblComboGrupo.Size = new System.Drawing.Size(78, 19);
             this.lblComboGrupo.TabIndex = 153;
@@ -827,7 +830,7 @@
             this.txtItemCod.SelectionStart = 0;
             this.txtItemCod.ShortcutsEnabled = true;
             this.txtItemCod.Size = new System.Drawing.Size(74, 23);
-            this.txtItemCod.TabIndex = 143;
+            this.txtItemCod.TabIndex = 3;
             this.txtItemCod.UseCustomBackColor = true;
             this.txtItemCod.UseSelectable = true;
             this.txtItemCod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -980,7 +983,7 @@
             this.txtItemQuantity.SelectionStart = 0;
             this.txtItemQuantity.ShortcutsEnabled = true;
             this.txtItemQuantity.Size = new System.Drawing.Size(71, 23);
-            this.txtItemQuantity.TabIndex = 138;
+            this.txtItemQuantity.TabIndex = 4;
             this.txtItemQuantity.UseCustomBackColor = true;
             this.txtItemQuantity.UseSelectable = true;
             this.txtItemQuantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1057,7 +1060,7 @@
             this.txtPrecioCboConTax.SelectionStart = 0;
             this.txtPrecioCboConTax.ShortcutsEnabled = true;
             this.txtPrecioCboConTax.Size = new System.Drawing.Size(126, 23);
-            this.txtPrecioCboConTax.TabIndex = 134;
+            this.txtPrecioCboConTax.TabIndex = 5;
             this.txtPrecioCboConTax.UseCustomBackColor = true;
             this.txtPrecioCboConTax.UseSelectable = true;
             this.txtPrecioCboConTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1090,7 +1093,7 @@
             this.txtItemDesc.SelectionStart = 0;
             this.txtItemDesc.ShortcutsEnabled = true;
             this.txtItemDesc.Size = new System.Drawing.Size(227, 23);
-            this.txtItemDesc.TabIndex = 132;
+            this.txtItemDesc.TabIndex = 4;
             this.txtItemDesc.UseCustomBackColor = true;
             this.txtItemDesc.UseSelectable = true;
             this.txtItemDesc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1139,7 +1142,7 @@
             this.chkActivo.Location = new System.Drawing.Point(0, 451);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 6;
+            this.chkActivo.TabIndex = 9;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -1161,7 +1164,7 @@
             this.txtCodigo.CustomButton.UseSelectable = true;
             this.txtCodigo.CustomButton.Visible = false;
             this.txtCodigo.Lines = new string[0];
-            this.txtCodigo.Location = new System.Drawing.Point(387, 46);
+            this.txtCodigo.Location = new System.Drawing.Point(77, 49);
             this.txtCodigo.MaxLength = 32767;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -1171,7 +1174,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(190, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1182,7 +1185,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.ForeColor = System.Drawing.Color.Navy;
-            this.lblCodigo.Location = new System.Drawing.Point(322, 48);
+            this.lblCodigo.Location = new System.Drawing.Point(0, 51);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(56, 19);
             this.lblCodigo.TabIndex = 2;
@@ -1215,7 +1218,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(500, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1262,7 +1265,6 @@
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
-            this.Controls.Add(this.lblIdCombo);
             this.Controls.Add(this.panelFiltro);
             this.Controls.Add(this.panelMantenimiento);
             this.Controls.Add(this.tglListarInactivos);

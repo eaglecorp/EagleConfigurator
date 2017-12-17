@@ -1677,9 +1677,11 @@ namespace ConfiguradorUI.Producto
 
             errorProvDtl.Clear();
         }
+
         private void SetInit()
         {
             #region Controls
+            btnItem.Visible = false;
             lblIdCombo.Visible = false;
             txtItemDesc.ReadOnly = true;
             txtItemPriceConImp.ReadOnly = true;

@@ -177,9 +177,9 @@
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(13, 13);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(56, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Criterio:";
+            this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
             this.lblFiltro.UseCustomForeColor = true;
             // 
@@ -237,9 +237,9 @@
             this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(81, 11);
+            this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(186, 23);
+            this.cboFiltro.Size = new System.Drawing.Size(172, 23);
             this.cboFiltro.TabIndex = 3;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
@@ -427,7 +427,7 @@
             this.chkFamiliaProducto.Location = new System.Drawing.Point(234, 167);
             this.chkFamiliaProducto.Name = "chkFamiliaProducto";
             this.chkFamiliaProducto.Size = new System.Drawing.Size(148, 19);
-            this.chkFamiliaProducto.TabIndex = 97;
+            this.chkFamiliaProducto.TabIndex = 8;
             this.chkFamiliaProducto.Text = "Familia de productos";
             this.chkFamiliaProducto.UseCustomForeColor = true;
             this.chkFamiliaProducto.UseSelectable = true;
@@ -442,7 +442,7 @@
             this.chkSubfamiliaProducto.Location = new System.Drawing.Point(234, 185);
             this.chkSubfamiliaProducto.Name = "chkSubfamiliaProducto";
             this.chkSubfamiliaProducto.Size = new System.Drawing.Size(168, 19);
-            this.chkSubfamiliaProducto.TabIndex = 96;
+            this.chkSubfamiliaProducto.TabIndex = 10;
             this.chkSubfamiliaProducto.Text = "Subfamilia de productos";
             this.chkSubfamiliaProducto.UseCustomForeColor = true;
             this.chkSubfamiliaProducto.UseSelectable = true;
@@ -457,7 +457,7 @@
             this.chkClaseEmpleado.Location = new System.Drawing.Point(7, 185);
             this.chkClaseEmpleado.Name = "chkClaseEmpleado";
             this.chkClaseEmpleado.Size = new System.Drawing.Size(144, 19);
-            this.chkClaseEmpleado.TabIndex = 95;
+            this.chkClaseEmpleado.TabIndex = 9;
             this.chkClaseEmpleado.Text = "Clase de empleados";
             this.chkClaseEmpleado.UseCustomForeColor = true;
             this.chkClaseEmpleado.UseSelectable = true;
@@ -472,7 +472,7 @@
             this.chkNombreProducto.Location = new System.Drawing.Point(234, 149);
             this.chkNombreProducto.Name = "chkNombreProducto";
             this.chkNombreProducto.Size = new System.Drawing.Size(152, 19);
-            this.chkNombreProducto.TabIndex = 94;
+            this.chkNombreProducto.TabIndex = 6;
             this.chkNombreProducto.Text = "Nombre de producto";
             this.chkNombreProducto.UseCustomForeColor = true;
             this.chkNombreProducto.UseSelectable = true;
@@ -487,7 +487,7 @@
             this.chkEmpleado.Location = new System.Drawing.Point(7, 167);
             this.chkEmpleado.Name = "chkEmpleado";
             this.chkEmpleado.Size = new System.Drawing.Size(90, 19);
-            this.chkEmpleado.TabIndex = 93;
+            this.chkEmpleado.TabIndex = 7;
             this.chkEmpleado.Text = "Empleados";
             this.chkEmpleado.UseCustomForeColor = true;
             this.chkEmpleado.UseSelectable = true;
@@ -501,14 +501,14 @@
             this.btnBrowse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnBrowse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
             this.btnBrowse.Location = new System.Drawing.Point(499, 218);
             this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(33, 23);
-            this.btnBrowse.TabIndex = 92;
-            this.btnBrowse.Text = "...";
+            this.btnBrowse.TabIndex = 11;
+            this.btnBrowse.Text = ". . .";
             this.btnBrowse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
@@ -553,9 +553,9 @@
             this.lblRuta.ForeColor = System.Drawing.Color.Navy;
             this.lblRuta.Location = new System.Drawing.Point(1, 220);
             this.lblRuta.Name = "lblRuta";
-            this.lblRuta.Size = new System.Drawing.Size(62, 19);
+            this.lblRuta.Size = new System.Drawing.Size(69, 19);
             this.lblRuta.TabIndex = 90;
-            this.lblRuta.Text = "Ruta Rpt:";
+            this.lblRuta.Text = "Ruta Rpte:";
             this.lblRuta.UseCustomForeColor = true;
             // 
             // chkRangoRVC
@@ -567,7 +567,7 @@
             this.chkRangoRVC.Location = new System.Drawing.Point(7, 149);
             this.chkRangoRVC.Name = "chkRangoRVC";
             this.chkRangoRVC.Size = new System.Drawing.Size(92, 19);
-            this.chkRangoRVC.TabIndex = 89;
+            this.chkRangoRVC.TabIndex = 5;
             this.chkRangoRVC.Text = "Rango RVC";
             this.chkRangoRVC.UseCustomForeColor = true;
             this.chkRangoRVC.UseSelectable = true;
@@ -582,7 +582,7 @@
             this.chkTurno.Location = new System.Drawing.Point(234, 131);
             this.chkTurno.Name = "chkTurno";
             this.chkTurno.Size = new System.Drawing.Size(62, 19);
-            this.chkTurno.TabIndex = 88;
+            this.chkTurno.TabIndex = 4;
             this.chkTurno.Text = "Turnos";
             this.chkTurno.UseCustomForeColor = true;
             this.chkTurno.UseSelectable = true;
@@ -597,7 +597,7 @@
             this.chkRangoFechas.Location = new System.Drawing.Point(7, 131);
             this.chkRangoFechas.Name = "chkRangoFechas";
             this.chkRangoFechas.Size = new System.Drawing.Size(122, 19);
-            this.chkRangoFechas.TabIndex = 87;
+            this.chkRangoFechas.TabIndex = 3;
             this.chkRangoFechas.Text = "Rango de fechas";
             this.chkRangoFechas.UseCustomForeColor = true;
             this.chkRangoFechas.UseSelectable = true;
@@ -642,7 +642,7 @@
             this.cboCategoriaReporte.Location = new System.Drawing.Point(77, 77);
             this.cboCategoriaReporte.Name = "cboCategoriaReporte";
             this.cboCategoriaReporte.Size = new System.Drawing.Size(157, 23);
-            this.cboCategoriaReporte.TabIndex = 5;
+            this.cboCategoriaReporte.TabIndex = 2;
             this.cboCategoriaReporte.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // chkActivo
@@ -656,7 +656,7 @@
             this.chkActivo.Location = new System.Drawing.Point(7, 271);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 6;
+            this.chkActivo.TabIndex = 12;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -668,9 +668,9 @@
             this.lblCategoriaReporte.ForeColor = System.Drawing.Color.Navy;
             this.lblCategoriaReporte.Location = new System.Drawing.Point(1, 79);
             this.lblCategoriaReporte.Name = "lblCategoriaReporte";
-            this.lblCategoriaReporte.Size = new System.Drawing.Size(74, 19);
+            this.lblCategoriaReporte.Size = new System.Drawing.Size(81, 19);
             this.lblCategoriaReporte.TabIndex = 4;
-            this.lblCategoriaReporte.Text = "Categ. Rpt:";
+            this.lblCategoriaReporte.Text = "Categ. Rpte:";
             this.lblCategoriaReporte.UseCustomForeColor = true;
             // 
             // txtCodigo
@@ -699,7 +699,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -743,7 +743,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(184, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

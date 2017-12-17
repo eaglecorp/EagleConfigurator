@@ -144,7 +144,7 @@
             // 
             // picStatus
             // 
-            this.picStatus.Location = new System.Drawing.Point(401, 17);
+            this.picStatus.Location = new System.Drawing.Point(401, 28);
             this.picStatus.Name = "picStatus";
             this.picStatus.Size = new System.Drawing.Size(36, 32);
             this.picStatus.TabIndex = 91;

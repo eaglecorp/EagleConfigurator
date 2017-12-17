@@ -563,6 +563,7 @@ namespace ConfiguradorUI.Producto
             }
 
         }
+
         private bool Actualizar()
         {
             bool isValid = false;
@@ -1319,6 +1320,7 @@ namespace ConfiguradorUI.Producto
         {
 
             #region Controls
+            btnProducto.Visible = false;
             lblIdComboVariable.Visible = false;
             txtItemDesc.ReadOnly = true;
             txtItemPriceConImp.ReadOnly = true;
@@ -1336,7 +1338,7 @@ namespace ConfiguradorUI.Producto
 
             #region Dgv
 
-            dgvDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dgvDetail.AutoSizeRowsMode          = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dgvDetail.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
             SetCabeceraGridDetail();
@@ -1344,8 +1346,8 @@ namespace ConfiguradorUI.Producto
             ControlHelper.DgvReadOnly(dgvDetail);
             ControlHelper.DgvLightStyle(dgvDetail);
 
-            chkIncluyeImpto.Enabled = true;
-            cboImpuesto.Enabled = true;
+            chkIncluyeImpto.Enabled    = true;
+            cboImpuesto.Enabled        = true;
             txtPrecioCboSinTax.Enabled = false;
             txtPrecioCboConTax.Enabled = true;
             #endregion
