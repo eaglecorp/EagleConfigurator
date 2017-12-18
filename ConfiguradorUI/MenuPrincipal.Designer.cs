@@ -667,7 +667,7 @@
             this.btnImpresora.Name = "btnImpresora";
             this.btnImpresora.Size = new System.Drawing.Size(135, 37);
             this.btnImpresora.TabIndex = 10;
-            this.btnImpresora.Text = "Impresora";
+            this.btnImpresora.Text = "Impresoras";
             this.btnImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImpresora.UseVisualStyleBackColor = false;
             this.btnImpresora.Click += new System.EventHandler(this.btnImpresora_Click);
@@ -837,7 +837,7 @@
             this.btnRazon.Name = "btnRazon";
             this.btnRazon.Size = new System.Drawing.Size(135, 37);
             this.btnRazon.TabIndex = 4;
-            this.btnRazon.Text = "&Razones";
+            this.btnRazon.Text = "Razones";
             this.btnRazon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRazon.UseVisualStyleBackColor = false;
             this.btnRazon.Click += new System.EventHandler(this.btnRazon_Click);

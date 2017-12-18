@@ -48,8 +48,8 @@ namespace ConfiguradorUI.Producto
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
-
             }
+
             var cbos = new[] {  cboUnidadMedida,cboFamilia,cboSubFamilia,
                                 cboMarca,cboModelo,cboTipoProd,cboTipoExistencia,
                                 cboGrupoProd,cboClaseProd,cboTipoMoneda,
@@ -57,8 +57,11 @@ namespace ConfiguradorUI.Producto
             foreach (var cbo in cbos)
             {
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            }
 
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+                cbo.DropDownWidth = ControlHelper.DropDownWidth(cbo);
+            }
 
             var chks = new[] {chkProductoVenta,chkProductoCompra,chkCombo,chkReceta,
                                 chkActivo,chkImpto, chkExento,chkInafecto};
@@ -67,7 +70,6 @@ namespace ConfiguradorUI.Producto
             {
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
-
 
             txtPvPuSinImpto.KeyPress += ValidarTxtDecimal;
             txtPvMiSinImpto.KeyPress += ValidarTxtDecimal;
@@ -78,8 +80,8 @@ namespace ConfiguradorUI.Producto
             txtPvMaConImpto.KeyPress += ValidarTxtDecimal;
 
             txtCostoProd.KeyPress += ValidarTxtDecimal;
-
         }
+
         protected void OnContentChanged(object sender, EventArgs e)
         {
             if (isSelected && isChangedRow == false && TipoOperacion != TipoOperacionABM.Cambio)
@@ -1414,6 +1416,8 @@ namespace ConfiguradorUI.Producto
 
             dgvProducto.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
 
+            dgvProducto.Columns["CODIGO"].Width = 70;
+            dgvProducto.Columns["NOMBRE"].Width = 260;
 
             dgvProducto.EnableHeadersVisualStyles = false;
         }
@@ -1488,7 +1492,6 @@ namespace ConfiguradorUI.Producto
         {
             SetInit();
         }
-
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -1698,6 +1701,9 @@ namespace ConfiguradorUI.Producto
                 cboSubFamilia.DataSource = new SubFamiliaBL().ListaSubFamXFam(int.Parse(cboFamilia.SelectedValue.ToString()), Estado.IdActivo);
             }
             else cboSubFamilia.DataSource = null;
+
+            cboSubFamilia.DropDownWidth = ControlHelper.DropDownWidth(cboSubFamilia);
+
             isChangedRow = false;
         }
 
@@ -1711,6 +1717,9 @@ namespace ConfiguradorUI.Producto
                 cboModelo.DataSource = new ModeloBL().ListaModeloXMarca(int.Parse(cboMarca.SelectedValue.ToString()), 1);
             }
             else cboModelo.DataSource = null;
+
+            cboModelo.DropDownWidth = ControlHelper.DropDownWidth(cboModelo);
+
             isChangedRow = false;
         }
 
@@ -1724,6 +1733,9 @@ namespace ConfiguradorUI.Producto
                 cboClaseProd.DataSource = new ClaseProdBL().ListaClaseProdXGrupo(int.Parse(cboGrupoProd.SelectedValue.ToString()), 1);
             }
             else cboClaseProd.DataSource = null;
+
+            cboClaseProd.DropDownWidth = ControlHelper.DropDownWidth(cboClaseProd);
+
             isChangedRow = false;
         }
 
@@ -1918,6 +1930,7 @@ namespace ConfiguradorUI.Producto
                     cboFamilia.DisplayMember = "txt_desc";
                     cboFamilia.ValueMember = "id_familia";
                     cboFamilia.DataSource = new FamiliaBL().ListaFamiliaProd(Estado.IdActivo, false, true);
+                    cboFamilia.DropDownWidth = ControlHelper.DropDownWidth(cboFamilia);
 
                     cboFamilia.SelectedValue = oldValue;
                     TipoOperacion = op;
@@ -1978,6 +1991,7 @@ namespace ConfiguradorUI.Producto
                     cboMarca.DisplayMember = "txt_desc";
                     cboMarca.ValueMember = "id_marca";
                     cboMarca.DataSource = new MarcaBL().ListaMarca(Estado.IdActivo, false, true);
+                    cboMarca.DropDownWidth = ControlHelper.DropDownWidth(cboMarca);
 
                     cboMarca.SelectedValue = oldValue;
                     TipoOperacion = op;
@@ -2038,6 +2052,7 @@ namespace ConfiguradorUI.Producto
                     cboTipoProd.DisplayMember = "txt_desc";
                     cboTipoProd.ValueMember = "id_tipo_prod";
                     cboTipoProd.DataSource = new TipoProdBL().ListaTipoProd(Estado.IdActivo, false, true);
+                    cboTipoProd.DropDownWidth = ControlHelper.DropDownWidth(cboTipoProd);
 
                     cboTipoProd.SelectedValue = oldValue;
                     TipoOperacion = op;
@@ -2070,6 +2085,7 @@ namespace ConfiguradorUI.Producto
                     cboGrupoProd.DisplayMember = "txt_desc";
                     cboGrupoProd.ValueMember = "id_grupo_prod";
                     cboGrupoProd.DataSource = new GrupoProdBL().ListaGrupoProd(Estado.IdActivo, false, true);
+                    cboGrupoProd.DropDownWidth = ControlHelper.DropDownWidth(cboGrupoProd);
 
                     cboGrupoProd.SelectedValue = oldValue;
                     TipoOperacion = op;
@@ -2130,6 +2146,7 @@ namespace ConfiguradorUI.Producto
                     cboImpuesto.DisplayMember = "txt_abrv";
                     cboImpuesto.ValueMember = "id_impuesto";
                     cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
+                    cboImpuesto.DropDownWidth = ControlHelper.DropDownWidth(cboImpuesto);
 
                     cboImpuesto.SelectedValue = oldValue;
                     TipoOperacion = op;

@@ -61,6 +61,9 @@ namespace ConfiguradorUI.Persona
             foreach (var cbo in cbos)
             {
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+                cbo.DropDownWidth = ControlHelper.DropDownWidth(cbo);
             }
 
             //cambio en radio button's
@@ -1157,6 +1160,8 @@ namespace ConfiguradorUI.Persona
                 cboProvincia.DataSource = new ProvinciaBL().ListaProvinciaXDep(int.Parse(cboDepartamento.SelectedValue.ToString()), Estado.IdActivo);
             }else cboProvincia.DataSource = null;
 
+            cboProvincia.DropDownWidth = ControlHelper.DropDownWidth(cboProvincia);
+
             isChangedRow = false;
         }
 
@@ -1169,6 +1174,9 @@ namespace ConfiguradorUI.Persona
                 cboDistrito.ValueMember = "id_dist";
                 cboDistrito.DataSource = new DistritoBL().ListaDistritoXProv(int.Parse(cboProvincia.SelectedValue.ToString()), Estado.IdActivo);
             } else cboDistrito.DataSource = null;
+
+            cboDistrito.DropDownWidth = ControlHelper.DropDownWidth(cboDistrito);
+
             isChangedRow = false;
         }
 

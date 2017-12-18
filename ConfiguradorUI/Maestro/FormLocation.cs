@@ -31,7 +31,7 @@ namespace ConfiguradorUI.Maestro
         {
             InitializeComponent();
         }
-        
+
         #region Métodos de ventana
 
         private void addHandlers()
@@ -45,11 +45,10 @@ namespace ConfiguradorUI.Maestro
                 txt.TextChanged += new EventHandler(OnContentChanged);
 
             }
-            var cbos = new[] { cboTipoLocation };
-            foreach (var cbo in cbos)
-            {
-                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            }
+            cboTipoLocation.SelectedIndexChanged += new EventHandler(OnContentChanged);
+            cboTipoLocation.IntegralHeight = false;
+            cboTipoLocation.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboTipoLocation.DropDownWidth = ControlHelper.DropDownWidth(cboTipoLocation);
 
 
             var chks = new[] { chkActivo, chkAlmacen, chkLocationActual };
@@ -98,7 +97,7 @@ namespace ConfiguradorUI.Maestro
                 }
                 else
                 {
-                   
+
                     Actualizar();
                 }
             }
@@ -652,7 +651,7 @@ namespace ConfiguradorUI.Maestro
                 cboTipoLocation.DataSource = null;
                 cboTipoLocation.DisplayMember = "txt_desc";
                 cboTipoLocation.ValueMember = "id_tipo_location";
-                cboTipoLocation.DataSource = new TipoLocationBL().ListaTipoLocation(Estado.IdActivo,false,true);
+                cboTipoLocation.DataSource = new TipoLocationBL().ListaTipoLocation(Estado.IdActivo, false, true);
             }
             catch (Exception e)
             {
@@ -728,7 +727,7 @@ namespace ConfiguradorUI.Maestro
             }
             catch (Exception e)
             {
-                MessageBox.Show(this, $"Excepción el contar los estados: {e.Message}", "Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(this, $"Excepción el contar los estados: {e.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void CerrarForm()
@@ -1034,15 +1033,15 @@ namespace ConfiguradorUI.Maestro
                     cboTipoLocation.DataSource = null;
                     cboTipoLocation.DisplayMember = "txt_desc";
                     cboTipoLocation.ValueMember = "id_tipo_location";
-                    cboTipoLocation.DataSource = new TipoLocationBL().ListaTipoLocation(Estado.IdActivo,false,true);
-
+                    cboTipoLocation.DataSource = new TipoLocationBL().ListaTipoLocation(Estado.IdActivo, false, true);
+                    cboTipoLocation.DropDownWidth = ControlHelper.DropDownWidth(cboTipoLocation);
                     cboTipoLocation.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();
                 }
 
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

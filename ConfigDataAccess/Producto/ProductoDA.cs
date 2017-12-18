@@ -414,7 +414,7 @@ namespace ConfigDataAccess
             {
                 try
                 {
-                    return cnn.Query<PROt09_producto>("SP_PROD_CNS_Producto",
+                    return cnn.Query<PROt09_producto>("SP_PROD_CNS_PRODUCTO",
                                                         new { cod, cod02, nombre, snVenta, snCompra, idEstado },
                                                         commandType: CommandType.StoredProcedure);
                 }

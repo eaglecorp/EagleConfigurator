@@ -496,6 +496,7 @@
             // btnBrowse
             // 
             this.btnBrowse.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBrowse.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBrowse.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBrowse.FlatAppearance.BorderSize = 0;
             this.btnBrowse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
@@ -792,6 +793,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 530);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);

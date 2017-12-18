@@ -16,8 +16,6 @@ namespace ConfiguradorUI.FormUtil
 {
     public partial class CheckBoxDialog : Form
     {
-        //static CheckBoxDialog oCheckBoxDialog;
-        //static DialogResult rp = DialogResult.No;
 
         public CheckBoxDialog()
         {
@@ -92,7 +90,6 @@ namespace ConfiguradorUI.FormUtil
         {
             AsignarImagenCheck();
             CenterToParent();
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -45,36 +45,23 @@ namespace ConfiguradorUI.Maestro
                 txt.TextChanged += new EventHandler(OnContentChanged);
 
             }
-            var cbos = new[] { cboTipoMedioPago };
-            foreach (var cbo in cbos)
-            {
-                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            }
 
-
+            cboTipoMedioPago.SelectedIndexChanged += new EventHandler(OnContentChanged);
+            cboTipoMedioPago.IntegralHeight = false;
+            cboTipoMedioPago.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboTipoMedioPago.DropDownWidth = ControlHelper.DropDownWidth(cboTipoMedioPago);
+            
             var chks = new[] { chkActivo };
 
             foreach (var chk in chks)
             {
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
-
-            //cboTipoMedioPago.DropDownWidth = ControlExt.DropDownWidth(cboTipoMedioPago);
-            cboTipoMedioPago.DropDownWidth = 600;
-
-
         }
 
         //Métodos enlazados a eventos.
         protected void OnContentChanged(object sender, EventArgs e)
         {
-            //Eliminar y agregar eventos... etc etc..
-            //TipoOperacion = TipoOperacionABM.Cambio;
-            //ControlarEventosABM();
-            //if (ContentChanged != null)
-            //{
-            //    ContentChanged(this, new EventArgs());
-            //}
             if (isSelected && isChangedRow == false && TipoOperacion != TipoOperacionABM.Cambio)
             {
                 TipoOperacion = TipoOperacionABM.Cambio;

@@ -46,12 +46,11 @@ namespace ConfiguradorUI.Reporte
                 txt.TextChanged += new EventHandler(OnContentChanged);
 
             }
-            var cbos = new[] { cboCategoriaReporte };
-            foreach (var cbo in cbos)
-            {
-                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            }
 
+            cboCategoriaReporte.SelectedIndexChanged += new EventHandler(OnContentChanged);
+            cboCategoriaReporte.IntegralHeight = false;
+            cboCategoriaReporte.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboCategoriaReporte.DropDownWidth = ControlHelper.DropDownWidth(cboCategoriaReporte);
 
             var chks = new[] { chkActivo, chkRangoFechas, chkTurno, chkRangoRVC,
                                  chkEmpleado, chkClaseEmpleado, chkNombreProducto,
@@ -1063,7 +1062,7 @@ namespace ConfiguradorUI.Reporte
                     cboCategoriaReporte.DisplayMember = "txt_desc";
                     cboCategoriaReporte.ValueMember = "id_categoria_reporte";
                     cboCategoriaReporte.DataSource = new CategoriaReporteBL().ListaCategoriaReporte(Estado.IdActivo, false, true);
-
+                    cboCategoriaReporte.DropDownWidth = ControlHelper.DropDownWidth(cboCategoriaReporte);
                     cboCategoriaReporte.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();

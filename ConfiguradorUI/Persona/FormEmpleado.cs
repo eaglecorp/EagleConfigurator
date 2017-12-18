@@ -20,7 +20,6 @@ namespace ConfiguradorUI.Persona
     public partial class FormEmpleado : MetroForm
     {
         #region Variables
-        ToolTip buttonToolTip = new ToolTip();
 
         bool isSelected = false;
         bool isChangedRow = false;
@@ -73,17 +72,9 @@ namespace ConfiguradorUI.Persona
             foreach (var cbo in cbos)
             {
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-
-            }
-
-
-            var cbosTool = new[] { cboEntidadFinanciera,cboTipoTrabajador,cboOcupacion,
-                                cboCondicionLaboral,cboRegPension,cboRegLaboral,cboRegSalud,
-                                cboSaludEps,cboSituacionEdu,cboModalidadFormativa,cboTipoEspc,
-                                cboEspcMedica,cboSituacion,cboMotivoBaja,cboSuspLaboral};
-            foreach (var cboTool in cbosTool)
-            {
-                cboTool.MouseHover += new EventHandler(ToolTipCombo);
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+                cbo.DropDownWidth = ControlHelper.DropDownWidth(cbo);
             }
 
             var rbts = new[] { rbtMasculino, rbtFemenino };
@@ -113,28 +104,6 @@ namespace ConfiguradorUI.Persona
             txtSalMensual.KeyPress += ValidarTxtDecimal;
             txtSalQuincenal.KeyPress += ValidarTxtDecimal;
             txtSalHora.KeyPress += ValidarTxtDecimal;
-
-            cboTipoDocIdentidad.DropDownWidth = ControlHelper.DropDownWidth(cboTipoDocIdentidad);
-            cboNacionalidad.DropDownWidth = ControlHelper.DropDownWidth(cboNacionalidad);
-            cboEntidadFinanciera.DropDownWidth = ControlHelper.DropDownWidth(cboEntidadFinanciera);
-            cboTipoTrabajador.DropDownWidth = ControlHelper.DropDownWidth(cboTipoTrabajador);
-            cboCondicionLaboral.DropDownWidth = ControlHelper.DropDownWidth(cboCondicionLaboral);
-            //cboOcupacion.DropDownWidth = ControlExt.DropDownWidth(cboOcupacion);
-            cboOcupacion.DropDownWidth = 400;
-            cboRegPension.DropDownWidth = ControlHelper.DropDownWidth(cboRegPension);
-            cboRegLaboral.DropDownWidth = ControlHelper.DropDownWidth(cboRegLaboral);
-            cboRegSalud.DropDownWidth = ControlHelper.DropDownWidth(cboRegSalud);
-            cboSaludEps.DropDownWidth = ControlHelper.DropDownWidth(cboSaludEps);
-            cboSituacionEdu.DropDownWidth = ControlHelper.DropDownWidth(cboSituacionEdu);
-            cboModalidadFormativa.DropDownWidth = ControlHelper.DropDownWidth(cboModalidadFormativa);
-            cboEspcMedica.DropDownWidth = ControlHelper.DropDownWidth(cboEspcMedica);
-            cboSituacion.DropDownWidth = ControlHelper.DropDownWidth(cboSituacion);
-            cboMotivoBaja.DropDownWidth = ControlHelper.DropDownWidth(cboMotivoBaja);
-            cboSuspLaboral.DropDownWidth = ControlHelper.DropDownWidth(cboSuspLaboral);
-
-
-
-
         }
         protected void OnContentChanged(object sender, EventArgs e)
         {
@@ -169,29 +138,6 @@ namespace ConfiguradorUI.Persona
                 }
             }
         }
-        private void ToolTipCombo(object sender, EventArgs e)
-        {
-            var cbo = sender as ComboBox;
-
-            buttonToolTip.ToolTipTitle = "Valor: ";
-            buttonToolTip.UseFading = true;
-            buttonToolTip.UseAnimation = true;
-            buttonToolTip.IsBalloon = true;
-            buttonToolTip.ShowAlways = true;
-            buttonToolTip.AutoPopDelay = 5000;
-            buttonToolTip.InitialDelay = 0;
-            buttonToolTip.ReshowDelay = 0;
-
-            try
-            {
-                buttonToolTip.SetToolTip(cbo, cbo.Text);
-            }
-            catch
-            {
-                buttonToolTip.SetToolTip(cbo, "Error");
-            }
-        }
-
 
         private void Commit()
         {
@@ -1732,6 +1678,9 @@ namespace ConfiguradorUI.Persona
                 cboProvincia.DataSource = new ProvinciaBL().ListaProvinciaXDep(int.Parse(cboDepartamento.SelectedValue.ToString()), Estado.IdActivo);
             }
             else cboProvincia.DataSource = null;
+
+            cboProvincia.DropDownWidth = ControlHelper.DropDownWidth(cboProvincia);
+
             isChangedRow = false;
         }
 
@@ -1745,6 +1694,9 @@ namespace ConfiguradorUI.Persona
                 cboDistrito.DataSource = new DistritoBL().ListaDistritoXProv(int.Parse(cboProvincia.SelectedValue.ToString()), Estado.IdActivo);
             }
             else cboDistrito.DataSource = null;
+
+            cboDistrito.DropDownWidth = ControlHelper.DropDownWidth(cboDistrito);
+
             isChangedRow = false;
         }
 
@@ -1767,7 +1719,7 @@ namespace ConfiguradorUI.Persona
                     cboClaseEmp.DisplayMember = "txt_nombre";
                     cboClaseEmp.ValueMember = "id_clase_emp";
                     cboClaseEmp.DataSource = new ClaseEmpBL().ListaClaseEmp(Estado.IdActivo, false, true);
-
+                    cboClaseEmp.DropDownWidth = ControlHelper.DropDownWidth(cboClaseEmp);
                     cboClaseEmp.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();
@@ -1799,6 +1751,7 @@ namespace ConfiguradorUI.Persona
                     cboCategoriaEmp.DisplayMember = "txt_nombre";
                     cboCategoriaEmp.ValueMember = "id_categoria_emp";
                     cboCategoriaEmp.DataSource = new CategoriaEmpBL().ListaCategoriaEmp(Estado.IdActivo, false, true);
+                    cboCategoriaEmp.DropDownWidth = ControlHelper.DropDownWidth(cboCategoriaEmp);
 
                     cboCategoriaEmp.SelectedValue = oldValue;
                     TipoOperacion = op;
@@ -1822,6 +1775,9 @@ namespace ConfiguradorUI.Persona
                 cboEspcMedica.DataSource = new EspecialidadMedicaBL().ListaEspcMedicaXTipo(int.Parse(cboTipoEspc.SelectedValue.ToString()), Estado.IdActivo);
             }
             else cboEspcMedica.DataSource = null;
+
+            cboEspcMedica.DropDownWidth = ControlHelper.DropDownWidth(cboEspcMedica);
+
             isChangedRow = false;
         }
 

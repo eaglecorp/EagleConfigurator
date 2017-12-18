@@ -637,7 +637,7 @@ namespace ConfiguradorUI.Producto
                 dgvCboVariableDetail.Columns["DESC"].HeaderText = "CBO. ELEC";
                 dgvCboVariableDetail.Columns["CANTIDAD"].HeaderText = "CANT";
 
-                dgvCboVariableDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvCboVariableDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvCboVariableDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvCboVariableDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P.UNIT. C/I";
@@ -679,7 +679,7 @@ namespace ConfiguradorUI.Producto
             {
                 dgvProductDetail.Columns["ID_PROD"].Visible = false;
 
-                dgvProductDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvProductDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvProductDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvProductDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
@@ -767,7 +767,6 @@ namespace ConfiguradorUI.Producto
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
-
             }
 
             var chks = new[] { chkActivo, chkIncluyeImpto, chkPrecioAcumulado };
@@ -777,12 +776,20 @@ namespace ConfiguradorUI.Producto
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
 
-            cboComboGrupo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            cboImpuesto.SelectedIndexChanged += new EventHandler(OnContentChanged);
+
+            var cbos = new[] { cboComboGrupo, cboImpuesto};
+
+            foreach (var cbo in cbos)
+            {
+                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+                cbo.DropDownWidth = ControlHelper.DropDownWidth(cbo);
+            }
 
             dgvProductDetail.DataSourceChanged += new EventHandler(OnContentChanged);
             dgvCboVariableDetail.DataSourceChanged += new EventHandler(OnContentChanged);
-
         }
 
         protected void OnContentChanged(object sender, EventArgs e)
@@ -2127,7 +2134,7 @@ namespace ConfiguradorUI.Producto
                     cboImpuesto.DisplayMember = "txt_abrv";
                     cboImpuesto.ValueMember = "id_impuesto";
                     cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
-
+                    cboImpuesto.DropDownWidth = ControlHelper.DropDownWidth(cboImpuesto);
                     cboImpuesto.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();
@@ -2240,7 +2247,7 @@ namespace ConfiguradorUI.Producto
                     cboComboGrupo.DisplayMember = "txt_desc";
                     cboComboGrupo.ValueMember = "id_combo_grupo";
                     cboComboGrupo.DataSource = new ComboGrupoBL().ListaComboGrupo(Estado.IdActivo, false, true);
-
+                    cboComboGrupo.DropDownWidth = ControlHelper.DropDownWidth(cboComboGrupo);
                     cboComboGrupo.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();

@@ -1832,7 +1832,6 @@
             this.cboOcupacion.Size = new System.Drawing.Size(176, 23);
             this.cboOcupacion.TabIndex = 3;
             this.cboOcupacion.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            this.cboOcupacion.MouseHover += new System.EventHandler(this.ToolTipCombo);
             // 
             // lblOcupacion
             // 

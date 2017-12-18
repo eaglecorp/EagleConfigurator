@@ -75,7 +75,7 @@
             this.btnNo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(81, 36);
-            this.btnNo.TabIndex = 2;
+            this.btnNo.TabIndex = 0;
             this.btnNo.Text = "&No";
             this.btnNo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNo.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@
             this.chkDialog.Location = new System.Drawing.Point(31, 182);
             this.chkDialog.Name = "chkDialog";
             this.chkDialog.Size = new System.Drawing.Size(201, 19);
-            this.chkDialog.TabIndex = 3;
+            this.chkDialog.TabIndex = 2;
             this.chkDialog.Text = "No volver a mostrar este mensaje";
             this.chkDialog.UseVisualStyleBackColor = true;
             // 

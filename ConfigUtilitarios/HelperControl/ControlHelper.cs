@@ -11,6 +11,11 @@ namespace ConfigUtilitarios
 {
     public class ControlHelper
     {
+
+        public static int maxWidthComboBox { get; } = 400;
+        public static int maxHeightComboBox { get; } = 300;
+        public static int maxDropDownItems { get; } = 15;
+
         #region TextBox
 
         public static void TxtValidDecimal(object sender, KeyPressEventArgs e)
@@ -50,7 +55,12 @@ namespace ConfigUtilitarios
                 foreach (var obj in myCombo.Items)
                 {
                     temp = TextRenderer.MeasureText(myCombo.GetItemText(obj), myCombo.Font).Width;
-                    if (temp > maxWidth)
+                    if (temp >= maxWidthComboBox)
+                    {
+                        maxWidth = maxWidthComboBox;
+                        break;
+                    }
+                    else if (temp > maxWidth)
                     {
                         maxWidth = temp;
                     }
@@ -58,7 +68,7 @@ namespace ConfigUtilitarios
             }
             catch (Exception)
             {
-                return 200;
+                return 250;
             }
             return maxWidth + SystemInformation.VerticalScrollBarWidth;
         }

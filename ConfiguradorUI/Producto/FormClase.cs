@@ -49,6 +49,10 @@ namespace ConfiguradorUI.Producto
             foreach (var cbo in cbos)
             {
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+                cbo.DropDownWidth = ControlHelper.DropDownWidth(cbo);
             }
 
 
@@ -1017,7 +1021,7 @@ namespace ConfiguradorUI.Producto
                     cboGrupoProd.DisplayMember = "txt_desc";
                     cboGrupoProd.ValueMember = "id_grupo_prod";
                     cboGrupoProd.DataSource = new GrupoProdBL().ListaGrupoProd(Estado.IdActivo, false, true);
-
+                    cboGrupoProd.DropDownWidth = ControlHelper.DropDownWidth(cboGrupoProd);
                     cboGrupoProd.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();
@@ -1049,7 +1053,7 @@ namespace ConfiguradorUI.Producto
                     cboFamilia.DisplayMember = "txt_desc";
                     cboFamilia.ValueMember = "id_familia";
                     cboFamilia.DataSource = new FamiliaBL().ListaFamiliaProd(Estado.IdActivo, false, true);
-
+                    cboFamilia.DropDownWidth = ControlHelper.DropDownWidth(cboFamilia);
                     cboFamilia.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();

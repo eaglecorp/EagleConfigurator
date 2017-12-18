@@ -35,6 +35,9 @@ namespace ConfiguradorUI.Seguridad
 
             txtContrasena.UseSystemPasswordChar = true;
 
+            cboDatabase.IntegralHeight = false;
+            cboDatabase.MaxDropDownItems = ControlHelper.maxDropDownItems;
+
             txtDataSource.Text = dataSource;
             txtUsuario.Text = dbUser;
             txtContrasena.Text = dbPassword;
@@ -164,7 +167,7 @@ namespace ConfiguradorUI.Seguridad
 
         private void btnTestConnection_Click(object sender, EventArgs e)
         {
-            if (cboDatabase.SelectedItem!=null && !string.IsNullOrEmpty(cboDatabase.SelectedItem.ToString()))
+            if (cboDatabase.SelectedItem != null && !string.IsNullOrEmpty(cboDatabase.SelectedItem.ToString()))
             {
                 string _dbName = cboDatabase.SelectedItem.ToString();
                 string _dataSource = txtDataSource.Text;
@@ -209,8 +212,8 @@ namespace ConfiguradorUI.Seguridad
                     _dbName = null;
 
                 bool success = new Connection().EditConnectionString(_dataSource, _dbName, _dbUser, _dbPassword);
-               
-                if(success)
+
+                if (success)
                 {
                     ButtonControl(false, true, true, false, true);
                     TextComboControl(false, false, false, false);

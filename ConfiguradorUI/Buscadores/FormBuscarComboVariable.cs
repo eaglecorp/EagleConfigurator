@@ -32,6 +32,20 @@ namespace ConfiguradorUI.Buscadores
 
         #region Métodos
 
+        void AddHandled()
+        {
+            txtCodigo.KeyDown += FocusDgv_KeyDown;
+            txtDescripcion.KeyDown += FocusDgv_KeyDown;
+        }
+
+        private void FocusDgv_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
+            {
+                dgvComboVariable.Focus();
+            }
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape)
@@ -183,6 +197,7 @@ namespace ConfiguradorUI.Buscadores
 
         private void SetInicio()
         {
+            AddHandled();
             ConfigurarControles();
             BuscarComboVariable();
         }
@@ -388,8 +403,6 @@ namespace ConfiguradorUI.Buscadores
             }
         }
 
-        #endregion
-
         private void dgvComboVariable_Paint(object sender, PaintEventArgs e)
         {
             ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
@@ -399,5 +412,7 @@ namespace ConfiguradorUI.Buscadores
         {
             ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
         }
+        #endregion
+
     }
 }

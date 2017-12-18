@@ -49,6 +49,9 @@ namespace ConfiguradorUI.Maestro
             foreach (var cbo in cbos)
             {
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+                cbo.DropDownWidth = ControlHelper.DropDownWidth(cbo);
             }
             txtCapacidad.KeyPress += ValidarTxtEntero;
         }
@@ -893,7 +896,7 @@ namespace ConfiguradorUI.Maestro
                     cboEstadoMesa.DisplayMember = "txt_desc";
                     cboEstadoMesa.ValueMember = "id_estado_mesa";
                     cboEstadoMesa.DataSource = new EstadoMesaBL().ListaEstadoMesa(Estado.IdActivo, false, true);
-
+                    cboEstadoMesa.DropDownWidth = ControlHelper.DropDownWidth(cboEstadoMesa);
                     cboEstadoMesa.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();
@@ -925,7 +928,7 @@ namespace ConfiguradorUI.Maestro
                     cboCanalVenta.DisplayMember = "txt_desc";
                     cboCanalVenta.ValueMember = "id_can_vta";
                     cboCanalVenta.DataSource = new CanalVentaBL().ListaCanalVenta(Estado.IdActivo, false, true);
-
+                    cboCanalVenta.DropDownWidth = ControlHelper.DropDownWidth(cboCanalVenta);
                     cboCanalVenta.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();

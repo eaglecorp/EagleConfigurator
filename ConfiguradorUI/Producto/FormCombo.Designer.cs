@@ -61,7 +61,10 @@
             this.lblPrecioCboSinTax = new MetroFramework.Controls.MetroLabel();
             this.lblPrecioCboConTax = new MetroFramework.Controls.MetroLabel();
             this.chkMostrarInactivos = new MetroFramework.Controls.MetroCheckBox();
+            this.btnComboGrupo = new MetroFramework.Controls.MetroLink();
+            this.lblComboGrupo = new MetroFramework.Controls.MetroLabel();
             this.btnAddItem = new System.Windows.Forms.Button();
+            this.cboComboGrupo = new System.Windows.Forms.ComboBox();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.tabDetails = new System.Windows.Forms.TabControl();
             this.tabPagProductos = new System.Windows.Forms.TabPage();
@@ -72,9 +75,6 @@
             this.dgvProductOfCboVarDetail = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCboVariableDetail = new System.Windows.Forms.DataGridView();
-            this.btnComboGrupo = new MetroFramework.Controls.MetroLink();
-            this.cboComboGrupo = new System.Windows.Forms.ComboBox();
-            this.lblComboGrupo = new MetroFramework.Controls.MetroLabel();
             this.btnBuscarItem = new MetroFramework.Controls.MetroLink();
             this.btnItem = new MetroFramework.Controls.MetroLink();
             this.txtItemCod = new MetroFramework.Controls.MetroTextBox();
@@ -128,7 +128,7 @@
             this.dgvCombo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCombo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCombo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCombo.Location = new System.Drawing.Point(31, 156);
+            this.dgvCombo.Location = new System.Drawing.Point(31, 148);
             this.dgvCombo.MultiSelect = false;
             this.dgvCombo.Name = "dgvCombo";
             this.dgvCombo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -145,7 +145,7 @@
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(175, 661);
+            this.lblNumInactivo.Location = new System.Drawing.Point(175, 653);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -158,7 +158,7 @@
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(95, 661);
+            this.lblNumActivo.Location = new System.Drawing.Point(95, 653);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -171,7 +171,7 @@
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(28, 661);
+            this.lblNumReg.Location = new System.Drawing.Point(28, 653);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -196,7 +196,7 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(286, 634);
+            this.panelFiltro.Location = new System.Drawing.Point(286, 626);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(583, 44);
             this.panelFiltro.TabIndex = 145;
@@ -289,7 +289,7 @@
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(286, 59);
+            this.panelMantenimiento.Location = new System.Drawing.Point(286, 51);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(597, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -378,7 +378,7 @@
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(135, 133);
+            this.tglListarInactivos.Location = new System.Drawing.Point(135, 125);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 147;
@@ -389,7 +389,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(37, 131);
+            this.lblListarInactivos.Location = new System.Drawing.Point(37, 123);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 146;
@@ -409,7 +409,7 @@
             // tabCombo
             // 
             this.tabCombo.Controls.Add(this.tabPagGeneral);
-            this.tabCombo.Location = new System.Drawing.Point(286, 115);
+            this.tabCombo.Location = new System.Drawing.Point(286, 107);
             this.tabCombo.Name = "tabCombo";
             this.tabCombo.SelectedIndex = 0;
             this.tabCombo.Size = new System.Drawing.Size(601, 513);
@@ -601,6 +601,28 @@
             this.chkMostrarInactivos.UseSelectable = true;
             this.chkMostrarInactivos.CheckedChanged += new System.EventHandler(this.chkMostrarInactivos_CheckedChanged);
             // 
+            // btnComboGrupo
+            // 
+            this.btnComboGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnComboGrupo.Image")));
+            this.btnComboGrupo.ImageSize = 24;
+            this.btnComboGrupo.Location = new System.Drawing.Point(551, 45);
+            this.btnComboGrupo.Name = "btnComboGrupo";
+            this.btnComboGrupo.Size = new System.Drawing.Size(29, 27);
+            this.btnComboGrupo.TabIndex = 155;
+            this.btnComboGrupo.UseSelectable = true;
+            this.btnComboGrupo.Click += new System.EventHandler(this.btnComboGrupo_Click);
+            // 
+            // lblComboGrupo
+            // 
+            this.lblComboGrupo.AutoSize = true;
+            this.lblComboGrupo.ForeColor = System.Drawing.Color.Navy;
+            this.lblComboGrupo.Location = new System.Drawing.Point(290, 51);
+            this.lblComboGrupo.Name = "lblComboGrupo";
+            this.lblComboGrupo.Size = new System.Drawing.Size(78, 19);
+            this.lblComboGrupo.TabIndex = 153;
+            this.lblComboGrupo.Text = "Grupo Cbo:";
+            this.lblComboGrupo.UseCustomForeColor = true;
+            // 
             // btnAddItem
             // 
             this.btnAddItem.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -617,6 +639,19 @@
             this.btnAddItem.TabIndex = 5;
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // cboComboGrupo
+            // 
+            this.cboComboGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboComboGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboComboGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboComboGrupo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboComboGrupo.FormattingEnabled = true;
+            this.cboComboGrupo.Location = new System.Drawing.Point(366, 49);
+            this.cboComboGrupo.Name = "cboComboGrupo";
+            this.cboComboGrupo.Size = new System.Drawing.Size(179, 23);
+            this.cboComboGrupo.TabIndex = 2;
+            this.cboComboGrupo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // btnRemoveItem
             // 
@@ -745,41 +780,6 @@
             this.dgvCboVariableDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCboVariableDetail_CellDoubleClick);
             this.dgvCboVariableDetail.SelectionChanged += new System.EventHandler(this.dgvCboVariableDetail_SelectionChanged);
             this.dgvCboVariableDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCboVariableDetail_KeyDown);
-            // 
-            // btnComboGrupo
-            // 
-            this.btnComboGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnComboGrupo.Image")));
-            this.btnComboGrupo.ImageSize = 24;
-            this.btnComboGrupo.Location = new System.Drawing.Point(551, 45);
-            this.btnComboGrupo.Name = "btnComboGrupo";
-            this.btnComboGrupo.Size = new System.Drawing.Size(29, 27);
-            this.btnComboGrupo.TabIndex = 155;
-            this.btnComboGrupo.UseSelectable = true;
-            this.btnComboGrupo.Click += new System.EventHandler(this.btnComboGrupo_Click);
-            // 
-            // cboComboGrupo
-            // 
-            this.cboComboGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboComboGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboComboGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboComboGrupo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboComboGrupo.FormattingEnabled = true;
-            this.cboComboGrupo.Location = new System.Drawing.Point(366, 49);
-            this.cboComboGrupo.Name = "cboComboGrupo";
-            this.cboComboGrupo.Size = new System.Drawing.Size(179, 23);
-            this.cboComboGrupo.TabIndex = 2;
-            this.cboComboGrupo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblComboGrupo
-            // 
-            this.lblComboGrupo.AutoSize = true;
-            this.lblComboGrupo.ForeColor = System.Drawing.Color.Navy;
-            this.lblComboGrupo.Location = new System.Drawing.Point(290, 51);
-            this.lblComboGrupo.Name = "lblComboGrupo";
-            this.lblComboGrupo.Size = new System.Drawing.Size(78, 19);
-            this.lblComboGrupo.TabIndex = 153;
-            this.lblComboGrupo.Text = "Grupo Cbo:";
-            this.lblComboGrupo.UseCustomForeColor = true;
             // 
             // btnBuscarItem
             // 
@@ -1249,7 +1249,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(25, 51);
+            this.btnCerrar.Location = new System.Drawing.Point(25, 43);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 148;
@@ -1260,6 +1260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(910, 709);
             this.Controls.Add(this.dgvCombo);
             this.Controls.Add(this.lblNumInactivo);

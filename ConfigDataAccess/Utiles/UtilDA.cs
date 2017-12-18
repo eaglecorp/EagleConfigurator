@@ -23,7 +23,7 @@ namespace ConfigDataAccess.Utiles
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("SP_NumHijosActivos", conexion))
+                    using (var cmd = new SqlCommand("SP_NUM_HIJOS_ACTIVOS", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 

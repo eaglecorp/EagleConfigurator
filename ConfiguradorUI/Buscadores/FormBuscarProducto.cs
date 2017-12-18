@@ -24,6 +24,21 @@ namespace ConfiguradorUI.Buscadores
         }
         #region Métodos
 
+        void AddHandled()
+        {
+            txtCodigo.KeyDown += FocusDgv_KeyDown;
+            txtCodigo02.KeyDown += FocusDgv_KeyDown;
+            txtDescripcionProd.KeyDown += FocusDgv_KeyDown;
+        }
+
+        private void FocusDgv_KeyDown(object sender, KeyEventArgs e)
+       {
+            if(e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
+            {
+                dgvProd.Focus();
+            }
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape)
@@ -94,6 +109,7 @@ namespace ConfiguradorUI.Buscadores
 
         private void SetInicio()
         {
+            AddHandled();
             ConfigurarControles();
             BuscarProducto();
         }
@@ -322,12 +338,12 @@ namespace ConfiguradorUI.Buscadores
             }
         }
 
-
-        #endregion
-
         private void dgvProd_Paint(object sender, PaintEventArgs e)
         {
             ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
         }
+
+        #endregion
+
     }
 }

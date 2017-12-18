@@ -46,12 +46,12 @@ namespace ConfiguradorUI.Producto
                 txt.TextChanged += new EventHandler(OnContentChanged);
 
             }
-            var cbos = new[] { cboFamilia };
-            foreach (var cbo in cbos)
-            {
-                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            }
 
+            cboFamilia.SelectedIndexChanged += new EventHandler(OnContentChanged);
+
+            cboFamilia.IntegralHeight = false;
+            cboFamilia.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboFamilia.DropDownWidth = ControlHelper.DropDownWidth(cboFamilia);
 
             var chks = new[] { chkActivo };
 
@@ -641,7 +641,7 @@ namespace ConfiguradorUI.Producto
                 cboFamilia.DataSource = null;
                 cboFamilia.DisplayMember = "txt_desc";
                 cboFamilia.ValueMember = "id_familia";
-                cboFamilia.DataSource = new FamiliaBL().ListaFamiliaProd(Estado.IdActivo,false,true);
+                cboFamilia.DataSource = new FamiliaBL().ListaFamiliaProd(Estado.IdActivo, false, true);
             }
             catch (Exception e)
             {
@@ -1005,7 +1005,8 @@ namespace ConfiguradorUI.Producto
                     cboFamilia.DataSource = null;
                     cboFamilia.DisplayMember = "txt_desc";
                     cboFamilia.ValueMember = "id_familia";
-                    cboFamilia.DataSource = new FamiliaBL().ListaFamiliaProd(Estado.IdActivo,false,true);
+                    cboFamilia.DataSource = new FamiliaBL().ListaFamiliaProd(Estado.IdActivo, false, true);
+                    cboFamilia.DropDownWidth = ControlHelper.DropDownWidth(cboFamilia);
 
                     cboFamilia.SelectedValue = oldValue;
                     TipoOperacion = op;

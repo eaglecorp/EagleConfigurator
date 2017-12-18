@@ -262,6 +262,12 @@ namespace ConfiguradorUI
             form.ShowDialog();
         }
 
+        private void btnComboGrupo_Click(object sender, EventArgs e)
+        {
+            var form = new FormComboGrupo();
+            form.ShowDialog();
+        }
+
         #endregion
 
         #region Eventos TabPag Persona
@@ -417,11 +423,6 @@ namespace ConfiguradorUI
 
         #endregion
 
-        private void btnComboGrupo_Click(object sender, EventArgs e)
-        {
-            var form = new FormComboGrupo();
-            form.ShowDialog();
-        }
 
 
     }

@@ -46,11 +46,12 @@ namespace ConfiguradorUI.Producto
                 txt.TextChanged += new EventHandler(OnContentChanged);
 
             }
-            var cbos = new[] { cboMarca };
-            foreach (var cbo in cbos)
-            {
-                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            }
+
+            cboMarca.SelectedIndexChanged += new EventHandler(OnContentChanged);
+            cboMarca.IntegralHeight = false;
+            cboMarca.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboMarca.DropDownWidth = ControlHelper.DropDownWidth(cboMarca);
+
 
 
             var chks = new[] { chkActivo };
@@ -64,13 +65,6 @@ namespace ConfiguradorUI.Producto
 
         protected void OnContentChanged(object sender, EventArgs e)
         {
-            //Eliminar y agregar eventos... etc etc..
-            //TipoOperacion = TipoOperacionABM.Cambio;
-            //ControlarEventosABM();
-            //if (ContentChanged != null)
-            //{
-            //    ContentChanged(this, new EventArgs());
-            //}
             if (isSelected && isChangedRow == false && TipoOperacion != TipoOperacionABM.Cambio)
             {
                 TipoOperacion = TipoOperacionABM.Cambio;
@@ -468,8 +462,6 @@ namespace ConfiguradorUI.Producto
             }
             return id;
         }
-
-
 
         private void CargarComboFiltro()
         {
@@ -974,7 +966,6 @@ namespace ConfiguradorUI.Producto
 
         private void btnMarca_Click(object sender, EventArgs e)
         {
-
             try
             {
                 int oldValue = 0;
@@ -992,7 +983,7 @@ namespace ConfiguradorUI.Producto
                     cboMarca.DisplayMember = "txt_desc";
                     cboMarca.ValueMember = "id_marca";
                     cboMarca.DataSource = new MarcaBL().ListaMarca(Estado.IdActivo, false, true);
-
+                    cboMarca.DropDownWidth = ControlHelper.DropDownWidth(cboMarca);
                     cboMarca.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();

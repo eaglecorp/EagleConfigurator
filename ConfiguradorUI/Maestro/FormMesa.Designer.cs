@@ -388,6 +388,7 @@
             // 
             // btnCanalVenta
             // 
+            this.btnCanalVenta.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCanalVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnCanalVenta.Image")));
             this.btnCanalVenta.ImageSize = 24;
             this.btnCanalVenta.Location = new System.Drawing.Point(510, 73);
@@ -566,6 +567,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 379);
             this.Controls.Add(this.lblIdMesa);
             this.Controls.Add(this.dgvMesa);

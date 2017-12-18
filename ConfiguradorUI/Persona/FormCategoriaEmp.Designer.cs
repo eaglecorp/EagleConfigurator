@@ -567,9 +567,9 @@
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblNombreForm.Location = new System.Drawing.Point(82, 52);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(210, 32);
+            this.lblNombreForm.Size = new System.Drawing.Size(201, 32);
             this.lblNombreForm.TabIndex = 149;
-            this.lblNombreForm.Text = "Categorías de Emp.";
+            this.lblNombreForm.Text = "Categoría de Emp.";
             // 
             // btnCerrar
             // 
@@ -591,6 +591,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 440);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);

@@ -631,9 +631,9 @@
             this.lblTipoImpresora.ForeColor = System.Drawing.Color.Navy;
             this.lblTipoImpresora.Location = new System.Drawing.Point(1, 74);
             this.lblTipoImpresora.Name = "lblTipoImpresora";
-            this.lblTipoImpresora.Size = new System.Drawing.Size(65, 19);
+            this.lblTipoImpresora.Size = new System.Drawing.Size(71, 19);
             this.lblTipoImpresora.TabIndex = 4;
-            this.lblTipoImpresora.Text = "Tipo Imp:";
+            this.lblTipoImpresora.Text = "Tipo Impr:";
             this.lblTipoImpresora.UseCustomForeColor = true;
             // 
             // txtCodigo
@@ -763,6 +763,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 450);
             this.Controls.Add(this.lblIdImpresora);
             this.Controls.Add(this.lblNumInactivo);

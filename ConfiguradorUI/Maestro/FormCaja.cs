@@ -52,6 +52,9 @@ namespace ConfiguradorUI.Maestro
             foreach (var cbo in cbos)
             {
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+                cbo.DropDownWidth = ControlHelper.DropDownWidth(cbo);
             }
 
 
@@ -1100,6 +1103,13 @@ namespace ConfiguradorUI.Maestro
                 if (frm.actualizar)
                 {
                     CargarCombos();
+                    var width = ControlHelper.DropDownWidth(cboImpresora);
+                    cboImpresora.DropDownWidth = width;
+                    cboImpresora02.DropDownWidth = width;
+                    cboImpresora03.DropDownWidth = width;
+                    cboImpresora04.DropDownWidth = width;
+                    cboImpresora05.DropDownWidth = width;
+                    cboImpresora06.DropDownWidth = width;
 
                     setValueInCbo(cboImpresora, oldValue);
                     setValueInCbo(cboImpresora02, oldValue02);

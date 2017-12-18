@@ -209,18 +209,13 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4AkCCy0tFCnyowAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJ5SURBVEhL
-        pZU9aBRBGIYjKioi2IggFoKK/9hY2Bm0sjBBBFEMCmKwFBV/MGoEwUrBStIECwnGKGoV7A6iuduoTRoF
-        A14RZG93Zy+IjVzQ8XnvduOyNydkLR7mm2++ed/d2ZnZLmutk3KttqcSRd+gDj/gJ/xKUKycxoKyMYdc
-        GsKZFEzsYeJDL473/wvqHnnG9Lo0hDMpvCh6hcBG51gc76yE4XGE+7wwvFCOoteuOuFMTtbruzEYyucR
-        OoBwhae2OX6/i6Jt+XrRlhCI35oy5mA2h8gl0PpLsMHTj2F4m7gf0wHiK9n6lLaEYNId6F7oh+HNRNjq
-        DSaDYHOuvhvD69lcSltCpAZeEKxH8GUqjsib8uzsKkd9AYOW8PdEvMHHvFeydlmH+kJvoOUw+tiIb82O
-        TwXB3ooxOzL1izdA+ATxEvW1LKVqdeXCuDF3y2G4hXNymlqvkIEmjVm7lPaiDhzbcANxP0K9tCO83Y3k
-        oD1TbSEDhI/SHklyg+/jeJcOIPFTtuUEJgMID6u2kIEm028uE/0SgocxuEx8X0uot/po7fLCBjzlByb2
-        seZn4Br9kx3qCy/Rdtqe6VptdTqmmNw5DB8z/pz2Bf3RQgb5PDvnLPkYWqf6L/P/bUD/QSImfJ786lQU
-        7Zvw/XWqLWyg/U/8BFLx8dLc3NpcfTED3ai0n6Epjsiw67pQbRGDr6kw6Nd5ylUrGCtgYEyVdlRbc3xm
-        ZoWrLmXRBoieZ9JbDlPzx5PdpinKaUw1OtWdzkhbIoWJQ5ikSzQPX0DfQyhWrvVtuD5cGsKZFBXf38RE
-        XQsjUIJPur5pG+DDtA4bP6VjXBlrXBrW2q4/oS7fHzhpiS0AAAAASUVORK5CYII=
+        TUUH4QwRCBk4gYj/QgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFLSURBVEhL
+        1Za9SgNBFIVFbIPaJEIgFj6CjXYWKYKNlvaCCBaCki7voJVaprQR4htoZRQFC0F8AMEUpksRCYzf2b2L
+        S2B3mWUEPfCRmbuHc9jN5GdGcs7VoRWYehLehgmEljLbKhjAPWwHRpkDFUgX0e0ElDIV/K8LjmH8awUS
+        uYveBXhX4Az6OdzBCTTKFNzAFzwXoGPa8yrAV4nt7txGmcLThYlvwUJsd6c2yhQe/1OE708V7MNLsAJm
+        S7A1xXLIAp2cIXwYn3oNWaDQlm21X5NRi3d4gp0CGlCq4BDG2hRIJf4FtqnCRgYdkMoX5AmPfjyk8AVc
+        V+CejChd8AaXKebBr4Brm5B+b45gDhQ0LX0GNH+Ea7gCfaPmFuzKkNKtzQ9gFE1+tA69eOle4SFeun4U
+        liUMq5D8DWnaWHM9Kj2ChKrNa6C7MdzsN4LsMqeq25+cAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnGrupoProducto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

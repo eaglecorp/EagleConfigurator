@@ -46,12 +46,11 @@ namespace ConfiguradorUI.Maestro
                 txt.TextChanged += new EventHandler(OnContentChanged);
             }
             //.TextChanged += new EventHandler(OnContentChanged);
-            var cbos = new[] { cboTipoImpresora };
-            foreach (var cbo in cbos)
-            {
-                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            }
 
+            cboTipoImpresora.SelectedIndexChanged += new EventHandler(OnContentChanged);
+            cboTipoImpresora.IntegralHeight = false;
+            cboTipoImpresora.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboTipoImpresora.DropDownWidth = ControlHelper.DropDownWidth(cboTipoImpresora);
 
             var chks = new[] { chkActivo };
 
@@ -743,9 +742,6 @@ namespace ConfiguradorUI.Maestro
         private void FormImpresora_Load(object sender, EventArgs e)
         {
             lblIdImpresora.Visible = false;
-            //txtIp.PromptChar = '#';
-            //txtIp.Mask = @"000\.000\.000\.000";
-            //txtIp.ResetOnSpace = false;
             SetMaxLengthTxt();
             ControlarEventosABM();
             CargarCombos();
@@ -1016,7 +1012,7 @@ namespace ConfiguradorUI.Maestro
                     cboTipoImpresora.DisplayMember = "txt_desc";
                     cboTipoImpresora.ValueMember = "id_tipo_impresora";
                     cboTipoImpresora.DataSource = new TipoImpresoraBL().ListaTipoImpresora(Estado.IdActivo, false, true);
-
+                    cboTipoImpresora.DropDownWidth = ControlHelper.DropDownWidth(cboTipoImpresora);
                     cboTipoImpresora.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();

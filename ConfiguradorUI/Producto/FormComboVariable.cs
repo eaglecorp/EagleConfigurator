@@ -407,7 +407,7 @@ namespace ConfiguradorUI.Producto
             {
                 dgvDetail.Columns["ID_PROD"].Visible = false;
 
-                dgvDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
@@ -464,6 +464,10 @@ namespace ConfiguradorUI.Producto
             }
 
             cboImpuesto.SelectedIndexChanged += new EventHandler(OnContentChanged);
+            cboImpuesto.IntegralHeight = false;
+            cboImpuesto.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboImpuesto.DropDownWidth = ControlHelper.DropDownWidth(cboImpuesto);
+
             dgvDetail.DataSourceChanged += new EventHandler(OnContentChanged);
 
         }
@@ -1709,7 +1713,7 @@ namespace ConfiguradorUI.Producto
                     cboImpuesto.DisplayMember = "txt_abrv";
                     cboImpuesto.ValueMember = "id_impuesto";
                     cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
-
+                    cboImpuesto.DropDownWidth = ControlHelper.DropDownWidth(cboImpuesto);
                     cboImpuesto.SelectedValue = oldValue;
                     TipoOperacion = op;
                     MantenerEstadoABM();
