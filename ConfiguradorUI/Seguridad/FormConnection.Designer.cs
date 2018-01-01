@@ -38,7 +38,6 @@
             this.txtContrasena = new MetroFramework.Controls.MetroTextBox();
             this.lblContrasena = new MetroFramework.Controls.MetroLabel();
             this.txtDataSource = new MetroFramework.Controls.MetroTextBox();
-            this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblTestResult = new MetroFramework.Controls.MetroLabel();
@@ -47,6 +46,7 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboDatabase = new System.Windows.Forms.ComboBox();
+            this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.grbSqlAuthetication.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,12 +59,12 @@
             this.btnTestConnection.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnTestConnection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnTestConnection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTestConnection.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestConnection.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTestConnection.ForeColor = System.Drawing.Color.White;
-            this.btnTestConnection.Location = new System.Drawing.Point(45, 318);
-            this.btnTestConnection.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTestConnection.Location = new System.Drawing.Point(40, 308);
+            this.btnTestConnection.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnTestConnection.Name = "btnTestConnection";
-            this.btnTestConnection.Size = new System.Drawing.Size(101, 29);
+            this.btnTestConnection.Size = new System.Drawing.Size(129, 30);
             this.btnTestConnection.TabIndex = 2;
             this.btnTestConnection.Text = "Test Connection";
             this.btnTestConnection.UseVisualStyleBackColor = false;
@@ -108,9 +108,9 @@
             this.lblUsuario.ForeColor = System.Drawing.Color.Navy;
             this.lblUsuario.Location = new System.Drawing.Point(21, 67);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(53, 19);
+            this.lblUsuario.Size = new System.Drawing.Size(56, 19);
             this.lblUsuario.TabIndex = 2;
-            this.lblUsuario.Text = "Usuario";
+            this.lblUsuario.Text = "Usuario:";
             this.lblUsuario.UseCustomForeColor = true;
             // 
             // lblBd
@@ -119,9 +119,9 @@
             this.lblBd.ForeColor = System.Drawing.Color.Navy;
             this.lblBd.Location = new System.Drawing.Point(10, 33);
             this.lblBd.Name = "lblBd";
-            this.lblBd.Size = new System.Drawing.Size(92, 19);
+            this.lblBd.Size = new System.Drawing.Size(95, 19);
             this.lblBd.TabIndex = 0;
-            this.lblBd.Text = "Base de Datos";
+            this.lblBd.Text = "Base de Datos:";
             this.lblBd.UseCustomForeColor = true;
             // 
             // lblDataSource
@@ -130,19 +130,19 @@
             this.lblDataSource.ForeColor = System.Drawing.Color.Navy;
             this.lblDataSource.Location = new System.Drawing.Point(21, 29);
             this.lblDataSource.Name = "lblDataSource";
-            this.lblDataSource.Size = new System.Drawing.Size(80, 19);
+            this.lblDataSource.Size = new System.Drawing.Size(83, 19);
             this.lblDataSource.TabIndex = 0;
-            this.lblDataSource.Text = "Data Source";
+            this.lblDataSource.Text = "Data Source:";
             this.lblDataSource.UseCustomForeColor = true;
             // 
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(91, 41);
+            this.lblNombreForm.Location = new System.Drawing.Point(96, 39);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(289, 32);
+            this.lblNombreForm.Size = new System.Drawing.Size(296, 32);
             this.lblNombreForm.TabIndex = 117;
             this.lblNombreForm.Text = "Configuración de Conexión";
             // 
@@ -184,9 +184,9 @@
             this.lblContrasena.ForeColor = System.Drawing.Color.Navy;
             this.lblContrasena.Location = new System.Drawing.Point(247, 67);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(75, 19);
+            this.lblContrasena.Size = new System.Drawing.Size(78, 19);
             this.lblContrasena.TabIndex = 4;
-            this.lblContrasena.Text = "Contraseña";
+            this.lblContrasena.Text = "Contraseña:";
             this.lblContrasena.UseCustomForeColor = true;
             // 
             // txtDataSource
@@ -221,17 +221,6 @@
             this.txtDataSource.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDataSource.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(35, 27);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 5;
-            this.btnCerrar.UseSelectable = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue;
@@ -240,12 +229,12 @@
             this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(447, 318);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardar.Location = new System.Drawing.Point(446, 308);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(78, 29);
+            this.btnGuardar.Size = new System.Drawing.Size(78, 30);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -260,12 +249,12 @@
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(529, 318);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(528, 308);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(78, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(78, 30);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Salir";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -276,7 +265,7 @@
             this.lblTestResult.AutoSize = true;
             this.lblTestResult.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblTestResult.ForeColor = System.Drawing.Color.Navy;
-            this.lblTestResult.Location = new System.Drawing.Point(151, 324);
+            this.lblTestResult.Location = new System.Drawing.Point(174, 314);
             this.lblTestResult.Name = "lblTestResult";
             this.lblTestResult.Size = new System.Drawing.Size(75, 19);
             this.lblTestResult.TabIndex = 133;
@@ -293,9 +282,9 @@
             this.grbSqlAuthetication.Controls.Add(this.txtUsuario);
             this.grbSqlAuthetication.Controls.Add(this.lblContrasena);
             this.grbSqlAuthetication.Controls.Add(this.txtDataSource);
-            this.grbSqlAuthetication.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSqlAuthetication.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbSqlAuthetication.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbSqlAuthetication.Location = new System.Drawing.Point(38, 105);
+            this.grbSqlAuthetication.Location = new System.Drawing.Point(37, 105);
             this.grbSqlAuthetication.Name = "grbSqlAuthetication";
             this.grbSqlAuthetication.Size = new System.Drawing.Size(569, 110);
             this.grbSqlAuthetication.TabIndex = 0;
@@ -310,12 +299,12 @@
             this.btnCambiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnCambiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnCambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiar.ForeColor = System.Drawing.Color.White;
             this.btnCambiar.Location = new System.Drawing.Point(468, 65);
             this.btnCambiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCambiar.Name = "btnCambiar";
-            this.btnCambiar.Size = new System.Drawing.Size(82, 23);
+            this.btnCambiar.Size = new System.Drawing.Size(82, 24);
             this.btnCambiar.TabIndex = 7;
             this.btnCambiar.Text = "Cambiar";
             this.btnCambiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -330,12 +319,12 @@
             this.btnConnect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnConnect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.Color.White;
             this.btnConnect.Location = new System.Drawing.Point(468, 28);
             this.btnConnect.Margin = new System.Windows.Forms.Padding(2);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(82, 23);
+            this.btnConnect.Size = new System.Drawing.Size(82, 24);
             this.btnConnect.TabIndex = 6;
             this.btnConnect.Text = "Conectar";
             this.btnConnect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -346,9 +335,9 @@
             // 
             this.groupBox1.Controls.Add(this.cboDatabase);
             this.groupBox1.Controls.Add(this.lblBd);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox1.Location = new System.Drawing.Point(41, 221);
+            this.groupBox1.Location = new System.Drawing.Point(40, 221);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(566, 74);
             this.groupBox1.TabIndex = 1;
@@ -368,12 +357,23 @@
             this.cboDatabase.TabIndex = 1;
             this.cboDatabase.SelectedIndexChanged += new System.EventHandler(this.cboDatabase_SelectedIndexChanged);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageSize = 48;
+            this.btnCerrar.Location = new System.Drawing.Point(34, 27);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
+            this.btnCerrar.TabIndex = 5;
+            this.btnCerrar.UseSelectable = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // FormConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(647, 381);
+            this.ClientSize = new System.Drawing.Size(645, 368);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grbSqlAuthetication);
             this.Controls.Add(this.btnTestConnection);
@@ -382,6 +382,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblNombreForm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormConnection";
             this.Resizable = false;

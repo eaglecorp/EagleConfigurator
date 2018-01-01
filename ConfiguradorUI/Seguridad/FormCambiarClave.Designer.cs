@@ -53,16 +53,14 @@
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(219, 264);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(325, 236);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(184, 37);
+            this.btnCancelar.Size = new System.Drawing.Size(78, 30);
             this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.Text = "Salir";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -75,16 +73,14 @@
             this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
-            this.btnConfirmar.Location = new System.Drawing.Point(26, 265);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirmar.Location = new System.Drawing.Point(219, 236);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(184, 37);
+            this.btnConfirmar.Size = new System.Drawing.Size(102, 30);
             this.btnConfirmar.TabIndex = 6;
             this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -94,7 +90,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblUsername.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblUsername.Location = new System.Drawing.Point(219, 107);
+            this.lblUsername.Location = new System.Drawing.Point(219, 102);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(72, 25);
             this.lblUsername.TabIndex = 1;
@@ -116,7 +112,7 @@
             this.txtNuevaClaveRepeat.CustomButton.UseSelectable = true;
             this.txtNuevaClaveRepeat.CustomButton.Visible = false;
             this.txtNuevaClaveRepeat.Lines = new string[0];
-            this.txtNuevaClaveRepeat.Location = new System.Drawing.Point(219, 205);
+            this.txtNuevaClaveRepeat.Location = new System.Drawing.Point(219, 200);
             this.txtNuevaClaveRepeat.MaxLength = 32767;
             this.txtNuevaClaveRepeat.Name = "txtNuevaClaveRepeat";
             this.txtNuevaClaveRepeat.PasswordChar = '\0';
@@ -137,7 +133,7 @@
             // 
             this.lblNuevaClaveRepeat.AutoSize = true;
             this.lblNuevaClaveRepeat.ForeColor = System.Drawing.Color.Navy;
-            this.lblNuevaClaveRepeat.Location = new System.Drawing.Point(26, 207);
+            this.lblNuevaClaveRepeat.Location = new System.Drawing.Point(26, 202);
             this.lblNuevaClaveRepeat.Name = "lblNuevaClaveRepeat";
             this.lblNuevaClaveRepeat.Size = new System.Drawing.Size(187, 19);
             this.lblNuevaClaveRepeat.TabIndex = 4;
@@ -160,7 +156,7 @@
             this.txtNuevaClave.CustomButton.UseSelectable = true;
             this.txtNuevaClave.CustomButton.Visible = false;
             this.txtNuevaClave.Lines = new string[0];
-            this.txtNuevaClave.Location = new System.Drawing.Point(219, 151);
+            this.txtNuevaClave.Location = new System.Drawing.Point(219, 146);
             this.txtNuevaClave.MaxLength = 32767;
             this.txtNuevaClave.Name = "txtNuevaClave";
             this.txtNuevaClave.PasswordChar = '\0';
@@ -181,7 +177,7 @@
             // 
             this.lblNuevaClave.AutoSize = true;
             this.lblNuevaClave.ForeColor = System.Drawing.Color.Navy;
-            this.lblNuevaClave.Location = new System.Drawing.Point(26, 155);
+            this.lblNuevaClave.Location = new System.Drawing.Point(26, 150);
             this.lblNuevaClave.Name = "lblNuevaClave";
             this.lblNuevaClave.Size = new System.Drawing.Size(116, 19);
             this.lblNuevaClave.TabIndex = 2;
@@ -192,7 +188,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.ForeColor = System.Drawing.Color.Navy;
-            this.lblNombre.Location = new System.Drawing.Point(26, 111);
+            this.lblNombre.Location = new System.Drawing.Point(26, 106);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(56, 19);
             this.lblNombre.TabIndex = 0;
@@ -202,11 +198,11 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(74, 43);
+            this.lblNombreForm.Location = new System.Drawing.Point(84, 38);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(249, 32);
+            this.lblNombreForm.Size = new System.Drawing.Size(254, 32);
             this.lblNombreForm.TabIndex = 103;
             this.lblNombreForm.Text = "Cambiar de contraseña";
             // 
@@ -214,7 +210,7 @@
             // 
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(22, 29);
+            this.btnCerrar.Location = new System.Drawing.Point(22, 24);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 8;
@@ -225,7 +221,7 @@
             // 
             this.panelIndicadorClave.BackColor = System.Drawing.Color.Transparent;
             this.panelIndicadorClave.Controls.Add(this.lblIndicadorContraseña);
-            this.panelIndicadorClave.Location = new System.Drawing.Point(219, 177);
+            this.panelIndicadorClave.Location = new System.Drawing.Point(219, 172);
             this.panelIndicadorClave.Name = "panelIndicadorClave";
             this.panelIndicadorClave.Size = new System.Drawing.Size(184, 19);
             this.panelIndicadorClave.TabIndex = 115;
@@ -245,7 +241,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(430, 338);
+            this.ClientSize = new System.Drawing.Size(433, 291);
             this.Controls.Add(this.panelIndicadorClave);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);

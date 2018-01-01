@@ -491,13 +491,13 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 20F);
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(83, 54);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 59);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(225, 37);
+            this.lblNombreForm.Size = new System.Drawing.Size(206, 32);
             this.lblNombreForm.TabIndex = 125;
-            this.lblNombreForm.Text = "Categoría Reporte";
+            this.lblNombreForm.Text = "Categorías de Rpt.";
             // 
             // btnCerrar
             // 

@@ -41,6 +41,7 @@
             this.lblLocationBackup = new MetroFramework.Controls.MetroLabel();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.lblNombreForm = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.grbRestore.SuspendLayout();
             this.grbBackup.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +52,11 @@
             this.grbRestore.Controls.Add(this.btnBrowseRestore);
             this.grbRestore.Controls.Add(this.txtLocationRestore);
             this.grbRestore.Controls.Add(this.lblLocationRestore);
-            this.grbRestore.Location = new System.Drawing.Point(42, 211);
+            this.grbRestore.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbRestore.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbRestore.Location = new System.Drawing.Point(42, 215);
             this.grbRestore.Name = "grbRestore";
-            this.grbRestore.Size = new System.Drawing.Size(487, 98);
+            this.grbRestore.Size = new System.Drawing.Size(562, 98);
             this.grbRestore.TabIndex = 1;
             this.grbRestore.TabStop = false;
             this.grbRestore.Text = "Restore Base de Datos";
@@ -66,9 +69,9 @@
             this.btnRestore.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnRestore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestore.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestore.ForeColor = System.Drawing.Color.White;
-            this.btnRestore.Location = new System.Drawing.Point(402, 55);
+            this.btnRestore.Location = new System.Drawing.Point(477, 55);
             this.btnRestore.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(69, 24);
@@ -86,9 +89,9 @@
             this.btnBrowseRestore.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnBrowseRestore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnBrowseRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowseRestore.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowseRestore.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowseRestore.ForeColor = System.Drawing.Color.White;
-            this.btnBrowseRestore.Location = new System.Drawing.Point(402, 25);
+            this.btnBrowseRestore.Location = new System.Drawing.Point(477, 25);
             this.btnBrowseRestore.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowseRestore.Name = "btnBrowseRestore";
             this.btnBrowseRestore.Size = new System.Drawing.Size(69, 24);
@@ -105,7 +108,7 @@
             // 
             // 
             this.txtLocationRestore.CustomButton.Image = null;
-            this.txtLocationRestore.CustomButton.Location = new System.Drawing.Point(278, 1);
+            this.txtLocationRestore.CustomButton.Location = new System.Drawing.Point(351, 1);
             this.txtLocationRestore.CustomButton.Name = "";
             this.txtLocationRestore.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtLocationRestore.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -123,7 +126,7 @@
             this.txtLocationRestore.SelectionLength = 0;
             this.txtLocationRestore.SelectionStart = 0;
             this.txtLocationRestore.ShortcutsEnabled = true;
-            this.txtLocationRestore.Size = new System.Drawing.Size(300, 23);
+            this.txtLocationRestore.Size = new System.Drawing.Size(373, 23);
             this.txtLocationRestore.TabIndex = 113;
             this.txtLocationRestore.UseCustomBackColor = true;
             this.txtLocationRestore.UseSelectable = true;
@@ -147,9 +150,11 @@
             this.grbBackup.Controls.Add(this.btnBrowseBackup);
             this.grbBackup.Controls.Add(this.txtLocationBackup);
             this.grbBackup.Controls.Add(this.lblLocationBackup);
-            this.grbBackup.Location = new System.Drawing.Point(42, 92);
+            this.grbBackup.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbBackup.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbBackup.Location = new System.Drawing.Point(42, 99);
             this.grbBackup.Name = "grbBackup";
-            this.grbBackup.Size = new System.Drawing.Size(487, 101);
+            this.grbBackup.Size = new System.Drawing.Size(562, 101);
             this.grbBackup.TabIndex = 0;
             this.grbBackup.TabStop = false;
             this.grbBackup.Text = "Backup de la Base de Datos";
@@ -162,9 +167,9 @@
             this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackup.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackup.ForeColor = System.Drawing.Color.White;
-            this.btnBackup.Location = new System.Drawing.Point(398, 56);
+            this.btnBackup.Location = new System.Drawing.Point(477, 56);
             this.btnBackup.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(69, 24);
@@ -182,9 +187,9 @@
             this.btnBrowseBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnBrowseBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnBrowseBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowseBackup.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowseBackup.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowseBackup.ForeColor = System.Drawing.Color.White;
-            this.btnBrowseBackup.Location = new System.Drawing.Point(398, 26);
+            this.btnBrowseBackup.Location = new System.Drawing.Point(477, 26);
             this.btnBrowseBackup.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowseBackup.Name = "btnBrowseBackup";
             this.btnBrowseBackup.Size = new System.Drawing.Size(69, 24);
@@ -201,7 +206,7 @@
             // 
             // 
             this.txtLocationBackup.CustomButton.Image = null;
-            this.txtLocationBackup.CustomButton.Location = new System.Drawing.Point(278, 1);
+            this.txtLocationBackup.CustomButton.Location = new System.Drawing.Point(355, 1);
             this.txtLocationBackup.CustomButton.Name = "";
             this.txtLocationBackup.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtLocationBackup.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -219,7 +224,7 @@
             this.txtLocationBackup.SelectionLength = 0;
             this.txtLocationBackup.SelectionStart = 0;
             this.txtLocationBackup.ShortcutsEnabled = true;
-            this.txtLocationBackup.Size = new System.Drawing.Size(300, 23);
+            this.txtLocationBackup.Size = new System.Drawing.Size(377, 23);
             this.txtLocationBackup.TabIndex = 109;
             this.txtLocationBackup.UseCustomBackColor = true;
             this.txtLocationBackup.UseSelectable = true;
@@ -242,7 +247,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(27, 20);
+            this.btnCerrar.Location = new System.Drawing.Point(34, 27);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 2;
@@ -252,20 +257,40 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(89, 35);
+            this.lblNombreForm.Location = new System.Drawing.Point(96, 42);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(187, 32);
+            this.lblNombreForm.Size = new System.Drawing.Size(191, 32);
             this.lblNombreForm.TabIndex = 108;
             this.lblNombreForm.Text = "Backup y Restore";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(526, 326);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(78, 30);
+            this.btnCancelar.TabIndex = 109;
+            this.btnCancelar.Text = "Salir";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // FormBackupRestore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(573, 345);
+            this.ClientSize = new System.Drawing.Size(645, 385);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.grbRestore);
             this.Controls.Add(this.grbBackup);
             this.Controls.Add(this.btnCerrar);
@@ -297,5 +322,6 @@
         private System.Windows.Forms.Button btnBrowseRestore;
         private MetroFramework.Controls.MetroTextBox txtLocationRestore;
         private MetroFramework.Controls.MetroLabel lblLocationRestore;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

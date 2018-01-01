@@ -187,6 +187,12 @@ namespace ConfiguradorUI
             var frm = new FormBackupRestore();
             frm.ShowDialog();
         }
+
+        private void lnkConfiguracion_Click(object sender, EventArgs e)
+        {
+            var frm = new FormConfiguracion();
+            frm.ShowDialog();
+        }
         #endregion
 
         #region Eventos tab
@@ -419,11 +425,11 @@ namespace ConfiguradorUI
         }
 
 
+
+
         #endregion
 
         #endregion
-
-
 
     }
 }

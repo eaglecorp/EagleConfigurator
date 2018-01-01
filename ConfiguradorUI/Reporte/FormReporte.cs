@@ -73,7 +73,6 @@ namespace ConfiguradorUI.Reporte
         }
         private void CambioEnControl(object sender, EventArgs e)
         {
-            //invocado con el IDE (por repetición).
             isChangedRow = false;
         }
 

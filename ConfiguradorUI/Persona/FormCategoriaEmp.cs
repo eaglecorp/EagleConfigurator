@@ -38,11 +38,13 @@ namespace ConfiguradorUI.Persona
 
         private void addHandlers()
         {
-            var txts = new[] { txtNombre, txtCodigo, txtDescripcion };
+            var txts = new[] { txtNombre, txtCodigo };
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
             }
+            txtDescripcion.TextChanged += new EventHandler(OnContentChanged);
+
             var chks = new[] { chkActivo };
             foreach (var chk in chks)
             {
@@ -654,6 +656,11 @@ namespace ConfiguradorUI.Persona
             txtNombre.MaxLength = 100;
             txtDescripcion.MaxLength = 750;
         }
+        private void ConfigurarControles()
+        {
+            SetMaxLengthTxt();
+            ControlHelper.SetTextArea(txtDescripcion);
+        }
         private void ContarEstados(List<PERt05_categoria_emp> lista)
         {
             try
@@ -685,7 +692,7 @@ namespace ConfiguradorUI.Persona
         private void FormCategoriaEmp_Load(object sender, EventArgs e)
         {
             lblIdCategoriaEmp.Visible = false;
-            SetMaxLengthTxt();
+            ConfigurarControles();
             ControlarEventosABM();
             LimpiarForm();
             CargarGrilla(Estado.IdActivo);

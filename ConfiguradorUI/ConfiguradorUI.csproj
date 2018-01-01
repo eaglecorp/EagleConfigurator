@@ -342,6 +342,12 @@
     <Compile Include="Seguridad\FormCambiarClave.Designer.cs">
       <DependentUpon>FormCambiarClave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad\FormConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FormConfiguracion.Designer.cs">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\FormConnection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -500,6 +506,9 @@
     <EmbeddedResource Include="Seguridad\FormCambiarClave.resx">
       <DependentUpon>FormCambiarClave.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FormConfiguracion.resx">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FormConnection.resx">
       <DependentUpon>FormConnection.cs</DependentUpon>
     </EmbeddedResource>
@@ -530,128 +539,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EagleSplashScreen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\FotosDefault\login.jpg" />
-    <Content Include="Resources\FotosDefault\logo.jpg" />
-    <Content Include="Resources\FotosDefault\splash.jpg" />
-    <Content Include="Resources\icons\add_dtl.png" />
-    <Content Include="Resources\icons\backup.png" />
-    <Content Include="Resources\icons\backupRestore.png" />
-    <Content Include="Resources\icons\backupx16.png" />
-    <Content Include="Resources\icons\calendar.png" />
-    <Content Include="Resources\icons\cashier.png" />
-    <Content Include="Resources\icons\category_emp.png" />
-    <Content Include="Resources\icons\class_emp.png" />
-    <Content Include="Resources\icons\cn.png" />
-    <Content Include="Resources\icons\combox24.png" />
-    <Content Include="Resources\icons\combo_selectx24.png" />
-    <Content Include="Resources\icons\connection.png" />
-    <Content Include="Resources\icons\databases-symbol.png" />
-    <Content Include="Resources\icons\delete_dtl.png" />
-    <Content Include="Resources\icons\login_passwordx16.png" />
-    <Content Include="Resources\icons\login_passwordx24.png" />
-    <Content Include="Resources\icons\login_userx16.png" />
-    <Content Include="Resources\icons\login_userx24.png" />
-    <Content Include="Resources\icons\plug.png" />
-    <Content Include="Resources\icons\printer-machine.png" />
-    <Content Include="Resources\icons\printer.png" />
-    <Content Include="Resources\icons\report.png" />
-    <Content Include="Resources\icons\report_category.png" />
-    <Content Include="Resources\logoEagleConfig.ico" />
-    <Content Include="Resources\off.png" />
-    <Content Include="Resources\on.png" />
-    <Content Include="Resources\remove.ico" />
-    <None Include="Resources\bdon.png" />
-    <Content Include="Resources\16 %28Db next%29.ico" />
-    <Content Include="Resources\16 %28Minus%29.ico" />
-    <Content Include="Resources\16 %28Open%29.ico" />
-    <Content Include="Resources\16 %28Plus%29.ico" />
-    <Content Include="Resources\16 %28Search%29.ico" />
-    <Content Include="Resources\16 %28Tick%29.ico" />
-    <Content Include="Resources\16 %28Undo%29.ico" />
-    <Content Include="Resources\add.ico" />
-    <Content Include="Resources\apply.ico" />
-    <Content Include="Resources\icons\add-symbolx32.png" />
-    <Content Include="Resources\icons\addx32.png" />
-    <Content Include="Resources\icons\app.png" />
-    <Content Include="Resources\icons\backx64.png" />
-    <Content Include="Resources\icons\box.png" />
-    <Content Include="Resources\icons\cancel-musicx24.png" />
-    <Content Include="Resources\icons\cancel-musicx32.png" />
-    <Content Include="Resources\icons\cancel.png" />
-    <Content Include="Resources\icons\check-markx24.png" />
-    <Content Include="Resources\icons\cogwheel.png" />
-    <Content Include="Resources\icons\cola-can.png" />
-    <Content Include="Resources\icons\commitx32.png" />
-    <Content Include="Resources\icons\confirm.png" />
-    <Content Include="Resources\icons\cook-book.png" />
-    <Content Include="Resources\icons\covered-food-tray-on-a-hand-of-hotel-room-service.png" />
-    <Content Include="Resources\icons\credit-cards.png" />
-    <Content Include="Resources\icons\cube-divisions.png" />
-    <Content Include="Resources\icons\delete-buttonx32.png" />
-    <Content Include="Resources\icons\deletex32.png" />
-    <Content Include="Resources\icons\delivery-man.png" />
-    <Content Include="Resources\icons\discount.png" />
-    <Content Include="Resources\icons\fish.png" />
-    <Content Include="Resources\icons\folderx24.png" />
-    <Content Include="Resources\icons\go-back-arrowx24.png" />
-    <Content Include="Resources\icons\go-back-arrowx32.png" />
-    <Content Include="Resources\icons\group.png" />
-    <Content Include="Resources\icons\hamburger.png" />
-    <Content Include="Resources\icons\head.png" />
-    <Content Include="Resources\icons\house.png" />
-    <Content Include="Resources\icons\iconx24.png" />
-    <Content Include="Resources\icons\internet.png" />
-    <Content Include="Resources\icons\left-arrowx64.png" />
-    <Content Include="Resources\icons\lock.png" />
-    <Content Include="Resources\icons\login-square-arrow-button-outline.png" />
-    <Content Include="Resources\icons\loginUser.png" />
-    <Content Include="Resources\icons\long-check-markx32.png" />
-    <Content Include="Resources\icons\magnifierx24.png" />
-    <Content Include="Resources\icons\meeting.png" />
-    <Content Include="Resources\icons\menu.png" />
-    <Content Include="Resources\icons\message.png" />
-    <Content Include="Resources\icons\money-bag.png" />
-    <Content Include="Resources\icons\open-archivex32.png" />
-    <Content Include="Resources\icons\padnote.png" />
-    <Content Include="Resources\icons\percentage-discount.png" />
-    <Content Include="Resources\icons\placeholder.png" />
-    <Content Include="Resources\icons\play-buttonx32.png" />
-    <Content Include="Resources\icons\plusx24.png" />
-    <Content Include="Resources\icons\private-eyex24.png" />
-    <Content Include="Resources\icons\profile-1.png" />
-    <Content Include="Resources\icons\profile.png" />
-    <Content Include="Resources\icons\real-estate-agent.png" />
-    <Content Include="Resources\icons\recipes.png" />
-    <Content Include="Resources\icons\rollbackx32.png" />
-    <Content Include="Resources\icons\searchx24.png" />
-    <Content Include="Resources\icons\searchx32.png" />
-    <Content Include="Resources\icons\send_mail.png" />
-    <Content Include="Resources\icons\shapes-1.png" />
-    <Content Include="Resources\icons\shapes.png" />
-    <Content Include="Resources\icons\share.png" />
-    <Content Include="Resources\icons\shared.png" />
-    <Content Include="Resources\icons\signs.png" />
-    <Content Include="Resources\icons\supermarket-barcode-product-identification.png" />
-    <Content Include="Resources\icons\technology.png" />
-    <Content Include="Resources\icons\thumbs-up.png" />
-    <Content Include="Resources\icons\truck.png" />
-    <Content Include="Resources\icons\userLogin.png" />
-    <Content Include="Resources\icons\users.png" />
-    <Content Include="Resources\icons\web-1.png" />
-    <Content Include="Resources\icons\web.png" />
-    <Content Include="Resources\img-form\avisoEagle.jpg" />
-    <Content Include="Resources\img-form\database_off.png" />
-    <Content Include="Resources\img-form\database_on.png" />
-    <Content Include="Resources\img-form\eagleConfig.png" />
-    <Content Include="Resources\img-form\eagleCongif2.png" />
-    <Content Include="Resources\img-form\eagleLogoConfigurator.png" />
-    <Content Include="Resources\img-form\linea_celeste.jpg" />
-    <Content Include="Resources\EagleIco.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

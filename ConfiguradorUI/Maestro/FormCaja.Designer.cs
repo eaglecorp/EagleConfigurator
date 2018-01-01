@@ -917,11 +917,11 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(89, 45);
+            this.lblNombreForm.Location = new System.Drawing.Point(84, 51);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(91, 45);
+            this.lblNombreForm.Size = new System.Drawing.Size(69, 32);
             this.lblNombreForm.TabIndex = 136;
             this.lblNombreForm.Text = "Cajas";
             // 

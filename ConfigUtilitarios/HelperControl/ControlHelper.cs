@@ -43,6 +43,20 @@ namespace ConfigUtilitarios
             }
         }
 
+        private static void TxtSetTextArea(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            txt.SelectionStart = txt.Text.Length;
+            txt.ScrollToCaret();
+        }
+
+        public static void SetTextArea(TextBox txt)
+        {
+            txt.Multiline = true;
+            txt.ScrollBars = ScrollBars.Both;
+            txt.TextChanged += TxtSetTextArea;
+        }
+
         #endregion
 
         #region DropDown

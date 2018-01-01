@@ -168,7 +168,7 @@
     <Compile Include="Transaccion\TNSt06_comp_emitido_estado.cs" />
     <Compile Include="Transaccion\TNSt07_medio_pago_dtl.cs" />
     <Compile Include="Transaccion\TNSt08_descuento_dtl.cs" />
-    <Compile Include="TOTt01_total_diario_vta.cs" />
+    <Compile Include="Reporte\TOTt01_total_diario_vta.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -550,13 +550,13 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 20F);
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(82, 52);
+            this.lblNombreForm.Location = new System.Drawing.Point(89, 58);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(186, 37);
+            this.lblNombreForm.Size = new System.Drawing.Size(214, 32);
             this.lblNombreForm.TabIndex = 124;
-            this.lblNombreForm.Text = "Tipo Impresora";
+            this.lblNombreForm.Text = "Tipos de Impresora";
             // 
             // btnCerrar
             // 

@@ -48,7 +48,7 @@
             this.btnSi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnSi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnSi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSi.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSi.ForeColor = System.Drawing.Color.White;
             this.btnSi.Location = new System.Drawing.Point(90, 124);
             this.btnSi.Margin = new System.Windows.Forms.Padding(2);
@@ -69,7 +69,7 @@
             this.btnNo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnNo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNo.ForeColor = System.Drawing.Color.White;
             this.btnNo.Location = new System.Drawing.Point(175, 124);
             this.btnNo.Margin = new System.Windows.Forms.Padding(2);

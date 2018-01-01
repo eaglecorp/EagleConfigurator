@@ -51,9 +51,9 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabClaseEmp = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtDescripcion = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
@@ -371,9 +371,9 @@
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.txtDescripcion);
             this.tabPagGeneral.Controls.Add(this.lblDescripcion);
             this.tabPagGeneral.Controls.Add(this.panel1);
-            this.tabPagGeneral.Controls.Add(this.txtDescripcion);
             this.tabPagGeneral.Controls.Add(this.panel2);
             this.tabPagGeneral.Controls.Add(this.chkActivo);
             this.tabPagGeneral.Controls.Add(this.txtCodigo);
@@ -391,6 +391,17 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(82, 72);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(452, 91);
+            this.txtDescripcion.TabIndex = 91;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblDescripcion
             // 
@@ -411,40 +422,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(530, 8);
             this.panel1.TabIndex = 88;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDescripcion.CustomButton.Image = null;
-            this.txtDescripcion.CustomButton.Location = new System.Drawing.Point(360, 1);
-            this.txtDescripcion.CustomButton.Name = "";
-            this.txtDescripcion.CustomButton.Size = new System.Drawing.Size(91, 91);
-            this.txtDescripcion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDescripcion.CustomButton.TabIndex = 1;
-            this.txtDescripcion.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDescripcion.CustomButton.UseSelectable = true;
-            this.txtDescripcion.CustomButton.Visible = false;
-            this.txtDescripcion.Lines = new string[0];
-            this.txtDescripcion.Location = new System.Drawing.Point(82, 72);
-            this.txtDescripcion.MaxLength = 300;
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.PasswordChar = '\0';
-            this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDescripcion.SelectedText = "";
-            this.txtDescripcion.SelectionLength = 0;
-            this.txtDescripcion.SelectionStart = 0;
-            this.txtDescripcion.ShortcutsEnabled = true;
-            this.txtDescripcion.Size = new System.Drawing.Size(452, 93);
-            this.txtDescripcion.TabIndex = 87;
-            this.txtDescripcion.UseCustomBackColor = true;
-            this.txtDescripcion.UseSelectable = true;
-            this.txtDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDescripcion.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDescripcion.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // panel2
             // 
@@ -563,13 +540,13 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 22F);
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(84, 46);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 52);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(197, 41);
+            this.lblNombreForm.Size = new System.Drawing.Size(170, 32);
             this.lblNombreForm.TabIndex = 137;
-            this.lblNombreForm.Text = "Clase de Emp.";
+            this.lblNombreForm.Text = "Clases de Emp.";
             // 
             // btnCerrar
             // 
@@ -654,6 +631,6 @@
         private System.Windows.Forms.ErrorProvider errorProv;
         private MetroFramework.Controls.MetroLabel lblDescripcion;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroTextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtDescripcion;
     }
 }

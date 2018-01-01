@@ -46,9 +46,36 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabImpuesto = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.lblPorcentajeAcumulado = new System.Windows.Forms.Label();
+            this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPorcentaje05 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPorcentaje08 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPorcentaje07 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPorcentaje06 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPorcentaje04 = new MetroFramework.Controls.MetroTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPorcentaje02 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPorcentaje03 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPorcentaje01 = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblSimboloPorc04 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.lblSimboloPorc03 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.lblSimboloPorc02 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.lblSimboloPorc01 = new MetroFramework.Controls.MetroLabel();
+            this.lblSimboloPorc08 = new MetroFramework.Controls.MetroLabel();
+            this.lblSimboloPorc07 = new MetroFramework.Controls.MetroLabel();
+            this.lblSimboloPorc06 = new MetroFramework.Controls.MetroLabel();
+            this.lblSimboloPorc05 = new MetroFramework.Controls.MetroLabel();
             this.txtAbreviacion = new MetroFramework.Controls.MetroTextBox();
             this.lblAbreviacion = new MetroFramework.Controls.MetroLabel();
-            this.txtPorcentaje01 = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
@@ -63,40 +90,13 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.txtPorcentaje02 = new MetroFramework.Controls.MetroTextBox();
-            this.txtPorcentaje03 = new MetroFramework.Controls.MetroTextBox();
-            this.txtPorcentaje04 = new MetroFramework.Controls.MetroTextBox();
-            this.txtPorcentaje08 = new MetroFramework.Controls.MetroTextBox();
-            this.txtPorcentaje07 = new MetroFramework.Controls.MetroTextBox();
-            this.txtPorcentaje06 = new MetroFramework.Controls.MetroTextBox();
-            this.txtPorcentaje05 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblSimboloPorc01 = new MetroFramework.Controls.MetroLabel();
-            this.lblSimboloPorc02 = new MetroFramework.Controls.MetroLabel();
-            this.lblSimboloPorc03 = new MetroFramework.Controls.MetroLabel();
-            this.lblSimboloPorc04 = new MetroFramework.Controls.MetroLabel();
-            this.lblSimboloPorc08 = new MetroFramework.Controls.MetroLabel();
-            this.lblSimboloPorc07 = new MetroFramework.Controls.MetroLabel();
-            this.lblSimboloPorc06 = new MetroFramework.Controls.MetroLabel();
-            this.lblSimboloPorc05 = new MetroFramework.Controls.MetroLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
-            this.lblPorcentajeAcumulado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImpuesto)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabImpuesto.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvImpuesto
@@ -365,6 +365,525 @@
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // lblPorcentajeAcumulado
+            // 
+            this.lblPorcentajeAcumulado.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeAcumulado.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPorcentajeAcumulado.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeAcumulado.Location = new System.Drawing.Point(355, 136);
+            this.lblPorcentajeAcumulado.Name = "lblPorcentajeAcumulado";
+            this.lblPorcentajeAcumulado.Size = new System.Drawing.Size(184, 90);
+            this.lblPorcentajeAcumulado.TabIndex = 117;
+            this.lblPorcentajeAcumulado.Text = "0 %";
+            this.lblPorcentajeAcumulado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel17
+            // 
+            this.metroLabel17.AutoSize = true;
+            this.metroLabel17.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel17.Location = new System.Drawing.Point(376, 114);
+            this.metroLabel17.Name = "metroLabel17";
+            this.metroLabel17.Size = new System.Drawing.Size(139, 19);
+            this.metroLabel17.TabIndex = 116;
+            this.metroLabel17.Text = "Porcentaje acumulado";
+            this.metroLabel17.UseCustomForeColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtPorcentaje05);
+            this.panel1.Controls.Add(this.txtPorcentaje08);
+            this.panel1.Controls.Add(this.txtPorcentaje07);
+            this.panel1.Controls.Add(this.txtPorcentaje06);
+            this.panel1.Controls.Add(this.txtPorcentaje04);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtPorcentaje02);
+            this.panel1.Controls.Add(this.txtPorcentaje03);
+            this.panel1.Controls.Add(this.txtPorcentaje01);
+            this.panel1.Controls.Add(this.metroLabel4);
+            this.panel1.Controls.Add(this.metroLabel1);
+            this.panel1.Controls.Add(this.lblSimboloPorc04);
+            this.panel1.Controls.Add(this.metroLabel7);
+            this.panel1.Controls.Add(this.lblSimboloPorc03);
+            this.panel1.Controls.Add(this.metroLabel8);
+            this.panel1.Controls.Add(this.metroLabel2);
+            this.panel1.Controls.Add(this.metroLabel9);
+            this.panel1.Controls.Add(this.lblSimboloPorc02);
+            this.panel1.Controls.Add(this.metroLabel10);
+            this.panel1.Controls.Add(this.metroLabel3);
+            this.panel1.Controls.Add(this.lblSimboloPorc01);
+            this.panel1.Controls.Add(this.lblSimboloPorc08);
+            this.panel1.Controls.Add(this.lblSimboloPorc07);
+            this.panel1.Controls.Add(this.lblSimboloPorc06);
+            this.panel1.Controls.Add(this.lblSimboloPorc05);
+            this.panel1.Location = new System.Drawing.Point(18, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(335, 116);
+            this.panel1.TabIndex = 115;
+            // 
+            // txtPorcentaje05
+            // 
+            this.txtPorcentaje05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPorcentaje05.CustomButton.Image = null;
+            this.txtPorcentaje05.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtPorcentaje05.CustomButton.Name = "";
+            this.txtPorcentaje05.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPorcentaje05.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPorcentaje05.CustomButton.TabIndex = 1;
+            this.txtPorcentaje05.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPorcentaje05.CustomButton.UseSelectable = true;
+            this.txtPorcentaje05.CustomButton.Visible = false;
+            this.txtPorcentaje05.Lines = new string[0];
+            this.txtPorcentaje05.Location = new System.Drawing.Point(226, 22);
+            this.txtPorcentaje05.MaxLength = 32767;
+            this.txtPorcentaje05.Name = "txtPorcentaje05";
+            this.txtPorcentaje05.PasswordChar = '\0';
+            this.txtPorcentaje05.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPorcentaje05.SelectedText = "";
+            this.txtPorcentaje05.SelectionLength = 0;
+            this.txtPorcentaje05.SelectionStart = 0;
+            this.txtPorcentaje05.ShortcutsEnabled = true;
+            this.txtPorcentaje05.Size = new System.Drawing.Size(74, 23);
+            this.txtPorcentaje05.TabIndex = 91;
+            this.txtPorcentaje05.UseCustomBackColor = true;
+            this.txtPorcentaje05.UseSelectable = true;
+            this.txtPorcentaje05.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPorcentaje05.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPorcentaje05.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
+            // 
+            // txtPorcentaje08
+            // 
+            this.txtPorcentaje08.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPorcentaje08.CustomButton.Image = null;
+            this.txtPorcentaje08.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtPorcentaje08.CustomButton.Name = "";
+            this.txtPorcentaje08.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPorcentaje08.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPorcentaje08.CustomButton.TabIndex = 1;
+            this.txtPorcentaje08.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPorcentaje08.CustomButton.UseSelectable = true;
+            this.txtPorcentaje08.CustomButton.Visible = false;
+            this.txtPorcentaje08.Lines = new string[0];
+            this.txtPorcentaje08.Location = new System.Drawing.Point(226, 91);
+            this.txtPorcentaje08.MaxLength = 32767;
+            this.txtPorcentaje08.Name = "txtPorcentaje08";
+            this.txtPorcentaje08.PasswordChar = '\0';
+            this.txtPorcentaje08.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPorcentaje08.SelectedText = "";
+            this.txtPorcentaje08.SelectionLength = 0;
+            this.txtPorcentaje08.SelectionStart = 0;
+            this.txtPorcentaje08.ShortcutsEnabled = true;
+            this.txtPorcentaje08.Size = new System.Drawing.Size(74, 23);
+            this.txtPorcentaje08.TabIndex = 94;
+            this.txtPorcentaje08.UseCustomBackColor = true;
+            this.txtPorcentaje08.UseSelectable = true;
+            this.txtPorcentaje08.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPorcentaje08.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPorcentaje08.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
+            // 
+            // txtPorcentaje07
+            // 
+            this.txtPorcentaje07.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPorcentaje07.CustomButton.Image = null;
+            this.txtPorcentaje07.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtPorcentaje07.CustomButton.Name = "";
+            this.txtPorcentaje07.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPorcentaje07.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPorcentaje07.CustomButton.TabIndex = 1;
+            this.txtPorcentaje07.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPorcentaje07.CustomButton.UseSelectable = true;
+            this.txtPorcentaje07.CustomButton.Visible = false;
+            this.txtPorcentaje07.Lines = new string[0];
+            this.txtPorcentaje07.Location = new System.Drawing.Point(226, 68);
+            this.txtPorcentaje07.MaxLength = 32767;
+            this.txtPorcentaje07.Name = "txtPorcentaje07";
+            this.txtPorcentaje07.PasswordChar = '\0';
+            this.txtPorcentaje07.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPorcentaje07.SelectedText = "";
+            this.txtPorcentaje07.SelectionLength = 0;
+            this.txtPorcentaje07.SelectionStart = 0;
+            this.txtPorcentaje07.ShortcutsEnabled = true;
+            this.txtPorcentaje07.Size = new System.Drawing.Size(74, 23);
+            this.txtPorcentaje07.TabIndex = 93;
+            this.txtPorcentaje07.UseCustomBackColor = true;
+            this.txtPorcentaje07.UseSelectable = true;
+            this.txtPorcentaje07.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPorcentaje07.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPorcentaje07.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
+            // 
+            // txtPorcentaje06
+            // 
+            this.txtPorcentaje06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPorcentaje06.CustomButton.Image = null;
+            this.txtPorcentaje06.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtPorcentaje06.CustomButton.Name = "";
+            this.txtPorcentaje06.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPorcentaje06.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPorcentaje06.CustomButton.TabIndex = 1;
+            this.txtPorcentaje06.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPorcentaje06.CustomButton.UseSelectable = true;
+            this.txtPorcentaje06.CustomButton.Visible = false;
+            this.txtPorcentaje06.Lines = new string[0];
+            this.txtPorcentaje06.Location = new System.Drawing.Point(226, 45);
+            this.txtPorcentaje06.MaxLength = 32767;
+            this.txtPorcentaje06.Name = "txtPorcentaje06";
+            this.txtPorcentaje06.PasswordChar = '\0';
+            this.txtPorcentaje06.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPorcentaje06.SelectedText = "";
+            this.txtPorcentaje06.SelectionLength = 0;
+            this.txtPorcentaje06.SelectionStart = 0;
+            this.txtPorcentaje06.ShortcutsEnabled = true;
+            this.txtPorcentaje06.Size = new System.Drawing.Size(74, 23);
+            this.txtPorcentaje06.TabIndex = 92;
+            this.txtPorcentaje06.UseCustomBackColor = true;
+            this.txtPorcentaje06.UseSelectable = true;
+            this.txtPorcentaje06.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPorcentaje06.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPorcentaje06.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
+            // 
+            // txtPorcentaje04
+            // 
+            this.txtPorcentaje04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPorcentaje04.CustomButton.Image = null;
+            this.txtPorcentaje04.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtPorcentaje04.CustomButton.Name = "";
+            this.txtPorcentaje04.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPorcentaje04.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPorcentaje04.CustomButton.TabIndex = 1;
+            this.txtPorcentaje04.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPorcentaje04.CustomButton.UseSelectable = true;
+            this.txtPorcentaje04.CustomButton.Visible = false;
+            this.txtPorcentaje04.Lines = new string[0];
+            this.txtPorcentaje04.Location = new System.Drawing.Point(66, 91);
+            this.txtPorcentaje04.MaxLength = 32767;
+            this.txtPorcentaje04.Name = "txtPorcentaje04";
+            this.txtPorcentaje04.PasswordChar = '\0';
+            this.txtPorcentaje04.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPorcentaje04.SelectedText = "";
+            this.txtPorcentaje04.SelectionLength = 0;
+            this.txtPorcentaje04.SelectionStart = 0;
+            this.txtPorcentaje04.ShortcutsEnabled = true;
+            this.txtPorcentaje04.Size = new System.Drawing.Size(74, 23);
+            this.txtPorcentaje04.TabIndex = 89;
+            this.txtPorcentaje04.UseCustomBackColor = true;
+            this.txtPorcentaje04.UseSelectable = true;
+            this.txtPorcentaje04.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPorcentaje04.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPorcentaje04.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.AliceBlue;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(-1, -1);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.label1.Size = new System.Drawing.Size(335, 23);
+            this.label1.TabIndex = 106;
+            this.label1.Text = "Tabla de Porcentajes";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPorcentaje02
+            // 
+            this.txtPorcentaje02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPorcentaje02.CustomButton.Image = null;
+            this.txtPorcentaje02.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtPorcentaje02.CustomButton.Name = "";
+            this.txtPorcentaje02.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPorcentaje02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPorcentaje02.CustomButton.TabIndex = 1;
+            this.txtPorcentaje02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPorcentaje02.CustomButton.UseSelectable = true;
+            this.txtPorcentaje02.CustomButton.Visible = false;
+            this.txtPorcentaje02.Lines = new string[0];
+            this.txtPorcentaje02.Location = new System.Drawing.Point(66, 45);
+            this.txtPorcentaje02.MaxLength = 32767;
+            this.txtPorcentaje02.Name = "txtPorcentaje02";
+            this.txtPorcentaje02.PasswordChar = '\0';
+            this.txtPorcentaje02.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPorcentaje02.SelectedText = "";
+            this.txtPorcentaje02.SelectionLength = 0;
+            this.txtPorcentaje02.SelectionStart = 0;
+            this.txtPorcentaje02.ShortcutsEnabled = true;
+            this.txtPorcentaje02.Size = new System.Drawing.Size(74, 23);
+            this.txtPorcentaje02.TabIndex = 87;
+            this.txtPorcentaje02.UseCustomBackColor = true;
+            this.txtPorcentaje02.UseSelectable = true;
+            this.txtPorcentaje02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPorcentaje02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPorcentaje02.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
+            // 
+            // txtPorcentaje03
+            // 
+            this.txtPorcentaje03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPorcentaje03.CustomButton.Image = null;
+            this.txtPorcentaje03.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtPorcentaje03.CustomButton.Name = "";
+            this.txtPorcentaje03.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPorcentaje03.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPorcentaje03.CustomButton.TabIndex = 1;
+            this.txtPorcentaje03.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPorcentaje03.CustomButton.UseSelectable = true;
+            this.txtPorcentaje03.CustomButton.Visible = false;
+            this.txtPorcentaje03.Lines = new string[0];
+            this.txtPorcentaje03.Location = new System.Drawing.Point(66, 68);
+            this.txtPorcentaje03.MaxLength = 32767;
+            this.txtPorcentaje03.Name = "txtPorcentaje03";
+            this.txtPorcentaje03.PasswordChar = '\0';
+            this.txtPorcentaje03.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPorcentaje03.SelectedText = "";
+            this.txtPorcentaje03.SelectionLength = 0;
+            this.txtPorcentaje03.SelectionStart = 0;
+            this.txtPorcentaje03.ShortcutsEnabled = true;
+            this.txtPorcentaje03.Size = new System.Drawing.Size(74, 23);
+            this.txtPorcentaje03.TabIndex = 88;
+            this.txtPorcentaje03.UseCustomBackColor = true;
+            this.txtPorcentaje03.UseSelectable = true;
+            this.txtPorcentaje03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPorcentaje03.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPorcentaje03.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
+            // 
+            // txtPorcentaje01
+            // 
+            this.txtPorcentaje01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPorcentaje01.CustomButton.Image = null;
+            this.txtPorcentaje01.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtPorcentaje01.CustomButton.Name = "";
+            this.txtPorcentaje01.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPorcentaje01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPorcentaje01.CustomButton.TabIndex = 1;
+            this.txtPorcentaje01.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPorcentaje01.CustomButton.UseSelectable = true;
+            this.txtPorcentaje01.CustomButton.Visible = false;
+            this.txtPorcentaje01.Lines = new string[0];
+            this.txtPorcentaje01.Location = new System.Drawing.Point(66, 22);
+            this.txtPorcentaje01.MaxLength = 32767;
+            this.txtPorcentaje01.Name = "txtPorcentaje01";
+            this.txtPorcentaje01.PasswordChar = '\0';
+            this.txtPorcentaje01.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPorcentaje01.SelectedText = "";
+            this.txtPorcentaje01.SelectionLength = 0;
+            this.txtPorcentaje01.SelectionStart = 0;
+            this.txtPorcentaje01.ShortcutsEnabled = true;
+            this.txtPorcentaje01.Size = new System.Drawing.Size(74, 23);
+            this.txtPorcentaje01.TabIndex = 7;
+            this.txtPorcentaje01.UseCustomBackColor = true;
+            this.txtPorcentaje01.UseSelectable = true;
+            this.txtPorcentaje01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPorcentaje01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPorcentaje01.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel4.Location = new System.Drawing.Point(10, 93);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel4.TabIndex = 99;
+            this.metroLabel4.Text = "Porc. 04:";
+            this.metroLabel4.UseCustomForeColor = true;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel1.Location = new System.Drawing.Point(10, 24);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel1.TabIndex = 96;
+            this.metroLabel1.Text = "Porc. 01:";
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
+            // lblSimboloPorc04
+            // 
+            this.lblSimboloPorc04.AutoSize = true;
+            this.lblSimboloPorc04.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorc04.Location = new System.Drawing.Point(137, 94);
+            this.lblSimboloPorc04.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSimboloPorc04.Name = "lblSimboloPorc04";
+            this.lblSimboloPorc04.Size = new System.Drawing.Size(20, 19);
+            this.lblSimboloPorc04.TabIndex = 110;
+            this.lblSimboloPorc04.Text = "%";
+            this.lblSimboloPorc04.UseCustomForeColor = true;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel7.Location = new System.Drawing.Point(168, 94);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel7.TabIndex = 104;
+            this.metroLabel7.Text = "Porc. 08:";
+            this.metroLabel7.UseCustomForeColor = true;
+            // 
+            // lblSimboloPorc03
+            // 
+            this.lblSimboloPorc03.AutoSize = true;
+            this.lblSimboloPorc03.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorc03.Location = new System.Drawing.Point(137, 70);
+            this.lblSimboloPorc03.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSimboloPorc03.Name = "lblSimboloPorc03";
+            this.lblSimboloPorc03.Size = new System.Drawing.Size(20, 19);
+            this.lblSimboloPorc03.TabIndex = 109;
+            this.lblSimboloPorc03.Text = "%";
+            this.lblSimboloPorc03.UseCustomForeColor = true;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel8.Location = new System.Drawing.Point(168, 70);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel8.TabIndex = 103;
+            this.metroLabel8.Text = "Porc. 07:";
+            this.metroLabel8.UseCustomForeColor = true;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel2.Location = new System.Drawing.Point(10, 47);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel2.TabIndex = 97;
+            this.metroLabel2.Text = "Porc. 02:";
+            this.metroLabel2.UseCustomForeColor = true;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel9.Location = new System.Drawing.Point(168, 47);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel9.TabIndex = 102;
+            this.metroLabel9.Text = "Porc. 06:";
+            this.metroLabel9.UseCustomForeColor = true;
+            // 
+            // lblSimboloPorc02
+            // 
+            this.lblSimboloPorc02.AutoSize = true;
+            this.lblSimboloPorc02.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorc02.Location = new System.Drawing.Point(137, 47);
+            this.lblSimboloPorc02.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSimboloPorc02.Name = "lblSimboloPorc02";
+            this.lblSimboloPorc02.Size = new System.Drawing.Size(20, 19);
+            this.lblSimboloPorc02.TabIndex = 108;
+            this.lblSimboloPorc02.Text = "%";
+            this.lblSimboloPorc02.UseCustomForeColor = true;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel10.Location = new System.Drawing.Point(168, 24);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel10.TabIndex = 101;
+            this.metroLabel10.Text = "Porc. 05:";
+            this.metroLabel10.UseCustomForeColor = true;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel3.Location = new System.Drawing.Point(10, 70);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel3.TabIndex = 98;
+            this.metroLabel3.Text = "Porc. 03:";
+            this.metroLabel3.UseCustomForeColor = true;
+            // 
+            // lblSimboloPorc01
+            // 
+            this.lblSimboloPorc01.AutoSize = true;
+            this.lblSimboloPorc01.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorc01.Location = new System.Drawing.Point(137, 24);
+            this.lblSimboloPorc01.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSimboloPorc01.Name = "lblSimboloPorc01";
+            this.lblSimboloPorc01.Size = new System.Drawing.Size(20, 19);
+            this.lblSimboloPorc01.TabIndex = 107;
+            this.lblSimboloPorc01.Text = "%";
+            this.lblSimboloPorc01.UseCustomForeColor = true;
+            // 
+            // lblSimboloPorc08
+            // 
+            this.lblSimboloPorc08.AutoSize = true;
+            this.lblSimboloPorc08.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorc08.Location = new System.Drawing.Point(297, 94);
+            this.lblSimboloPorc08.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSimboloPorc08.Name = "lblSimboloPorc08";
+            this.lblSimboloPorc08.Size = new System.Drawing.Size(20, 19);
+            this.lblSimboloPorc08.TabIndex = 114;
+            this.lblSimboloPorc08.Text = "%";
+            this.lblSimboloPorc08.UseCustomForeColor = true;
+            // 
+            // lblSimboloPorc07
+            // 
+            this.lblSimboloPorc07.AutoSize = true;
+            this.lblSimboloPorc07.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorc07.Location = new System.Drawing.Point(297, 72);
+            this.lblSimboloPorc07.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSimboloPorc07.Name = "lblSimboloPorc07";
+            this.lblSimboloPorc07.Size = new System.Drawing.Size(20, 19);
+            this.lblSimboloPorc07.TabIndex = 113;
+            this.lblSimboloPorc07.Text = "%";
+            this.lblSimboloPorc07.UseCustomForeColor = true;
+            // 
+            // lblSimboloPorc06
+            // 
+            this.lblSimboloPorc06.AutoSize = true;
+            this.lblSimboloPorc06.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorc06.Location = new System.Drawing.Point(297, 49);
+            this.lblSimboloPorc06.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSimboloPorc06.Name = "lblSimboloPorc06";
+            this.lblSimboloPorc06.Size = new System.Drawing.Size(20, 19);
+            this.lblSimboloPorc06.TabIndex = 112;
+            this.lblSimboloPorc06.Text = "%";
+            this.lblSimboloPorc06.UseCustomForeColor = true;
+            // 
+            // lblSimboloPorc05
+            // 
+            this.lblSimboloPorc05.AutoSize = true;
+            this.lblSimboloPorc05.ForeColor = System.Drawing.Color.Navy;
+            this.lblSimboloPorc05.Location = new System.Drawing.Point(297, 24);
+            this.lblSimboloPorc05.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSimboloPorc05.Name = "lblSimboloPorc05";
+            this.lblSimboloPorc05.Size = new System.Drawing.Size(20, 19);
+            this.lblSimboloPorc05.TabIndex = 111;
+            this.lblSimboloPorc05.Text = "%";
+            this.lblSimboloPorc05.UseCustomForeColor = true;
+            // 
             // txtAbreviacion
             // 
             this.txtAbreviacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
@@ -408,39 +927,6 @@
             this.lblAbreviacion.TabIndex = 2;
             this.lblAbreviacion.Text = "Abreviación:";
             this.lblAbreviacion.UseCustomForeColor = true;
-            // 
-            // txtPorcentaje01
-            // 
-            this.txtPorcentaje01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPorcentaje01.CustomButton.Image = null;
-            this.txtPorcentaje01.CustomButton.Location = new System.Drawing.Point(52, 1);
-            this.txtPorcentaje01.CustomButton.Name = "";
-            this.txtPorcentaje01.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPorcentaje01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPorcentaje01.CustomButton.TabIndex = 1;
-            this.txtPorcentaje01.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPorcentaje01.CustomButton.UseSelectable = true;
-            this.txtPorcentaje01.CustomButton.Visible = false;
-            this.txtPorcentaje01.Lines = new string[0];
-            this.txtPorcentaje01.Location = new System.Drawing.Point(66, 22);
-            this.txtPorcentaje01.MaxLength = 32767;
-            this.txtPorcentaje01.Name = "txtPorcentaje01";
-            this.txtPorcentaje01.PasswordChar = '\0';
-            this.txtPorcentaje01.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPorcentaje01.SelectedText = "";
-            this.txtPorcentaje01.SelectionLength = 0;
-            this.txtPorcentaje01.SelectionStart = 0;
-            this.txtPorcentaje01.ShortcutsEnabled = true;
-            this.txtPorcentaje01.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje01.TabIndex = 7;
-            this.txtPorcentaje01.UseCustomBackColor = true;
-            this.txtPorcentaje01.UseSelectable = true;
-            this.txtPorcentaje01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPorcentaje01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPorcentaje01.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
             // 
             // panel2
             // 
@@ -568,13 +1054,13 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(92, 48);
+            this.lblNombreForm.Location = new System.Drawing.Point(92, 54);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(144, 45);
+            this.lblNombreForm.Size = new System.Drawing.Size(122, 32);
             this.lblNombreForm.TabIndex = 96;
-            this.lblNombreForm.Text = "Impuesto";
+            this.lblNombreForm.Text = "Impuestos";
             // 
             // btnCerrar
             // 
@@ -639,492 +1125,6 @@
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
             // 
-            // txtPorcentaje02
-            // 
-            this.txtPorcentaje02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPorcentaje02.CustomButton.Image = null;
-            this.txtPorcentaje02.CustomButton.Location = new System.Drawing.Point(52, 1);
-            this.txtPorcentaje02.CustomButton.Name = "";
-            this.txtPorcentaje02.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPorcentaje02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPorcentaje02.CustomButton.TabIndex = 1;
-            this.txtPorcentaje02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPorcentaje02.CustomButton.UseSelectable = true;
-            this.txtPorcentaje02.CustomButton.Visible = false;
-            this.txtPorcentaje02.Lines = new string[0];
-            this.txtPorcentaje02.Location = new System.Drawing.Point(66, 45);
-            this.txtPorcentaje02.MaxLength = 32767;
-            this.txtPorcentaje02.Name = "txtPorcentaje02";
-            this.txtPorcentaje02.PasswordChar = '\0';
-            this.txtPorcentaje02.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPorcentaje02.SelectedText = "";
-            this.txtPorcentaje02.SelectionLength = 0;
-            this.txtPorcentaje02.SelectionStart = 0;
-            this.txtPorcentaje02.ShortcutsEnabled = true;
-            this.txtPorcentaje02.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje02.TabIndex = 87;
-            this.txtPorcentaje02.UseCustomBackColor = true;
-            this.txtPorcentaje02.UseSelectable = true;
-            this.txtPorcentaje02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPorcentaje02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPorcentaje02.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
-            // 
-            // txtPorcentaje03
-            // 
-            this.txtPorcentaje03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPorcentaje03.CustomButton.Image = null;
-            this.txtPorcentaje03.CustomButton.Location = new System.Drawing.Point(52, 1);
-            this.txtPorcentaje03.CustomButton.Name = "";
-            this.txtPorcentaje03.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPorcentaje03.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPorcentaje03.CustomButton.TabIndex = 1;
-            this.txtPorcentaje03.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPorcentaje03.CustomButton.UseSelectable = true;
-            this.txtPorcentaje03.CustomButton.Visible = false;
-            this.txtPorcentaje03.Lines = new string[0];
-            this.txtPorcentaje03.Location = new System.Drawing.Point(66, 68);
-            this.txtPorcentaje03.MaxLength = 32767;
-            this.txtPorcentaje03.Name = "txtPorcentaje03";
-            this.txtPorcentaje03.PasswordChar = '\0';
-            this.txtPorcentaje03.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPorcentaje03.SelectedText = "";
-            this.txtPorcentaje03.SelectionLength = 0;
-            this.txtPorcentaje03.SelectionStart = 0;
-            this.txtPorcentaje03.ShortcutsEnabled = true;
-            this.txtPorcentaje03.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje03.TabIndex = 88;
-            this.txtPorcentaje03.UseCustomBackColor = true;
-            this.txtPorcentaje03.UseSelectable = true;
-            this.txtPorcentaje03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPorcentaje03.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPorcentaje03.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
-            // 
-            // txtPorcentaje04
-            // 
-            this.txtPorcentaje04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPorcentaje04.CustomButton.Image = null;
-            this.txtPorcentaje04.CustomButton.Location = new System.Drawing.Point(52, 1);
-            this.txtPorcentaje04.CustomButton.Name = "";
-            this.txtPorcentaje04.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPorcentaje04.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPorcentaje04.CustomButton.TabIndex = 1;
-            this.txtPorcentaje04.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPorcentaje04.CustomButton.UseSelectable = true;
-            this.txtPorcentaje04.CustomButton.Visible = false;
-            this.txtPorcentaje04.Lines = new string[0];
-            this.txtPorcentaje04.Location = new System.Drawing.Point(66, 91);
-            this.txtPorcentaje04.MaxLength = 32767;
-            this.txtPorcentaje04.Name = "txtPorcentaje04";
-            this.txtPorcentaje04.PasswordChar = '\0';
-            this.txtPorcentaje04.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPorcentaje04.SelectedText = "";
-            this.txtPorcentaje04.SelectionLength = 0;
-            this.txtPorcentaje04.SelectionStart = 0;
-            this.txtPorcentaje04.ShortcutsEnabled = true;
-            this.txtPorcentaje04.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje04.TabIndex = 89;
-            this.txtPorcentaje04.UseCustomBackColor = true;
-            this.txtPorcentaje04.UseSelectable = true;
-            this.txtPorcentaje04.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPorcentaje04.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPorcentaje04.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
-            // 
-            // txtPorcentaje08
-            // 
-            this.txtPorcentaje08.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPorcentaje08.CustomButton.Image = null;
-            this.txtPorcentaje08.CustomButton.Location = new System.Drawing.Point(52, 1);
-            this.txtPorcentaje08.CustomButton.Name = "";
-            this.txtPorcentaje08.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPorcentaje08.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPorcentaje08.CustomButton.TabIndex = 1;
-            this.txtPorcentaje08.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPorcentaje08.CustomButton.UseSelectable = true;
-            this.txtPorcentaje08.CustomButton.Visible = false;
-            this.txtPorcentaje08.Lines = new string[0];
-            this.txtPorcentaje08.Location = new System.Drawing.Point(226, 91);
-            this.txtPorcentaje08.MaxLength = 32767;
-            this.txtPorcentaje08.Name = "txtPorcentaje08";
-            this.txtPorcentaje08.PasswordChar = '\0';
-            this.txtPorcentaje08.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPorcentaje08.SelectedText = "";
-            this.txtPorcentaje08.SelectionLength = 0;
-            this.txtPorcentaje08.SelectionStart = 0;
-            this.txtPorcentaje08.ShortcutsEnabled = true;
-            this.txtPorcentaje08.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje08.TabIndex = 94;
-            this.txtPorcentaje08.UseCustomBackColor = true;
-            this.txtPorcentaje08.UseSelectable = true;
-            this.txtPorcentaje08.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPorcentaje08.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPorcentaje08.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
-            // 
-            // txtPorcentaje07
-            // 
-            this.txtPorcentaje07.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPorcentaje07.CustomButton.Image = null;
-            this.txtPorcentaje07.CustomButton.Location = new System.Drawing.Point(52, 1);
-            this.txtPorcentaje07.CustomButton.Name = "";
-            this.txtPorcentaje07.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPorcentaje07.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPorcentaje07.CustomButton.TabIndex = 1;
-            this.txtPorcentaje07.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPorcentaje07.CustomButton.UseSelectable = true;
-            this.txtPorcentaje07.CustomButton.Visible = false;
-            this.txtPorcentaje07.Lines = new string[0];
-            this.txtPorcentaje07.Location = new System.Drawing.Point(226, 68);
-            this.txtPorcentaje07.MaxLength = 32767;
-            this.txtPorcentaje07.Name = "txtPorcentaje07";
-            this.txtPorcentaje07.PasswordChar = '\0';
-            this.txtPorcentaje07.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPorcentaje07.SelectedText = "";
-            this.txtPorcentaje07.SelectionLength = 0;
-            this.txtPorcentaje07.SelectionStart = 0;
-            this.txtPorcentaje07.ShortcutsEnabled = true;
-            this.txtPorcentaje07.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje07.TabIndex = 93;
-            this.txtPorcentaje07.UseCustomBackColor = true;
-            this.txtPorcentaje07.UseSelectable = true;
-            this.txtPorcentaje07.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPorcentaje07.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPorcentaje07.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
-            // 
-            // txtPorcentaje06
-            // 
-            this.txtPorcentaje06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPorcentaje06.CustomButton.Image = null;
-            this.txtPorcentaje06.CustomButton.Location = new System.Drawing.Point(52, 1);
-            this.txtPorcentaje06.CustomButton.Name = "";
-            this.txtPorcentaje06.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPorcentaje06.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPorcentaje06.CustomButton.TabIndex = 1;
-            this.txtPorcentaje06.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPorcentaje06.CustomButton.UseSelectable = true;
-            this.txtPorcentaje06.CustomButton.Visible = false;
-            this.txtPorcentaje06.Lines = new string[0];
-            this.txtPorcentaje06.Location = new System.Drawing.Point(226, 45);
-            this.txtPorcentaje06.MaxLength = 32767;
-            this.txtPorcentaje06.Name = "txtPorcentaje06";
-            this.txtPorcentaje06.PasswordChar = '\0';
-            this.txtPorcentaje06.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPorcentaje06.SelectedText = "";
-            this.txtPorcentaje06.SelectionLength = 0;
-            this.txtPorcentaje06.SelectionStart = 0;
-            this.txtPorcentaje06.ShortcutsEnabled = true;
-            this.txtPorcentaje06.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje06.TabIndex = 92;
-            this.txtPorcentaje06.UseCustomBackColor = true;
-            this.txtPorcentaje06.UseSelectable = true;
-            this.txtPorcentaje06.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPorcentaje06.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPorcentaje06.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
-            // 
-            // txtPorcentaje05
-            // 
-            this.txtPorcentaje05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPorcentaje05.CustomButton.Image = null;
-            this.txtPorcentaje05.CustomButton.Location = new System.Drawing.Point(52, 1);
-            this.txtPorcentaje05.CustomButton.Name = "";
-            this.txtPorcentaje05.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPorcentaje05.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPorcentaje05.CustomButton.TabIndex = 1;
-            this.txtPorcentaje05.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPorcentaje05.CustomButton.UseSelectable = true;
-            this.txtPorcentaje05.CustomButton.Visible = false;
-            this.txtPorcentaje05.Lines = new string[0];
-            this.txtPorcentaje05.Location = new System.Drawing.Point(226, 22);
-            this.txtPorcentaje05.MaxLength = 32767;
-            this.txtPorcentaje05.Name = "txtPorcentaje05";
-            this.txtPorcentaje05.PasswordChar = '\0';
-            this.txtPorcentaje05.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPorcentaje05.SelectedText = "";
-            this.txtPorcentaje05.SelectionLength = 0;
-            this.txtPorcentaje05.SelectionStart = 0;
-            this.txtPorcentaje05.ShortcutsEnabled = true;
-            this.txtPorcentaje05.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje05.TabIndex = 91;
-            this.txtPorcentaje05.UseCustomBackColor = true;
-            this.txtPorcentaje05.UseSelectable = true;
-            this.txtPorcentaje05.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPorcentaje05.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPorcentaje05.TextChanged += new System.EventHandler(this.CambioEnControlYCalcularAcumulado);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(10, 24);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel1.TabIndex = 96;
-            this.metroLabel1.Text = "Porc. 01:";
-            this.metroLabel1.UseCustomForeColor = true;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel2.Location = new System.Drawing.Point(10, 47);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel2.TabIndex = 97;
-            this.metroLabel2.Text = "Porc. 02:";
-            this.metroLabel2.UseCustomForeColor = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel3.Location = new System.Drawing.Point(10, 70);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel3.TabIndex = 98;
-            this.metroLabel3.Text = "Porc. 03:";
-            this.metroLabel3.UseCustomForeColor = true;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel4.Location = new System.Drawing.Point(10, 93);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel4.TabIndex = 99;
-            this.metroLabel4.Text = "Porc. 04:";
-            this.metroLabel4.UseCustomForeColor = true;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel7.Location = new System.Drawing.Point(168, 94);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel7.TabIndex = 104;
-            this.metroLabel7.Text = "Porc. 08:";
-            this.metroLabel7.UseCustomForeColor = true;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel8.Location = new System.Drawing.Point(168, 70);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel8.TabIndex = 103;
-            this.metroLabel8.Text = "Porc. 07:";
-            this.metroLabel8.UseCustomForeColor = true;
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel9.Location = new System.Drawing.Point(168, 47);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel9.TabIndex = 102;
-            this.metroLabel9.Text = "Porc. 06:";
-            this.metroLabel9.UseCustomForeColor = true;
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel10.Location = new System.Drawing.Point(168, 24);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel10.TabIndex = 101;
-            this.metroLabel10.Text = "Porc. 05:";
-            this.metroLabel10.UseCustomForeColor = true;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.AliceBlue;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(-1, -1);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.label1.Size = new System.Drawing.Size(335, 23);
-            this.label1.TabIndex = 106;
-            this.label1.Text = "Tabla de Porcentajes";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblSimboloPorc01
-            // 
-            this.lblSimboloPorc01.AutoSize = true;
-            this.lblSimboloPorc01.ForeColor = System.Drawing.Color.Navy;
-            this.lblSimboloPorc01.Location = new System.Drawing.Point(137, 24);
-            this.lblSimboloPorc01.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSimboloPorc01.Name = "lblSimboloPorc01";
-            this.lblSimboloPorc01.Size = new System.Drawing.Size(20, 19);
-            this.lblSimboloPorc01.TabIndex = 107;
-            this.lblSimboloPorc01.Text = "%";
-            this.lblSimboloPorc01.UseCustomForeColor = true;
-            // 
-            // lblSimboloPorc02
-            // 
-            this.lblSimboloPorc02.AutoSize = true;
-            this.lblSimboloPorc02.ForeColor = System.Drawing.Color.Navy;
-            this.lblSimboloPorc02.Location = new System.Drawing.Point(137, 47);
-            this.lblSimboloPorc02.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSimboloPorc02.Name = "lblSimboloPorc02";
-            this.lblSimboloPorc02.Size = new System.Drawing.Size(20, 19);
-            this.lblSimboloPorc02.TabIndex = 108;
-            this.lblSimboloPorc02.Text = "%";
-            this.lblSimboloPorc02.UseCustomForeColor = true;
-            // 
-            // lblSimboloPorc03
-            // 
-            this.lblSimboloPorc03.AutoSize = true;
-            this.lblSimboloPorc03.ForeColor = System.Drawing.Color.Navy;
-            this.lblSimboloPorc03.Location = new System.Drawing.Point(137, 70);
-            this.lblSimboloPorc03.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSimboloPorc03.Name = "lblSimboloPorc03";
-            this.lblSimboloPorc03.Size = new System.Drawing.Size(20, 19);
-            this.lblSimboloPorc03.TabIndex = 109;
-            this.lblSimboloPorc03.Text = "%";
-            this.lblSimboloPorc03.UseCustomForeColor = true;
-            // 
-            // lblSimboloPorc04
-            // 
-            this.lblSimboloPorc04.AutoSize = true;
-            this.lblSimboloPorc04.ForeColor = System.Drawing.Color.Navy;
-            this.lblSimboloPorc04.Location = new System.Drawing.Point(137, 94);
-            this.lblSimboloPorc04.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSimboloPorc04.Name = "lblSimboloPorc04";
-            this.lblSimboloPorc04.Size = new System.Drawing.Size(20, 19);
-            this.lblSimboloPorc04.TabIndex = 110;
-            this.lblSimboloPorc04.Text = "%";
-            this.lblSimboloPorc04.UseCustomForeColor = true;
-            // 
-            // lblSimboloPorc08
-            // 
-            this.lblSimboloPorc08.AutoSize = true;
-            this.lblSimboloPorc08.ForeColor = System.Drawing.Color.Navy;
-            this.lblSimboloPorc08.Location = new System.Drawing.Point(297, 94);
-            this.lblSimboloPorc08.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSimboloPorc08.Name = "lblSimboloPorc08";
-            this.lblSimboloPorc08.Size = new System.Drawing.Size(20, 19);
-            this.lblSimboloPorc08.TabIndex = 114;
-            this.lblSimboloPorc08.Text = "%";
-            this.lblSimboloPorc08.UseCustomForeColor = true;
-            // 
-            // lblSimboloPorc07
-            // 
-            this.lblSimboloPorc07.AutoSize = true;
-            this.lblSimboloPorc07.ForeColor = System.Drawing.Color.Navy;
-            this.lblSimboloPorc07.Location = new System.Drawing.Point(297, 72);
-            this.lblSimboloPorc07.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSimboloPorc07.Name = "lblSimboloPorc07";
-            this.lblSimboloPorc07.Size = new System.Drawing.Size(20, 19);
-            this.lblSimboloPorc07.TabIndex = 113;
-            this.lblSimboloPorc07.Text = "%";
-            this.lblSimboloPorc07.UseCustomForeColor = true;
-            // 
-            // lblSimboloPorc06
-            // 
-            this.lblSimboloPorc06.AutoSize = true;
-            this.lblSimboloPorc06.ForeColor = System.Drawing.Color.Navy;
-            this.lblSimboloPorc06.Location = new System.Drawing.Point(297, 49);
-            this.lblSimboloPorc06.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSimboloPorc06.Name = "lblSimboloPorc06";
-            this.lblSimboloPorc06.Size = new System.Drawing.Size(20, 19);
-            this.lblSimboloPorc06.TabIndex = 112;
-            this.lblSimboloPorc06.Text = "%";
-            this.lblSimboloPorc06.UseCustomForeColor = true;
-            // 
-            // lblSimboloPorc05
-            // 
-            this.lblSimboloPorc05.AutoSize = true;
-            this.lblSimboloPorc05.ForeColor = System.Drawing.Color.Navy;
-            this.lblSimboloPorc05.Location = new System.Drawing.Point(297, 24);
-            this.lblSimboloPorc05.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSimboloPorc05.Name = "lblSimboloPorc05";
-            this.lblSimboloPorc05.Size = new System.Drawing.Size(20, 19);
-            this.lblSimboloPorc05.TabIndex = 111;
-            this.lblSimboloPorc05.Text = "%";
-            this.lblSimboloPorc05.UseCustomForeColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtPorcentaje05);
-            this.panel1.Controls.Add(this.txtPorcentaje08);
-            this.panel1.Controls.Add(this.txtPorcentaje07);
-            this.panel1.Controls.Add(this.txtPorcentaje06);
-            this.panel1.Controls.Add(this.txtPorcentaje04);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtPorcentaje02);
-            this.panel1.Controls.Add(this.txtPorcentaje03);
-            this.panel1.Controls.Add(this.txtPorcentaje01);
-            this.panel1.Controls.Add(this.metroLabel4);
-            this.panel1.Controls.Add(this.metroLabel1);
-            this.panel1.Controls.Add(this.lblSimboloPorc04);
-            this.panel1.Controls.Add(this.metroLabel7);
-            this.panel1.Controls.Add(this.lblSimboloPorc03);
-            this.panel1.Controls.Add(this.metroLabel8);
-            this.panel1.Controls.Add(this.metroLabel2);
-            this.panel1.Controls.Add(this.metroLabel9);
-            this.panel1.Controls.Add(this.lblSimboloPorc02);
-            this.panel1.Controls.Add(this.metroLabel10);
-            this.panel1.Controls.Add(this.metroLabel3);
-            this.panel1.Controls.Add(this.lblSimboloPorc01);
-            this.panel1.Controls.Add(this.lblSimboloPorc08);
-            this.panel1.Controls.Add(this.lblSimboloPorc07);
-            this.panel1.Controls.Add(this.lblSimboloPorc06);
-            this.panel1.Controls.Add(this.lblSimboloPorc05);
-            this.panel1.Location = new System.Drawing.Point(18, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 116);
-            this.panel1.TabIndex = 115;
-            // 
-            // metroLabel17
-            // 
-            this.metroLabel17.AutoSize = true;
-            this.metroLabel17.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel17.Location = new System.Drawing.Point(376, 114);
-            this.metroLabel17.Name = "metroLabel17";
-            this.metroLabel17.Size = new System.Drawing.Size(139, 19);
-            this.metroLabel17.TabIndex = 116;
-            this.metroLabel17.Text = "Porcentaje acumulado";
-            this.metroLabel17.UseCustomForeColor = true;
-            // 
-            // lblPorcentajeAcumulado
-            // 
-            this.lblPorcentajeAcumulado.BackColor = System.Drawing.Color.Transparent;
-            this.lblPorcentajeAcumulado.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPorcentajeAcumulado.ForeColor = System.Drawing.Color.Navy;
-            this.lblPorcentajeAcumulado.Location = new System.Drawing.Point(355, 136);
-            this.lblPorcentajeAcumulado.Name = "lblPorcentajeAcumulado";
-            this.lblPorcentajeAcumulado.Size = new System.Drawing.Size(184, 90);
-            this.lblPorcentajeAcumulado.TabIndex = 117;
-            this.lblPorcentajeAcumulado.Text = "0 %";
-            this.lblPorcentajeAcumulado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormImpuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1154,9 +1154,9 @@
             this.tabImpuesto.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

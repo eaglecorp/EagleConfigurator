@@ -462,13 +462,13 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(92, 47);
+            this.lblNombreForm.Location = new System.Drawing.Point(92, 52);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(182, 45);
+            this.lblNombreForm.Size = new System.Drawing.Size(183, 32);
             this.lblNombreForm.TabIndex = 88;
-            this.lblNombreForm.Text = "Medio Pago";
+            this.lblNombreForm.Text = "Medios de Pago";
             // 
             // lblIdMedioPago
             // 

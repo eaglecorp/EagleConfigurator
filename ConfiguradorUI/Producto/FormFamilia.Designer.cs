@@ -234,13 +234,13 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(93, 46);
+            this.lblNombreForm.Location = new System.Drawing.Point(93, 52);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(112, 45);
+            this.lblNombreForm.Size = new System.Drawing.Size(94, 32);
             this.lblNombreForm.TabIndex = 61;
-            this.lblNombreForm.Text = "Familia";
+            this.lblNombreForm.Text = "Familias";
             // 
             // btnCerrar
             // 

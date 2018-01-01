@@ -492,13 +492,13 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(92, 50);
+            this.lblNombreForm.Location = new System.Drawing.Point(94, 56);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(180, 45);
+            this.lblNombreForm.Size = new System.Drawing.Size(190, 32);
             this.lblNombreForm.TabIndex = 3;
-            this.lblNombreForm.Text = "Canal Venta";
+            this.lblNombreForm.Text = "Canales de venta";
             // 
             // btnCerrar
             // 

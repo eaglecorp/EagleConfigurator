@@ -120,11 +120,11 @@
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
-            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(77, 22);
+            this.lblNombreForm.Location = new System.Drawing.Point(77, 23);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(204, 32);
+            this.lblNombreForm.Size = new System.Drawing.Size(210, 32);
             this.lblNombreForm.TabIndex = 89;
             this.lblNombreForm.Text = "Login Configurator";
             // 
@@ -134,7 +134,7 @@
             this.linkOlvideCuenta.AutoSize = true;
             this.linkOlvideCuenta.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkOlvideCuenta.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.linkOlvideCuenta.Location = new System.Drawing.Point(310, 205);
+            this.linkOlvideCuenta.Location = new System.Drawing.Point(312, 215);
             this.linkOlvideCuenta.Name = "linkOlvideCuenta";
             this.linkOlvideCuenta.Size = new System.Drawing.Size(127, 17);
             this.linkOlvideCuenta.TabIndex = 6;
@@ -161,8 +161,8 @@
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(227, 164);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(227, 172);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(103, 32);
             this.btnCancelar.TabIndex = 5;
@@ -182,8 +182,8 @@
             this.btnEntrar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
             this.btnEntrar.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrar.Image")));
-            this.btnEntrar.Location = new System.Drawing.Point(334, 164);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEntrar.Location = new System.Drawing.Point(334, 172);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(103, 32);
             this.btnEntrar.TabIndex = 4;
@@ -206,8 +206,8 @@
             this.picUserLogin.InitialImage = null;
             this.picUserLogin.Location = new System.Drawing.Point(23, 78);
             this.picUserLogin.Name = "picUserLogin";
-            this.picUserLogin.Size = new System.Drawing.Size(130, 135);
-            this.picUserLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picUserLogin.Size = new System.Drawing.Size(125, 126);
+            this.picUserLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picUserLogin.TabIndex = 20;
             this.picUserLogin.TabStop = false;
             // 
@@ -220,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 255);
+            this.ClientSize = new System.Drawing.Size(462, 260);
             this.Controls.Add(this.picStatus);
             this.Controls.Add(this.linkOlvideCuenta);
             this.Controls.Add(this.lblNombreForm);
