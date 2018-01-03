@@ -57,45 +57,9 @@ namespace ConfiguradorUI
 
         private void AsignarImagenHeader()
         {
-            bool errorDefault = false;
-            try
-            {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.LogoImg);
 
-                if (p != null && p.id_parametro > 0 && !string.IsNullOrEmpty(p.txt_valor) && File.Exists(@p.txt_valor))
-                {
-                    string fullpath = @p.txt_valor;
-                    try
-                    {
-                        picLogo.Image = new Bitmap(fullpath);
-                    }
-                    catch
-                    {
-                        MessageBox.Show($"Excepción al momento de cargar la imagen del logo sugerido. Parámetro: {ParameterCode.LogoImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        try
-                        {
-                            picLogo.Image = new Bitmap(Path.Combine
-                                  (FilePath.FotoDefault, Parameter.LogoImg));
-                        }
-                        catch
-                        {
-                            MessageBox.Show($"El logo por defecto no existe o la ruta es incorrecta. Parámetro: {ParameterCode.LogoImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                }
-                else
-                {
-                    errorDefault = true;
-                    picLogo.Image = new Bitmap(Path.Combine(FilePath.FotoDefault, Parameter.LogoImg));
-                }
-            }
-            catch (Exception e)
-            {
-                if (errorDefault)
-                    MessageBox.Show($"El logo por defecto no existe o la ruta es incorrecta. Parámetro: {ParameterCode.LogoImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                    MessageBox.Show($"Ocurrió un error no identificado. ERROR:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            var parametroImg = new ParametroBL().ParametroXCod(ParameterCode.LogoImg);
+            Parameter.CargarParametroImg(parametroImg, picLogo, ParameterCode.LogoImg);
         }
 
 
@@ -105,7 +69,7 @@ namespace ConfiguradorUI
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            
+
             try
             {
                 var oFormLogin = new FormLogin();
@@ -192,6 +156,10 @@ namespace ConfiguradorUI
         {
             var frm = new FormConfiguracion();
             frm.ShowDialog();
+            if (frm.changedLogo)
+            {
+                AsignarImagenHeader();
+            }
         }
         #endregion
 

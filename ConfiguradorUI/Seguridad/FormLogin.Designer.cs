@@ -132,11 +132,11 @@
             // 
             this.linkOlvideCuenta.ActiveLinkColor = System.Drawing.Color.DeepSkyBlue;
             this.linkOlvideCuenta.AutoSize = true;
-            this.linkOlvideCuenta.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkOlvideCuenta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkOlvideCuenta.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.linkOlvideCuenta.Location = new System.Drawing.Point(312, 215);
+            this.linkOlvideCuenta.Location = new System.Drawing.Point(299, 219);
             this.linkOlvideCuenta.Name = "linkOlvideCuenta";
-            this.linkOlvideCuenta.Size = new System.Drawing.Size(127, 17);
+            this.linkOlvideCuenta.Size = new System.Drawing.Size(138, 17);
             this.linkOlvideCuenta.TabIndex = 6;
             this.linkOlvideCuenta.TabStop = true;
             this.linkOlvideCuenta.Text = "¿Olvidaste tu cuenta?";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfiguracion));
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
@@ -58,12 +59,15 @@
             this.txtMailServer = new MetroFramework.Controls.MetroTextBox();
             this.tabPagDiseno = new MetroFramework.Controls.MetroTabPage();
             this.grbLogo = new System.Windows.Forms.GroupBox();
+            this.lblPathLogo = new System.Windows.Forms.Label();
             this.btnCambiarLogo = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.grbImagenLogin = new System.Windows.Forms.GroupBox();
+            this.lblPathLoginImg = new System.Windows.Forms.Label();
             this.btnCambiarImagenLogin = new System.Windows.Forms.Button();
             this.picImagenLogin = new System.Windows.Forms.PictureBox();
             this.grbSplash = new System.Windows.Forms.GroupBox();
+            this.lblPathSplash = new System.Windows.Forms.Label();
             this.btnCambiarSplash = new System.Windows.Forms.Button();
             this.picSplash = new System.Windows.Forms.PictureBox();
             this.tabPagBaseDeDatos = new MetroFramework.Controls.MetroTabPage();
@@ -73,6 +77,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblCodParametro = new System.Windows.Forms.Label();
             this.lblDescripcionParametro = new System.Windows.Forms.Label();
+            this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabConfiguracion.SuspendLayout();
             this.tabPagEmail.SuspendLayout();
             this.grbConfiguracionMensajes.SuspendLayout();
@@ -87,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSplash)).BeginInit();
             this.tabPagBaseDeDatos.SuspendLayout();
             this.grbBackupRestore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombreForm
@@ -120,7 +126,7 @@
             this.tabConfiguracion.Name = "tabConfiguracion";
             this.tabConfiguracion.SelectedIndex = 0;
             this.tabConfiguracion.Size = new System.Drawing.Size(567, 389);
-            this.tabConfiguracion.TabIndex = 111;
+            this.tabConfiguracion.TabIndex = 0;
             this.tabConfiguracion.UseSelectable = true;
             // 
             // tabPagEmail
@@ -170,7 +176,8 @@
             this.txtAddMsjCredentials.Multiline = true;
             this.txtAddMsjCredentials.Name = "txtAddMsjCredentials";
             this.txtAddMsjCredentials.Size = new System.Drawing.Size(264, 46);
-            this.txtAddMsjCredentials.TabIndex = 17;
+            this.txtAddMsjCredentials.TabIndex = 4;
+            this.txtAddMsjCredentials.Enter += new System.EventHandler(this.txtAddMsjCredentials_Enter);
             // 
             // txtAddMsjRegister
             // 
@@ -180,7 +187,8 @@
             this.txtAddMsjRegister.Multiline = true;
             this.txtAddMsjRegister.Name = "txtAddMsjRegister";
             this.txtAddMsjRegister.Size = new System.Drawing.Size(264, 46);
-            this.txtAddMsjRegister.TabIndex = 16;
+            this.txtAddMsjRegister.TabIndex = 1;
+            this.txtAddMsjRegister.Enter += new System.EventHandler(this.txtAddMsjRegister_Enter);
             // 
             // lblAddMsjCredentials
             // 
@@ -230,11 +238,12 @@
             this.txtSubjectCredentials.SelectionStart = 0;
             this.txtSubjectCredentials.ShortcutsEnabled = true;
             this.txtSubjectCredentials.Size = new System.Drawing.Size(264, 23);
-            this.txtSubjectCredentials.TabIndex = 13;
+            this.txtSubjectCredentials.TabIndex = 3;
             this.txtSubjectCredentials.UseCustomBackColor = true;
             this.txtSubjectCredentials.UseSelectable = true;
             this.txtSubjectCredentials.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSubjectCredentials.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSubjectCredentials.Enter += new System.EventHandler(this.txtSubjectCredentials_Enter);
             // 
             // chkSendMailPostRegister
             // 
@@ -246,11 +255,12 @@
             this.chkSendMailPostRegister.ForeColor = System.Drawing.Color.Navy;
             this.chkSendMailPostRegister.Location = new System.Drawing.Point(18, 148);
             this.chkSendMailPostRegister.Name = "chkSendMailPostRegister";
-            this.chkSendMailPostRegister.Size = new System.Drawing.Size(262, 19);
-            this.chkSendMailPostRegister.TabIndex = 11;
-            this.chkSendMailPostRegister.Text = "Enviar después de registro de empleado";
+            this.chkSendMailPostRegister.Size = new System.Drawing.Size(254, 19);
+            this.chkSendMailPostRegister.TabIndex = 2;
+            this.chkSendMailPostRegister.Text = "Enviar credenciales después de registro";
             this.chkSendMailPostRegister.UseCustomForeColor = true;
             this.chkSendMailPostRegister.UseSelectable = true;
+            this.chkSendMailPostRegister.MouseEnter += new System.EventHandler(this.chkSendMailPostRegister_MouseEnter);
             // 
             // lblAddMsjRegister
             // 
@@ -308,11 +318,12 @@
             this.txtSubjectRegister.SelectionStart = 0;
             this.txtSubjectRegister.ShortcutsEnabled = true;
             this.txtSubjectRegister.Size = new System.Drawing.Size(264, 23);
-            this.txtSubjectRegister.TabIndex = 5;
+            this.txtSubjectRegister.TabIndex = 0;
             this.txtSubjectRegister.UseCustomBackColor = true;
             this.txtSubjectRegister.UseSelectable = true;
             this.txtSubjectRegister.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSubjectRegister.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSubjectRegister.Enter += new System.EventHandler(this.txtSubjectRegister_Enter);
             // 
             // grbCredencialesSistema
             // 
@@ -369,11 +380,12 @@
             this.txtContrasena.SelectionStart = 0;
             this.txtContrasena.ShortcutsEnabled = true;
             this.txtContrasena.Size = new System.Drawing.Size(209, 23);
-            this.txtContrasena.TabIndex = 5;
+            this.txtContrasena.TabIndex = 1;
             this.txtContrasena.UseCustomBackColor = true;
             this.txtContrasena.UseSelectable = true;
             this.txtContrasena.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtContrasena.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtContrasena.Enter += new System.EventHandler(this.txtContrasena_Enter);
             // 
             // lblEmail
             // 
@@ -412,11 +424,12 @@
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
             this.txtEmail.Size = new System.Drawing.Size(209, 23);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 0;
             this.txtEmail.UseCustomBackColor = true;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // lblDisplayNameEmail
             // 
@@ -424,9 +437,9 @@
             this.lblDisplayNameEmail.ForeColor = System.Drawing.Color.Navy;
             this.lblDisplayNameEmail.Location = new System.Drawing.Point(15, 124);
             this.lblDisplayNameEmail.Name = "lblDisplayNameEmail";
-            this.lblDisplayNameEmail.Size = new System.Drawing.Size(187, 19);
+            this.lblDisplayNameEmail.Size = new System.Drawing.Size(126, 19);
             this.lblDisplayNameEmail.TabIndex = 2;
-            this.lblDisplayNameEmail.Text = "Nombre de emisor (opcional):";
+            this.lblDisplayNameEmail.Text = "Nombre de emisor:";
             this.lblDisplayNameEmail.UseCustomForeColor = true;
             // 
             // txtDisplayNameEmail
@@ -455,11 +468,12 @@
             this.txtDisplayNameEmail.SelectionStart = 0;
             this.txtDisplayNameEmail.ShortcutsEnabled = true;
             this.txtDisplayNameEmail.Size = new System.Drawing.Size(209, 23);
-            this.txtDisplayNameEmail.TabIndex = 3;
+            this.txtDisplayNameEmail.TabIndex = 2;
             this.txtDisplayNameEmail.UseCustomBackColor = true;
             this.txtDisplayNameEmail.UseSelectable = true;
             this.txtDisplayNameEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDisplayNameEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDisplayNameEmail.Enter += new System.EventHandler(this.txtDisplayNameEmail_Enter);
             // 
             // grbServidorCorreo
             // 
@@ -514,11 +528,12 @@
             this.txtPort.SelectionStart = 0;
             this.txtPort.ShortcutsEnabled = true;
             this.txtPort.Size = new System.Drawing.Size(209, 23);
-            this.txtPort.TabIndex = 5;
+            this.txtPort.TabIndex = 1;
             this.txtPort.UseCustomBackColor = true;
             this.txtPort.UseSelectable = true;
             this.txtPort.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPort.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPort.Enter += new System.EventHandler(this.txtPort_Enter);
             // 
             // lblMailServer
             // 
@@ -557,11 +572,12 @@
             this.txtMailServer.SelectionStart = 0;
             this.txtMailServer.ShortcutsEnabled = true;
             this.txtMailServer.Size = new System.Drawing.Size(209, 23);
-            this.txtMailServer.TabIndex = 3;
+            this.txtMailServer.TabIndex = 0;
             this.txtMailServer.UseCustomBackColor = true;
             this.txtMailServer.UseSelectable = true;
             this.txtMailServer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMailServer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMailServer.Enter += new System.EventHandler(this.txtMailServer_Enter);
             // 
             // tabPagDiseno
             // 
@@ -583,16 +599,27 @@
             // grbLogo
             // 
             this.grbLogo.BackColor = System.Drawing.Color.White;
+            this.grbLogo.Controls.Add(this.lblPathLogo);
             this.grbLogo.Controls.Add(this.btnCambiarLogo);
             this.grbLogo.Controls.Add(this.picLogo);
             this.grbLogo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbLogo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbLogo.Location = new System.Drawing.Point(393, 16);
+            this.grbLogo.Location = new System.Drawing.Point(377, 16);
+            this.grbLogo.Margin = new System.Windows.Forms.Padding(20);
             this.grbLogo.Name = "grbLogo";
             this.grbLogo.Size = new System.Drawing.Size(162, 200);
             this.grbLogo.TabIndex = 23;
             this.grbLogo.TabStop = false;
-            this.grbLogo.Text = "Logo del menú principal";
+            this.grbLogo.Text = "Logo";
+            // 
+            // lblPathLogo
+            // 
+            this.lblPathLogo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPathLogo.Location = new System.Drawing.Point(18, 184);
+            this.lblPathLogo.Name = "lblPathLogo";
+            this.lblPathLogo.Size = new System.Drawing.Size(125, 13);
+            this.lblPathLogo.TabIndex = 118;
+            this.lblPathLogo.Text = "path logo";
             // 
             // btnCambiarLogo
             // 
@@ -604,39 +631,52 @@
             this.btnCambiarLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarLogo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarLogo.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarLogo.Location = new System.Drawing.Point(45, 159);
+            this.btnCambiarLogo.Location = new System.Drawing.Point(46, 159);
             this.btnCambiarLogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnCambiarLogo.Name = "btnCambiarLogo";
             this.btnCambiarLogo.Size = new System.Drawing.Size(69, 24);
-            this.btnCambiarLogo.TabIndex = 26;
+            this.btnCambiarLogo.TabIndex = 0;
             this.btnCambiarLogo.Text = "Cambiar";
             this.btnCambiarLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCambiarLogo.UseVisualStyleBackColor = false;
+            this.btnCambiarLogo.Click += new System.EventHandler(this.btnCambiarLogo_Click);
             // 
             // picLogo
             // 
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogo.InitialImage = null;
-            this.picLogo.Location = new System.Drawing.Point(17, 28);
+            this.picLogo.Location = new System.Drawing.Point(18, 28);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(125, 126);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picLogo.TabIndex = 21;
             this.picLogo.TabStop = false;
+            this.picLogo.MouseEnter += new System.EventHandler(this.picLogo_MouseEnter);
             // 
             // grbImagenLogin
             // 
             this.grbImagenLogin.BackColor = System.Drawing.Color.White;
+            this.grbImagenLogin.Controls.Add(this.lblPathLoginImg);
             this.grbImagenLogin.Controls.Add(this.btnCambiarImagenLogin);
             this.grbImagenLogin.Controls.Add(this.picImagenLogin);
             this.grbImagenLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbImagenLogin.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbImagenLogin.Location = new System.Drawing.Point(198, 16);
+            this.grbImagenLogin.Margin = new System.Windows.Forms.Padding(20);
             this.grbImagenLogin.Name = "grbImagenLogin";
             this.grbImagenLogin.Size = new System.Drawing.Size(162, 200);
             this.grbImagenLogin.TabIndex = 22;
             this.grbImagenLogin.TabStop = false;
             this.grbImagenLogin.Text = "Imagen del login";
+            // 
+            // lblPathLoginImg
+            // 
+            this.lblPathLoginImg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPathLoginImg.Location = new System.Drawing.Point(18, 184);
+            this.lblPathLoginImg.Name = "lblPathLoginImg";
+            this.lblPathLoginImg.Size = new System.Drawing.Size(125, 13);
+            this.lblPathLoginImg.TabIndex = 117;
+            this.lblPathLoginImg.Text = "path imagen login";
             // 
             // btnCambiarImagenLogin
             // 
@@ -648,39 +688,52 @@
             this.btnCambiarImagenLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarImagenLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarImagenLogin.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarImagenLogin.Location = new System.Drawing.Point(45, 159);
+            this.btnCambiarImagenLogin.Location = new System.Drawing.Point(46, 159);
             this.btnCambiarImagenLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnCambiarImagenLogin.Name = "btnCambiarImagenLogin";
             this.btnCambiarImagenLogin.Size = new System.Drawing.Size(69, 24);
-            this.btnCambiarImagenLogin.TabIndex = 25;
+            this.btnCambiarImagenLogin.TabIndex = 0;
             this.btnCambiarImagenLogin.Text = "Cambiar";
             this.btnCambiarImagenLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCambiarImagenLogin.UseVisualStyleBackColor = false;
+            this.btnCambiarImagenLogin.Click += new System.EventHandler(this.btnCambiarImagenLogin_Click);
             // 
             // picImagenLogin
             // 
             this.picImagenLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picImagenLogin.InitialImage = null;
-            this.picImagenLogin.Location = new System.Drawing.Point(17, 28);
+            this.picImagenLogin.Location = new System.Drawing.Point(18, 28);
             this.picImagenLogin.Name = "picImagenLogin";
             this.picImagenLogin.Size = new System.Drawing.Size(125, 126);
             this.picImagenLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picImagenLogin.TabIndex = 21;
             this.picImagenLogin.TabStop = false;
+            this.picImagenLogin.MouseEnter += new System.EventHandler(this.picImagenLogin_MouseEnter);
             // 
             // grbSplash
             // 
             this.grbSplash.BackColor = System.Drawing.Color.White;
+            this.grbSplash.Controls.Add(this.lblPathSplash);
             this.grbSplash.Controls.Add(this.btnCambiarSplash);
             this.grbSplash.Controls.Add(this.picSplash);
             this.grbSplash.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbSplash.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbSplash.Location = new System.Drawing.Point(3, 16);
+            this.grbSplash.Location = new System.Drawing.Point(20, 16);
+            this.grbSplash.Margin = new System.Windows.Forms.Padding(20);
             this.grbSplash.Name = "grbSplash";
             this.grbSplash.Size = new System.Drawing.Size(162, 200);
             this.grbSplash.TabIndex = 5;
             this.grbSplash.TabStop = false;
             this.grbSplash.Text = "Splash";
+            // 
+            // lblPathSplash
+            // 
+            this.lblPathSplash.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPathSplash.Location = new System.Drawing.Point(18, 184);
+            this.lblPathSplash.Name = "lblPathSplash";
+            this.lblPathSplash.Size = new System.Drawing.Size(125, 13);
+            this.lblPathSplash.TabIndex = 116;
+            this.lblPathSplash.Text = "path splash";
             // 
             // btnCambiarSplash
             // 
@@ -692,25 +745,27 @@
             this.btnCambiarSplash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarSplash.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarSplash.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarSplash.Location = new System.Drawing.Point(45, 159);
+            this.btnCambiarSplash.Location = new System.Drawing.Point(46, 159);
             this.btnCambiarSplash.Margin = new System.Windows.Forms.Padding(2);
             this.btnCambiarSplash.Name = "btnCambiarSplash";
             this.btnCambiarSplash.Size = new System.Drawing.Size(69, 24);
-            this.btnCambiarSplash.TabIndex = 24;
+            this.btnCambiarSplash.TabIndex = 0;
             this.btnCambiarSplash.Text = "Cambiar";
             this.btnCambiarSplash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCambiarSplash.UseVisualStyleBackColor = false;
+            this.btnCambiarSplash.Click += new System.EventHandler(this.btnCambiarSplash_Click);
             // 
             // picSplash
             // 
             this.picSplash.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSplash.InitialImage = null;
-            this.picSplash.Location = new System.Drawing.Point(17, 28);
+            this.picSplash.Location = new System.Drawing.Point(18, 28);
             this.picSplash.Name = "picSplash";
             this.picSplash.Size = new System.Drawing.Size(125, 126);
             this.picSplash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picSplash.TabIndex = 21;
             this.picSplash.TabStop = false;
+            this.picSplash.MouseEnter += new System.EventHandler(this.picSplash_MouseEnter);
             // 
             // tabPagBaseDeDatos
             // 
@@ -751,10 +806,11 @@
             this.chkHabilitarRestore.Location = new System.Drawing.Point(17, 25);
             this.chkHabilitarRestore.Name = "chkHabilitarRestore";
             this.chkHabilitarRestore.Size = new System.Drawing.Size(122, 19);
-            this.chkHabilitarRestore.TabIndex = 12;
+            this.chkHabilitarRestore.TabIndex = 0;
             this.chkHabilitarRestore.Text = "Habilitar Restore";
             this.chkHabilitarRestore.UseCustomForeColor = true;
             this.chkHabilitarRestore.UseSelectable = true;
+            this.chkHabilitarRestore.MouseEnter += new System.EventHandler(this.chkHabilitarRestore_MouseEnter);
             // 
             // btnCancelar
             // 
@@ -789,9 +845,10 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 30);
-            this.btnGuardar.TabIndex = 112;
+            this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblCodParametro
             // 
@@ -810,6 +867,10 @@
             this.lblDescripcionParametro.Size = new System.Drawing.Size(296, 45);
             this.lblDescripcionParametro.TabIndex = 115;
             this.lblDescripcionParametro.Text = "Descripción del parámetro";
+            // 
+            // errorProv
+            // 
+            this.errorProv.ContainerControl = this;
             // 
             // FormConfiguracion
             // 
@@ -849,6 +910,7 @@
             this.tabPagBaseDeDatos.ResumeLayout(false);
             this.grbBackupRestore.ResumeLayout(false);
             this.grbBackupRestore.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -900,5 +962,9 @@
         private System.Windows.Forms.Button btnCambiarSplash;
         private System.Windows.Forms.Label lblCodParametro;
         private System.Windows.Forms.Label lblDescripcionParametro;
+        private System.Windows.Forms.ErrorProvider errorProv;
+        private System.Windows.Forms.Label lblPathLogo;
+        private System.Windows.Forms.Label lblPathLoginImg;
+        private System.Windows.Forms.Label lblPathSplash;
     }
 }

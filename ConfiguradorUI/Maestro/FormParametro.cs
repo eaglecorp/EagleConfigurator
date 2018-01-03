@@ -284,6 +284,7 @@ namespace ConfiguradorUI.Maestro
                 txtValor.Text = obj.txt_valor;
                 txtDecValor.Text = (obj.dec_valor == null) ? "" : obj.dec_valor.RemoveTrailingZeros();
                 txtObservacion.Text = obj.txt_obs;
+
             }
             catch (Exception e)
             {

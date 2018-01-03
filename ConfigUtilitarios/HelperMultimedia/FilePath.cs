@@ -55,14 +55,14 @@ namespace ConfigUtilitarios
             }
         }
 
-        public static string Reporting
+        public static string Reports
         {
             get
             {
                 string strPath = "";
                 try
                 {
-                    strPath = Application.StartupPath + @"\CustomReports";
+                    strPath = Application.StartupPath + @"\Reports\CustomReports";
                     if (!Directory.Exists(strPath))
                     {
                         Directory.CreateDirectory(strPath);
@@ -71,13 +71,14 @@ namespace ConfigUtilitarios
                 catch (Exception e)
                 {
                     var log = new Log();
-                    log.ArchiveLog("Reporting Path: Utilitarios. ", e.Message);
+                    log.ArchiveLog("Reports Path: Utilitarios. ", e.Message);
                 }
                 return strPath;
             }
         }
 
-        public static string FotoDefault { get; } = Application.StartupPath+ @"\FotosDefault";
+        public static string DefaultImages { get; } = Application.StartupPath+ @"\Images\DefaultImages";
+        public static string Images { get; } = Application.StartupPath + @"\Images";
 
 
 

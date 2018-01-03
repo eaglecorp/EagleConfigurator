@@ -6,6 +6,7 @@ using ConfigUtilitarios;
 using ConfigBusinessLogic.Seguridad;
 using ConfigBusinessLogic.Sunat;
 using System.Linq;
+using ConfigUtilitarios.HelperControl;
 
 namespace ConfigBusinessLogic.Persona
 {
@@ -37,8 +38,8 @@ namespace ConfigBusinessLogic.Persona
 
                     if (idUsuario > 0)
                     {
-                        string sendMailRegister = Parameter.SendMailRegister;
-                        if (sendMailRegister == "true")
+                        int sendMailRegister = Parameter.SendMailRegister;
+                        if (sendMailRegister == Estado.IdActivo)
                         {
                             string emailFrom = Parameter.EmailFrom;
                             string password = Parameter.Password;
@@ -55,11 +56,17 @@ namespace ConfigBusinessLogic.Persona
                                         string body = ArmarMsjCredenciales(usuario, empleado, ParameterCode.SubjectRegister);
                                         if (!string.IsNullOrEmpty(empleado.txt_email1))
                                         {
-                                            new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, empleado.txt_email1, Parameter.SubjectRegister, body, Parameter.MailServer, Parameter.Port);
+                                            RespuestaEmailEnviado(
+                                            new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, empleado.txt_email1, Parameter.SubjectRegister, body, Parameter.MailServer, Parameter.Port),
+                                            empleado.txt_email1);
+
+
                                         }
                                         else if (!string.IsNullOrEmpty(empleado.txt_email2))
                                         {
-                                            new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, empleado.txt_email2, Parameter.SubjectRegister, body, Parameter.MailServer, Parameter.Port);
+                                            RespuestaEmailEnviado(
+                                            new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, empleado.txt_email2, Parameter.SubjectRegister, body, Parameter.MailServer, Parameter.Port),
+                                            empleado.txt_email2);
                                         }
                                     }
                                 }
@@ -76,6 +83,18 @@ namespace ConfigBusinessLogic.Persona
 
             }
             return idEmpleado;
+        }
+
+        private void RespuestaEmailEnviado(bool sended, string email)
+        {
+            if (sended)
+            {
+                Msg.Ok_Info("Sus credenciales han sido enviadas a su correo: " + email + ".");
+            }
+            else
+            {
+                Msg.Ok_Wng("No se pudo enviar sus credenciales a su correo.");
+            }
         }
 
         private string Nombre(string apPaterno, string apMaterno, string primerNom, string segundoNom, string rznSocial)

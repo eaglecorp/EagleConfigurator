@@ -125,5 +125,46 @@ namespace ConfigDataAccess.General
             }
             return obj;
         }
+        public bool ActualizarParametros(List<GRLt01_parametro> parametros)
+        {
+            bool success = false;
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                cnn.Open();
+                try
+                {
+                    using (var trans = cnn.BeginTransaction())
+                    {
+                        try
+                        {
+                            cnn.Execute(@"UPDATE GRLt01_parametro
+                                        SET cod_parametro = @cod_parametro
+                                          ,txt_desc = @txt_desc
+                                          ,dec_valor = @dec_valor
+                                          ,txt_valor = @txt_valor
+                                          ,txt_obs = @txt_obs
+                                          ,sn_edit = @sn_edit
+                                     WHERE id_parametro = @id_parametro",
+                                     parametros, transaction: trans);
+
+                            trans.Commit();
+                            success = true;
+                        }
+                        catch (Exception e)
+                        {
+                            trans.Rollback();
+                            var log = new Log();
+                            log.ArchiveLog("Actualizar Parametros - Excepción en la ejecución de la transacción: ", e.Message);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Actualizar Parametros - Excepción en abrir la transacción.: ", e.Message);
+                }
+            }
+            return success;
+        }
     }
 }

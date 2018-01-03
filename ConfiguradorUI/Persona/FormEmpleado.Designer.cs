@@ -3293,6 +3293,7 @@
             this.btnCommit.Size = new System.Drawing.Size(40, 40);
             this.btnCommit.TabIndex = 0;
             this.btnCommit.UseVisualStyleBackColor = false;
+            this.btnCommit.UseWaitCursor = true;
             this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 
             // btnDelete

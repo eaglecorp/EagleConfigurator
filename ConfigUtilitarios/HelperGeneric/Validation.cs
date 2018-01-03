@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.IO;
+using System.Drawing;
 
 namespace ConfigUtilitarios
 {
@@ -41,6 +43,24 @@ namespace ConfigUtilitarios
         {
             return amount > 0 &&
                     amount <= upperLimit;
+        }
+
+        public static bool IsValidImage(string filename)
+        {
+            try
+            {
+                using (Image newImage = Image.FromFile(filename))
+                { }
+            }
+            catch (OutOfMemoryException)
+            {
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

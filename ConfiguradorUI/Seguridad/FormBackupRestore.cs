@@ -23,7 +23,6 @@ namespace ConfiguradorUI.Seguridad
         }
 
         #region Métodos de ventana
-
         private bool Backup(string path)
         {
             using (new CursorWait())
@@ -43,8 +42,22 @@ namespace ConfiguradorUI.Seguridad
                 return BackupRestore.Restore(cnString, dbName, pathFile);
             }
         }
-        #endregion
 
+        private void ConfigurarLoad()
+        {
+            try
+            {
+                if(Parameter.EnableRestore != Estado.IdActivo)
+                {
+                    btnRestore.Enabled = false;
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("No se pudo configurar el load. "+e.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        #endregion
 
         #region Eventos de ventana
 
@@ -139,20 +152,6 @@ namespace ConfiguradorUI.Seguridad
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-        private void ConfigurarLoad()
-        {
-            try
-            {
-                if(Parameter.EnableRestore != "true")
-                {
-                    btnRestore.Enabled = false;
-                }
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show("No se pudo configurar el load. "+e.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
 

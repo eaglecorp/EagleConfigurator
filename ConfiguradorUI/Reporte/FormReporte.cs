@@ -502,10 +502,10 @@ namespace ConfiguradorUI.Reporte
             {
                 try
                 {
-                    if (Directory.Exists(FilePath.Reporting))
+                    if (Directory.Exists(FilePath.Reports))
                     {
-                        string path = Path.Combine(Path.GetFullPath(FilePath.Reporting), fullPathFile
-                            .Substring(fullPathFile.LastIndexOf(@"\") + 1));
+                        string path = Path.Combine(Path.GetFullPath(FilePath.Reports), fullPathFile.Substring(fullPathFile.LastIndexOf(@"\") + 1));
+
                         if (fullPathFile != path)
                             File.Copy(txtPath.Text.Trim(), path, true);
                         if (File.Exists(path))
@@ -1084,9 +1084,9 @@ namespace ConfiguradorUI.Reporte
                 openFile.FilterIndex = 0;
 
                 //Crea si no existe
-                if (Directory.Exists(FilePath.Reporting))
+                if (Directory.Exists(FilePath.Reports))
                 {
-                    openFile.InitialDirectory = FilePath.Reporting;
+                    openFile.InitialDirectory = FilePath.Reports;
                     //var log = new Log();
                     //log.ArchiveLog("Reporting",$"Se creó la carpeta de reportes en local. La ruta es {reportingPath}");
                 }

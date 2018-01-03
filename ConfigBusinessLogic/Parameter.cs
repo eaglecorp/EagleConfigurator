@@ -1,11 +1,15 @@
-﻿using ConfigBusinessLogic.General;
+﻿using ConfigBusinessEntity;
+using ConfigBusinessLogic.General;
 using ConfigUtilitarios;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConfigBusinessLogic
 {
@@ -24,27 +28,49 @@ namespace ConfigBusinessLogic
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.EmailFrom);
-                string emailFrom = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
-                return emailFrom;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.EmailFrom);
+                    string emailFrom = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
+                    return emailFrom;
+                }
+                catch (Exception)
+                {
+                    return "";
+                }
             }
         }
         public static string DisplayNameEmail
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.DisplayNameEmail);
-                string displayNameEmail = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
-                return displayNameEmail;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.DisplayNameEmail);
+                    string displayNameEmail = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
+                    return displayNameEmail;
+                }
+                catch (Exception)
+                {
+                    return "";
+                }
             }
         }
         public static string Password
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.Password);
-                string password = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
-                return password;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.Password);
+                    string password = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
+                    return password;
+                }
+                catch (Exception)
+                {
+
+                    return "";
+                }
 
             }
         }
@@ -52,63 +78,119 @@ namespace ConfigBusinessLogic
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.SubjectRegister);
-                string subjectRegister = (p != null && p.id_parametro > 0) ? p.txt_valor : "Registro de usuario - EagleConfig";
-                return subjectRegister;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.SubjectRegister);
+                    string subjectRegister = (p != null && p.id_parametro > 0) ? p.txt_valor : "Registro de usuario - EagleConfig";
+                    return subjectRegister;
+                }
+                catch (Exception)
+                {
+
+                    return "";
+                }
             }
         }
         public static string SubjectCredentials
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.SubjectCredentials);
-                string subjectCredentials = (p != null && p.id_parametro > 0) ? p.txt_valor : "Envío de credenciales - EagleConfig";
-                return subjectCredentials;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.SubjectCredentials);
+                    string subjectCredentials = (p != null && p.id_parametro > 0) ? p.txt_valor : "Envío de credenciales - EagleConfig";
+                    return subjectCredentials;
+                }
+                catch (Exception)
+                {
+
+                    return "";
+                }
             }
         }
         public static string MailServer
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.MailServer);
-                string subjectCredentials = (p != null && p.id_parametro > 0) ? p.txt_valor : "smtp.gmail.com";
-                return subjectCredentials;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.MailServer);
+                    string subjectCredentials = (p != null && p.id_parametro > 0) ? p.txt_valor : "smtp.gmail.com";
+                    return subjectCredentials;
+                }
+                catch (Exception)
+                {
+
+                    return "";
+                }
             }
         }
         public static int Port
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.Port);
-                int port = (p != null && p.id_parametro > 0) ? (int)p.dec_valor : 587;
-                return port;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.Port);
+                    int port = (p != null && p.id_parametro > 0) ? (int)p.dec_valor : 587;
+                    return port;
+                }
+                catch (Exception)
+                {
+
+                    return 0;
+                }
             }
         }
         public static string AddMsjRegister
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.AddMsjRegister);
-                string additionalMsj = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
-                return additionalMsj;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.AddMsjRegister);
+                    string additionalMsj = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
+                    return additionalMsj;
+                }
+                catch (Exception)
+                {
+
+                    return "";
+                }
             }
         }
         public static string AddMsjCredentials
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.AddMsjCredentials);
-                string additionalMsj = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
-                return additionalMsj;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.AddMsjCredentials);
+                    string additionalMsj = (p != null && p.id_parametro > 0) ? p.txt_valor : "";
+                    return additionalMsj;
+                }
+                catch (Exception)
+                {
+
+                    return "";
+                }
             }
         }
-        public static string SendMailRegister
+        public static int SendMailRegister
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.SendMailRegister);
-                string sendMailRegister = (p != null && p.id_parametro > 0) ? p.txt_valor.Trim().ToLower() : "";
-                return sendMailRegister;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.SendMailRegister);
+                    int sendMailRegister = (p != null && p.id_parametro > 0) ? (int)p.dec_valor : 0;
+                    return sendMailRegister;
+                }
+                catch (Exception)
+                {
+
+                    return 0;
+                }
             }
         }
 
@@ -122,13 +204,101 @@ namespace ConfigBusinessLogic
 
         #region Parámetros de botones
 
-        public static string EnableRestore
+        public static int EnableRestore
         {
             get
             {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.EnableRestore);
-                string enableRestore = (p != null && p.id_parametro > 0) ? p.txt_valor.Trim().ToLower() : "";
-                return enableRestore;
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.EnableRestore);
+                    int enableRestore = (p != null && p.id_parametro > 0) ? (int)p.dec_valor : 0;
+                    return enableRestore;
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Métodos
+
+        public static void CargarParametroImg(GRLt01_parametro parametroImg, PictureBox picTarget, string codDefault)
+        {
+            bool intentarCargarImgDefault = true;
+
+            if (parametroImg != null && parametroImg.id_parametro > 0 &&
+                !string.IsNullOrEmpty(parametroImg.txt_valor))
+            {
+                string fullpath = parametroImg.txt_valor;
+                if (File.Exists(fullpath))
+                {
+                    try
+                    {
+                        picTarget.Image = new Bitmap(fullpath);
+                        intentarCargarImgDefault = false;
+                    }
+                    catch
+                    {
+                        MessageBox.Show($"No se pudo cargar la imagen ({parametroImg.txt_desc}). Se cargará la imagen por defecto. Parámetro: {parametroImg.cod_parametro}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"La ruta de la imagen ({parametroImg.txt_desc}) no existe. Se cargará la imagen por defecto. Parámetro: {parametroImg.cod_parametro}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if (intentarCargarImgDefault)
+            {
+                try
+                {
+                    picTarget.Image = new Bitmap(Path.Combine
+                          (FilePath.DefaultImages, ParameterCode.GetImgDefaultNameByCod(codDefault)));
+                }
+                catch
+                {
+                    MessageBox.Show($"La imagen por defecto no existe o la ruta es incorrecta. Parámetro: {codDefault}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        public static void CargarParametroImg(string fullPath, PictureBox picTarget, string codDefault)
+        {
+            bool intentarCargarImgDefault = true;
+
+            if (!string.IsNullOrEmpty(fullPath))
+            {
+                if (File.Exists(fullPath))
+                {
+                    try
+                    {
+                        picTarget.Image = new Bitmap(fullPath);
+                        intentarCargarImgDefault = false;
+                    }
+                    catch
+                    {
+                        MessageBox.Show($"No se pudo cargar la imagen. Se cargará la imagen por defecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"La ruta de la imagen no existe. Se cargará la imagen por defecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if (intentarCargarImgDefault)
+            {
+                try
+                {
+                    picTarget.Image = new Bitmap(Path.Combine
+                          (FilePath.DefaultImages, ParameterCode.GetImgDefaultNameByCod(codDefault)));
+                }
+                catch
+                {
+                    MessageBox.Show($"La imagen por defecto no existe o la ruta es incorrecta. Parámetro: {codDefault}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -183,7 +353,22 @@ namespace ConfigBusinessLogic
         {
             return obj.GetType().GetProperties();
         }
-
+        public static string GetImgDefaultNameByCod(string cod)
+        {
+            if (cod == LoginImg)
+            {
+                return Parameter.LoginImg;
+            }
+            if (cod == LogoImg)
+            {
+                return Parameter.LogoImg;
+            }
+            if (cod == SplashImg)
+            {
+                return Parameter.SplashImg;
+            }
+            return "";
+        }
 
     }
 }

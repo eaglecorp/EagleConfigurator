@@ -77,88 +77,16 @@ namespace ConfiguradorUI.Seguridad
 
         private void AsignarImagenLogo()
         {
-            bool errorDefault = false;
-            try
-            {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.LogoImg);
-
-                if (p != null && p.id_parametro > 0 && !string.IsNullOrEmpty(p.txt_valor) && File.Exists(@p.txt_valor))
-                {
-                    string fullpath = @p.txt_valor;
-                    try
-                    {
-                        picLogo.Image = new Bitmap(fullpath);
-                    }
-                    catch
-                    {
-                        MessageBox.Show($"Excepción al momento de cargar la imagen del logo sugerido. Parámetro: {ParameterCode.LogoImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        try
-                        {
-                            picLogo.Image = new Bitmap(Path.Combine
-                                  (FilePath.FotoDefault, Parameter.LogoImg));
-                        }
-                        catch
-                        {
-                            MessageBox.Show($"El logo por defecto no existe o la ruta es incorrecta. Parámetro: {ParameterCode.LogoImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                }
-                else
-                {
-                    errorDefault = true;
-                    picLogo.Image = new Bitmap(Path.Combine(FilePath.FotoDefault, Parameter.LogoImg));
-                }
-            }
-            catch (Exception e)
-            {
-                if (errorDefault)
-                    MessageBox.Show($"El logo por defecto no existe o la ruta es incorrecta. Parámetro: {ParameterCode.LogoImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                    MessageBox.Show($"Ocurrió un error no identificado. ERROR:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            var parametroImg = new ParametroBL().ParametroXCod(ParameterCode.LogoImg);
+            Parameter.CargarParametroImg(parametroImg, picLogo, ParameterCode.LogoImg);
         }
 
         private void AsignarImagenLogin()
         {
-            bool errorDefault = false;
-            try
-            {
-                var p = new ParametroBL().ParametroXCod(ParameterCode.LoginImg);
 
-                if (p != null && p.id_parametro > 0 && !string.IsNullOrEmpty(p.txt_valor) && File.Exists(@p.txt_valor))
-                {
-                    string fullpath = @p.txt_valor;
-                    try
-                    {
-                        picUserLogin.Image = new Bitmap(fullpath);
-                    }
-                    catch
-                    {
-                        MessageBox.Show($"Excepción al momento de cargar la imagen del logo sugerido. Parámetro: {ParameterCode.LoginImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        try
-                        {
-                            picUserLogin.Image = new Bitmap(Path.Combine
-                                  (FilePath.FotoDefault, Parameter.LoginImg));
-                        }
-                        catch
-                        {
-                            MessageBox.Show($"El login por defecto no existe o la ruta es incorrecta. Parámetro: {ParameterCode.LoginImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                }
-                else
-                {
-                    errorDefault = true;
-                    picUserLogin.Image = new Bitmap(Path.Combine(FilePath.FotoDefault, Parameter.LoginImg));
-                }
-            }
-            catch (Exception e)
-            {
-                if (errorDefault)
-                    MessageBox.Show($"El login por defecto no existe o la ruta es incorrecta. Parámetro: {ParameterCode.LoginImg}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                    MessageBox.Show($"Ocurrió un error no identificado. ERROR:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            var parametroImg = new ParametroBL().ParametroXCod(ParameterCode.LoginImg);
+            Parameter.CargarParametroImg(parametroImg, picUserLogin, ParameterCode.LoginImg);
+
         }
 
         private void AsignarImagenStatus()
@@ -315,7 +243,7 @@ namespace ConfiguradorUI.Seguridad
         {
             if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
             {
-              ValidarUsuario();
+                ValidarUsuario();
             }
         }
 

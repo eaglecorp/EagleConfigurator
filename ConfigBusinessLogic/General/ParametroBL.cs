@@ -32,6 +32,11 @@ namespace ConfigBusinessLogic.General
             new ParametroDA().ActualizarParametro(obj);
         }
 
+        public bool ActualizarParametros(List<GRLt01_parametro> parametros)
+        {
+            return new ParametroDA().ActualizarParametros(parametros);
+        }
+
         public GRLt01_parametro ParametroXId(int id)
         {
             var p = new GRLt01_parametro();
