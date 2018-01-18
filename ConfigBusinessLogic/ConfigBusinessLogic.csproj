@@ -65,6 +65,7 @@
     <Compile Include="Maestro\TurnoBL.cs" />
     <Compile Include="Parameter.cs" />
     <Compile Include="Persona\CategoriaEmpBL.cs" />
+    <Compile Include="Persona\TrabajoBL.cs" />
     <Compile Include="Persona\ClaseEmpBL.cs" />
     <Compile Include="Persona\ClienteBL.cs" />
     <Compile Include="Persona\EmpleadoBL.cs" />

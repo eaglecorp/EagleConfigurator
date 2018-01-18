@@ -272,6 +272,12 @@ namespace ConfiguradorUI
             oForm.ShowDialog();
         }
 
+        private void btnTrabajo_Click(object sender, EventArgs e)
+        {
+            FormTrabajo oForm = new FormTrabajo();
+            oForm.ShowDialog();
+        }
+
         private void btnCliente_Click(object sender, EventArgs e)
         {
             FormCliente oForm = new FormCliente();
@@ -404,9 +410,11 @@ namespace ConfiguradorUI
 
 
 
+
         #endregion
 
         #endregion
+
 
     }
 }

@@ -53,6 +53,7 @@
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnEmpleado = new System.Windows.Forms.Button();
             this.tabPagMaestros = new MetroFramework.Controls.MetroTabPage();
+            this.btnTipoRazon = new System.Windows.Forms.Button();
             this.btnTurno = new System.Windows.Forms.Button();
             this.btnEstadoMesa = new System.Windows.Forms.Button();
             this.btnMesa = new System.Windows.Forms.Button();
@@ -83,7 +84,7 @@
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lnkConfiguracion = new MetroFramework.Controls.MetroLink();
-            this.btnTipoRazon = new System.Windows.Forms.Button();
+            this.btnTrabajo = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
@@ -101,7 +102,7 @@
             this.tabPanel.Controls.Add(this.tabPagReportes);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 2;
+            this.tabPanel.SelectedIndex = 1;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -396,6 +397,7 @@
             // 
             // tabPagPersonas
             // 
+            this.tabPagPersonas.Controls.Add(this.btnTrabajo);
             this.tabPagPersonas.Controls.Add(this.btnClaseEmp);
             this.tabPagPersonas.Controls.Add(this.btnCategoriaEmp);
             this.tabPagPersonas.Controls.Add(this.btnUsuario);
@@ -467,7 +469,7 @@
             this.btnUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
             this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
-            this.btnUsuario.Location = new System.Drawing.Point(151, 11);
+            this.btnUsuario.Location = new System.Drawing.Point(151, 52);
             this.btnUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(145, 37);
@@ -488,7 +490,7 @@
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.White;
             this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
-            this.btnCliente.Location = new System.Drawing.Point(2, 177);
+            this.btnCliente.Location = new System.Drawing.Point(150, 11);
             this.btnCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(145, 37);
@@ -509,7 +511,7 @@
             this.btnProveedor.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
             this.btnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedor.Image")));
-            this.btnProveedor.Location = new System.Drawing.Point(2, 135);
+            this.btnProveedor.Location = new System.Drawing.Point(2, 176);
             this.btnProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(145, 37);
@@ -569,6 +571,27 @@
             this.tabPagMaestros.VerticalScrollbarBarColor = true;
             this.tabPagMaestros.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagMaestros.VerticalScrollbarSize = 10;
+            // 
+            // btnTipoRazon
+            // 
+            this.btnTipoRazon.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTipoRazon.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTipoRazon.FlatAppearance.BorderSize = 0;
+            this.btnTipoRazon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnTipoRazon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTipoRazon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoRazon.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoRazon.ForeColor = System.Drawing.Color.White;
+            this.btnTipoRazon.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoRazon.Image")));
+            this.btnTipoRazon.Location = new System.Drawing.Point(151, 11);
+            this.btnTipoRazon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTipoRazon.Name = "btnTipoRazon";
+            this.btnTipoRazon.Size = new System.Drawing.Size(145, 37);
+            this.btnTipoRazon.TabIndex = 15;
+            this.btnTipoRazon.Text = "Tipos Razones";
+            this.btnTipoRazon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTipoRazon.UseVisualStyleBackColor = false;
+            this.btnTipoRazon.Click += new System.EventHandler(this.btnTipoRazon_Click);
             // 
             // btnTurno
             // 
@@ -1080,26 +1103,26 @@
             this.lnkConfiguracion.UseSelectable = true;
             this.lnkConfiguracion.Click += new System.EventHandler(this.lnkConfiguracion_Click);
             // 
-            // btnTipoRazon
+            // btnTrabajo
             // 
-            this.btnTipoRazon.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnTipoRazon.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnTipoRazon.FlatAppearance.BorderSize = 0;
-            this.btnTipoRazon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnTipoRazon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnTipoRazon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoRazon.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTipoRazon.ForeColor = System.Drawing.Color.White;
-            this.btnTipoRazon.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoRazon.Image")));
-            this.btnTipoRazon.Location = new System.Drawing.Point(151, 11);
-            this.btnTipoRazon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTipoRazon.Name = "btnTipoRazon";
-            this.btnTipoRazon.Size = new System.Drawing.Size(145, 37);
-            this.btnTipoRazon.TabIndex = 15;
-            this.btnTipoRazon.Text = "Tipos Razones";
-            this.btnTipoRazon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTipoRazon.UseVisualStyleBackColor = false;
-            this.btnTipoRazon.Click += new System.EventHandler(this.btnTipoRazon_Click);
+            this.btnTrabajo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTrabajo.FlatAppearance.BorderSize = 0;
+            this.btnTrabajo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrabajo.ForeColor = System.Drawing.Color.White;
+            this.btnTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnTrabajo.Image")));
+            this.btnTrabajo.Location = new System.Drawing.Point(2, 135);
+            this.btnTrabajo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrabajo.Name = "btnTrabajo";
+            this.btnTrabajo.Size = new System.Drawing.Size(145, 37);
+            this.btnTrabajo.TabIndex = 6;
+            this.btnTrabajo.Text = "Trabajos";
+            this.btnTrabajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTrabajo.UseVisualStyleBackColor = false;
+            this.btnTrabajo.Click += new System.EventHandler(this.btnTrabajo_Click);
             // 
             // MenuPrincipal
             // 
@@ -1192,6 +1215,7 @@
         private System.Windows.Forms.Button btnComboGrupo;
         private MetroFramework.Controls.MetroLink lnkConfiguracion;
         private System.Windows.Forms.Button btnTipoRazon;
+        private System.Windows.Forms.Button btnTrabajo;
     }
 }
 

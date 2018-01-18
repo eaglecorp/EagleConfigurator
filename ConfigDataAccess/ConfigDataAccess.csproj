@@ -79,6 +79,7 @@
     <Compile Include="Maestro\TipoOrdenDA.cs" />
     <Compile Include="Maestro\TurnoDA.cs" />
     <Compile Include="Persona\CategoriaEmpDA.cs" />
+    <Compile Include="Persona\TrabajoDA.cs" />
     <Compile Include="Persona\ClaseEmpDA.cs" />
     <Compile Include="Persona\ClienteDA.cs" />
     <Compile Include="Persona\EmpleadoDA.cs" />
