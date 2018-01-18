@@ -35,14 +35,9 @@ namespace ConfigBusinessLogic.Maestro
             return new DescuentoDA().DescuentoXCod(cod);
         }
 
-        public List<MSTt02_descuento> ListaDescuento(int? id_estado = null, bool ocultarBlankReg = false)
+        public List<MSTt02_descuento> ListaDescuento(int? id_estado = null)
         {
-            var lista = new DescuentoDA().ListaDescuento(id_estado);
-            if (ocultarBlankReg && lista != null && lista.Count > 0)
-            {
-                lista.RemoveAll(x => x.cod_descuento == Parameter.BlankRegister);
-            }
-            return lista;
+            return new DescuentoDA().ListaDescuento(id_estado);
         }
     }
 }

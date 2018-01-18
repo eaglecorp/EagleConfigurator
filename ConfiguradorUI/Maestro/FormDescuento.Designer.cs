@@ -177,6 +177,11 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
+            this.grbFormaDeDescuento = new System.Windows.Forms.GroupBox();
+            this.rbtMonto = new MetroFramework.Controls.MetroRadioButton();
+            this.rbtMontoAbierto = new MetroFramework.Controls.MetroRadioButton();
+            this.rbtPorcentaje = new MetroFramework.Controls.MetroRadioButton();
+            this.rbtPorcentajeAbierto = new MetroFramework.Controls.MetroRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescuento)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -193,6 +198,7 @@
             this.grbP2.SuspendLayout();
             this.grbP1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
+            this.grbFormaDeDescuento.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDescuento
@@ -442,6 +448,7 @@
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.grbFormaDeDescuento);
             this.tabPagGeneral.Controls.Add(this.label4);
             this.tabPagGeneral.Controls.Add(this.label3);
             this.tabPagGeneral.Controls.Add(this.label2);
@@ -480,7 +487,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label4.Location = new System.Drawing.Point(10, 384);
+            this.label4.Location = new System.Drawing.Point(10, 394);
             this.label4.MaximumSize = new System.Drawing.Size(550, 1500);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(211, 17);
@@ -493,7 +500,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label3.Location = new System.Drawing.Point(9, 260);
+            this.label3.Location = new System.Drawing.Point(9, 295);
             this.label3.MaximumSize = new System.Drawing.Size(550, 1500);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(240, 17);
@@ -519,7 +526,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(10, 285);
+            this.label1.Location = new System.Drawing.Point(10, 314);
             this.label1.MaximumSize = new System.Drawing.Size(550, 1500);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(543, 68);
@@ -532,7 +539,7 @@
             this.lblMensaje.BackColor = System.Drawing.Color.Transparent;
             this.lblMensaje.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblMensaje.Location = new System.Drawing.Point(9, 219);
+            this.lblMensaje.Location = new System.Drawing.Point(9, 262);
             this.lblMensaje.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(346, 17);
@@ -543,7 +550,7 @@
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(10, 192);
+            this.panel2.Location = new System.Drawing.Point(10, 241);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(545, 8);
             this.panel2.TabIndex = 58;
@@ -564,7 +571,7 @@
             this.txtMontoMin.CustomButton.UseSelectable = true;
             this.txtMontoMin.CustomButton.Visible = false;
             this.txtMontoMin.Lines = new string[0];
-            this.txtMontoMin.Location = new System.Drawing.Point(86, 113);
+            this.txtMontoMin.Location = new System.Drawing.Point(86, 178);
             this.txtMontoMin.MaxLength = 32767;
             this.txtMontoMin.Name = "txtMontoMin";
             this.txtMontoMin.PasswordChar = '\0';
@@ -574,7 +581,7 @@
             this.txtMontoMin.SelectionStart = 0;
             this.txtMontoMin.ShortcutsEnabled = true;
             this.txtMontoMin.Size = new System.Drawing.Size(184, 23);
-            this.txtMontoMin.TabIndex = 9;
+            this.txtMontoMin.TabIndex = 5;
             this.txtMontoMin.UseCustomBackColor = true;
             this.txtMontoMin.UseSelectable = true;
             this.txtMontoMin.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -585,7 +592,7 @@
             // 
             this.lblMontoMin.AutoSize = true;
             this.lblMontoMin.ForeColor = System.Drawing.Color.Navy;
-            this.lblMontoMin.Location = new System.Drawing.Point(6, 115);
+            this.lblMontoMin.Location = new System.Drawing.Point(6, 180);
             this.lblMontoMin.Name = "lblMontoMin";
             this.lblMontoMin.Size = new System.Drawing.Size(77, 19);
             this.lblMontoMin.TabIndex = 8;
@@ -608,7 +615,7 @@
             this.txtPorcentaje.CustomButton.UseSelectable = true;
             this.txtPorcentaje.CustomButton.Visible = false;
             this.txtPorcentaje.Lines = new string[0];
-            this.txtPorcentaje.Location = new System.Drawing.Point(86, 76);
+            this.txtPorcentaje.Location = new System.Drawing.Point(86, 143);
             this.txtPorcentaje.MaxLength = 32767;
             this.txtPorcentaje.Name = "txtPorcentaje";
             this.txtPorcentaje.PasswordChar = '\0';
@@ -618,7 +625,7 @@
             this.txtPorcentaje.SelectionStart = 0;
             this.txtPorcentaje.ShortcutsEnabled = true;
             this.txtPorcentaje.Size = new System.Drawing.Size(184, 23);
-            this.txtPorcentaje.TabIndex = 5;
+            this.txtPorcentaje.TabIndex = 3;
             this.txtPorcentaje.UseCustomBackColor = true;
             this.txtPorcentaje.UseSelectable = true;
             this.txtPorcentaje.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -629,7 +636,7 @@
             // 
             this.lblPorcentaje.AutoSize = true;
             this.lblPorcentaje.ForeColor = System.Drawing.Color.Navy;
-            this.lblPorcentaje.Location = new System.Drawing.Point(5, 78);
+            this.lblPorcentaje.Location = new System.Drawing.Point(5, 145);
             this.lblPorcentaje.Name = "lblPorcentaje";
             this.lblPorcentaje.Size = new System.Drawing.Size(73, 19);
             this.lblPorcentaje.TabIndex = 4;
@@ -652,7 +659,7 @@
             this.txtMontoMax.CustomButton.UseSelectable = true;
             this.txtMontoMax.CustomButton.Visible = false;
             this.txtMontoMax.Lines = new string[0];
-            this.txtMontoMax.Location = new System.Drawing.Point(372, 113);
+            this.txtMontoMax.Location = new System.Drawing.Point(372, 178);
             this.txtMontoMax.MaxLength = 32767;
             this.txtMontoMax.Name = "txtMontoMax";
             this.txtMontoMax.PasswordChar = '\0';
@@ -662,7 +669,7 @@
             this.txtMontoMax.SelectionStart = 0;
             this.txtMontoMax.ShortcutsEnabled = true;
             this.txtMontoMax.Size = new System.Drawing.Size(184, 23);
-            this.txtMontoMax.TabIndex = 11;
+            this.txtMontoMax.TabIndex = 6;
             this.txtMontoMax.UseCustomBackColor = true;
             this.txtMontoMax.UseSelectable = true;
             this.txtMontoMax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -673,7 +680,7 @@
             // 
             this.lblMontoMax.AutoSize = true;
             this.lblMontoMax.ForeColor = System.Drawing.Color.Navy;
-            this.lblMontoMax.Location = new System.Drawing.Point(292, 115);
+            this.lblMontoMax.Location = new System.Drawing.Point(292, 180);
             this.lblMontoMax.Name = "lblMontoMax";
             this.lblMontoMax.Size = new System.Drawing.Size(80, 19);
             this.lblMontoMax.TabIndex = 10;
@@ -697,7 +704,7 @@
             this.txtMonto.CustomButton.Visible = false;
             this.errorProv.SetIconAlignment(this.txtMonto, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.txtMonto.Lines = new string[0];
-            this.txtMonto.Location = new System.Drawing.Point(372, 76);
+            this.txtMonto.Location = new System.Drawing.Point(372, 143);
             this.txtMonto.MaxLength = 32767;
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.PasswordChar = '\0';
@@ -707,7 +714,7 @@
             this.txtMonto.SelectionStart = 0;
             this.txtMonto.ShortcutsEnabled = true;
             this.txtMonto.Size = new System.Drawing.Size(184, 23);
-            this.txtMonto.TabIndex = 7;
+            this.txtMonto.TabIndex = 4;
             this.txtMonto.UseCustomBackColor = true;
             this.txtMonto.UseSelectable = true;
             this.txtMonto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -718,7 +725,7 @@
             // 
             this.lblMonto.AutoSize = true;
             this.lblMonto.ForeColor = System.Drawing.Color.Navy;
-            this.lblMonto.Location = new System.Drawing.Point(292, 78);
+            this.lblMonto.Location = new System.Drawing.Point(292, 145);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(51, 19);
             this.lblMonto.TabIndex = 6;
@@ -742,10 +749,10 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(12, 151);
+            this.chkActivo.Location = new System.Drawing.Point(11, 212);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 12;
+            this.chkActivo.TabIndex = 7;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -777,7 +784,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -821,7 +828,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(184, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2277,6 +2284,70 @@
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
             // 
+            // grbFormaDeDescuento
+            // 
+            this.grbFormaDeDescuento.BackColor = System.Drawing.Color.Transparent;
+            this.grbFormaDeDescuento.Controls.Add(this.rbtPorcentajeAbierto);
+            this.grbFormaDeDescuento.Controls.Add(this.rbtPorcentaje);
+            this.grbFormaDeDescuento.Controls.Add(this.rbtMontoAbierto);
+            this.grbFormaDeDescuento.Controls.Add(this.rbtMonto);
+            this.grbFormaDeDescuento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbFormaDeDescuento.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbFormaDeDescuento.Location = new System.Drawing.Point(9, 69);
+            this.grbFormaDeDescuento.Name = "grbFormaDeDescuento";
+            this.grbFormaDeDescuento.Size = new System.Drawing.Size(546, 60);
+            this.grbFormaDeDescuento.TabIndex = 2;
+            this.grbFormaDeDescuento.TabStop = false;
+            this.grbFormaDeDescuento.Text = "Forma de descuento";
+            // 
+            // rbtMonto
+            // 
+            this.rbtMonto.AutoSize = true;
+            this.rbtMonto.Location = new System.Drawing.Point(316, 29);
+            this.rbtMonto.Name = "rbtMonto";
+            this.rbtMonto.Size = new System.Drawing.Size(59, 15);
+            this.rbtMonto.TabIndex = 2;
+            this.rbtMonto.Text = "Monto";
+            this.rbtMonto.UseSelectable = true;
+            this.rbtMonto.CheckedChanged += new System.EventHandler(this.rbtMonto_CheckedChanged);
+            this.rbtMonto.Click += new System.EventHandler(this.rbtMonto_Click);
+            // 
+            // rbtMontoAbierto
+            // 
+            this.rbtMontoAbierto.AutoSize = true;
+            this.rbtMontoAbierto.Location = new System.Drawing.Point(429, 29);
+            this.rbtMontoAbierto.Name = "rbtMontoAbierto";
+            this.rbtMontoAbierto.Size = new System.Drawing.Size(99, 15);
+            this.rbtMontoAbierto.TabIndex = 3;
+            this.rbtMontoAbierto.Text = "Monto abierto";
+            this.rbtMontoAbierto.UseSelectable = true;
+            this.rbtMontoAbierto.CheckedChanged += new System.EventHandler(this.rbtMontoAbierto_CheckedChanged);
+            this.rbtMontoAbierto.Click += new System.EventHandler(this.rbtMontoAbierto_Click);
+            // 
+            // rbtPorcentaje
+            // 
+            this.rbtPorcentaje.AutoSize = true;
+            this.rbtPorcentaje.Location = new System.Drawing.Point(10, 29);
+            this.rbtPorcentaje.Name = "rbtPorcentaje";
+            this.rbtPorcentaje.Size = new System.Drawing.Size(79, 15);
+            this.rbtPorcentaje.TabIndex = 0;
+            this.rbtPorcentaje.Text = "Porcentaje";
+            this.rbtPorcentaje.UseSelectable = true;
+            this.rbtPorcentaje.CheckedChanged += new System.EventHandler(this.rbtPorcentaje_CheckedChanged);
+            this.rbtPorcentaje.Click += new System.EventHandler(this.rbtPorcentaje_Click);
+            // 
+            // rbtPorcentajeAbierto
+            // 
+            this.rbtPorcentajeAbierto.AutoSize = true;
+            this.rbtPorcentajeAbierto.Location = new System.Drawing.Point(143, 29);
+            this.rbtPorcentajeAbierto.Name = "rbtPorcentajeAbierto";
+            this.rbtPorcentajeAbierto.Size = new System.Drawing.Size(119, 15);
+            this.rbtPorcentajeAbierto.TabIndex = 1;
+            this.rbtPorcentajeAbierto.Text = "Porcentaje abierto";
+            this.rbtPorcentajeAbierto.UseSelectable = true;
+            this.rbtPorcentajeAbierto.CheckedChanged += new System.EventHandler(this.rbtPorcentajeAbierto_CheckedChanged);
+            this.rbtPorcentajeAbierto.Click += new System.EventHandler(this.rbtPorcentajeAbierto_Click);
+            // 
             // FormDescuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2326,6 +2397,8 @@
             this.grbP1.ResumeLayout(false);
             this.grbP1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
+            this.grbFormaDeDescuento.ResumeLayout(false);
+            this.grbFormaDeDescuento.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2480,5 +2553,10 @@
         private System.Windows.Forms.Label lblNumInactivo;
         private System.Windows.Forms.Label lblNumActivo;
         private System.Windows.Forms.Label lblNumReg;
+        private System.Windows.Forms.GroupBox grbFormaDeDescuento;
+        private MetroFramework.Controls.MetroRadioButton rbtPorcentajeAbierto;
+        private MetroFramework.Controls.MetroRadioButton rbtPorcentaje;
+        private MetroFramework.Controls.MetroRadioButton rbtMontoAbierto;
+        private MetroFramework.Controls.MetroRadioButton rbtMonto;
     }
 }

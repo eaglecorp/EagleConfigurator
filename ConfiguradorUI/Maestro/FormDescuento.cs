@@ -3,6 +3,7 @@ using ConfigBusinessLogic.General;
 using ConfigBusinessLogic.Maestro;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -34,6 +35,7 @@ namespace ConfiguradorUI.Maestro
         {
             InitializeComponent();
         }
+
         #region Métodos de ventana
 
         private void addHandlers()
@@ -91,6 +93,14 @@ namespace ConfiguradorUI.Maestro
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
 
+            var rbts = new[] { rbtMonto, rbtMontoAbierto, rbtPorcentaje,
+                                rbtPorcentajeAbierto };
+
+            foreach (var rbt in rbts)
+            {
+                rbt.CheckedChanged += new EventHandler(OnContentChanged);
+            }
+
             txtPorcentaje.KeyPress += ValidarTxtDecimal;
             txtMonto.KeyPress += ValidarTxtDecimal;
             txtMontoMin.KeyPress += ValidarTxtDecimal;
@@ -99,13 +109,6 @@ namespace ConfiguradorUI.Maestro
 
         protected void OnContentChanged(object sender, EventArgs e)
         {
-            //Eliminar y agregar eventos... etc etc..
-            //TipoOperacion = TipoOperacionABM.Cambio;
-            //ControlarEventosABM();
-            //if (ContentChanged != null)
-            //{
-            //    ContentChanged(this, new EventArgs());
-            //}
             if (isSelected && isChangedRow == false && TipoOperacion != TipoOperacionABM.Cambio)
             {
                 TipoOperacion = TipoOperacionABM.Cambio;
@@ -137,6 +140,18 @@ namespace ConfiguradorUI.Maestro
                 }
             }
         }
+        private void EnableTxtMtoAndPorc(bool enableMto = true, bool enablePorc = true)
+        {
+            txtMonto.Enabled = enableMto;
+            txtPorcentaje.Enabled = enablePorc;
+        }
+        private void CleanTxtMtoAndPorc(bool cleanMto = true, bool cleanPorc = true)
+        {
+            if (cleanMto)
+                txtMonto.Clear();
+            if (cleanPorc)
+                txtPorcentaje.Clear();
+        }
 
         private void Commit()
         {
@@ -154,7 +169,7 @@ namespace ConfiguradorUI.Maestro
                 }
                 else
                 {
-                    
+
                     Actualizar();
                 }
             }
@@ -280,23 +295,29 @@ namespace ConfiguradorUI.Maestro
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.cod_descuento = txtCodigo.Text.Trim();
 
-                if (string.IsNullOrEmpty(txtPorcentaje.Text)
-                   || string.IsNullOrWhiteSpace(txtPorcentaje.Text))
-                    obj.porcentaje = null;
-                else obj.porcentaje = decimal.Parse(txtPorcentaje.Text);
+                if (rbtPorcentaje.Checked)
+                {
+                    if (string.IsNullOrEmpty(txtPorcentaje.Text.Trim()))
+                        obj.porcentaje = null;
+                    else obj.porcentaje = decimal.Parse(txtPorcentaje.Text);
+                }
+                else if (rbtMonto.Checked)
+                {
+                    if (string.IsNullOrEmpty(txtMonto.Text.Trim()))
+                        obj.monto = null;
+                    else obj.monto = decimal.Parse(txtMonto.Text);
+                }
 
-                if (string.IsNullOrEmpty(txtMonto.Text)
-                   || string.IsNullOrWhiteSpace(txtMonto.Text))
-                    obj.monto = null;
-                else obj.monto = decimal.Parse(txtMonto.Text);
+                obj.sn_dscto_mto = rbtMonto.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                obj.sn_dscto_mto_abierto = rbtMontoAbierto.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                obj.sn_dscto_porc = rbtPorcentaje.Checked ? Estado.IdActivo : Estado.IdInactivo;
+                obj.sn_dscto_porc_abierto = rbtPorcentajeAbierto.Checked ? Estado.IdActivo : Estado.IdInactivo;
 
-                if (string.IsNullOrEmpty(txtMontoMin.Text)
-                   || string.IsNullOrWhiteSpace(txtMontoMin.Text))
+                if (string.IsNullOrEmpty(txtMontoMin.Text.Trim()))
                     obj.monto_min = null;
                 else obj.monto_min = decimal.Parse(txtMontoMin.Text);
 
-                if (string.IsNullOrEmpty(txtMontoMax.Text)
-                   || string.IsNullOrWhiteSpace(txtMontoMax.Text))
+                if (string.IsNullOrEmpty(txtMontoMax.Text.Trim()))
                     obj.monto_max = null;
                 else obj.monto_max = decimal.Parse(txtMontoMax.Text);
 
@@ -454,10 +475,6 @@ namespace ConfiguradorUI.Maestro
                     }
 
                 }
-
-
-
-                //Dado que son not null se asume que son siempre habrá un valor para ellos
             }
             catch (Exception e)
             {
@@ -482,10 +499,15 @@ namespace ConfiguradorUI.Maestro
                 txtNombre.Text = obj.txt_desc;
                 txtCodigo.Text = obj.cod_descuento;
 
-                txtPorcentaje.Text  = (obj.porcentaje==null)?"":obj.porcentaje.RemoveTrailingZeros();
-                txtMonto.Text       = (obj.monto==null)?"":obj.monto.RemoveTrailingZeros();
-                txtMontoMin.Text    = (obj.monto_min==null)?"":obj.monto_min.RemoveTrailingZeros();
-                txtMontoMax.Text    = (obj.monto_max==null)?"":obj.monto_max.RemoveTrailingZeros();
+                txtPorcentaje.Text = (obj.porcentaje == null) ? "" : obj.porcentaje.RemoveTrailingZeros();
+                txtMonto.Text = (obj.monto == null) ? "" : obj.monto.RemoveTrailingZeros();
+                txtMontoMin.Text = (obj.monto_min == null) ? "" : obj.monto_min.RemoveTrailingZeros();
+                txtMontoMax.Text = (obj.monto_max == null) ? "" : obj.monto_max.RemoveTrailingZeros();
+
+                rbtMonto.Checked = obj.sn_dscto_mto == Estado.IdActivo;
+                rbtMontoAbierto.Checked = obj.sn_dscto_mto_abierto == Estado.IdActivo;
+                rbtPorcentaje.Checked = obj.sn_dscto_porc == Estado.IdActivo;
+                rbtPorcentajeAbierto.Checked = obj.sn_dscto_porc_abierto == Estado.IdActivo;
 
                 if (obj.sn_descuen_dia == 1 || obj.sn_descuen_periodo == 1)
                 {
@@ -728,73 +750,75 @@ namespace ConfiguradorUI.Maestro
 
             #endregion
 
-            #region validación de porcetanje y montos
+            #region validación de porcetanje y monto
 
-            if (no_error)
+            //si tiene algo dentro
+            if (rbtPorcentaje.Checked)
             {
-                //si tiene algo dentro
-                if (txtPorcentaje.Text.Trim().Length > 0 || txtMonto.Text.Trim().Length > 0)
+                if (txtPorcentaje.Text.Trim().Length > 0)
                 {
-
-                    if (txtPorcentaje.Text.Trim().Length > 0)
+                    decimal num = 0;
+                    //Es número.
+                    if (!decimal.TryParse(txtPorcentaje.Text, out num))
                     {
-                        decimal num = 0;
-                        //Es número.
-                        if (!decimal.TryParse(txtPorcentaje.Text, out num))
+                        tabDescuento.SelectedTab = tabPagGeneral;
+                        errorProv.SetError(txtPorcentaje, "Tiene que ingresar un número.");
+                        txtPorcentaje.Focus();
+                        no_error = false;
+                    }
+                    else
+                    {
+                        if (!(num > 0 && num <= KeyAmounts.MaxAmount))
                         {
                             tabDescuento.SelectedTab = tabPagGeneral;
-                            errorProv.SetError(txtPorcentaje, "Tiene que ingresar un número.");
+                            errorProv.SetError(txtPorcentaje, "El porcentaje tiene que ser mayor que 0 y menor que 10000000000.");
                             txtPorcentaje.Focus();
                             no_error = false;
-                        }
-                        else
-                        {
-                            if (!(num > 0 && num < 10000000000))
-                            {
-                                tabDescuento.SelectedTab = tabPagGeneral;
-                                errorProv.SetError(txtPorcentaje, "El porcentaje tiene que ser mayor que 0 y menor que 10000000000.");
-                                txtPorcentaje.Focus();
-                                no_error = false;
-                            }
-                        }
-                    }
-
-                    if (no_error)
-                    {
-                        if (txtMonto.Text.Trim().Length > 0)
-                        {
-                            decimal num2 = 0;
-                            //Es número.
-                            if (!decimal.TryParse(txtMonto.Text, out num2))
-                            {
-                                tabDescuento.SelectedTab = tabPagGeneral;
-                                errorProv.SetError(txtMonto, "Tiene que ingresar un número.");
-                                txtMonto.Focus();
-                                no_error = false;
-                            }
-                            else
-                            {
-                                if (!(num2 > 0 && num2 < 10000000000))
-                                {
-                                    tabDescuento.SelectedTab = tabPagGeneral;
-                                    errorProv.SetError(txtMonto, "El monto tiene que ser mayor que 0 y menor que 10000000000.");
-                                    txtMonto.Focus();
-                                    no_error = false;
-                                }
-                            }
                         }
                     }
                 }
                 else
                 {
                     tabDescuento.SelectedTab = tabPagGeneral;
-                    MessageBox.Show("Tiene que ingresar un porcentaje y/o monto.", "AVISO EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    errorProv.SetError(txtPorcentaje, "Tiene que ingresar un porcentaje.");
-                    errorProv.SetError(txtMonto, "Tiene que ingresa un monto.");
+                    errorProv.SetError(txtPorcentaje, "El porcentaje es requerido.");
                     txtPorcentaje.Focus();
                     no_error = false;
                 }
             }
+            else if (rbtMonto.Checked)
+            {
+                if (txtMonto.Text.Trim().Length > 0)
+                {
+                    decimal num2 = 0;
+                    //Es número.
+                    if (!decimal.TryParse(txtMonto.Text, out num2))
+                    {
+                        tabDescuento.SelectedTab = tabPagGeneral;
+                        errorProv.SetError(txtMonto, "Tiene que ingresar un número.");
+                        txtMonto.Focus();
+                        no_error = false;
+                    }
+                    else
+                    {
+                        if (!(num2 > 0 && num2 <= KeyAmounts.MaxAmount))
+                        {
+                            tabDescuento.SelectedTab = tabPagGeneral;
+                            errorProv.SetError(txtMonto, "El monto tiene que ser mayor que 0 y menor que 10000000000.");
+                            txtMonto.Focus();
+                            no_error = false;
+                        }
+
+                    }
+                }
+                else
+                {
+                    tabDescuento.SelectedTab = tabPagGeneral;
+                    errorProv.SetError(txtMonto, "El monto es requerido.");
+                    txtMonto.Focus();
+                    no_error = false;
+                }
+            }
+
 
             if (no_error)
             {
@@ -815,7 +839,7 @@ namespace ConfiguradorUI.Maestro
                         }
                         else
                         {
-                            if (!(num > 0 && num < 10000000000))
+                            if (!(num > 0 && num <= KeyAmounts.MaxAmount))
                             {
                                 tabDescuento.SelectedTab = tabPagGeneral;
                                 errorProv.SetError(txt, "El monto tiene que ser mayor que 0 y menor que 10000000000.");
@@ -1088,6 +1112,8 @@ namespace ConfiguradorUI.Maestro
             txtMonto.Clear();
             txtMontoMin.Clear();
             txtMontoMax.Clear();
+
+            rbtPorcentaje.Checked = true;
 
             rbtDia.Checked = false;
             rbtPeriodo.Checked = false;
@@ -1539,7 +1565,7 @@ namespace ConfiguradorUI.Maestro
         {
             try
             {
-                var lista = new DescuentoBL().ListaDescuento(id_estado,true);
+                var lista = new DescuentoBL().ListaDescuento(id_estado);
 
                 var listaView = lista.Select(x => new { x.id_descuento, CODIGO = x.cod_descuento, NOMBRE = x.txt_desc })
                     .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
@@ -1595,9 +1621,9 @@ namespace ConfiguradorUI.Maestro
             txtCodigo.MaxLength = 10;
             txtNombre.MaxLength = 100;
             txtPorcentaje.MaxLength = 19;
-            txtMonto.MaxLength      = 19;
-            txtMontoMin.MaxLength   = 19;
-            txtMontoMax.MaxLength   = 19;
+            txtMonto.MaxLength = 19;
+            txtMontoMin.MaxLength = 19;
+            txtMontoMax.MaxLength = 19;
         }
         private void ContarEstados(List<MSTt02_descuento> lista)
         {
@@ -1809,7 +1835,7 @@ namespace ConfiguradorUI.Maestro
                 panelFiltro.Visible = true;
             }
 
-            
+
 
         }
 
@@ -2233,6 +2259,72 @@ namespace ConfiguradorUI.Maestro
             {
                 CerrarForm();
             }
+        }
+
+        private void rbtMonto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtMonto.Checked)
+            {
+                EnableTxtMtoAndPorc(true, false);
+                CleanTxtMtoAndPorc(false);
+            }
+            isChangedRow = false;
+        }
+
+        private void rbtMontoAbierto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtMontoAbierto.Checked)
+            {
+                EnableTxtMtoAndPorc(false, false);
+                CleanTxtMtoAndPorc();
+            }
+            isChangedRow = false;
+        }
+
+        private void rbtPorcentaje_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtPorcentaje.Checked)
+            {
+                EnableTxtMtoAndPorc(false);
+                CleanTxtMtoAndPorc(true, false);
+            }
+            isChangedRow = false;
+        }
+
+        private void rbtPorcentajeAbierto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtPorcentajeAbierto.Checked)
+            {
+                EnableTxtMtoAndPorc(false, false);
+                CleanTxtMtoAndPorc();
+            }
+            isChangedRow = false;
+        }
+
+        private void rbtPorcentaje_Click(object sender, EventArgs e)
+        {
+            txtPorcentaje.Focus();
+            errorProv.SetError(txtMonto, string.Empty);
+        }
+
+        private void rbtPorcentajeAbierto_Click(object sender, EventArgs e)
+        {
+            txtMontoMin.Focus();
+            errorProv.SetError(txtMonto, string.Empty);
+            errorProv.SetError(txtPorcentaje, string.Empty);
+        }
+
+        private void rbtMonto_Click(object sender, EventArgs e)
+        {
+            txtMonto.Focus();
+            errorProv.SetError(txtPorcentaje, string.Empty);
+        }
+
+        private void rbtMontoAbierto_Click(object sender, EventArgs e)
+        {
+            txtMontoMin.Focus();
+            errorProv.SetError(txtMonto, string.Empty);
+            errorProv.SetError(txtPorcentaje, string.Empty);
         }
 
 
