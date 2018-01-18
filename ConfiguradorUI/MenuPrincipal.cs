@@ -44,10 +44,12 @@ namespace ConfiguradorUI
 
         private void ConfigurarControles()
         {
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             NombreUsuario();
             RunTimer();
             btnPrecio.Enabled = false;
             btnReceta.Enabled = false;
+            btnParametro.Visible = false;
         }
 
         private void NombreUsuario()

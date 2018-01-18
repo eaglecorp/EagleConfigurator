@@ -52,9 +52,7 @@ namespace ConfigBusinessLogic.General
             var lista = new ParametroDA().ListaParametro();
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_parametro == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_parametro > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_parametro == Parameter.BlankRegister);
             }
             return lista;
         }

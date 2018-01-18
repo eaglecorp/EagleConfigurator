@@ -41,9 +41,7 @@ namespace ConfigBusinessLogic.Maestro
             var lista = new CanalVentaDA().ListaCanalVenta(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_can_vta == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_can_vta > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_can_vta == Parameter.BlankRegister);
             }
             if (enableTopList && lista != null)
                 return lista.OrderBy(x => x.cod_can_vta != TopList.CanalVenta).ThenBy(x => x.txt_desc).ToList();

@@ -36,9 +36,7 @@ namespace ConfigBusinessLogic.Maestro
             var lista = new EstadoMesaDA().ListaEstadoMesa(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_estado_mesa == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_estado_mesa > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_estado_mesa == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

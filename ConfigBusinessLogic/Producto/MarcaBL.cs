@@ -41,9 +41,7 @@ namespace ConfigBusinessLogic
             var lista = new MarcaDA().ListaMarca(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_marca == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_marca > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_marca == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

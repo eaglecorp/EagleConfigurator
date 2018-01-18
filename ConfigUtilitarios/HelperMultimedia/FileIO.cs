@@ -20,11 +20,15 @@ namespace ConfigUtilitarios
                 {
                     File.Delete(f);
                 }
-                oLog.ArchiveLog("Utilitarios: Delete Files Path : ", "Archivos eleminados de la carpeta " + strPath);
+                oLog.ArchiveLog("Utilitarios: Delete Files Path : ", "Archivos eliminados de la carpeta " + strPath);
             }
             catch (DirectoryNotFoundException Ex)
             {
-                oLog.ArchiveLog("Utilitarios: Delete Files Path : ", Ex.Message.ToString());
+                oLog.ArchiveLog("Utilitarios: Delete Files Path - Directorio no encontrado. : ", Ex.Message.ToString());
+            }
+            catch(Exception ExGeneric)
+            {
+                oLog.ArchiveLog("Utilitarios: Delete Files Path : ", ExGeneric.Message.ToString());
             }
 
             return _result;

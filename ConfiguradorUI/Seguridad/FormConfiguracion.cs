@@ -15,6 +15,7 @@ using ConfigBusinessLogic.General;
 using ConfigBusinessLogic;
 using System.IO;
 using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.HelperGeneric;
 
 namespace ConfiguradorUI.Seguridad
 {
@@ -240,7 +241,7 @@ namespace ConfiguradorUI.Seguridad
                 {
                     try
                     {
-                        string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + Path.GetFileNameWithoutExtension(Path.GetRandomFileName());
+                        string fileName = UtilString.GetRandomName();
                         string extension = pathSource.Substring(pathSource.LastIndexOf(@"."));
                         string pathTarget = Path.Combine(Path.GetFullPath(FilePath.Images), fileName + extension);
                         if (pathSource != pathTarget)
@@ -280,7 +281,7 @@ namespace ConfiguradorUI.Seguridad
                 }
             }
         }
-        private bool EsValidoEnControles()
+        private bool EsValido()
         {
             bool esValido = true;
 
@@ -332,13 +333,14 @@ namespace ConfiguradorUI.Seguridad
                 foreach (var pathWithCode in PathsImg)
                 {
                     var pathSource = pathWithCode.Item1.Text.Trim();
+                    var codImg = pathWithCode.Item2;
 
                     if (!string.IsNullOrEmpty(pathSource))
                     {
                         if (pathSource.Length <= 260)
                         {
                             //verificar si la ruta de la imagen ha cambiado
-                            var parametro = GetParametro(pathWithCode.Item2);
+                            var parametro = GetParametro(codImg);
                             if (parametro != null && parametro.txt_valor != pathSource)
                             {
                                 //si ha cambiado... entonces copiamos la imagen en la carpeta de la app (local)
@@ -365,7 +367,7 @@ namespace ConfiguradorUI.Seguridad
                             }
                             else if (!File.Exists(pathSource))
                             {
-                                errorProv.SetError(pathWithCode.Item1.Parent, "La ruta del archivo que ha colocado es incorrecta o no existe.");
+                                errorProv.SetError(pathWithCode.Item1.Parent, "La ruta de la imagen no existe o ha sido modificada.");
                                 esValido = false;
                             }
                             else if (!Validation.IsValidImage(pathSource))
@@ -545,7 +547,7 @@ namespace ConfiguradorUI.Seguridad
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (EsValidoEnControles())
+            if (EsValido())
             {
                 var parametrosCambiados = GetParametros();
                 if (parametrosCambiados != null && parametrosCambiados.Count > 0)

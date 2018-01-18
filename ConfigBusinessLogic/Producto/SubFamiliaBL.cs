@@ -41,9 +41,7 @@ namespace ConfigBusinessLogic
             var lista = new SubFamiliaDA().ListaSubFamilia(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_subfamilia == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_subfamilia > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_subfamilia == Parameter.BlankRegister);
             }
             return lista;
         }

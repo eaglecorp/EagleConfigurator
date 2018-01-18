@@ -17,9 +17,7 @@ namespace ConfigBusinessLogic.Producto
 
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_combo_grupo == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_combo_grupo > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_combo_grupo == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

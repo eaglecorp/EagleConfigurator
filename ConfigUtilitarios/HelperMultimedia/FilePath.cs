@@ -78,9 +78,8 @@ namespace ConfigUtilitarios
         }
 
         public static string DefaultImages { get; } = Application.StartupPath+ @"\Images\DefaultImages";
+
         public static string Images { get; } = Application.StartupPath + @"\Images";
-
-
 
     }
 }

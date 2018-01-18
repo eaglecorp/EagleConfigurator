@@ -27,7 +27,7 @@ namespace ConfigBusinessLogic
 
         public PROt06_clase_prod ClaseXId(int id)
         {
-           return new ClaseProdDA().ClaseXId(id);
+            return new ClaseProdDA().ClaseXId(id);
         }
 
         public PROt06_clase_prod ClaseProdXCod(string cod)
@@ -40,9 +40,7 @@ namespace ConfigBusinessLogic
             var lista = new ClaseProdDA().ListaClaseProd(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_clase_prod == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_clase_prod > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_clase_prod == Parameter.BlankRegister);
             }
             return lista;
         }
@@ -54,7 +52,7 @@ namespace ConfigBusinessLogic
             if (list != null)
                 return list.OrderBy(x => x.txt_desc).ToList();
 
-            return list;    
+            return list;
         }
 
     }

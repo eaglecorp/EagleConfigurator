@@ -42,9 +42,7 @@ namespace ConfigBusinessLogic
             var lista = new ModeloDA().ListaModelo(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_modelo == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_modelo > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_modelo == Parameter.BlankRegister);
             }
             return lista;
         }

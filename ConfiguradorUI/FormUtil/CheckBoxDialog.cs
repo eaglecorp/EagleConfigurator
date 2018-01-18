@@ -57,13 +57,9 @@ namespace ConfiguradorUI.FormUtil
 
         private void CheckBoxDialog_Load(object sender, EventArgs e)
         {
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             AsignarImagenCheck();
             CenterToParent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         #endregion
 

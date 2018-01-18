@@ -643,7 +643,7 @@
             // 
             // picLogo
             // 
-            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Default;
             this.picLogo.InitialImage = null;
             this.picLogo.Location = new System.Drawing.Point(18, 28);
             this.picLogo.Name = "picLogo";
@@ -700,7 +700,7 @@
             // 
             // picImagenLogin
             // 
-            this.picImagenLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picImagenLogin.Cursor = System.Windows.Forms.Cursors.Default;
             this.picImagenLogin.InitialImage = null;
             this.picImagenLogin.Location = new System.Drawing.Point(18, 28);
             this.picImagenLogin.Name = "picImagenLogin";
@@ -757,7 +757,7 @@
             // 
             // picSplash
             // 
-            this.picSplash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSplash.Cursor = System.Windows.Forms.Cursors.Default;
             this.picSplash.InitialImage = null;
             this.picSplash.Location = new System.Drawing.Point(18, 28);
             this.picSplash.Name = "picSplash";

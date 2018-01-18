@@ -16,9 +16,7 @@ namespace ConfigBusinessLogic.Maestro
             var lista = new EstadoCivilDA().ListaEstadoCivil(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_estado_civil == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_estado_civil > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_estado_civil == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

@@ -15,6 +15,7 @@ namespace ConfiguradorUI
         public splahScreen(int segundos)
         {
             InitializeComponent();
+            picSplash.SizeMode = PictureBoxSizeMode.StretchImage;
             AsignarImagenSplash();
 
             timSplah.Interval = segundos * 1000;

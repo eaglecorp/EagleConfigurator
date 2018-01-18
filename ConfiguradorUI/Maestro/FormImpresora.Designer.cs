@@ -452,7 +452,7 @@
             this.txtInfo01.CustomButton.UseSelectable = true;
             this.txtInfo01.CustomButton.Visible = false;
             this.txtInfo01.Lines = new string[0];
-            this.txtInfo01.Location = new System.Drawing.Point(77, 145);
+            this.txtInfo01.Location = new System.Drawing.Point(77, 144);
             this.txtInfo01.MaxLength = 32767;
             this.txtInfo01.Name = "txtInfo01";
             this.txtInfo01.PasswordChar = '\0';
@@ -473,7 +473,7 @@
             // 
             this.lblInfo01.AutoSize = true;
             this.lblInfo01.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo01.Location = new System.Drawing.Point(3, 147);
+            this.lblInfo01.Location = new System.Drawing.Point(3, 146);
             this.lblInfo01.Name = "lblInfo01";
             this.lblInfo01.Size = new System.Drawing.Size(50, 19);
             this.lblInfo01.TabIndex = 93;
@@ -583,7 +583,7 @@
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(4, 179);
+            this.panel2.Location = new System.Drawing.Point(4, 178);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(528, 8);
             this.panel2.TabIndex = 86;
@@ -592,7 +592,7 @@
             // 
             this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(4, 51);
+            this.panel3.Location = new System.Drawing.Point(4, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(528, 8);
             this.panel3.TabIndex = 65;
@@ -616,7 +616,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(5, 193);
+            this.chkActivo.Location = new System.Drawing.Point(5, 192);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 7;

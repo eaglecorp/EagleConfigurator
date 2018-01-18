@@ -17,9 +17,7 @@ namespace ConfigBusinessLogic.Maestro
             var lista = new ImpresoraDA().ListaImpresora(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_impresora == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_impresora > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_impresora == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

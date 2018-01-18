@@ -42,9 +42,7 @@ namespace ConfigBusinessLogic
             var lista = new ImpuestoDA().ListaImpuesto(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_impuesto == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_impuesto > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_impuesto == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

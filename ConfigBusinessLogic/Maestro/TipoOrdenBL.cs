@@ -40,9 +40,7 @@ namespace ConfigBusinessLogic.Maestro
             var lista = new TipoOrdenDA().ListaTipoOrden(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_tipo_orden == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_tipo_orden > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_tipo_orden == Parameter.BlankRegister);
             }
 
             return lista;

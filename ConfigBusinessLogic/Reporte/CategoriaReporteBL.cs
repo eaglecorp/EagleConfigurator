@@ -36,9 +36,7 @@ namespace ConfigBusinessLogic.Reporte
             var lista = new CategoriaReporteDA().ListaCategoriaReporte(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_categoria_reporte == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_categoria_reporte > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_categoria_reporte == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

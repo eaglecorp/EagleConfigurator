@@ -200,6 +200,7 @@ namespace ConfigBusinessLogic
         public static string SplashImg { get; } = "splash.jpg";
         public static string LogoImg { get; } = "logo.jpg";
         public static string LoginImg { get; } = "login.jpg";
+
         #endregion
 
         #region Parámetros de botones
@@ -242,12 +243,12 @@ namespace ConfigBusinessLogic
                     }
                     catch
                     {
-                        MessageBox.Show($"No se pudo cargar la imagen ({parametroImg.txt_desc}). Se cargará la imagen por defecto. Parámetro: {parametroImg.cod_parametro}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show($"No se pudo cargar la imagen ({parametroImg.txt_desc}). Se cargará la imagen por defecto. Parámetro: {parametroImg.cod_parametro}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"La ruta de la imagen ({parametroImg.txt_desc}) no existe. Se cargará la imagen por defecto. Parámetro: {parametroImg.cod_parametro}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show($"La ruta de la imagen ({parametroImg.txt_desc}) no existe. Se cargará la imagen por defecto. Parámetro: {parametroImg.cod_parametro}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -279,12 +280,12 @@ namespace ConfigBusinessLogic
                     }
                     catch
                     {
-                        MessageBox.Show($"No se pudo cargar la imagen. Se cargará la imagen por defecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show($"No se pudo cargar la imagen. Se cargará la imagen por defecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"La ruta de la imagen no existe. Se cargará la imagen por defecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show($"La ruta de la imagen no existe. Se cargará la imagen por defecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -369,6 +370,8 @@ namespace ConfigBusinessLogic
             }
             return "";
         }
+
+
 
     }
 }

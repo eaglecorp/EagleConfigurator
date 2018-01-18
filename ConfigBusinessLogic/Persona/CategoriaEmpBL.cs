@@ -16,9 +16,7 @@ namespace ConfigBusinessLogic.Persona
             var lista = new CategoriaEmpDA().ListaCategoriaEmp(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_categoria_emp == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_categoria_emp > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_categoria_emp == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

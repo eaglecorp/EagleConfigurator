@@ -66,7 +66,6 @@
             this.txtDato02 = new MetroFramework.Controls.MetroTextBox();
             this.txtNumRuc = new MetroFramework.Controls.MetroTextBox();
             this.lblDato02 = new MetroFramework.Controls.MetroLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRUC = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
@@ -131,7 +130,7 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(312, 606);
+            this.panelFiltro.Location = new System.Drawing.Point(312, 564);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(551, 49);
             this.panelFiltro.TabIndex = 3;
@@ -316,7 +315,7 @@
             this.tabLocation.Location = new System.Drawing.Point(312, 99);
             this.tabLocation.Name = "tabLocation";
             this.tabLocation.SelectedIndex = 0;
-            this.tabLocation.Size = new System.Drawing.Size(567, 506);
+            this.tabLocation.Size = new System.Drawing.Size(567, 458);
             this.tabLocation.TabIndex = 1;
             this.tabLocation.UseSelectable = true;
             // 
@@ -343,7 +342,6 @@
             this.tabPagGeneral.Controls.Add(this.txtDato02);
             this.tabPagGeneral.Controls.Add(this.txtNumRuc);
             this.tabPagGeneral.Controls.Add(this.lblDato02);
-            this.tabPagGeneral.Controls.Add(this.panel3);
             this.tabPagGeneral.Controls.Add(this.panel1);
             this.tabPagGeneral.Controls.Add(this.lblRUC);
             this.tabPagGeneral.Controls.Add(this.chkActivo);
@@ -364,7 +362,7 @@
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(559, 464);
+            this.tabPagGeneral.Size = new System.Drawing.Size(559, 416);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
@@ -378,7 +376,7 @@
             this.cboTipoLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoLocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoLocation.FormattingEnabled = true;
-            this.cboTipoLocation.Location = new System.Drawing.Point(75, 88);
+            this.cboTipoLocation.Location = new System.Drawing.Point(75, 106);
             this.cboTipoLocation.Name = "cboTipoLocation";
             this.cboTipoLocation.Size = new System.Drawing.Size(158, 23);
             this.cboTipoLocation.TabIndex = 9;
@@ -400,7 +398,7 @@
             this.txtDireccion02.CustomButton.UseSelectable = true;
             this.txtDireccion02.CustomButton.Visible = false;
             this.txtDireccion02.Lines = new string[0];
-            this.txtDireccion02.Location = new System.Drawing.Point(75, 425);
+            this.txtDireccion02.Location = new System.Drawing.Point(75, 384);
             this.txtDireccion02.MaxLength = 32767;
             this.txtDireccion02.Name = "txtDireccion02";
             this.txtDireccion02.PasswordChar = '\0';
@@ -421,7 +419,7 @@
             // 
             this.lblDireccion02.AutoSize = true;
             this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion02.Location = new System.Drawing.Point(1, 429);
+            this.lblDireccion02.Location = new System.Drawing.Point(1, 388);
             this.lblDireccion02.Name = "lblDireccion02";
             this.lblDireccion02.Size = new System.Drawing.Size(77, 19);
             this.lblDireccion02.TabIndex = 31;
@@ -444,7 +442,7 @@
             this.txtDireccion01.CustomButton.UseSelectable = true;
             this.txtDireccion01.CustomButton.Visible = false;
             this.txtDireccion01.Lines = new string[0];
-            this.txtDireccion01.Location = new System.Drawing.Point(75, 387);
+            this.txtDireccion01.Location = new System.Drawing.Point(75, 347);
             this.txtDireccion01.MaxLength = 32767;
             this.txtDireccion01.Name = "txtDireccion01";
             this.txtDireccion01.PasswordChar = '\0';
@@ -465,7 +463,7 @@
             // 
             this.lblDireccion01.AutoSize = true;
             this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion01.Location = new System.Drawing.Point(1, 389);
+            this.lblDireccion01.Location = new System.Drawing.Point(1, 349);
             this.lblDireccion01.Name = "lblDireccion01";
             this.lblDireccion01.Size = new System.Drawing.Size(75, 19);
             this.lblDireccion01.TabIndex = 29;
@@ -476,7 +474,7 @@
             // 
             this.panel4.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(4, 286);
+            this.panel4.Location = new System.Drawing.Point(4, 216);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(540, 8);
             this.panel4.TabIndex = 61;
@@ -497,7 +495,7 @@
             this.txtFono02.CustomButton.UseSelectable = true;
             this.txtFono02.CustomButton.Visible = false;
             this.txtFono02.Lines = new string[0];
-            this.txtFono02.Location = new System.Drawing.Point(359, 249);
+            this.txtFono02.Location = new System.Drawing.Point(359, 236);
             this.txtFono02.MaxLength = 32767;
             this.txtFono02.Name = "txtFono02";
             this.txtFono02.PasswordChar = '\0';
@@ -518,7 +516,7 @@
             // 
             this.lblFono02.AutoSize = true;
             this.lblFono02.ForeColor = System.Drawing.Color.Navy;
-            this.lblFono02.Location = new System.Drawing.Point(283, 251);
+            this.lblFono02.Location = new System.Drawing.Point(283, 238);
             this.lblFono02.Name = "lblFono02";
             this.lblFono02.Size = new System.Drawing.Size(60, 19);
             this.lblFono02.TabIndex = 19;
@@ -541,7 +539,7 @@
             this.txtFono01.CustomButton.UseSelectable = true;
             this.txtFono01.CustomButton.Visible = false;
             this.txtFono01.Lines = new string[0];
-            this.txtFono01.Location = new System.Drawing.Point(75, 249);
+            this.txtFono01.Location = new System.Drawing.Point(75, 236);
             this.txtFono01.MaxLength = 32767;
             this.txtFono01.Name = "txtFono01";
             this.txtFono01.PasswordChar = '\0';
@@ -562,7 +560,7 @@
             // 
             this.lblFono01.AutoSize = true;
             this.lblFono01.ForeColor = System.Drawing.Color.Navy;
-            this.lblFono01.Location = new System.Drawing.Point(1, 251);
+            this.lblFono01.Location = new System.Drawing.Point(1, 238);
             this.lblFono01.Name = "lblFono01";
             this.lblFono01.Size = new System.Drawing.Size(58, 19);
             this.lblFono01.TabIndex = 17;
@@ -585,7 +583,7 @@
             this.txtDato01.CustomButton.UseSelectable = true;
             this.txtDato01.CustomButton.Visible = false;
             this.txtDato01.Lines = new string[0];
-            this.txtDato01.Location = new System.Drawing.Point(75, 313);
+            this.txtDato01.Location = new System.Drawing.Point(75, 273);
             this.txtDato01.MaxLength = 32767;
             this.txtDato01.Name = "txtDato01";
             this.txtDato01.PasswordChar = '\0';
@@ -606,7 +604,7 @@
             // 
             this.lblDato01.AutoSize = true;
             this.lblDato01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato01.Location = new System.Drawing.Point(1, 315);
+            this.lblDato01.Location = new System.Drawing.Point(1, 275);
             this.lblDato01.Name = "lblDato01";
             this.lblDato01.Size = new System.Drawing.Size(56, 19);
             this.lblDato01.TabIndex = 21;
@@ -629,7 +627,7 @@
             this.txtDato04.CustomButton.UseSelectable = true;
             this.txtDato04.CustomButton.Visible = false;
             this.txtDato04.Lines = new string[0];
-            this.txtDato04.Location = new System.Drawing.Point(359, 349);
+            this.txtDato04.Location = new System.Drawing.Point(359, 310);
             this.txtDato04.MaxLength = 32767;
             this.txtDato04.Name = "txtDato04";
             this.txtDato04.PasswordChar = '\0';
@@ -650,7 +648,7 @@
             // 
             this.lblDato03.AutoSize = true;
             this.lblDato03.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato03.Location = new System.Drawing.Point(1, 351);
+            this.lblDato03.Location = new System.Drawing.Point(1, 312);
             this.lblDato03.Name = "lblDato03";
             this.lblDato03.Size = new System.Drawing.Size(58, 19);
             this.lblDato03.TabIndex = 25;
@@ -661,7 +659,7 @@
             // 
             this.lblDato04.AutoSize = true;
             this.lblDato04.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato04.Location = new System.Drawing.Point(283, 351);
+            this.lblDato04.Location = new System.Drawing.Point(283, 312);
             this.lblDato04.Name = "lblDato04";
             this.lblDato04.Size = new System.Drawing.Size(58, 19);
             this.lblDato04.TabIndex = 27;
@@ -673,7 +671,7 @@
             this.dtpFechaNegocio.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dtpFechaNegocio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNegocio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNegocio.Location = new System.Drawing.Point(75, 126);
+            this.dtpFechaNegocio.Location = new System.Drawing.Point(75, 144);
             this.dtpFechaNegocio.Name = "dtpFechaNegocio";
             this.dtpFechaNegocio.Size = new System.Drawing.Size(184, 23);
             this.dtpFechaNegocio.TabIndex = 13;
@@ -696,7 +694,7 @@
             this.txtDato03.CustomButton.UseSelectable = true;
             this.txtDato03.CustomButton.Visible = false;
             this.txtDato03.Lines = new string[0];
-            this.txtDato03.Location = new System.Drawing.Point(75, 349);
+            this.txtDato03.Location = new System.Drawing.Point(75, 310);
             this.txtDato03.MaxLength = 32767;
             this.txtDato03.Name = "txtDato03";
             this.txtDato03.PasswordChar = '\0';
@@ -717,7 +715,7 @@
             // 
             this.lblFechaNegocio.AutoSize = true;
             this.lblFechaNegocio.ForeColor = System.Drawing.Color.Navy;
-            this.lblFechaNegocio.Location = new System.Drawing.Point(-1, 130);
+            this.lblFechaNegocio.Location = new System.Drawing.Point(-1, 148);
             this.lblFechaNegocio.Name = "lblFechaNegocio";
             this.lblFechaNegocio.Size = new System.Drawing.Size(74, 19);
             this.lblFechaNegocio.TabIndex = 12;
@@ -740,7 +738,7 @@
             this.txtDato02.CustomButton.UseSelectable = true;
             this.txtDato02.CustomButton.Visible = false;
             this.txtDato02.Lines = new string[0];
-            this.txtDato02.Location = new System.Drawing.Point(359, 313);
+            this.txtDato02.Location = new System.Drawing.Point(359, 273);
             this.txtDato02.MaxLength = 32767;
             this.txtDato02.Name = "txtDato02";
             this.txtDato02.PasswordChar = '\0';
@@ -773,7 +771,7 @@
             this.txtNumRuc.CustomButton.UseSelectable = true;
             this.txtNumRuc.CustomButton.Visible = false;
             this.txtNumRuc.Lines = new string[0];
-            this.txtNumRuc.Location = new System.Drawing.Point(359, 88);
+            this.txtNumRuc.Location = new System.Drawing.Point(359, 106);
             this.txtNumRuc.MaxLength = 32767;
             this.txtNumRuc.Name = "txtNumRuc";
             this.txtNumRuc.PasswordChar = '\0';
@@ -794,27 +792,18 @@
             // 
             this.lblDato02.AutoSize = true;
             this.lblDato02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato02.Location = new System.Drawing.Point(283, 315);
+            this.lblDato02.Location = new System.Drawing.Point(283, 275);
             this.lblDato02.Name = "lblDato02";
             this.lblDato02.Size = new System.Drawing.Size(58, 19);
             this.lblDato02.TabIndex = 23;
             this.lblDato02.Text = "Dato 02:";
             this.lblDato02.UseCustomForeColor = true;
             // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 225);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(540, 8);
-            this.panel3.TabIndex = 59;
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(3, 166);
+            this.panel1.Location = new System.Drawing.Point(3, 86);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 8);
             this.panel1.TabIndex = 57;
@@ -823,7 +812,7 @@
             // 
             this.lblRUC.AutoSize = true;
             this.lblRUC.ForeColor = System.Drawing.Color.Navy;
-            this.lblRUC.Location = new System.Drawing.Point(283, 90);
+            this.lblRUC.Location = new System.Drawing.Point(283, 108);
             this.lblRUC.Name = "lblRUC";
             this.lblRUC.Size = new System.Drawing.Size(57, 19);
             this.lblRUC.TabIndex = 10;
@@ -838,7 +827,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(242, 189);
+            this.chkActivo.Location = new System.Drawing.Point(3, 183);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 16;
@@ -851,7 +840,7 @@
             // 
             this.btnTipoLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoLocation.Image")));
             this.btnTipoLocation.ImageSize = 24;
-            this.btnTipoLocation.Location = new System.Drawing.Point(235, 83);
+            this.btnTipoLocation.Location = new System.Drawing.Point(235, 101);
             this.btnTipoLocation.Name = "btnTipoLocation";
             this.btnTipoLocation.Size = new System.Drawing.Size(29, 27);
             this.btnTipoLocation.TabIndex = 46;
@@ -864,7 +853,7 @@
             this.chkLocationActual.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkLocationActual.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkLocationActual.ForeColor = System.Drawing.Color.Navy;
-            this.chkLocationActual.Location = new System.Drawing.Point(104, 189);
+            this.chkLocationActual.Location = new System.Drawing.Point(177, 183);
             this.chkLocationActual.Name = "chkLocationActual";
             this.chkLocationActual.Size = new System.Drawing.Size(114, 19);
             this.chkLocationActual.TabIndex = 15;
@@ -879,7 +868,7 @@
             this.chkAlmacen.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkAlmacen.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkAlmacen.ForeColor = System.Drawing.Color.Navy;
-            this.chkAlmacen.Location = new System.Drawing.Point(10, 189);
+            this.chkAlmacen.Location = new System.Drawing.Point(83, 183);
             this.chkAlmacen.Name = "chkAlmacen";
             this.chkAlmacen.Size = new System.Drawing.Size(76, 19);
             this.chkAlmacen.TabIndex = 14;
@@ -892,7 +881,7 @@
             // 
             this.lblTipoLocation.AutoSize = true;
             this.lblTipoLocation.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoLocation.Location = new System.Drawing.Point(-2, 90);
+            this.lblTipoLocation.Location = new System.Drawing.Point(-2, 108);
             this.lblTipoLocation.Name = "lblTipoLocation";
             this.lblTipoLocation.Size = new System.Drawing.Size(73, 19);
             this.lblTipoLocation.TabIndex = 8;
@@ -1112,7 +1101,7 @@
             this.dgvLocation.RowHeadersVisible = false;
             this.dgvLocation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocation.Size = new System.Drawing.Size(230, 498);
+            this.dgvLocation.Size = new System.Drawing.Size(230, 456);
             this.dgvLocation.TabIndex = 0;
             this.dgvLocation.SelectionChanged += new System.EventHandler(this.dgvLocation_SelectionChanged);
             // 
@@ -1136,7 +1125,7 @@
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(174, 638);
+            this.lblNumInactivo.Location = new System.Drawing.Point(178, 596);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -1149,7 +1138,7 @@
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(94, 638);
+            this.lblNumActivo.Location = new System.Drawing.Point(98, 596);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -1162,7 +1151,7 @@
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(27, 638);
+            this.lblNumReg.Location = new System.Drawing.Point(31, 596);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -1174,7 +1163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 694);
+            this.ClientSize = new System.Drawing.Size(900, 655);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -1220,7 +1209,6 @@
         private System.Windows.Forms.Button btnDelete;
         private MetroFramework.Controls.MetroTabControl tabLocation;
         private MetroFramework.Controls.MetroTabPage tabPagGeneral;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroLabel lblRUC;
         private MetroFramework.Controls.MetroCheckBox chkActivo;

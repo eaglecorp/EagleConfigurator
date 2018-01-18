@@ -164,6 +164,8 @@ namespace ConfiguradorUI.Seguridad
 
         private void ConfigurarInicio()
         {
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            picUserLogin.SizeMode = PictureBoxSizeMode.StretchImage;
             SetMaxLengthTxt();
             AsignarImagenLogo();
             AsignarImagenLogin();

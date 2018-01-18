@@ -46,9 +46,7 @@ namespace ConfigBusinessLogic.Persona
             var lista = new ClienteDA().ListaCliente(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_cliente == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_cliente > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_cliente == Parameter.BlankRegister);
             }
             return lista;
         }

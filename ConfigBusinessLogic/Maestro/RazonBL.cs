@@ -40,9 +40,7 @@ namespace ConfigBusinessLogic.Maestro
             var lista = new RazonDA().ListaRazon(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_razon == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_razon > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_razon == Parameter.BlankRegister);
             }
 
             return lista;

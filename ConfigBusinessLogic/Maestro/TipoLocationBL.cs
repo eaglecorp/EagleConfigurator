@@ -41,9 +41,7 @@ namespace ConfigBusinessLogic.Maestro
             var lista = new TipoLocationDA().ListaTipoLocation(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_tipo_location == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_tipo_location > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_tipo_location == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)

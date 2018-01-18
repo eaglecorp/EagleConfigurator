@@ -41,9 +41,7 @@ namespace ConfigBusinessLogic
             var lista = new GrupoProdDA().ListaGrupoProd(id_estado);
             if (ocultarBlankReg && lista != null && lista.Count > 0)
             {
-                var itemToRemove = lista.SingleOrDefault(x => x.cod_grupo_prod == Parameter.BlankRegister);
-                if (itemToRemove != null && itemToRemove.id_grupo_prod > 0)
-                    lista.Remove(itemToRemove);
+                lista.RemoveAll(x => x.cod_grupo_prod == Parameter.BlankRegister);
             }
 
             if (enableTopList && lista != null)
