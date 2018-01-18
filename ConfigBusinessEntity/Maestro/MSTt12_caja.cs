@@ -13,6 +13,7 @@ namespace ConfigBusinessEntity
         {
             CSHt01_caja_dtl = new HashSet<CSHt01_caja_dtl>();
             FISt01_control_numeracion = new HashSet<FISt01_control_numeracion>();
+            FISt05_configuracion_fiscal_caja = new HashSet<FISt05_configuracion_fiscal_caja>();
             GRLt04_configuracion_caja = new HashSet<GRLt04_configuracion_caja>();
         }
 
@@ -58,6 +59,9 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FISt01_control_numeracion> FISt01_control_numeracion { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FISt05_configuracion_fiscal_caja> FISt05_configuracion_fiscal_caja { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GRLt04_configuracion_caja> GRLt04_configuracion_caja { get; set; }

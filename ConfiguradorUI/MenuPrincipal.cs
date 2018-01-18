@@ -369,6 +369,13 @@ namespace ConfiguradorUI
             form.ShowDialog();
         }
 
+
+        private void btnTipoRazon_Click(object sender, EventArgs e)
+        {
+            var form = new FormTipoRazon();
+            form.ShowDialog();
+        }
+
         private void btnParametro_Click(object sender, EventArgs e)
         {
             FormParametro oForm = new FormParametro();

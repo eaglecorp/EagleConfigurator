@@ -341,7 +341,6 @@ namespace ConfiguradorUI.Producto
                 }
             }
 
-
             #endregion
 
             return no_error;

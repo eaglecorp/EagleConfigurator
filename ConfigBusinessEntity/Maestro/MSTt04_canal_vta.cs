@@ -12,6 +12,7 @@ namespace ConfigBusinessEntity
         public MSTt04_canal_vta()
         {
             FISt01_control_numeracion = new HashSet<FISt01_control_numeracion>();
+            LABt01_asistencia = new HashSet<LABt01_asistencia>();
             MSTt14_mesa = new HashSet<MSTt14_mesa>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
         }
@@ -35,6 +36,9 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FISt01_control_numeracion> FISt01_control_numeracion { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LABt01_asistencia> LABt01_asistencia { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MSTt14_mesa> MSTt14_mesa { get; set; }

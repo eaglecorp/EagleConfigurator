@@ -20,9 +20,10 @@ namespace ConfigBusinessEntity
         [Key]
         public long id_comp_emitido { get; set; }
 
-        [Required]
         [StringLength(20)]
         public string nro_comp_emitido { get; set; }
+
+        public long? nro_cheque { get; set; }
 
         public int id_tipo_comp { get; set; }
 
@@ -207,6 +208,14 @@ namespace ConfigBusinessEntity
 
         [StringLength(50)]
         public string txt_usuario { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime fec_registro { get; set; }
+
+        public long? id_usuario_modificador { get; set; }
+
+        [StringLength(50)]
+        public string txt_usuario_modificador { get; set; }
 
         [Column(TypeName = "datetime2")]
         public DateTime? fecha_modificacion { get; set; }

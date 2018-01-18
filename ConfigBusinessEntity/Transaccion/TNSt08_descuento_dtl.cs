@@ -29,9 +29,13 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
+        public long? id_emp_autorizador { get; set; }
+
         public virtual MSTt02_descuento MSTt02_descuento { get; set; }
 
         public virtual MSTt05_razon MSTt05_razon { get; set; }
+
+        public virtual PERt04_empleado PERt04_empleado { get; set; }
 
         public virtual TNSt04_comp_emitido TNSt04_comp_emitido { get; set; }
     }

@@ -89,13 +89,19 @@ namespace ConfigBusinessEntity
 
         public int? sn_cancelada { get; set; }
 
-        public long? id_usuario { get; set; }
+        public long? id_usuario_modificador { get; set; }
 
         [StringLength(50)]
-        public string txt_usuario { get; set; }
+        public string txt_usuario_modificador { get; set; }
 
         [Column(TypeName = "datetime2")]
         public DateTime? fecha_modificacion { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime fec_registro { get; set; }
+
+        [StringLength(50)]
+        public string txt_usuario { get; set; }
 
         public int? id_estado { get; set; }
 
@@ -105,6 +111,8 @@ namespace ConfigBusinessEntity
         public long? id_proveedor { get; set; }
 
         public int id_impuesto { get; set; }
+
+        public long? id_usuario { get; set; }
 
         public virtual MSTt03_tipo_orden MSTt03_tipo_orden { get; set; }
 

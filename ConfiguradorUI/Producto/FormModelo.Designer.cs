@@ -147,7 +147,7 @@
             // 
             this.btnMarca.Image = ((System.Drawing.Image)(resources.GetObject("btnMarca.Image")));
             this.btnMarca.ImageSize = 24;
-            this.btnMarca.Location = new System.Drawing.Point(236, 73);
+            this.btnMarca.Location = new System.Drawing.Point(238, 73);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Size = new System.Drawing.Size(29, 27);
             this.btnMarca.TabIndex = 59;
@@ -163,7 +163,7 @@
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(77, 77);
             this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(152, 23);
+            this.cboMarca.Size = new System.Drawing.Size(155, 23);
             this.cboMarca.TabIndex = 5;
             this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -572,7 +572,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 400);
+            this.ClientSize = new System.Drawing.Size(900, 393);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);

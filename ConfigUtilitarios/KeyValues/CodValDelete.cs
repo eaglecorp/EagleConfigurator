@@ -32,5 +32,6 @@ namespace ConfigUtilitarios
         public static int ComboVariable_ComboFixedDtl   { get; } = 21;
         public static int Impuesto_ComboVariable        { get; } = 22;
         public static int Impuesto_Combo                { get; } = 23;
+        public static int TipoRazon_Razon               { get; } = 24;
     }
 }

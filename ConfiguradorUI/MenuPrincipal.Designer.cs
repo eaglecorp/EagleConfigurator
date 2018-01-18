@@ -83,6 +83,7 @@
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lnkConfiguracion = new MetroFramework.Controls.MetroLink();
+            this.btnTipoRazon = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
@@ -100,7 +101,7 @@
             this.tabPanel.Controls.Add(this.tabPagReportes);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 0;
+            this.tabPanel.SelectedIndex = 2;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -541,6 +542,7 @@
             // 
             // tabPagMaestros
             // 
+            this.tabPagMaestros.Controls.Add(this.btnTipoRazon);
             this.tabPagMaestros.Controls.Add(this.btnTurno);
             this.tabPagMaestros.Controls.Add(this.btnEstadoMesa);
             this.tabPagMaestros.Controls.Add(this.btnMesa);
@@ -579,7 +581,7 @@
             this.btnTurno.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTurno.ForeColor = System.Drawing.Color.White;
             this.btnTurno.Image = ((System.Drawing.Image)(resources.GetObject("btnTurno.Image")));
-            this.btnTurno.Location = new System.Drawing.Point(300, 135);
+            this.btnTurno.Location = new System.Drawing.Point(300, 176);
             this.btnTurno.Margin = new System.Windows.Forms.Padding(2);
             this.btnTurno.Name = "btnTurno";
             this.btnTurno.Size = new System.Drawing.Size(145, 37);
@@ -600,7 +602,7 @@
             this.btnEstadoMesa.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoMesa.ForeColor = System.Drawing.Color.White;
             this.btnEstadoMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadoMesa.Image")));
-            this.btnEstadoMesa.Location = new System.Drawing.Point(300, 94);
+            this.btnEstadoMesa.Location = new System.Drawing.Point(300, 135);
             this.btnEstadoMesa.Margin = new System.Windows.Forms.Padding(2);
             this.btnEstadoMesa.Name = "btnEstadoMesa";
             this.btnEstadoMesa.Size = new System.Drawing.Size(145, 37);
@@ -621,7 +623,7 @@
             this.btnMesa.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMesa.ForeColor = System.Drawing.Color.White;
             this.btnMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnMesa.Image")));
-            this.btnMesa.Location = new System.Drawing.Point(300, 53);
+            this.btnMesa.Location = new System.Drawing.Point(300, 94);
             this.btnMesa.Margin = new System.Windows.Forms.Padding(2);
             this.btnMesa.Name = "btnMesa";
             this.btnMesa.Size = new System.Drawing.Size(145, 37);
@@ -642,7 +644,7 @@
             this.btnCaja.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaja.ForeColor = System.Drawing.Color.White;
             this.btnCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCaja.Image")));
-            this.btnCaja.Location = new System.Drawing.Point(300, 12);
+            this.btnCaja.Location = new System.Drawing.Point(300, 53);
             this.btnCaja.Margin = new System.Windows.Forms.Padding(2);
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(145, 37);
@@ -663,7 +665,7 @@
             this.btnImpresora.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImpresora.ForeColor = System.Drawing.Color.White;
             this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
-            this.btnImpresora.Location = new System.Drawing.Point(151, 135);
+            this.btnImpresora.Location = new System.Drawing.Point(151, 176);
             this.btnImpresora.Margin = new System.Windows.Forms.Padding(2);
             this.btnImpresora.Name = "btnImpresora";
             this.btnImpresora.Size = new System.Drawing.Size(145, 37);
@@ -684,7 +686,7 @@
             this.btnTipoImpresora.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoImpresora.ForeColor = System.Drawing.Color.White;
             this.btnTipoImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoImpresora.Image")));
-            this.btnTipoImpresora.Location = new System.Drawing.Point(151, 176);
+            this.btnTipoImpresora.Location = new System.Drawing.Point(300, 12);
             this.btnTipoImpresora.Margin = new System.Windows.Forms.Padding(2);
             this.btnTipoImpresora.Name = "btnTipoImpresora";
             this.btnTipoImpresora.Size = new System.Drawing.Size(145, 37);
@@ -705,7 +707,7 @@
             this.btnParametro.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParametro.ForeColor = System.Drawing.Color.White;
             this.btnParametro.Image = ((System.Drawing.Image)(resources.GetObject("btnParametro.Image")));
-            this.btnParametro.Location = new System.Drawing.Point(300, 176);
+            this.btnParametro.Location = new System.Drawing.Point(526, 183);
             this.btnParametro.Margin = new System.Windows.Forms.Padding(2);
             this.btnParametro.Name = "btnParametro";
             this.btnParametro.Size = new System.Drawing.Size(145, 37);
@@ -727,7 +729,7 @@
             this.btnTipoLocation.ForeColor = System.Drawing.Color.White;
             this.btnTipoLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoLocation.Image")));
             this.btnTipoLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTipoLocation.Location = new System.Drawing.Point(151, 94);
+            this.btnTipoLocation.Location = new System.Drawing.Point(151, 135);
             this.btnTipoLocation.Margin = new System.Windows.Forms.Padding(0);
             this.btnTipoLocation.Name = "btnTipoLocation";
             this.btnTipoLocation.Size = new System.Drawing.Size(145, 37);
@@ -749,7 +751,7 @@
             this.btnLocation.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocation.ForeColor = System.Drawing.Color.White;
             this.btnLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnLocation.Image")));
-            this.btnLocation.Location = new System.Drawing.Point(151, 52);
+            this.btnLocation.Location = new System.Drawing.Point(151, 93);
             this.btnLocation.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocation.Name = "btnLocation";
             this.btnLocation.Size = new System.Drawing.Size(145, 37);
@@ -791,7 +793,7 @@
             this.btnImpuesto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImpuesto.ForeColor = System.Drawing.Color.White;
             this.btnImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuesto.Image")));
-            this.btnImpuesto.Location = new System.Drawing.Point(151, 11);
+            this.btnImpuesto.Location = new System.Drawing.Point(151, 52);
             this.btnImpuesto.Margin = new System.Windows.Forms.Padding(2);
             this.btnImpuesto.Name = "btnImpuesto";
             this.btnImpuesto.Size = new System.Drawing.Size(145, 37);
@@ -1078,6 +1080,27 @@
             this.lnkConfiguracion.UseSelectable = true;
             this.lnkConfiguracion.Click += new System.EventHandler(this.lnkConfiguracion_Click);
             // 
+            // btnTipoRazon
+            // 
+            this.btnTipoRazon.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTipoRazon.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTipoRazon.FlatAppearance.BorderSize = 0;
+            this.btnTipoRazon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnTipoRazon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTipoRazon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoRazon.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoRazon.ForeColor = System.Drawing.Color.White;
+            this.btnTipoRazon.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoRazon.Image")));
+            this.btnTipoRazon.Location = new System.Drawing.Point(151, 11);
+            this.btnTipoRazon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTipoRazon.Name = "btnTipoRazon";
+            this.btnTipoRazon.Size = new System.Drawing.Size(145, 37);
+            this.btnTipoRazon.TabIndex = 15;
+            this.btnTipoRazon.Text = "Tipos Razones";
+            this.btnTipoRazon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTipoRazon.UseVisualStyleBackColor = false;
+            this.btnTipoRazon.Click += new System.EventHandler(this.btnTipoRazon_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1168,6 +1191,7 @@
         private System.Windows.Forms.Button btnComboVariable;
         private System.Windows.Forms.Button btnComboGrupo;
         private MetroFramework.Controls.MetroLink lnkConfiguracion;
+        private System.Windows.Forms.Button btnTipoRazon;
     }
 }
 

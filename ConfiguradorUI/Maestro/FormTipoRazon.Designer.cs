@@ -1,6 +1,6 @@
 ﻿namespace ConfiguradorUI.Maestro
 {
-    partial class FormRazon
+    partial class FormTipoRazon
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRazon));
-            this.dgvRazon = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTipoRazon));
+            this.lblNumInactivo = new System.Windows.Forms.Label();
+            this.lblNumActivo = new System.Windows.Forms.Label();
+            this.lblNumReg = new System.Windows.Forms.Label();
+            this.lblIdTipoRazon = new MetroFramework.Controls.MetroLabel();
+            this.dgvTipoRazon = new System.Windows.Forms.DataGridView();
             this.panelFiltro = new MetroFramework.Controls.MetroPanel();
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
@@ -44,7 +48,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tglListarInactivos = new MetroFramework.Controls.MetroToggle();
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
-            this.tabRazon = new MetroFramework.Controls.MetroTabControl();
+            this.tabTipoRazon = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
@@ -54,43 +58,82 @@
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
-            this.lblIdRazon = new MetroFramework.Controls.MetroLabel();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblNumInactivo = new System.Windows.Forms.Label();
-            this.lblNumActivo = new System.Windows.Forms.Label();
-            this.lblNumReg = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTipoRazon = new MetroFramework.Controls.MetroLink();
-            this.cboTipoRazon = new System.Windows.Forms.ComboBox();
-            this.lblTipoRazon = new MetroFramework.Controls.MetroLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRazon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoRazon)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
-            this.tabRazon.SuspendLayout();
+            this.tabTipoRazon.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvRazon
+            // lblNumInactivo
             // 
-            this.dgvRazon.AllowUserToAddRows = false;
-            this.dgvRazon.AllowUserToResizeColumns = false;
-            this.dgvRazon.AllowUserToResizeRows = false;
-            this.dgvRazon.BackgroundColor = System.Drawing.Color.White;
-            this.dgvRazon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvRazon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvRazon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvRazon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvRazon.Location = new System.Drawing.Point(42, 140);
-            this.dgvRazon.MultiSelect = false;
-            this.dgvRazon.Name = "dgvRazon";
-            this.dgvRazon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvRazon.RowHeadersVisible = false;
-            this.dgvRazon.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvRazon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRazon.Size = new System.Drawing.Size(227, 191);
-            this.dgvRazon.TabIndex = 0;
-            this.dgvRazon.SelectionChanged += new System.EventHandler(this.dgvRazon_SelectionChanged);
+            this.lblNumInactivo.AutoSize = true;
+            this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
+            this.lblNumInactivo.Location = new System.Drawing.Point(183, 276);
+            this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
+            this.lblNumInactivo.Name = "lblNumInactivo";
+            this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
+            this.lblNumInactivo.TabIndex = 128;
+            this.lblNumInactivo.Text = "Inactivos: ";
+            // 
+            // lblNumActivo
+            // 
+            this.lblNumActivo.AutoSize = true;
+            this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblNumActivo.Location = new System.Drawing.Point(103, 276);
+            this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
+            this.lblNumActivo.Name = "lblNumActivo";
+            this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
+            this.lblNumActivo.TabIndex = 127;
+            this.lblNumActivo.Text = "Activos: ";
+            // 
+            // lblNumReg
+            // 
+            this.lblNumReg.AutoSize = true;
+            this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblNumReg.Location = new System.Drawing.Point(36, 276);
+            this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
+            this.lblNumReg.Name = "lblNumReg";
+            this.lblNumReg.Size = new System.Drawing.Size(43, 17);
+            this.lblNumReg.TabIndex = 126;
+            this.lblNumReg.Text = "Total: ";
+            // 
+            // lblIdTipoRazon
+            // 
+            this.lblIdTipoRazon.AutoSize = true;
+            this.lblIdTipoRazon.Location = new System.Drawing.Point(537, 31);
+            this.lblIdTipoRazon.Name = "lblIdTipoRazon";
+            this.lblIdTipoRazon.Size = new System.Drawing.Size(0, 0);
+            this.lblIdTipoRazon.TabIndex = 124;
+            // 
+            // dgvTipoRazon
+            // 
+            this.dgvTipoRazon.AllowUserToAddRows = false;
+            this.dgvTipoRazon.AllowUserToResizeColumns = false;
+            this.dgvTipoRazon.AllowUserToResizeRows = false;
+            this.dgvTipoRazon.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTipoRazon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTipoRazon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvTipoRazon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTipoRazon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTipoRazon.Location = new System.Drawing.Point(42, 141);
+            this.dgvTipoRazon.MultiSelect = false;
+            this.dgvTipoRazon.Name = "dgvTipoRazon";
+            this.dgvTipoRazon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTipoRazon.RowHeadersVisible = false;
+            this.dgvTipoRazon.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvTipoRazon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTipoRazon.Size = new System.Drawing.Size(227, 132);
+            this.dgvTipoRazon.TabIndex = 117;
+            this.dgvTipoRazon.SelectionChanged += new System.EventHandler(this.dgvTipoRazon_SelectionChanged);
             // 
             // panelFiltro
             // 
@@ -102,10 +145,10 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(316, 307);
+            this.panelFiltro.Location = new System.Drawing.Point(316, 249);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(542, 44);
-            this.panelFiltro.TabIndex = 3;
+            this.panelFiltro.TabIndex = 120;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
             this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
@@ -195,11 +238,11 @@
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(314, 49);
+            this.panelMantenimiento.Location = new System.Drawing.Point(314, 50);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
-            this.panelMantenimiento.TabIndex = 2;
+            this.panelMantenimiento.TabIndex = 119;
             this.panelMantenimiento.UseCustomBackColor = true;
             this.panelMantenimiento.UseStyleColors = true;
             this.panelMantenimiento.VerticalScrollbarBarColor = true;
@@ -284,10 +327,10 @@
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(140, 120);
+            this.tglListarInactivos.Location = new System.Drawing.Point(140, 121);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 5;
+            this.tglListarInactivos.TabIndex = 122;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -295,28 +338,24 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(42, 118);
+            this.lblListarInactivos.Location = new System.Drawing.Point(42, 119);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
-            this.lblListarInactivos.TabIndex = 4;
+            this.lblListarInactivos.TabIndex = 121;
             this.lblListarInactivos.Text = "Listar inactivos";
             // 
-            // tabRazon
+            // tabTipoRazon
             // 
-            this.tabRazon.Controls.Add(this.tabPagGeneral);
-            this.tabRazon.Location = new System.Drawing.Point(314, 105);
-            this.tabRazon.Name = "tabRazon";
-            this.tabRazon.SelectedIndex = 0;
-            this.tabRazon.Size = new System.Drawing.Size(560, 189);
-            this.tabRazon.TabIndex = 1;
-            this.tabRazon.UseSelectable = true;
+            this.tabTipoRazon.Controls.Add(this.tabPagGeneral);
+            this.tabTipoRazon.Location = new System.Drawing.Point(314, 106);
+            this.tabTipoRazon.Name = "tabTipoRazon";
+            this.tabTipoRazon.SelectedIndex = 0;
+            this.tabTipoRazon.Size = new System.Drawing.Size(560, 141);
+            this.tabTipoRazon.TabIndex = 118;
+            this.tabTipoRazon.UseSelectable = true;
             // 
             // tabPagGeneral
             // 
-            this.tabPagGeneral.Controls.Add(this.panel1);
-            this.tabPagGeneral.Controls.Add(this.btnTipoRazon);
-            this.tabPagGeneral.Controls.Add(this.cboTipoRazon);
-            this.tabPagGeneral.Controls.Add(this.lblTipoRazon);
             this.tabPagGeneral.Controls.Add(this.panel2);
             this.tabPagGeneral.Controls.Add(this.chkActivo);
             this.tabPagGeneral.Controls.Add(this.txtCodigo);
@@ -328,7 +367,7 @@
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(552, 147);
+            this.tabPagGeneral.Size = new System.Drawing.Size(552, 99);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
@@ -352,7 +391,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(5, 127);
+            this.chkActivo.Location = new System.Drawing.Point(2, 75);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 4;
@@ -454,146 +493,52 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(92, 53);
+            this.lblNombreForm.Location = new System.Drawing.Point(92, 54);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(101, 32);
-            this.lblNombreForm.TabIndex = 104;
-            this.lblNombreForm.Text = "Razones";
+            this.lblNombreForm.Size = new System.Drawing.Size(168, 32);
+            this.lblNombreForm.TabIndex = 125;
+            this.lblNombreForm.Text = "Tipos de razón";
             // 
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(30, 41);
+            this.btnCerrar.Location = new System.Drawing.Point(30, 42);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 123;
             this.btnCerrar.UseSelectable = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // lblIdRazon
-            // 
-            this.lblIdRazon.AutoSize = true;
-            this.lblIdRazon.Location = new System.Drawing.Point(539, 28);
-            this.lblIdRazon.Name = "lblIdRazon";
-            this.lblIdRazon.Size = new System.Drawing.Size(0, 0);
-            this.lblIdRazon.TabIndex = 87;
+            this.btnCerrar.MouseCaptureChanged += new System.EventHandler(this.btnCerrar_Click);
             // 
             // errorProv
             // 
             this.errorProv.ContainerControl = this;
             // 
-            // lblNumInactivo
-            // 
-            this.lblNumInactivo.AutoSize = true;
-            this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(183, 334);
-            this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
-            this.lblNumInactivo.Name = "lblNumInactivo";
-            this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
-            this.lblNumInactivo.TabIndex = 116;
-            this.lblNumInactivo.Text = "Inactivos: ";
-            // 
-            // lblNumActivo
-            // 
-            this.lblNumActivo.AutoSize = true;
-            this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(103, 334);
-            this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
-            this.lblNumActivo.Name = "lblNumActivo";
-            this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
-            this.lblNumActivo.TabIndex = 115;
-            this.lblNumActivo.Text = "Activos: ";
-            // 
-            // lblNumReg
-            // 
-            this.lblNumReg.AutoSize = true;
-            this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(36, 334);
-            this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
-            this.lblNumReg.Name = "lblNumReg";
-            this.lblNumReg.Size = new System.Drawing.Size(43, 17);
-            this.lblNumReg.TabIndex = 114;
-            this.lblNumReg.Text = "Total: ";
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(4, 109);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 8);
-            this.panel1.TabIndex = 90;
-            // 
-            // btnTipoRazon
-            // 
-            this.btnTipoRazon.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoRazon.Image")));
-            this.btnTipoRazon.ImageSize = 24;
-            this.btnTipoRazon.Location = new System.Drawing.Point(239, 69);
-            this.btnTipoRazon.Name = "btnTipoRazon";
-            this.btnTipoRazon.Size = new System.Drawing.Size(29, 27);
-            this.btnTipoRazon.TabIndex = 89;
-            this.btnTipoRazon.UseSelectable = true;
-            this.btnTipoRazon.Click += new System.EventHandler(this.btnTipoRazon_Click);
-            // 
-            // cboTipoRazon
-            // 
-            this.cboTipoRazon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoRazon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoRazon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoRazon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoRazon.FormattingEnabled = true;
-            this.cboTipoRazon.Location = new System.Drawing.Point(75, 73);
-            this.cboTipoRazon.Name = "cboTipoRazon";
-            this.cboTipoRazon.Size = new System.Drawing.Size(158, 23);
-            this.cboTipoRazon.TabIndex = 88;
-            this.cboTipoRazon.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblTipoRazon
-            // 
-            this.lblTipoRazon.AutoSize = true;
-            this.lblTipoRazon.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoRazon.Location = new System.Drawing.Point(2, 75);
-            this.lblTipoRazon.Name = "lblTipoRazon";
-            this.lblTipoRazon.Size = new System.Drawing.Size(78, 19);
-            this.lblTipoRazon.TabIndex = 87;
-            this.lblTipoRazon.Text = "Tipo Razón:";
-            this.lblTipoRazon.UseCustomForeColor = true;
-            // 
-            // FormRazon
+            // FormTipoRazon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 387);
+            this.ClientSize = new System.Drawing.Size(900, 330);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
-            this.Controls.Add(this.lblIdRazon);
-            this.Controls.Add(this.dgvRazon);
+            this.Controls.Add(this.lblIdTipoRazon);
+            this.Controls.Add(this.dgvTipoRazon);
             this.Controls.Add(this.panelFiltro);
             this.Controls.Add(this.panelMantenimiento);
             this.Controls.Add(this.tglListarInactivos);
             this.Controls.Add(this.lblListarInactivos);
-            this.Controls.Add(this.tabRazon);
+            this.Controls.Add(this.tabTipoRazon);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
-            this.MaximizeBox = false;
-            this.Name = "FormRazon";
-            this.Resizable = false;
-            this.Load += new System.EventHandler(this.FormRazon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRazon)).EndInit();
+            this.Name = "FormTipoRazon";
+            this.Load += new System.EventHandler(this.FormTipoRazon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoRazon)).EndInit();
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();
             this.panelMantenimiento.ResumeLayout(false);
-            this.tabRazon.ResumeLayout(false);
+            this.tabTipoRazon.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
@@ -604,7 +549,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvRazon;
+        private System.Windows.Forms.Label lblNumInactivo;
+        private System.Windows.Forms.Label lblNumActivo;
+        private System.Windows.Forms.Label lblNumReg;
+        private MetroFramework.Controls.MetroLabel lblIdTipoRazon;
+        private System.Windows.Forms.DataGridView dgvTipoRazon;
         private MetroFramework.Controls.MetroPanel panelFiltro;
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
@@ -618,7 +567,7 @@
         private System.Windows.Forms.Button btnDelete;
         private MetroFramework.Controls.MetroToggle tglListarInactivos;
         private MetroFramework.Controls.MetroLabel lblListarInactivos;
-        private MetroFramework.Controls.MetroTabControl tabRazon;
+        private MetroFramework.Controls.MetroTabControl tabTipoRazon;
         private MetroFramework.Controls.MetroTabPage tabPagGeneral;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroCheckBox chkActivo;
@@ -628,14 +577,6 @@
         private MetroFramework.Controls.MetroLabel lblNombre;
         private System.Windows.Forms.Label lblNombreForm;
         private MetroFramework.Controls.MetroLink btnCerrar;
-        private MetroFramework.Controls.MetroLabel lblIdRazon;
         private System.Windows.Forms.ErrorProvider errorProv;
-        private System.Windows.Forms.Label lblNumInactivo;
-        private System.Windows.Forms.Label lblNumActivo;
-        private System.Windows.Forms.Label lblNumReg;
-        private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroLink btnTipoRazon;
-        private System.Windows.Forms.ComboBox cboTipoRazon;
-        private MetroFramework.Controls.MetroLabel lblTipoRazon;
     }
 }

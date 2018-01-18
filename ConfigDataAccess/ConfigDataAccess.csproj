@@ -72,6 +72,7 @@
     <Compile Include="Maestro\LocationDA.cs" />
     <Compile Include="Maestro\MedioPagoDA.cs" />
     <Compile Include="Maestro\MesaDA.cs" />
+    <Compile Include="Maestro\TipoRazonDA.cs" />
     <Compile Include="Maestro\RazonDA.cs" />
     <Compile Include="Maestro\TipoImpresoraDA.cs" />
     <Compile Include="Maestro\TipoLocationDA.cs" />

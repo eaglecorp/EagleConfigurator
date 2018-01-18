@@ -46,11 +46,8 @@ namespace ConfiguradorUI.Maestro
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
             }
-            var chks = new[] { chkActivo };
-            foreach (var chk in chks)
-            {
-                chk.CheckedChanged += new EventHandler(OnContentChanged);
-            }
+
+            chkActivo.CheckedChanged += new EventHandler(OnContentChanged);
 
             pnlColor.BackColorChanged += new EventHandler(OnContentChanged);
 
@@ -996,8 +993,6 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        #endregion
-
         private void lblColorPanel_Click(object sender, EventArgs e)
         {
             SeleccionarColor();
@@ -1022,5 +1017,8 @@ namespace ConfiguradorUI.Maestro
         {
             lblColorPanel.BackColor = Color.FromArgb(192, 255, 255);
         }
+
+        #endregion
+
     }
 }

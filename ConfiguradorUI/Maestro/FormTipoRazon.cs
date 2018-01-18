@@ -10,54 +10,59 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ConfiguradorUI.Maestro
 {
-    public partial class FormImpresora : MetroForm
+    public partial class FormTipoRazon : MetroForm
     {
+
         #region Variables
         bool isSelected = false;
         bool isChangedRow = false;
         bool isPending = false;
         bool preguntar = true;
+
         public bool actualizar = false;
+
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
         string codSelected = "";
         #endregion
 
-        public FormImpresora()
+        public FormTipoRazon()
         {
             InitializeComponent();
         }
 
         #region Métodos de ventana
 
+        //Método que agrega algunos eventos asociados - otros se asocian mediante el IDE.
         private void addHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
-            var txts = new[] { txtNombre, txtCodigo, txtInfo01, txtMarca, txtModelo, txtIp };
+            var txts = new[] { txtNombre, txtCodigo };
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
+
             }
-            //.TextChanged += new EventHandler(OnContentChanged);
-
-            cboTipoImpresora.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            cboTipoImpresora.IntegralHeight = false;
-            cboTipoImpresora.MaxDropDownItems = ControlHelper.maxDropDownItems;
-            cboTipoImpresora.DropDownWidth = ControlHelper.DropDownWidth(cboTipoImpresora);
-
 
             chkActivo.CheckedChanged += new EventHandler(OnContentChanged);
         }
 
+        //Métodos enlazados a eventos.
         protected void OnContentChanged(object sender, EventArgs e)
         {
+            //Eliminar y agregar eventos... etc etc..
+            //TipoOperacion = TipoOperacionABM.Cambio;
+            //ControlarEventosABM();
+            //if (ContentChanged != null)
+            //{
+            //    ContentChanged(this, new EventArgs());
+            //}
             if (isSelected && isChangedRow == false && TipoOperacion != TipoOperacionABM.Cambio)
             {
                 TipoOperacion = TipoOperacionABM.Cambio;
@@ -70,6 +75,7 @@ namespace ConfiguradorUI.Maestro
             isChangedRow = false;
         }
 
+        //Métodos del CRUD y sus utilitarios - algunos son llamados en eventos.
         private void Commit()
         {
             try
@@ -78,11 +84,12 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt10_impresora();
+                        var obj = new MSTt16_tipo_razon();
                         obj = GetObjeto();
-                        int id = new ImpresoraBL().InsertarImpresora(obj);
-                        if (id > 0)
+                        int id = new TipoRazonBL().InsertarTipoRazon(obj);
+                        if(id > 0)
                             actualizar = true;
+
                         ControlarEventosABM(id);
                     }
                 }
@@ -101,22 +108,23 @@ namespace ConfiguradorUI.Maestro
         {
             if (TipoOperacion == TipoOperacionABM.Eliminar)
             {
-                if (dgvImpresora.RowCount > 0)
+                if (dgvTipoRazon.RowCount > 0)
                 {
-                    if (dgvImpresora.SelectedRows.Count > 0)
+                    if (dgvTipoRazon.SelectedRows.Count > 0)
                     {
                         try
                         {
                             int id = 0;
-                            if (int.TryParse(lblIdImpresora.Text, out id) && id > 0)
+                            if (int.TryParse(lblIdTipoRazon.Text, out id) && id > 0)
                             {
                                 DialogResult rp = MessageBox.Show("¿Seguro de eliminar el registro?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (rp == DialogResult.Yes)
                                 {
-                                    bool validDelete = new UtilBL().ValidarDelete(id, CodValDelete.Impresora_Caja);
+
+                                    bool validDelete = new UtilBL().ValidarDelete(id, CodValDelete.TipoRazon_Razon);
                                     if (validDelete)
                                     {
-                                        new ImpresoraBL().EliminarImpresora(id);
+                                        new TipoRazonBL().EliminarTipoRazon(id);
                                         actualizar = true;
                                         ControlarEventosABM();
                                     }
@@ -152,6 +160,10 @@ namespace ConfiguradorUI.Maestro
         }
         private bool Actualizar()
         {
+            //Esta variable booleana se usa en algunos para controlar la validez
+            // del reg, por ejemplo, cuando el usuario quiere salir
+            //y tiene una modificación pendiente(pero si no es válida no sale)
+            //en esa caso usaremos esta variables, en otras no.
             bool isValid = false;
             try
             {
@@ -159,16 +171,15 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-
-                        var obj = new MSTt10_impresora();
+                        var obj = new MSTt16_tipo_razon();
                         obj = GetObjeto();
                         int id = 0;
-                        if (int.TryParse(lblIdImpresora.Text, out id))
+                        if (int.TryParse(lblIdTipoRazon.Text, out id))
                         {
-                            obj.id_impresora = id;
-                            new ImpresoraBL().ActualizarImpresora(obj);
+                            obj.id_tipo_razon = id;
+                            new TipoRazonBL().ActualizarTipoRazon(obj);
                             actualizar = true;
-                            ControlarEventosABM(obj.id_impresora);
+                            ControlarEventosABM(obj.id_tipo_razon);
                         }
                         isValid = true;
                     }
@@ -190,13 +201,13 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (esValido())
                     {
-                        var obj = new MSTt10_impresora();
+                        var obj = new MSTt16_tipo_razon();
                         obj = GetObjeto();
                         int id = 0;
-                        if (int.TryParse(lblIdImpresora.Text, out id))
+                        if (int.TryParse(lblIdTipoRazon.Text, out id))
                         {
-                            obj.id_impresora = id;
-                            new ImpresoraBL().ActualizarImpresora(obj);
+                            obj.id_tipo_razon = id;
+                            new TipoRazonBL().ActualizarTipoRazon(obj);
                             actualizar = true;
                         }
                         isValid = true;
@@ -211,22 +222,16 @@ namespace ConfiguradorUI.Maestro
             return isValid;
         }
 
-        private MSTt10_impresora GetObjeto()
+        private MSTt16_tipo_razon GetObjeto()
         {
-            var obj = new MSTt10_impresora();
+            var obj = new MSTt16_tipo_razon();
             try
             {
                 obj.txt_desc = txtNombre.Text.Trim();
-                obj.cod_impresora = txtCodigo.Text.Trim();
-                obj.txt_ip = txtIp.Text.Trim();
-                obj.txt_marca = txtMarca.Text.Trim();
-                obj.txt_modelo = txtModelo.Text.Trim();
-                obj.txt_info01 = txtInfo01.Text.Trim();
+                obj.cod_tipo_razon = txtCodigo.Text.Trim();
 
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
-
-                obj.id_tipo_impresora = int.Parse(cboTipoImpresora.SelectedValue.ToString());
 
             }
             catch (Exception e)
@@ -236,58 +241,48 @@ namespace ConfiguradorUI.Maestro
 
             return obj;
         }
-        private void SetObjeto(MSTt10_impresora obj)
+        private void SetObjeto(MSTt16_tipo_razon obj)
         {
             try
             {
-
+                // Variable de la lógica de cambio.
+                // Indica que la asignación de los datos de un reg se está dando
+                // porque se cambió de fila.
                 isChangedRow = true;
                 LimpiarForm();
 
                 chkActivo.Checked = (obj.id_estado == Estado.IdActivo) ? true : false;
 
-                lblIdImpresora.Text = obj.id_impresora.ToString();
-                codSelected = obj.cod_impresora;
+                lblIdTipoRazon.Text = obj.id_tipo_razon.ToString();
+                codSelected = obj.cod_tipo_razon;
 
                 txtNombre.Text = obj.txt_desc;
-                txtCodigo.Text = obj.cod_impresora;
-                txtMarca.Text = obj.txt_marca;
-                txtModelo.Text = obj.txt_modelo;
-                txtInfo01.Text = obj.txt_info01;
-                txtIp.Text = obj.txt_ip;
-
-                cboTipoImpresora.SelectedValue = obj.id_tipo_impresora;
+                txtCodigo.Text = obj.cod_tipo_razon;
 
             }
             catch (Exception e)
             {
                 MessageBox.Show(this, "Excepción en el Set: " + e.Message);
             }
-
         }
 
         private bool esValido()
         {
             //Por ver - validar combos.
-            bool no_error = true;
             errorProv.Clear();
+            bool no_error = true;
             //validando los controles para el tabPageGeneral
             //Foreach en caso se requiera validar más controles - por ver.
 
             if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
             {
-                tabImpresora.SelectedTab = tabPagGeneral;
+                tabTipoRazon.SelectedTab = tabPagGeneral;
                 errorProv.SetError(txtNombre, "Este campo es requerido.");
                 txtNombre.Focus();
                 no_error = false;
             }
 
-            if (!int.TryParse(cboTipoImpresora.SelectedValue?.ToString(), out int id))
-            {
-                errorProv.SetError(cboTipoImpresora, "Este campo es requerido.");
-                cboTipoImpresora.Focus();
-                no_error = false;
-            }
+
             #region código único
 
             if (no_error)
@@ -295,12 +290,12 @@ namespace ConfiguradorUI.Maestro
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new ImpresoraBL().ImpresoraXCod(cod);
+                    var obj = new TipoRazonBL().TipoRazonXCod(cod);
                     if (TipoOperacion == TipoOperacionABM.Insertar)
                     {
-                        if (obj != null && obj.id_impresora > 0)
+                        if (obj != null && obj.id_tipo_razon > 0)
                         {
-                            tabImpresora.SelectedTab = tabPagGeneral;
+                            tabTipoRazon.SelectedTab = tabPagGeneral;
                             MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             errorProv.SetError(txtCodigo, "El código ya está en uso.");
                             txtCodigo.Focus();
@@ -309,9 +304,9 @@ namespace ConfiguradorUI.Maestro
                     }
                     else if (TipoOperacion == TipoOperacionABM.Modificar)
                     {
-                        if (cod != codSelected && obj != null && obj.id_impresora > 0)
+                        if (cod != codSelected && obj != null && obj.id_tipo_razon > 0)
                         {
-                            tabImpresora.SelectedTab = tabPagGeneral;
+                            tabTipoRazon.SelectedTab = tabPagGeneral;
                             MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             errorProv.SetError(txtCodigo, "El código ya está en uso.");
                             txtCodigo.Focus();
@@ -323,28 +318,20 @@ namespace ConfiguradorUI.Maestro
 
             #endregion
 
-            if (no_error && !string.IsNullOrEmpty(txtIp.Text.Trim()))
-            {
-                if (!IPAddress.TryParse(txtIp.Text.Trim(), out IPAddress ip))
-                {
-                    errorProv.SetError(txtIp, "La dirección IP es incorrecta.");
-                    txtIp.Focus();
-                    no_error = false;
-                }
-            }
-
+            //Se podría validar que no tenga hijas al desactivar.
             #region validación delete
 
             if (no_error && !chkActivo.Checked && TipoOperacion == TipoOperacionABM.Modificar)
             {
-                if (int.TryParse(lblIdImpresora.Text, out int idImp))
+                int id = 0;
+                if (int.TryParse(lblIdTipoRazon.Text, out id))
                 {
                     bool validDelete = false;
-                    validDelete = new UtilBL().ValidarDelete(idImp, CodValDelete.Impresora_Caja);
+                    validDelete = new UtilBL().ValidarDelete(id, CodValDelete.TipoRazon_Razon);
                     if (!validDelete)
                     {
                         MessageBox.Show(this, "Este registro no se puede desactivar porque se usa en otro lado.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        tabImpresora.SelectedTab = tabPagGeneral;
+                        tabTipoRazon.SelectedTab = tabPagGeneral;
                         errorProv.SetError(chkActivo, "No puede desactivarlo, está usándose en otro lado.");
                         chkActivo.Focus();
                         no_error = false;
@@ -359,7 +346,6 @@ namespace ConfiguradorUI.Maestro
 
 
             #endregion
-
             return no_error;
         }
         private void Filtrar(int criterio, string filtro)
@@ -371,34 +357,33 @@ namespace ConfiguradorUI.Maestro
 
                 if (criterio == Filtro.Nombre)
                 {
-                    DataGridViewRow row = dgvImpresora.Rows
+                    DataGridViewRow row = dgvTipoRazon.Rows
                     .Cast<DataGridViewRow>()
                     .Where(r => r.Cells["NOMBRE"].Value.ToString().ToUpper().Contains(filtro.ToUpper()))
                     .FirstOrDefault();
                     if (row != null)
                     {
                         index = row.Index;
-                        if (dgvImpresora.Rows.Count > 0)
+                        if (dgvTipoRazon.Rows.Count > 0)
                         {
-                            dgvImpresora.Rows[index].Selected = true;
-                            dgvImpresora.FirstDisplayedScrollingRowIndex = index;
-
+                            dgvTipoRazon.Rows[index].Selected = true;
+                            dgvTipoRazon.FirstDisplayedScrollingRowIndex = index;
                         }
                     }
                 }
                 else if (criterio == Filtro.Codigo)
                 {
-                    DataGridViewRow row = dgvImpresora.Rows
+                    DataGridViewRow row = dgvTipoRazon.Rows
                     .Cast<DataGridViewRow>()
                     .Where(r => r.Cells["CODIGO"].Value.ToString().ToUpper().Contains(filtro.ToUpper()))
                     .FirstOrDefault();
                     if (row != null)
                     {
                         index = row.Index;
-                        if (dgvImpresora.Rows.Count > 0)
+                        if (dgvTipoRazon.Rows.Count > 0)
                         {
-                            dgvImpresora.Rows[index].Selected = true;
-                            dgvImpresora.FirstDisplayedScrollingRowIndex = index;
+                            dgvTipoRazon.Rows[index].Selected = true;
+                            dgvTipoRazon.FirstDisplayedScrollingRowIndex = index;
                         }
                     }
                 }
@@ -415,17 +400,17 @@ namespace ConfiguradorUI.Maestro
             try
             {
                 //si no haya alguna fila con el id enviado, signfica que no está el id
-                DataGridViewRow row = dgvImpresora.Rows
+                DataGridViewRow row = dgvTipoRazon.Rows
                 .Cast<DataGridViewRow>()
-                .Where(r => r.Cells["id_impresora"].Value.ToString().Equals(id.ToString()))
+                .Where(r => r.Cells["id_tipo_razon"].Value.ToString().Equals(id.ToString()))
                 .FirstOrDefault();
                 if (row != null)
                 {
                     index = row.Index;
-                    if (dgvImpresora.Rows.Count > 0)
+                    if (dgvTipoRazon.Rows.Count > 0)
                     {
-                        dgvImpresora.Rows[index].Selected = true;
-                        dgvImpresora.FirstDisplayedScrollingRowIndex = index;
+                        dgvTipoRazon.Rows[index].Selected = true;
+                        dgvTipoRazon.FirstDisplayedScrollingRowIndex = index;
                     }
                 }
             }
@@ -437,14 +422,14 @@ namespace ConfiguradorUI.Maestro
         private void SeleccionarRegistro()
         {
             isPending = false;
-            if (dgvImpresora.RowCount > 0 && dgvImpresora.SelectedRows.Count > 0 && dgvImpresora.CurrentRow.Index != -1)
+            if (dgvTipoRazon.RowCount > 0 && dgvTipoRazon.SelectedRows.Count > 0 && dgvTipoRazon.CurrentRow.Index != -1)
             {
                 int id = 0;
                 if (int.TryParse(GetIdSelected(), out id))
                 {
                     if (id > 0)
                     {
-                        var obj = new ImpresoraBL().ImpresoraXId(id);
+                        var obj = new TipoRazonBL().TipoRazonXId(id);
                         if (obj != null)
                         {
                             isSelected = false;
@@ -465,9 +450,9 @@ namespace ConfiguradorUI.Maestro
             string id = "-1";
             try
             {
-                if (dgvImpresora.SelectedRows.Count > 0 && dgvImpresora.Rows.Count > 0)
+                if (dgvTipoRazon.SelectedRows.Count > 0 && dgvTipoRazon.Rows.Count > 0)
                 {
-                    id = dgvImpresora.SelectedRows[0].Cells[0].Value.ToString();
+                    id = dgvTipoRazon.SelectedRows[0].Cells[0].Value.ToString();
                 }
             }
             catch (Exception e)
@@ -478,6 +463,7 @@ namespace ConfiguradorUI.Maestro
         }
 
 
+        //Métodos utilitarios de lógica del Form
         private void CargarComboFiltro()
         {
             try
@@ -497,15 +483,11 @@ namespace ConfiguradorUI.Maestro
         private void LimpiarForm()
         {
             isSelected = false;
-            lblIdImpresora.Text = 0 + "";
+            lblIdTipoRazon.Text = 0 + "";
             codSelected = "";
 
             txtNombre.Clear();
             txtCodigo.Clear();
-            txtMarca.Clear();
-            txtModelo.Clear();
-            txtInfo01.Clear();
-            txtIp.Clear();
 
             if (TipoOperacion == TipoOperacionABM.Nuevo)
                 chkActivo.Enabled = false;
@@ -513,9 +495,6 @@ namespace ConfiguradorUI.Maestro
                 chkActivo.Enabled = true;
 
             chkActivo.Checked = true;
-
-            if (cboTipoImpresora.Items.Count > 0) cboTipoImpresora.SelectedIndex = 0;
-
         }
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
         {
@@ -534,7 +513,7 @@ namespace ConfiguradorUI.Maestro
                 isPending = false;
                 ControlarBotones(true, true, false, false, true, true);
                 errorProv.Clear();
-                //tabProducto.SelectedTab = tabPagGeneral;
+                //tab
             }
             else
             {
@@ -543,7 +522,7 @@ namespace ConfiguradorUI.Maestro
                     ControlarBotones(false, false, true, true, false, false);
                     errorProv.Clear();
                     LimpiarForm();
-                    tabImpresora.SelectedTab = tabPagGeneral;
+                    tabTipoRazon.SelectedTab = tabPagGeneral;
                     txtNombre.Focus();
                 }
                 else
@@ -558,7 +537,7 @@ namespace ConfiguradorUI.Maestro
 
                         int idInsertado = (int)id;
                         SeleccionarPorId(idInsertado);
-                        tabImpresora.SelectedTab = tabPagGeneral;
+                        tabTipoRazon.SelectedTab = tabPagGeneral;
                         btnNuevo.Focus();
                     }
                     else
@@ -570,7 +549,7 @@ namespace ConfiguradorUI.Maestro
                             ControlarBotones(true, true, false, false, true, true);
                             LimpiarForm();
                             if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
-                            tabImpresora.SelectedTab = tabPagGeneral;
+                            tabTipoRazon.SelectedTab = tabPagGeneral;
                             btnNuevo.Focus();
                         }
                         else
@@ -582,7 +561,7 @@ namespace ConfiguradorUI.Maestro
                                 errorProv.Clear();
                                 LimpiarForm();
                                 SeleccionarRegistro();
-                                tabImpresora.SelectedTab = tabPagGeneral;
+                                tabTipoRazon.SelectedTab = tabPagGeneral;
                                 btnNuevo.Focus();
                             }
                             else
@@ -605,7 +584,7 @@ namespace ConfiguradorUI.Maestro
 
                                         if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
 
-                                        tabImpresora.SelectedTab = tabPagGeneral;
+                                        tabTipoRazon.SelectedTab = tabPagGeneral;
 
                                         if (id != null)
                                         {
@@ -621,61 +600,24 @@ namespace ConfiguradorUI.Maestro
                 }
             }
         }
-        private void MantenerEstadoABM()
-        {
-            if (TipoOperacion == TipoOperacionABM.Nuevo)
-            {
-                ControlarBotones(false, false, true, true, false, false);
-            }
-            else if (TipoOperacion == TipoOperacionABM.Cambio)
-            {
-                ControlarBotones(false, false, true, true, false, false);
-                isPending = true;
-            }
-            else if (TipoOperacion == TipoOperacionABM.No_Action)
-            {
-                isPending = false;
-                ControlarBotones(true, true, false, false, true, true);
-            }
-            else
-            {
-                isPending = false;
-                ControlarBotones(true, true, false, false, true, true);
-            }
-        }
-        private void CargarCombos()
-        {
-            try
-            {
-                cboTipoImpresora.DataSource = null;
-                cboTipoImpresora.DisplayMember = "txt_desc";
-                cboTipoImpresora.ValueMember = "id_tipo_impresora";
-                cboTipoImpresora.DataSource = new TipoImpresoraBL().ListaTipoImpresora(Estado.IdActivo, false, true);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(this, "Ocurrió una excepción al cargar los combos: " + e.Message, "MENSAJE");
-            }
-        }
         private void CargarGrilla(int? id_estado = null)
         {
             try
             {
-                var lista = new ImpresoraBL().ListaImpresora(id_estado, true);
-                var listaView = lista.Select(x => new { x.id_impresora, CODIGO = x.cod_impresora, NOMBRE = x.txt_desc })
-               .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
+                var lista = new TipoRazonBL().ListaTipoRazon(id_estado, true);
+                var listaView = lista.Select(x => new { x.id_tipo_razon, CODIGO = x.cod_tipo_razon, NOMBRE = x.txt_desc })
+                .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 
                 if (lista != null)
                 {
                     ContarEstados(lista);
-                    dgvImpresora.DataSource = listaView;
-                    dgvImpresora.Columns["id_impresora"].Visible = false;
+                    dgvTipoRazon.DataSource = listaView;
+                    dgvTipoRazon.Columns["id_tipo_razon"].Visible = false;
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show(this, $"Excepción en cargar la grilla: {e.Message}");
-
             }
         }
         private void ActualizarGrilla(int? id_estado = null)
@@ -684,29 +626,24 @@ namespace ConfiguradorUI.Maestro
         }
         private void ConfigurarGrilla()
         {
-            dgvImpresora.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#ecf0f1");
-            dgvImpresora.AlternatingRowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FAFAFA");
+            dgvTipoRazon.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#ecf0f1");
+            dgvTipoRazon.AlternatingRowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FAFAFA");
 
             //Cabecera
-            dgvImpresora.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#00B2EE");
-            dgvImpresora.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvTipoRazon.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#00B2EE");
+            dgvTipoRazon.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             //Selección
-            dgvImpresora.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
+            dgvTipoRazon.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
 
             //Para que no sobreescriba los estilos de cabecera
-            dgvImpresora.EnableHeadersVisualStyles = false;
+            dgvTipoRazon.EnableHeadersVisualStyles = false;
         }
         private void SetMaxLengthTxt()
         {
             txtCodigo.MaxLength = 10;
-            txtNombre.MaxLength = 100;
-            txtIp.MaxLength = 15;
-            txtMarca.MaxLength = 100;
-            txtModelo.MaxLength = 100;
-            txtInfo01.MaxLength = 100;
-
+            txtNombre.MaxLength = 50;
         }
-        private void ContarEstados(List<MSTt10_impresora> lista)
+        private void ContarEstados(List<MSTt16_tipo_razon> lista)
         {
             try
             {
@@ -734,12 +671,11 @@ namespace ConfiguradorUI.Maestro
 
         #region Eventos de ventana
 
-        private void FormImpresora_Load(object sender, EventArgs e)
+        private void FormTipoRazon_Load(object sender, EventArgs e)
         {
-            lblIdImpresora.Visible = false;
+            lblIdTipoRazon.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();
-            CargarCombos();
             LimpiarForm();
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
@@ -827,7 +763,13 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        private void dgvImpresora_SelectionChanged(object sender, EventArgs e)
+        private void cboFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFiltro.Clear();
+            txtFiltro.Focus();
+        }
+
+        private void dgvTipoRazon_SelectionChanged(object sender, EventArgs e)
         {
             errorProv.Clear();
             if (isPending)
@@ -839,14 +781,23 @@ namespace ConfiguradorUI.Maestro
                     if (rp == DialogResult.Yes)
                     {
                         TipoOperacion = TipoOperacionABM.Modificar;
+                        //al intentar cambiar la fila si no es válido
+                        //la actualización, no pasará hasta que sea válido
+                        //o se dea rollback.
                         bool isValid = false;
                         string idSelect = GetIdSelected();
 
-                        if (idSelect != lblIdImpresora.Text && idSelect != "-1")
+                        //Indica que está seleccionado otro registro
+                        //que el que se quiere modificar
+                        if (idSelect != lblIdTipoRazon.Text && idSelect != "-1")
                         {
                             isValid = Actualizar();
                             if (isValid)
                             {
+                                //Sobreescribe el indice indicado
+                                //por el indice que corresponde al seleccionado
+                                //que es diferente respecto quién está en el proceso.
+                                //manejar 
                                 SeleccionarPorId(int.Parse(idSelect));
                             }
                         }
@@ -854,7 +805,6 @@ namespace ConfiguradorUI.Maestro
                         {
                             Actualizar();
                         }
-
 
                         preguntar = !checkDialog.check;
                     }
@@ -864,16 +814,20 @@ namespace ConfiguradorUI.Maestro
                         TipoOperacion = TipoOperacionABM.No_Action;
                         ControlarEventosABM();
                     }
+
                 }
                 else if (preguntar == false)
                 {
                     TipoOperacion = TipoOperacionABM.Modificar;
+                    //al intentar cambiar la fila si no es válido
+                    //la actualización, no pasará hasta que sea válido
+                    //o se dea rollback.
                     bool isValid = false;
                     string idSelect = GetIdSelected();
 
                     //Indica que está seleccionado otro registro
                     //que el que se quiere modificar
-                    if (idSelect != lblIdImpresora.Text && idSelect != "-1")
+                    if (idSelect != lblIdTipoRazon.Text && idSelect != "-1")
                     {
                         isValid = Actualizar();
                         if (isValid)
@@ -893,12 +847,6 @@ namespace ConfiguradorUI.Maestro
                 TipoOperacion = TipoOperacionABM.No_Action;
                 ControlarEventosABM();
             }
-        }
-
-        private void cboFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtFiltro.Clear();
-            txtFiltro.Focus();
         }
 
         private void tglListarInactivos_Click(object sender, EventArgs e)
@@ -985,44 +933,6 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        #region Eventos ventana emergente
-
-        private void btnTipoImpresora_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                int oldValue = 0;
-                int op = TipoOperacion;
-
-                if (cboTipoImpresora.SelectedValue != null)
-                    oldValue = int.Parse(cboTipoImpresora.SelectedValue.ToString());
-
-                var frm = new FormTipoImpresora();
-                frm.ShowDialog();
-
-                if (frm.actualizar)
-                {
-                    cboTipoImpresora.DataSource = null;
-                    cboTipoImpresora.DisplayMember = "txt_desc";
-                    cboTipoImpresora.ValueMember = "id_tipo_impresora";
-                    cboTipoImpresora.DataSource = new TipoImpresoraBL().ListaTipoImpresora(Estado.IdActivo, false, true);
-                    cboTipoImpresora.DropDownWidth = ControlHelper.DropDownWidth(cboTipoImpresora);
-                    cboTipoImpresora.SelectedValue = oldValue;
-                    TipoOperacion = op;
-                    MantenerEstadoABM();
-                }
-
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        #endregion
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if (isPending)
@@ -1068,6 +978,7 @@ namespace ConfiguradorUI.Maestro
                 CerrarForm();
             }
         }
+
 
         #endregion
     }

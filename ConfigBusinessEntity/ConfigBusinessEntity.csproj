@@ -82,10 +82,16 @@
     <Compile Include="Fiscal\FISt01_control_numeracion.cs" />
     <Compile Include="Fiscal\FISt02_nivel.cs" />
     <Compile Include="Fiscal\FISt03_tipo_numeracion.cs" />
+    <Compile Include="Fiscal\FISt04_parametro_fiscal.cs" />
+    <Compile Include="Fiscal\FISt05_configuracion_fiscal_caja.cs" />
     <Compile Include="General\GRLt01_parametro.cs" />
     <Compile Include="General\GRLt02_estado.cs" />
     <Compile Include="General\GRLt03_horario.cs" />
     <Compile Include="General\GRLt04_configuracion_caja.cs" />
+    <Compile Include="Labor\LABt01_asistencia.cs" />
+    <Compile Include="Labor\LABt02_asistencia_ajustada.cs" />
+    <Compile Include="Labor\LABt03_emp_turno.cs" />
+    <Compile Include="Labor\LABt04_emp_turno_dtl.cs" />
     <Compile Include="Maestro\MSTt01_medio_pago.cs" />
     <Compile Include="Maestro\MSTt02_descuento.cs" />
     <Compile Include="Maestro\MSTt03_tipo_orden.cs" />
@@ -101,12 +107,15 @@
     <Compile Include="Maestro\MSTt13_turno.cs" />
     <Compile Include="Maestro\MSTt14_mesa.cs" />
     <Compile Include="Maestro\MSTt15_estado_mesa.cs" />
+    <Compile Include="Maestro\MSTt16_tipo_razon.cs" />
     <Compile Include="Persona\PERt01_usuario.cs" />
     <Compile Include="Persona\PERt02_cliente.cs" />
     <Compile Include="Persona\PERt03_proveedor.cs" />
     <Compile Include="Persona\PERt04_empleado.cs" />
     <Compile Include="Persona\PERt05_categoria_emp.cs" />
     <Compile Include="Persona\PERt06_clase_emp.cs" />
+    <Compile Include="Persona\PERt07_trabajo.cs" />
+    <Compile Include="Persona\PERt08_emp_trabajo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Producto\PROt01_marca.cs" />
     <Compile Include="Producto\PROt02_modelo.cs" />
@@ -169,6 +178,7 @@
     <Compile Include="Transaccion\TNSt07_medio_pago_dtl.cs" />
     <Compile Include="Transaccion\TNSt08_descuento_dtl.cs" />
     <Compile Include="Reporte\TOTt01_total_diario_vta.cs" />
+    <Compile Include="Reporte\TOTt02_total_diario_prod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -34,6 +34,14 @@ namespace ConfigBusinessEntity
 
         public decimal? monto_max { get; set; }
 
+        public int sn_dscto_porc { get; set; }
+
+        public int sn_dscto_porc_abierto { get; set; }
+
+        public int sn_dscto_mto { get; set; }
+
+        public int sn_dscto_mto_abierto { get; set; }
+
         public int? sn_descuen_periodo { get; set; }
 
         public int? sn_descuen_dia { get; set; }

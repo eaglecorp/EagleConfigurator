@@ -12,6 +12,7 @@ namespace ConfigBusinessEntity
         public MSTt13_turno()
         {
             CSHt01_caja_dtl = new HashSet<CSHt01_caja_dtl>();
+            LABt03_emp_turno = new HashSet<LABt03_emp_turno>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
         }
 
@@ -40,6 +41,9 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CSHt01_caja_dtl> CSHt01_caja_dtl { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LABt03_emp_turno> LABt03_emp_turno { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt04_comp_emitido> TNSt04_comp_emitido { get; set; }

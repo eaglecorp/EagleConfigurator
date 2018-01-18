@@ -7,7 +7,6 @@ namespace ConfigBusinessEntity
 
     public partial class EagleContext : DbContext
     {
-
         public EagleContext(string connectionString)
             : base(connectionString)
         {
@@ -36,10 +35,16 @@ namespace ConfigBusinessEntity
         public virtual DbSet<FISt01_control_numeracion> FISt01_control_numeracion { get; set; }
         public virtual DbSet<FISt02_nivel> FISt02_nivel { get; set; }
         public virtual DbSet<FISt03_tipo_numeracion> FISt03_tipo_numeracion { get; set; }
+        public virtual DbSet<FISt04_parametro_fiscal> FISt04_parametro_fiscal { get; set; }
+        public virtual DbSet<FISt05_configuracion_fiscal_caja> FISt05_configuracion_fiscal_caja { get; set; }
         public virtual DbSet<GRLt01_parametro> GRLt01_parametro { get; set; }
         public virtual DbSet<GRLt02_estado> GRLt02_estado { get; set; }
         public virtual DbSet<GRLt03_horario> GRLt03_horario { get; set; }
         public virtual DbSet<GRLt04_configuracion_caja> GRLt04_configuracion_caja { get; set; }
+        public virtual DbSet<LABt01_asistencia> LABt01_asistencia { get; set; }
+        public virtual DbSet<LABt02_asistencia_ajustada> LABt02_asistencia_ajustada { get; set; }
+        public virtual DbSet<LABt03_emp_turno> LABt03_emp_turno { get; set; }
+        public virtual DbSet<LABt04_emp_turno_dtl> LABt04_emp_turno_dtl { get; set; }
         public virtual DbSet<MSTt01_medio_pago> MSTt01_medio_pago { get; set; }
         public virtual DbSet<MSTt02_descuento> MSTt02_descuento { get; set; }
         public virtual DbSet<MSTt03_tipo_orden> MSTt03_tipo_orden { get; set; }
@@ -55,12 +60,15 @@ namespace ConfigBusinessEntity
         public virtual DbSet<MSTt13_turno> MSTt13_turno { get; set; }
         public virtual DbSet<MSTt14_mesa> MSTt14_mesa { get; set; }
         public virtual DbSet<MSTt15_estado_mesa> MSTt15_estado_mesa { get; set; }
+        public virtual DbSet<MSTt16_tipo_razon> MSTt16_tipo_razon { get; set; }
         public virtual DbSet<PERt01_usuario> PERt01_usuario { get; set; }
         public virtual DbSet<PERt02_cliente> PERt02_cliente { get; set; }
         public virtual DbSet<PERt03_proveedor> PERt03_proveedor { get; set; }
         public virtual DbSet<PERt04_empleado> PERt04_empleado { get; set; }
         public virtual DbSet<PERt05_categoria_emp> PERt05_categoria_emp { get; set; }
         public virtual DbSet<PERt06_clase_emp> PERt06_clase_emp { get; set; }
+        public virtual DbSet<PERt07_trabajo> PERt07_trabajo { get; set; }
+        public virtual DbSet<PERt08_emp_trabajo> PERt08_emp_trabajo { get; set; }
         public virtual DbSet<PROt01_marca> PROt01_marca { get; set; }
         public virtual DbSet<PROt02_modelo> PROt02_modelo { get; set; }
         public virtual DbSet<PROt03_familia> PROt03_familia { get; set; }
@@ -122,6 +130,7 @@ namespace ConfigBusinessEntity
         public virtual DbSet<TNSt07_medio_pago_dtl> TNSt07_medio_pago_dtl { get; set; }
         public virtual DbSet<TNSt08_descuento_dtl> TNSt08_descuento_dtl { get; set; }
         public virtual DbSet<TOTt01_total_diario_vta> TOTt01_total_diario_vta { get; set; }
+        public virtual DbSet<TOTt02_total_diario_prod> TOTt02_total_diario_prod { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -552,6 +561,27 @@ namespace ConfigBusinessEntity
                 .WithRequired(e => e.FISt03_tipo_numeracion)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<FISt04_parametro_fiscal>()
+                .Property(e => e.cod_parametro_fiscal)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<FISt04_parametro_fiscal>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<FISt04_parametro_fiscal>()
+                .Property(e => e.valor_default)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<FISt04_parametro_fiscal>()
+                .HasMany(e => e.FISt05_configuracion_fiscal_caja)
+                .WithRequired(e => e.FISt04_parametro_fiscal)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<FISt05_configuracion_fiscal_caja>()
+                .Property(e => e.valor)
+                .IsUnicode(false);
+
             modelBuilder.Entity<GRLt01_parametro>()
                 .Property(e => e.cod_parametro)
                 .IsUnicode(false);
@@ -594,6 +624,96 @@ namespace ConfigBusinessEntity
 
             modelBuilder.Entity<GRLt04_configuracion_caja>()
                 .Property(e => e.txt_pathlog)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt01_asistencia>()
+                .Property(e => e.txt_obsv)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt01_asistencia>()
+                .Property(e => e.txt_photo_path_clock_in)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt01_asistencia>()
+                .Property(e => e.txt_photo_path_clock_out)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt01_asistencia>()
+                .Property(e => e.clock_in_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt01_asistencia>()
+                .Property(e => e.break_in_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt01_asistencia>()
+                .Property(e => e.break_out_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt01_asistencia>()
+                .Property(e => e.clock_out_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt01_asistencia>()
+                .HasMany(e => e.LABt02_asistencia_ajustada)
+                .WithRequired(e => e.LABt01_asistencia)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.txt_obsv)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.txt_photo_path_clock_in_ajust)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.txt_photo_path_clock_out_ajust)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.clock_in_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.clock_in_status_ajust)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.break_in_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.break_in_status_ajust)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.break_out_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.break_out_status_ajust)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.clock_out_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt02_asistencia_ajustada>()
+                .Property(e => e.clock_out_status_ajust)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt03_emp_turno>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt03_emp_turno>()
+                .HasMany(e => e.LABt04_emp_turno_dtl)
+                .WithRequired(e => e.LABt03_emp_turno)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<LABt04_emp_turno_dtl>()
+                .Property(e => e.txt_estado)
                 .IsUnicode(false);
 
             modelBuilder.Entity<MSTt01_medio_pago>()
@@ -699,6 +819,11 @@ namespace ConfigBusinessEntity
             modelBuilder.Entity<MSTt05_razon>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<MSTt05_razon>()
+                .HasMany(e => e.LABt02_asistencia_ajustada)
+                .WithRequired(e => e.MSTt05_razon)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MSTt06_impuesto>()
                 .Property(e => e.cod_impuesto)
@@ -956,6 +1081,11 @@ namespace ConfigBusinessEntity
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MSTt12_caja>()
+                .HasMany(e => e.FISt05_configuracion_fiscal_caja)
+                .WithRequired(e => e.MSTt12_caja)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<MSTt12_caja>()
                 .HasMany(e => e.GRLt04_configuracion_caja)
                 .WithRequired(e => e.MSTt12_caja)
                 .WillCascadeOnDelete(false);
@@ -978,6 +1108,11 @@ namespace ConfigBusinessEntity
 
             modelBuilder.Entity<MSTt13_turno>()
                 .HasMany(e => e.CSHt01_caja_dtl)
+                .WithRequired(e => e.MSTt13_turno)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<MSTt13_turno>()
+                .HasMany(e => e.LABt03_emp_turno)
                 .WithRequired(e => e.MSTt13_turno)
                 .WillCascadeOnDelete(false);
 
@@ -1013,6 +1148,23 @@ namespace ConfigBusinessEntity
             modelBuilder.Entity<MSTt15_estado_mesa>()
                 .HasMany(e => e.MSTt14_mesa)
                 .WithRequired(e => e.MSTt15_estado_mesa)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<MSTt16_tipo_razon>()
+                .Property(e => e.cod_tipo_razon)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<MSTt16_tipo_razon>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<MSTt16_tipo_razon>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<MSTt16_tipo_razon>()
+                .HasMany(e => e.MSTt05_razon)
+                .WithRequired(e => e.MSTt16_tipo_razon)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERt01_usuario>()
@@ -1546,6 +1698,22 @@ namespace ConfigBusinessEntity
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERt04_empleado>()
+                .HasMany(e => e.LABt01_asistencia)
+                .WithOptional(e => e.PERt04_empleado)
+                .HasForeignKey(e => e.id_emp_autorizador);
+
+            modelBuilder.Entity<PERt04_empleado>()
+                .HasMany(e => e.LABt02_asistencia_ajustada)
+                .WithRequired(e => e.PERt04_empleado)
+                .HasForeignKey(e => e.id_emp_autorizador)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PERt04_empleado>()
+                .HasMany(e => e.LABt03_emp_turno)
+                .WithRequired(e => e.PERt04_empleado)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PERt04_empleado>()
                 .HasMany(e => e.PERt01_usuario)
                 .WithRequired(e => e.PERt04_empleado)
                 .WillCascadeOnDelete(false);
@@ -1559,6 +1727,16 @@ namespace ConfigBusinessEntity
                 .HasMany(e => e.TNSt04_comp_emitido1)
                 .WithOptional(e => e.PERt04_empleado1)
                 .HasForeignKey(e => e.id_emp_autorizador);
+
+            modelBuilder.Entity<PERt04_empleado>()
+                .HasMany(e => e.TNSt08_descuento_dtl)
+                .WithOptional(e => e.PERt04_empleado)
+                .HasForeignKey(e => e.id_emp_autorizador);
+
+            modelBuilder.Entity<PERt04_empleado>()
+                .HasMany(e => e.PERt08_emp_trabajo)
+                .WithRequired(e => e.PERt04_empleado)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERt05_categoria_emp>()
                 .Property(e => e.cod_categoria_emp)
@@ -1591,6 +1769,36 @@ namespace ConfigBusinessEntity
             modelBuilder.Entity<PERt06_clase_emp>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<PERt07_trabajo>()
+                .Property(e => e.cod_trabajo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt07_trabajo>()
+                .Property(e => e.txt_nombre)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt07_trabajo>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt07_trabajo>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt07_trabajo>()
+                .HasMany(e => e.PERt08_emp_trabajo)
+                .WithRequired(e => e.PERt07_trabajo)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PERt08_emp_trabajo>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERt08_emp_trabajo>()
+                .HasMany(e => e.LABt01_asistencia)
+                .WithRequired(e => e.PERt08_emp_trabajo)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PROt01_marca>()
                 .Property(e => e.cod_marca)
@@ -2870,6 +3078,10 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.txt_usuario_modificador)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
                 .Property(e => e.txt_usuario)
                 .IsUnicode(false);
 
@@ -3136,6 +3348,10 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<TNSt04_comp_emitido>()
+                .Property(e => e.txt_usuario_modificador)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt04_comp_emitido>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
 
@@ -3373,6 +3589,54 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<TOTt01_total_diario_vta>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.soh_ini)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.soh_fin)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.cant_compra)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.cant_transf_in)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.cant_trans_out)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.cant_vta)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.precio)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.precio_last)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.precio_avg)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.costo)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
+                .Property(e => e.txt_usuario)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TOTt02_total_diario_prod>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
         }

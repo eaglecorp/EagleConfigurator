@@ -42,17 +42,14 @@ namespace ConfiguradorUI.Maestro
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
-
             }
 
+            cboTipoRazon.SelectedIndexChanged += new EventHandler(OnContentChanged);
+            cboTipoRazon.IntegralHeight = false;
+            cboTipoRazon.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboTipoRazon.DropDownWidth = ControlHelper.DropDownWidth(cboTipoRazon);
 
-            var chks = new[] { chkActivo };
-
-            foreach (var chk in chks)
-            {
-                chk.CheckedChanged += new EventHandler(OnContentChanged);
-            }
-
+            chkActivo.CheckedChanged += new EventHandler(OnContentChanged);
         }
 
         //Métodos enlazados a eventos.
@@ -218,6 +215,8 @@ namespace ConfiguradorUI.Maestro
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
+                obj.id_tipo_razon = int.Parse(cboTipoRazon.SelectedValue.ToString());
+
             }
             catch (Exception e)
             {
@@ -244,6 +243,8 @@ namespace ConfiguradorUI.Maestro
                 txtNombre.Text = obj.txt_desc;
                 txtCodigo.Text = obj.cod_razon;
 
+                cboTipoRazon.SelectedValue = obj.id_tipo_razon;
+
             }
             catch (Exception e)
             {
@@ -264,6 +265,13 @@ namespace ConfiguradorUI.Maestro
                 tabRazon.SelectedTab = tabPagGeneral;
                 errorProv.SetError(txtNombre, "Este campo es requerido.");
                 txtNombre.Focus();
+                no_error = false;
+            }
+
+            if (!int.TryParse(cboTipoRazon.SelectedValue?.ToString(), out int id))
+            {
+                errorProv.SetError(cboTipoRazon, "Este campo es requerido.");
+                cboTipoRazon.Focus();
                 no_error = false;
             }
 
@@ -439,6 +447,20 @@ namespace ConfiguradorUI.Maestro
             }
 
         }
+        private void CargarCombos()
+        {
+            try
+            {
+                cboTipoRazon.DataSource = null;
+                cboTipoRazon.DisplayMember = "txt_desc";
+                cboTipoRazon.ValueMember = "id_tipo_razon";
+                cboTipoRazon.DataSource = new TipoRazonBL().ListaTipoRazon(Estado.IdActivo, false, true);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(this, "Ocurrió una excepción al cargar los combos: " + e.Message, "MENSAJE");
+            }
+        }
         private void LimpiarForm()
         {
             isSelected = false;
@@ -452,6 +474,8 @@ namespace ConfiguradorUI.Maestro
                 chkActivo.Enabled = false;
             else
                 chkActivo.Enabled = true;
+
+            if (cboTipoRazon.Items.Count > 0) cboTipoRazon.SelectedIndex = 0;
 
             chkActivo.Checked = true;
         }
@@ -559,11 +583,33 @@ namespace ConfiguradorUI.Maestro
                 }
             }
         }
+        private void MantenerEstadoABM()
+        {
+            if (TipoOperacion == TipoOperacionABM.Nuevo)
+            {
+                ControlarBotones(false, false, true, true, false, false);
+            }
+            else if (TipoOperacion == TipoOperacionABM.Cambio)
+            {
+                ControlarBotones(false, false, true, true, false, false);
+                isPending = true;
+            }
+            else if (TipoOperacion == TipoOperacionABM.No_Action)
+            {
+                isPending = false;
+                ControlarBotones(true, true, false, false, true, true);
+            }
+            else
+            {
+                isPending = false;
+                ControlarBotones(true, true, false, false, true, true);
+            }
+        }
         private void CargarGrilla(int? id_estado = null)
         {
             try
             {
-                var lista = new RazonBL().ListaRazon(id_estado,true);
+                var lista = new RazonBL().ListaRazon(id_estado);
                 var listaView = lista.Select(x => new { x.id_razon, CODIGO = x.cod_razon, NOMBRE = x.txt_desc })
                 .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 
@@ -635,6 +681,7 @@ namespace ConfiguradorUI.Maestro
             lblIdRazon.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();
+            CargarCombos();
             LimpiarForm();
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
@@ -940,6 +987,37 @@ namespace ConfiguradorUI.Maestro
         }
 
 
+        private void btnTipoRazon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int oldValue = 0;
+                int op = TipoOperacion;
+
+                if (cboTipoRazon.SelectedValue != null)
+                    oldValue = int.Parse(cboTipoRazon.SelectedValue.ToString());
+
+                var frm = new FormTipoRazon();
+                frm.ShowDialog();
+
+                if (frm.actualizar)
+                {
+                    cboTipoRazon.DataSource = null;
+                    cboTipoRazon.DisplayMember = "txt_desc";
+                    cboTipoRazon.ValueMember = "id_tipo_razon";
+                    cboTipoRazon.DataSource = new TipoRazonBL().ListaTipoRazon(Estado.IdActivo, false, true);
+                    cboTipoRazon.DropDownWidth = ControlHelper.DropDownWidth(cboTipoRazon);
+                    cboTipoRazon.SelectedValue = oldValue;
+                    TipoOperacion = op;
+                    MantenerEstadoABM();
+                }
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
     }

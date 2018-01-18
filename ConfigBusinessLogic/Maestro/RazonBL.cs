@@ -35,15 +35,9 @@ namespace ConfigBusinessLogic.Maestro
             return new RazonDA().RazonXCod(cod);
         }
 
-        public List<MSTt05_razon> ListaRazon(int? id_estado = null, bool ocultarBlankReg = false)
+        public List<MSTt05_razon> ListaRazon(int? id_estado = null)
         {
-            var lista = new RazonDA().ListaRazon(id_estado);
-            if (ocultarBlankReg && lista != null && lista.Count > 0)
-            {
-                lista.RemoveAll(x => x.cod_razon == Parameter.BlankRegister);
-            }
-
-            return lista;
+            return new RazonDA().ListaRazon(id_estado);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace ConfigBusinessEntity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MSTt08_location()
         {
+            LABt01_asistencia = new HashSet<LABt01_asistencia>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
         }
 
@@ -70,6 +71,9 @@ namespace ConfigBusinessEntity
 
         [StringLength(20)]
         public string txt_estado { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LABt01_asistencia> LABt01_asistencia { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt04_comp_emitido> TNSt04_comp_emitido { get; set; }

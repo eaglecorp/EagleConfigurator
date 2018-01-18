@@ -11,6 +11,8 @@ namespace ConfigBusinessEntity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MSTt05_razon()
         {
+            LABt01_asistencia = new HashSet<LABt01_asistencia>();
+            LABt02_asistencia_ajustada = new HashSet<LABt02_asistencia_ajustada>();
             TNSt05_comp_emitido_dtl = new HashSet<TNSt05_comp_emitido_dtl>();
             TNSt08_descuento_dtl = new HashSet<TNSt08_descuento_dtl>();
         }
@@ -30,10 +32,20 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
+        public int id_tipo_razon { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LABt01_asistencia> LABt01_asistencia { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LABt02_asistencia_ajustada> LABt02_asistencia_ajustada { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt05_comp_emitido_dtl> TNSt05_comp_emitido_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt08_descuento_dtl> TNSt08_descuento_dtl { get; set; }
+
+        public virtual MSTt16_tipo_razon MSTt16_tipo_razon { get; set; }
     }
 }

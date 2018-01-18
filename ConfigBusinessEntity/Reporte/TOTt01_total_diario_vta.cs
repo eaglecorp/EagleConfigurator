@@ -64,8 +64,9 @@ namespace ConfigBusinessEntity
         [StringLength(50)]
         public string txt_usuario { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
     }

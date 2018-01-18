@@ -59,7 +59,8 @@ namespace ConfigUtilitarios
         public static string CategoriaEmp { get; } = "0";
         public static string ClaseEmp { get; } = "0"; 
 
-        public static string ComboGrupo { get; } = "0"; 
+        public static string ComboGrupo { get; } = "0";
+        public static string TipoRazon { get; } = "0";
 
     }
 }

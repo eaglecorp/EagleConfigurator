@@ -57,6 +57,7 @@
     <Compile Include="Maestro\LocationBL.cs" />
     <Compile Include="Maestro\MedioPagoBL.cs" />
     <Compile Include="Maestro\MesaBL.cs" />
+    <Compile Include="Maestro\TipoRazonBL.cs" />
     <Compile Include="Maestro\RazonBL.cs" />
     <Compile Include="Maestro\TipoImpresoraBL.cs" />
     <Compile Include="Maestro\TipoLocationBL.cs" />
