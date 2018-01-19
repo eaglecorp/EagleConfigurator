@@ -310,27 +310,34 @@ namespace ConfigBusinessLogic
     {
 
         #region Parámetros de Email
-        public static string EmailFrom { get; } = "100000";
-        public static string DisplayNameEmail { get; } = "100001";
-        public static string Password { get; } = "100002";
-        public static string SubjectRegister { get; } = "100003";
+        public static string EmailFrom { get; }          = "100000";
+        public static string DisplayNameEmail { get; }   = "100001";
+        public static string Password { get; }           = "100002";
+        public static string SubjectRegister { get; }    = "100003";
         public static string SubjectCredentials { get; } = "100004";
-        public static string MailServer { get; } = "100005";
-        public static string Port { get; } = "100006";
-        public static string AddMsjRegister { get; } = "100007";
-        public static string AddMsjCredentials { get; } = "100008";
-        public static string SendMailRegister { get; } = "100009";
+        public static string MailServer { get; }         = "100005";
+        public static string Port { get; }               = "100006";
+        public static string AddMsjRegister { get; }     = "100007";
+        public static string AddMsjCredentials { get; }  = "100008";
+        public static string SendMailRegister { get; }   = "100009";
         #endregion
 
         #region Parámetros de Imágenes
-        public static string SplashImg { get; } = "200000";
-        public static string LogoImg { get; } = "200001";
-        public static string LoginImg { get; } = "200002";
+        public static string SplashImg { get; }          = "200000";
+        public static string LogoImg { get; }            = "200001";
+        public static string LoginImg { get; }           = "200002";
         #endregion
 
         #region Parámetros de botones
 
         public static string EnableRestore { get; } = "300000";
+
+        #endregion
+
+        #region Comprobante
+
+        public static string AuthAnularComp { get; }      = "400000";
+        public static string AuthReimpresionComp { get; } = "400001";
 
         #endregion
 

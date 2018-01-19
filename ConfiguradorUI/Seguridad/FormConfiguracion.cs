@@ -58,6 +58,9 @@ namespace ConfiguradorUI.Seguridad
 
                 var enableRestore = GetParametro(ParameterCode.EnableRestore);
 
+                var authAnularComp = GetParametro(ParameterCode.AuthAnularComp);
+                var authReimprComp = GetParametro(ParameterCode.AuthReimpresionComp);
+
                 #endregion
 
                 #region Seteando los parámetros
@@ -79,6 +82,12 @@ namespace ConfiguradorUI.Seguridad
 
                 chkHabilitarRestore.Checked = enableRestore.dec_valor != null &&
                                     (int)enableRestore.dec_valor == Estado.IdActivo;
+
+                chkAuthAnularComp.Checked = authAnularComp.dec_valor != null &&
+                    (int)authAnularComp.dec_valor == Estado.IdActivo;
+
+                chkAuthReimprComp.Checked = authReimprComp.dec_valor != null &&
+                    (int)authReimprComp.dec_valor == Estado.IdActivo;
 
                 Parameter.CargarParametroImg(splash, picSplash, ParameterCode.SplashImg);
                 lblPathSplash.Text = splash.txt_valor;
@@ -118,6 +127,9 @@ namespace ConfiguradorUI.Seguridad
 
             var enableRestore = GetParametro(ParameterCode.EnableRestore);
 
+            var authAnularComp = GetParametro(ParameterCode.AuthAnularComp);
+            var authReimprComp = GetParametro(ParameterCode.AuthReimpresionComp);
+
             TryAddParameterFromMetroTxt(mailServer, txtMailServer);
 
             int.TryParse(txtPort.Text.Trim(), out int valuePort);
@@ -150,6 +162,9 @@ namespace ConfiguradorUI.Seguridad
             TryAddParameterFromLbl(logo, lblPathLogo);
 
             TryAddParameterFromChk(enableRestore, chkHabilitarRestore);
+
+            TryAddParameterFromChk(authAnularComp, chkAuthAnularComp);
+            TryAddParameterFromChk(authReimprComp, chkAuthReimprComp);
 
             #region Métodos locales
             void TryAddParameterFromMetroTxt(GRLt01_parametro parametro, MetroTextBox txtParametro)
@@ -229,9 +244,26 @@ namespace ConfiguradorUI.Seguridad
             return parametro;
         }
 
-        private bool Guardar(List<GRLt01_parametro> parametrosAGuardar)
+        private void Guardar()
         {
-            return new ParametroBL().ActualizarParametros(parametrosAGuardar);
+            if (EsValido())
+            {
+                var parametrosCambiados = GetParametros();
+                if (parametrosCambiados != null && parametrosCambiados.Count > 0)
+                {
+                    if (new ParametroBL().ActualizarParametros(parametrosCambiados))
+                    {
+                        Msg.Ok_Info("Se actualizó correctamente los parámetros.");
+                        changedLogo = parametrosCambiados.Any(x => x.cod_parametro == ParameterCode.LogoImg);
+                        CargarParametros();
+                        SetParametros();
+                    }
+                    else
+                    {
+                        Msg.Ok_Err("No se pudo actualizar los parámetros.");
+                    }
+                }
+            }
         }
         private string GuardarImageDesde(string pathSource)
         {
@@ -440,7 +472,9 @@ namespace ConfiguradorUI.Seguridad
             var chks = new[]
             {
                 chkSendMailPostRegister,
-                chkHabilitarRestore
+                chkHabilitarRestore,
+                chkAuthAnularComp,
+                chkAuthReimprComp
             };
 
             var pics = new[]
@@ -527,7 +561,6 @@ namespace ConfiguradorUI.Seguridad
 
             #endregion
 
-            //validar txt enteros etc ect
         }
         private void ConfigurarLoad()
         {
@@ -545,27 +578,12 @@ namespace ConfiguradorUI.Seguridad
         {
             ConfigurarLoad();
         }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (EsValido())
-            {
-                var parametrosCambiados = GetParametros();
-                if (parametrosCambiados != null && parametrosCambiados.Count > 0)
-                {
-                    if (Guardar(parametrosCambiados))
-                    {
-                        Msg.Ok_Info("Se actualizó correctamente los parámetros.");
-                        changedLogo = parametrosCambiados.Any(x => x.cod_parametro == ParameterCode.LogoImg);
-                        CargarParametros();
-                        SetParametros();
-                    }
-                    else
-                    {
-                        Msg.Ok_Err("No se pudo actualizar los parámetros.");
-                    }
-                }
-            }
+            Guardar();
         }
+
         private void btnCambiarSplash_Click(object sender, EventArgs e)
         {
             CargarImg(Parameter.SplashImg, picSplash, lblPathSplash);
@@ -646,6 +664,17 @@ namespace ConfiguradorUI.Seguridad
         private void picLogo_MouseEnter(object sender, EventArgs e)
         {
             SetCodYDescripcionParametro(ParameterCode.LogoImg);
+        }
+
+
+        private void chkAuthAnularComp_MouseEnter(object sender, EventArgs e)
+        {
+            SetCodYDescripcionParametro(ParameterCode.AuthAnularComp);
+        }
+
+        private void chkAuthReimprComp_MouseEnter(object sender, EventArgs e)
+        {
+            SetCodYDescripcionParametro(ParameterCode.AuthReimpresionComp);
         }
 
         #endregion

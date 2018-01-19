@@ -73,6 +73,11 @@
             this.tabPagBaseDeDatos = new MetroFramework.Controls.MetroTabPage();
             this.grbBackupRestore = new System.Windows.Forms.GroupBox();
             this.chkHabilitarRestore = new MetroFramework.Controls.MetroCheckBox();
+            this.tabPagFiscal = new MetroFramework.Controls.MetroTabPage();
+            this.tabPagComprobante = new MetroFramework.Controls.MetroTabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkAuthReimprComp = new MetroFramework.Controls.MetroCheckBox();
+            this.chkAuthAnularComp = new MetroFramework.Controls.MetroCheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblCodParametro = new System.Windows.Forms.Label();
@@ -92,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSplash)).BeginInit();
             this.tabPagBaseDeDatos.SuspendLayout();
             this.grbBackupRestore.SuspendLayout();
+            this.tabPagComprobante.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,9 +129,11 @@
             this.tabConfiguracion.Controls.Add(this.tabPagEmail);
             this.tabConfiguracion.Controls.Add(this.tabPagDiseno);
             this.tabConfiguracion.Controls.Add(this.tabPagBaseDeDatos);
+            this.tabConfiguracion.Controls.Add(this.tabPagFiscal);
+            this.tabConfiguracion.Controls.Add(this.tabPagComprobante);
             this.tabConfiguracion.Location = new System.Drawing.Point(37, 89);
             this.tabConfiguracion.Name = "tabConfiguracion";
-            this.tabConfiguracion.SelectedIndex = 0;
+            this.tabConfiguracion.SelectedIndex = 4;
             this.tabConfiguracion.Size = new System.Drawing.Size(567, 389);
             this.tabConfiguracion.TabIndex = 0;
             this.tabConfiguracion.UseSelectable = true;
@@ -812,6 +821,83 @@
             this.chkHabilitarRestore.UseSelectable = true;
             this.chkHabilitarRestore.MouseEnter += new System.EventHandler(this.chkHabilitarRestore_MouseEnter);
             // 
+            // tabPagFiscal
+            // 
+            this.tabPagFiscal.HorizontalScrollbarBarColor = true;
+            this.tabPagFiscal.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagFiscal.HorizontalScrollbarSize = 10;
+            this.tabPagFiscal.Location = new System.Drawing.Point(4, 38);
+            this.tabPagFiscal.Name = "tabPagFiscal";
+            this.tabPagFiscal.Size = new System.Drawing.Size(559, 347);
+            this.tabPagFiscal.TabIndex = 3;
+            this.tabPagFiscal.Text = "Fiscal";
+            this.tabPagFiscal.VerticalScrollbarBarColor = true;
+            this.tabPagFiscal.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagFiscal.VerticalScrollbarSize = 10;
+            // 
+            // tabPagComprobante
+            // 
+            this.tabPagComprobante.Controls.Add(this.groupBox1);
+            this.tabPagComprobante.HorizontalScrollbarBarColor = true;
+            this.tabPagComprobante.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagComprobante.HorizontalScrollbarSize = 10;
+            this.tabPagComprobante.Location = new System.Drawing.Point(4, 38);
+            this.tabPagComprobante.Name = "tabPagComprobante";
+            this.tabPagComprobante.Size = new System.Drawing.Size(559, 347);
+            this.tabPagComprobante.TabIndex = 4;
+            this.tabPagComprobante.Text = "Comprobante";
+            this.tabPagComprobante.VerticalScrollbarBarColor = true;
+            this.tabPagComprobante.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagComprobante.VerticalScrollbarSize = 10;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.chkAuthReimprComp);
+            this.groupBox1.Controls.Add(this.chkAuthAnularComp);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox1.Location = new System.Drawing.Point(3, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(553, 84);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Autorizaciones";
+            // 
+            // chkAuthReimprComp
+            // 
+            this.chkAuthReimprComp.AutoSize = true;
+            this.chkAuthReimprComp.Checked = true;
+            this.chkAuthReimprComp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAuthReimprComp.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkAuthReimprComp.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkAuthReimprComp.ForeColor = System.Drawing.Color.Navy;
+            this.chkAuthReimprComp.Location = new System.Drawing.Point(17, 50);
+            this.chkAuthReimprComp.Name = "chkAuthReimprComp";
+            this.chkAuthReimprComp.Size = new System.Drawing.Size(374, 19);
+            this.chkAuthReimprComp.TabIndex = 1;
+            this.chkAuthReimprComp.Text = "Reimprimir comprobante requiere autorización de gerente.";
+            this.chkAuthReimprComp.UseCustomForeColor = true;
+            this.chkAuthReimprComp.UseSelectable = true;
+            this.chkAuthReimprComp.MouseEnter += new System.EventHandler(this.chkAuthReimprComp_MouseEnter);
+            // 
+            // chkAuthAnularComp
+            // 
+            this.chkAuthAnularComp.AutoSize = true;
+            this.chkAuthAnularComp.Checked = true;
+            this.chkAuthAnularComp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAuthAnularComp.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkAuthAnularComp.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkAuthAnularComp.ForeColor = System.Drawing.Color.Navy;
+            this.chkAuthAnularComp.Location = new System.Drawing.Point(17, 25);
+            this.chkAuthAnularComp.Name = "chkAuthAnularComp";
+            this.chkAuthAnularComp.Size = new System.Drawing.Size(346, 19);
+            this.chkAuthAnularComp.TabIndex = 0;
+            this.chkAuthAnularComp.Text = "Anular comprobante requiere autorización de gerente.";
+            this.chkAuthAnularComp.UseCustomForeColor = true;
+            this.chkAuthAnularComp.UseSelectable = true;
+            this.chkAuthAnularComp.MouseEnter += new System.EventHandler(this.chkAuthAnularComp_MouseEnter);
+            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue;
@@ -910,6 +996,9 @@
             this.tabPagBaseDeDatos.ResumeLayout(false);
             this.grbBackupRestore.ResumeLayout(false);
             this.grbBackupRestore.PerformLayout();
+            this.tabPagComprobante.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -966,5 +1055,10 @@
         private System.Windows.Forms.Label lblPathLogo;
         private System.Windows.Forms.Label lblPathLoginImg;
         private System.Windows.Forms.Label lblPathSplash;
+        private MetroFramework.Controls.MetroTabPage tabPagFiscal;
+        private MetroFramework.Controls.MetroTabPage tabPagComprobante;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroCheckBox chkAuthReimprComp;
+        private MetroFramework.Controls.MetroCheckBox chkAuthAnularComp;
     }
 }

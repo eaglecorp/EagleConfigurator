@@ -1673,14 +1673,14 @@ namespace ConfiguradorUI.Maestro
             if (rbtPeriodo.Checked)
             { panelPeriodo.Visible = true; panelDia.Visible = false; }
             else if (rbtDia.Checked)
-            { panelPeriodo.Visible = false; panelDia.Visible = true; }
+            { panelDia.Visible = true; panelPeriodo.Visible = false;}
 
         }
 
         private void rbtDia_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtDia.Checked)
-            { panelPeriodo.Visible = false; panelDia.Visible = true; }
+            { panelDia.Visible = true; panelPeriodo.Visible = false; }
             else if (rbtDia.Checked)
             { panelPeriodo.Visible = true; panelDia.Visible = false; }
         }

@@ -46,6 +46,11 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tabDescuento = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.grbFormaDeDescuento = new System.Windows.Forms.GroupBox();
+            this.rbtPorcentajeAbierto = new MetroFramework.Controls.MetroRadioButton();
+            this.rbtPorcentaje = new MetroFramework.Controls.MetroRadioButton();
+            this.rbtMontoAbierto = new MetroFramework.Controls.MetroRadioButton();
+            this.rbtMonto = new MetroFramework.Controls.MetroRadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -177,16 +182,12 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.grbFormaDeDescuento = new System.Windows.Forms.GroupBox();
-            this.rbtMonto = new MetroFramework.Controls.MetroRadioButton();
-            this.rbtMontoAbierto = new MetroFramework.Controls.MetroRadioButton();
-            this.rbtPorcentaje = new MetroFramework.Controls.MetroRadioButton();
-            this.rbtPorcentajeAbierto = new MetroFramework.Controls.MetroRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescuento)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabDescuento.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
+            this.grbFormaDeDescuento.SuspendLayout();
             this.tabPagPeriodoDia.SuspendLayout();
             this.panelDia.SuspendLayout();
             this.panelPeriodo.SuspendLayout();
@@ -198,7 +199,6 @@
             this.grbP2.SuspendLayout();
             this.grbP1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
-            this.grbFormaDeDescuento.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDescuento
@@ -480,6 +480,70 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // grbFormaDeDescuento
+            // 
+            this.grbFormaDeDescuento.BackColor = System.Drawing.Color.Transparent;
+            this.grbFormaDeDescuento.Controls.Add(this.rbtPorcentajeAbierto);
+            this.grbFormaDeDescuento.Controls.Add(this.rbtPorcentaje);
+            this.grbFormaDeDescuento.Controls.Add(this.rbtMontoAbierto);
+            this.grbFormaDeDescuento.Controls.Add(this.rbtMonto);
+            this.grbFormaDeDescuento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbFormaDeDescuento.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbFormaDeDescuento.Location = new System.Drawing.Point(9, 69);
+            this.grbFormaDeDescuento.Name = "grbFormaDeDescuento";
+            this.grbFormaDeDescuento.Size = new System.Drawing.Size(546, 60);
+            this.grbFormaDeDescuento.TabIndex = 2;
+            this.grbFormaDeDescuento.TabStop = false;
+            this.grbFormaDeDescuento.Text = "Forma de descuento";
+            // 
+            // rbtPorcentajeAbierto
+            // 
+            this.rbtPorcentajeAbierto.AutoSize = true;
+            this.rbtPorcentajeAbierto.Location = new System.Drawing.Point(143, 29);
+            this.rbtPorcentajeAbierto.Name = "rbtPorcentajeAbierto";
+            this.rbtPorcentajeAbierto.Size = new System.Drawing.Size(119, 15);
+            this.rbtPorcentajeAbierto.TabIndex = 1;
+            this.rbtPorcentajeAbierto.Text = "Porcentaje abierto";
+            this.rbtPorcentajeAbierto.UseSelectable = true;
+            this.rbtPorcentajeAbierto.CheckedChanged += new System.EventHandler(this.rbtPorcentajeAbierto_CheckedChanged);
+            this.rbtPorcentajeAbierto.Click += new System.EventHandler(this.rbtPorcentajeAbierto_Click);
+            // 
+            // rbtPorcentaje
+            // 
+            this.rbtPorcentaje.AutoSize = true;
+            this.rbtPorcentaje.Location = new System.Drawing.Point(10, 29);
+            this.rbtPorcentaje.Name = "rbtPorcentaje";
+            this.rbtPorcentaje.Size = new System.Drawing.Size(79, 15);
+            this.rbtPorcentaje.TabIndex = 0;
+            this.rbtPorcentaje.Text = "Porcentaje";
+            this.rbtPorcentaje.UseSelectable = true;
+            this.rbtPorcentaje.CheckedChanged += new System.EventHandler(this.rbtPorcentaje_CheckedChanged);
+            this.rbtPorcentaje.Click += new System.EventHandler(this.rbtPorcentaje_Click);
+            // 
+            // rbtMontoAbierto
+            // 
+            this.rbtMontoAbierto.AutoSize = true;
+            this.rbtMontoAbierto.Location = new System.Drawing.Point(429, 29);
+            this.rbtMontoAbierto.Name = "rbtMontoAbierto";
+            this.rbtMontoAbierto.Size = new System.Drawing.Size(99, 15);
+            this.rbtMontoAbierto.TabIndex = 3;
+            this.rbtMontoAbierto.Text = "Monto abierto";
+            this.rbtMontoAbierto.UseSelectable = true;
+            this.rbtMontoAbierto.CheckedChanged += new System.EventHandler(this.rbtMontoAbierto_CheckedChanged);
+            this.rbtMontoAbierto.Click += new System.EventHandler(this.rbtMontoAbierto_Click);
+            // 
+            // rbtMonto
+            // 
+            this.rbtMonto.AutoSize = true;
+            this.rbtMonto.Location = new System.Drawing.Point(316, 29);
+            this.rbtMonto.Name = "rbtMonto";
+            this.rbtMonto.Size = new System.Drawing.Size(59, 15);
+            this.rbtMonto.TabIndex = 2;
+            this.rbtMonto.Text = "Monto";
+            this.rbtMonto.UseSelectable = true;
+            this.rbtMonto.CheckedChanged += new System.EventHandler(this.rbtMonto_CheckedChanged);
+            this.rbtMonto.Click += new System.EventHandler(this.rbtMonto_Click);
             // 
             // label4
             // 
@@ -905,7 +969,7 @@
             this.panelDia.Controls.Add(this.chkDomingo);
             this.panelDia.Location = new System.Drawing.Point(3, 33);
             this.panelDia.Name = "panelDia";
-            this.panelDia.Size = new System.Drawing.Size(566, 346);
+            this.panelDia.Size = new System.Drawing.Size(566, 438);
             this.panelDia.TabIndex = 2;
             this.panelDia.Visible = false;
             // 
@@ -2284,70 +2348,6 @@
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
             // 
-            // grbFormaDeDescuento
-            // 
-            this.grbFormaDeDescuento.BackColor = System.Drawing.Color.Transparent;
-            this.grbFormaDeDescuento.Controls.Add(this.rbtPorcentajeAbierto);
-            this.grbFormaDeDescuento.Controls.Add(this.rbtPorcentaje);
-            this.grbFormaDeDescuento.Controls.Add(this.rbtMontoAbierto);
-            this.grbFormaDeDescuento.Controls.Add(this.rbtMonto);
-            this.grbFormaDeDescuento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbFormaDeDescuento.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbFormaDeDescuento.Location = new System.Drawing.Point(9, 69);
-            this.grbFormaDeDescuento.Name = "grbFormaDeDescuento";
-            this.grbFormaDeDescuento.Size = new System.Drawing.Size(546, 60);
-            this.grbFormaDeDescuento.TabIndex = 2;
-            this.grbFormaDeDescuento.TabStop = false;
-            this.grbFormaDeDescuento.Text = "Forma de descuento";
-            // 
-            // rbtMonto
-            // 
-            this.rbtMonto.AutoSize = true;
-            this.rbtMonto.Location = new System.Drawing.Point(316, 29);
-            this.rbtMonto.Name = "rbtMonto";
-            this.rbtMonto.Size = new System.Drawing.Size(59, 15);
-            this.rbtMonto.TabIndex = 2;
-            this.rbtMonto.Text = "Monto";
-            this.rbtMonto.UseSelectable = true;
-            this.rbtMonto.CheckedChanged += new System.EventHandler(this.rbtMonto_CheckedChanged);
-            this.rbtMonto.Click += new System.EventHandler(this.rbtMonto_Click);
-            // 
-            // rbtMontoAbierto
-            // 
-            this.rbtMontoAbierto.AutoSize = true;
-            this.rbtMontoAbierto.Location = new System.Drawing.Point(429, 29);
-            this.rbtMontoAbierto.Name = "rbtMontoAbierto";
-            this.rbtMontoAbierto.Size = new System.Drawing.Size(99, 15);
-            this.rbtMontoAbierto.TabIndex = 3;
-            this.rbtMontoAbierto.Text = "Monto abierto";
-            this.rbtMontoAbierto.UseSelectable = true;
-            this.rbtMontoAbierto.CheckedChanged += new System.EventHandler(this.rbtMontoAbierto_CheckedChanged);
-            this.rbtMontoAbierto.Click += new System.EventHandler(this.rbtMontoAbierto_Click);
-            // 
-            // rbtPorcentaje
-            // 
-            this.rbtPorcentaje.AutoSize = true;
-            this.rbtPorcentaje.Location = new System.Drawing.Point(10, 29);
-            this.rbtPorcentaje.Name = "rbtPorcentaje";
-            this.rbtPorcentaje.Size = new System.Drawing.Size(79, 15);
-            this.rbtPorcentaje.TabIndex = 0;
-            this.rbtPorcentaje.Text = "Porcentaje";
-            this.rbtPorcentaje.UseSelectable = true;
-            this.rbtPorcentaje.CheckedChanged += new System.EventHandler(this.rbtPorcentaje_CheckedChanged);
-            this.rbtPorcentaje.Click += new System.EventHandler(this.rbtPorcentaje_Click);
-            // 
-            // rbtPorcentajeAbierto
-            // 
-            this.rbtPorcentajeAbierto.AutoSize = true;
-            this.rbtPorcentajeAbierto.Location = new System.Drawing.Point(143, 29);
-            this.rbtPorcentajeAbierto.Name = "rbtPorcentajeAbierto";
-            this.rbtPorcentajeAbierto.Size = new System.Drawing.Size(119, 15);
-            this.rbtPorcentajeAbierto.TabIndex = 1;
-            this.rbtPorcentajeAbierto.Text = "Porcentaje abierto";
-            this.rbtPorcentajeAbierto.UseSelectable = true;
-            this.rbtPorcentajeAbierto.CheckedChanged += new System.EventHandler(this.rbtPorcentajeAbierto_CheckedChanged);
-            this.rbtPorcentajeAbierto.Click += new System.EventHandler(this.rbtPorcentajeAbierto_Click);
-            // 
             // FormDescuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2377,6 +2377,8 @@
             this.tabDescuento.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
+            this.grbFormaDeDescuento.ResumeLayout(false);
+            this.grbFormaDeDescuento.PerformLayout();
             this.tabPagPeriodoDia.ResumeLayout(false);
             this.tabPagPeriodoDia.PerformLayout();
             this.panelDia.ResumeLayout(false);
@@ -2397,8 +2399,6 @@
             this.grbP1.ResumeLayout(false);
             this.grbP1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
-            this.grbFormaDeDescuento.ResumeLayout(false);
-            this.grbFormaDeDescuento.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
