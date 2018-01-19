@@ -264,5 +264,36 @@ namespace ConfigDataAccess.Persona
             }
             return obj;
         }
+
+        public bool EsValidoIDPassword(long? idEmpleado, long idPassword)
+        {
+            bool isValid = true;
+
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    var emp = new PERt04_empleado();
+                    if (idEmpleado == null)
+                    {
+                        //Cuando verifica en toda la tabla (EN INSERCIÓN)
+                        isValid = ctx.PERt04_empleado.Any(x => x.id_password == idPassword);
+                    }
+
+                    else
+                    {
+                        //Cuando verifica en toda la tabla excepto su contenido (EN ACTUALIZACIÓN)
+                        isValid = ctx.PERt04_empleado.Where(x => x.id_empleado != idEmpleado)
+                                                        .Any(x => x.id_password == idPassword);
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Validar ID Password: ", e.Message);
+                }
+            }
+            return !isValid;
+        }
     }
 }

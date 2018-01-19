@@ -39,41 +39,24 @@
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.tabEmpleado = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.lblSuspLaboral = new MetroFramework.Controls.MetroLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cboMotivoBaja = new System.Windows.Forms.ComboBox();
+            this.cboSuspLaboral = new System.Windows.Forms.ComboBox();
             this.btnCategoriaEmp = new MetroFramework.Controls.MetroLink();
             this.btnClaseEmp = new MetroFramework.Controls.MetroLink();
+            this.lblMotivoBaja = new MetroFramework.Controls.MetroLabel();
             this.lblCategoriaEmp = new MetroFramework.Controls.MetroLabel();
             this.cboCategoriaEmp = new System.Windows.Forms.ComboBox();
             this.cboClaseEmp = new System.Windows.Forms.ComboBox();
             this.lblClaseEmp = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
-            this.txtReferencia = new MetroFramework.Controls.MetroTextBox();
-            this.lblReferencia = new MetroFramework.Controls.MetroLabel();
-            this.txtDireccion02 = new MetroFramework.Controls.MetroTextBox();
             this.txtSegundoNom = new MetroFramework.Controls.MetroTextBox();
             this.lblPrimerNom = new MetroFramework.Controls.MetroLabel();
-            this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
+            this.lblSituacion = new MetroFramework.Controls.MetroLabel();
             this.txtPrimerNom = new MetroFramework.Controls.MetroTextBox();
-            this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
+            this.cboSituacion = new System.Windows.Forms.ComboBox();
             this.lblSegundoNom = new MetroFramework.Controls.MetroLabel();
-            this.lblDireccion01 = new MetroFramework.Controls.MetroLabel();
-            this.txtNumVia = new MetroFramework.Controls.MetroTextBox();
-            this.lblNumVia = new MetroFramework.Controls.MetroLabel();
-            this.cboNacionalidad = new System.Windows.Forms.ComboBox();
-            this.lblNacionalidad = new MetroFramework.Controls.MetroLabel();
-            this.cboProvincia = new System.Windows.Forms.ComboBox();
-            this.lblProvincia = new MetroFramework.Controls.MetroLabel();
-            this.cboDepartamento = new System.Windows.Forms.ComboBox();
-            this.lblDepartamento = new MetroFramework.Controls.MetroLabel();
-            this.cboDistrito = new System.Windows.Forms.ComboBox();
-            this.lblDistrito = new MetroFramework.Controls.MetroLabel();
-            this.txtNomVia = new MetroFramework.Controls.MetroTextBox();
-            this.lblNomVia = new MetroFramework.Controls.MetroLabel();
-            this.txtNomZona = new MetroFramework.Controls.MetroTextBox();
-            this.lblNomZona = new MetroFramework.Controls.MetroLabel();
-            this.cboVia = new System.Windows.Forms.ComboBox();
-            this.lblVia = new MetroFramework.Controls.MetroLabel();
-            this.cboZona = new System.Windows.Forms.ComboBox();
-            this.lblZona = new MetroFramework.Controls.MetroLabel();
             this.txtNumRuc = new MetroFramework.Controls.MetroTextBox();
             this.lblNumRuc = new MetroFramework.Controls.MetroLabel();
             this.txtNumDoc = new MetroFramework.Controls.MetroTextBox();
@@ -90,7 +73,6 @@
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
             this.lblCodigo = new MetroFramework.Controls.MetroLabel();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblFechaNac = new MetroFramework.Controls.MetroLabel();
             this.cboEstadoCivil = new System.Windows.Forms.ComboBox();
@@ -100,22 +82,6 @@
             this.txtApPaterno = new MetroFramework.Controls.MetroTextBox();
             this.lblApPaterno = new MetroFramework.Controls.MetroLabel();
             this.tabPagDetalles = new MetroFramework.Controls.MetroTabPage();
-            this.grbSkillsEducativas = new System.Windows.Forms.GroupBox();
-            this.cboEspcMedica = new System.Windows.Forms.ComboBox();
-            this.lblEspcMedica = new MetroFramework.Controls.MetroLabel();
-            this.lblSituacionEdu = new MetroFramework.Controls.MetroLabel();
-            this.cboTipoEspc = new System.Windows.Forms.ComboBox();
-            this.cboSituacionEdu = new System.Windows.Forms.ComboBox();
-            this.lblTipoEspc = new MetroFramework.Controls.MetroLabel();
-            this.lblModalidadFormativa = new MetroFramework.Controls.MetroLabel();
-            this.cboModalidadFormativa = new System.Windows.Forms.ComboBox();
-            this.grbBajaYSuspension = new System.Windows.Forms.GroupBox();
-            this.lblSuspLaboral = new MetroFramework.Controls.MetroLabel();
-            this.cboSuspLaboral = new System.Windows.Forms.ComboBox();
-            this.cboMotivoBaja = new System.Windows.Forms.ComboBox();
-            this.lblMotivoBaja = new MetroFramework.Controls.MetroLabel();
-            this.lblSituacion = new MetroFramework.Controls.MetroLabel();
-            this.cboSituacion = new System.Windows.Forms.ComboBox();
             this.grbLaboralSaludPen = new System.Windows.Forms.GroupBox();
             this.cboSaludEps = new System.Windows.Forms.ComboBox();
             this.lblSaludEps = new MetroFramework.Controls.MetroLabel();
@@ -150,6 +116,16 @@
             this.lblSalHora = new MetroFramework.Controls.MetroLabel();
             this.txtSalMensual = new MetroFramework.Controls.MetroTextBox();
             this.lblSalMensual = new MetroFramework.Controls.MetroLabel();
+            this.tabPagEducacion = new MetroFramework.Controls.MetroTabPage();
+            this.grbSkillsEducativas = new System.Windows.Forms.GroupBox();
+            this.cboEspcMedica = new System.Windows.Forms.ComboBox();
+            this.lblEspcMedica = new MetroFramework.Controls.MetroLabel();
+            this.lblSituacionEdu = new MetroFramework.Controls.MetroLabel();
+            this.cboTipoEspc = new System.Windows.Forms.ComboBox();
+            this.cboSituacionEdu = new System.Windows.Forms.ComboBox();
+            this.lblTipoEspc = new MetroFramework.Controls.MetroLabel();
+            this.lblModalidadFormativa = new MetroFramework.Controls.MetroLabel();
+            this.cboModalidadFormativa = new System.Windows.Forms.ComboBox();
             this.tabPagContacto = new MetroFramework.Controls.MetroTabPage();
             this.grbEmailYWeb = new System.Windows.Forms.GroupBox();
             this.txtEmail02 = new MetroFramework.Controls.MetroTextBox();
@@ -158,20 +134,47 @@
             this.lblPagWeb = new MetroFramework.Controls.MetroLabel();
             this.txtEmail01 = new MetroFramework.Controls.MetroTextBox();
             this.lblEmail01 = new MetroFramework.Controls.MetroLabel();
-            this.grbTelefonosFijos = new System.Windows.Forms.GroupBox();
+            this.grbNumerosContacto = new System.Windows.Forms.GroupBox();
             this.txtTelfFijo02 = new MetroFramework.Controls.MetroTextBox();
+            this.txtCelular02 = new MetroFramework.Controls.MetroTextBox();
             this.txtTelfFijo01 = new MetroFramework.Controls.MetroTextBox();
+            this.lblCelular02 = new MetroFramework.Controls.MetroLabel();
             this.lblTelFijo02 = new MetroFramework.Controls.MetroLabel();
+            this.txtCelular03 = new MetroFramework.Controls.MetroTextBox();
             this.lblTelFijo01 = new MetroFramework.Controls.MetroLabel();
+            this.lblCelular03 = new MetroFramework.Controls.MetroLabel();
             this.txtTelfFijo03 = new MetroFramework.Controls.MetroTextBox();
             this.lblTelFijo03 = new MetroFramework.Controls.MetroLabel();
-            this.grbCelulares = new System.Windows.Forms.GroupBox();
-            this.txtCelular02 = new MetroFramework.Controls.MetroTextBox();
-            this.lblCelular02 = new MetroFramework.Controls.MetroLabel();
-            this.txtCelular03 = new MetroFramework.Controls.MetroTextBox();
-            this.lblCelular03 = new MetroFramework.Controls.MetroLabel();
             this.txtCelular01 = new MetroFramework.Controls.MetroTextBox();
             this.lblCelular01 = new MetroFramework.Controls.MetroLabel();
+            this.tabPagDireccion = new MetroFramework.Controls.MetroTabPage();
+            this.grbUbicacionDetallada = new System.Windows.Forms.GroupBox();
+            this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
+            this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
+            this.lblDireccion01 = new MetroFramework.Controls.MetroLabel();
+            this.txtDireccion02 = new MetroFramework.Controls.MetroTextBox();
+            this.txtNomZona = new MetroFramework.Controls.MetroTextBox();
+            this.lblNomZona = new MetroFramework.Controls.MetroLabel();
+            this.txtNomVia = new MetroFramework.Controls.MetroTextBox();
+            this.lblZona = new MetroFramework.Controls.MetroLabel();
+            this.lblNumVia = new MetroFramework.Controls.MetroLabel();
+            this.cboZona = new System.Windows.Forms.ComboBox();
+            this.txtReferencia = new MetroFramework.Controls.MetroTextBox();
+            this.lblNomVia = new MetroFramework.Controls.MetroLabel();
+            this.lblReferencia = new MetroFramework.Controls.MetroLabel();
+            this.txtNumVia = new MetroFramework.Controls.MetroTextBox();
+            this.lblVia = new MetroFramework.Controls.MetroLabel();
+            this.cboVia = new System.Windows.Forms.ComboBox();
+            this.gbrUbigeo = new System.Windows.Forms.GroupBox();
+            this.lblDepartamento = new MetroFramework.Controls.MetroLabel();
+            this.cboDepartamento = new System.Windows.Forms.ComboBox();
+            this.cboDistrito = new System.Windows.Forms.ComboBox();
+            this.lblDistrito = new MetroFramework.Controls.MetroLabel();
+            this.lblNacionalidad = new MetroFramework.Controls.MetroLabel();
+            this.lblProvincia = new MetroFramework.Controls.MetroLabel();
+            this.cboNacionalidad = new System.Windows.Forms.ComboBox();
+            this.cboProvincia = new System.Windows.Forms.ComboBox();
+            this.tabPagSeguridad = new MetroFramework.Controls.MetroTabPage();
             this.tabPagInfoExtra = new MetroFramework.Controls.MetroTabPage();
             this.grbInfoExtra = new System.Windows.Forms.GroupBox();
             this.txtInfo10 = new MetroFramework.Controls.MetroTextBox();
@@ -208,29 +211,36 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
+            this.txtIdPassword = new MetroFramework.Controls.MetroTextBox();
+            this.lblIdPassword = new MetroFramework.Controls.MetroLabel();
+            this.grbSeguridad = new System.Windows.Forms.GroupBox();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             this.tabPagDetalles.SuspendLayout();
-            this.grbSkillsEducativas.SuspendLayout();
-            this.grbBajaYSuspension.SuspendLayout();
             this.grbLaboralSaludPen.SuspendLayout();
             this.grbSalario.SuspendLayout();
+            this.tabPagEducacion.SuspendLayout();
+            this.grbSkillsEducativas.SuspendLayout();
             this.tabPagContacto.SuspendLayout();
             this.grbEmailYWeb.SuspendLayout();
-            this.grbTelefonosFijos.SuspendLayout();
-            this.grbCelulares.SuspendLayout();
+            this.grbNumerosContacto.SuspendLayout();
+            this.tabPagDireccion.SuspendLayout();
+            this.grbUbicacionDetallada.SuspendLayout();
+            this.gbrUbigeo.SuspendLayout();
+            this.tabPagSeguridad.SuspendLayout();
             this.tabPagInfoExtra.SuspendLayout();
             this.grbInfoExtra.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
+            this.grbSeguridad.SuspendLayout();
             this.SuspendLayout();
             // 
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(134, 86);
+            this.tglListarInactivos.Location = new System.Drawing.Point(134, 118);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -241,7 +251,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(36, 84);
+            this.lblListarInactivos.Location = new System.Drawing.Point(36, 116);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;
@@ -257,9 +267,9 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(297, 658);
+            this.panelFiltro.Location = new System.Drawing.Point(297, 547);
             this.panelFiltro.Name = "panelFiltro";
-            this.panelFiltro.Size = new System.Drawing.Size(562, 42);
+            this.panelFiltro.Size = new System.Drawing.Size(562, 53);
             this.panelFiltro.TabIndex = 3;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
@@ -271,7 +281,7 @@
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.BackColor = System.Drawing.Color.Transparent;
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
-            this.lblFiltro.Location = new System.Drawing.Point(13, 11);
+            this.lblFiltro.Location = new System.Drawing.Point(13, 17);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
@@ -287,7 +297,7 @@
             this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
-            this.btnFilter.Location = new System.Drawing.Point(519, 6);
+            this.btnFilter.Location = new System.Drawing.Point(519, 12);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(37, 30);
             this.btnFilter.TabIndex = 1;
@@ -309,7 +319,7 @@
             this.txtFiltro.CustomButton.UseSelectable = true;
             this.txtFiltro.CustomButton.Visible = false;
             this.txtFiltro.Lines = new string[0];
-            this.txtFiltro.Location = new System.Drawing.Point(291, 9);
+            this.txtFiltro.Location = new System.Drawing.Point(291, 15);
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
@@ -334,7 +344,7 @@
             this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(95, 9);
+            this.cboFiltro.Location = new System.Drawing.Point(95, 15);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
             this.cboFiltro.TabIndex = 3;
@@ -344,53 +354,39 @@
             // 
             this.tabEmpleado.Controls.Add(this.tabPagGeneral);
             this.tabEmpleado.Controls.Add(this.tabPagDetalles);
+            this.tabEmpleado.Controls.Add(this.tabPagEducacion);
             this.tabEmpleado.Controls.Add(this.tabPagContacto);
+            this.tabEmpleado.Controls.Add(this.tabPagDireccion);
+            this.tabEmpleado.Controls.Add(this.tabPagSeguridad);
             this.tabEmpleado.Controls.Add(this.tabPagInfoExtra);
-            this.tabEmpleado.Location = new System.Drawing.Point(294, 73);
+            this.tabEmpleado.Location = new System.Drawing.Point(294, 105);
             this.tabEmpleado.Name = "tabEmpleado";
             this.tabEmpleado.SelectedIndex = 0;
-            this.tabEmpleado.Size = new System.Drawing.Size(586, 581);
+            this.tabEmpleado.Size = new System.Drawing.Size(586, 436);
             this.tabEmpleado.TabIndex = 1;
             this.tabEmpleado.UseSelectable = true;
             // 
             // tabPagGeneral
             // 
             this.tabPagGeneral.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagGeneral.Controls.Add(this.lblSuspLaboral);
+            this.tabPagGeneral.Controls.Add(this.panel2);
+            this.tabPagGeneral.Controls.Add(this.cboMotivoBaja);
+            this.tabPagGeneral.Controls.Add(this.cboSuspLaboral);
             this.tabPagGeneral.Controls.Add(this.btnCategoriaEmp);
             this.tabPagGeneral.Controls.Add(this.btnClaseEmp);
+            this.tabPagGeneral.Controls.Add(this.lblMotivoBaja);
             this.tabPagGeneral.Controls.Add(this.lblCategoriaEmp);
             this.tabPagGeneral.Controls.Add(this.cboCategoriaEmp);
             this.tabPagGeneral.Controls.Add(this.cboClaseEmp);
             this.tabPagGeneral.Controls.Add(this.lblClaseEmp);
             this.tabPagGeneral.Controls.Add(this.chkActivo);
-            this.tabPagGeneral.Controls.Add(this.txtReferencia);
-            this.tabPagGeneral.Controls.Add(this.lblReferencia);
-            this.tabPagGeneral.Controls.Add(this.txtDireccion02);
             this.tabPagGeneral.Controls.Add(this.txtSegundoNom);
             this.tabPagGeneral.Controls.Add(this.lblPrimerNom);
-            this.tabPagGeneral.Controls.Add(this.lblDireccion02);
+            this.tabPagGeneral.Controls.Add(this.lblSituacion);
             this.tabPagGeneral.Controls.Add(this.txtPrimerNom);
-            this.tabPagGeneral.Controls.Add(this.txtDireccion01);
+            this.tabPagGeneral.Controls.Add(this.cboSituacion);
             this.tabPagGeneral.Controls.Add(this.lblSegundoNom);
-            this.tabPagGeneral.Controls.Add(this.lblDireccion01);
-            this.tabPagGeneral.Controls.Add(this.txtNumVia);
-            this.tabPagGeneral.Controls.Add(this.lblNumVia);
-            this.tabPagGeneral.Controls.Add(this.cboNacionalidad);
-            this.tabPagGeneral.Controls.Add(this.lblNacionalidad);
-            this.tabPagGeneral.Controls.Add(this.cboProvincia);
-            this.tabPagGeneral.Controls.Add(this.lblProvincia);
-            this.tabPagGeneral.Controls.Add(this.cboDepartamento);
-            this.tabPagGeneral.Controls.Add(this.lblDepartamento);
-            this.tabPagGeneral.Controls.Add(this.cboDistrito);
-            this.tabPagGeneral.Controls.Add(this.lblDistrito);
-            this.tabPagGeneral.Controls.Add(this.txtNomVia);
-            this.tabPagGeneral.Controls.Add(this.lblNomVia);
-            this.tabPagGeneral.Controls.Add(this.txtNomZona);
-            this.tabPagGeneral.Controls.Add(this.lblNomZona);
-            this.tabPagGeneral.Controls.Add(this.cboVia);
-            this.tabPagGeneral.Controls.Add(this.lblVia);
-            this.tabPagGeneral.Controls.Add(this.cboZona);
-            this.tabPagGeneral.Controls.Add(this.lblZona);
             this.tabPagGeneral.Controls.Add(this.txtNumRuc);
             this.tabPagGeneral.Controls.Add(this.lblNumRuc);
             this.tabPagGeneral.Controls.Add(this.txtNumDoc);
@@ -407,7 +403,6 @@
             this.tabPagGeneral.Controls.Add(this.txtCodigo);
             this.tabPagGeneral.Controls.Add(this.lblCodigo);
             this.tabPagGeneral.Controls.Add(this.dtpFechaNacimiento);
-            this.tabPagGeneral.Controls.Add(this.panel3);
             this.tabPagGeneral.Controls.Add(this.panel1);
             this.tabPagGeneral.Controls.Add(this.lblFechaNac);
             this.tabPagGeneral.Controls.Add(this.cboEstadoCivil);
@@ -421,18 +416,64 @@
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(578, 539);
+            this.tabPagGeneral.Size = new System.Drawing.Size(578, 394);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // lblSuspLaboral
+            // 
+            this.lblSuspLaboral.AutoSize = true;
+            this.lblSuspLaboral.ForeColor = System.Drawing.Color.Navy;
+            this.lblSuspLaboral.Location = new System.Drawing.Point(2, 345);
+            this.lblSuspLaboral.Name = "lblSuspLaboral";
+            this.lblSuspLaboral.Size = new System.Drawing.Size(81, 19);
+            this.lblSuspLaboral.TabIndex = 4;
+            this.lblSuspLaboral.Text = "Susp. Labor:";
+            this.lblSuspLaboral.UseCustomForeColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(1, 293);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(555, 6);
+            this.panel2.TabIndex = 58;
+            // 
+            // cboMotivoBaja
+            // 
+            this.cboMotivoBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboMotivoBaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMotivoBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboMotivoBaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMotivoBaja.FormattingEnabled = true;
+            this.cboMotivoBaja.Location = new System.Drawing.Point(376, 311);
+            this.cboMotivoBaja.Name = "cboMotivoBaja";
+            this.cboMotivoBaja.Size = new System.Drawing.Size(180, 23);
+            this.cboMotivoBaja.TabIndex = 3;
+            this.cboMotivoBaja.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboSuspLaboral
+            // 
+            this.cboSuspLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboSuspLaboral.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSuspLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboSuspLaboral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSuspLaboral.FormattingEnabled = true;
+            this.cboSuspLaboral.Location = new System.Drawing.Point(82, 345);
+            this.cboSuspLaboral.Name = "cboSuspLaboral";
+            this.cboSuspLaboral.Size = new System.Drawing.Size(184, 23);
+            this.cboSuspLaboral.TabIndex = 5;
+            this.cboSuspLaboral.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // btnCategoriaEmp
             // 
             this.btnCategoriaEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaEmp.Image")));
             this.btnCategoriaEmp.ImageSize = 24;
-            this.btnCategoriaEmp.Location = new System.Drawing.Point(531, 151);
+            this.btnCategoriaEmp.Location = new System.Drawing.Point(531, 156);
             this.btnCategoriaEmp.Name = "btnCategoriaEmp";
             this.btnCategoriaEmp.Size = new System.Drawing.Size(29, 27);
             this.btnCategoriaEmp.TabIndex = 57;
@@ -443,18 +484,29 @@
             // 
             this.btnClaseEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnClaseEmp.Image")));
             this.btnClaseEmp.ImageSize = 24;
-            this.btnClaseEmp.Location = new System.Drawing.Point(244, 151);
+            this.btnClaseEmp.Location = new System.Drawing.Point(244, 156);
             this.btnClaseEmp.Name = "btnClaseEmp";
             this.btnClaseEmp.Size = new System.Drawing.Size(29, 27);
             this.btnClaseEmp.TabIndex = 56;
             this.btnClaseEmp.UseSelectable = true;
             this.btnClaseEmp.Click += new System.EventHandler(this.btnClaseEmp_Click);
             // 
+            // lblMotivoBaja
+            // 
+            this.lblMotivoBaja.AutoSize = true;
+            this.lblMotivoBaja.ForeColor = System.Drawing.Color.Navy;
+            this.lblMotivoBaja.Location = new System.Drawing.Point(289, 311);
+            this.lblMotivoBaja.Name = "lblMotivoBaja";
+            this.lblMotivoBaja.Size = new System.Drawing.Size(82, 19);
+            this.lblMotivoBaja.TabIndex = 2;
+            this.lblMotivoBaja.Text = "Motivo Baja:";
+            this.lblMotivoBaja.UseCustomForeColor = true;
+            // 
             // lblCategoriaEmp
             // 
             this.lblCategoriaEmp.AutoSize = true;
             this.lblCategoriaEmp.ForeColor = System.Drawing.Color.Navy;
-            this.lblCategoriaEmp.Location = new System.Drawing.Point(289, 158);
+            this.lblCategoriaEmp.Location = new System.Drawing.Point(289, 163);
             this.lblCategoriaEmp.Name = "lblCategoriaEmp";
             this.lblCategoriaEmp.Size = new System.Drawing.Size(70, 19);
             this.lblCategoriaEmp.TabIndex = 19;
@@ -468,7 +520,7 @@
             this.cboCategoriaEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboCategoriaEmp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoriaEmp.FormattingEnabled = true;
-            this.cboCategoriaEmp.Location = new System.Drawing.Point(373, 155);
+            this.cboCategoriaEmp.Location = new System.Drawing.Point(373, 160);
             this.cboCategoriaEmp.Name = "cboCategoriaEmp";
             this.cboCategoriaEmp.Size = new System.Drawing.Size(157, 23);
             this.cboCategoriaEmp.TabIndex = 20;
@@ -481,7 +533,7 @@
             this.cboClaseEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboClaseEmp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboClaseEmp.FormattingEnabled = true;
-            this.cboClaseEmp.Location = new System.Drawing.Point(83, 156);
+            this.cboClaseEmp.Location = new System.Drawing.Point(83, 161);
             this.cboClaseEmp.Name = "cboClaseEmp";
             this.cboClaseEmp.Size = new System.Drawing.Size(159, 23);
             this.cboClaseEmp.TabIndex = 18;
@@ -491,7 +543,7 @@
             // 
             this.lblClaseEmp.AutoSize = true;
             this.lblClaseEmp.ForeColor = System.Drawing.Color.Navy;
-            this.lblClaseEmp.Location = new System.Drawing.Point(0, 158);
+            this.lblClaseEmp.Location = new System.Drawing.Point(0, 163);
             this.lblClaseEmp.Name = "lblClaseEmp";
             this.lblClaseEmp.Size = new System.Drawing.Size(74, 19);
             this.lblClaseEmp.TabIndex = 17;
@@ -506,7 +558,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(293, 258);
+            this.chkActivo.Location = new System.Drawing.Point(3, 373);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 31;
@@ -515,83 +567,6 @@
             this.chkActivo.UseSelectable = true;
             this.chkActivo.CheckedChanged += new System.EventHandler(this.CambioEnControl);
             // 
-            // txtReferencia
-            // 
-            this.txtReferencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtReferencia.CustomButton.Image = null;
-            this.txtReferencia.CustomButton.Location = new System.Drawing.Point(159, 1);
-            this.txtReferencia.CustomButton.Name = "";
-            this.txtReferencia.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtReferencia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtReferencia.CustomButton.TabIndex = 1;
-            this.txtReferencia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtReferencia.CustomButton.UseSelectable = true;
-            this.txtReferencia.CustomButton.Visible = false;
-            this.txtReferencia.Lines = new string[0];
-            this.txtReferencia.Location = new System.Drawing.Point(375, 442);
-            this.txtReferencia.MaxLength = 32767;
-            this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.PasswordChar = '\0';
-            this.txtReferencia.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtReferencia.SelectedText = "";
-            this.txtReferencia.SelectionLength = 0;
-            this.txtReferencia.SelectionStart = 0;
-            this.txtReferencia.ShortcutsEnabled = true;
-            this.txtReferencia.Size = new System.Drawing.Size(181, 23);
-            this.txtReferencia.TabIndex = 51;
-            this.txtReferencia.UseCustomBackColor = true;
-            this.txtReferencia.UseSelectable = true;
-            this.txtReferencia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtReferencia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtReferencia.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblReferencia
-            // 
-            this.lblReferencia.AutoSize = true;
-            this.lblReferencia.ForeColor = System.Drawing.Color.Navy;
-            this.lblReferencia.Location = new System.Drawing.Point(289, 444);
-            this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(73, 19);
-            this.lblReferencia.TabIndex = 50;
-            this.lblReferencia.Text = "Referencia:";
-            this.lblReferencia.UseCustomForeColor = true;
-            // 
-            // txtDireccion02
-            // 
-            this.txtDireccion02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDireccion02.CustomButton.Image = null;
-            this.txtDireccion02.CustomButton.Location = new System.Drawing.Point(452, 1);
-            this.txtDireccion02.CustomButton.Name = "";
-            this.txtDireccion02.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDireccion02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDireccion02.CustomButton.TabIndex = 1;
-            this.txtDireccion02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDireccion02.CustomButton.UseSelectable = true;
-            this.txtDireccion02.CustomButton.Visible = false;
-            this.txtDireccion02.Lines = new string[0];
-            this.txtDireccion02.Location = new System.Drawing.Point(82, 512);
-            this.txtDireccion02.MaxLength = 32767;
-            this.txtDireccion02.Name = "txtDireccion02";
-            this.txtDireccion02.PasswordChar = '\0';
-            this.txtDireccion02.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDireccion02.SelectedText = "";
-            this.txtDireccion02.SelectionLength = 0;
-            this.txtDireccion02.SelectionStart = 0;
-            this.txtDireccion02.ShortcutsEnabled = true;
-            this.txtDireccion02.Size = new System.Drawing.Size(474, 23);
-            this.txtDireccion02.TabIndex = 55;
-            this.txtDireccion02.UseCustomBackColor = true;
-            this.txtDireccion02.UseSelectable = true;
-            this.txtDireccion02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDireccion02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDireccion02.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
             // txtSegundoNom
             // 
             this.txtSegundoNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
@@ -599,7 +574,7 @@
             // 
             // 
             this.txtSegundoNom.CustomButton.Image = null;
-            this.txtSegundoNom.CustomButton.Location = new System.Drawing.Point(160, 1);
+            this.txtSegundoNom.CustomButton.Location = new System.Drawing.Point(159, 1);
             this.txtSegundoNom.CustomButton.Name = "";
             this.txtSegundoNom.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtSegundoNom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -608,7 +583,7 @@
             this.txtSegundoNom.CustomButton.UseSelectable = true;
             this.txtSegundoNom.CustomButton.Visible = false;
             this.txtSegundoNom.Lines = new string[0];
-            this.txtSegundoNom.Location = new System.Drawing.Point(376, 9);
+            this.txtSegundoNom.Location = new System.Drawing.Point(376, 12);
             this.txtSegundoNom.MaxLength = 32767;
             this.txtSegundoNom.Name = "txtSegundoNom";
             this.txtSegundoNom.PasswordChar = '\0';
@@ -617,7 +592,7 @@
             this.txtSegundoNom.SelectionLength = 0;
             this.txtSegundoNom.SelectionStart = 0;
             this.txtSegundoNom.ShortcutsEnabled = true;
-            this.txtSegundoNom.Size = new System.Drawing.Size(182, 23);
+            this.txtSegundoNom.Size = new System.Drawing.Size(181, 23);
             this.txtSegundoNom.TabIndex = 3;
             this.txtSegundoNom.UseCustomBackColor = true;
             this.txtSegundoNom.UseSelectable = true;
@@ -629,23 +604,23 @@
             // 
             this.lblPrimerNom.AutoSize = true;
             this.lblPrimerNom.ForeColor = System.Drawing.Color.Navy;
-            this.lblPrimerNom.Location = new System.Drawing.Point(1, 11);
+            this.lblPrimerNom.Location = new System.Drawing.Point(1, 14);
             this.lblPrimerNom.Name = "lblPrimerNom";
             this.lblPrimerNom.Size = new System.Drawing.Size(76, 19);
             this.lblPrimerNom.TabIndex = 0;
             this.lblPrimerNom.Text = "1° Nombre:";
             this.lblPrimerNom.UseCustomForeColor = true;
             // 
-            // lblDireccion02
+            // lblSituacion
             // 
-            this.lblDireccion02.AutoSize = true;
-            this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion02.Location = new System.Drawing.Point(-1, 514);
-            this.lblDireccion02.Name = "lblDireccion02";
-            this.lblDireccion02.Size = new System.Drawing.Size(84, 19);
-            this.lblDireccion02.TabIndex = 54;
-            this.lblDireccion02.Text = "Dirección 02:";
-            this.lblDireccion02.UseCustomForeColor = true;
+            this.lblSituacion.AutoSize = true;
+            this.lblSituacion.ForeColor = System.Drawing.Color.Navy;
+            this.lblSituacion.Location = new System.Drawing.Point(2, 309);
+            this.lblSituacion.Name = "lblSituacion";
+            this.lblSituacion.Size = new System.Drawing.Size(64, 19);
+            this.lblSituacion.TabIndex = 0;
+            this.lblSituacion.Text = "Situación:";
+            this.lblSituacion.UseCustomForeColor = true;
             // 
             // txtPrimerNom
             // 
@@ -663,7 +638,7 @@
             this.txtPrimerNom.CustomButton.UseSelectable = true;
             this.txtPrimerNom.CustomButton.Visible = false;
             this.txtPrimerNom.Lines = new string[0];
-            this.txtPrimerNom.Location = new System.Drawing.Point(84, 9);
+            this.txtPrimerNom.Location = new System.Drawing.Point(84, 12);
             this.txtPrimerNom.MaxLength = 32767;
             this.txtPrimerNom.Name = "txtPrimerNom";
             this.txtPrimerNom.PasswordChar = '\0';
@@ -680,336 +655,29 @@
             this.txtPrimerNom.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtPrimerNom.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
-            // txtDireccion01
+            // cboSituacion
             // 
-            this.txtDireccion01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDireccion01.CustomButton.Image = null;
-            this.txtDireccion01.CustomButton.Location = new System.Drawing.Point(452, 1);
-            this.txtDireccion01.CustomButton.Name = "";
-            this.txtDireccion01.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDireccion01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDireccion01.CustomButton.TabIndex = 1;
-            this.txtDireccion01.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDireccion01.CustomButton.UseSelectable = true;
-            this.txtDireccion01.CustomButton.Visible = false;
-            this.txtDireccion01.Lines = new string[0];
-            this.txtDireccion01.Location = new System.Drawing.Point(82, 477);
-            this.txtDireccion01.MaxLength = 32767;
-            this.txtDireccion01.Name = "txtDireccion01";
-            this.txtDireccion01.PasswordChar = '\0';
-            this.txtDireccion01.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDireccion01.SelectedText = "";
-            this.txtDireccion01.SelectionLength = 0;
-            this.txtDireccion01.SelectionStart = 0;
-            this.txtDireccion01.ShortcutsEnabled = true;
-            this.txtDireccion01.Size = new System.Drawing.Size(474, 23);
-            this.txtDireccion01.TabIndex = 53;
-            this.txtDireccion01.UseCustomBackColor = true;
-            this.txtDireccion01.UseSelectable = true;
-            this.txtDireccion01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDireccion01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDireccion01.TextChanged += new System.EventHandler(this.CambioEnControl);
+            this.cboSituacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboSituacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSituacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboSituacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSituacion.FormattingEnabled = true;
+            this.cboSituacion.Location = new System.Drawing.Point(82, 309);
+            this.cboSituacion.Name = "cboSituacion";
+            this.cboSituacion.Size = new System.Drawing.Size(184, 23);
+            this.cboSituacion.TabIndex = 1;
+            this.cboSituacion.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblSegundoNom
             // 
             this.lblSegundoNom.AutoSize = true;
             this.lblSegundoNom.ForeColor = System.Drawing.Color.Navy;
-            this.lblSegundoNom.Location = new System.Drawing.Point(290, 11);
+            this.lblSegundoNom.Location = new System.Drawing.Point(290, 14);
             this.lblSegundoNom.Name = "lblSegundoNom";
             this.lblSegundoNom.Size = new System.Drawing.Size(78, 19);
             this.lblSegundoNom.TabIndex = 2;
             this.lblSegundoNom.Text = "2° Nombre:";
             this.lblSegundoNom.UseCustomForeColor = true;
-            // 
-            // lblDireccion01
-            // 
-            this.lblDireccion01.AutoSize = true;
-            this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion01.Location = new System.Drawing.Point(-1, 479);
-            this.lblDireccion01.Name = "lblDireccion01";
-            this.lblDireccion01.Size = new System.Drawing.Size(82, 19);
-            this.lblDireccion01.TabIndex = 52;
-            this.lblDireccion01.Text = "Dirección 01:";
-            this.lblDireccion01.UseCustomForeColor = true;
-            // 
-            // txtNumVia
-            // 
-            this.txtNumVia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtNumVia.CustomButton.Image = null;
-            this.txtNumVia.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtNumVia.CustomButton.Name = "";
-            this.txtNumVia.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtNumVia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNumVia.CustomButton.TabIndex = 1;
-            this.txtNumVia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNumVia.CustomButton.UseSelectable = true;
-            this.txtNumVia.CustomButton.Visible = false;
-            this.txtNumVia.Lines = new string[0];
-            this.txtNumVia.Location = new System.Drawing.Point(82, 442);
-            this.txtNumVia.MaxLength = 32767;
-            this.txtNumVia.Name = "txtNumVia";
-            this.txtNumVia.PasswordChar = '\0';
-            this.txtNumVia.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNumVia.SelectedText = "";
-            this.txtNumVia.SelectionLength = 0;
-            this.txtNumVia.SelectionStart = 0;
-            this.txtNumVia.ShortcutsEnabled = true;
-            this.txtNumVia.Size = new System.Drawing.Size(184, 23);
-            this.txtNumVia.TabIndex = 49;
-            this.txtNumVia.UseCustomBackColor = true;
-            this.txtNumVia.UseSelectable = true;
-            this.txtNumVia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNumVia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtNumVia.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblNumVia
-            // 
-            this.lblNumVia.AutoSize = true;
-            this.lblNumVia.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumVia.Location = new System.Drawing.Point(-1, 444);
-            this.lblNumVia.Name = "lblNumVia";
-            this.lblNumVia.Size = new System.Drawing.Size(66, 19);
-            this.lblNumVia.TabIndex = 48;
-            this.lblNumVia.Text = "Num. Vía:";
-            this.lblNumVia.UseCustomForeColor = true;
-            // 
-            // cboNacionalidad
-            // 
-            this.cboNacionalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNacionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboNacionalidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNacionalidad.FormattingEnabled = true;
-            this.cboNacionalidad.Location = new System.Drawing.Point(375, 338);
-            this.cboNacionalidad.Name = "cboNacionalidad";
-            this.cboNacionalidad.Size = new System.Drawing.Size(183, 23);
-            this.cboNacionalidad.TabIndex = 39;
-            this.cboNacionalidad.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblNacionalidad
-            // 
-            this.lblNacionalidad.AutoSize = true;
-            this.lblNacionalidad.ForeColor = System.Drawing.Color.Navy;
-            this.lblNacionalidad.Location = new System.Drawing.Point(291, 340);
-            this.lblNacionalidad.Name = "lblNacionalidad";
-            this.lblNacionalidad.Size = new System.Drawing.Size(89, 19);
-            this.lblNacionalidad.TabIndex = 38;
-            this.lblNacionalidad.Text = "Nacionalidad:";
-            this.lblNacionalidad.UseCustomForeColor = true;
-            // 
-            // cboProvincia
-            // 
-            this.cboProvincia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(376, 304);
-            this.cboProvincia.Name = "cboProvincia";
-            this.cboProvincia.Size = new System.Drawing.Size(182, 23);
-            this.cboProvincia.TabIndex = 35;
-            this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
-            // 
-            // lblProvincia
-            // 
-            this.lblProvincia.AutoSize = true;
-            this.lblProvincia.ForeColor = System.Drawing.Color.Navy;
-            this.lblProvincia.Location = new System.Drawing.Point(292, 306);
-            this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(65, 19);
-            this.lblProvincia.TabIndex = 34;
-            this.lblProvincia.Text = "Provincia:";
-            this.lblProvincia.UseCustomForeColor = true;
-            // 
-            // cboDepartamento
-            // 
-            this.cboDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboDepartamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDepartamento.FormattingEnabled = true;
-            this.cboDepartamento.Location = new System.Drawing.Point(83, 306);
-            this.cboDepartamento.Name = "cboDepartamento";
-            this.cboDepartamento.Size = new System.Drawing.Size(182, 23);
-            this.cboDepartamento.TabIndex = 33;
-            this.cboDepartamento.SelectedIndexChanged += new System.EventHandler(this.cboDepartamento_SelectedIndexChanged);
-            // 
-            // lblDepartamento
-            // 
-            this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.ForeColor = System.Drawing.Color.Navy;
-            this.lblDepartamento.Location = new System.Drawing.Point(-2, 308);
-            this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(41, 19);
-            this.lblDepartamento.TabIndex = 32;
-            this.lblDepartamento.Text = "Dpto:";
-            this.lblDepartamento.UseCustomForeColor = true;
-            // 
-            // cboDistrito
-            // 
-            this.cboDistrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDistrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboDistrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDistrito.FormattingEnabled = true;
-            this.cboDistrito.Location = new System.Drawing.Point(82, 340);
-            this.cboDistrito.Name = "cboDistrito";
-            this.cboDistrito.Size = new System.Drawing.Size(184, 23);
-            this.cboDistrito.TabIndex = 37;
-            this.cboDistrito.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblDistrito
-            // 
-            this.lblDistrito.AutoSize = true;
-            this.lblDistrito.ForeColor = System.Drawing.Color.Navy;
-            this.lblDistrito.Location = new System.Drawing.Point(-2, 342);
-            this.lblDistrito.Name = "lblDistrito";
-            this.lblDistrito.Size = new System.Drawing.Size(53, 19);
-            this.lblDistrito.TabIndex = 36;
-            this.lblDistrito.Text = "Distrito:";
-            this.lblDistrito.UseCustomForeColor = true;
-            // 
-            // txtNomVia
-            // 
-            this.txtNomVia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtNomVia.CustomButton.Image = null;
-            this.txtNomVia.CustomButton.Location = new System.Drawing.Point(160, 1);
-            this.txtNomVia.CustomButton.Name = "";
-            this.txtNomVia.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtNomVia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNomVia.CustomButton.TabIndex = 1;
-            this.txtNomVia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNomVia.CustomButton.UseSelectable = true;
-            this.txtNomVia.CustomButton.Visible = false;
-            this.txtNomVia.Lines = new string[0];
-            this.txtNomVia.Location = new System.Drawing.Point(375, 408);
-            this.txtNomVia.MaxLength = 32767;
-            this.txtNomVia.Name = "txtNomVia";
-            this.txtNomVia.PasswordChar = '\0';
-            this.txtNomVia.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNomVia.SelectedText = "";
-            this.txtNomVia.SelectionLength = 0;
-            this.txtNomVia.SelectionStart = 0;
-            this.txtNomVia.ShortcutsEnabled = true;
-            this.txtNomVia.Size = new System.Drawing.Size(182, 23);
-            this.txtNomVia.TabIndex = 47;
-            this.txtNomVia.UseCustomBackColor = true;
-            this.txtNomVia.UseSelectable = true;
-            this.txtNomVia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNomVia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtNomVia.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblNomVia
-            // 
-            this.lblNomVia.AutoSize = true;
-            this.lblNomVia.ForeColor = System.Drawing.Color.Navy;
-            this.lblNomVia.Location = new System.Drawing.Point(292, 410);
-            this.lblNomVia.Name = "lblNomVia";
-            this.lblNomVia.Size = new System.Drawing.Size(67, 19);
-            this.lblNomVia.TabIndex = 46;
-            this.lblNomVia.Text = "Nom. Vía:";
-            this.lblNomVia.UseCustomForeColor = true;
-            // 
-            // txtNomZona
-            // 
-            this.txtNomZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtNomZona.CustomButton.Image = null;
-            this.txtNomZona.CustomButton.Location = new System.Drawing.Point(160, 1);
-            this.txtNomZona.CustomButton.Name = "";
-            this.txtNomZona.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtNomZona.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNomZona.CustomButton.TabIndex = 1;
-            this.txtNomZona.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNomZona.CustomButton.UseSelectable = true;
-            this.txtNomZona.CustomButton.Visible = false;
-            this.txtNomZona.Lines = new string[0];
-            this.txtNomZona.Location = new System.Drawing.Point(375, 375);
-            this.txtNomZona.MaxLength = 32767;
-            this.txtNomZona.Name = "txtNomZona";
-            this.txtNomZona.PasswordChar = '\0';
-            this.txtNomZona.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNomZona.SelectedText = "";
-            this.txtNomZona.SelectionLength = 0;
-            this.txtNomZona.SelectionStart = 0;
-            this.txtNomZona.ShortcutsEnabled = true;
-            this.txtNomZona.Size = new System.Drawing.Size(182, 23);
-            this.txtNomZona.TabIndex = 43;
-            this.txtNomZona.UseCustomBackColor = true;
-            this.txtNomZona.UseSelectable = true;
-            this.txtNomZona.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNomZona.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtNomZona.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblNomZona
-            // 
-            this.lblNomZona.AutoSize = true;
-            this.lblNomZona.ForeColor = System.Drawing.Color.Navy;
-            this.lblNomZona.Location = new System.Drawing.Point(292, 377);
-            this.lblNomZona.Name = "lblNomZona";
-            this.lblNomZona.Size = new System.Drawing.Size(79, 19);
-            this.lblNomZona.TabIndex = 42;
-            this.lblNomZona.Text = "Nom. Zona:";
-            this.lblNomZona.UseCustomForeColor = true;
-            // 
-            // cboVia
-            // 
-            this.cboVia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboVia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboVia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboVia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboVia.FormattingEnabled = true;
-            this.cboVia.Location = new System.Drawing.Point(82, 408);
-            this.cboVia.Name = "cboVia";
-            this.cboVia.Size = new System.Drawing.Size(184, 23);
-            this.cboVia.TabIndex = 45;
-            this.cboVia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblVia
-            // 
-            this.lblVia.AutoSize = true;
-            this.lblVia.ForeColor = System.Drawing.Color.Navy;
-            this.lblVia.Location = new System.Drawing.Point(-1, 410);
-            this.lblVia.Name = "lblVia";
-            this.lblVia.Size = new System.Drawing.Size(60, 19);
-            this.lblVia.TabIndex = 44;
-            this.lblVia.Text = "Tipo Vía:";
-            this.lblVia.UseCustomForeColor = true;
-            // 
-            // cboZona
-            // 
-            this.cboZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboZona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboZona.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboZona.FormattingEnabled = true;
-            this.cboZona.Location = new System.Drawing.Point(82, 375);
-            this.cboZona.Name = "cboZona";
-            this.cboZona.Size = new System.Drawing.Size(184, 23);
-            this.cboZona.TabIndex = 41;
-            this.cboZona.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblZona
-            // 
-            this.lblZona.AutoSize = true;
-            this.lblZona.ForeColor = System.Drawing.Color.Navy;
-            this.lblZona.Location = new System.Drawing.Point(-1, 377);
-            this.lblZona.Name = "lblZona";
-            this.lblZona.Size = new System.Drawing.Size(72, 19);
-            this.lblZona.TabIndex = 40;
-            this.lblZona.Text = "Tipo Zona:";
-            this.lblZona.UseCustomForeColor = true;
             // 
             // txtNumRuc
             // 
@@ -1027,7 +695,7 @@
             this.txtNumRuc.CustomButton.UseSelectable = true;
             this.txtNumRuc.CustomButton.Visible = false;
             this.txtNumRuc.Lines = new string[0];
-            this.txtNumRuc.Location = new System.Drawing.Point(82, 256);
+            this.txtNumRuc.Location = new System.Drawing.Point(82, 227);
             this.txtNumRuc.MaxLength = 32767;
             this.txtNumRuc.Name = "txtNumRuc";
             this.txtNumRuc.PasswordChar = '\0';
@@ -1048,7 +716,7 @@
             // 
             this.lblNumRuc.AutoSize = true;
             this.lblNumRuc.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumRuc.Location = new System.Drawing.Point(1, 258);
+            this.lblNumRuc.Location = new System.Drawing.Point(1, 229);
             this.lblNumRuc.Name = "lblNumRuc";
             this.lblNumRuc.Size = new System.Drawing.Size(74, 19);
             this.lblNumRuc.TabIndex = 29;
@@ -1071,7 +739,7 @@
             this.txtNumDoc.CustomButton.UseSelectable = true;
             this.txtNumDoc.CustomButton.Visible = false;
             this.txtNumDoc.Lines = new string[0];
-            this.txtNumDoc.Location = new System.Drawing.Point(375, 222);
+            this.txtNumDoc.Location = new System.Drawing.Point(375, 227);
             this.txtNumDoc.MaxLength = 32767;
             this.txtNumDoc.Name = "txtNumDoc";
             this.txtNumDoc.PasswordChar = '\0';
@@ -1092,7 +760,7 @@
             // 
             this.lblNumDoc.AutoSize = true;
             this.lblNumDoc.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumDoc.Location = new System.Drawing.Point(289, 226);
+            this.lblNumDoc.Location = new System.Drawing.Point(289, 231);
             this.lblNumDoc.Name = "lblNumDoc";
             this.lblNumDoc.Size = new System.Drawing.Size(71, 19);
             this.lblNumDoc.TabIndex = 27;
@@ -1106,7 +774,7 @@
             this.cboTipoDocIdentidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoDocIdentidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoDocIdentidad.FormattingEnabled = true;
-            this.cboTipoDocIdentidad.Location = new System.Drawing.Point(82, 222);
+            this.cboTipoDocIdentidad.Location = new System.Drawing.Point(82, 262);
             this.cboTipoDocIdentidad.Name = "cboTipoDocIdentidad";
             this.cboTipoDocIdentidad.Size = new System.Drawing.Size(184, 23);
             this.cboTipoDocIdentidad.TabIndex = 26;
@@ -1116,7 +784,7 @@
             // 
             this.lblTipoDocIdentidad.AutoSize = true;
             this.lblTipoDocIdentidad.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoDocIdentidad.Location = new System.Drawing.Point(-2, 224);
+            this.lblTipoDocIdentidad.Location = new System.Drawing.Point(2, 264);
             this.lblTipoDocIdentidad.Name = "lblTipoDocIdentidad";
             this.lblTipoDocIdentidad.Size = new System.Drawing.Size(68, 19);
             this.lblTipoDocIdentidad.TabIndex = 25;
@@ -1139,7 +807,7 @@
             this.txtNomComercial.CustomButton.UseSelectable = true;
             this.txtNomComercial.CustomButton.Visible = false;
             this.txtNomComercial.Lines = new string[0];
-            this.txtNomComercial.Location = new System.Drawing.Point(375, 188);
+            this.txtNomComercial.Location = new System.Drawing.Point(375, 193);
             this.txtNomComercial.MaxLength = 32767;
             this.txtNomComercial.Name = "txtNomComercial";
             this.txtNomComercial.PasswordChar = '\0';
@@ -1160,7 +828,7 @@
             // 
             this.lblNomComercial.AutoSize = true;
             this.lblNomComercial.ForeColor = System.Drawing.Color.Navy;
-            this.lblNomComercial.Location = new System.Drawing.Point(289, 190);
+            this.lblNomComercial.Location = new System.Drawing.Point(289, 195);
             this.lblNomComercial.Name = "lblNomComercial";
             this.lblNomComercial.Size = new System.Drawing.Size(89, 19);
             this.lblNomComercial.TabIndex = 23;
@@ -1183,7 +851,7 @@
             this.txtRazonSocial.CustomButton.UseSelectable = true;
             this.txtRazonSocial.CustomButton.Visible = false;
             this.txtRazonSocial.Lines = new string[0];
-            this.txtRazonSocial.Location = new System.Drawing.Point(82, 188);
+            this.txtRazonSocial.Location = new System.Drawing.Point(82, 193);
             this.txtRazonSocial.MaxLength = 32767;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.PasswordChar = '\0';
@@ -1204,7 +872,7 @@
             // 
             this.lblRazonSocial.AutoSize = true;
             this.lblRazonSocial.ForeColor = System.Drawing.Color.Navy;
-            this.lblRazonSocial.Location = new System.Drawing.Point(0, 190);
+            this.lblRazonSocial.Location = new System.Drawing.Point(0, 195);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(86, 19);
             this.lblRazonSocial.TabIndex = 21;
@@ -1215,7 +883,7 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.ForeColor = System.Drawing.Color.Navy;
-            this.lblSexo.Location = new System.Drawing.Point(289, 112);
+            this.lblSexo.Location = new System.Drawing.Point(289, 115);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(40, 19);
             this.lblSexo.TabIndex = 14;
@@ -1225,7 +893,7 @@
             // rbtFemenino
             // 
             this.rbtFemenino.AutoSize = true;
-            this.rbtFemenino.Location = new System.Drawing.Point(482, 116);
+            this.rbtFemenino.Location = new System.Drawing.Point(482, 119);
             this.rbtFemenino.Name = "rbtFemenino";
             this.rbtFemenino.Size = new System.Drawing.Size(76, 15);
             this.rbtFemenino.TabIndex = 16;
@@ -1236,7 +904,7 @@
             // rbtMasculino
             // 
             this.rbtMasculino.AutoSize = true;
-            this.rbtMasculino.Location = new System.Drawing.Point(376, 116);
+            this.rbtMasculino.Location = new System.Drawing.Point(376, 119);
             this.rbtMasculino.Name = "rbtMasculino";
             this.rbtMasculino.Size = new System.Drawing.Size(78, 15);
             this.rbtMasculino.TabIndex = 15;
@@ -1260,7 +928,7 @@
             this.txtCodigo.CustomButton.UseSelectable = true;
             this.txtCodigo.CustomButton.Visible = false;
             this.txtCodigo.Lines = new string[0];
-            this.txtCodigo.Location = new System.Drawing.Point(83, 77);
+            this.txtCodigo.Location = new System.Drawing.Point(83, 80);
             this.txtCodigo.MaxLength = 32767;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -1281,7 +949,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.ForeColor = System.Drawing.Color.Navy;
-            this.lblCodigo.Location = new System.Drawing.Point(0, 79);
+            this.lblCodigo.Location = new System.Drawing.Point(0, 82);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(56, 19);
             this.lblCodigo.TabIndex = 8;
@@ -1293,27 +961,18 @@
             this.dtpFechaNacimiento.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(376, 77);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(376, 80);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(179, 23);
             this.dtpFechaNacimiento.TabIndex = 11;
             this.dtpFechaNacimiento.CloseUp += new System.EventHandler(this.dtpFechaNacimiento_CloseUp);
             this.dtpFechaNacimiento.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(1, 289);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(555, 6);
-            this.panel3.TabIndex = 59;
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(1, 142);
+            this.panel1.Location = new System.Drawing.Point(1, 145);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(555, 6);
             this.panel1.TabIndex = 57;
@@ -1322,7 +981,7 @@
             // 
             this.lblFechaNac.AutoSize = true;
             this.lblFechaNac.ForeColor = System.Drawing.Color.Navy;
-            this.lblFechaNac.Location = new System.Drawing.Point(289, 79);
+            this.lblFechaNac.Location = new System.Drawing.Point(289, 82);
             this.lblFechaNac.Name = "lblFechaNac";
             this.lblFechaNac.Size = new System.Drawing.Size(73, 19);
             this.lblFechaNac.TabIndex = 10;
@@ -1336,7 +995,7 @@
             this.cboEstadoCivil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboEstadoCivil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEstadoCivil.FormattingEnabled = true;
-            this.cboEstadoCivil.Location = new System.Drawing.Point(84, 111);
+            this.cboEstadoCivil.Location = new System.Drawing.Point(84, 114);
             this.cboEstadoCivil.Name = "cboEstadoCivil";
             this.cboEstadoCivil.Size = new System.Drawing.Size(181, 23);
             this.cboEstadoCivil.TabIndex = 13;
@@ -1346,7 +1005,7 @@
             // 
             this.lblEstadoCivil.AutoSize = true;
             this.lblEstadoCivil.ForeColor = System.Drawing.Color.Navy;
-            this.lblEstadoCivil.Location = new System.Drawing.Point(2, 113);
+            this.lblEstadoCivil.Location = new System.Drawing.Point(2, 116);
             this.lblEstadoCivil.Name = "lblEstadoCivil";
             this.lblEstadoCivil.Size = new System.Drawing.Size(79, 19);
             this.lblEstadoCivil.TabIndex = 12;
@@ -1369,7 +1028,7 @@
             this.txtApMaterno.CustomButton.UseSelectable = true;
             this.txtApMaterno.CustomButton.Visible = false;
             this.txtApMaterno.Lines = new string[0];
-            this.txtApMaterno.Location = new System.Drawing.Point(375, 43);
+            this.txtApMaterno.Location = new System.Drawing.Point(375, 46);
             this.txtApMaterno.MaxLength = 32767;
             this.txtApMaterno.Name = "txtApMaterno";
             this.txtApMaterno.PasswordChar = '\0';
@@ -1390,7 +1049,7 @@
             // 
             this.lblApMaterno.AutoSize = true;
             this.lblApMaterno.ForeColor = System.Drawing.Color.Navy;
-            this.lblApMaterno.Location = new System.Drawing.Point(289, 45);
+            this.lblApMaterno.Location = new System.Drawing.Point(289, 48);
             this.lblApMaterno.Name = "lblApMaterno";
             this.lblApMaterno.Size = new System.Drawing.Size(86, 19);
             this.lblApMaterno.TabIndex = 6;
@@ -1413,7 +1072,7 @@
             this.txtApPaterno.CustomButton.UseSelectable = true;
             this.txtApPaterno.CustomButton.Visible = false;
             this.txtApPaterno.Lines = new string[0];
-            this.txtApPaterno.Location = new System.Drawing.Point(83, 43);
+            this.txtApPaterno.Location = new System.Drawing.Point(83, 46);
             this.txtApPaterno.MaxLength = 32767;
             this.txtApPaterno.Name = "txtApPaterno";
             this.txtApPaterno.PasswordChar = '\0';
@@ -1434,7 +1093,7 @@
             // 
             this.lblApPaterno.AutoSize = true;
             this.lblApPaterno.ForeColor = System.Drawing.Color.Navy;
-            this.lblApPaterno.Location = new System.Drawing.Point(0, 45);
+            this.lblApPaterno.Location = new System.Drawing.Point(0, 48);
             this.lblApPaterno.Name = "lblApPaterno";
             this.lblApPaterno.Size = new System.Drawing.Size(81, 19);
             this.lblApPaterno.TabIndex = 4;
@@ -1443,8 +1102,6 @@
             // 
             // tabPagDetalles
             // 
-            this.tabPagDetalles.Controls.Add(this.grbSkillsEducativas);
-            this.tabPagDetalles.Controls.Add(this.grbBajaYSuspension);
             this.tabPagDetalles.Controls.Add(this.grbLaboralSaludPen);
             this.tabPagDetalles.Controls.Add(this.dtpFechaCese);
             this.tabPagDetalles.Controls.Add(this.metroLabel5);
@@ -1456,222 +1113,12 @@
             this.tabPagDetalles.HorizontalScrollbarSize = 10;
             this.tabPagDetalles.Location = new System.Drawing.Point(4, 38);
             this.tabPagDetalles.Name = "tabPagDetalles";
-            this.tabPagDetalles.Size = new System.Drawing.Size(578, 539);
+            this.tabPagDetalles.Size = new System.Drawing.Size(578, 394);
             this.tabPagDetalles.TabIndex = 3;
-            this.tabPagDetalles.Text = "Detalles";
+            this.tabPagDetalles.Text = "Salario y Regimen";
             this.tabPagDetalles.VerticalScrollbarBarColor = true;
             this.tabPagDetalles.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagDetalles.VerticalScrollbarSize = 10;
-            // 
-            // grbSkillsEducativas
-            // 
-            this.grbSkillsEducativas.BackColor = System.Drawing.Color.Transparent;
-            this.grbSkillsEducativas.Controls.Add(this.cboEspcMedica);
-            this.grbSkillsEducativas.Controls.Add(this.lblEspcMedica);
-            this.grbSkillsEducativas.Controls.Add(this.lblSituacionEdu);
-            this.grbSkillsEducativas.Controls.Add(this.cboTipoEspc);
-            this.grbSkillsEducativas.Controls.Add(this.cboSituacionEdu);
-            this.grbSkillsEducativas.Controls.Add(this.lblTipoEspc);
-            this.grbSkillsEducativas.Controls.Add(this.lblModalidadFormativa);
-            this.grbSkillsEducativas.Controls.Add(this.cboModalidadFormativa);
-            this.grbSkillsEducativas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbSkillsEducativas.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSkillsEducativas.ForeColor = System.Drawing.Color.Black;
-            this.grbSkillsEducativas.Location = new System.Drawing.Point(3, 349);
-            this.grbSkillsEducativas.Name = "grbSkillsEducativas";
-            this.grbSkillsEducativas.Size = new System.Drawing.Size(571, 91);
-            this.grbSkillsEducativas.TabIndex = 6;
-            this.grbSkillsEducativas.TabStop = false;
-            this.grbSkillsEducativas.Text = "Skills Educativas";
-            // 
-            // cboEspcMedica
-            // 
-            this.cboEspcMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboEspcMedica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEspcMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboEspcMedica.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboEspcMedica.FormattingEnabled = true;
-            this.cboEspcMedica.Location = new System.Drawing.Point(380, 56);
-            this.cboEspcMedica.Name = "cboEspcMedica";
-            this.cboEspcMedica.Size = new System.Drawing.Size(175, 23);
-            this.cboEspcMedica.TabIndex = 7;
-            this.cboEspcMedica.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblEspcMedica
-            // 
-            this.lblEspcMedica.AutoSize = true;
-            this.lblEspcMedica.ForeColor = System.Drawing.Color.Navy;
-            this.lblEspcMedica.Location = new System.Drawing.Point(290, 58);
-            this.lblEspcMedica.Name = "lblEspcMedica";
-            this.lblEspcMedica.Size = new System.Drawing.Size(88, 19);
-            this.lblEspcMedica.TabIndex = 6;
-            this.lblEspcMedica.Text = "Espc. Médica:";
-            this.lblEspcMedica.UseCustomForeColor = true;
-            // 
-            // lblSituacionEdu
-            // 
-            this.lblSituacionEdu.AutoSize = true;
-            this.lblSituacionEdu.ForeColor = System.Drawing.Color.Navy;
-            this.lblSituacionEdu.Location = new System.Drawing.Point(12, 26);
-            this.lblSituacionEdu.Name = "lblSituacionEdu";
-            this.lblSituacionEdu.Size = new System.Drawing.Size(75, 19);
-            this.lblSituacionEdu.TabIndex = 0;
-            this.lblSituacionEdu.Text = "Situac. Edu:";
-            this.lblSituacionEdu.UseCustomForeColor = true;
-            // 
-            // cboTipoEspc
-            // 
-            this.cboTipoEspc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoEspc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoEspc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoEspc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoEspc.FormattingEnabled = true;
-            this.cboTipoEspc.Location = new System.Drawing.Point(90, 56);
-            this.cboTipoEspc.Name = "cboTipoEspc";
-            this.cboTipoEspc.Size = new System.Drawing.Size(177, 23);
-            this.cboTipoEspc.TabIndex = 5;
-            this.cboTipoEspc.SelectedIndexChanged += new System.EventHandler(this.cboTipoEspc_SelectedIndexChanged);
-            // 
-            // cboSituacionEdu
-            // 
-            this.cboSituacionEdu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboSituacionEdu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSituacionEdu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboSituacionEdu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSituacionEdu.FormattingEnabled = true;
-            this.cboSituacionEdu.Location = new System.Drawing.Point(90, 24);
-            this.cboSituacionEdu.Name = "cboSituacionEdu";
-            this.cboSituacionEdu.Size = new System.Drawing.Size(177, 23);
-            this.cboSituacionEdu.TabIndex = 1;
-            this.cboSituacionEdu.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblTipoEspc
-            // 
-            this.lblTipoEspc.AutoSize = true;
-            this.lblTipoEspc.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoEspc.Location = new System.Drawing.Point(12, 58);
-            this.lblTipoEspc.Name = "lblTipoEspc";
-            this.lblTipoEspc.Size = new System.Drawing.Size(68, 19);
-            this.lblTipoEspc.TabIndex = 4;
-            this.lblTipoEspc.Text = "Tipo Espc:";
-            this.lblTipoEspc.UseCustomForeColor = true;
-            // 
-            // lblModalidadFormativa
-            // 
-            this.lblModalidadFormativa.AutoSize = true;
-            this.lblModalidadFormativa.BackColor = System.Drawing.Color.Transparent;
-            this.lblModalidadFormativa.ForeColor = System.Drawing.Color.Navy;
-            this.lblModalidadFormativa.Location = new System.Drawing.Point(290, 26);
-            this.lblModalidadFormativa.Name = "lblModalidadFormativa";
-            this.lblModalidadFormativa.Size = new System.Drawing.Size(90, 19);
-            this.lblModalidadFormativa.TabIndex = 2;
-            this.lblModalidadFormativa.Text = "M. Formativa:";
-            this.lblModalidadFormativa.UseCustomBackColor = true;
-            this.lblModalidadFormativa.UseCustomForeColor = true;
-            // 
-            // cboModalidadFormativa
-            // 
-            this.cboModalidadFormativa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboModalidadFormativa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboModalidadFormativa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboModalidadFormativa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboModalidadFormativa.FormattingEnabled = true;
-            this.cboModalidadFormativa.Location = new System.Drawing.Point(380, 24);
-            this.cboModalidadFormativa.Name = "cboModalidadFormativa";
-            this.cboModalidadFormativa.Size = new System.Drawing.Size(175, 23);
-            this.cboModalidadFormativa.TabIndex = 3;
-            this.cboModalidadFormativa.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // grbBajaYSuspension
-            // 
-            this.grbBajaYSuspension.BackColor = System.Drawing.Color.Transparent;
-            this.grbBajaYSuspension.Controls.Add(this.lblSuspLaboral);
-            this.grbBajaYSuspension.Controls.Add(this.cboSuspLaboral);
-            this.grbBajaYSuspension.Controls.Add(this.cboMotivoBaja);
-            this.grbBajaYSuspension.Controls.Add(this.lblMotivoBaja);
-            this.grbBajaYSuspension.Controls.Add(this.lblSituacion);
-            this.grbBajaYSuspension.Controls.Add(this.cboSituacion);
-            this.grbBajaYSuspension.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbBajaYSuspension.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbBajaYSuspension.ForeColor = System.Drawing.Color.Black;
-            this.grbBajaYSuspension.Location = new System.Drawing.Point(3, 446);
-            this.grbBajaYSuspension.Name = "grbBajaYSuspension";
-            this.grbBajaYSuspension.Size = new System.Drawing.Size(571, 90);
-            this.grbBajaYSuspension.TabIndex = 7;
-            this.grbBajaYSuspension.TabStop = false;
-            this.grbBajaYSuspension.Text = "Baja y Suspensión";
-            // 
-            // lblSuspLaboral
-            // 
-            this.lblSuspLaboral.AutoSize = true;
-            this.lblSuspLaboral.ForeColor = System.Drawing.Color.Navy;
-            this.lblSuspLaboral.Location = new System.Drawing.Point(10, 57);
-            this.lblSuspLaboral.Name = "lblSuspLaboral";
-            this.lblSuspLaboral.Size = new System.Drawing.Size(81, 19);
-            this.lblSuspLaboral.TabIndex = 4;
-            this.lblSuspLaboral.Text = "Susp. Labor:";
-            this.lblSuspLaboral.UseCustomForeColor = true;
-            // 
-            // cboSuspLaboral
-            // 
-            this.cboSuspLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboSuspLaboral.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSuspLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboSuspLaboral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSuspLaboral.FormattingEnabled = true;
-            this.cboSuspLaboral.Location = new System.Drawing.Point(91, 54);
-            this.cboSuspLaboral.Name = "cboSuspLaboral";
-            this.cboSuspLaboral.Size = new System.Drawing.Size(175, 23);
-            this.cboSuspLaboral.TabIndex = 5;
-            this.cboSuspLaboral.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboMotivoBaja
-            // 
-            this.cboMotivoBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboMotivoBaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMotivoBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboMotivoBaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMotivoBaja.FormattingEnabled = true;
-            this.cboMotivoBaja.Location = new System.Drawing.Point(379, 24);
-            this.cboMotivoBaja.Name = "cboMotivoBaja";
-            this.cboMotivoBaja.Size = new System.Drawing.Size(176, 23);
-            this.cboMotivoBaja.TabIndex = 3;
-            this.cboMotivoBaja.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblMotivoBaja
-            // 
-            this.lblMotivoBaja.AutoSize = true;
-            this.lblMotivoBaja.ForeColor = System.Drawing.Color.Navy;
-            this.lblMotivoBaja.Location = new System.Drawing.Point(290, 26);
-            this.lblMotivoBaja.Name = "lblMotivoBaja";
-            this.lblMotivoBaja.Size = new System.Drawing.Size(82, 19);
-            this.lblMotivoBaja.TabIndex = 2;
-            this.lblMotivoBaja.Text = "Motivo Baja:";
-            this.lblMotivoBaja.UseCustomForeColor = true;
-            // 
-            // lblSituacion
-            // 
-            this.lblSituacion.AutoSize = true;
-            this.lblSituacion.ForeColor = System.Drawing.Color.Navy;
-            this.lblSituacion.Location = new System.Drawing.Point(12, 26);
-            this.lblSituacion.Name = "lblSituacion";
-            this.lblSituacion.Size = new System.Drawing.Size(64, 19);
-            this.lblSituacion.TabIndex = 0;
-            this.lblSituacion.Text = "Situación:";
-            this.lblSituacion.UseCustomForeColor = true;
-            // 
-            // cboSituacion
-            // 
-            this.cboSituacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboSituacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSituacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboSituacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSituacion.FormattingEnabled = true;
-            this.cboSituacion.Location = new System.Drawing.Point(90, 24);
-            this.cboSituacion.Name = "cboSituacion";
-            this.cboSituacion.Size = new System.Drawing.Size(176, 23);
-            this.cboSituacion.TabIndex = 1;
-            this.cboSituacion.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // grbLaboralSaludPen
             // 
@@ -1691,9 +1138,9 @@
             this.grbLaboralSaludPen.Controls.Add(this.cboTipoTrabajador);
             this.grbLaboralSaludPen.Controls.Add(this.lblTipoTrabajador);
             this.grbLaboralSaludPen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbLaboralSaludPen.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbLaboralSaludPen.ForeColor = System.Drawing.Color.Black;
-            this.grbLaboralSaludPen.Location = new System.Drawing.Point(3, 188);
+            this.grbLaboralSaludPen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbLaboralSaludPen.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbLaboralSaludPen.Location = new System.Drawing.Point(4, 196);
             this.grbLaboralSaludPen.Name = "grbLaboralSaludPen";
             this.grbLaboralSaludPen.Size = new System.Drawing.Size(571, 155);
             this.grbLaboralSaludPen.TabIndex = 5;
@@ -1932,11 +1379,11 @@
             this.grbSalario.Controls.Add(this.txtSalMensual);
             this.grbSalario.Controls.Add(this.lblSalMensual);
             this.grbSalario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbSalario.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSalario.ForeColor = System.Drawing.Color.Black;
-            this.grbSalario.Location = new System.Drawing.Point(3, 48);
+            this.grbSalario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSalario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbSalario.Location = new System.Drawing.Point(3, 41);
             this.grbSalario.Name = "grbSalario";
-            this.grbSalario.Size = new System.Drawing.Size(571, 134);
+            this.grbSalario.Size = new System.Drawing.Size(571, 149);
             this.grbSalario.TabIndex = 4;
             this.grbSalario.TabStop = false;
             this.grbSalario.Text = "Horas y Salario";
@@ -1948,9 +1395,9 @@
             this.cboPeriodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboPeriodoPago.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPeriodoPago.FormattingEnabled = true;
-            this.cboPeriodoPago.Location = new System.Drawing.Point(379, 24);
+            this.cboPeriodoPago.Location = new System.Drawing.Point(104, 56);
             this.cboPeriodoPago.Name = "cboPeriodoPago";
-            this.cboPeriodoPago.Size = new System.Drawing.Size(175, 23);
+            this.cboPeriodoPago.Size = new System.Drawing.Size(163, 23);
             this.cboPeriodoPago.TabIndex = 3;
             this.cboPeriodoPago.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -1961,7 +1408,7 @@
             this.cboEntidadFinanciera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboEntidadFinanciera.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEntidadFinanciera.FormattingEnabled = true;
-            this.cboEntidadFinanciera.Location = new System.Drawing.Point(90, 56);
+            this.cboEntidadFinanciera.Location = new System.Drawing.Point(91, 24);
             this.cboEntidadFinanciera.Name = "cboEntidadFinanciera";
             this.cboEntidadFinanciera.Size = new System.Drawing.Size(176, 23);
             this.cboEntidadFinanciera.TabIndex = 5;
@@ -1971,7 +1418,7 @@
             // 
             this.lblPeriodoPago.AutoSize = true;
             this.lblPeriodoPago.ForeColor = System.Drawing.Color.Navy;
-            this.lblPeriodoPago.Location = new System.Drawing.Point(290, 26);
+            this.lblPeriodoPago.Location = new System.Drawing.Point(10, 60);
             this.lblPeriodoPago.Name = "lblPeriodoPago";
             this.lblPeriodoPago.Size = new System.Drawing.Size(92, 19);
             this.lblPeriodoPago.TabIndex = 2;
@@ -1985,7 +1432,7 @@
             // 
             // 
             this.txtNumHorasMes.CustomButton.Image = null;
-            this.txtNumHorasMes.CustomButton.Location = new System.Drawing.Point(154, 1);
+            this.txtNumHorasMes.CustomButton.Location = new System.Drawing.Point(82, 1);
             this.txtNumHorasMes.CustomButton.Name = "";
             this.txtNumHorasMes.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNumHorasMes.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1994,7 +1441,7 @@
             this.txtNumHorasMes.CustomButton.UseSelectable = true;
             this.txtNumHorasMes.CustomButton.Visible = false;
             this.txtNumHorasMes.Lines = new string[0];
-            this.txtNumHorasMes.Location = new System.Drawing.Point(90, 24);
+            this.txtNumHorasMes.Location = new System.Drawing.Point(448, 117);
             this.txtNumHorasMes.MaxLength = 32767;
             this.txtNumHorasMes.Name = "txtNumHorasMes";
             this.txtNumHorasMes.PasswordChar = '\0';
@@ -2003,7 +1450,7 @@
             this.txtNumHorasMes.SelectionLength = 0;
             this.txtNumHorasMes.SelectionStart = 0;
             this.txtNumHorasMes.ShortcutsEnabled = true;
-            this.txtNumHorasMes.Size = new System.Drawing.Size(176, 23);
+            this.txtNumHorasMes.Size = new System.Drawing.Size(104, 23);
             this.txtNumHorasMes.TabIndex = 1;
             this.txtNumHorasMes.UseCustomBackColor = true;
             this.txtNumHorasMes.UseSelectable = true;
@@ -2016,11 +1463,11 @@
             this.lblNumHorasMes.AutoSize = true;
             this.lblNumHorasMes.BackColor = System.Drawing.Color.Transparent;
             this.lblNumHorasMes.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumHorasMes.Location = new System.Drawing.Point(12, 26);
+            this.lblNumHorasMes.Location = new System.Drawing.Point(327, 119);
             this.lblNumHorasMes.Name = "lblNumHorasMes";
-            this.lblNumHorasMes.Size = new System.Drawing.Size(81, 19);
+            this.lblNumHorasMes.Size = new System.Drawing.Size(74, 19);
             this.lblNumHorasMes.TabIndex = 0;
-            this.lblNumHorasMes.Text = "N° Hrs. Mes:";
+            this.lblNumHorasMes.Text = "Horas Mes:";
             this.lblNumHorasMes.UseCustomForeColor = true;
             // 
             // txtNumCuenta
@@ -2030,7 +1477,7 @@
             // 
             // 
             this.txtNumCuenta.CustomButton.Image = null;
-            this.txtNumCuenta.CustomButton.Location = new System.Drawing.Point(154, 1);
+            this.txtNumCuenta.CustomButton.Location = new System.Drawing.Point(142, 1);
             this.txtNumCuenta.CustomButton.Name = "";
             this.txtNumCuenta.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNumCuenta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2039,7 +1486,7 @@
             this.txtNumCuenta.CustomButton.UseSelectable = true;
             this.txtNumCuenta.CustomButton.Visible = false;
             this.txtNumCuenta.Lines = new string[0];
-            this.txtNumCuenta.Location = new System.Drawing.Point(379, 56);
+            this.txtNumCuenta.Location = new System.Drawing.Point(104, 88);
             this.txtNumCuenta.MaxLength = 32767;
             this.txtNumCuenta.Name = "txtNumCuenta";
             this.txtNumCuenta.PasswordChar = '\0';
@@ -2048,7 +1495,7 @@
             this.txtNumCuenta.SelectionLength = 0;
             this.txtNumCuenta.SelectionStart = 0;
             this.txtNumCuenta.ShortcutsEnabled = true;
-            this.txtNumCuenta.Size = new System.Drawing.Size(176, 23);
+            this.txtNumCuenta.Size = new System.Drawing.Size(164, 23);
             this.txtNumCuenta.TabIndex = 7;
             this.txtNumCuenta.UseCustomBackColor = true;
             this.txtNumCuenta.UseSelectable = true;
@@ -2061,7 +1508,7 @@
             this.lblNumCuenta.AutoSize = true;
             this.lblNumCuenta.BackColor = System.Drawing.Color.Transparent;
             this.lblNumCuenta.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumCuenta.Location = new System.Drawing.Point(290, 58);
+            this.lblNumCuenta.Location = new System.Drawing.Point(10, 92);
             this.lblNumCuenta.Name = "lblNumCuenta";
             this.lblNumCuenta.Size = new System.Drawing.Size(88, 19);
             this.lblNumCuenta.TabIndex = 6;
@@ -2072,7 +1519,7 @@
             // 
             this.lblEntidadFinanciera.AutoSize = true;
             this.lblEntidadFinanciera.ForeColor = System.Drawing.Color.Navy;
-            this.lblEntidadFinanciera.Location = new System.Drawing.Point(12, 60);
+            this.lblEntidadFinanciera.Location = new System.Drawing.Point(10, 26);
             this.lblEntidadFinanciera.Name = "lblEntidadFinanciera";
             this.lblEntidadFinanciera.Size = new System.Drawing.Size(79, 19);
             this.lblEntidadFinanciera.TabIndex = 4;
@@ -2086,7 +1533,7 @@
             // 
             // 
             this.txtSalQuincenal.CustomButton.Image = null;
-            this.txtSalQuincenal.CustomButton.Location = new System.Drawing.Point(83, 1);
+            this.txtSalQuincenal.CustomButton.Location = new System.Drawing.Point(82, 1);
             this.txtSalQuincenal.CustomButton.Name = "";
             this.txtSalQuincenal.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtSalQuincenal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2096,7 +1543,7 @@
             this.txtSalQuincenal.CustomButton.Visible = false;
             this.txtSalQuincenal.ForeColor = System.Drawing.Color.Black;
             this.txtSalQuincenal.Lines = new string[0];
-            this.txtSalQuincenal.Location = new System.Drawing.Point(277, 88);
+            this.txtSalQuincenal.Location = new System.Drawing.Point(448, 56);
             this.txtSalQuincenal.MaxLength = 32767;
             this.txtSalQuincenal.Name = "txtSalQuincenal";
             this.txtSalQuincenal.PasswordChar = '\0';
@@ -2105,7 +1552,7 @@
             this.txtSalQuincenal.SelectionLength = 0;
             this.txtSalQuincenal.SelectionStart = 0;
             this.txtSalQuincenal.ShortcutsEnabled = true;
-            this.txtSalQuincenal.Size = new System.Drawing.Size(105, 23);
+            this.txtSalQuincenal.Size = new System.Drawing.Size(104, 23);
             this.txtSalQuincenal.TabIndex = 11;
             this.txtSalQuincenal.UseCustomBackColor = true;
             this.txtSalQuincenal.UseSelectable = true;
@@ -2118,11 +1565,11 @@
             this.lblSalQuincenal.AutoSize = true;
             this.lblSalQuincenal.BackColor = System.Drawing.Color.Transparent;
             this.lblSalQuincenal.ForeColor = System.Drawing.Color.Navy;
-            this.lblSalQuincenal.Location = new System.Drawing.Point(209, 90);
+            this.lblSalQuincenal.Location = new System.Drawing.Point(327, 58);
             this.lblSalQuincenal.Name = "lblSalQuincenal";
-            this.lblSalQuincenal.Size = new System.Drawing.Size(70, 19);
+            this.lblSalQuincenal.Size = new System.Drawing.Size(114, 19);
             this.lblSalQuincenal.TabIndex = 10;
-            this.lblSalQuincenal.Text = "Quincenal:";
+            this.lblSalQuincenal.Text = "Salario Quincenal:";
             this.lblSalQuincenal.UseCustomForeColor = true;
             // 
             // txtSalHora
@@ -2141,7 +1588,7 @@
             this.txtSalHora.CustomButton.UseSelectable = true;
             this.txtSalHora.CustomButton.Visible = false;
             this.txtSalHora.Lines = new string[0];
-            this.txtSalHora.Location = new System.Drawing.Point(449, 88);
+            this.txtSalHora.Location = new System.Drawing.Point(448, 86);
             this.txtSalHora.MaxLength = 32767;
             this.txtSalHora.Name = "txtSalHora";
             this.txtSalHora.PasswordChar = '\0';
@@ -2163,11 +1610,11 @@
             this.lblSalHora.AutoSize = true;
             this.lblSalHora.BackColor = System.Drawing.Color.Transparent;
             this.lblSalHora.ForeColor = System.Drawing.Color.Navy;
-            this.lblSalHora.Location = new System.Drawing.Point(401, 90);
+            this.lblSalHora.Location = new System.Drawing.Point(327, 88);
             this.lblSalHora.Name = "lblSalHora";
-            this.lblSalHora.Size = new System.Drawing.Size(41, 19);
+            this.lblSalHora.Size = new System.Drawing.Size(85, 19);
             this.lblSalHora.TabIndex = 12;
-            this.lblSalHora.Text = "Hora:";
+            this.lblSalHora.Text = "Salario Hora:";
             this.lblSalHora.UseCustomForeColor = true;
             // 
             // txtSalMensual
@@ -2177,7 +1624,7 @@
             // 
             // 
             this.txtSalMensual.CustomButton.Image = null;
-            this.txtSalMensual.CustomButton.Location = new System.Drawing.Point(87, 1);
+            this.txtSalMensual.CustomButton.Location = new System.Drawing.Point(82, 1);
             this.txtSalMensual.CustomButton.Name = "";
             this.txtSalMensual.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtSalMensual.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2186,7 +1633,7 @@
             this.txtSalMensual.CustomButton.UseSelectable = true;
             this.txtSalMensual.CustomButton.Visible = false;
             this.txtSalMensual.Lines = new string[0];
-            this.txtSalMensual.Location = new System.Drawing.Point(90, 88);
+            this.txtSalMensual.Location = new System.Drawing.Point(448, 24);
             this.txtSalMensual.MaxLength = 32767;
             this.txtSalMensual.Name = "txtSalMensual";
             this.txtSalMensual.PasswordChar = '\0';
@@ -2195,7 +1642,7 @@
             this.txtSalMensual.SelectionLength = 0;
             this.txtSalMensual.SelectionStart = 0;
             this.txtSalMensual.ShortcutsEnabled = true;
-            this.txtSalMensual.Size = new System.Drawing.Size(109, 23);
+            this.txtSalMensual.Size = new System.Drawing.Size(104, 23);
             this.txtSalMensual.TabIndex = 9;
             this.txtSalMensual.UseCustomBackColor = true;
             this.txtSalMensual.UseSelectable = true;
@@ -2208,24 +1655,157 @@
             this.lblSalMensual.AutoSize = true;
             this.lblSalMensual.BackColor = System.Drawing.Color.Transparent;
             this.lblSalMensual.ForeColor = System.Drawing.Color.Navy;
-            this.lblSalMensual.Location = new System.Drawing.Point(13, 90);
+            this.lblSalMensual.Location = new System.Drawing.Point(327, 26);
             this.lblSalMensual.Name = "lblSalMensual";
-            this.lblSalMensual.Size = new System.Drawing.Size(60, 19);
+            this.lblSalMensual.Size = new System.Drawing.Size(104, 19);
             this.lblSalMensual.TabIndex = 8;
-            this.lblSalMensual.Text = "Mensual:";
+            this.lblSalMensual.Text = "Salario Mensual:";
             this.lblSalMensual.UseCustomForeColor = true;
+            // 
+            // tabPagEducacion
+            // 
+            this.tabPagEducacion.Controls.Add(this.grbSkillsEducativas);
+            this.tabPagEducacion.HorizontalScrollbarBarColor = true;
+            this.tabPagEducacion.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagEducacion.HorizontalScrollbarSize = 10;
+            this.tabPagEducacion.Location = new System.Drawing.Point(4, 38);
+            this.tabPagEducacion.Name = "tabPagEducacion";
+            this.tabPagEducacion.Size = new System.Drawing.Size(578, 394);
+            this.tabPagEducacion.TabIndex = 6;
+            this.tabPagEducacion.Text = "Educación";
+            this.tabPagEducacion.VerticalScrollbarBarColor = true;
+            this.tabPagEducacion.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagEducacion.VerticalScrollbarSize = 10;
+            // 
+            // grbSkillsEducativas
+            // 
+            this.grbSkillsEducativas.BackColor = System.Drawing.Color.Transparent;
+            this.grbSkillsEducativas.Controls.Add(this.cboEspcMedica);
+            this.grbSkillsEducativas.Controls.Add(this.lblEspcMedica);
+            this.grbSkillsEducativas.Controls.Add(this.lblSituacionEdu);
+            this.grbSkillsEducativas.Controls.Add(this.cboTipoEspc);
+            this.grbSkillsEducativas.Controls.Add(this.cboSituacionEdu);
+            this.grbSkillsEducativas.Controls.Add(this.lblTipoEspc);
+            this.grbSkillsEducativas.Controls.Add(this.lblModalidadFormativa);
+            this.grbSkillsEducativas.Controls.Add(this.cboModalidadFormativa);
+            this.grbSkillsEducativas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbSkillsEducativas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSkillsEducativas.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbSkillsEducativas.Location = new System.Drawing.Point(4, 13);
+            this.grbSkillsEducativas.Name = "grbSkillsEducativas";
+            this.grbSkillsEducativas.Size = new System.Drawing.Size(571, 91);
+            this.grbSkillsEducativas.TabIndex = 6;
+            this.grbSkillsEducativas.TabStop = false;
+            this.grbSkillsEducativas.Text = "Formación y Educación";
+            // 
+            // cboEspcMedica
+            // 
+            this.cboEspcMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboEspcMedica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEspcMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboEspcMedica.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEspcMedica.FormattingEnabled = true;
+            this.cboEspcMedica.Location = new System.Drawing.Point(380, 56);
+            this.cboEspcMedica.Name = "cboEspcMedica";
+            this.cboEspcMedica.Size = new System.Drawing.Size(175, 23);
+            this.cboEspcMedica.TabIndex = 7;
+            this.cboEspcMedica.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblEspcMedica
+            // 
+            this.lblEspcMedica.AutoSize = true;
+            this.lblEspcMedica.ForeColor = System.Drawing.Color.Navy;
+            this.lblEspcMedica.Location = new System.Drawing.Point(290, 58);
+            this.lblEspcMedica.Name = "lblEspcMedica";
+            this.lblEspcMedica.Size = new System.Drawing.Size(88, 19);
+            this.lblEspcMedica.TabIndex = 6;
+            this.lblEspcMedica.Text = "Espc. Médica:";
+            this.lblEspcMedica.UseCustomForeColor = true;
+            // 
+            // lblSituacionEdu
+            // 
+            this.lblSituacionEdu.AutoSize = true;
+            this.lblSituacionEdu.ForeColor = System.Drawing.Color.Navy;
+            this.lblSituacionEdu.Location = new System.Drawing.Point(12, 26);
+            this.lblSituacionEdu.Name = "lblSituacionEdu";
+            this.lblSituacionEdu.Size = new System.Drawing.Size(75, 19);
+            this.lblSituacionEdu.TabIndex = 0;
+            this.lblSituacionEdu.Text = "Situac. Edu:";
+            this.lblSituacionEdu.UseCustomForeColor = true;
+            // 
+            // cboTipoEspc
+            // 
+            this.cboTipoEspc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTipoEspc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoEspc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoEspc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoEspc.FormattingEnabled = true;
+            this.cboTipoEspc.Location = new System.Drawing.Point(90, 56);
+            this.cboTipoEspc.Name = "cboTipoEspc";
+            this.cboTipoEspc.Size = new System.Drawing.Size(177, 23);
+            this.cboTipoEspc.TabIndex = 5;
+            this.cboTipoEspc.SelectedIndexChanged += new System.EventHandler(this.cboTipoEspc_SelectedIndexChanged);
+            // 
+            // cboSituacionEdu
+            // 
+            this.cboSituacionEdu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboSituacionEdu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSituacionEdu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboSituacionEdu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSituacionEdu.FormattingEnabled = true;
+            this.cboSituacionEdu.Location = new System.Drawing.Point(90, 24);
+            this.cboSituacionEdu.Name = "cboSituacionEdu";
+            this.cboSituacionEdu.Size = new System.Drawing.Size(177, 23);
+            this.cboSituacionEdu.TabIndex = 1;
+            this.cboSituacionEdu.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblTipoEspc
+            // 
+            this.lblTipoEspc.AutoSize = true;
+            this.lblTipoEspc.ForeColor = System.Drawing.Color.Navy;
+            this.lblTipoEspc.Location = new System.Drawing.Point(12, 58);
+            this.lblTipoEspc.Name = "lblTipoEspc";
+            this.lblTipoEspc.Size = new System.Drawing.Size(68, 19);
+            this.lblTipoEspc.TabIndex = 4;
+            this.lblTipoEspc.Text = "Tipo Espc:";
+            this.lblTipoEspc.UseCustomForeColor = true;
+            // 
+            // lblModalidadFormativa
+            // 
+            this.lblModalidadFormativa.AutoSize = true;
+            this.lblModalidadFormativa.BackColor = System.Drawing.Color.Transparent;
+            this.lblModalidadFormativa.ForeColor = System.Drawing.Color.Navy;
+            this.lblModalidadFormativa.Location = new System.Drawing.Point(290, 26);
+            this.lblModalidadFormativa.Name = "lblModalidadFormativa";
+            this.lblModalidadFormativa.Size = new System.Drawing.Size(90, 19);
+            this.lblModalidadFormativa.TabIndex = 2;
+            this.lblModalidadFormativa.Text = "M. Formativa:";
+            this.lblModalidadFormativa.UseCustomBackColor = true;
+            this.lblModalidadFormativa.UseCustomForeColor = true;
+            // 
+            // cboModalidadFormativa
+            // 
+            this.cboModalidadFormativa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboModalidadFormativa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboModalidadFormativa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboModalidadFormativa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboModalidadFormativa.FormattingEnabled = true;
+            this.cboModalidadFormativa.Location = new System.Drawing.Point(380, 24);
+            this.cboModalidadFormativa.Name = "cboModalidadFormativa";
+            this.cboModalidadFormativa.Size = new System.Drawing.Size(175, 23);
+            this.cboModalidadFormativa.TabIndex = 3;
+            this.cboModalidadFormativa.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // tabPagContacto
             // 
             this.tabPagContacto.Controls.Add(this.grbEmailYWeb);
-            this.tabPagContacto.Controls.Add(this.grbTelefonosFijos);
-            this.tabPagContacto.Controls.Add(this.grbCelulares);
+            this.tabPagContacto.Controls.Add(this.grbNumerosContacto);
             this.tabPagContacto.HorizontalScrollbarBarColor = true;
             this.tabPagContacto.HorizontalScrollbarHighlightOnWheel = false;
             this.tabPagContacto.HorizontalScrollbarSize = 10;
             this.tabPagContacto.Location = new System.Drawing.Point(4, 38);
             this.tabPagContacto.Name = "tabPagContacto";
-            this.tabPagContacto.Size = new System.Drawing.Size(578, 539);
+            this.tabPagContacto.Size = new System.Drawing.Size(578, 394);
             this.tabPagContacto.TabIndex = 1;
             this.tabPagContacto.Text = "Contacto";
             this.tabPagContacto.VerticalScrollbarBarColor = true;
@@ -2242,11 +1822,11 @@
             this.grbEmailYWeb.Controls.Add(this.txtEmail01);
             this.grbEmailYWeb.Controls.Add(this.lblEmail01);
             this.grbEmailYWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbEmailYWeb.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEmailYWeb.ForeColor = System.Drawing.Color.Black;
-            this.grbEmailYWeb.Location = new System.Drawing.Point(11, 179);
+            this.grbEmailYWeb.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbEmailYWeb.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbEmailYWeb.Location = new System.Drawing.Point(12, 12);
             this.grbEmailYWeb.Name = "grbEmailYWeb";
-            this.grbEmailYWeb.Size = new System.Drawing.Size(555, 160);
+            this.grbEmailYWeb.Size = new System.Drawing.Size(555, 134);
             this.grbEmailYWeb.TabIndex = 2;
             this.grbEmailYWeb.TabStop = false;
             this.grbEmailYWeb.Text = "Email\'s y Web";
@@ -2258,7 +1838,7 @@
             // 
             // 
             this.txtEmail02.CustomButton.Image = null;
-            this.txtEmail02.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtEmail02.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtEmail02.CustomButton.Name = "";
             this.txtEmail02.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtEmail02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2267,7 +1847,7 @@
             this.txtEmail02.CustomButton.UseSelectable = true;
             this.txtEmail02.CustomButton.Visible = false;
             this.txtEmail02.Lines = new string[0];
-            this.txtEmail02.Location = new System.Drawing.Point(98, 74);
+            this.txtEmail02.Location = new System.Drawing.Point(91, 61);
             this.txtEmail02.MaxLength = 32767;
             this.txtEmail02.Name = "txtEmail02";
             this.txtEmail02.PasswordChar = '\0';
@@ -2276,7 +1856,7 @@
             this.txtEmail02.SelectionLength = 0;
             this.txtEmail02.SelectionStart = 0;
             this.txtEmail02.ShortcutsEnabled = true;
-            this.txtEmail02.Size = new System.Drawing.Size(439, 23);
+            this.txtEmail02.Size = new System.Drawing.Size(446, 23);
             this.txtEmail02.TabIndex = 3;
             this.txtEmail02.UseCustomBackColor = true;
             this.txtEmail02.UseSelectable = true;
@@ -2289,7 +1869,7 @@
             this.lblEmail02.AutoSize = true;
             this.lblEmail02.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail02.ForeColor = System.Drawing.Color.Navy;
-            this.lblEmail02.Location = new System.Drawing.Point(6, 74);
+            this.lblEmail02.Location = new System.Drawing.Point(6, 63);
             this.lblEmail02.Name = "lblEmail02";
             this.lblEmail02.Size = new System.Drawing.Size(62, 19);
             this.lblEmail02.TabIndex = 2;
@@ -2303,7 +1883,7 @@
             // 
             // 
             this.txtPagWeb.CustomButton.Image = null;
-            this.txtPagWeb.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtPagWeb.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtPagWeb.CustomButton.Name = "";
             this.txtPagWeb.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtPagWeb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2312,7 +1892,7 @@
             this.txtPagWeb.CustomButton.UseSelectable = true;
             this.txtPagWeb.CustomButton.Visible = false;
             this.txtPagWeb.Lines = new string[0];
-            this.txtPagWeb.Location = new System.Drawing.Point(98, 115);
+            this.txtPagWeb.Location = new System.Drawing.Point(91, 95);
             this.txtPagWeb.MaxLength = 32767;
             this.txtPagWeb.Name = "txtPagWeb";
             this.txtPagWeb.PasswordChar = '\0';
@@ -2321,7 +1901,7 @@
             this.txtPagWeb.SelectionLength = 0;
             this.txtPagWeb.SelectionStart = 0;
             this.txtPagWeb.ShortcutsEnabled = true;
-            this.txtPagWeb.Size = new System.Drawing.Size(439, 23);
+            this.txtPagWeb.Size = new System.Drawing.Size(446, 23);
             this.txtPagWeb.TabIndex = 5;
             this.txtPagWeb.UseCustomBackColor = true;
             this.txtPagWeb.UseSelectable = true;
@@ -2334,7 +1914,7 @@
             this.lblPagWeb.AutoSize = true;
             this.lblPagWeb.BackColor = System.Drawing.Color.Transparent;
             this.lblPagWeb.ForeColor = System.Drawing.Color.Navy;
-            this.lblPagWeb.Location = new System.Drawing.Point(6, 116);
+            this.lblPagWeb.Location = new System.Drawing.Point(6, 97);
             this.lblPagWeb.Name = "lblPagWeb";
             this.lblPagWeb.Size = new System.Drawing.Size(79, 19);
             this.lblPagWeb.TabIndex = 4;
@@ -2348,7 +1928,7 @@
             // 
             // 
             this.txtEmail01.CustomButton.Image = null;
-            this.txtEmail01.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtEmail01.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtEmail01.CustomButton.Name = "";
             this.txtEmail01.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtEmail01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2357,7 +1937,7 @@
             this.txtEmail01.CustomButton.UseSelectable = true;
             this.txtEmail01.CustomButton.Visible = false;
             this.txtEmail01.Lines = new string[0];
-            this.txtEmail01.Location = new System.Drawing.Point(98, 33);
+            this.txtEmail01.Location = new System.Drawing.Point(91, 27);
             this.txtEmail01.MaxLength = 32767;
             this.txtEmail01.Name = "txtEmail01";
             this.txtEmail01.PasswordChar = '\0';
@@ -2366,7 +1946,7 @@
             this.txtEmail01.SelectionLength = 0;
             this.txtEmail01.SelectionStart = 0;
             this.txtEmail01.ShortcutsEnabled = true;
-            this.txtEmail01.Size = new System.Drawing.Size(439, 23);
+            this.txtEmail01.Size = new System.Drawing.Size(446, 23);
             this.txtEmail01.TabIndex = 1;
             this.txtEmail01.UseCustomBackColor = true;
             this.txtEmail01.UseSelectable = true;
@@ -2379,29 +1959,37 @@
             this.lblEmail01.AutoSize = true;
             this.lblEmail01.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail01.ForeColor = System.Drawing.Color.Navy;
-            this.lblEmail01.Location = new System.Drawing.Point(6, 34);
+            this.lblEmail01.Location = new System.Drawing.Point(6, 29);
             this.lblEmail01.Name = "lblEmail01";
             this.lblEmail01.Size = new System.Drawing.Size(60, 19);
             this.lblEmail01.TabIndex = 0;
             this.lblEmail01.Text = "Email 01:";
             this.lblEmail01.UseCustomForeColor = true;
             // 
-            // grbTelefonosFijos
+            // grbNumerosContacto
             // 
-            this.grbTelefonosFijos.BackColor = System.Drawing.Color.Transparent;
-            this.grbTelefonosFijos.Controls.Add(this.txtTelfFijo02);
-            this.grbTelefonosFijos.Controls.Add(this.txtTelfFijo01);
-            this.grbTelefonosFijos.Controls.Add(this.lblTelFijo02);
-            this.grbTelefonosFijos.Controls.Add(this.lblTelFijo01);
-            this.grbTelefonosFijos.Controls.Add(this.txtTelfFijo03);
-            this.grbTelefonosFijos.Controls.Add(this.lblTelFijo03);
-            this.grbTelefonosFijos.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbTelefonosFijos.Location = new System.Drawing.Point(296, 13);
-            this.grbTelefonosFijos.Name = "grbTelefonosFijos";
-            this.grbTelefonosFijos.Size = new System.Drawing.Size(270, 160);
-            this.grbTelefonosFijos.TabIndex = 1;
-            this.grbTelefonosFijos.TabStop = false;
-            this.grbTelefonosFijos.Text = "Teléfonos fijos";
+            this.grbNumerosContacto.BackColor = System.Drawing.Color.Transparent;
+            this.grbNumerosContacto.Controls.Add(this.txtTelfFijo02);
+            this.grbNumerosContacto.Controls.Add(this.txtCelular02);
+            this.grbNumerosContacto.Controls.Add(this.txtTelfFijo01);
+            this.grbNumerosContacto.Controls.Add(this.lblCelular02);
+            this.grbNumerosContacto.Controls.Add(this.lblTelFijo02);
+            this.grbNumerosContacto.Controls.Add(this.txtCelular03);
+            this.grbNumerosContacto.Controls.Add(this.lblTelFijo01);
+            this.grbNumerosContacto.Controls.Add(this.lblCelular03);
+            this.grbNumerosContacto.Controls.Add(this.txtTelfFijo03);
+            this.grbNumerosContacto.Controls.Add(this.lblTelFijo03);
+            this.grbNumerosContacto.Controls.Add(this.txtCelular01);
+            this.grbNumerosContacto.Controls.Add(this.lblCelular01);
+            this.grbNumerosContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbNumerosContacto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbNumerosContacto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbNumerosContacto.Location = new System.Drawing.Point(12, 152);
+            this.grbNumerosContacto.Name = "grbNumerosContacto";
+            this.grbNumerosContacto.Size = new System.Drawing.Size(555, 135);
+            this.grbNumerosContacto.TabIndex = 0;
+            this.grbNumerosContacto.TabStop = false;
+            this.grbNumerosContacto.Text = "Celulares y teléfonos";
             // 
             // txtTelfFijo02
             // 
@@ -2419,7 +2007,7 @@
             this.txtTelfFijo02.CustomButton.UseSelectable = true;
             this.txtTelfFijo02.CustomButton.Visible = false;
             this.txtTelfFijo02.Lines = new string[0];
-            this.txtTelfFijo02.Location = new System.Drawing.Point(98, 74);
+            this.txtTelfFijo02.Location = new System.Drawing.Point(381, 61);
             this.txtTelfFijo02.MaxLength = 32767;
             this.txtTelfFijo02.Name = "txtTelfFijo02";
             this.txtTelfFijo02.PasswordChar = '\0';
@@ -2435,6 +2023,39 @@
             this.txtTelfFijo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTelfFijo02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtTelfFijo02.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // txtCelular02
+            // 
+            this.txtCelular02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtCelular02.CustomButton.Image = null;
+            this.txtCelular02.CustomButton.Location = new System.Drawing.Point(134, 1);
+            this.txtCelular02.CustomButton.Name = "";
+            this.txtCelular02.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCelular02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCelular02.CustomButton.TabIndex = 1;
+            this.txtCelular02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCelular02.CustomButton.UseSelectable = true;
+            this.txtCelular02.CustomButton.Visible = false;
+            this.txtCelular02.Lines = new string[0];
+            this.txtCelular02.Location = new System.Drawing.Point(91, 61);
+            this.txtCelular02.MaxLength = 32767;
+            this.txtCelular02.Name = "txtCelular02";
+            this.txtCelular02.PasswordChar = '\0';
+            this.txtCelular02.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCelular02.SelectedText = "";
+            this.txtCelular02.SelectionLength = 0;
+            this.txtCelular02.SelectionStart = 0;
+            this.txtCelular02.ShortcutsEnabled = true;
+            this.txtCelular02.Size = new System.Drawing.Size(156, 23);
+            this.txtCelular02.TabIndex = 3;
+            this.txtCelular02.UseCustomBackColor = true;
+            this.txtCelular02.UseSelectable = true;
+            this.txtCelular02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCelular02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCelular02.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtTelfFijo01
             // 
@@ -2452,7 +2073,7 @@
             this.txtTelfFijo01.CustomButton.UseSelectable = true;
             this.txtTelfFijo01.CustomButton.Visible = false;
             this.txtTelfFijo01.Lines = new string[0];
-            this.txtTelfFijo01.Location = new System.Drawing.Point(98, 33);
+            this.txtTelfFijo01.Location = new System.Drawing.Point(381, 27);
             this.txtTelfFijo01.MaxLength = 32767;
             this.txtTelfFijo01.Name = "txtTelfFijo01";
             this.txtTelfFijo01.PasswordChar = '\0';
@@ -2469,29 +2090,86 @@
             this.txtTelfFijo01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtTelfFijo01.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
+            // lblCelular02
+            // 
+            this.lblCelular02.AutoSize = true;
+            this.lblCelular02.BackColor = System.Drawing.Color.Transparent;
+            this.lblCelular02.ForeColor = System.Drawing.Color.Navy;
+            this.lblCelular02.Location = new System.Drawing.Point(6, 63);
+            this.lblCelular02.Name = "lblCelular02";
+            this.lblCelular02.Size = new System.Drawing.Size(71, 19);
+            this.lblCelular02.TabIndex = 2;
+            this.lblCelular02.Text = "Celular 02:";
+            this.lblCelular02.UseCustomForeColor = true;
+            // 
             // lblTelFijo02
             // 
             this.lblTelFijo02.AutoSize = true;
             this.lblTelFijo02.BackColor = System.Drawing.Color.Transparent;
             this.lblTelFijo02.ForeColor = System.Drawing.Color.Navy;
-            this.lblTelFijo02.Location = new System.Drawing.Point(6, 74);
+            this.lblTelFijo02.Location = new System.Drawing.Point(292, 63);
             this.lblTelFijo02.Name = "lblTelFijo02";
             this.lblTelFijo02.Size = new System.Drawing.Size(83, 19);
             this.lblTelFijo02.TabIndex = 2;
             this.lblTelFijo02.Text = "Telef. Fijo 02:";
             this.lblTelFijo02.UseCustomForeColor = true;
             // 
+            // txtCelular03
+            // 
+            this.txtCelular03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtCelular03.CustomButton.Image = null;
+            this.txtCelular03.CustomButton.Location = new System.Drawing.Point(134, 1);
+            this.txtCelular03.CustomButton.Name = "";
+            this.txtCelular03.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCelular03.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCelular03.CustomButton.TabIndex = 1;
+            this.txtCelular03.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCelular03.CustomButton.UseSelectable = true;
+            this.txtCelular03.CustomButton.Visible = false;
+            this.txtCelular03.Lines = new string[0];
+            this.txtCelular03.Location = new System.Drawing.Point(91, 95);
+            this.txtCelular03.MaxLength = 32767;
+            this.txtCelular03.Name = "txtCelular03";
+            this.txtCelular03.PasswordChar = '\0';
+            this.txtCelular03.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCelular03.SelectedText = "";
+            this.txtCelular03.SelectionLength = 0;
+            this.txtCelular03.SelectionStart = 0;
+            this.txtCelular03.ShortcutsEnabled = true;
+            this.txtCelular03.Size = new System.Drawing.Size(156, 23);
+            this.txtCelular03.TabIndex = 5;
+            this.txtCelular03.UseCustomBackColor = true;
+            this.txtCelular03.UseSelectable = true;
+            this.txtCelular03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCelular03.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCelular03.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // lblTelFijo01
             // 
             this.lblTelFijo01.AutoSize = true;
             this.lblTelFijo01.BackColor = System.Drawing.Color.Transparent;
             this.lblTelFijo01.ForeColor = System.Drawing.Color.Navy;
-            this.lblTelFijo01.Location = new System.Drawing.Point(6, 34);
+            this.lblTelFijo01.Location = new System.Drawing.Point(294, 31);
             this.lblTelFijo01.Name = "lblTelFijo01";
             this.lblTelFijo01.Size = new System.Drawing.Size(81, 19);
             this.lblTelFijo01.TabIndex = 0;
             this.lblTelFijo01.Text = "Telef. Fijo 01:";
             this.lblTelFijo01.UseCustomForeColor = true;
+            // 
+            // lblCelular03
+            // 
+            this.lblCelular03.AutoSize = true;
+            this.lblCelular03.BackColor = System.Drawing.Color.Transparent;
+            this.lblCelular03.ForeColor = System.Drawing.Color.Navy;
+            this.lblCelular03.Location = new System.Drawing.Point(6, 97);
+            this.lblCelular03.Name = "lblCelular03";
+            this.lblCelular03.Size = new System.Drawing.Size(71, 19);
+            this.lblCelular03.TabIndex = 4;
+            this.lblCelular03.Text = "Celular 03:";
+            this.lblCelular03.UseCustomForeColor = true;
             // 
             // txtTelfFijo03
             // 
@@ -2509,7 +2187,7 @@
             this.txtTelfFijo03.CustomButton.UseSelectable = true;
             this.txtTelfFijo03.CustomButton.Visible = false;
             this.txtTelfFijo03.Lines = new string[0];
-            this.txtTelfFijo03.Location = new System.Drawing.Point(98, 115);
+            this.txtTelfFijo03.Location = new System.Drawing.Point(381, 95);
             this.txtTelfFijo03.MaxLength = 32767;
             this.txtTelfFijo03.Name = "txtTelfFijo03";
             this.txtTelfFijo03.PasswordChar = '\0';
@@ -2531,121 +2209,12 @@
             this.lblTelFijo03.AutoSize = true;
             this.lblTelFijo03.BackColor = System.Drawing.Color.Transparent;
             this.lblTelFijo03.ForeColor = System.Drawing.Color.Navy;
-            this.lblTelFijo03.Location = new System.Drawing.Point(6, 116);
+            this.lblTelFijo03.Location = new System.Drawing.Point(292, 97);
             this.lblTelFijo03.Name = "lblTelFijo03";
             this.lblTelFijo03.Size = new System.Drawing.Size(83, 19);
             this.lblTelFijo03.TabIndex = 4;
             this.lblTelFijo03.Text = "Telef. Fijo 03:";
             this.lblTelFijo03.UseCustomForeColor = true;
-            // 
-            // grbCelulares
-            // 
-            this.grbCelulares.BackColor = System.Drawing.Color.Transparent;
-            this.grbCelulares.Controls.Add(this.txtCelular02);
-            this.grbCelulares.Controls.Add(this.lblCelular02);
-            this.grbCelulares.Controls.Add(this.txtCelular03);
-            this.grbCelulares.Controls.Add(this.lblCelular03);
-            this.grbCelulares.Controls.Add(this.txtCelular01);
-            this.grbCelulares.Controls.Add(this.lblCelular01);
-            this.grbCelulares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbCelulares.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbCelulares.ForeColor = System.Drawing.Color.Black;
-            this.grbCelulares.Location = new System.Drawing.Point(11, 13);
-            this.grbCelulares.Name = "grbCelulares";
-            this.grbCelulares.Size = new System.Drawing.Size(270, 160);
-            this.grbCelulares.TabIndex = 0;
-            this.grbCelulares.TabStop = false;
-            this.grbCelulares.Text = "Celulares";
-            // 
-            // txtCelular02
-            // 
-            this.txtCelular02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtCelular02.CustomButton.Image = null;
-            this.txtCelular02.CustomButton.Location = new System.Drawing.Point(134, 1);
-            this.txtCelular02.CustomButton.Name = "";
-            this.txtCelular02.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtCelular02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCelular02.CustomButton.TabIndex = 1;
-            this.txtCelular02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCelular02.CustomButton.UseSelectable = true;
-            this.txtCelular02.CustomButton.Visible = false;
-            this.txtCelular02.Lines = new string[0];
-            this.txtCelular02.Location = new System.Drawing.Point(98, 74);
-            this.txtCelular02.MaxLength = 32767;
-            this.txtCelular02.Name = "txtCelular02";
-            this.txtCelular02.PasswordChar = '\0';
-            this.txtCelular02.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCelular02.SelectedText = "";
-            this.txtCelular02.SelectionLength = 0;
-            this.txtCelular02.SelectionStart = 0;
-            this.txtCelular02.ShortcutsEnabled = true;
-            this.txtCelular02.Size = new System.Drawing.Size(156, 23);
-            this.txtCelular02.TabIndex = 3;
-            this.txtCelular02.UseCustomBackColor = true;
-            this.txtCelular02.UseSelectable = true;
-            this.txtCelular02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCelular02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCelular02.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblCelular02
-            // 
-            this.lblCelular02.AutoSize = true;
-            this.lblCelular02.BackColor = System.Drawing.Color.Transparent;
-            this.lblCelular02.ForeColor = System.Drawing.Color.Navy;
-            this.lblCelular02.Location = new System.Drawing.Point(6, 74);
-            this.lblCelular02.Name = "lblCelular02";
-            this.lblCelular02.Size = new System.Drawing.Size(71, 19);
-            this.lblCelular02.TabIndex = 2;
-            this.lblCelular02.Text = "Celular 02:";
-            this.lblCelular02.UseCustomForeColor = true;
-            // 
-            // txtCelular03
-            // 
-            this.txtCelular03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtCelular03.CustomButton.Image = null;
-            this.txtCelular03.CustomButton.Location = new System.Drawing.Point(134, 1);
-            this.txtCelular03.CustomButton.Name = "";
-            this.txtCelular03.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtCelular03.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCelular03.CustomButton.TabIndex = 1;
-            this.txtCelular03.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCelular03.CustomButton.UseSelectable = true;
-            this.txtCelular03.CustomButton.Visible = false;
-            this.txtCelular03.Lines = new string[0];
-            this.txtCelular03.Location = new System.Drawing.Point(98, 115);
-            this.txtCelular03.MaxLength = 32767;
-            this.txtCelular03.Name = "txtCelular03";
-            this.txtCelular03.PasswordChar = '\0';
-            this.txtCelular03.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCelular03.SelectedText = "";
-            this.txtCelular03.SelectionLength = 0;
-            this.txtCelular03.SelectionStart = 0;
-            this.txtCelular03.ShortcutsEnabled = true;
-            this.txtCelular03.Size = new System.Drawing.Size(156, 23);
-            this.txtCelular03.TabIndex = 5;
-            this.txtCelular03.UseCustomBackColor = true;
-            this.txtCelular03.UseSelectable = true;
-            this.txtCelular03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCelular03.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCelular03.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblCelular03
-            // 
-            this.lblCelular03.AutoSize = true;
-            this.lblCelular03.BackColor = System.Drawing.Color.Transparent;
-            this.lblCelular03.ForeColor = System.Drawing.Color.Navy;
-            this.lblCelular03.Location = new System.Drawing.Point(6, 116);
-            this.lblCelular03.Name = "lblCelular03";
-            this.lblCelular03.Size = new System.Drawing.Size(71, 19);
-            this.lblCelular03.TabIndex = 4;
-            this.lblCelular03.Text = "Celular 03:";
-            this.lblCelular03.UseCustomForeColor = true;
             // 
             // txtCelular01
             // 
@@ -2663,7 +2232,7 @@
             this.txtCelular01.CustomButton.UseSelectable = true;
             this.txtCelular01.CustomButton.Visible = false;
             this.txtCelular01.Lines = new string[0];
-            this.txtCelular01.Location = new System.Drawing.Point(98, 33);
+            this.txtCelular01.Location = new System.Drawing.Point(91, 27);
             this.txtCelular01.MaxLength = 32767;
             this.txtCelular01.Name = "txtCelular01";
             this.txtCelular01.PasswordChar = '\0';
@@ -2685,12 +2254,501 @@
             this.lblCelular01.AutoSize = true;
             this.lblCelular01.BackColor = System.Drawing.Color.Transparent;
             this.lblCelular01.ForeColor = System.Drawing.Color.Navy;
-            this.lblCelular01.Location = new System.Drawing.Point(6, 34);
+            this.lblCelular01.Location = new System.Drawing.Point(6, 28);
             this.lblCelular01.Name = "lblCelular01";
             this.lblCelular01.Size = new System.Drawing.Size(69, 19);
             this.lblCelular01.TabIndex = 0;
             this.lblCelular01.Text = "Celular 01:";
             this.lblCelular01.UseCustomForeColor = true;
+            // 
+            // tabPagDireccion
+            // 
+            this.tabPagDireccion.Controls.Add(this.grbUbicacionDetallada);
+            this.tabPagDireccion.Controls.Add(this.gbrUbigeo);
+            this.tabPagDireccion.HorizontalScrollbarBarColor = true;
+            this.tabPagDireccion.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagDireccion.HorizontalScrollbarSize = 10;
+            this.tabPagDireccion.Location = new System.Drawing.Point(4, 38);
+            this.tabPagDireccion.Name = "tabPagDireccion";
+            this.tabPagDireccion.Size = new System.Drawing.Size(578, 394);
+            this.tabPagDireccion.TabIndex = 4;
+            this.tabPagDireccion.Text = "Dirección";
+            this.tabPagDireccion.VerticalScrollbarBarColor = true;
+            this.tabPagDireccion.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagDireccion.VerticalScrollbarSize = 10;
+            // 
+            // grbUbicacionDetallada
+            // 
+            this.grbUbicacionDetallada.BackColor = System.Drawing.Color.Transparent;
+            this.grbUbicacionDetallada.Controls.Add(this.txtDireccion01);
+            this.grbUbicacionDetallada.Controls.Add(this.lblDireccion02);
+            this.grbUbicacionDetallada.Controls.Add(this.lblDireccion01);
+            this.grbUbicacionDetallada.Controls.Add(this.txtDireccion02);
+            this.grbUbicacionDetallada.Controls.Add(this.txtNomZona);
+            this.grbUbicacionDetallada.Controls.Add(this.lblNomZona);
+            this.grbUbicacionDetallada.Controls.Add(this.txtNomVia);
+            this.grbUbicacionDetallada.Controls.Add(this.lblZona);
+            this.grbUbicacionDetallada.Controls.Add(this.lblNumVia);
+            this.grbUbicacionDetallada.Controls.Add(this.cboZona);
+            this.grbUbicacionDetallada.Controls.Add(this.txtReferencia);
+            this.grbUbicacionDetallada.Controls.Add(this.lblNomVia);
+            this.grbUbicacionDetallada.Controls.Add(this.lblReferencia);
+            this.grbUbicacionDetallada.Controls.Add(this.txtNumVia);
+            this.grbUbicacionDetallada.Controls.Add(this.lblVia);
+            this.grbUbicacionDetallada.Controls.Add(this.cboVia);
+            this.grbUbicacionDetallada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbUbicacionDetallada.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbUbicacionDetallada.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbUbicacionDetallada.Location = new System.Drawing.Point(4, 123);
+            this.grbUbicacionDetallada.Name = "grbUbicacionDetallada";
+            this.grbUbicacionDetallada.Size = new System.Drawing.Size(555, 248);
+            this.grbUbicacionDetallada.TabIndex = 57;
+            this.grbUbicacionDetallada.TabStop = false;
+            this.grbUbicacionDetallada.Text = "Ubicación detallada";
+            // 
+            // txtDireccion01
+            // 
+            this.txtDireccion01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDireccion01.CustomButton.Image = null;
+            this.txtDireccion01.CustomButton.Location = new System.Drawing.Point(434, 1);
+            this.txtDireccion01.CustomButton.Name = "";
+            this.txtDireccion01.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDireccion01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDireccion01.CustomButton.TabIndex = 1;
+            this.txtDireccion01.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDireccion01.CustomButton.UseSelectable = true;
+            this.txtDireccion01.CustomButton.Visible = false;
+            this.txtDireccion01.Lines = new string[0];
+            this.txtDireccion01.Location = new System.Drawing.Point(91, 139);
+            this.txtDireccion01.MaxLength = 32767;
+            this.txtDireccion01.Name = "txtDireccion01";
+            this.txtDireccion01.PasswordChar = '\0';
+            this.txtDireccion01.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDireccion01.SelectedText = "";
+            this.txtDireccion01.SelectionLength = 0;
+            this.txtDireccion01.SelectionStart = 0;
+            this.txtDireccion01.ShortcutsEnabled = true;
+            this.txtDireccion01.Size = new System.Drawing.Size(456, 23);
+            this.txtDireccion01.TabIndex = 53;
+            this.txtDireccion01.UseCustomBackColor = true;
+            this.txtDireccion01.UseSelectable = true;
+            this.txtDireccion01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDireccion01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDireccion01.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblDireccion02
+            // 
+            this.lblDireccion02.AutoSize = true;
+            this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
+            this.lblDireccion02.Location = new System.Drawing.Point(6, 176);
+            this.lblDireccion02.Name = "lblDireccion02";
+            this.lblDireccion02.Size = new System.Drawing.Size(84, 19);
+            this.lblDireccion02.TabIndex = 54;
+            this.lblDireccion02.Text = "Dirección 02:";
+            this.lblDireccion02.UseCustomForeColor = true;
+            // 
+            // lblDireccion01
+            // 
+            this.lblDireccion01.AutoSize = true;
+            this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
+            this.lblDireccion01.Location = new System.Drawing.Point(6, 141);
+            this.lblDireccion01.Name = "lblDireccion01";
+            this.lblDireccion01.Size = new System.Drawing.Size(82, 19);
+            this.lblDireccion01.TabIndex = 52;
+            this.lblDireccion01.Text = "Dirección 01:";
+            this.lblDireccion01.UseCustomForeColor = true;
+            // 
+            // txtDireccion02
+            // 
+            this.txtDireccion02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDireccion02.CustomButton.Image = null;
+            this.txtDireccion02.CustomButton.Location = new System.Drawing.Point(434, 1);
+            this.txtDireccion02.CustomButton.Name = "";
+            this.txtDireccion02.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDireccion02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDireccion02.CustomButton.TabIndex = 1;
+            this.txtDireccion02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDireccion02.CustomButton.UseSelectable = true;
+            this.txtDireccion02.CustomButton.Visible = false;
+            this.txtDireccion02.Lines = new string[0];
+            this.txtDireccion02.Location = new System.Drawing.Point(91, 174);
+            this.txtDireccion02.MaxLength = 32767;
+            this.txtDireccion02.Name = "txtDireccion02";
+            this.txtDireccion02.PasswordChar = '\0';
+            this.txtDireccion02.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDireccion02.SelectedText = "";
+            this.txtDireccion02.SelectionLength = 0;
+            this.txtDireccion02.SelectionStart = 0;
+            this.txtDireccion02.ShortcutsEnabled = true;
+            this.txtDireccion02.Size = new System.Drawing.Size(456, 23);
+            this.txtDireccion02.TabIndex = 55;
+            this.txtDireccion02.UseCustomBackColor = true;
+            this.txtDireccion02.UseSelectable = true;
+            this.txtDireccion02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDireccion02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDireccion02.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // txtNomZona
+            // 
+            this.txtNomZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtNomZona.CustomButton.Image = null;
+            this.txtNomZona.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtNomZona.CustomButton.Name = "";
+            this.txtNomZona.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNomZona.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNomZona.CustomButton.TabIndex = 1;
+            this.txtNomZona.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNomZona.CustomButton.UseSelectable = true;
+            this.txtNomZona.CustomButton.Visible = false;
+            this.txtNomZona.Lines = new string[0];
+            this.txtNomZona.Location = new System.Drawing.Point(363, 33);
+            this.txtNomZona.MaxLength = 32767;
+            this.txtNomZona.Name = "txtNomZona";
+            this.txtNomZona.PasswordChar = '\0';
+            this.txtNomZona.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNomZona.SelectedText = "";
+            this.txtNomZona.SelectionLength = 0;
+            this.txtNomZona.SelectionStart = 0;
+            this.txtNomZona.ShortcutsEnabled = true;
+            this.txtNomZona.Size = new System.Drawing.Size(184, 23);
+            this.txtNomZona.TabIndex = 43;
+            this.txtNomZona.UseCustomBackColor = true;
+            this.txtNomZona.UseSelectable = true;
+            this.txtNomZona.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNomZona.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNomZona.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblNomZona
+            // 
+            this.lblNomZona.AutoSize = true;
+            this.lblNomZona.ForeColor = System.Drawing.Color.Navy;
+            this.lblNomZona.Location = new System.Drawing.Point(278, 35);
+            this.lblNomZona.Name = "lblNomZona";
+            this.lblNomZona.Size = new System.Drawing.Size(79, 19);
+            this.lblNomZona.TabIndex = 42;
+            this.lblNomZona.Text = "Nom. Zona:";
+            this.lblNomZona.UseCustomForeColor = true;
+            // 
+            // txtNomVia
+            // 
+            this.txtNomVia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtNomVia.CustomButton.Image = null;
+            this.txtNomVia.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtNomVia.CustomButton.Name = "";
+            this.txtNomVia.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNomVia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNomVia.CustomButton.TabIndex = 1;
+            this.txtNomVia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNomVia.CustomButton.UseSelectable = true;
+            this.txtNomVia.CustomButton.Visible = false;
+            this.txtNomVia.Lines = new string[0];
+            this.txtNomVia.Location = new System.Drawing.Point(363, 69);
+            this.txtNomVia.MaxLength = 32767;
+            this.txtNomVia.Name = "txtNomVia";
+            this.txtNomVia.PasswordChar = '\0';
+            this.txtNomVia.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNomVia.SelectedText = "";
+            this.txtNomVia.SelectionLength = 0;
+            this.txtNomVia.SelectionStart = 0;
+            this.txtNomVia.ShortcutsEnabled = true;
+            this.txtNomVia.Size = new System.Drawing.Size(184, 23);
+            this.txtNomVia.TabIndex = 47;
+            this.txtNomVia.UseCustomBackColor = true;
+            this.txtNomVia.UseSelectable = true;
+            this.txtNomVia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNomVia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNomVia.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblZona
+            // 
+            this.lblZona.AutoSize = true;
+            this.lblZona.ForeColor = System.Drawing.Color.Navy;
+            this.lblZona.Location = new System.Drawing.Point(5, 33);
+            this.lblZona.Name = "lblZona";
+            this.lblZona.Size = new System.Drawing.Size(72, 19);
+            this.lblZona.TabIndex = 40;
+            this.lblZona.Text = "Tipo Zona:";
+            this.lblZona.UseCustomForeColor = true;
+            // 
+            // lblNumVia
+            // 
+            this.lblNumVia.AutoSize = true;
+            this.lblNumVia.ForeColor = System.Drawing.Color.Navy;
+            this.lblNumVia.Location = new System.Drawing.Point(278, 106);
+            this.lblNumVia.Name = "lblNumVia";
+            this.lblNumVia.Size = new System.Drawing.Size(66, 19);
+            this.lblNumVia.TabIndex = 48;
+            this.lblNumVia.Text = "Num. Vía:";
+            this.lblNumVia.UseCustomForeColor = true;
+            // 
+            // cboZona
+            // 
+            this.cboZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboZona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboZona.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboZona.FormattingEnabled = true;
+            this.cboZona.Location = new System.Drawing.Point(82, 33);
+            this.cboZona.Name = "cboZona";
+            this.cboZona.Size = new System.Drawing.Size(163, 23);
+            this.cboZona.TabIndex = 41;
+            this.cboZona.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // txtReferencia
+            // 
+            this.txtReferencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtReferencia.CustomButton.Image = null;
+            this.txtReferencia.CustomButton.Location = new System.Drawing.Point(434, 1);
+            this.txtReferencia.CustomButton.Name = "";
+            this.txtReferencia.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtReferencia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtReferencia.CustomButton.TabIndex = 1;
+            this.txtReferencia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtReferencia.CustomButton.UseSelectable = true;
+            this.txtReferencia.CustomButton.Visible = false;
+            this.txtReferencia.Lines = new string[0];
+            this.txtReferencia.Location = new System.Drawing.Point(91, 209);
+            this.txtReferencia.MaxLength = 32767;
+            this.txtReferencia.Name = "txtReferencia";
+            this.txtReferencia.PasswordChar = '\0';
+            this.txtReferencia.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtReferencia.SelectedText = "";
+            this.txtReferencia.SelectionLength = 0;
+            this.txtReferencia.SelectionStart = 0;
+            this.txtReferencia.ShortcutsEnabled = true;
+            this.txtReferencia.Size = new System.Drawing.Size(456, 23);
+            this.txtReferencia.TabIndex = 51;
+            this.txtReferencia.UseCustomBackColor = true;
+            this.txtReferencia.UseSelectable = true;
+            this.txtReferencia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtReferencia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtReferencia.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblNomVia
+            // 
+            this.lblNomVia.AutoSize = true;
+            this.lblNomVia.ForeColor = System.Drawing.Color.Navy;
+            this.lblNomVia.Location = new System.Drawing.Point(278, 71);
+            this.lblNomVia.Name = "lblNomVia";
+            this.lblNomVia.Size = new System.Drawing.Size(67, 19);
+            this.lblNomVia.TabIndex = 46;
+            this.lblNomVia.Text = "Nom. Vía:";
+            this.lblNomVia.UseCustomForeColor = true;
+            // 
+            // lblReferencia
+            // 
+            this.lblReferencia.AutoSize = true;
+            this.lblReferencia.ForeColor = System.Drawing.Color.Navy;
+            this.lblReferencia.Location = new System.Drawing.Point(6, 211);
+            this.lblReferencia.Name = "lblReferencia";
+            this.lblReferencia.Size = new System.Drawing.Size(73, 19);
+            this.lblReferencia.TabIndex = 50;
+            this.lblReferencia.Text = "Referencia:";
+            this.lblReferencia.UseCustomForeColor = true;
+            // 
+            // txtNumVia
+            // 
+            this.txtNumVia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtNumVia.CustomButton.Image = null;
+            this.txtNumVia.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtNumVia.CustomButton.Name = "";
+            this.txtNumVia.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNumVia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNumVia.CustomButton.TabIndex = 1;
+            this.txtNumVia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNumVia.CustomButton.UseSelectable = true;
+            this.txtNumVia.CustomButton.Visible = false;
+            this.txtNumVia.Lines = new string[0];
+            this.txtNumVia.Location = new System.Drawing.Point(363, 104);
+            this.txtNumVia.MaxLength = 32767;
+            this.txtNumVia.Name = "txtNumVia";
+            this.txtNumVia.PasswordChar = '\0';
+            this.txtNumVia.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNumVia.SelectedText = "";
+            this.txtNumVia.SelectionLength = 0;
+            this.txtNumVia.SelectionStart = 0;
+            this.txtNumVia.ShortcutsEnabled = true;
+            this.txtNumVia.Size = new System.Drawing.Size(184, 23);
+            this.txtNumVia.TabIndex = 49;
+            this.txtNumVia.UseCustomBackColor = true;
+            this.txtNumVia.UseSelectable = true;
+            this.txtNumVia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNumVia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNumVia.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblVia
+            // 
+            this.lblVia.AutoSize = true;
+            this.lblVia.ForeColor = System.Drawing.Color.Navy;
+            this.lblVia.Location = new System.Drawing.Point(6, 71);
+            this.lblVia.Name = "lblVia";
+            this.lblVia.Size = new System.Drawing.Size(60, 19);
+            this.lblVia.TabIndex = 44;
+            this.lblVia.Text = "Tipo Vía:";
+            this.lblVia.UseCustomForeColor = true;
+            // 
+            // cboVia
+            // 
+            this.cboVia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboVia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboVia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboVia.FormattingEnabled = true;
+            this.cboVia.Location = new System.Drawing.Point(82, 69);
+            this.cboVia.Name = "cboVia";
+            this.cboVia.Size = new System.Drawing.Size(163, 23);
+            this.cboVia.TabIndex = 45;
+            this.cboVia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // gbrUbigeo
+            // 
+            this.gbrUbigeo.BackColor = System.Drawing.Color.Transparent;
+            this.gbrUbigeo.Controls.Add(this.lblDepartamento);
+            this.gbrUbigeo.Controls.Add(this.cboDepartamento);
+            this.gbrUbigeo.Controls.Add(this.cboDistrito);
+            this.gbrUbigeo.Controls.Add(this.lblDistrito);
+            this.gbrUbigeo.Controls.Add(this.lblNacionalidad);
+            this.gbrUbigeo.Controls.Add(this.lblProvincia);
+            this.gbrUbigeo.Controls.Add(this.cboNacionalidad);
+            this.gbrUbigeo.Controls.Add(this.cboProvincia);
+            this.gbrUbigeo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbrUbigeo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbrUbigeo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gbrUbigeo.Location = new System.Drawing.Point(3, 13);
+            this.gbrUbigeo.Name = "gbrUbigeo";
+            this.gbrUbigeo.Size = new System.Drawing.Size(555, 104);
+            this.gbrUbigeo.TabIndex = 56;
+            this.gbrUbigeo.TabStop = false;
+            this.gbrUbigeo.Text = "Ubicación general";
+            // 
+            // lblDepartamento
+            // 
+            this.lblDepartamento.AutoSize = true;
+            this.lblDepartamento.ForeColor = System.Drawing.Color.Navy;
+            this.lblDepartamento.Location = new System.Drawing.Point(6, 29);
+            this.lblDepartamento.Name = "lblDepartamento";
+            this.lblDepartamento.Size = new System.Drawing.Size(41, 19);
+            this.lblDepartamento.TabIndex = 32;
+            this.lblDepartamento.Text = "Dpto:";
+            this.lblDepartamento.UseCustomForeColor = true;
+            // 
+            // cboDepartamento
+            // 
+            this.cboDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDepartamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDepartamento.FormattingEnabled = true;
+            this.cboDepartamento.Location = new System.Drawing.Point(62, 27);
+            this.cboDepartamento.Name = "cboDepartamento";
+            this.cboDepartamento.Size = new System.Drawing.Size(184, 23);
+            this.cboDepartamento.TabIndex = 33;
+            this.cboDepartamento.SelectedIndexChanged += new System.EventHandler(this.cboDepartamento_SelectedIndexChanged);
+            // 
+            // cboDistrito
+            // 
+            this.cboDistrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDistrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDistrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDistrito.FormattingEnabled = true;
+            this.cboDistrito.Location = new System.Drawing.Point(62, 62);
+            this.cboDistrito.Name = "cboDistrito";
+            this.cboDistrito.Size = new System.Drawing.Size(184, 23);
+            this.cboDistrito.TabIndex = 37;
+            this.cboDistrito.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblDistrito
+            // 
+            this.lblDistrito.AutoSize = true;
+            this.lblDistrito.ForeColor = System.Drawing.Color.Navy;
+            this.lblDistrito.Location = new System.Drawing.Point(6, 64);
+            this.lblDistrito.Name = "lblDistrito";
+            this.lblDistrito.Size = new System.Drawing.Size(53, 19);
+            this.lblDistrito.TabIndex = 36;
+            this.lblDistrito.Text = "Distrito:";
+            this.lblDistrito.UseCustomForeColor = true;
+            // 
+            // lblNacionalidad
+            // 
+            this.lblNacionalidad.AutoSize = true;
+            this.lblNacionalidad.ForeColor = System.Drawing.Color.Navy;
+            this.lblNacionalidad.Location = new System.Drawing.Point(272, 64);
+            this.lblNacionalidad.Name = "lblNacionalidad";
+            this.lblNacionalidad.Size = new System.Drawing.Size(89, 19);
+            this.lblNacionalidad.TabIndex = 38;
+            this.lblNacionalidad.Text = "Nacionalidad:";
+            this.lblNacionalidad.UseCustomForeColor = true;
+            // 
+            // lblProvincia
+            // 
+            this.lblProvincia.AutoSize = true;
+            this.lblProvincia.ForeColor = System.Drawing.Color.Navy;
+            this.lblProvincia.Location = new System.Drawing.Point(272, 29);
+            this.lblProvincia.Name = "lblProvincia";
+            this.lblProvincia.Size = new System.Drawing.Size(65, 19);
+            this.lblProvincia.TabIndex = 34;
+            this.lblProvincia.Text = "Provincia:";
+            this.lblProvincia.UseCustomForeColor = true;
+            // 
+            // cboNacionalidad
+            // 
+            this.cboNacionalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNacionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboNacionalidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNacionalidad.FormattingEnabled = true;
+            this.cboNacionalidad.Location = new System.Drawing.Point(364, 62);
+            this.cboNacionalidad.Name = "cboNacionalidad";
+            this.cboNacionalidad.Size = new System.Drawing.Size(184, 23);
+            this.cboNacionalidad.TabIndex = 39;
+            this.cboNacionalidad.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboProvincia
+            // 
+            this.cboProvincia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboProvincia.FormattingEnabled = true;
+            this.cboProvincia.Location = new System.Drawing.Point(364, 27);
+            this.cboProvincia.Name = "cboProvincia";
+            this.cboProvincia.Size = new System.Drawing.Size(184, 23);
+            this.cboProvincia.TabIndex = 35;
+            this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
+            // 
+            // tabPagSeguridad
+            // 
+            this.tabPagSeguridad.Controls.Add(this.grbSeguridad);
+            this.tabPagSeguridad.HorizontalScrollbarBarColor = true;
+            this.tabPagSeguridad.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagSeguridad.HorizontalScrollbarSize = 10;
+            this.tabPagSeguridad.Location = new System.Drawing.Point(4, 38);
+            this.tabPagSeguridad.Name = "tabPagSeguridad";
+            this.tabPagSeguridad.Size = new System.Drawing.Size(578, 394);
+            this.tabPagSeguridad.TabIndex = 5;
+            this.tabPagSeguridad.Text = "Seguridad";
+            this.tabPagSeguridad.VerticalScrollbarBarColor = true;
+            this.tabPagSeguridad.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagSeguridad.VerticalScrollbarSize = 10;
             // 
             // tabPagInfoExtra
             // 
@@ -2700,7 +2758,7 @@
             this.tabPagInfoExtra.HorizontalScrollbarSize = 10;
             this.tabPagInfoExtra.Location = new System.Drawing.Point(4, 38);
             this.tabPagInfoExtra.Name = "tabPagInfoExtra";
-            this.tabPagInfoExtra.Size = new System.Drawing.Size(578, 539);
+            this.tabPagInfoExtra.Size = new System.Drawing.Size(578, 394);
             this.tabPagInfoExtra.TabIndex = 2;
             this.tabPagInfoExtra.Text = "Info. Extra";
             this.tabPagInfoExtra.VerticalScrollbarBarColor = true;
@@ -2731,11 +2789,11 @@
             this.grbInfoExtra.Controls.Add(this.txtInfo01);
             this.grbInfoExtra.Controls.Add(this.lblInfo01);
             this.grbInfoExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbInfoExtra.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbInfoExtra.ForeColor = System.Drawing.Color.Black;
+            this.grbInfoExtra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbInfoExtra.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbInfoExtra.Location = new System.Drawing.Point(11, 15);
             this.grbInfoExtra.Name = "grbInfoExtra";
-            this.grbInfoExtra.Size = new System.Drawing.Size(555, 439);
+            this.grbInfoExtra.Size = new System.Drawing.Size(555, 376);
             this.grbInfoExtra.TabIndex = 0;
             this.grbInfoExtra.TabStop = false;
             this.grbInfoExtra.Text = "Agregue la información extra que necesite";
@@ -2747,7 +2805,7 @@
             // 
             // 
             this.txtInfo10.CustomButton.Image = null;
-            this.txtInfo10.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo10.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo10.CustomButton.Name = "";
             this.txtInfo10.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo10.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2756,7 +2814,7 @@
             this.txtInfo10.CustomButton.UseSelectable = true;
             this.txtInfo10.CustomButton.Visible = false;
             this.txtInfo10.Lines = new string[0];
-            this.txtInfo10.Location = new System.Drawing.Point(98, 394);
+            this.txtInfo10.Location = new System.Drawing.Point(91, 336);
             this.txtInfo10.MaxLength = 32767;
             this.txtInfo10.Name = "txtInfo10";
             this.txtInfo10.PasswordChar = '\0';
@@ -2765,7 +2823,7 @@
             this.txtInfo10.SelectionLength = 0;
             this.txtInfo10.SelectionStart = 0;
             this.txtInfo10.ShortcutsEnabled = true;
-            this.txtInfo10.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo10.Size = new System.Drawing.Size(446, 23);
             this.txtInfo10.TabIndex = 19;
             this.txtInfo10.UseCustomBackColor = true;
             this.txtInfo10.UseSelectable = true;
@@ -2778,7 +2836,7 @@
             this.lblInfo10.AutoSize = true;
             this.lblInfo10.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo10.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo10.Location = new System.Drawing.Point(6, 395);
+            this.lblInfo10.Location = new System.Drawing.Point(6, 338);
             this.lblInfo10.Name = "lblInfo10";
             this.lblInfo10.Size = new System.Drawing.Size(53, 19);
             this.lblInfo10.TabIndex = 18;
@@ -2792,7 +2850,7 @@
             // 
             // 
             this.txtInfo08.CustomButton.Image = null;
-            this.txtInfo08.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo08.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo08.CustomButton.Name = "";
             this.txtInfo08.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo08.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2801,7 +2859,7 @@
             this.txtInfo08.CustomButton.UseSelectable = true;
             this.txtInfo08.CustomButton.Visible = false;
             this.txtInfo08.Lines = new string[0];
-            this.txtInfo08.Location = new System.Drawing.Point(98, 314);
+            this.txtInfo08.Location = new System.Drawing.Point(91, 268);
             this.txtInfo08.MaxLength = 32767;
             this.txtInfo08.Name = "txtInfo08";
             this.txtInfo08.PasswordChar = '\0';
@@ -2810,7 +2868,7 @@
             this.txtInfo08.SelectionLength = 0;
             this.txtInfo08.SelectionStart = 0;
             this.txtInfo08.ShortcutsEnabled = true;
-            this.txtInfo08.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo08.Size = new System.Drawing.Size(446, 23);
             this.txtInfo08.TabIndex = 15;
             this.txtInfo08.UseCustomBackColor = true;
             this.txtInfo08.UseSelectable = true;
@@ -2823,7 +2881,7 @@
             this.lblInfo08.AutoSize = true;
             this.lblInfo08.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo08.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo08.Location = new System.Drawing.Point(6, 314);
+            this.lblInfo08.Location = new System.Drawing.Point(6, 270);
             this.lblInfo08.Name = "lblInfo08";
             this.lblInfo08.Size = new System.Drawing.Size(55, 19);
             this.lblInfo08.TabIndex = 14;
@@ -2837,7 +2895,7 @@
             // 
             // 
             this.txtInfo09.CustomButton.Image = null;
-            this.txtInfo09.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo09.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo09.CustomButton.Name = "";
             this.txtInfo09.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo09.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2846,7 +2904,7 @@
             this.txtInfo09.CustomButton.UseSelectable = true;
             this.txtInfo09.CustomButton.Visible = false;
             this.txtInfo09.Lines = new string[0];
-            this.txtInfo09.Location = new System.Drawing.Point(98, 355);
+            this.txtInfo09.Location = new System.Drawing.Point(91, 302);
             this.txtInfo09.MaxLength = 32767;
             this.txtInfo09.Name = "txtInfo09";
             this.txtInfo09.PasswordChar = '\0';
@@ -2855,7 +2913,7 @@
             this.txtInfo09.SelectionLength = 0;
             this.txtInfo09.SelectionStart = 0;
             this.txtInfo09.ShortcutsEnabled = true;
-            this.txtInfo09.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo09.Size = new System.Drawing.Size(446, 23);
             this.txtInfo09.TabIndex = 17;
             this.txtInfo09.UseCustomBackColor = true;
             this.txtInfo09.UseSelectable = true;
@@ -2868,7 +2926,7 @@
             this.lblInfo09.AutoSize = true;
             this.lblInfo09.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo09.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo09.Location = new System.Drawing.Point(6, 356);
+            this.lblInfo09.Location = new System.Drawing.Point(6, 304);
             this.lblInfo09.Name = "lblInfo09";
             this.lblInfo09.Size = new System.Drawing.Size(55, 19);
             this.lblInfo09.TabIndex = 16;
@@ -2882,7 +2940,7 @@
             // 
             // 
             this.txtInfo07.CustomButton.Image = null;
-            this.txtInfo07.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo07.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo07.CustomButton.Name = "";
             this.txtInfo07.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo07.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2891,7 +2949,7 @@
             this.txtInfo07.CustomButton.UseSelectable = true;
             this.txtInfo07.CustomButton.Visible = false;
             this.txtInfo07.Lines = new string[0];
-            this.txtInfo07.Location = new System.Drawing.Point(98, 273);
+            this.txtInfo07.Location = new System.Drawing.Point(91, 234);
             this.txtInfo07.MaxLength = 32767;
             this.txtInfo07.Name = "txtInfo07";
             this.txtInfo07.PasswordChar = '\0';
@@ -2900,7 +2958,7 @@
             this.txtInfo07.SelectionLength = 0;
             this.txtInfo07.SelectionStart = 0;
             this.txtInfo07.ShortcutsEnabled = true;
-            this.txtInfo07.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo07.Size = new System.Drawing.Size(446, 23);
             this.txtInfo07.TabIndex = 13;
             this.txtInfo07.UseCustomBackColor = true;
             this.txtInfo07.UseSelectable = true;
@@ -2913,7 +2971,7 @@
             this.lblInfo07.AutoSize = true;
             this.lblInfo07.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo07.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo07.Location = new System.Drawing.Point(6, 274);
+            this.lblInfo07.Location = new System.Drawing.Point(6, 236);
             this.lblInfo07.Name = "lblInfo07";
             this.lblInfo07.Size = new System.Drawing.Size(55, 19);
             this.lblInfo07.TabIndex = 12;
@@ -2927,7 +2985,7 @@
             // 
             // 
             this.txtInfo05.CustomButton.Image = null;
-            this.txtInfo05.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo05.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo05.CustomButton.Name = "";
             this.txtInfo05.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo05.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2936,7 +2994,7 @@
             this.txtInfo05.CustomButton.UseSelectable = true;
             this.txtInfo05.CustomButton.Visible = false;
             this.txtInfo05.Lines = new string[0];
-            this.txtInfo05.Location = new System.Drawing.Point(98, 194);
+            this.txtInfo05.Location = new System.Drawing.Point(91, 167);
             this.txtInfo05.MaxLength = 32767;
             this.txtInfo05.Name = "txtInfo05";
             this.txtInfo05.PasswordChar = '\0';
@@ -2945,7 +3003,7 @@
             this.txtInfo05.SelectionLength = 0;
             this.txtInfo05.SelectionStart = 0;
             this.txtInfo05.ShortcutsEnabled = true;
-            this.txtInfo05.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo05.Size = new System.Drawing.Size(446, 23);
             this.txtInfo05.TabIndex = 9;
             this.txtInfo05.UseCustomBackColor = true;
             this.txtInfo05.UseSelectable = true;
@@ -2958,7 +3016,7 @@
             this.lblInfo05.AutoSize = true;
             this.lblInfo05.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo05.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo05.Location = new System.Drawing.Point(6, 194);
+            this.lblInfo05.Location = new System.Drawing.Point(6, 169);
             this.lblInfo05.Name = "lblInfo05";
             this.lblInfo05.Size = new System.Drawing.Size(55, 19);
             this.lblInfo05.TabIndex = 8;
@@ -2972,7 +3030,7 @@
             // 
             // 
             this.txtInfo06.CustomButton.Image = null;
-            this.txtInfo06.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo06.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo06.CustomButton.Name = "";
             this.txtInfo06.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo06.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2981,7 +3039,7 @@
             this.txtInfo06.CustomButton.UseSelectable = true;
             this.txtInfo06.CustomButton.Visible = false;
             this.txtInfo06.Lines = new string[0];
-            this.txtInfo06.Location = new System.Drawing.Point(98, 235);
+            this.txtInfo06.Location = new System.Drawing.Point(91, 201);
             this.txtInfo06.MaxLength = 32767;
             this.txtInfo06.Name = "txtInfo06";
             this.txtInfo06.PasswordChar = '\0';
@@ -2990,7 +3048,7 @@
             this.txtInfo06.SelectionLength = 0;
             this.txtInfo06.SelectionStart = 0;
             this.txtInfo06.ShortcutsEnabled = true;
-            this.txtInfo06.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo06.Size = new System.Drawing.Size(446, 23);
             this.txtInfo06.TabIndex = 11;
             this.txtInfo06.UseCustomBackColor = true;
             this.txtInfo06.UseSelectable = true;
@@ -3003,7 +3061,7 @@
             this.lblInfo06.AutoSize = true;
             this.lblInfo06.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo06.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo06.Location = new System.Drawing.Point(6, 236);
+            this.lblInfo06.Location = new System.Drawing.Point(6, 203);
             this.lblInfo06.Name = "lblInfo06";
             this.lblInfo06.Size = new System.Drawing.Size(55, 19);
             this.lblInfo06.TabIndex = 10;
@@ -3017,7 +3075,7 @@
             // 
             // 
             this.txtInfo04.CustomButton.Image = null;
-            this.txtInfo04.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo04.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo04.CustomButton.Name = "";
             this.txtInfo04.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo04.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3026,7 +3084,7 @@
             this.txtInfo04.CustomButton.UseSelectable = true;
             this.txtInfo04.CustomButton.Visible = false;
             this.txtInfo04.Lines = new string[0];
-            this.txtInfo04.Location = new System.Drawing.Point(98, 153);
+            this.txtInfo04.Location = new System.Drawing.Point(91, 133);
             this.txtInfo04.MaxLength = 32767;
             this.txtInfo04.Name = "txtInfo04";
             this.txtInfo04.PasswordChar = '\0';
@@ -3035,7 +3093,7 @@
             this.txtInfo04.SelectionLength = 0;
             this.txtInfo04.SelectionStart = 0;
             this.txtInfo04.ShortcutsEnabled = true;
-            this.txtInfo04.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo04.Size = new System.Drawing.Size(446, 23);
             this.txtInfo04.TabIndex = 7;
             this.txtInfo04.UseCustomBackColor = true;
             this.txtInfo04.UseSelectable = true;
@@ -3048,7 +3106,7 @@
             this.lblInfo04.AutoSize = true;
             this.lblInfo04.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo04.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo04.Location = new System.Drawing.Point(6, 154);
+            this.lblInfo04.Location = new System.Drawing.Point(6, 135);
             this.lblInfo04.Name = "lblInfo04";
             this.lblInfo04.Size = new System.Drawing.Size(55, 19);
             this.lblInfo04.TabIndex = 6;
@@ -3062,7 +3120,7 @@
             // 
             // 
             this.txtInfo02.CustomButton.Image = null;
-            this.txtInfo02.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo02.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo02.CustomButton.Name = "";
             this.txtInfo02.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3071,7 +3129,7 @@
             this.txtInfo02.CustomButton.UseSelectable = true;
             this.txtInfo02.CustomButton.Visible = false;
             this.txtInfo02.Lines = new string[0];
-            this.txtInfo02.Location = new System.Drawing.Point(98, 74);
+            this.txtInfo02.Location = new System.Drawing.Point(91, 65);
             this.txtInfo02.MaxLength = 32767;
             this.txtInfo02.Name = "txtInfo02";
             this.txtInfo02.PasswordChar = '\0';
@@ -3080,7 +3138,7 @@
             this.txtInfo02.SelectionLength = 0;
             this.txtInfo02.SelectionStart = 0;
             this.txtInfo02.ShortcutsEnabled = true;
-            this.txtInfo02.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo02.Size = new System.Drawing.Size(446, 23);
             this.txtInfo02.TabIndex = 3;
             this.txtInfo02.UseCustomBackColor = true;
             this.txtInfo02.UseSelectable = true;
@@ -3093,7 +3151,7 @@
             this.lblInfo02.AutoSize = true;
             this.lblInfo02.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo02.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo02.Location = new System.Drawing.Point(6, 74);
+            this.lblInfo02.Location = new System.Drawing.Point(6, 67);
             this.lblInfo02.Name = "lblInfo02";
             this.lblInfo02.Size = new System.Drawing.Size(55, 19);
             this.lblInfo02.TabIndex = 2;
@@ -3107,7 +3165,7 @@
             // 
             // 
             this.txtInfo03.CustomButton.Image = null;
-            this.txtInfo03.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo03.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo03.CustomButton.Name = "";
             this.txtInfo03.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo03.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3116,7 +3174,7 @@
             this.txtInfo03.CustomButton.UseSelectable = true;
             this.txtInfo03.CustomButton.Visible = false;
             this.txtInfo03.Lines = new string[0];
-            this.txtInfo03.Location = new System.Drawing.Point(98, 115);
+            this.txtInfo03.Location = new System.Drawing.Point(91, 99);
             this.txtInfo03.MaxLength = 32767;
             this.txtInfo03.Name = "txtInfo03";
             this.txtInfo03.PasswordChar = '\0';
@@ -3125,7 +3183,7 @@
             this.txtInfo03.SelectionLength = 0;
             this.txtInfo03.SelectionStart = 0;
             this.txtInfo03.ShortcutsEnabled = true;
-            this.txtInfo03.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo03.Size = new System.Drawing.Size(446, 23);
             this.txtInfo03.TabIndex = 5;
             this.txtInfo03.UseCustomBackColor = true;
             this.txtInfo03.UseSelectable = true;
@@ -3138,7 +3196,7 @@
             this.lblInfo03.AutoSize = true;
             this.lblInfo03.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo03.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo03.Location = new System.Drawing.Point(6, 116);
+            this.lblInfo03.Location = new System.Drawing.Point(6, 101);
             this.lblInfo03.Name = "lblInfo03";
             this.lblInfo03.Size = new System.Drawing.Size(55, 19);
             this.lblInfo03.TabIndex = 4;
@@ -3152,7 +3210,7 @@
             // 
             // 
             this.txtInfo01.CustomButton.Image = null;
-            this.txtInfo01.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.txtInfo01.CustomButton.Location = new System.Drawing.Point(424, 1);
             this.txtInfo01.CustomButton.Name = "";
             this.txtInfo01.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3161,7 +3219,7 @@
             this.txtInfo01.CustomButton.UseSelectable = true;
             this.txtInfo01.CustomButton.Visible = false;
             this.txtInfo01.Lines = new string[0];
-            this.txtInfo01.Location = new System.Drawing.Point(98, 33);
+            this.txtInfo01.Location = new System.Drawing.Point(91, 31);
             this.txtInfo01.MaxLength = 32767;
             this.txtInfo01.Name = "txtInfo01";
             this.txtInfo01.PasswordChar = '\0';
@@ -3170,7 +3228,7 @@
             this.txtInfo01.SelectionLength = 0;
             this.txtInfo01.SelectionStart = 0;
             this.txtInfo01.ShortcutsEnabled = true;
-            this.txtInfo01.Size = new System.Drawing.Size(439, 23);
+            this.txtInfo01.Size = new System.Drawing.Size(446, 23);
             this.txtInfo01.TabIndex = 1;
             this.txtInfo01.UseCustomBackColor = true;
             this.txtInfo01.UseSelectable = true;
@@ -3183,7 +3241,7 @@
             this.lblInfo01.AutoSize = true;
             this.lblInfo01.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo01.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo01.Location = new System.Drawing.Point(6, 34);
+            this.lblInfo01.Location = new System.Drawing.Point(6, 33);
             this.lblInfo01.Name = "lblInfo01";
             this.lblInfo01.Size = new System.Drawing.Size(53, 19);
             this.lblInfo01.TabIndex = 0;
@@ -3195,7 +3253,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(96, 36);
+            this.lblNombreForm.Location = new System.Drawing.Point(96, 68);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(128, 32);
             this.lblNombreForm.TabIndex = 62;
@@ -3206,7 +3264,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(35, 24);
+            this.btnCerrar.Location = new System.Drawing.Point(35, 56);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 6;
@@ -3224,9 +3282,9 @@
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(293, 29);
+            this.panelMantenimiento.Location = new System.Drawing.Point(293, 48);
             this.panelMantenimiento.Name = "panelMantenimiento";
-            this.panelMantenimiento.Size = new System.Drawing.Size(566, 42);
+            this.panelMantenimiento.Size = new System.Drawing.Size(566, 55);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
             this.panelMantenimiento.TabIndex = 2;
             this.panelMantenimiento.UseCustomBackColor = true;
@@ -3243,7 +3301,7 @@
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(6, 1);
+            this.btnSearch.Location = new System.Drawing.Point(6, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(40, 40);
             this.btnSearch.TabIndex = 4;
@@ -3258,7 +3316,7 @@
             this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(394, 1);
+            this.btnNuevo.Location = new System.Drawing.Point(394, 7);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 1;
@@ -3273,7 +3331,7 @@
             this.btnRollback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnRollback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRollback.Image = ((System.Drawing.Image)(resources.GetObject("btnRollback.Image")));
-            this.btnRollback.Location = new System.Drawing.Point(520, 1);
+            this.btnRollback.Location = new System.Drawing.Point(520, 7);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
             this.btnRollback.TabIndex = 3;
@@ -3284,11 +3342,12 @@
             // 
             this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCommit.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
-            this.btnCommit.Location = new System.Drawing.Point(478, 1);
+            this.btnCommit.Location = new System.Drawing.Point(478, 7);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Size = new System.Drawing.Size(40, 40);
             this.btnCommit.TabIndex = 0;
@@ -3304,7 +3363,7 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(436, 1);
+            this.btnDelete.Location = new System.Drawing.Point(436, 7);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
             this.btnDelete.TabIndex = 2;
@@ -3335,14 +3394,14 @@
             this.dgvEmpleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvEmpleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEmpleado.Location = new System.Drawing.Point(38, 109);
+            this.dgvEmpleado.Location = new System.Drawing.Point(38, 141);
             this.dgvEmpleado.MultiSelect = false;
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEmpleado.RowHeadersVisible = false;
             this.dgvEmpleado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleado.Size = new System.Drawing.Size(240, 565);
+            this.dgvEmpleado.Size = new System.Drawing.Size(240, 439);
             this.dgvEmpleado.TabIndex = 0;
             this.dgvEmpleado.SelectionChanged += new System.EventHandler(this.dgvEmpleado_SelectionChanged);
             // 
@@ -3352,7 +3411,7 @@
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(179, 685);
+            this.lblNumInactivo.Location = new System.Drawing.Point(183, 583);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -3365,7 +3424,7 @@
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(99, 685);
+            this.lblNumActivo.Location = new System.Drawing.Point(103, 583);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -3378,19 +3437,78 @@
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(32, 685);
+            this.lblNumReg.Location = new System.Drawing.Point(34, 583);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
             this.lblNumReg.TabIndex = 108;
             this.lblNumReg.Text = "Total: ";
             // 
+            // txtIdPassword
+            // 
+            this.txtIdPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtIdPassword.CustomButton.Image = null;
+            this.txtIdPassword.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtIdPassword.CustomButton.Name = "";
+            this.txtIdPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtIdPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtIdPassword.CustomButton.TabIndex = 1;
+            this.txtIdPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtIdPassword.CustomButton.UseSelectable = true;
+            this.txtIdPassword.CustomButton.Visible = false;
+            this.txtIdPassword.Lines = new string[0];
+            this.txtIdPassword.Location = new System.Drawing.Point(89, 31);
+            this.txtIdPassword.MaxLength = 32767;
+            this.txtIdPassword.Name = "txtIdPassword";
+            this.txtIdPassword.PasswordChar = '\0';
+            this.txtIdPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtIdPassword.SelectedText = "";
+            this.txtIdPassword.SelectionLength = 0;
+            this.txtIdPassword.SelectionStart = 0;
+            this.txtIdPassword.ShortcutsEnabled = true;
+            this.txtIdPassword.Size = new System.Drawing.Size(184, 23);
+            this.txtIdPassword.TabIndex = 11;
+            this.txtIdPassword.UseCustomBackColor = true;
+            this.txtIdPassword.UseSelectable = true;
+            this.txtIdPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtIdPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdPassword.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblIdPassword
+            // 
+            this.lblIdPassword.AutoSize = true;
+            this.lblIdPassword.ForeColor = System.Drawing.Color.Navy;
+            this.lblIdPassword.Location = new System.Drawing.Point(6, 33);
+            this.lblIdPassword.Name = "lblIdPassword";
+            this.lblIdPassword.Size = new System.Drawing.Size(82, 19);
+            this.lblIdPassword.TabIndex = 10;
+            this.lblIdPassword.Text = "ID Password:";
+            this.lblIdPassword.UseCustomForeColor = true;
+            // 
+            // grbSeguridad
+            // 
+            this.grbSeguridad.BackColor = System.Drawing.Color.Transparent;
+            this.grbSeguridad.Controls.Add(this.txtIdPassword);
+            this.grbSeguridad.Controls.Add(this.lblIdPassword);
+            this.grbSeguridad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbSeguridad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSeguridad.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbSeguridad.Location = new System.Drawing.Point(3, 14);
+            this.grbSeguridad.Name = "grbSeguridad";
+            this.grbSeguridad.Size = new System.Drawing.Size(555, 73);
+            this.grbSeguridad.TabIndex = 57;
+            this.grbSeguridad.TabStop = false;
+            this.grbSeguridad.Text = "Accesibilidad";
+            // 
             // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(919, 713);
+            this.ClientSize = new System.Drawing.Size(919, 639);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -3414,27 +3532,32 @@
             this.tabPagGeneral.PerformLayout();
             this.tabPagDetalles.ResumeLayout(false);
             this.tabPagDetalles.PerformLayout();
-            this.grbSkillsEducativas.ResumeLayout(false);
-            this.grbSkillsEducativas.PerformLayout();
-            this.grbBajaYSuspension.ResumeLayout(false);
-            this.grbBajaYSuspension.PerformLayout();
             this.grbLaboralSaludPen.ResumeLayout(false);
             this.grbLaboralSaludPen.PerformLayout();
             this.grbSalario.ResumeLayout(false);
             this.grbSalario.PerformLayout();
+            this.tabPagEducacion.ResumeLayout(false);
+            this.grbSkillsEducativas.ResumeLayout(false);
+            this.grbSkillsEducativas.PerformLayout();
             this.tabPagContacto.ResumeLayout(false);
             this.grbEmailYWeb.ResumeLayout(false);
             this.grbEmailYWeb.PerformLayout();
-            this.grbTelefonosFijos.ResumeLayout(false);
-            this.grbTelefonosFijos.PerformLayout();
-            this.grbCelulares.ResumeLayout(false);
-            this.grbCelulares.PerformLayout();
+            this.grbNumerosContacto.ResumeLayout(false);
+            this.grbNumerosContacto.PerformLayout();
+            this.tabPagDireccion.ResumeLayout(false);
+            this.grbUbicacionDetallada.ResumeLayout(false);
+            this.grbUbicacionDetallada.PerformLayout();
+            this.gbrUbigeo.ResumeLayout(false);
+            this.gbrUbigeo.PerformLayout();
+            this.tabPagSeguridad.ResumeLayout(false);
             this.tabPagInfoExtra.ResumeLayout(false);
             this.grbInfoExtra.ResumeLayout(false);
             this.grbInfoExtra.PerformLayout();
             this.panelMantenimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
+            this.grbSeguridad.ResumeLayout(false);
+            this.grbSeguridad.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3491,7 +3614,6 @@
         private MetroFramework.Controls.MetroTextBox txtCodigo;
         private MetroFramework.Controls.MetroLabel lblCodigo;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroLabel lblFechaNac;
         private System.Windows.Forms.ComboBox cboEstadoCivil;
@@ -3512,14 +3634,13 @@
         private MetroFramework.Controls.MetroLabel lblPagWeb;
         private MetroFramework.Controls.MetroTextBox txtEmail01;
         private MetroFramework.Controls.MetroLabel lblEmail01;
-        private System.Windows.Forms.GroupBox grbTelefonosFijos;
         private MetroFramework.Controls.MetroTextBox txtTelfFijo02;
         private MetroFramework.Controls.MetroTextBox txtTelfFijo01;
         private MetroFramework.Controls.MetroLabel lblTelFijo02;
         private MetroFramework.Controls.MetroLabel lblTelFijo01;
         private MetroFramework.Controls.MetroTextBox txtTelfFijo03;
         private MetroFramework.Controls.MetroLabel lblTelFijo03;
-        private System.Windows.Forms.GroupBox grbCelulares;
+        private System.Windows.Forms.GroupBox grbNumerosContacto;
         private MetroFramework.Controls.MetroTextBox txtCelular02;
         private MetroFramework.Controls.MetroLabel lblCelular02;
         private MetroFramework.Controls.MetroTextBox txtCelular03;
@@ -3559,7 +3680,6 @@
         private MetroFramework.Controls.MetroLabel lblIdEmpleado;
         private MetroFramework.Controls.MetroTabPage tabPagDetalles;
         private System.Windows.Forms.GroupBox grbSkillsEducativas;
-        private System.Windows.Forms.GroupBox grbBajaYSuspension;
         private System.Windows.Forms.GroupBox grbLaboralSaludPen;
         private System.Windows.Forms.DateTimePicker dtpFechaCese;
         private MetroFramework.Controls.MetroLabel metroLabel5;
@@ -3619,5 +3739,14 @@
         private System.Windows.Forms.ComboBox cboCategoriaEmp;
         private MetroFramework.Controls.MetroLink btnCategoriaEmp;
         private MetroFramework.Controls.MetroLink btnClaseEmp;
+        private MetroFramework.Controls.MetroTabPage tabPagDireccion;
+        private MetroFramework.Controls.MetroTabPage tabPagSeguridad;
+        private MetroFramework.Controls.MetroTabPage tabPagEducacion;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox grbUbicacionDetallada;
+        private System.Windows.Forms.GroupBox gbrUbigeo;
+        private System.Windows.Forms.GroupBox grbSeguridad;
+        private MetroFramework.Controls.MetroTextBox txtIdPassword;
+        private MetroFramework.Controls.MetroLabel lblIdPassword;
     }
 }

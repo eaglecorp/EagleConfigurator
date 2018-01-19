@@ -211,5 +211,9 @@ namespace ConfigBusinessLogic.Persona
             return mensaje;
         }
 
+        public bool EsValidoIDPassword(long? idEmpleado, long idPassword)
+        {
+            return new EmpleadoDA().EsValidoIDPassword(idEmpleado, idPassword);
+        }
     }
 }

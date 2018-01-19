@@ -14,6 +14,8 @@ using ConfigBusinessLogic.Clinica;
 using ConfiguradorUI.FormUtil;
 using MetroFramework.Controls;
 using ConfigBusinessLogic.Seguridad;
+using ConfigUtilitarios.KeyValues;
+using ConfigUtilitarios.HelperControl;
 
 namespace ConfiguradorUI.Persona
 {
@@ -54,12 +56,11 @@ namespace ConfiguradorUI.Persona
                                 txtInfo05,txtInfo06,txtInfo07,txtInfo08,
                                 txtInfo09,txtInfo10,
                                 txtNumHorasMes,txtNumCuenta,txtSalMensual, txtSalQuincenal,
-                                txtSalHora};
+                                txtSalHora, txtIdPassword};
 
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
-
             }
 
             var cbos = new[] { cboEstadoCivil,cboClaseEmp,cboCategoriaEmp, cboTipoDocIdentidad,
@@ -104,6 +105,7 @@ namespace ConfiguradorUI.Persona
             txtSalMensual.KeyPress += ValidarTxtDecimal;
             txtSalQuincenal.KeyPress += ValidarTxtDecimal;
             txtSalHora.KeyPress += ValidarTxtDecimal;
+            txtIdPassword.KeyPress += ControlHelper.TxtValidInteger;
         }
         protected void OnContentChanged(object sender, EventArgs e)
         {
@@ -345,6 +347,14 @@ namespace ConfiguradorUI.Persona
 
                 obj.nro_cuenta = txtNumCuenta.Text.Trim();
 
+                if (long.TryParse(txtIdPassword.Text.Trim(), out long idPasswordPosible) && idPasswordPosible >= 0)
+                {
+                    obj.id_password = idPasswordPosible;
+                }
+                else
+                {
+                    obj.id_password = null;
+                }
 
                 if (string.IsNullOrEmpty(txtNumHorasMes.Text)
                 || string.IsNullOrWhiteSpace(txtNumHorasMes.Text))
@@ -549,6 +559,8 @@ namespace ConfiguradorUI.Persona
                 txtSalQuincenal.Text = (obj.salario_quincenal == null) ? "" : obj.salario_quincenal.RemoveTrailingZeros();
                 txtSalHora.Text = (obj.salario_hora == null) ? "" : obj.salario_hora.RemoveTrailingZeros();
 
+                txtIdPassword.Text = obj.id_password?.ToString();
+
                 if (obj.sexo != null)
                 {
                     if (obj.sexo.Equals("M") || obj.sexo.Equals("F"))
@@ -733,9 +745,36 @@ namespace ConfiguradorUI.Persona
 
             #endregion
 
+
+            #region Validación fechas
+            if (no_error)
+            {
+                if (dtpFechaIngreso.Format != DateTimePickerFormat.Short && dtpFechaCese.Checked)
+                {
+                    tabEmpleado.SelectedTab = tabPagDetalles;
+                    errorProv.SetError(dtpFechaIngreso, "La fecha de ingreso es requerida cuando ha asignado una fecha de cese.");
+                    dtpFechaIngreso.Focus();
+                    no_error = false;
+                }
+
+                else if (dtpFechaIngreso.Format == DateTimePickerFormat.Short && dtpFechaCese.Checked)
+                {
+                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpFechaIngreso.Value, dtpFechaCese.Value)))
+                    {
+                        tabEmpleado.SelectedTab = tabPagDetalles;
+                        MessageBox.Show("La fecha de ingreso tiene que ser anterior y/o inferior a la fecha de cese.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(dtpFechaIngreso, "La fecha ingreso tiene que ser inferior a la fecha de cese.");
+                        errorProv.SetError(dtpFechaCese, "La fecha cese tiene que ser superior a la fecha de ingreso.");
+                        dtpFechaIngreso.Focus();
+                        no_error = false;
+                    }
+                }
+            }
+            #endregion
+
             #region validación salarios y demás numéricos
             //validar los txt's numéricos. Si ya pasó la 
-            if (no_error == true)
+            if (no_error)
             {
                 if (no_error)
                 {
@@ -782,7 +821,7 @@ namespace ConfiguradorUI.Persona
                         }
                         else
                         {
-                            if (!(salario > 0 && salario < 10000000000))
+                            if (!(salario > 0 && salario <= KeyAmounts.MaxAmount))
                             {
                                 tabEmpleado.SelectedTab = tabPagDetalles;
                                 errorProv.SetError(txtNum, "El salario tiene que ser mayor que 0 y menor que 10000000000.");
@@ -898,31 +937,61 @@ namespace ConfiguradorUI.Persona
             }
             #endregion
 
-            #region Validación fechas
+
+            #region Valid ID password único
             if (no_error)
             {
-                if (dtpFechaIngreso.Format != DateTimePickerFormat.Short && dtpFechaCese.Checked)
+                var txtValorIdPassword = txtIdPassword.Text.Trim();
+                if (txtValorIdPassword != "")
                 {
-                    tabEmpleado.SelectedTab = tabPagDetalles;
-                    errorProv.SetError(dtpFechaIngreso, "La fecha de ingreso es requerida cuando ha asignado una fecha de cese.");
-                    dtpFechaIngreso.Focus();
-                    no_error = false;
-                }
-
-                else if (dtpFechaIngreso.Format == DateTimePickerFormat.Short && dtpFechaCese.Checked)
-                {
-                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpFechaIngreso.Value, dtpFechaCese.Value)))
+                    if (long.TryParse(txtValorIdPassword, out long idPassword))
                     {
-                        tabEmpleado.SelectedTab = tabPagDetalles;
-                        MessageBox.Show("La fecha de ingreso tiene que ser anterior y/o inferior a la fecha de cese.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        errorProv.SetError(dtpFechaIngreso, "La fecha ingreso tiene que ser inferior a la fecha de cese.");
-                        errorProv.SetError(dtpFechaCese, "La fecha cese tiene que ser superior a la fecha de ingreso.");
-                        dtpFechaIngreso.Focus();
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
+                        {
+                            if (!new EmpleadoBL().EsValidoIDPassword(null, idPassword))
+                            {
+                                Msg.Ok_Err("El ID Password ya existe.");
+                                tabEmpleado.SelectedTab = tabPagSeguridad;
+                                errorProv.SetError(txtIdPassword, "El ID Password ya existe.");
+                                txtIdPassword.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (long.TryParse(lblIdEmpleado.Text, out long idEmpleadoActual) && idEmpleadoActual > 0)
+                            {
+                                if (!new EmpleadoBL().EsValidoIDPassword(idEmpleadoActual, idPassword))
+                                {
+                                    Msg.Ok_Err("El ID Password ya existe.");
+                                    tabEmpleado.SelectedTab = tabPagSeguridad;
+                                    errorProv.SetError(txtIdPassword, "El ID Password ya existe.");
+                                    txtIdPassword.Focus();
+                                    no_error = false;
+                                }
+                            }
+                            else
+                            {
+                                Msg.Ok_Err("No se pudo obtener el ID del empleado para validar su ID Password.");
+                                tabEmpleado.SelectedTab = tabPagSeguridad;
+                                errorProv.SetError(txtIdPassword, "No se puede validar el password id");
+                                txtIdPassword.Focus();
+                                no_error = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        tabEmpleado.SelectedTab = tabPagSeguridad;
+                        errorProv.SetError(txtIdPassword, "Debe ser un número entero");
+                        txtIdPassword.Focus();
                         no_error = false;
                     }
                 }
             }
+
             #endregion
+
 
             return no_error;
         }
@@ -1113,6 +1182,8 @@ namespace ConfiguradorUI.Persona
             txtInfo08.Clear();
             txtInfo09.Clear();
             txtInfo10.Clear();
+
+            txtIdPassword.Clear();
 
             if (TipoOperacion == TipoOperacionABM.Nuevo)
                 chkActivo.Enabled = false;
@@ -1534,6 +1605,7 @@ namespace ConfiguradorUI.Persona
             txtInfo08.MaxLength = 300;
             txtInfo09.MaxLength = 300;
             txtInfo10.MaxLength = 300;
+            txtIdPassword.MaxLength = 10;
 
             txtSalMensual.MaxLength = 19;
             txtSalQuincenal.MaxLength = 19;
@@ -1566,11 +1638,12 @@ namespace ConfiguradorUI.Persona
         }
 
         #endregion
-        
+
         #region Eventos de ventana
 
         private void FormEmpleado_Load(object sender, EventArgs e)
         {
+            btnCommit.Cursor = Cursors.Default;
             lblIdEmpleado.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();
@@ -1726,6 +1799,7 @@ namespace ConfiguradorUI.Persona
                 }
 
             }
+
             catch (Exception exc)
             {
                 MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);

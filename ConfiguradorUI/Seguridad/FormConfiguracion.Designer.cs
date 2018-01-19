@@ -129,11 +129,11 @@
             this.tabConfiguracion.Controls.Add(this.tabPagEmail);
             this.tabConfiguracion.Controls.Add(this.tabPagDiseno);
             this.tabConfiguracion.Controls.Add(this.tabPagBaseDeDatos);
-            this.tabConfiguracion.Controls.Add(this.tabPagFiscal);
             this.tabConfiguracion.Controls.Add(this.tabPagComprobante);
+            this.tabConfiguracion.Controls.Add(this.tabPagFiscal);
             this.tabConfiguracion.Location = new System.Drawing.Point(37, 89);
             this.tabConfiguracion.Name = "tabConfiguracion";
-            this.tabConfiguracion.SelectedIndex = 4;
+            this.tabConfiguracion.SelectedIndex = 0;
             this.tabConfiguracion.Size = new System.Drawing.Size(567, 389);
             this.tabConfiguracion.TabIndex = 0;
             this.tabConfiguracion.UseSelectable = true;
