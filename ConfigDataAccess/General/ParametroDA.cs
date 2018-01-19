@@ -130,9 +130,9 @@ namespace ConfigDataAccess.General
             bool success = false;
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
-                cnn.Open();
                 try
                 {
+                cnn.Open();
                     using (var trans = cnn.BeginTransaction())
                     {
                         try

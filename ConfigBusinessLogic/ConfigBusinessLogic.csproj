@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Clinica\EspecialidadMedicaBL.cs" />
     <Compile Include="Clinica\TipoEspecialidadBL.cs" />
+    <Compile Include="Fiscal\ParametroFiscalBL.cs" />
     <Compile Include="General\HorarioBL.cs" />
     <Compile Include="General\ParametroBL.cs" />
     <Compile Include="Maestro\CajaBL.cs" />

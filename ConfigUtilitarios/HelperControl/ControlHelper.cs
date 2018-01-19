@@ -142,8 +142,6 @@ namespace ConfigUtilitarios
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgv.EnableHeadersVisualStyles = false;//Para que no sobeescriba la cabecera
 
-            #region Estilo grilla
-
             dgv.BackgroundColor = Color.White;
             dgv.GridColor = Color.LightGray;
             dgv.ForeColor = Color.Black;
@@ -158,7 +156,35 @@ namespace ConfigUtilitarios
             dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.Font = new Font("Segoe UI", recordFontSize, FontStyle.Regular);
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", headerFontSize, FontStyle.Regular);
-            #endregion
+        }
+
+        public static void DgvBaseStyle(DataGridView dgv)
+        {
+            dgv.ColumnHeadersHeight = 25;
+            dgv.EnableHeadersVisualStyles = false;
+
+            dgv.BackgroundColor = Color.White;
+            dgv.GridColor = Color.LightGray;
+            dgv.ForeColor = Color.Black;
+
+            dgv.BorderStyle = BorderStyle.None;
+
+            dgv.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
+
+        }
+
+        public static void DgvBaseConfig(DataGridView dgv)
+        {
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.RowHeadersVisible = false;
+            
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgv.AllowUserToResizeRows = false;
+
         }
 
         public static string DgvGetCellValueSelected(DataGridView dgv, int indexColumn)

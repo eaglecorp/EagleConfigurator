@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Clinica\EspecialidadMedicaDA.cs" />
     <Compile Include="Clinica\TipoEspecialidadDA.cs" />
+    <Compile Include="Fiscal\ParametroFiscalDA.cs" />
     <Compile Include="General\HorarioDA.cs" />
     <Compile Include="General\ParametroDA.cs" />
     <Compile Include="Maestro\CajaDA.cs" />

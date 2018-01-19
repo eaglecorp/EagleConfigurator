@@ -1,9 +1,11 @@
 ﻿using ConfigBusinessEntity;
+using ConfigDataAccess.Fiscal;
 using ConfigUtilitarios;
 using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,16 +41,21 @@ namespace ConfigDataAccess.Maestro
             int id = 0;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
-                try
+                using (var tns = ctx.Database.BeginTransaction())
                 {
-                    ctx.MSTt12_caja.Add(obj);
-                    ctx.SaveChanges();
-                    id = obj.id_caja;
-                }
-                catch (Exception e)
-                {
-                    var log = new Log();
-                    log.ArchiveLog("Insertar Caja: ", e.Message);
+                    try
+                    {
+                        ctx.MSTt12_caja.Add(obj);
+                        ctx.SaveChanges();
+                        id = obj.id_caja;
+                        tns.Commit();
+                    }
+                    catch (Exception e)
+                    {
+                        tns.Rollback();
+                        var log = new Log();
+                        log.ArchiveLog("Insertar Caja: ", e.Message);
+                    }
                 }
             }
             return id;
@@ -82,32 +89,81 @@ namespace ConfigDataAccess.Maestro
         {
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
-                try
+
+                using (var tns = ctx.Database.BeginTransaction())
                 {
-                    var original = ctx.MSTt12_caja.Find(actualizado.id_caja);
-                    if (original != null && original.id_caja > 0)
+                    try
                     {
-                        ctx.Entry(original).CurrentValues.SetValues(actualizado);
-                        ctx.SaveChanges();
+                        var original = ctx.MSTt12_caja.Find(actualizado.id_caja);
+                        if (original != null && original.id_caja > 0)
+                        {
+                            ctx.Entry(original).CurrentValues.SetValues(actualizado);
+                            ctx.SaveChanges();
+                            //contra sql injection
+                            if (ActualizarConfigFiscalCaja(actualizado.FISt05_configuracion_fiscal_caja))
+                                tns.Commit();
+                            else
+                                tns.Rollback();
+                        }
                     }
-                }
-                catch (Exception e)
-                {
-                    var log = new Log();
-                    log.ArchiveLog("Actualizar Caja: ", e.Message);
+                    catch (Exception e)
+                    {
+                        tns.Rollback();
+                        var log = new Log();
+                        log.ArchiveLog("Actualizar Caja: ", e.Message);
+                    }
                 }
             }
         }
-        public MSTt12_caja CajaXId(int id)
+
+
+        public bool ActualizarConfigFiscalCaja(ICollection<FISt05_configuracion_fiscal_caja> configFiscal)
         {
-            var obj = new MSTt12_caja();
-            string sentencia = "SELECT * FROM MSTt12_caja WHERE id_caja=@id";
+            bool success = false;
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    obj = cnn.Query<MSTt12_caja>(sentencia, new { id }).FirstOrDefault();
+                    using (var trans = cnn.BeginTransaction())
+                    {
+                        try
+                        {
+                            cnn.Execute(@"UPDATE FISt05_configuracion_fiscal_caja
+                                            SET valor = @valor 
+                                            WHERE id_configuracion_fiscal_caja = @id_configuracion_fiscal_caja",
+                                     configFiscal, transaction: trans);
+
+                            trans.Commit();
+                            success = true;
+                        }
+                        catch (Exception e)
+                        {
+                            trans.Rollback();
+                            var log = new Log();
+                            log.ArchiveLog("Actualizar Config. Fiscal Caja - Excepción en la ejecución de la transacción: ", e.Message);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Actualizar Config. Fiscal Caja  - Excepción en abrir la transacción.: ", e.Message);
+                }
+            }
+            return success;
+        }
+
+        public MSTt12_caja CajaXId(int id)
+        {
+            var obj = new MSTt12_caja();
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    obj = ctx.MSTt12_caja.Include(x => x.FISt05_configuracion_fiscal_caja
+                                                    .Select(cf => cf.FISt04_parametro_fiscal))
+                                                    .FirstOrDefault(x => x.id_caja == id);
                 }
                 catch (Exception e)
                 {
@@ -120,13 +176,13 @@ namespace ConfigDataAccess.Maestro
         public MSTt12_caja CajaXCod(string cod)
         {
             var obj = new MSTt12_caja();
-            string sentencia = "SELECT * FROM MSTt12_caja WHERE cod_caja=@cod";
-            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    cnn.Open();
-                    obj = cnn.Query<MSTt12_caja>(sentencia, new { cod }).FirstOrDefault();
+                    obj = ctx.MSTt12_caja.Include(x => x.FISt05_configuracion_fiscal_caja
+                                                    .Select(cf => cf.FISt04_parametro_fiscal))
+                                                    .FirstOrDefault(x => x.cod_caja == cod);
                 }
                 catch (Exception e)
                 {

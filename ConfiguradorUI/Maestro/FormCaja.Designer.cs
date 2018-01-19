@@ -83,6 +83,8 @@
             this.lblCod = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
+            this.tabPagConfigFiscal = new MetroFramework.Controls.MetroTabPage();
+            this.dgvConfigFiscalCaja = new System.Windows.Forms.DataGridView();
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
@@ -91,6 +93,8 @@
             this.panelMantenimiento.SuspendLayout();
             this.tabCaja.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
+            this.tabPagConfigFiscal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -374,9 +378,10 @@
             // tabCaja
             // 
             this.tabCaja.Controls.Add(this.tabPagGeneral);
+            this.tabCaja.Controls.Add(this.tabPagConfigFiscal);
             this.tabCaja.Location = new System.Drawing.Point(311, 103);
             this.tabCaja.Name = "tabCaja";
-            this.tabCaja.SelectedIndex = 0;
+            this.tabCaja.SelectedIndex = 1;
             this.tabCaja.Size = new System.Drawing.Size(562, 361);
             this.tabCaja.TabIndex = 130;
             this.tabCaja.UseSelectable = true;
@@ -914,6 +919,30 @@
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.UseCustomForeColor = true;
             // 
+            // tabPagConfigFiscal
+            // 
+            this.tabPagConfigFiscal.Controls.Add(this.dgvConfigFiscalCaja);
+            this.tabPagConfigFiscal.HorizontalScrollbarBarColor = true;
+            this.tabPagConfigFiscal.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagConfigFiscal.HorizontalScrollbarSize = 10;
+            this.tabPagConfigFiscal.Location = new System.Drawing.Point(4, 38);
+            this.tabPagConfigFiscal.Name = "tabPagConfigFiscal";
+            this.tabPagConfigFiscal.Size = new System.Drawing.Size(554, 319);
+            this.tabPagConfigFiscal.TabIndex = 1;
+            this.tabPagConfigFiscal.Text = "Configuración Fiscal";
+            this.tabPagConfigFiscal.VerticalScrollbarBarColor = true;
+            this.tabPagConfigFiscal.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagConfigFiscal.VerticalScrollbarSize = 10;
+            // 
+            // dgvConfigFiscalCaja
+            // 
+            this.dgvConfigFiscalCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 16);
+            this.dgvConfigFiscalCaja.Name = "dgvConfigFiscalCaja";
+            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(548, 300);
+            this.dgvConfigFiscalCaja.TabIndex = 2;
+            this.dgvConfigFiscalCaja.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConfigFiscalCaja_CellValueChanged);
+            // 
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
@@ -968,6 +997,8 @@
             this.tabCaja.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
+            this.tabPagConfigFiscal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1032,5 +1063,7 @@
         private System.Windows.Forms.ComboBox cboImpresora04;
         private System.Windows.Forms.ComboBox cboImpresora03;
         private System.Windows.Forms.ComboBox cboImpresora02;
+        private MetroFramework.Controls.MetroTabPage tabPagConfigFiscal;
+        private System.Windows.Forms.DataGridView dgvConfigFiscalCaja;
     }
 }
