@@ -81,6 +81,7 @@
     <Compile Include="HelperGeneric\Validation.cs" />
     <Compile Include="HelperMultimedia\ZipArchive.cs" />
     <Compile Include="ViewModels\ComboItem.cs" />
+    <Compile Include="ViewModels\ParametroFiscalVM.cs" />
     <Compile Include="ViewModels\ParametroFiscalDeCajaVM.cs" />
   </ItemGroup>
   <ItemGroup />

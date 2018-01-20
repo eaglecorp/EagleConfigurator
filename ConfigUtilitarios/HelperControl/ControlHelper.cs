@@ -169,6 +169,9 @@ namespace ConfigUtilitarios
 
             dgv.BorderStyle = BorderStyle.None;
 
+            dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
+            dgv.RowHeadersWidth = 25;
+
             dgv.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
@@ -178,10 +181,11 @@ namespace ConfigUtilitarios
 
         public static void DgvBaseConfig(DataGridView dgv)
         {
+            dgv.MultiSelect = false;
             dgv.AllowUserToAddRows = false;
             dgv.AllowUserToDeleteRows = false;
-            dgv.RowHeadersVisible = false;
-            
+            dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+
             dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgv.AllowUserToResizeRows = false;
 
@@ -203,8 +207,22 @@ namespace ConfigUtilitarios
             {
                 return null;
             }
+        }
 
-
+        public static string DgvGetCellValueSelectedFromCell(DataGridView dgv, int indexColumn)
+        {
+            try
+            {
+                if (dgv.CurrentRow != null)
+                {
+                    return dgv.CurrentRow.Cells[indexColumn].Value.ToString();
+                }
+                else return null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         #endregion

@@ -14,5 +14,10 @@ namespace ConfigBusinessLogic.Fiscal
         {
             return new ParametroFiscalDA().ListaParametroFiscal();
         }
+
+        public bool ActualizarParametrosFiscales(List<FISt04_parametro_fiscal> parametrosFiscales)
+        {
+            return new ParametroFiscalDA().ActualizarParametrosFiscales(parametrosFiscales);
+        }
     }
 }

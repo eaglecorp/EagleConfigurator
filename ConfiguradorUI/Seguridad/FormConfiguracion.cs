@@ -16,6 +16,8 @@ using ConfigBusinessLogic;
 using System.IO;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.HelperGeneric;
+using ConfigBusinessLogic.Fiscal;
+using ConfigUtilitarios.ViewModels;
 
 namespace ConfiguradorUI.Seguridad
 {
@@ -24,8 +26,23 @@ namespace ConfiguradorUI.Seguridad
 
         #region Variables
 
-        List<GRLt01_parametro> _parametros = null;
+        List<GRLt01_parametro> _parametrosSistema = null;
+        List<int> _idsParametrosFiscalesCambiados = null;
         public bool changedLogo = false;
+
+        const int colIdParametroFiscal = 0;
+        const int colCodParametroFiscal = 1;
+        const int colNombreParametroFiscal = 2;
+        const int colValorDefault = 3;
+
+        enum ResultadoOperacion
+        {
+            Fail,
+            Success,
+            NoAction
+        };
+
+        bool postLoad = false;
         #endregion
 
         public FormConfiguracion()
@@ -35,7 +52,7 @@ namespace ConfiguradorUI.Seguridad
 
         #region Métodos de ventana
 
-        private void SetParametros()
+        private void SetParametrosSistema()
         {
             try
             {
@@ -62,6 +79,8 @@ namespace ConfiguradorUI.Seguridad
                 var authReimprComp = GetParametro(ParameterCode.AuthReimpresionComp);
 
                 #endregion
+
+                SetParametrosFiscales(new ParametroFiscalBL().ListaParametroFiscal());
 
                 #region Seteando los parámetros
 
@@ -103,9 +122,9 @@ namespace ConfiguradorUI.Seguridad
                 Msg.Ok_Err("Ocurrió un error cuando se mostraba los parámetros. Excepción:" + e.Message);
             }
         }
-        private List<GRLt01_parametro> GetParametros()
+        private List<GRLt01_parametro> GetParametrosSistemaCambiados()
         {
-            if (_parametros == null || _parametros.Count == 0)
+            if (_parametrosSistema == null || _parametrosSistema.Count == 0)
                 return null;
 
             var parametrosCambiados = new List<GRLt01_parametro>();
@@ -213,13 +232,13 @@ namespace ConfiguradorUI.Seguridad
         private GRLt01_parametro GetParametro(string cod)
         {
             var parametro = new GRLt01_parametro();
-            if (_parametros == null || cod == null)
+            if (_parametrosSistema == null || cod == null)
             { return parametro; }
             else
             {
                 try
                 {
-                    var tempParametro = _parametros.FirstOrDefault(x => x.cod_parametro == cod);
+                    var tempParametro = _parametrosSistema.FirstOrDefault(x => x.cod_parametro == cod);
                     if (tempParametro != null && tempParametro.id_parametro > 0)
                     {
                         parametro = new GRLt01_parametro
@@ -244,26 +263,76 @@ namespace ConfiguradorUI.Seguridad
             return parametro;
         }
 
+        private ResultadoOperacion Actualizar()
+        {
+            var parametrosSistemaCambiados = GetParametrosSistemaCambiados();
+            bool? pSistemasSuccess = null, pFiscalesSuccess = null;
+
+            if (parametrosSistemaCambiados != null && parametrosSistemaCambiados.Count > 0)
+            {
+                pSistemasSuccess = new ParametroBL().ActualizarParametros(parametrosSistemaCambiados);
+
+                if (pSistemasSuccess == true)
+                {
+                    changedLogo = parametrosSistemaCambiados.Any(x => x.cod_parametro == ParameterCode.LogoImg);
+                }
+            }
+
+            if (_idsParametrosFiscalesCambiados != null && _idsParametrosFiscalesCambiados.Count > 0)
+            {
+                pFiscalesSuccess = new ParametroFiscalBL().ActualizarParametrosFiscales(GetParametrosFiscales());
+            }
+
+            return
+                (pSistemasSuccess == null && pFiscalesSuccess == null) ? ResultadoOperacion.NoAction :
+                (pSistemasSuccess == false || pSistemasSuccess == false) ? ResultadoOperacion.Fail :
+                ResultadoOperacion.Success;
+        }
         private void Guardar()
         {
             if (EsValido())
             {
-                var parametrosCambiados = GetParametros();
-                if (parametrosCambiados != null && parametrosCambiados.Count > 0)
+                var resultadoOperacion = Actualizar();
+                if (resultadoOperacion == ResultadoOperacion.Success)
                 {
-                    if (new ParametroBL().ActualizarParametros(parametrosCambiados))
+                    Msg.Ok_Info("Se actualizó correctamente los parámetros.");
+                }
+                else if (resultadoOperacion == ResultadoOperacion.Fail)
+                {
+                    Msg.Ok_Err("Ocurrió un error en la actualización de los parámetros.");
+                }
+
+                CargarParametros();
+                LimpiarParametrosCambiados();
+            }
+        }
+
+        private void AddIdParametroFiscalCambiado()
+        {
+            try
+            {
+                var idTxt = ControlHelper.DgvGetCellValueSelectedFromCell(dgvParametrosFiscales, colIdParametroFiscal);
+                if (int.TryParse(idTxt, out int id))
+                {
+                    if (_idsParametrosFiscalesCambiados == null)
                     {
-                        Msg.Ok_Info("Se actualizó correctamente los parámetros.");
-                        changedLogo = parametrosCambiados.Any(x => x.cod_parametro == ParameterCode.LogoImg);
-                        CargarParametros();
-                        SetParametros();
+                        _idsParametrosFiscalesCambiados = new List<int>();
                     }
-                    else
+
+                    if (!_idsParametrosFiscalesCambiados.Any(x => x == id))
                     {
-                        Msg.Ok_Err("No se pudo actualizar los parámetros.");
+                        _idsParametrosFiscalesCambiados.Add(id);
                     }
                 }
             }
+            catch (Exception e)
+            {
+                Msg.Ok_Err("No se pudo agregar el ID del parámetro fiscal. Excepción: " + e.Message);
+            }
+        }
+        private void LimpiarParametrosCambiados()
+        {
+            _idsParametrosFiscalesCambiados = null;
         }
         private string GuardarImageDesde(string pathSource)
         {
@@ -299,9 +368,10 @@ namespace ConfiguradorUI.Seguridad
         }
         private void CargarParametros()
         {
-            _parametros = new ParametroBL().ListaParametro(true);
+            _parametrosSistema = new ParametroBL().ListaParametro(true);
+            var parametrosFiscales = new ParametroFiscalBL().ListaParametroFiscal();
 
-            if (_parametros == null || _parametros.Count == 0)
+            if ((_parametrosSistema == null || _parametrosSistema.Count == 0) && (parametrosFiscales == null || parametrosFiscales.Count == 0))
             {
                 if (Msg.YesNo_Ques("No se ha encontrado ningún parámetro en la base de datos. ¿Continuar de todas formas?") == DialogResult.No)
                 {
@@ -311,6 +381,11 @@ namespace ConfiguradorUI.Seguridad
                 {
                     btnGuardar.Enabled = false;
                 }
+            }
+            else
+            {
+                SetParametrosSistema();
+                SetParametrosFiscales(parametrosFiscales);
             }
         }
         private bool EsValido()
@@ -561,12 +636,128 @@ namespace ConfiguradorUI.Seguridad
 
             #endregion
 
+            #region Dgv
+
+            DefinirCabeceraGridParametros();
+            RenombrarCabeceraGridParametros();
+            ConfigurarGridParametrosFiscales();
+            ((DataGridViewTextBoxColumn)dgvParametrosFiscales.Columns[colValorDefault]).MaxInputLength = 500;
+            ControlHelper.DgvBaseStyle(dgvParametrosFiscales);
+            ControlHelper.DgvBaseConfig(dgvParametrosFiscales);
+
+            #endregion
         }
+
+        private void DefinirCabeceraGridParametros()
+        {
+            try
+            {
+                var configHeader = new List<FISt04_parametro_fiscal>();
+                dgvParametrosFiscales.DataSource = configHeader.Select(x => new
+                ParametroFiscalVM()
+                {
+                    id_parametro_fiscal = 0,
+                    cod_parametro_fiscal = "",
+                    txt_desc = "",
+                    valor_default = ""
+                }).ToList();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"No se pudo definir la cabecera de la grilla de los parámetros fiscales. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void RenombrarCabeceraGridParametros()
+        {
+            try
+            {
+                dgvParametrosFiscales.Columns["cod_parametro_fiscal"].HeaderText = "CÓDIGO";
+                dgvParametrosFiscales.Columns["txt_desc"].HeaderText = "PARÁMETRO";
+                dgvParametrosFiscales.Columns["valor_default"].HeaderText = "VALOR DEFAULT";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"No se pudo renombrar la cabecera de la grilla de los parámetros fiscales. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ConfigurarGridParametrosFiscales()
+        {
+            dgvParametrosFiscales.Columns["id_parametro_fiscal"].Visible = false;
+            dgvParametrosFiscales.ReadOnly = false;
+            dgvParametrosFiscales.Columns[colIdParametroFiscal].ReadOnly = true;
+            dgvParametrosFiscales.Columns[colCodParametroFiscal].ReadOnly = true;
+            dgvParametrosFiscales.Columns[colNombreParametroFiscal].ReadOnly = true;
+
+            dgvParametrosFiscales.Columns["cod_parametro_fiscal"].Width = 110;
+            dgvParametrosFiscales.Columns["txt_desc"].Width = 280;
+            dgvParametrosFiscales.Columns["valor_default"].Width = 125;
+        }
+        private void SetParametrosFiscales(ICollection<FISt04_parametro_fiscal> parametrosFiscales)
+        {
+            try
+            {
+                if (parametrosFiscales != null && parametrosFiscales.Count > 0)
+                {
+                    dgvParametrosFiscales.DataSource = parametrosFiscales
+                                                                .Select(x => new
+                                                        ParametroFiscalVM()
+                                                                {
+                                                                    id_parametro_fiscal = x.id_parametro_fiscal,
+                                                                    cod_parametro_fiscal = x.cod_parametro_fiscal,
+                                                                    txt_desc = x.txt_desc,
+                                                                    valor_default = x.valor_default
+                                                                }).ToList();
+                }
+                else
+                {
+                    DefinirCabeceraGridParametros();
+                }
+                RenombrarCabeceraGridParametros();
+            }
+            catch (Exception ex)
+            {
+                Msg.Ok_Err("Ocurrió un error cuando se cargaba la configuración de parámetros fiscales. Excepción : " + ex.Message);
+            }
+        }
+        private List<FISt04_parametro_fiscal> GetParametrosFiscales()
+        {
+            var parametrosFiscalesCambiados = new List<FISt04_parametro_fiscal>();
+
+            try
+            {
+                if (dgvParametrosFiscales.Rows != null && dgvParametrosFiscales.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow row in dgvParametrosFiscales.Rows)
+                    {
+                        var id_parametro_fiscal = int.Parse(row.Cells[colIdParametroFiscal].Value.ToString());
+
+                        if (_idsParametrosFiscalesCambiados.Any(x => x == id_parametro_fiscal))
+                        {
+                            parametrosFiscalesCambiados.Add(
+                                new FISt04_parametro_fiscal()
+                                {
+                                    id_parametro_fiscal = id_parametro_fiscal,
+                                    cod_parametro_fiscal = row.Cells[colCodParametroFiscal].Value.ToString(),
+                                    txt_desc = row.Cells[colNombreParametroFiscal].Value.ToString(),
+                                    valor_default = row.Cells[colValorDefault].Value.ToString()
+                                }
+                               );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Msg.Ok_Err("No se pudo obtener los parámetros fiscales. Excepción: " + ex.Message);
+            }
+            return parametrosFiscalesCambiados;
+        }
+
+
         private void ConfigurarLoad()
         {
             ConfigurarControles();
             CargarParametros();
-            SetParametros();
             AddHandlers();
         }
 
@@ -577,6 +768,7 @@ namespace ConfiguradorUI.Seguridad
         private void FormConfiguracion_Load(object sender, EventArgs e)
         {
             ConfigurarLoad();
+            postLoad = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -675,6 +867,14 @@ namespace ConfiguradorUI.Seguridad
         private void chkAuthReimprComp_MouseEnter(object sender, EventArgs e)
         {
             SetCodYDescripcionParametro(ParameterCode.AuthReimpresionComp);
+        }
+
+        private void dgvParametrosFiscales_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == colValorDefault && postLoad)
+            {
+                AddIdParametroFiscalCambiado();
+            }
         }
 
         #endregion

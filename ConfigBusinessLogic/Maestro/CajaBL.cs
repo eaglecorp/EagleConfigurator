@@ -28,11 +28,34 @@ namespace ConfigBusinessLogic.Maestro
         }
         public MSTt12_caja CajaXId(int id)
         {
-            return new CajaDA().CajaXId(id);
+            return OrdenarConfigDeCajaPorCod(new CajaDA().CajaXId(id));
         }
         public MSTt12_caja CajaXCod(string cod)
         {
-            return new CajaDA().CajaXCod(cod);
+            return OrdenarConfigDeCajaPorCod(new CajaDA().CajaXCod(cod));
+        }
+
+        private MSTt12_caja OrdenarConfigDeCajaPorCod(MSTt12_caja caja)
+        {
+            try
+            {
+                if (caja == null ||
+                       caja.FISt05_configuracion_fiscal_caja == null ||
+                       caja.FISt05_configuracion_fiscal_caja.Count == 0)
+                {
+                    return caja;
+                }
+
+                caja.FISt05_configuracion_fiscal_caja = caja.FISt05_configuracion_fiscal_caja.
+                                                            OrderBy(x => x.FISt04_parametro_fiscal.cod_parametro_fiscal).
+                                                            ToList();
+
+                return caja;
+            }
+            catch
+            {
+                return caja;
+            }
         }
     }
 }

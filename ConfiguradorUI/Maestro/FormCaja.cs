@@ -24,19 +24,24 @@ namespace ConfiguradorUI.Maestro
     public partial class FormCaja : MetroForm
     {
         #region Variables
-        bool isSelected = false;
-        bool isChangedRow = false;
-        bool isPending = false;
-        bool preguntar = true;
+        List<int> _idsParametrosFiscalesCambiados = null;
+
+        bool isSelected      = false,
+                isChangedRow = false,
+                isPending    = false,
+                preguntar    = true,
+                postLoad     = false;
+
         public bool actualizar = false;
+
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
-        const int colIdConfigCaja = 0;
-        const int colIdCaja = 1;
-        const int colIdParametroFiscal = 2;
-        const int colCodParametroFiscal = 3;
-        const int colNombreParametroFiscal = 4;
-        const int colValorParametroCaja = 5;
+        const int colIdConfigCaja            = 0,
+                    colIdCaja                = 1,
+                    colIdParametroFiscal     = 2,
+                    colCodParametroFiscal    = 3,
+                    colNombreParametroFiscal = 4,
+                    colValorParametroCaja    = 5;
 
         string codSelected = "";
         #endregion
@@ -87,7 +92,6 @@ namespace ConfiguradorUI.Maestro
                 ControlarEventosABM();
             }
         }
-
         protected void OnContentChangedDgv(object sender, DataGridViewCellEventArgs e)
         {
             if (isSelected && isChangedRow == false && TipoOperacion != TipoOperacionABM.Cambio)
@@ -96,7 +100,6 @@ namespace ConfiguradorUI.Maestro
                 ControlarEventosABM();
             }
         }
-
         private void CambioEnControl(object sender, EventArgs e)
         {
             //invocado con el IDE (por repetición).
@@ -349,7 +352,6 @@ namespace ConfiguradorUI.Maestro
                 Msg.Ok_Err("Ocurrió un error cuando se cargaba la configuración de parámetros fiscales. Excepción : " + ex.Message);
             }
         }
-
         private void SetParametrosFiscalesDefault(List<FISt04_parametro_fiscal> parametrosFiscales)
         {
             try
@@ -378,6 +380,82 @@ namespace ConfiguradorUI.Maestro
             {
                 Msg.Ok_Err("Ocurrió un error cuando se cargaba la configuración de parámetros fiscales default. Excepción : " + ex.Message);
             }
+        }
+        private List<FISt05_configuracion_fiscal_caja> GetParametrosFiscalesDeCaja()
+        {
+            var parametrosFiscales = new List<FISt05_configuracion_fiscal_caja>();
+            try
+            {
+                if (dgvConfigFiscalCaja.Rows != null && dgvConfigFiscalCaja.Rows.Count > 0)
+                {
+                    if (TipoOperacion == TipoOperacionABM.Insertar)
+                    {
+                        RecorrerYLeerParametros(true);
+                    }
+                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    {
+                        if (_idsParametrosFiscalesCambiados != null && _idsParametrosFiscalesCambiados.Count > 0)
+                        {
+                            RecorrerYLeerParametros(false);
+                        }
+                    }
+                }
+
+                void RecorrerYLeerParametros(bool traerTodos)
+                {
+                    foreach (DataGridViewRow row in dgvConfigFiscalCaja.Rows)
+                    {
+                        int id_config_fiscal_caja = int.Parse(row.Cells[colIdConfigCaja].Value.ToString());
+
+                        if (traerTodos || _idsParametrosFiscalesCambiados.Any(x => x == id_config_fiscal_caja))
+                        {
+                            parametrosFiscales.Add(
+                            new FISt05_configuracion_fiscal_caja()
+                            {
+                                id_caja = GetIdActualDeCaja(),
+                                id_parametro_fiscal = int.Parse(row.Cells[colIdParametroFiscal].Value.ToString()),
+                                id_configuracion_fiscal_caja = id_config_fiscal_caja,
+                                valor = row.Cells[colValorParametroCaja].Value.ToString()
+                            }
+                           );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Msg.Ok_Err("No se pudo leer la configuración de los parámetros fiscales de la caja. Excepción: " + ex.Message);
+            }
+            return parametrosFiscales;
+        }
+        private void AddIdParametroFiscalCambiado()
+        {
+            try
+            {
+                var idTxt = ControlHelper.DgvGetCellValueSelectedFromCell(dgvConfigFiscalCaja, colIdConfigCaja);
+                if (int.TryParse(idTxt, out int id))
+                {
+                    if (_idsParametrosFiscalesCambiados == null)
+                    {
+                        _idsParametrosFiscalesCambiados = new List<int>();
+                    }
+
+                    if (!_idsParametrosFiscalesCambiados.Any(x => x == id))
+                    {
+                        _idsParametrosFiscalesCambiados.Add(id);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Msg.Ok_Err("No se pudo agregar el ID de la configuración fiscal de la caja. Excepción: " + e.Message);
+            }
+        }
+        private int GetIdActualDeCaja()
+        {
+            int id_caja = 0;
+            int.TryParse(lblIdCaja.Text, out id_caja);
+            return id_caja;
         }
 
         private bool esValido()
@@ -610,40 +688,6 @@ namespace ConfiguradorUI.Maestro
             return id;
         }
 
-        private List<FISt05_configuracion_fiscal_caja> GetParametrosFiscalesDeCaja()
-        {
-            var parametrosFiscales = new List<FISt05_configuracion_fiscal_caja>();
-
-            try
-            {
-                if (dgvConfigFiscalCaja.Rows != null && dgvConfigFiscalCaja.Rows.Count > 0)
-                {
-                    foreach (DataGridViewRow row in dgvConfigFiscalCaja.Rows)
-                    {
-                        parametrosFiscales.Add(
-                            new FISt05_configuracion_fiscal_caja()
-                            {
-                                id_caja = GetIdActual(),
-                                id_parametro_fiscal = int.Parse(row.Cells[colIdParametroFiscal].Value.ToString()),
-                                id_configuracion_fiscal_caja = int.Parse(row.Cells[colIdConfigCaja].Value.ToString()),
-                                valor = row.Cells[colValorParametroCaja].Value.ToString()
-                            }
-                           );
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Msg.Ok_Err("No se pudo leer los parámetros fiscales de la caja. Excepción: " + ex.Message);
-            }
-            return parametrosFiscales;
-        }
-        private int GetIdActual()
-        {
-            int id_caja = 0;
-            int.TryParse(lblIdCaja.Text, out id_caja);
-            return id_caja;
-        }
 
         private void CargarComboFiltro()
         {
@@ -680,6 +724,7 @@ namespace ConfiguradorUI.Maestro
 
             chkActivo.Checked = true;
 
+            _idsParametrosFiscalesCambiados = null;
             DefinirCabeceraGridParametros();
             RenombrarCabeceraGridParametros();
 
@@ -944,11 +989,11 @@ namespace ConfiguradorUI.Maestro
             Hide();
             Close();
         }
+
         private void SetCabeceraGridDetail()
         {
 
         }
-
         private void DefinirCabeceraGridParametros()
         {
             try
@@ -970,7 +1015,6 @@ namespace ConfiguradorUI.Maestro
                 MessageBox.Show($"No se pudo definir la cabecera de la grilla de los parámetros. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void RenombrarCabeceraGridParametros()
         {
             try
@@ -984,7 +1028,6 @@ namespace ConfiguradorUI.Maestro
                 MessageBox.Show($"No se pudo renombrar la cabecera de la grilla de los parámetros. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void ConfigurarGridParametros()
         {
             dgvConfigFiscalCaja.Columns["id"].Visible = false;
@@ -1001,15 +1044,16 @@ namespace ConfiguradorUI.Maestro
             dgvConfigFiscalCaja.Columns["parametro"].Width = 300;
             dgvConfigFiscalCaja.Columns["valor"].Width = 110;
         }
-
         private void InicializarGridParametros()
         {
             DefinirCabeceraGridParametros();
             RenombrarCabeceraGridParametros();
             ConfigurarGridParametros();
+            ((DataGridViewTextBoxColumn)dgvConfigFiscalCaja.Columns[colValorParametroCaja]).MaxInputLength = 500;
             ControlHelper.DgvBaseStyle(dgvConfigFiscalCaja);
             ControlHelper.DgvBaseConfig(dgvConfigFiscalCaja);
         }
+
 
         #endregion
 
@@ -1029,9 +1073,8 @@ namespace ConfiguradorUI.Maestro
             addHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
+            postLoad = true;
         }
-
-        
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -1155,8 +1198,6 @@ namespace ConfiguradorUI.Maestro
                     bool isValid = false;
                     string idSelect = GetIdSelected();
 
-                    //Indica que está seleccionado otro registro
-                    //que el que se quiere modificar
                     if (idSelect != lblIdCaja.Text && idSelect != "-1")
                     {
                         isValid = Actualizar();
@@ -1269,6 +1310,15 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
+        private void dgvConfigFiscalCaja_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == colValorParametroCaja && postLoad)
+            {
+                isChangedRow = false;
+                AddIdParametroFiscalCambiado();
+            }
+        }
+
         #region Eventos ventana emergente
 
         private void btnImpresora_Click(object sender, EventArgs e)
@@ -1368,12 +1418,5 @@ namespace ConfiguradorUI.Maestro
 
         #endregion
 
-        private void dgvConfigFiscalCaja_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == colValorParametroCaja)
-            {
-                isChangedRow = false;
-            }
-        }
     }
 }

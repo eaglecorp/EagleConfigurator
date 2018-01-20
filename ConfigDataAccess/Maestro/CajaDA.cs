@@ -60,6 +60,7 @@ namespace ConfigDataAccess.Maestro
             }
             return id;
         }
+
         public void EliminarCaja(int id)
         {
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
@@ -89,7 +90,6 @@ namespace ConfigDataAccess.Maestro
         {
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
-
                 using (var tns = ctx.Database.BeginTransaction())
                 {
                     try
@@ -115,10 +115,11 @@ namespace ConfigDataAccess.Maestro
                 }
             }
         }
-
-
         public bool ActualizarConfigFiscalCaja(ICollection<FISt05_configuracion_fiscal_caja> configFiscal)
         {
+            if (configFiscal == null || configFiscal.Count == 0)
+                return true;
+
             bool success = false;
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
@@ -153,7 +154,6 @@ namespace ConfigDataAccess.Maestro
             }
             return success;
         }
-
         public MSTt12_caja CajaXId(int id)
         {
             var obj = new MSTt12_caja();
@@ -161,6 +161,8 @@ namespace ConfigDataAccess.Maestro
             {
                 try
                 {
+
+
                     obj = ctx.MSTt12_caja.Include(x => x.FISt05_configuracion_fiscal_caja
                                                     .Select(cf => cf.FISt04_parametro_fiscal))
                                                     .FirstOrDefault(x => x.id_caja == id);

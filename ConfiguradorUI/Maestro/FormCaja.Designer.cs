@@ -381,7 +381,7 @@
             this.tabCaja.Controls.Add(this.tabPagConfigFiscal);
             this.tabCaja.Location = new System.Drawing.Point(311, 103);
             this.tabCaja.Name = "tabCaja";
-            this.tabCaja.SelectedIndex = 1;
+            this.tabCaja.SelectedIndex = 0;
             this.tabCaja.Size = new System.Drawing.Size(562, 361);
             this.tabCaja.TabIndex = 130;
             this.tabCaja.UseSelectable = true;
@@ -937,9 +937,9 @@
             // dgvConfigFiscalCaja
             // 
             this.dgvConfigFiscalCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 16);
+            this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 15);
             this.dgvConfigFiscalCaja.Name = "dgvConfigFiscalCaja";
-            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(548, 300);
+            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(548, 301);
             this.dgvConfigFiscalCaja.TabIndex = 2;
             this.dgvConfigFiscalCaja.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConfigFiscalCaja_CellValueChanged);
             // 

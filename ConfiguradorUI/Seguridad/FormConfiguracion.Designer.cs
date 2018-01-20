@@ -73,11 +73,12 @@
             this.tabPagBaseDeDatos = new MetroFramework.Controls.MetroTabPage();
             this.grbBackupRestore = new System.Windows.Forms.GroupBox();
             this.chkHabilitarRestore = new MetroFramework.Controls.MetroCheckBox();
-            this.tabPagFiscal = new MetroFramework.Controls.MetroTabPage();
             this.tabPagComprobante = new MetroFramework.Controls.MetroTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkAuthReimprComp = new MetroFramework.Controls.MetroCheckBox();
             this.chkAuthAnularComp = new MetroFramework.Controls.MetroCheckBox();
+            this.tabPagFiscal = new MetroFramework.Controls.MetroTabPage();
+            this.dgvParametrosFiscales = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblCodParametro = new System.Windows.Forms.Label();
@@ -99,6 +100,8 @@
             this.grbBackupRestore.SuspendLayout();
             this.tabPagComprobante.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPagFiscal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParametrosFiscales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +110,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(96, 40);
+            this.lblNombreForm.Location = new System.Drawing.Point(97, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(281, 32);
             this.lblNombreForm.TabIndex = 110;
@@ -118,7 +121,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(34, 27);
+            this.btnCerrar.Location = new System.Drawing.Point(35, 27);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 109;
@@ -131,7 +134,7 @@
             this.tabConfiguracion.Controls.Add(this.tabPagBaseDeDatos);
             this.tabConfiguracion.Controls.Add(this.tabPagComprobante);
             this.tabConfiguracion.Controls.Add(this.tabPagFiscal);
-            this.tabConfiguracion.Location = new System.Drawing.Point(37, 89);
+            this.tabConfiguracion.Location = new System.Drawing.Point(38, 89);
             this.tabConfiguracion.Name = "tabConfiguracion";
             this.tabConfiguracion.SelectedIndex = 0;
             this.tabConfiguracion.Size = new System.Drawing.Size(567, 389);
@@ -821,20 +824,6 @@
             this.chkHabilitarRestore.UseSelectable = true;
             this.chkHabilitarRestore.MouseEnter += new System.EventHandler(this.chkHabilitarRestore_MouseEnter);
             // 
-            // tabPagFiscal
-            // 
-            this.tabPagFiscal.HorizontalScrollbarBarColor = true;
-            this.tabPagFiscal.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagFiscal.HorizontalScrollbarSize = 10;
-            this.tabPagFiscal.Location = new System.Drawing.Point(4, 38);
-            this.tabPagFiscal.Name = "tabPagFiscal";
-            this.tabPagFiscal.Size = new System.Drawing.Size(559, 347);
-            this.tabPagFiscal.TabIndex = 3;
-            this.tabPagFiscal.Text = "Fiscal";
-            this.tabPagFiscal.VerticalScrollbarBarColor = true;
-            this.tabPagFiscal.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagFiscal.VerticalScrollbarSize = 10;
-            // 
             // tabPagComprobante
             // 
             this.tabPagComprobante.Controls.Add(this.groupBox1);
@@ -898,6 +887,30 @@
             this.chkAuthAnularComp.UseSelectable = true;
             this.chkAuthAnularComp.MouseEnter += new System.EventHandler(this.chkAuthAnularComp_MouseEnter);
             // 
+            // tabPagFiscal
+            // 
+            this.tabPagFiscal.Controls.Add(this.dgvParametrosFiscales);
+            this.tabPagFiscal.HorizontalScrollbarBarColor = true;
+            this.tabPagFiscal.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagFiscal.HorizontalScrollbarSize = 10;
+            this.tabPagFiscal.Location = new System.Drawing.Point(4, 38);
+            this.tabPagFiscal.Name = "tabPagFiscal";
+            this.tabPagFiscal.Size = new System.Drawing.Size(559, 347);
+            this.tabPagFiscal.TabIndex = 3;
+            this.tabPagFiscal.Text = "Fiscal";
+            this.tabPagFiscal.VerticalScrollbarBarColor = true;
+            this.tabPagFiscal.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagFiscal.VerticalScrollbarSize = 10;
+            // 
+            // dgvParametrosFiscales
+            // 
+            this.dgvParametrosFiscales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParametrosFiscales.Location = new System.Drawing.Point(3, 16);
+            this.dgvParametrosFiscales.Name = "dgvParametrosFiscales";
+            this.dgvParametrosFiscales.Size = new System.Drawing.Size(553, 325);
+            this.dgvParametrosFiscales.TabIndex = 3;
+            this.dgvParametrosFiscales.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParametrosFiscales_CellValueChanged);
+            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue;
@@ -909,7 +922,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(519, 481);
+            this.btnCancelar.Location = new System.Drawing.Point(520, 481);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
@@ -927,7 +940,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(437, 481);
+            this.btnGuardar.Location = new System.Drawing.Point(438, 481);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 30);
@@ -939,7 +952,7 @@
             // lblCodParametro
             // 
             this.lblCodParametro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodParametro.Location = new System.Drawing.Point(41, 481);
+            this.lblCodParametro.Location = new System.Drawing.Point(42, 481);
             this.lblCodParametro.Name = "lblCodParametro";
             this.lblCodParametro.Size = new System.Drawing.Size(77, 30);
             this.lblCodParametro.TabIndex = 114;
@@ -948,7 +961,7 @@
             // lblDescripcionParametro
             // 
             this.lblDescripcionParametro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionParametro.Location = new System.Drawing.Point(124, 481);
+            this.lblDescripcionParametro.Location = new System.Drawing.Point(125, 481);
             this.lblDescripcionParametro.Name = "lblDescripcionParametro";
             this.lblDescripcionParametro.Size = new System.Drawing.Size(296, 45);
             this.lblDescripcionParametro.TabIndex = 115;
@@ -999,6 +1012,8 @@
             this.tabPagComprobante.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPagFiscal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParametrosFiscales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1060,5 +1075,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroCheckBox chkAuthReimprComp;
         private MetroFramework.Controls.MetroCheckBox chkAuthAnularComp;
+        private System.Windows.Forms.DataGridView dgvParametrosFiscales;
     }
 }

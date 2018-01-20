@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConfigDataAccess.Fiscal;
 
 namespace ConfigDataAccess.General
 {
@@ -127,12 +128,13 @@ namespace ConfigDataAccess.General
         }
         public bool ActualizarParametros(List<GRLt01_parametro> parametros)
         {
+
             bool success = false;
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                cnn.Open();
+                    cnn.Open();
                     using (var trans = cnn.BeginTransaction())
                     {
                         try
@@ -166,5 +168,7 @@ namespace ConfigDataAccess.General
             }
             return success;
         }
+
+
     }
 }

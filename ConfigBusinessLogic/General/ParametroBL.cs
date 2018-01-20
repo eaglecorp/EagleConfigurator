@@ -32,9 +32,9 @@ namespace ConfigBusinessLogic.General
             new ParametroDA().ActualizarParametro(obj);
         }
 
-        public bool ActualizarParametros(List<GRLt01_parametro> parametros)
+        public bool ActualizarParametros(List<GRLt01_parametro> parametrosSistema)
         {
-            return new ParametroDA().ActualizarParametros(parametros);
+            return new ParametroDA().ActualizarParametros(parametrosSistema);
         }
 
         public GRLt01_parametro ParametroXId(int id)
