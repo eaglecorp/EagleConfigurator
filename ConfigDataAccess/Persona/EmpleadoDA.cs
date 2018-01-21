@@ -273,7 +273,6 @@ namespace ConfigDataAccess.Persona
             {
                 try
                 {
-                    var emp = new PERt04_empleado();
                     if (idEmpleado == null)
                     {
                         //Cuando verifica en toda la tabla (EN INSERCIÓN)

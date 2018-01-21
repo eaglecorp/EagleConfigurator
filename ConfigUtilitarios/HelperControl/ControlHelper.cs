@@ -225,6 +225,18 @@ namespace ConfigUtilitarios
             }
         }
 
+        public static void DgvRemoveBorderSeletedCell_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            try
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
+                e.Handled = true;
+            }
+            catch
+            {
+            }
+        }
+
         #endregion
 
     }

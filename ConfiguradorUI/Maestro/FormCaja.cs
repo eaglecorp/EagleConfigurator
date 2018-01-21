@@ -82,6 +82,7 @@ namespace ConfiguradorUI.Maestro
 
             dgvConfigFiscalCaja.CellValueChanged += OnContentChangedDgv;
 
+            dgvConfigFiscalCaja.CellPainting += ControlHelper.DgvRemoveBorderSeletedCell_CellPainting;
         }
 
         protected void OnContentChanged(object sender, EventArgs e)

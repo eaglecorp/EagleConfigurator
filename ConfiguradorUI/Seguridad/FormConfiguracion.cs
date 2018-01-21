@@ -28,6 +28,7 @@ namespace ConfiguradorUI.Seguridad
 
         List<GRLt01_parametro> _parametrosSistema = null;
         List<int> _idsParametrosFiscalesCambiados = null;
+        List<FISt04_parametro_fiscal> _parametrosFiscalesAgregadosSinConfirmar = null;
         public bool changedLogo = false;
 
         const int colIdParametroFiscal = 0;
@@ -58,25 +59,25 @@ namespace ConfiguradorUI.Seguridad
             {
                 #region Identificando los parámetros
 
-                var mailServer = GetParametro(ParameterCode.MailServer);
-                var port = GetParametro(ParameterCode.Port);
-                var email = GetParametro(ParameterCode.EmailFrom);
-                var contrasena = GetParametro(ParameterCode.Password);
-                var displayNameEmail = GetParametro(ParameterCode.DisplayNameEmail);
-                var subjectRegister = GetParametro(ParameterCode.SubjectRegister);
-                var addMsjRegister = GetParametro(ParameterCode.AddMsjRegister);
-                var sendMailPostRegister = GetParametro(ParameterCode.SendMailRegister);
-                var subjectCredentials = GetParametro(ParameterCode.SubjectCredentials);
-                var addMsjCredentials = GetParametro(ParameterCode.AddMsjCredentials);
+                var mailServer = GetParametroSistema(ParameterCode.MailServer);
+                var port = GetParametroSistema(ParameterCode.Port);
+                var email = GetParametroSistema(ParameterCode.EmailFrom);
+                var contrasena = GetParametroSistema(ParameterCode.Password);
+                var displayNameEmail = GetParametroSistema(ParameterCode.DisplayNameEmail);
+                var subjectRegister = GetParametroSistema(ParameterCode.SubjectRegister);
+                var addMsjRegister = GetParametroSistema(ParameterCode.AddMsjRegister);
+                var sendMailPostRegister = GetParametroSistema(ParameterCode.SendMailRegister);
+                var subjectCredentials = GetParametroSistema(ParameterCode.SubjectCredentials);
+                var addMsjCredentials = GetParametroSistema(ParameterCode.AddMsjCredentials);
 
-                var splash = GetParametro(ParameterCode.SplashImg);
-                var loginImg = GetParametro(ParameterCode.LoginImg);
-                var logo = GetParametro(ParameterCode.LogoImg);
+                var splash = GetParametroSistema(ParameterCode.SplashImg);
+                var loginImg = GetParametroSistema(ParameterCode.LoginImg);
+                var logo = GetParametroSistema(ParameterCode.LogoImg);
 
-                var enableRestore = GetParametro(ParameterCode.EnableRestore);
+                var enableRestore = GetParametroSistema(ParameterCode.EnableRestore);
 
-                var authAnularComp = GetParametro(ParameterCode.AuthAnularComp);
-                var authReimprComp = GetParametro(ParameterCode.AuthReimpresionComp);
+                var authAnularComp = GetParametroSistema(ParameterCode.AuthAnularComp);
+                var authReimprComp = GetParametroSistema(ParameterCode.AuthReimpresionComp);
 
                 #endregion
 
@@ -129,25 +130,25 @@ namespace ConfiguradorUI.Seguridad
 
             var parametrosCambiados = new List<GRLt01_parametro>();
 
-            var mailServer = GetParametro(ParameterCode.MailServer);
-            var port = GetParametro(ParameterCode.Port);
-            var email = GetParametro(ParameterCode.EmailFrom);
-            var contrasena = GetParametro(ParameterCode.Password);
-            var displayNameEmail = GetParametro(ParameterCode.DisplayNameEmail);
-            var subjectRegister = GetParametro(ParameterCode.SubjectRegister);
-            var addMsjRegister = GetParametro(ParameterCode.AddMsjRegister);
-            var sendMailPostRegister = GetParametro(ParameterCode.SendMailRegister);
-            var subjectCredentials = GetParametro(ParameterCode.SubjectCredentials);
-            var addMsjCredentials = GetParametro(ParameterCode.AddMsjCredentials);
+            var mailServer = GetParametroSistema(ParameterCode.MailServer);
+            var port = GetParametroSistema(ParameterCode.Port);
+            var email = GetParametroSistema(ParameterCode.EmailFrom);
+            var contrasena = GetParametroSistema(ParameterCode.Password);
+            var displayNameEmail = GetParametroSistema(ParameterCode.DisplayNameEmail);
+            var subjectRegister = GetParametroSistema(ParameterCode.SubjectRegister);
+            var addMsjRegister = GetParametroSistema(ParameterCode.AddMsjRegister);
+            var sendMailPostRegister = GetParametroSistema(ParameterCode.SendMailRegister);
+            var subjectCredentials = GetParametroSistema(ParameterCode.SubjectCredentials);
+            var addMsjCredentials = GetParametroSistema(ParameterCode.AddMsjCredentials);
 
-            var splash = GetParametro(ParameterCode.SplashImg);
-            var loginImg = GetParametro(ParameterCode.LoginImg);
-            var logo = GetParametro(ParameterCode.LogoImg);
+            var splash = GetParametroSistema(ParameterCode.SplashImg);
+            var loginImg = GetParametroSistema(ParameterCode.LoginImg);
+            var logo = GetParametroSistema(ParameterCode.LogoImg);
 
-            var enableRestore = GetParametro(ParameterCode.EnableRestore);
+            var enableRestore = GetParametroSistema(ParameterCode.EnableRestore);
 
-            var authAnularComp = GetParametro(ParameterCode.AuthAnularComp);
-            var authReimprComp = GetParametro(ParameterCode.AuthReimpresionComp);
+            var authAnularComp = GetParametroSistema(ParameterCode.AuthAnularComp);
+            var authReimprComp = GetParametroSistema(ParameterCode.AuthReimpresionComp);
 
             TryAddParameterFromMetroTxt(mailServer, txtMailServer);
 
@@ -229,7 +230,7 @@ namespace ConfiguradorUI.Seguridad
 
             return parametrosCambiados;
         }
-        private GRLt01_parametro GetParametro(string cod)
+        private GRLt01_parametro GetParametroSistema(string cod)
         {
             var parametro = new GRLt01_parametro();
             if (_parametrosSistema == null || cod == null)
@@ -278,17 +279,20 @@ namespace ConfiguradorUI.Seguridad
                 }
             }
 
-            if (_idsParametrosFiscalesCambiados != null && _idsParametrosFiscalesCambiados.Count > 0)
+            if ((_idsParametrosFiscalesCambiados != null && _idsParametrosFiscalesCambiados.Count > 0) ||
+                _parametrosFiscalesAgregadosSinConfirmar != null && _parametrosFiscalesAgregadosSinConfirmar.Count > 0)
             {
-                pFiscalesSuccess = new ParametroFiscalBL().ActualizarParametrosFiscales(GetParametrosFiscales());
+                var paramFiscales = GetParametrosFiscales();
+                pFiscalesSuccess = new ParametroFiscalBL().ActualizarAndInsertarParametrosFiscales(paramFiscales);
             }
 
             return
                 (pSistemasSuccess == null && pFiscalesSuccess == null) ? ResultadoOperacion.NoAction :
-                (pSistemasSuccess == false || pSistemasSuccess == false) ? ResultadoOperacion.Fail :
+                (pSistemasSuccess == false || pFiscalesSuccess == false) ? ResultadoOperacion.Fail :
                 ResultadoOperacion.Success;
         }
-        private void Guardar()
+
+        private void GuardarCambios()
         {
             if (EsValido())
             {
@@ -296,14 +300,16 @@ namespace ConfiguradorUI.Seguridad
                 if (resultadoOperacion == ResultadoOperacion.Success)
                 {
                     Msg.Ok_Info("Se actualizó correctamente los parámetros.");
+                    CargarParametros();
                 }
                 else if (resultadoOperacion == ResultadoOperacion.Fail)
                 {
                     Msg.Ok_Err("Ocurrió un error en la actualización de los parámetros.");
+                    CargarParametros();
                 }
 
-                CargarParametros();
-                LimpiarParametrosCambiados();
+                LimpiarParametrosFisEnMemoria();
+                LimpiarTxtAndErrorProv();
             }
         }
 
@@ -330,8 +336,9 @@ namespace ConfiguradorUI.Seguridad
                 Msg.Ok_Err("No se pudo agregar el ID del parámetro fiscal. Excepción: " + e.Message);
             }
         }
-        private void LimpiarParametrosCambiados()
+        private void LimpiarParametrosFisEnMemoria()
         {
+            _parametrosFiscalesAgregadosSinConfirmar = null;
             _idsParametrosFiscalesCambiados = null;
         }
         private string GuardarImageDesde(string pathSource)
@@ -392,13 +399,13 @@ namespace ConfiguradorUI.Seguridad
         {
             bool esValido = true;
 
-            errorProv.Clear();
+            errorProvParamSis.Clear();
 
             #region Email
             if (txtContrasena.Text.Length == 0)
             {
                 tabConfiguracion.SelectedTab = tabPagEmail;
-                errorProv.SetError(txtContrasena, "Debe ingresar una contraseña.");
+                errorProvParamSis.SetError(txtContrasena, "Debe ingresar una contraseña.");
                 txtContrasena.Focus();
                 esValido = false;
             }
@@ -406,7 +413,7 @@ namespace ConfiguradorUI.Seguridad
             if (txtEmail.Text.Trim().Length == 0 || !Validation.EsEmail(txtEmail.Text.Trim()))
             {
                 tabConfiguracion.SelectedTab = tabPagEmail;
-                errorProv.SetError(txtEmail, "Debe ingresar un correo electrónico.");
+                errorProvParamSis.SetError(txtEmail, "Debe ingresar un correo electrónico.");
                 txtEmail.Focus();
                 esValido = false;
             }
@@ -414,7 +421,7 @@ namespace ConfiguradorUI.Seguridad
             if (txtPort.Text.Trim().Length == 0 || !int.TryParse(txtPort.Text, out int puerto))
             {
                 tabConfiguracion.SelectedTab = tabPagEmail;
-                errorProv.SetError(txtPort, "Debe ingresar un puerto.");
+                errorProvParamSis.SetError(txtPort, "Debe ingresar un puerto.");
                 txtPort.Focus();
                 esValido = false;
             }
@@ -422,7 +429,7 @@ namespace ConfiguradorUI.Seguridad
             if (txtMailServer.Text.Trim().Length == 0)
             {
                 tabConfiguracion.SelectedTab = tabPagEmail;
-                errorProv.SetError(txtMailServer, "Debe ingresar un servidor de correo.");
+                errorProvParamSis.SetError(txtMailServer, "Debe ingresar un servidor de correo.");
                 txtMailServer.Focus();
                 esValido = false;
             }
@@ -447,7 +454,7 @@ namespace ConfiguradorUI.Seguridad
                         if (pathSource.Length <= 260)
                         {
                             //verificar si la ruta de la imagen ha cambiado
-                            var parametro = GetParametro(codImg);
+                            var parametro = GetParametroSistema(codImg);
                             if (parametro != null && parametro.txt_valor != pathSource)
                             {
                                 //si ha cambiado... entonces copiamos la imagen en la carpeta de la app (local)
@@ -455,7 +462,7 @@ namespace ConfiguradorUI.Seguridad
                                 if (path == null)
                                 {
                                     //Si no se pudo copiar
-                                    errorProv.SetError(pathWithCode.Item1.Parent, "No se pudo guardar la imagen localmente.");
+                                    errorProvParamSis.SetError(pathWithCode.Item1.Parent, "No se pudo guardar la imagen localmente.");
                                     esValido = false;
                                 }
                                 else
@@ -463,7 +470,7 @@ namespace ConfiguradorUI.Seguridad
                                     //Si copió exitosamente... la ruta generada la guardamos
                                     if (!Validation.IsValidImage(path))
                                     {
-                                        errorProv.SetError(pathWithCode.Item1.Parent, "El archivo debe ser una imagen.");
+                                        errorProvParamSis.SetError(pathWithCode.Item1.Parent, "El archivo debe ser una imagen.");
                                         esValido = false;
                                     }
                                     else
@@ -474,18 +481,18 @@ namespace ConfiguradorUI.Seguridad
                             }
                             else if (!File.Exists(pathSource))
                             {
-                                errorProv.SetError(pathWithCode.Item1.Parent, "La ruta de la imagen no existe o ha sido modificada.");
+                                errorProvParamSis.SetError(pathWithCode.Item1.Parent, "La ruta de la imagen no existe o ha sido modificada.");
                                 esValido = false;
                             }
                             else if (!Validation.IsValidImage(pathSource))
                             {
-                                errorProv.SetError(pathWithCode.Item1.Parent, "El archivo debe ser una imagen.");
+                                errorProvParamSis.SetError(pathWithCode.Item1.Parent, "El archivo debe ser una imagen.");
                                 esValido = false;
                             }
                         }
                         else
                         {
-                            errorProv.SetError(pathWithCode.Item1.Parent, "La ruta del archivo puede tener máximo hasta 260 de longitud.");
+                            errorProvParamSis.SetError(pathWithCode.Item1.Parent, "La ruta del archivo puede tener máximo hasta 260 de longitud.");
                             esValido = false;
                         }
                     }
@@ -498,6 +505,12 @@ namespace ConfiguradorUI.Seguridad
             #endregion
 
             return esValido;
+        }
+        private void LimpiarTxtAndErrorProv()
+        {
+            errorProvParamSis.Clear();
+            errorProvParamFis.Clear();
+            LimpiarTxtParametroFiscal();
         }
 
         private void CargarImg(string codImg, PictureBox picTarget, Label lblTargetPath)
@@ -577,7 +590,13 @@ namespace ConfiguradorUI.Seguridad
             txtAddMsjRegister.Leave += controlParametro_FocusLeave;
             txtAddMsjCredentials.Leave += controlParametro_FocusLeave;
             txtPort.KeyPress += ControlHelper.TxtValidInteger;
+
+            txtCodParamFis.KeyPress += AddParametroFiscal_KeyPress;
+            txtValorDefParamFis.KeyPress += AddParametroFiscal_KeyPress;
+            txtDescParamFis.KeyPress += AddParametroFiscal_KeyPress;
+            dgvParametrosFiscales.CellPainting += ControlHelper.DgvRemoveBorderSeletedCell_CellPainting;
         }
+
         private void LimpiarCodYDescripcionParametro()
         {
             lblCodParametro.Text = "";
@@ -585,8 +604,8 @@ namespace ConfiguradorUI.Seguridad
         }
         private void SetCodYDescripcionParametro(string cod)
         {
-            lblDescripcionParametro.Text = GetParametro(cod)?.txt_obs;
-            lblCodParametro.Text = "Código:\n" + GetParametro(cod)?.cod_parametro;
+            lblDescripcionParametro.Text = GetParametroSistema(cod)?.txt_obs;
+            lblCodParametro.Text = "Código:\n" + GetParametroSistema(cod)?.cod_parametro;
         }
         private void SetMaxLengthTxt()
         {
@@ -607,6 +626,11 @@ namespace ConfiguradorUI.Seguridad
             txtAddMsjRegister.MaxLength = 500;
             txtAddMsjCredentials.MaxLength = 500;
             txtPort.MaxLength = 10;
+
+            txtCodParamFis.MaxLength = 10;
+            txtDescParamFis.MaxLength = 100;
+            txtValorDefParamFis.MaxLength = 500;
+
         }
         private void ConfigurarControles()
         {
@@ -646,6 +670,77 @@ namespace ConfiguradorUI.Seguridad
             ControlHelper.DgvBaseConfig(dgvParametrosFiscales);
 
             #endregion
+        }
+
+        public int MatchingRowIndex(DataGridView dgv, int indexColumn, string searchValue)
+        {
+            int rowIndex = -1;
+            try
+            {
+                bool tempAllowUserToAddRows = dgv.AllowUserToAddRows;
+
+                dgv.AllowUserToAddRows = false;
+                if (dgv.Rows.Count > 0 && dgv.Columns.Count > 0 && dgv.Columns[indexColumn] != null)
+                {
+                    DataGridViewRow row = dgv.Rows
+                        .Cast<DataGridViewRow>()
+                        .FirstOrDefault(r => r.Cells[indexColumn].Value.ToString().Equals(searchValue));
+
+                    rowIndex = row.Index;
+                }
+                dgv.AllowUserToAddRows = tempAllowUserToAddRows;
+            }
+            catch
+            {
+                rowIndex = -1;
+            }
+            return rowIndex;
+        }
+        private void SeleccionarEnGridParametroFiscal(string something)
+        {
+            int rowIndex = MatchingRowIndex(dgvParametrosFiscales, colCodParametroFiscal, something);
+            if (rowIndex >= 0)
+            {
+                dgvParametrosFiscales.CurrentCell = dgvParametrosFiscales.Rows[rowIndex].Cells[colCodParametroFiscal];
+                EnableBtnRemoveParametroFiscal();
+            }
+        }
+
+        private void SetParametrosFiscales(ICollection<FISt04_parametro_fiscal> parametrosFiscales)
+        {
+            try
+            {
+                if (parametrosFiscales != null && parametrosFiscales.Count > 0)
+                {
+                    parametrosFiscales = parametrosFiscales.OrderBy(x => x.cod_parametro_fiscal).ToList();
+                    dgvParametrosFiscales.DataSource = parametrosFiscales
+                                                                .Select(x => new
+                                                        ParametroFiscalVM()
+                                                                {
+                                                                    id_parametro_fiscal = x.id_parametro_fiscal,
+                                                                    cod_parametro_fiscal = x.cod_parametro_fiscal,
+                                                                    txt_desc = x.txt_desc,
+                                                                    valor_default = x.valor_default
+                                                                }).ToList();
+                }
+                else
+                {
+                    DefinirCabeceraGridParametros();
+                }
+                RenombrarCabeceraGridParametros();
+            }
+            catch (Exception ex)
+            {
+                Msg.Ok_Err("Ocurrió un error cuando se cargaba la configuración de parámetros fiscales. Excepción : " + ex.Message);
+            }
+        }
+        private FISt04_parametro_fiscal GetParametroFiscal()
+        {
+            var paramFis = new FISt04_parametro_fiscal();
+            paramFis.cod_parametro_fiscal = txtCodParamFis.Text.Trim();
+            paramFis.txt_desc = txtDescParamFis.Text.Trim();
+            paramFis.valor_default = txtValorDefParamFis.Text.Trim();
+            return paramFis;
         }
 
         private void DefinirCabeceraGridParametros()
@@ -689,39 +784,17 @@ namespace ConfiguradorUI.Seguridad
             dgvParametrosFiscales.Columns[colNombreParametroFiscal].ReadOnly = true;
 
             dgvParametrosFiscales.Columns["cod_parametro_fiscal"].Width = 110;
-            dgvParametrosFiscales.Columns["txt_desc"].Width = 280;
+            dgvParametrosFiscales.Columns["txt_desc"].Width = 300;
             dgvParametrosFiscales.Columns["valor_default"].Width = 125;
-        }
-        private void SetParametrosFiscales(ICollection<FISt04_parametro_fiscal> parametrosFiscales)
-        {
-            try
-            {
-                if (parametrosFiscales != null && parametrosFiscales.Count > 0)
-                {
-                    dgvParametrosFiscales.DataSource = parametrosFiscales
-                                                                .Select(x => new
-                                                        ParametroFiscalVM()
-                                                                {
-                                                                    id_parametro_fiscal = x.id_parametro_fiscal,
-                                                                    cod_parametro_fiscal = x.cod_parametro_fiscal,
-                                                                    txt_desc = x.txt_desc,
-                                                                    valor_default = x.valor_default
-                                                                }).ToList();
-                }
-                else
-                {
-                    DefinirCabeceraGridParametros();
-                }
-                RenombrarCabeceraGridParametros();
-            }
-            catch (Exception ex)
-            {
-                Msg.Ok_Err("Ocurrió un error cuando se cargaba la configuración de parámetros fiscales. Excepción : " + ex.Message);
-            }
         }
         private List<FISt04_parametro_fiscal> GetParametrosFiscales()
         {
             var parametrosFiscalesCambiados = new List<FISt04_parametro_fiscal>();
+
+            if (_idsParametrosFiscalesCambiados == null)
+            {
+                _idsParametrosFiscalesCambiados = new List<int>();
+            }
 
             try
             {
@@ -731,7 +804,7 @@ namespace ConfiguradorUI.Seguridad
                     {
                         var id_parametro_fiscal = int.Parse(row.Cells[colIdParametroFiscal].Value.ToString());
 
-                        if (_idsParametrosFiscalesCambiados.Any(x => x == id_parametro_fiscal))
+                        if (_idsParametrosFiscalesCambiados.Any(x => x == id_parametro_fiscal) || id_parametro_fiscal == 0)
                         {
                             parametrosFiscalesCambiados.Add(
                                 new FISt04_parametro_fiscal()
@@ -752,7 +825,163 @@ namespace ConfiguradorUI.Seguridad
             }
             return parametrosFiscalesCambiados;
         }
+        private bool EsParametroFiscalValido()
+        {
+            bool esValido = true;
+            errorProvParamFis.Clear();
 
+            string codigo = txtCodParamFis.Text.Trim();
+            string nombre = txtDescParamFis.Text.Trim();
+            string valorDefault = txtValorDefParamFis.Text.Trim();
+
+            if (Validation.IsNullOrEmptyOrSpace(valorDefault))
+            {
+                esValido = false;
+                SetErrorProv(txtValorDefParamFis, tabConfiguracion, tabPagFiscal, errorProvParamFis, "Ingrese un valor por defecto.");
+            }
+
+            if (Validation.IsNullOrEmptyOrSpace(nombre))
+            {
+                esValido = false;
+                SetErrorProv(txtDescParamFis, tabConfiguracion, tabPagFiscal, errorProvParamFis, "Ingrese un nombre.");
+            }
+            else
+            {
+                if (!new ParametroFiscalBL().EstaDisponibleNombre(null, nombre) ||
+                    !EstaDisponibleEnNombresParamFisSinConfirmar(nombre))
+                {
+                    esValido = false;
+                    SetErrorProv(txtDescParamFis, tabConfiguracion, tabPagFiscal, errorProvParamFis, "El nombre del parámetro fiscal ya existe.");
+                }
+            }
+
+            if (Validation.IsNullOrEmptyOrSpace(codigo))
+            {
+                esValido = false;
+                SetErrorProv(txtCodParamFis, tabConfiguracion, tabPagFiscal, errorProvParamFis, "Ingrese un código.");
+            }
+            else
+            {
+                if (!new ParametroFiscalBL().EstaDisponibleCodigo(null, codigo) ||
+                    !EstaDisponibleEnCodigosParamFisSinConfirmar(codigo))
+                {
+                    esValido = false;
+                    SetErrorProv(txtCodParamFis, tabConfiguracion, tabPagFiscal, errorProvParamFis, "El código del parámetro fiscal ya existe.");
+                }
+            }
+
+            return esValido;
+        }
+        private bool EstaDisponibleEnCodigosParamFisSinConfirmar(string codigoParamFis)
+        {
+            if (_parametrosFiscalesAgregadosSinConfirmar == null || _parametrosFiscalesAgregadosSinConfirmar.Count == 0)
+                return true;
+
+            return !_parametrosFiscalesAgregadosSinConfirmar.Any(x => x.cod_parametro_fiscal == codigoParamFis);
+        }
+        private bool EstaDisponibleEnNombresParamFisSinConfirmar(string nombreParamFis)
+        {
+            if (_parametrosFiscalesAgregadosSinConfirmar == null || _parametrosFiscalesAgregadosSinConfirmar.Count == 0)
+                return true;
+
+            return !_parametrosFiscalesAgregadosSinConfirmar.Any(x => x.txt_desc == nombreParamFis);
+        }
+        private void LimpiarTxtParametroFiscal()
+        {
+            txtCodParamFis.Clear();
+            txtDescParamFis.Clear();
+            txtValorDefParamFis.Clear();
+        }
+        private void SetErrorProv(MetroTextBox txt, MetroTabControl tab, TabPage tabPag, ErrorProvider errorProvider, string msgError = null, bool mostrarMsgBox = false)
+        {
+            string mensaje = string.IsNullOrEmpty(msgError) ? "Debe ingresar un valor correcto." : msgError;
+            if (mostrarMsgBox)
+            {
+                Msg.Ok_Wng(mensaje);
+            }
+
+            tab.SelectedTab = tabPag;
+            errorProvider.SetIconPadding(txt, -20);
+            errorProvider.SetError(txt, mensaje);
+            txt.Focus();
+        }
+        private void AddParametroFiscal()
+        {
+            try
+            {
+                var paramFis = GetParametroFiscal();
+                var paramFiscales = new ParametroFiscalBL().ListaParametroFiscal();
+
+                if (_parametrosFiscalesAgregadosSinConfirmar == null)
+                {
+                    _parametrosFiscalesAgregadosSinConfirmar = new List<FISt04_parametro_fiscal>();
+                }
+
+                _parametrosFiscalesAgregadosSinConfirmar.Add(paramFis);
+
+                if (paramFiscales != null)
+                {
+                    paramFiscales.AddRange(_parametrosFiscalesAgregadosSinConfirmar);
+                }
+                else
+                {
+                    paramFiscales = _parametrosFiscalesAgregadosSinConfirmar;
+                }
+
+                LimpiarTxtParametroFiscal();
+                SetParametrosFiscales(paramFiscales);
+
+                SeleccionarEnGridParametroFiscal(paramFis.cod_parametro_fiscal);
+            }
+            catch (Exception ex)
+            {
+                Msg.Ok_Err("Ocurrió un error cuando se agregaba el nuevo parámetro fiscal. Excepción : " + ex.Message);
+            }
+            finally
+            {
+                dgvParametrosFiscales.Focus();
+            }
+        }
+        private void EnableBtnRemoveParametroFiscal()
+        {
+            string val = ControlHelper.DgvGetCellValueSelectedFromCell(dgvParametrosFiscales, colIdParametroFiscal);
+            if (val == "0")
+            {
+                btnRemoveParamFis.Enabled = true;
+            }
+            else
+            {
+                btnRemoveParamFis.Enabled = false;
+            }
+        }
+        private void RemoveParametroFiscal()
+        {
+            try
+            {
+                string codParamFis = ControlHelper.DgvGetCellValueSelectedFromCell(dgvParametrosFiscales, colCodParametroFiscal);
+                if (_parametrosFiscalesAgregadosSinConfirmar != null && _parametrosFiscalesAgregadosSinConfirmar.Count > 0)
+                {
+                    _parametrosFiscalesAgregadosSinConfirmar.RemoveAll(x => x.cod_parametro_fiscal == codParamFis);
+
+                    var paramFiscales = new ParametroFiscalBL().ListaParametroFiscal();
+                    if (paramFiscales != null)
+                    {
+                        paramFiscales.AddRange(_parametrosFiscalesAgregadosSinConfirmar);
+                    }
+                    else
+                    {
+                        paramFiscales = _parametrosFiscalesAgregadosSinConfirmar;
+                    }
+
+                    LimpiarTxtParametroFiscal();
+                    SetParametrosFiscales(paramFiscales);
+                }
+            }
+            catch (Exception ex)
+            {
+                Msg.Ok_Err("Ocurrió un error cuando se intentaba eliminar un parámetro fiscal. Excepción : " + ex.Message);
+            }
+        }
 
         private void ConfigurarLoad()
         {
@@ -770,12 +999,10 @@ namespace ConfiguradorUI.Seguridad
             ConfigurarLoad();
             postLoad = true;
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Guardar();
+            GuardarCambios();
         }
-
         private void btnCambiarSplash_Click(object sender, EventArgs e)
         {
             CargarImg(Parameter.SplashImg, picSplash, lblPathSplash);
@@ -788,7 +1015,6 @@ namespace ConfiguradorUI.Seguridad
         {
             CargarImg(Parameter.LogoImg, picLogo, lblPathLogo);
         }
-
         private void controlParametro_FocusLeave(object sender, EventArgs e)
         {
             LimpiarCodYDescripcionParametro();
@@ -797,7 +1023,6 @@ namespace ConfiguradorUI.Seguridad
         {
             LimpiarCodYDescripcionParametro();
         }
-
         private void txtMailServer_Enter(object sender, EventArgs e)
         {
             SetCodYDescripcionParametro(ParameterCode.MailServer);
@@ -834,7 +1059,6 @@ namespace ConfiguradorUI.Seguridad
         {
             SetCodYDescripcionParametro(ParameterCode.AddMsjCredentials);
         }
-
         private void chkSendMailPostRegister_MouseEnter(object sender, EventArgs e)
         {
             chkSendMailPostRegister.Focus();
@@ -844,7 +1068,6 @@ namespace ConfiguradorUI.Seguridad
         {
             SetCodYDescripcionParametro(ParameterCode.EnableRestore);
         }
-
         private void picSplash_MouseEnter(object sender, EventArgs e)
         {
             SetCodYDescripcionParametro(ParameterCode.SplashImg);
@@ -857,18 +1080,14 @@ namespace ConfiguradorUI.Seguridad
         {
             SetCodYDescripcionParametro(ParameterCode.LogoImg);
         }
-
-
         private void chkAuthAnularComp_MouseEnter(object sender, EventArgs e)
         {
             SetCodYDescripcionParametro(ParameterCode.AuthAnularComp);
         }
-
         private void chkAuthReimprComp_MouseEnter(object sender, EventArgs e)
         {
             SetCodYDescripcionParametro(ParameterCode.AuthReimpresionComp);
         }
-
         private void dgvParametrosFiscales_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == colValorDefault && postLoad)
@@ -876,8 +1095,34 @@ namespace ConfiguradorUI.Seguridad
                 AddIdParametroFiscalCambiado();
             }
         }
+        private void btnAddParametroFiscal_Click(object sender, EventArgs e)
+        {
+            if (EsParametroFiscalValido())
+            {
+                AddParametroFiscal();
+            }
+        }
+        private void dgvParametrosFiscales_SelectionChanged(object sender, EventArgs e)
+        {
+            EnableBtnRemoveParametroFiscal();
+        }
+        private void btnRemoveParamFis_Click(object sender, EventArgs e)
+        {
+            RemoveParametroFiscal();
+        }
+        private void AddParametroFiscal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
+            {
+                if (EsParametroFiscalValido())
+                {
+                    AddParametroFiscal();
+                }
+            }
+
+        }
+
 
         #endregion
-
     }
 }

@@ -143,7 +143,32 @@
         I90PJ2NsPSHJT2dvoecxvY+na8Hau65cQT+frwz8BXUOxxAtzM98AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="errorProv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="btnRemoveParamFis.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4QsQETQAkMs+uQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEuSURBVDhP
+        tdK/K8RxHMfx75XhSIpSnGL0B1hsSq7E4oaL0SA/VnVlMLBZ5F+QyWYlGWwGVrkikiSTBZuv58vnJXzu
+        c3WLVz26z70/7/f7rr7fLE6e52v4nV1fNQ9NM2q0C9zjEHVc4/tuwSN/w8UGWkn633Axga0WVD3SGC6n
+        MY9hjPg8hgGfZ92aDg1nUJahX1P2MRmO+ZNb06HhXxd84NSt6dDQbEE3elHS2e2N4TK1YA6juPr6FnKC
+        IY/9hGK84ACDeMER3vCAc1yi6NEQCvGCJWyqQMrQu6JHvK4CqXg0hEK8YAp7KhC90m3QP3pXgax6NIRC
+        vGAHNRWIXqxFjGNFBVL2aAiFeMEtuvx5Az3KVzziGAWPhlDoQR/a0elzAf3Q43zGHbbREaay7BPx0m4S
+        UySi7wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnAddParametroFiscal.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4QsQETQuTB0zdgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABYSURBVDhP
+        Y8AF/v//zw7Ex6GYHSpMPABqUgBiGFCAChMPQJogesFgWBsAlASFNkgxOrYBYhgAsbGpYQcZAIomcsFx
+        qhhAmRdwAagCGBhNSGQaQER2ZmAAAKl8juyTwFYbAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="errorProvParamSis.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="errorProvParamFis.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>119, 17</value>
   </metadata>
 </root>

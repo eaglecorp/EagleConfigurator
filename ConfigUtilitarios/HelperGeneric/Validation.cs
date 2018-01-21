@@ -31,7 +31,6 @@ namespace ConfigUtilitarios
                 return false;
             }
         }
-
         public static bool PositiveAmount(string amount, decimal upperLimit = KeyAmounts.MaxAmount)
         {
             return decimal.TryParse(amount, out decimal _amount) &&
@@ -44,7 +43,6 @@ namespace ConfigUtilitarios
             return amount > 0 &&
                     amount <= upperLimit;
         }
-
         public static bool IsValidImage(string filename)
         {
             try
@@ -61,6 +59,10 @@ namespace ConfigUtilitarios
                 return false;
             }
             return true;
+        }
+        public static bool IsNullOrEmptyOrSpace(string something)
+        {
+            return string.IsNullOrEmpty(something) || something.Trim() == string.Empty;
         }
     }
 }
