@@ -916,9 +916,9 @@
             // 
             // btnRemoveParamFis
             // 
-            this.btnRemoveParamFis.BackColor = System.Drawing.Color.IndianRed;
+            this.btnRemoveParamFis.BackColor = System.Drawing.Color.Gray;
             this.btnRemoveParamFis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRemoveParamFis.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnRemoveParamFis.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnRemoveParamFis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnRemoveParamFis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveParamFis.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

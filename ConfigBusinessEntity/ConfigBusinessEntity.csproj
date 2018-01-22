@@ -92,6 +92,7 @@
     <Compile Include="Labor\LABt02_asistencia_ajustada.cs" />
     <Compile Include="Labor\LABt03_emp_turno.cs" />
     <Compile Include="Labor\LABt04_emp_turno_dtl.cs" />
+    <Compile Include="Labor\LABt05_asistencia_temp_last.cs" />
     <Compile Include="Maestro\MSTt01_medio_pago.cs" />
     <Compile Include="Maestro\MSTt02_descuento.cs" />
     <Compile Include="Maestro\MSTt03_tipo_orden.cs" />

@@ -37,6 +37,8 @@ namespace ConfigBusinessEntity
 
         public int sn_clock_in { get; set; }
 
+        public int sn_break_in { get; set; }
+
         [Column(TypeName = "datetime2")]
         public DateTime? clock_in { get; set; }
 

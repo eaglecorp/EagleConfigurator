@@ -8,7 +8,7 @@ namespace ConfigBusinessEntity
     public partial class EagleContext : DbContext
     {
         public EagleContext(string connectionString)
-            : base(connectionString)
+                            : base(connectionString)
         {
         }
 
@@ -45,6 +45,7 @@ namespace ConfigBusinessEntity
         public virtual DbSet<LABt02_asistencia_ajustada> LABt02_asistencia_ajustada { get; set; }
         public virtual DbSet<LABt03_emp_turno> LABt03_emp_turno { get; set; }
         public virtual DbSet<LABt04_emp_turno_dtl> LABt04_emp_turno_dtl { get; set; }
+        public virtual DbSet<LABt05_asistencia_temp_last> LABt05_asistencia_temp_last { get; set; }
         public virtual DbSet<MSTt01_medio_pago> MSTt01_medio_pago { get; set; }
         public virtual DbSet<MSTt02_descuento> MSTt02_descuento { get; set; }
         public virtual DbSet<MSTt03_tipo_orden> MSTt03_tipo_orden { get; set; }

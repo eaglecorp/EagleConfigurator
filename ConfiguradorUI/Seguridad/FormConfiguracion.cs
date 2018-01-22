@@ -785,7 +785,7 @@ namespace ConfiguradorUI.Seguridad
 
             dgvParametrosFiscales.Columns["cod_parametro_fiscal"].Width = 110;
             dgvParametrosFiscales.Columns["txt_desc"].Width = 300;
-            dgvParametrosFiscales.Columns["valor_default"].Width = 125;
+            dgvParametrosFiscales.Columns["valor_default"].Width = 110;
         }
         private List<FISt04_parametro_fiscal> GetParametrosFiscales()
         {
@@ -948,12 +948,17 @@ namespace ConfiguradorUI.Seguridad
             if (val == "0")
             {
                 btnRemoveParamFis.Enabled = true;
+                btnRemoveParamFis.BackColor = Color.IndianRed;
+                btnRemoveParamFis.FlatAppearance.BorderColor = Color.IndianRed;
             }
             else
             {
                 btnRemoveParamFis.Enabled = false;
+                btnRemoveParamFis.BackColor = Color.Gray;
+                btnRemoveParamFis.FlatAppearance.BorderColor = Color.Gray;
             }
         }
+
         private void RemoveParametroFiscal()
         {
             try
@@ -1124,5 +1129,13 @@ namespace ConfiguradorUI.Seguridad
 
 
         #endregion
+
+        private void NoNegative_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+        }
+
+        private void CleanErrorText_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+        }
     }
 }
