@@ -132,7 +132,9 @@
     <Compile Include="Sunat\ZonaDA.cs" />
     <Compile Include="Utiles\UtilDA.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Labor\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConfigBusinessEntity\ConfigBusinessEntity.csproj">
       <Project>{5f19851a-857f-4335-9dec-13db240874df}</Project>

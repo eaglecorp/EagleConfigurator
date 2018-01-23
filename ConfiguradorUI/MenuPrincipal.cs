@@ -12,6 +12,7 @@ using System.IO;
 using ConfigBusinessLogic;
 using ConfigUtilitarios;
 using ConfiguradorUI.Reporte;
+using ConfiguradorUI.Labor;
 
 namespace ConfiguradorUI
 {
@@ -411,10 +412,15 @@ namespace ConfiguradorUI
 
 
 
-        #endregion
 
         #endregion
 
+        #endregion
 
+        private void btnHorario_Click(object sender, EventArgs e)
+        {
+            var form = new FormHorario();
+            form.ShowDialog();
+        }
     }
 }

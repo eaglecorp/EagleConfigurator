@@ -46,6 +46,7 @@
             this.btnModelo = new System.Windows.Forms.Button();
             this.btnMarca = new System.Windows.Forms.Button();
             this.tabPagPersonas = new MetroFramework.Controls.MetroTabPage();
+            this.btnTrabajo = new System.Windows.Forms.Button();
             this.btnClaseEmp = new System.Windows.Forms.Button();
             this.btnCategoriaEmp = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
@@ -72,6 +73,8 @@
             this.tabPagReportes = new MetroFramework.Controls.MetroTabPage();
             this.btnCategoriaReporte = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
+            this.tabPagLabor = new MetroFramework.Controls.MetroTabPage();
+            this.btnHorario = new System.Windows.Forms.Button();
             this.dtpFechaCronologia = new System.Windows.Forms.DateTimePicker();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -84,12 +87,12 @@
             this.toolStripHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lnkConfiguracion = new MetroFramework.Controls.MetroLink();
-            this.btnTrabajo = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabPagProductos.SuspendLayout();
             this.tabPagPersonas.SuspendLayout();
             this.tabPagMaestros.SuspendLayout();
             this.tabPagReportes.SuspendLayout();
+            this.tabPagLabor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.StatusStripEagle.SuspendLayout();
             this.SuspendLayout();
@@ -100,9 +103,10 @@
             this.tabPanel.Controls.Add(this.tabPagPersonas);
             this.tabPanel.Controls.Add(this.tabPagMaestros);
             this.tabPanel.Controls.Add(this.tabPagReportes);
+            this.tabPanel.Controls.Add(this.tabPagLabor);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 1;
+            this.tabPanel.SelectedIndex = 4;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -415,6 +419,27 @@
             this.tabPagPersonas.VerticalScrollbarBarColor = true;
             this.tabPagPersonas.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagPersonas.VerticalScrollbarSize = 10;
+            // 
+            // btnTrabajo
+            // 
+            this.btnTrabajo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTrabajo.FlatAppearance.BorderSize = 0;
+            this.btnTrabajo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrabajo.ForeColor = System.Drawing.Color.White;
+            this.btnTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnTrabajo.Image")));
+            this.btnTrabajo.Location = new System.Drawing.Point(2, 135);
+            this.btnTrabajo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrabajo.Name = "btnTrabajo";
+            this.btnTrabajo.Size = new System.Drawing.Size(145, 37);
+            this.btnTrabajo.TabIndex = 6;
+            this.btnTrabajo.Text = "Trabajos";
+            this.btnTrabajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTrabajo.UseVisualStyleBackColor = false;
+            this.btnTrabajo.Click += new System.EventHandler(this.btnTrabajo_Click);
             // 
             // btnClaseEmp
             // 
@@ -730,7 +755,7 @@
             this.btnParametro.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParametro.ForeColor = System.Drawing.Color.White;
             this.btnParametro.Image = ((System.Drawing.Image)(resources.GetObject("btnParametro.Image")));
-            this.btnParametro.Location = new System.Drawing.Point(526, 183);
+            this.btnParametro.Location = new System.Drawing.Point(526, 176);
             this.btnParametro.Margin = new System.Windows.Forms.Padding(2);
             this.btnParametro.Name = "btnParametro";
             this.btnParametro.Size = new System.Drawing.Size(145, 37);
@@ -968,6 +993,42 @@
             this.btnReporte.UseVisualStyleBackColor = false;
             this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
+            // tabPagLabor
+            // 
+            this.tabPagLabor.Controls.Add(this.btnHorario);
+            this.tabPagLabor.HorizontalScrollbarBarColor = true;
+            this.tabPagLabor.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagLabor.HorizontalScrollbarSize = 10;
+            this.tabPagLabor.Location = new System.Drawing.Point(4, 38);
+            this.tabPagLabor.Name = "tabPagLabor";
+            this.tabPagLabor.Size = new System.Drawing.Size(673, 222);
+            this.tabPagLabor.TabIndex = 4;
+            this.tabPagLabor.Text = "Labor";
+            this.tabPagLabor.VerticalScrollbarBarColor = true;
+            this.tabPagLabor.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagLabor.VerticalScrollbarSize = 10;
+            // 
+            // btnHorario
+            // 
+            this.btnHorario.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnHorario.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHorario.FlatAppearance.BorderSize = 0;
+            this.btnHorario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnHorario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnHorario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorario.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHorario.ForeColor = System.Drawing.Color.White;
+            this.btnHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnHorario.Image")));
+            this.btnHorario.Location = new System.Drawing.Point(2, 11);
+            this.btnHorario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHorario.Name = "btnHorario";
+            this.btnHorario.Size = new System.Drawing.Size(145, 37);
+            this.btnHorario.TabIndex = 13;
+            this.btnHorario.Text = "Horario";
+            this.btnHorario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHorario.UseVisualStyleBackColor = false;
+            this.btnHorario.Click += new System.EventHandler(this.btnHorario_Click);
+            // 
             // dtpFechaCronologia
             // 
             this.dtpFechaCronologia.Location = new System.Drawing.Point(520, 20);
@@ -1103,27 +1164,6 @@
             this.lnkConfiguracion.UseSelectable = true;
             this.lnkConfiguracion.Click += new System.EventHandler(this.lnkConfiguracion_Click);
             // 
-            // btnTrabajo
-            // 
-            this.btnTrabajo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnTrabajo.FlatAppearance.BorderSize = 0;
-            this.btnTrabajo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrabajo.ForeColor = System.Drawing.Color.White;
-            this.btnTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnTrabajo.Image")));
-            this.btnTrabajo.Location = new System.Drawing.Point(2, 135);
-            this.btnTrabajo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTrabajo.Name = "btnTrabajo";
-            this.btnTrabajo.Size = new System.Drawing.Size(145, 37);
-            this.btnTrabajo.TabIndex = 6;
-            this.btnTrabajo.Text = "Trabajos";
-            this.btnTrabajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTrabajo.UseVisualStyleBackColor = false;
-            this.btnTrabajo.Click += new System.EventHandler(this.btnTrabajo_Click);
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1151,6 +1191,7 @@
             this.tabPagPersonas.ResumeLayout(false);
             this.tabPagMaestros.ResumeLayout(false);
             this.tabPagReportes.ResumeLayout(false);
+            this.tabPagLabor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.StatusStripEagle.ResumeLayout(false);
             this.StatusStripEagle.PerformLayout();
@@ -1216,6 +1257,8 @@
         private MetroFramework.Controls.MetroLink lnkConfiguracion;
         private System.Windows.Forms.Button btnTipoRazon;
         private System.Windows.Forms.Button btnTrabajo;
+        private MetroFramework.Controls.MetroTabPage tabPagLabor;
+        private System.Windows.Forms.Button btnHorario;
     }
 }
 
