@@ -17,8 +17,8 @@ namespace ConfigBusinessEntity
         [Column(TypeName = "date")]
         public DateTime? fec_negocio { get; set; }
 
-        [StringLength(10)]
-        public string fec_registro { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime? fec_registro { get; set; }
 
         [StringLength(50)]
         public string sistoles { get; set; }

@@ -6,16 +6,16 @@ namespace ConfigBusinessEntity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class LABt03_emp_turno
+    public partial class LABt07_emp_trabajo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LABt03_emp_turno()
+        public LABt07_emp_trabajo()
         {
-            LABt04_emp_turno_dtl = new HashSet<LABt04_emp_turno_dtl>();
+            LABt01_asistencia = new HashSet<LABt01_asistencia>();
         }
 
         [Key]
-        public long id_emp_turno { get; set; }
+        public long id_emp_trabajo { get; set; }
 
         public int id_estado { get; set; }
 
@@ -23,14 +23,14 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
-        public int id_turno { get; set; }
+        public int id_trabajo { get; set; }
 
         public long id_empleado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LABt04_emp_turno_dtl> LABt04_emp_turno_dtl { get; set; }
+        public virtual ICollection<LABt01_asistencia> LABt01_asistencia { get; set; }
 
-        public virtual MSTt13_turno MSTt13_turno { get; set; }
+        public virtual LABt06_trabajo LABt06_trabajo { get; set; }
 
         public virtual PERt04_empleado PERt04_empleado { get; set; }
     }

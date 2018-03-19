@@ -119,6 +119,10 @@
     <Compile Include="Labor\FormHorario.Designer.cs">
       <DependentUpon>FormHorario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Labor\FormHorarioEmpleado.cs" />
+    <Compile Include="Labor\FormHorarioEmpleado.Designer.cs">
+      <DependentUpon>FormHorarioEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestro\FormCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,10 +255,10 @@
     <Compile Include="Persona\FormProveedor.Designer.cs">
       <DependentUpon>FormProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persona\FormTrabajo.cs">
+    <Compile Include="Labor\FormTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Persona\FormTrabajo.Designer.cs">
+    <Compile Include="Labor\FormTrabajo.Designer.cs">
       <DependentUpon>FormTrabajo.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto\Auxiliares\FormComboItem.cs">
@@ -411,6 +415,9 @@
     <EmbeddedResource Include="Labor\FormHorario.resx">
       <DependentUpon>FormHorario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Labor\FormHorarioEmpleado.resx">
+      <DependentUpon>FormHorarioEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormCaja.resx">
       <DependentUpon>FormCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -477,7 +484,7 @@
     <EmbeddedResource Include="Persona\FormProveedor.resx">
       <DependentUpon>FormProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Persona\FormTrabajo.resx">
+    <EmbeddedResource Include="Labor\FormTrabajo.resx">
       <DependentUpon>FormTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\Auxiliares\FormComboItem.resx">

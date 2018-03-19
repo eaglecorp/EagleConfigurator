@@ -90,9 +90,11 @@
     <Compile Include="General\GRLt04_configuracion_caja.cs" />
     <Compile Include="Labor\LABt01_asistencia.cs" />
     <Compile Include="Labor\LABt02_asistencia_ajustada.cs" />
-    <Compile Include="Labor\LABt03_emp_turno.cs" />
-    <Compile Include="Labor\LABt04_emp_turno_dtl.cs" />
+    <Compile Include="Labor\LABt03_horario_emp.cs" />
+    <Compile Include="Labor\LABt04_horario_emp_dtl.cs" />
     <Compile Include="Labor\LABt05_asistencia_temp_last.cs" />
+    <Compile Include="Labor\LABt06_trabajo.cs" />
+    <Compile Include="Labor\LABt07_emp_trabajo.cs" />
     <Compile Include="Maestro\MSTt01_medio_pago.cs" />
     <Compile Include="Maestro\MSTt02_descuento.cs" />
     <Compile Include="Maestro\MSTt03_tipo_orden.cs" />
@@ -115,8 +117,8 @@
     <Compile Include="Persona\PERt04_empleado.cs" />
     <Compile Include="Persona\PERt05_categoria_emp.cs" />
     <Compile Include="Persona\PERt06_clase_emp.cs" />
-    <Compile Include="Persona\PERt07_trabajo.cs" />
-    <Compile Include="Persona\PERt08_emp_trabajo.cs" />
+    <Compile Include="Persona\PERt07_access_item.cs" />
+    <Compile Include="Persona\PERt08_security_access.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Producto\PROt01_marca.cs" />
     <Compile Include="Producto\PROt02_modelo.cs" />

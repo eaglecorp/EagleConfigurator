@@ -265,34 +265,23 @@ namespace ConfigDataAccess.Persona
             return obj;
         }
 
-        public bool EsValidoIDPassword(long? idEmpleado, long idPassword)
-        {
-            bool isValid = true;
 
+        public PERt04_empleado EmpleadoXNroDoc(string nro_doc)
+        {
+            var obj = new PERt04_empleado();
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    if (idEmpleado == null)
-                    {
-                        //Cuando verifica en toda la tabla (EN INSERCIÓN)
-                        isValid = ctx.PERt04_empleado.Any(x => x.id_password == idPassword);
-                    }
-
-                    else
-                    {
-                        //Cuando verifica en toda la tabla excepto su contenido (EN ACTUALIZACIÓN)
-                        isValid = ctx.PERt04_empleado.Where(x => x.id_empleado != idEmpleado)
-                                                        .Any(x => x.id_password == idPassword);
-                    }
+                    obj = ctx.PERt04_empleado.FirstOrDefault(x => x.nro_doc == nro_doc);
                 }
                 catch (Exception e)
                 {
                     var log = new Log();
-                    log.ArchiveLog("Validar ID Password: ", e.Message);
+                    log.ArchiveLog("Búsqueda Empleado por número de documento: ", e.Message);
                 }
             }
-            return !isValid;
+            return obj;
         }
     }
 }

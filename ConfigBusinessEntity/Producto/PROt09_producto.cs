@@ -12,10 +12,10 @@ namespace ConfigBusinessEntity
         public PROt09_producto()
         {
             PROt08_precio_prod = new HashSet<PROt08_precio_prod>();
-            TNSt02_comp_recibido_dtl = new HashSet<TNSt02_comp_recibido_dtl>();
             TNSt05_comp_emitido_dtl = new HashSet<TNSt05_comp_emitido_dtl>();
             PROt11_receta_dtl = new HashSet<PROt11_receta_dtl>();
             PROt14_combo_fixed_dtl = new HashSet<PROt14_combo_fixed_dtl>();
+            TNSt02_comp_recibido_dtl = new HashSet<TNSt02_comp_recibido_dtl>();
             PROt16_combo_variable_dtl = new HashSet<PROt16_combo_variable_dtl>();
         }
 
@@ -126,9 +126,6 @@ namespace ConfigBusinessEntity
         public virtual SNTt06_unidad_medida SNTt06_unidad_medida { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TNSt02_comp_recibido_dtl> TNSt02_comp_recibido_dtl { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt05_comp_emitido_dtl> TNSt05_comp_emitido_dtl { get; set; }
 
         public virtual SNTt04_tipo_moneda SNTt04_tipo_moneda { get; set; }
@@ -140,6 +137,9 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROt14_combo_fixed_dtl> PROt14_combo_fixed_dtl { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TNSt02_comp_recibido_dtl> TNSt02_comp_recibido_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROt16_combo_variable_dtl> PROt16_combo_variable_dtl { get; set; }

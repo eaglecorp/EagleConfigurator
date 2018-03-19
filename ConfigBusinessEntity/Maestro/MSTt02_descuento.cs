@@ -57,7 +57,7 @@ namespace ConfigBusinessEntity
         public TimeSpan? p1_hora_fin { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public DateTime? p2_fecha_ini { get; set; }
+        public DateTime p2_fecha_ini { get; set; }
 
         [Column(TypeName = "datetime2")]
         public DateTime? p2_fecha_fin { get; set; }

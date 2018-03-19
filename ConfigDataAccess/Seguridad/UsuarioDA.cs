@@ -362,6 +362,35 @@ namespace ConfigDataAccess.Seguridad
             return pUsername;
 
         }
+        public bool EsValidoIDPassword(long? idUsuario, long idPassword)
+        {
+            bool isValid = true;
+
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    if (idUsuario == null)
+                    {
+                        //Cuando verifica en toda la tabla (EN INSERCIÓN)
+                        isValid = ctx.PERt01_usuario.Any(x => x.id_password == idPassword);
+                    }
+
+                    else
+                    {
+                        //Cuando verifica en toda la tabla excepto su contenido (EN ACTUALIZACIÓN)
+                        isValid = ctx.PERt01_usuario.Where(x => x.id_usuario != idUsuario)
+                                                        .Any(x => x.id_password == idPassword);
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Validar ID Password de usuario: ", e.Message);
+                }
+            }
+            return !isValid;
+        }
     }
 
 

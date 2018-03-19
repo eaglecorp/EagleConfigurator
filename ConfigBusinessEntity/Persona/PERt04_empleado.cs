@@ -18,18 +18,16 @@ namespace ConfigBusinessEntity
             CSHt01_caja_dtl1 = new HashSet<CSHt01_caja_dtl>();
             LABt01_asistencia = new HashSet<LABt01_asistencia>();
             LABt02_asistencia_ajustada = new HashSet<LABt02_asistencia_ajustada>();
-            LABt03_emp_turno = new HashSet<LABt03_emp_turno>();
+            LABt03_horario_emp = new HashSet<LABt03_horario_emp>();
+            LABt07_emp_trabajo = new HashSet<LABt07_emp_trabajo>();
             PERt01_usuario = new HashSet<PERt01_usuario>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
             TNSt04_comp_emitido1 = new HashSet<TNSt04_comp_emitido>();
             TNSt08_descuento_dtl = new HashSet<TNSt08_descuento_dtl>();
-            PERt08_emp_trabajo = new HashSet<PERt08_emp_trabajo>();
         }
 
         [Key]
         public long id_empleado { get; set; }
-
-        public long? id_password { get; set; }
 
         [StringLength(20)]
         public string cod_empleado { get; set; }
@@ -238,7 +236,10 @@ namespace ConfigBusinessEntity
         public virtual ICollection<LABt02_asistencia_ajustada> LABt02_asistencia_ajustada { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LABt03_emp_turno> LABt03_emp_turno { get; set; }
+        public virtual ICollection<LABt03_horario_emp> LABt03_horario_emp { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LABt07_emp_trabajo> LABt07_emp_trabajo { get; set; }
 
         public virtual MSTt07_estado_civil MSTt07_estado_civil { get; set; }
 
@@ -253,9 +254,6 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt08_descuento_dtl> TNSt08_descuento_dtl { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PERt08_emp_trabajo> PERt08_emp_trabajo { get; set; }
 
         public virtual PERt05_categoria_emp PERt05_categoria_emp { get; set; }
 

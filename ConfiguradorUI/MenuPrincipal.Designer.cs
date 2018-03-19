@@ -46,7 +46,6 @@
             this.btnModelo = new System.Windows.Forms.Button();
             this.btnMarca = new System.Windows.Forms.Button();
             this.tabPagPersonas = new MetroFramework.Controls.MetroTabPage();
-            this.btnTrabajo = new System.Windows.Forms.Button();
             this.btnClaseEmp = new System.Windows.Forms.Button();
             this.btnCategoriaEmp = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
@@ -74,6 +73,7 @@
             this.btnCategoriaReporte = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.tabPagLabor = new MetroFramework.Controls.MetroTabPage();
+            this.btnTrabajo = new System.Windows.Forms.Button();
             this.btnHorario = new System.Windows.Forms.Button();
             this.dtpFechaCronologia = new System.Windows.Forms.DateTimePicker();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
@@ -401,7 +401,6 @@
             // 
             // tabPagPersonas
             // 
-            this.tabPagPersonas.Controls.Add(this.btnTrabajo);
             this.tabPagPersonas.Controls.Add(this.btnClaseEmp);
             this.tabPagPersonas.Controls.Add(this.btnCategoriaEmp);
             this.tabPagPersonas.Controls.Add(this.btnUsuario);
@@ -419,27 +418,6 @@
             this.tabPagPersonas.VerticalScrollbarBarColor = true;
             this.tabPagPersonas.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagPersonas.VerticalScrollbarSize = 10;
-            // 
-            // btnTrabajo
-            // 
-            this.btnTrabajo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnTrabajo.FlatAppearance.BorderSize = 0;
-            this.btnTrabajo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrabajo.ForeColor = System.Drawing.Color.White;
-            this.btnTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnTrabajo.Image")));
-            this.btnTrabajo.Location = new System.Drawing.Point(2, 135);
-            this.btnTrabajo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTrabajo.Name = "btnTrabajo";
-            this.btnTrabajo.Size = new System.Drawing.Size(145, 37);
-            this.btnTrabajo.TabIndex = 6;
-            this.btnTrabajo.Text = "Trabajos";
-            this.btnTrabajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTrabajo.UseVisualStyleBackColor = false;
-            this.btnTrabajo.Click += new System.EventHandler(this.btnTrabajo_Click);
             // 
             // btnClaseEmp
             // 
@@ -494,7 +472,7 @@
             this.btnUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
             this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
-            this.btnUsuario.Location = new System.Drawing.Point(151, 52);
+            this.btnUsuario.Location = new System.Drawing.Point(151, 11);
             this.btnUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(145, 37);
@@ -515,7 +493,7 @@
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.White;
             this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
-            this.btnCliente.Location = new System.Drawing.Point(150, 11);
+            this.btnCliente.Location = new System.Drawing.Point(2, 176);
             this.btnCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(145, 37);
@@ -536,7 +514,7 @@
             this.btnProveedor.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
             this.btnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedor.Image")));
-            this.btnProveedor.Location = new System.Drawing.Point(2, 176);
+            this.btnProveedor.Location = new System.Drawing.Point(2, 135);
             this.btnProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(145, 37);
@@ -995,6 +973,7 @@
             // 
             // tabPagLabor
             // 
+            this.tabPagLabor.Controls.Add(this.btnTrabajo);
             this.tabPagLabor.Controls.Add(this.btnHorario);
             this.tabPagLabor.HorizontalScrollbarBarColor = true;
             this.tabPagLabor.HorizontalScrollbarHighlightOnWheel = false;
@@ -1007,6 +986,27 @@
             this.tabPagLabor.VerticalScrollbarBarColor = true;
             this.tabPagLabor.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagLabor.VerticalScrollbarSize = 10;
+            // 
+            // btnTrabajo
+            // 
+            this.btnTrabajo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTrabajo.FlatAppearance.BorderSize = 0;
+            this.btnTrabajo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrabajo.ForeColor = System.Drawing.Color.White;
+            this.btnTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnTrabajo.Image")));
+            this.btnTrabajo.Location = new System.Drawing.Point(2, 52);
+            this.btnTrabajo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrabajo.Name = "btnTrabajo";
+            this.btnTrabajo.Size = new System.Drawing.Size(145, 37);
+            this.btnTrabajo.TabIndex = 14;
+            this.btnTrabajo.Text = "Trabajos";
+            this.btnTrabajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTrabajo.UseVisualStyleBackColor = false;
+            this.btnTrabajo.Click += new System.EventHandler(this.btnTrabajo_Click);
             // 
             // btnHorario
             // 
@@ -1256,9 +1256,9 @@
         private System.Windows.Forms.Button btnComboGrupo;
         private MetroFramework.Controls.MetroLink lnkConfiguracion;
         private System.Windows.Forms.Button btnTipoRazon;
-        private System.Windows.Forms.Button btnTrabajo;
         private MetroFramework.Controls.MetroTabPage tabPagLabor;
         private System.Windows.Forms.Button btnHorario;
+        private System.Windows.Forms.Button btnTrabajo;
     }
 }
 

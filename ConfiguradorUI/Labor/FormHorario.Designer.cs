@@ -29,43 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHorario));
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Mesero");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Cocinero");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Gerente");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Mesero");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Cocinero");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Gerente");
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.grbDatosEmpleado = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lstTrabajo = new System.Windows.Forms.ListView();
+            this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
+            this.picFotoEmp = new System.Windows.Forms.PictureBox();
             this.lblApeNom = new MetroFramework.Controls.MetroLabel();
             this.btnBuscarEmp = new System.Windows.Forms.Button();
             this.txtNroDocEmp = new MetroFramework.Controls.MetroTextBox();
             this.lblNroDocEmp = new MetroFramework.Controls.MetroLabel();
             this.grbBuscarEmp = new System.Windows.Forms.GroupBox();
             this.grbMesYAnio = new System.Windows.Forms.GroupBox();
+            this.dgvMes = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.lblMes = new MetroFramework.Controls.MetroLabel();
-            this.lblTurno = new MetroFramework.Controls.MetroLabel();
             this.cboTurno = new System.Windows.Forms.ComboBox();
+            this.lblTurno = new MetroFramework.Controls.MetroLabel();
+            this.lblMes = new MetroFramework.Controls.MetroLabel();
+            this.dgvSemana = new System.Windows.Forms.DataGridView();
+            this.mcaMes = new System.Windows.Forms.MonthCalendar();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.grbDatosEmpleado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoEmp)).BeginInit();
             this.grbBuscarEmp.SuspendLayout();
             this.grbMesYAnio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMes)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemana)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombreForm
@@ -97,9 +96,9 @@
             this.grbDatosEmpleado.Controls.Add(this.dateTimePicker1);
             this.grbDatosEmpleado.Controls.Add(this.metroLabel2);
             this.grbDatosEmpleado.Controls.Add(this.metroLabel1);
-            this.grbDatosEmpleado.Controls.Add(this.listView1);
+            this.grbDatosEmpleado.Controls.Add(this.lstTrabajo);
             this.grbDatosEmpleado.Controls.Add(this.txtUsuario);
-            this.grbDatosEmpleado.Controls.Add(this.pictureBox1);
+            this.grbDatosEmpleado.Controls.Add(this.picFotoEmp);
             this.grbDatosEmpleado.Controls.Add(this.lblApeNom);
             this.grbDatosEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDatosEmpleado.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -110,15 +109,115 @@
             this.grbDatosEmpleado.TabStop = false;
             this.grbDatosEmpleado.Text = "Datos del Empleado";
             // 
-            // pictureBox1
+            // metroLabel3
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(288, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 163);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 112;
-            this.pictureBox1.TabStop = false;
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel3.Location = new System.Drawing.Point(173, 143);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel3.TabIndex = 119;
+            this.metroLabel3.Text = "Fin contrato:";
+            this.metroLabel3.UseCustomForeColor = true;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(173, 165);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(99, 25);
+            this.dateTimePicker2.TabIndex = 118;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(173, 108);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(99, 25);
+            this.dateTimePicker1.TabIndex = 117;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel2.Location = new System.Drawing.Point(173, 86);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(100, 19);
+            this.metroLabel2.TabIndex = 116;
+            this.metroLabel2.Text = "Inicio contrato:";
+            this.metroLabel2.UseCustomForeColor = true;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel1.Location = new System.Drawing.Point(8, 86);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel1.TabIndex = 115;
+            this.metroLabel1.Text = "Trabajos:";
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
+            // lstTrabajo
+            // 
+            this.lstTrabajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.lstTrabajo.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
+            this.lstTrabajo.Location = new System.Drawing.Point(8, 108);
+            this.lstTrabajo.Name = "lstTrabajo";
+            this.lstTrabajo.Size = new System.Drawing.Size(142, 82);
+            this.lstTrabajo.TabIndex = 114;
+            this.lstTrabajo.UseCompatibleStateImageBehavior = false;
+            this.lstTrabajo.View = System.Windows.Forms.View.List;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtUsuario.CustomButton.Image = null;
+            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(252, 1);
+            this.txtUsuario.CustomButton.Name = "";
+            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtUsuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUsuario.CustomButton.TabIndex = 1;
+            this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUsuario.CustomButton.UseSelectable = true;
+            this.txtUsuario.CustomButton.Visible = false;
+            this.txtUsuario.Lines = new string[] {
+        "RAMIRO SAAVEDRA"};
+            this.txtUsuario.Location = new System.Drawing.Point(8, 49);
+            this.txtUsuario.MaxLength = 32767;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUsuario.SelectedText = "";
+            this.txtUsuario.SelectionLength = 0;
+            this.txtUsuario.SelectionStart = 0;
+            this.txtUsuario.ShortcutsEnabled = true;
+            this.txtUsuario.Size = new System.Drawing.Size(274, 23);
+            this.txtUsuario.TabIndex = 113;
+            this.txtUsuario.Text = "RAMIRO SAAVEDRA";
+            this.txtUsuario.UseCustomBackColor = true;
+            this.txtUsuario.UseSelectable = true;
+            this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUsuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // picFotoEmp
+            // 
+            this.picFotoEmp.Image = ((System.Drawing.Image)(resources.GetObject("picFotoEmp.Image")));
+            this.picFotoEmp.Location = new System.Drawing.Point(288, 27);
+            this.picFotoEmp.Name = "picFotoEmp";
+            this.picFotoEmp.Size = new System.Drawing.Size(140, 163);
+            this.picFotoEmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFotoEmp.TabIndex = 112;
+            this.picFotoEmp.TabStop = false;
             // 
             // lblApeNom
             // 
@@ -190,7 +289,7 @@
             this.lblNroDocEmp.ForeColor = System.Drawing.Color.Navy;
             this.lblNroDocEmp.Location = new System.Drawing.Point(8, 28);
             this.lblNroDocEmp.Name = "lblNroDocEmp";
-            this.lblNroDocEmp.Size = new System.Drawing.Size(225, 19);
+            this.lblNroDocEmp.Size = new System.Drawing.Size(207, 19);
             this.lblNroDocEmp.TabIndex = 108;
             this.lblNroDocEmp.Text = "Ingresar número de documento:";
             this.lblNroDocEmp.UseCustomForeColor = true;
@@ -211,65 +310,51 @@
             // 
             // grbMesYAnio
             // 
-            this.grbMesYAnio.Controls.Add(this.dataGridView1);
+            this.grbMesYAnio.Controls.Add(this.dgvMes);
             this.grbMesYAnio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbMesYAnio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbMesYAnio.Location = new System.Drawing.Point(36, 389);
             this.grbMesYAnio.Name = "grbMesYAnio";
-            this.grbMesYAnio.Size = new System.Drawing.Size(952, 164);
+            this.grbMesYAnio.Size = new System.Drawing.Size(1026, 164);
             this.grbMesYAnio.TabIndex = 113;
             this.grbMesYAnio.TabStop = false;
             this.grbMesYAnio.Text = "Mes y año";
+            // 
+            // dgvMes
+            // 
+            this.dgvMes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMes.Location = new System.Drawing.Point(8, 30);
+            this.dgvMes.Name = "dgvMes";
+            this.dgvMes.Size = new System.Drawing.Size(1012, 134);
+            this.dgvMes.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboTurno);
             this.groupBox1.Controls.Add(this.lblTurno);
             this.groupBox1.Controls.Add(this.lblMes);
-            this.groupBox1.Controls.Add(this.dataGridView2);
-            this.groupBox1.Controls.Add(this.monthCalendar1);
+            this.groupBox1.Controls.Add(this.dgvSemana);
+            this.groupBox1.Controls.Add(this.mcaMes);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(478, 101);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 282);
+            this.groupBox1.Size = new System.Drawing.Size(584, 282);
             this.groupBox1.TabIndex = 114;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turnos y días de labor";
             // 
-            // dataGridView1
+            // cboTurno
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(932, 134);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(12, 108);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(272, 24);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(232, 246);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // lblMes
-            // 
-            this.lblMes.AutoSize = true;
-            this.lblMes.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblMes.ForeColor = System.Drawing.Color.Navy;
-            this.lblMes.Location = new System.Drawing.Point(12, 80);
-            this.lblMes.Name = "lblMes";
-            this.lblMes.Size = new System.Drawing.Size(108, 19);
-            this.lblMes.TabIndex = 109;
-            this.lblMes.Text = "Seleccionar mes:";
-            this.lblMes.UseCustomForeColor = true;
+            this.cboTurno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTurno.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTurno.FormattingEnabled = true;
+            this.cboTurno.Location = new System.Drawing.Point(12, 48);
+            this.cboTurno.Name = "cboTurno";
+            this.cboTurno.Size = new System.Drawing.Size(248, 23);
+            this.cboTurno.TabIndex = 111;
             // 
             // lblTurno
             // 
@@ -283,17 +368,32 @@
             this.lblTurno.Text = "Seleccionar Turno:";
             this.lblTurno.UseCustomForeColor = true;
             // 
-            // cboTurno
+            // lblMes
             // 
-            this.cboTurno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTurno.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTurno.FormattingEnabled = true;
-            this.cboTurno.Location = new System.Drawing.Point(12, 48);
-            this.cboTurno.Name = "cboTurno";
-            this.cboTurno.Size = new System.Drawing.Size(248, 23);
-            this.cboTurno.TabIndex = 111;
+            this.lblMes.AutoSize = true;
+            this.lblMes.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblMes.ForeColor = System.Drawing.Color.Navy;
+            this.lblMes.Location = new System.Drawing.Point(12, 80);
+            this.lblMes.Name = "lblMes";
+            this.lblMes.Size = new System.Drawing.Size(108, 19);
+            this.lblMes.TabIndex = 109;
+            this.lblMes.Text = "Seleccionar mes:";
+            this.lblMes.UseCustomForeColor = true;
+            // 
+            // dgvSemana
+            // 
+            this.dgvSemana.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSemana.Location = new System.Drawing.Point(272, 24);
+            this.dgvSemana.Name = "dgvSemana";
+            this.dgvSemana.Size = new System.Drawing.Size(306, 246);
+            this.dgvSemana.TabIndex = 1;
+            // 
+            // mcaMes
+            // 
+            this.mcaMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.mcaMes.Location = new System.Drawing.Point(12, 108);
+            this.mcaMes.Name = "mcaMes";
+            this.mcaMes.TabIndex = 0;
             // 
             // btnCancelar
             // 
@@ -331,116 +431,13 @@
             this.btnGuardar.TabIndex = 115;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtUsuario.CustomButton.Image = null;
-            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(252, 1);
-            this.txtUsuario.CustomButton.Name = "";
-            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtUsuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtUsuario.CustomButton.TabIndex = 1;
-            this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUsuario.CustomButton.UseSelectable = true;
-            this.txtUsuario.CustomButton.Visible = false;
-            this.txtUsuario.Lines = new string[] {
-        "RAMIRO SAAVEDRA"};
-            this.txtUsuario.Location = new System.Drawing.Point(8, 49);
-            this.txtUsuario.MaxLength = 32767;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.PasswordChar = '\0';
-            this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUsuario.SelectedText = "";
-            this.txtUsuario.SelectionLength = 0;
-            this.txtUsuario.SelectionStart = 0;
-            this.txtUsuario.ShortcutsEnabled = true;
-            this.txtUsuario.Size = new System.Drawing.Size(274, 23);
-            this.txtUsuario.TabIndex = 113;
-            this.txtUsuario.Text = "RAMIRO SAAVEDRA";
-            this.txtUsuario.UseCustomBackColor = true;
-            this.txtUsuario.UseSelectable = true;
-            this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUsuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "listViewGroup1";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3});
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
-            this.listView1.Location = new System.Drawing.Point(8, 108);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(142, 82);
-            this.listView1.TabIndex = 114;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(8, 86);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(62, 19);
-            this.metroLabel1.TabIndex = 115;
-            this.metroLabel1.Text = "Trabajos:";
-            this.metroLabel1.UseCustomForeColor = true;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel2.Location = new System.Drawing.Point(173, 86);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(100, 19);
-            this.metroLabel2.TabIndex = 116;
-            this.metroLabel2.Text = "Inicio contrato:";
-            this.metroLabel2.UseCustomForeColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(173, 108);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(99, 25);
-            this.dateTimePicker1.TabIndex = 117;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(173, 165);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(99, 25);
-            this.dateTimePicker2.TabIndex = 118;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel3.Location = new System.Drawing.Point(173, 143);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(86, 19);
-            this.metroLabel3.TabIndex = 119;
-            this.metroLabel3.Text = "Fin contrato:";
-            this.metroLabel3.UseCustomForeColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FormHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 589);
+            this.ClientSize = new System.Drawing.Size(1100, 589);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox1);
@@ -450,16 +447,17 @@
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
             this.Name = "FormHorario";
+            this.Load += new System.EventHandler(this.FormHorario_Load);
             this.grbDatosEmpleado.ResumeLayout(false);
             this.grbDatosEmpleado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoEmp)).EndInit();
             this.grbBuscarEmp.ResumeLayout(false);
             this.grbBuscarEmp.PerformLayout();
             this.grbMesYAnio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemana)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,14 +473,14 @@
         private MetroFramework.Controls.MetroLabel lblNroDocEmp;
         private MetroFramework.Controls.MetroLabel lblApeNom;
         private System.Windows.Forms.GroupBox grbBuscarEmp;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picFotoEmp;
         private System.Windows.Forms.GroupBox grbMesYAnio;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMes;
         private MetroFramework.Controls.MetroLabel lblTurno;
         private MetroFramework.Controls.MetroLabel lblMes;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.DataGridView dgvSemana;
+        private System.Windows.Forms.MonthCalendar mcaMes;
         private System.Windows.Forms.ComboBox cboTurno;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
@@ -491,7 +489,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstTrabajo;
         private MetroFramework.Controls.MetroTextBox txtUsuario;
     }
 }

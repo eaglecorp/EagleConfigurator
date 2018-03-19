@@ -11,8 +11,8 @@ namespace ConfigBusinessEntity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TNSt01_comp_recibido()
         {
-            TNSt02_comp_recibido_dtl = new HashSet<TNSt02_comp_recibido_dtl>();
             TNSt03_comp_recibido_estado = new HashSet<TNSt03_comp_recibido_estado>();
+            TNSt02_comp_recibido_dtl = new HashSet<TNSt02_comp_recibido_dtl>();
         }
 
         [Key]
@@ -40,13 +40,11 @@ namespace ConfigBusinessEntity
         public DateTime? fec_vcto { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public DateTime? fec_canc { get; set; }
+        public DateTime fec_canc { get; set; }
 
         public int id_tipo_moneda { get; set; }
 
         public int? id_tipo_orden { get; set; }
-
-        public decimal por_impto { get; set; }
 
         [StringLength(500)]
         public string txt_observ { get; set; }
@@ -73,6 +71,8 @@ namespace ConfigBusinessEntity
 
         public decimal mto_tot_comp { get; set; }
 
+        public long? ref_id_comp_recibido { get; set; }
+
         [StringLength(10)]
         public string ref_tipo_comprobante { get; set; }
 
@@ -84,6 +84,80 @@ namespace ConfigBusinessEntity
 
         [StringLength(14)]
         public string ref_numero { get; set; }
+
+        public decimal? tax_por01 { get; set; }
+
+        public decimal? tax_por02 { get; set; }
+
+        public decimal? tax_por03 { get; set; }
+
+        public decimal? tax_por04 { get; set; }
+
+        public decimal? tax_por05 { get; set; }
+
+        public decimal? tax_por07 { get; set; }
+
+        public decimal? tax_por08 { get; set; }
+
+        [StringLength(500)]
+        public string info01 { get; set; }
+
+        [StringLength(500)]
+        public string info02 { get; set; }
+
+        [StringLength(500)]
+        public string info03 { get; set; }
+
+        [StringLength(500)]
+        public string info04 { get; set; }
+
+        [StringLength(500)]
+        public string info05 { get; set; }
+
+        [StringLength(500)]
+        public string info06 { get; set; }
+
+        [StringLength(500)]
+        public string info07 { get; set; }
+
+        [StringLength(500)]
+        public string info08 { get; set; }
+
+        [StringLength(500)]
+        public string info09 { get; set; }
+
+        [StringLength(500)]
+        public string info10 { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? info_date01 { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? info_date02 { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? info_date03 { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? info_date04 { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? info_date05 { get; set; }
+
+        public decimal? info_mto01 { get; set; }
+
+        public decimal? info_mto02 { get; set; }
+
+        public decimal? info_mto03 { get; set; }
+
+        public decimal? info_mto04 { get; set; }
+
+        public decimal? info_mto05 { get; set; }
+
+        public int? post { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? post_date { get; set; }
 
         public int? sn_credito { get; set; }
 
@@ -110,13 +184,13 @@ namespace ConfigBusinessEntity
 
         public long? id_proveedor { get; set; }
 
-        public int id_impuesto { get; set; }
-
         public long? id_usuario { get; set; }
+
+        public int id_location { get; set; }
 
         public virtual MSTt03_tipo_orden MSTt03_tipo_orden { get; set; }
 
-        public virtual MSTt06_impuesto MSTt06_impuesto { get; set; }
+        public virtual MSTt08_location MSTt08_location { get; set; }
 
         public virtual PERt01_usuario PERt01_usuario { get; set; }
 
@@ -127,9 +201,9 @@ namespace ConfigBusinessEntity
         public virtual SNTt10_tipo_comprobante SNTt10_tipo_comprobante { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TNSt02_comp_recibido_dtl> TNSt02_comp_recibido_dtl { get; set; }
+        public virtual ICollection<TNSt03_comp_recibido_estado> TNSt03_comp_recibido_estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TNSt03_comp_recibido_estado> TNSt03_comp_recibido_estado { get; set; }
+        public virtual ICollection<TNSt02_comp_recibido_dtl> TNSt02_comp_recibido_dtl { get; set; }
     }
 }

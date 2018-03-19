@@ -48,6 +48,7 @@
     <Compile Include="Fiscal\ParametroFiscalBL.cs" />
     <Compile Include="General\HorarioBL.cs" />
     <Compile Include="General\ParametroBL.cs" />
+    <Compile Include="Labor\HorarioEmpleadoBL.cs" />
     <Compile Include="Maestro\CajaBL.cs" />
     <Compile Include="Maestro\CanalVentaBL.cs" />
     <Compile Include="Maestro\DescuentoBL.cs" />
@@ -115,9 +116,7 @@
     <Compile Include="Sunat\ZonaBL.cs" />
     <Compile Include="Utiles\UtilBL.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Labor\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ConfigBusinessEntity\ConfigBusinessEntity.csproj">
       <Project>{5f19851a-857f-4335-9dec-13db240874df}</Project>

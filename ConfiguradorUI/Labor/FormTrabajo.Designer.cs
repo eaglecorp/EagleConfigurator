@@ -1,4 +1,4 @@
-﻿namespace ConfiguradorUI.Persona
+﻿namespace ConfiguradorUI.Labor
 {
     partial class FormTrabajo
     {

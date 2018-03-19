@@ -21,6 +21,8 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string cod_usuario { get; set; }
 
+        public long? id_password { get; set; }
+
         [Required]
         [StringLength(20)]
         public string txt_usuario { get; set; }

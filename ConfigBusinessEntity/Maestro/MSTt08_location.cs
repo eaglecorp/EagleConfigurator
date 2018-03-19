@@ -13,6 +13,7 @@ namespace ConfigBusinessEntity
         {
             LABt01_asistencia = new HashSet<LABt01_asistencia>();
             TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
+            TNSt01_comp_recibido = new HashSet<TNSt01_comp_recibido>();
         }
 
         [Key]
@@ -61,6 +62,10 @@ namespace ConfigBusinessEntity
         [StringLength(150)]
         public string txt_datos4 { get; set; }
 
+        public decimal? latitud { get; set; }
+
+        public decimal? longitud { get; set; }
+
         public int? sn_almacen { get; set; }
 
         public int? sn_location_current { get; set; }
@@ -77,6 +82,9 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt04_comp_emitido> TNSt04_comp_emitido { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TNSt01_comp_recibido> TNSt01_comp_recibido { get; set; }
 
         public virtual MSTt09_tipo_location MSTt09_tipo_location { get; set; }
     }

@@ -13,7 +13,7 @@ namespace ConfigBusinessEntity
 
         public long? id_comp_emitido { get; set; }
 
-        public int id_descuento { get; set; }
+        public int? id_descuento { get; set; }
 
         public decimal? porcentaje { get; set; }
 

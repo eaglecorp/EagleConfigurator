@@ -1,18 +1,16 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using ConfiguradorUI.Producto;
-using MetroFramework.Forms;
-using ConfiguradorUI.Persona;
-using ConfiguradorUI.Maestro;
-using ConfiguradorUI.Seguridad;
-using ConfigBusinessEntity;
-using ConfigBusinessLogic.General;
-using System.IO;
+﻿using ConfigBusinessEntity;
 using ConfigBusinessLogic;
-using ConfigUtilitarios;
-using ConfiguradorUI.Reporte;
+using ConfigBusinessLogic.General;
 using ConfiguradorUI.Labor;
+using ConfiguradorUI.Maestro;
+using ConfiguradorUI.Persona;
+using ConfiguradorUI.Producto;
+using ConfiguradorUI.Reporte;
+using ConfiguradorUI.Seguridad;
+using ConfigUtilitarios;
+using MetroFramework.Forms;
+using System;
+using System.Windows.Forms;
 
 namespace ConfiguradorUI
 {
@@ -273,12 +271,6 @@ namespace ConfiguradorUI
             oForm.ShowDialog();
         }
 
-        private void btnTrabajo_Click(object sender, EventArgs e)
-        {
-            FormTrabajo oForm = new FormTrabajo();
-            oForm.ShowDialog();
-        }
-
         private void btnCliente_Click(object sender, EventArgs e)
         {
             FormCliente oForm = new FormCliente();
@@ -408,19 +400,25 @@ namespace ConfiguradorUI
             oForm.ShowDialog();
         }
 
-
-
-
-
-
         #endregion
 
-        #endregion
+        #region TabPag Labor
 
         private void btnHorario_Click(object sender, EventArgs e)
         {
             var form = new FormHorario();
             form.ShowDialog();
         }
+
+        private void btnTrabajo_Click(object sender, EventArgs e)
+        {
+            FormTrabajo oForm = new FormTrabajo();
+            oForm.ShowDialog();
+        }
+
+        #endregion
+
+        #endregion
+
     }
 }

@@ -12,6 +12,7 @@ namespace ConfigBusinessEntity
         public PERt06_clase_emp()
         {
             PERt04_empleado = new HashSet<PERt04_empleado>();
+            PERt08_security_access = new HashSet<PERt08_security_access>();
         }
 
         [Key]
@@ -35,5 +36,8 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PERt04_empleado> PERt04_empleado { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PERt08_security_access> PERt08_security_access { get; set; }
     }
 }

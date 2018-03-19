@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ConfiguradorUI.Persona
+namespace ConfiguradorUI.Labor
 {
     public partial class FormTrabajo : MetroForm
     {
@@ -76,7 +76,7 @@ namespace ConfiguradorUI.Persona
                 {
                     if (esValido())
                     {
-                        var obj = new PERt07_trabajo();
+                        var obj = new LABt06_trabajo();
                         obj = GetObjeto();
                         int id = new TrabajoBL().InsertarTrabajo(obj);
                         if (id > 0)
@@ -158,7 +158,7 @@ namespace ConfiguradorUI.Persona
                     if (esValido())
                     {
 
-                        var obj = new PERt07_trabajo();
+                        var obj = new LABt06_trabajo();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdTrabajo.Text, out id))
@@ -188,7 +188,7 @@ namespace ConfiguradorUI.Persona
                 {
                     if (esValido())
                     {
-                        var obj = new PERt07_trabajo();
+                        var obj = new LABt06_trabajo();
                         obj = GetObjeto();
                         int id = 0;
                         if (int.TryParse(lblIdTrabajo.Text, out id))
@@ -210,9 +210,9 @@ namespace ConfiguradorUI.Persona
         }
         
 
-        private PERt07_trabajo GetObjeto()
+        private LABt06_trabajo GetObjeto()
         {
-            var obj = new PERt07_trabajo();
+            var obj = new LABt06_trabajo();
             try
             {
                 obj.txt_nombre = txtNombre.Text.Trim();
@@ -231,7 +231,7 @@ namespace ConfiguradorUI.Persona
 
             return obj;
         }
-        private void SetObjeto(PERt07_trabajo obj)
+        private void SetObjeto(LABt06_trabajo obj)
         {
             try
             {
@@ -661,7 +661,7 @@ namespace ConfiguradorUI.Persona
             SetMaxLengthTxt();
             ControlHelper.SetTextArea(txtDescripcion);
         }
-        private void ContarEstados(List<PERt07_trabajo> lista)
+        private void ContarEstados(List<LABt06_trabajo> lista)
         {
             try
             {

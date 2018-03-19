@@ -56,7 +56,7 @@ namespace ConfiguradorUI.Persona
                                 txtInfo05,txtInfo06,txtInfo07,txtInfo08,
                                 txtInfo09,txtInfo10,
                                 txtNumHorasMes,txtNumCuenta,txtSalMensual, txtSalQuincenal,
-                                txtSalHora, txtIdPassword};
+                                txtSalHora};
 
             foreach (var txt in txts)
             {
@@ -105,7 +105,7 @@ namespace ConfiguradorUI.Persona
             txtSalMensual.KeyPress += ValidarTxtDecimal;
             txtSalQuincenal.KeyPress += ValidarTxtDecimal;
             txtSalHora.KeyPress += ValidarTxtDecimal;
-            txtIdPassword.KeyPress += ControlHelper.TxtValidInteger;
+
         }
         protected void OnContentChanged(object sender, EventArgs e)
         {
@@ -347,14 +347,7 @@ namespace ConfiguradorUI.Persona
 
                 obj.nro_cuenta = txtNumCuenta.Text.Trim();
 
-                if (long.TryParse(txtIdPassword.Text.Trim(), out long idPasswordPosible) && idPasswordPosible >= 0)
-                {
-                    obj.id_password = idPasswordPosible;
-                }
-                else
-                {
-                    obj.id_password = null;
-                }
+              
 
                 if (string.IsNullOrEmpty(txtNumHorasMes.Text)
                 || string.IsNullOrWhiteSpace(txtNumHorasMes.Text))
@@ -559,7 +552,7 @@ namespace ConfiguradorUI.Persona
                 txtSalQuincenal.Text = (obj.salario_quincenal == null) ? "" : obj.salario_quincenal.RemoveTrailingZeros();
                 txtSalHora.Text = (obj.salario_hora == null) ? "" : obj.salario_hora.RemoveTrailingZeros();
 
-                txtIdPassword.Text = obj.id_password?.ToString();
+               
 
                 if (obj.sexo != null)
                 {
@@ -937,62 +930,6 @@ namespace ConfiguradorUI.Persona
             }
             #endregion
 
-
-            #region Valid ID password único
-            if (no_error)
-            {
-                var txtValorIdPassword = txtIdPassword.Text.Trim();
-                if (txtValorIdPassword != "")
-                {
-                    if (long.TryParse(txtValorIdPassword, out long idPassword))
-                    {
-                        if (TipoOperacion == TipoOperacionABM.Insertar)
-                        {
-                            if (!new EmpleadoBL().EsValidoIDPassword(null, idPassword))
-                            {
-                                Msg.Ok_Err("El ID Password ya existe.");
-                                tabEmpleado.SelectedTab = tabPagSeguridad;
-                                errorProv.SetError(txtIdPassword, "El ID Password ya existe.");
-                                txtIdPassword.Focus();
-                                no_error = false;
-                            }
-                        }
-                        else if (TipoOperacion == TipoOperacionABM.Modificar)
-                        {
-                            if (long.TryParse(lblIdEmpleado.Text, out long idEmpleadoActual) && idEmpleadoActual > 0)
-                            {
-                                if (!new EmpleadoBL().EsValidoIDPassword(idEmpleadoActual, idPassword))
-                                {
-                                    Msg.Ok_Err("El ID Password ya existe.");
-                                    tabEmpleado.SelectedTab = tabPagSeguridad;
-                                    errorProv.SetError(txtIdPassword, "El ID Password ya existe.");
-                                    txtIdPassword.Focus();
-                                    no_error = false;
-                                }
-                            }
-                            else
-                            {
-                                Msg.Ok_Err("No se pudo obtener el ID del empleado para validar su ID Password.");
-                                tabEmpleado.SelectedTab = tabPagSeguridad;
-                                errorProv.SetError(txtIdPassword, "No se puede validar el password id");
-                                txtIdPassword.Focus();
-                                no_error = false;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        tabEmpleado.SelectedTab = tabPagSeguridad;
-                        errorProv.SetError(txtIdPassword, "Debe ser un número entero");
-                        txtIdPassword.Focus();
-                        no_error = false;
-                    }
-                }
-            }
-
-            #endregion
-
-
             return no_error;
         }
         private void Filtrar(int criterio, string filtro)
@@ -1183,7 +1120,7 @@ namespace ConfiguradorUI.Persona
             txtInfo09.Clear();
             txtInfo10.Clear();
 
-            txtIdPassword.Clear();
+
 
             if (TipoOperacion == TipoOperacionABM.Nuevo)
                 chkActivo.Enabled = false;
@@ -1605,7 +1542,7 @@ namespace ConfiguradorUI.Persona
             txtInfo08.MaxLength = 300;
             txtInfo09.MaxLength = 300;
             txtInfo10.MaxLength = 300;
-            txtIdPassword.MaxLength = 10;
+
 
             txtSalMensual.MaxLength = 19;
             txtSalQuincenal.MaxLength = 19;

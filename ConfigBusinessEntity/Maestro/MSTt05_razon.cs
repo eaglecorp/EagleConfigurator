@@ -15,6 +15,7 @@ namespace ConfigBusinessEntity
             LABt02_asistencia_ajustada = new HashSet<LABt02_asistencia_ajustada>();
             TNSt05_comp_emitido_dtl = new HashSet<TNSt05_comp_emitido_dtl>();
             TNSt08_descuento_dtl = new HashSet<TNSt08_descuento_dtl>();
+            TNSt02_comp_recibido_dtl = new HashSet<TNSt02_comp_recibido_dtl>();
         }
 
         [Key]
@@ -45,6 +46,9 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TNSt08_descuento_dtl> TNSt08_descuento_dtl { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TNSt02_comp_recibido_dtl> TNSt02_comp_recibido_dtl { get; set; }
 
         public virtual MSTt16_tipo_razon MSTt16_tipo_razon { get; set; }
     }

@@ -211,9 +211,9 @@ namespace ConfigBusinessLogic.Persona
             return mensaje;
         }
 
-        public bool EsValidoIDPassword(long? idEmpleado, long idPassword)
+        public PERt04_empleado EmpleadoXNroDoc(string nro_doc)
         {
-            return new EmpleadoDA().EsValidoIDPassword(idEmpleado, idPassword);
+            return new EmpleadoDA().EmpleadoXNroDoc(nro_doc);
         }
     }
 }

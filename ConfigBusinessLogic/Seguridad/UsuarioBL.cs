@@ -61,6 +61,11 @@ namespace ConfigBusinessLogic.Seguridad
             return new UsuarioDA().ValidarUsuario(username, clave);
         }
 
+        public bool EsValidoIDPassword(long? idUsuario, long idPassword)
+        {
+            return new UsuarioDA().EsValidoIDPassword(idUsuario, idPassword);
+        }
+
         public List<PERt01_usuario> ListaUsuario(int? id_estado = null, bool ocultarBlankReg = false)
         {
             var lista = new UsuarioDA().ListaUsuario(id_estado);

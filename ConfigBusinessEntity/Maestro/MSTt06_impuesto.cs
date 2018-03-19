@@ -14,7 +14,6 @@ namespace ConfigBusinessEntity
             PROt15_combo_variable = new HashSet<PROt15_combo_variable>();
             PROt13_combo = new HashSet<PROt13_combo>();
             PROt09_producto = new HashSet<PROt09_producto>();
-            TNSt01_comp_recibido = new HashSet<TNSt01_comp_recibido>();
         }
 
         [Key]
@@ -60,8 +59,5 @@ namespace ConfigBusinessEntity
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROt09_producto> PROt09_producto { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TNSt01_comp_recibido> TNSt01_comp_recibido { get; set; }
     }
 }

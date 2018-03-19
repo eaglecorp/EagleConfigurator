@@ -8,9 +8,10 @@ namespace ConfigBusinessEntity
     public partial class EagleContext : DbContext
     {
         public EagleContext(string connectionString)
-                            : base(connectionString)
+                   : base(connectionString)
         {
         }
+
 
         public virtual DbSet<CLIt01_paciente> CLIt01_paciente { get; set; }
         public virtual DbSet<CLIt02_actividad> CLIt02_actividad { get; set; }
@@ -43,9 +44,11 @@ namespace ConfigBusinessEntity
         public virtual DbSet<GRLt04_configuracion_caja> GRLt04_configuracion_caja { get; set; }
         public virtual DbSet<LABt01_asistencia> LABt01_asistencia { get; set; }
         public virtual DbSet<LABt02_asistencia_ajustada> LABt02_asistencia_ajustada { get; set; }
-        public virtual DbSet<LABt03_emp_turno> LABt03_emp_turno { get; set; }
-        public virtual DbSet<LABt04_emp_turno_dtl> LABt04_emp_turno_dtl { get; set; }
+        public virtual DbSet<LABt03_horario_emp> LABt03_horario_emp { get; set; }
+        public virtual DbSet<LABt04_horario_emp_dtl> LABt04_horario_emp_dtl { get; set; }
         public virtual DbSet<LABt05_asistencia_temp_last> LABt05_asistencia_temp_last { get; set; }
+        public virtual DbSet<LABt06_trabajo> LABt06_trabajo { get; set; }
+        public virtual DbSet<LABt07_emp_trabajo> LABt07_emp_trabajo { get; set; }
         public virtual DbSet<MSTt01_medio_pago> MSTt01_medio_pago { get; set; }
         public virtual DbSet<MSTt02_descuento> MSTt02_descuento { get; set; }
         public virtual DbSet<MSTt03_tipo_orden> MSTt03_tipo_orden { get; set; }
@@ -68,8 +71,8 @@ namespace ConfigBusinessEntity
         public virtual DbSet<PERt04_empleado> PERt04_empleado { get; set; }
         public virtual DbSet<PERt05_categoria_emp> PERt05_categoria_emp { get; set; }
         public virtual DbSet<PERt06_clase_emp> PERt06_clase_emp { get; set; }
-        public virtual DbSet<PERt07_trabajo> PERt07_trabajo { get; set; }
-        public virtual DbSet<PERt08_emp_trabajo> PERt08_emp_trabajo { get; set; }
+        public virtual DbSet<PERt07_access_item> PERt07_access_item { get; set; }
+        public virtual DbSet<PERt08_security_access> PERt08_security_access { get; set; }
         public virtual DbSet<PROt01_marca> PROt01_marca { get; set; }
         public virtual DbSet<PROt02_modelo> PROt02_modelo { get; set; }
         public virtual DbSet<PROt03_familia> PROt03_familia { get; set; }
@@ -272,11 +275,6 @@ namespace ConfigBusinessEntity
 
             modelBuilder.Entity<CLIt08_funciones_vitales>()
                 .Property(e => e.cod_funciones_vitales)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CLIt08_funciones_vitales>()
-                .Property(e => e.fec_registro)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<CLIt08_funciones_vitales>()
@@ -704,18 +702,40 @@ namespace ConfigBusinessEntity
                 .Property(e => e.clock_out_status_ajust)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<LABt03_emp_turno>()
-                .Property(e => e.txt_estado)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LABt03_emp_turno>()
-                .HasMany(e => e.LABt04_emp_turno_dtl)
-                .WithRequired(e => e.LABt03_emp_turno)
+            modelBuilder.Entity<LABt03_horario_emp>()
+                .HasMany(e => e.LABt04_horario_emp_dtl)
+                .WithRequired(e => e.LABt03_horario_emp)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<LABt04_emp_turno_dtl>()
+            modelBuilder.Entity<LABt06_trabajo>()
+                .Property(e => e.cod_trabajo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt06_trabajo>()
+                .Property(e => e.txt_nombre)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt06_trabajo>()
+                .Property(e => e.txt_desc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt06_trabajo>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<LABt06_trabajo>()
+                .HasMany(e => e.LABt07_emp_trabajo)
+                .WithRequired(e => e.LABt06_trabajo)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<LABt07_emp_trabajo>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LABt07_emp_trabajo>()
+                .HasMany(e => e.LABt01_asistencia)
+                .WithRequired(e => e.LABt07_emp_trabajo)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MSTt01_medio_pago>()
                 .Property(e => e.cod_medio_pago)
@@ -761,11 +781,6 @@ namespace ConfigBusinessEntity
             modelBuilder.Entity<MSTt02_descuento>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<MSTt02_descuento>()
-                .HasMany(e => e.TNSt08_descuento_dtl)
-                .WithRequired(e => e.MSTt02_descuento)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MSTt03_tipo_orden>()
                 .Property(e => e.cod_tipo_orden)
@@ -874,11 +889,6 @@ namespace ConfigBusinessEntity
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MSTt06_impuesto>()
-                .HasMany(e => e.TNSt01_comp_recibido)
-                .WithRequired(e => e.MSTt06_impuesto)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<MSTt07_estado_civil>()
                 .Property(e => e.cod_estado_civil)
                 .IsUnicode(false);
@@ -944,11 +954,24 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<MSTt08_location>()
+                .Property(e => e.latitud)
+                .HasPrecision(9, 6);
+
+            modelBuilder.Entity<MSTt08_location>()
+                .Property(e => e.longitud)
+                .HasPrecision(9, 6);
+
+            modelBuilder.Entity<MSTt08_location>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
 
             modelBuilder.Entity<MSTt08_location>()
                 .HasMany(e => e.TNSt04_comp_emitido)
+                .WithRequired(e => e.MSTt08_location)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<MSTt08_location>()
+                .HasMany(e => e.TNSt01_comp_recibido)
                 .WithRequired(e => e.MSTt08_location)
                 .WillCascadeOnDelete(false);
 
@@ -1109,11 +1132,6 @@ namespace ConfigBusinessEntity
 
             modelBuilder.Entity<MSTt13_turno>()
                 .HasMany(e => e.CSHt01_caja_dtl)
-                .WithRequired(e => e.MSTt13_turno)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<MSTt13_turno>()
-                .HasMany(e => e.LABt03_emp_turno)
                 .WithRequired(e => e.MSTt13_turno)
                 .WillCascadeOnDelete(false);
 
@@ -1710,7 +1728,12 @@ namespace ConfigBusinessEntity
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERt04_empleado>()
-                .HasMany(e => e.LABt03_emp_turno)
+                .HasMany(e => e.LABt03_horario_emp)
+                .WithRequired(e => e.PERt04_empleado)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PERt04_empleado>()
+                .HasMany(e => e.LABt07_emp_trabajo)
                 .WithRequired(e => e.PERt04_empleado)
                 .WillCascadeOnDelete(false);
 
@@ -1733,11 +1756,6 @@ namespace ConfigBusinessEntity
                 .HasMany(e => e.TNSt08_descuento_dtl)
                 .WithOptional(e => e.PERt04_empleado)
                 .HasForeignKey(e => e.id_emp_autorizador);
-
-            modelBuilder.Entity<PERt04_empleado>()
-                .HasMany(e => e.PERt08_emp_trabajo)
-                .WithRequired(e => e.PERt04_empleado)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERt05_categoria_emp>()
                 .Property(e => e.cod_categoria_emp)
@@ -1771,34 +1789,22 @@ namespace ConfigBusinessEntity
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PERt07_trabajo>()
-                .Property(e => e.cod_trabajo)
-                .IsUnicode(false);
+            modelBuilder.Entity<PERt06_clase_emp>()
+                .HasMany(e => e.PERt08_security_access)
+                .WithRequired(e => e.PERt06_clase_emp)
+                .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PERt07_trabajo>()
-                .Property(e => e.txt_nombre)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PERt07_trabajo>()
+            modelBuilder.Entity<PERt07_access_item>()
                 .Property(e => e.txt_desc)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PERt07_trabajo>()
-                .Property(e => e.txt_estado)
+            modelBuilder.Entity<PERt07_access_item>()
+                .Property(e => e.app_code)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PERt07_trabajo>()
-                .HasMany(e => e.PERt08_emp_trabajo)
-                .WithRequired(e => e.PERt07_trabajo)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PERt08_emp_trabajo>()
-                .Property(e => e.txt_estado)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PERt08_emp_trabajo>()
-                .HasMany(e => e.LABt01_asistencia)
-                .WithRequired(e => e.PERt08_emp_trabajo)
+            modelBuilder.Entity<PERt07_access_item>()
+                .HasMany(e => e.PERt08_security_access)
+                .WithRequired(e => e.PERt07_access_item)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PROt01_marca>()
@@ -2107,6 +2113,11 @@ namespace ConfigBusinessEntity
             modelBuilder.Entity<PROt09_producto>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .HasMany(e => e.TNSt05_comp_emitido_dtl)
+                .WithRequired(e => e.PROt09_producto)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PROt09_producto>()
                 .HasMany(e => e.TNSt02_comp_recibido_dtl)
@@ -2440,16 +2451,6 @@ namespace ConfigBusinessEntity
 
             modelBuilder.Entity<SNTt06_unidad_medida>()
                 .HasMany(e => e.PROt11_receta_dtl)
-                .WithRequired(e => e.SNTt06_unidad_medida)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<SNTt06_unidad_medida>()
-                .HasMany(e => e.TNSt02_comp_recibido_dtl)
-                .WithRequired(e => e.SNTt06_unidad_medida)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<SNTt06_unidad_medida>()
-                .HasMany(e => e.TNSt05_comp_emitido_dtl)
                 .WithRequired(e => e.SNTt06_unidad_medida)
                 .WillCascadeOnDelete(false);
 
@@ -3015,10 +3016,6 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<TNSt01_comp_recibido>()
-                .Property(e => e.por_impto)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<TNSt01_comp_recibido>()
                 .Property(e => e.txt_observ)
                 .IsUnicode(false);
 
@@ -3079,6 +3076,94 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.tax_por01)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.tax_por02)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.tax_por03)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.tax_por04)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.tax_por05)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.tax_por07)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.tax_por08)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info01)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info02)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info03)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info04)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info05)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info06)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info07)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info08)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info09)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info10)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info_mto01)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info_mto02)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info_mto03)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info_mto04)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
+                .Property(e => e.info_mto05)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt01_comp_recibido>()
                 .Property(e => e.txt_usuario_modificador)
                 .IsUnicode(false);
 
@@ -3091,29 +3176,25 @@ namespace ConfigBusinessEntity
                 .IsUnicode(false);
 
             modelBuilder.Entity<TNSt01_comp_recibido>()
-                .HasMany(e => e.TNSt02_comp_recibido_dtl)
+                .HasMany(e => e.TNSt03_comp_recibido_estado)
                 .WithOptional(e => e.TNSt01_comp_recibido)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<TNSt01_comp_recibido>()
-                .HasMany(e => e.TNSt03_comp_recibido_estado)
-                .WithOptional(e => e.TNSt01_comp_recibido)
-                .WillCascadeOnDelete();
+                .HasMany(e => e.TNSt02_comp_recibido_dtl)
+                .WithRequired(e => e.TNSt01_comp_recibido)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
                 .Property(e => e.txt_producto)
                 .IsUnicode(false);
 
             modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
-                .Property(e => e.qt_comp)
+                .Property(e => e.cantidad)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
-                .Property(e => e.punit_sin_igv)
-                .HasPrecision(18, 8);
-
-            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
-                .Property(e => e.punit_con_igv)
+                .Property(e => e.peso)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
@@ -3121,20 +3202,108 @@ namespace ConfigBusinessEntity
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
-                .Property(e => e.punit_dscto_sin_igv)
+                .Property(e => e.mto_dscto_sin_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
-                .Property(e => e.punit_dscto_con_igv)
+                .Property(e => e.mto_dscto_con_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
-                .Property(e => e.mto_comp_sin_igv)
+                .Property(e => e.punit_sin_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
-                .Property(e => e.mto_comp_con_igv)
+                .Property(e => e.punit_con_tax)
                 .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por_tot)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto_tot)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por01)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por02)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por03)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por04)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por05)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por06)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por07)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_por08)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto01)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto02)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto03)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto04)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto05)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto06)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto07)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.tax_mto08)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.mto_vta_sin_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.mto_vta_con_tax)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.txt_observ)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TNSt02_comp_recibido_dtl>()
+                .Property(e => e.txt_estado)
+                .IsUnicode(false);
 
             modelBuilder.Entity<TNSt03_comp_recibido_estado>()
                 .Property(e => e.txt_estado)
@@ -3355,11 +3524,6 @@ namespace ConfigBusinessEntity
             modelBuilder.Entity<TNSt04_comp_emitido>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<TNSt04_comp_emitido>()
-                .HasMany(e => e.TNSt05_comp_emitido_dtl)
-                .WithOptional(e => e.TNSt04_comp_emitido)
-                .WillCascadeOnDelete();
 
             modelBuilder.Entity<TNSt05_comp_emitido_dtl>()
                 .Property(e => e.txt_producto)

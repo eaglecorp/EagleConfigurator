@@ -11,14 +11,14 @@ namespace ConfigBusinessEntity
         [Key]
         public long id_comp_emitido_dtl { get; set; }
 
-        public long? id_comp_emitido { get; set; }
+        public long id_comp_emitido { get; set; }
 
-        public long? id_producto { get; set; }
+        public long id_producto { get; set; }
 
         [StringLength(1000)]
         public string txt_producto { get; set; }
 
-        public int id_um { get; set; }
+        public int? id_um { get; set; }
 
         public decimal cantidad { get; set; }
 

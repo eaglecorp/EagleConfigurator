@@ -13,8 +13,8 @@ namespace ConfigBusinessEntity
         {
             PROt09_producto = new HashSet<PROt09_producto>();
             PROt11_receta_dtl = new HashSet<PROt11_receta_dtl>();
-            TNSt02_comp_recibido_dtl = new HashSet<TNSt02_comp_recibido_dtl>();
             TNSt05_comp_emitido_dtl = new HashSet<TNSt05_comp_emitido_dtl>();
+            TNSt02_comp_recibido_dtl = new HashSet<TNSt02_comp_recibido_dtl>();
         }
 
         [Key]
@@ -55,9 +55,9 @@ namespace ConfigBusinessEntity
         public virtual ICollection<PROt11_receta_dtl> PROt11_receta_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TNSt02_comp_recibido_dtl> TNSt02_comp_recibido_dtl { get; set; }
+        public virtual ICollection<TNSt05_comp_emitido_dtl> TNSt05_comp_emitido_dtl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TNSt05_comp_emitido_dtl> TNSt05_comp_emitido_dtl { get; set; }
+        public virtual ICollection<TNSt02_comp_recibido_dtl> TNSt02_comp_recibido_dtl { get; set; }
     }
 }

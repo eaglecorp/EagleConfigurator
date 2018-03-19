@@ -116,6 +116,8 @@
             this.lblSalHora = new MetroFramework.Controls.MetroLabel();
             this.txtSalMensual = new MetroFramework.Controls.MetroTextBox();
             this.lblSalMensual = new MetroFramework.Controls.MetroLabel();
+            this.tabPagTrabajo = new MetroFramework.Controls.MetroTabPage();
+            this.dgvConfigFiscalCaja = new System.Windows.Forms.DataGridView();
             this.tabPagEducacion = new MetroFramework.Controls.MetroTabPage();
             this.grbSkillsEducativas = new System.Windows.Forms.GroupBox();
             this.cboEspcMedica = new System.Windows.Forms.ComboBox();
@@ -174,10 +176,6 @@
             this.lblProvincia = new MetroFramework.Controls.MetroLabel();
             this.cboNacionalidad = new System.Windows.Forms.ComboBox();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
-            this.tabPagSeguridad = new MetroFramework.Controls.MetroTabPage();
-            this.grbSeguridad = new System.Windows.Forms.GroupBox();
-            this.txtIdPassword = new MetroFramework.Controls.MetroTextBox();
-            this.lblIdPassword = new MetroFramework.Controls.MetroLabel();
             this.tabPagInfoExtra = new MetroFramework.Controls.MetroTabPage();
             this.grbInfoExtra = new System.Windows.Forms.GroupBox();
             this.txtInfo10 = new MetroFramework.Controls.MetroTextBox();
@@ -214,14 +212,14 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.tabPagTrabajo = new MetroFramework.Controls.MetroTabPage();
-            this.dgvConfigFiscalCaja = new System.Windows.Forms.DataGridView();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             this.tabPagDetalles.SuspendLayout();
             this.grbLaboralSaludPen.SuspendLayout();
             this.grbSalario.SuspendLayout();
+            this.tabPagTrabajo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).BeginInit();
             this.tabPagEducacion.SuspendLayout();
             this.grbSkillsEducativas.SuspendLayout();
             this.tabPagContacto.SuspendLayout();
@@ -230,15 +228,11 @@
             this.tabPagDireccion.SuspendLayout();
             this.grbUbicacionDetallada.SuspendLayout();
             this.gbrUbigeo.SuspendLayout();
-            this.tabPagSeguridad.SuspendLayout();
-            this.grbSeguridad.SuspendLayout();
             this.tabPagInfoExtra.SuspendLayout();
             this.grbInfoExtra.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
-            this.tabPagTrabajo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).BeginInit();
             this.SuspendLayout();
             // 
             // tglListarInactivos
@@ -356,17 +350,16 @@
             // 
             // tabEmpleado
             // 
+            this.tabEmpleado.Controls.Add(this.tabPagTrabajo);
             this.tabEmpleado.Controls.Add(this.tabPagGeneral);
             this.tabEmpleado.Controls.Add(this.tabPagDetalles);
-            this.tabEmpleado.Controls.Add(this.tabPagTrabajo);
             this.tabEmpleado.Controls.Add(this.tabPagEducacion);
             this.tabEmpleado.Controls.Add(this.tabPagContacto);
             this.tabEmpleado.Controls.Add(this.tabPagDireccion);
-            this.tabEmpleado.Controls.Add(this.tabPagSeguridad);
             this.tabEmpleado.Controls.Add(this.tabPagInfoExtra);
             this.tabEmpleado.Location = new System.Drawing.Point(294, 105);
             this.tabEmpleado.Name = "tabEmpleado";
-            this.tabEmpleado.SelectedIndex = 2;
+            this.tabEmpleado.SelectedIndex = 0;
             this.tabEmpleado.Size = new System.Drawing.Size(586, 436);
             this.tabEmpleado.TabIndex = 1;
             this.tabEmpleado.UseSelectable = true;
@@ -1667,6 +1660,29 @@
             this.lblSalMensual.Text = "Salario Mensual:";
             this.lblSalMensual.UseCustomForeColor = true;
             // 
+            // tabPagTrabajo
+            // 
+            this.tabPagTrabajo.Controls.Add(this.dgvConfigFiscalCaja);
+            this.tabPagTrabajo.HorizontalScrollbarBarColor = true;
+            this.tabPagTrabajo.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagTrabajo.HorizontalScrollbarSize = 10;
+            this.tabPagTrabajo.Location = new System.Drawing.Point(4, 38);
+            this.tabPagTrabajo.Name = "tabPagTrabajo";
+            this.tabPagTrabajo.Size = new System.Drawing.Size(578, 394);
+            this.tabPagTrabajo.TabIndex = 7;
+            this.tabPagTrabajo.Text = "Trabajos";
+            this.tabPagTrabajo.VerticalScrollbarBarColor = true;
+            this.tabPagTrabajo.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagTrabajo.VerticalScrollbarSize = 10;
+            // 
+            // dgvConfigFiscalCaja
+            // 
+            this.dgvConfigFiscalCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 13);
+            this.dgvConfigFiscalCaja.Name = "dgvConfigFiscalCaja";
+            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(572, 378);
+            this.dgvConfigFiscalCaja.TabIndex = 3;
+            // 
             // tabPagEducacion
             // 
             this.tabPagEducacion.Controls.Add(this.grbSkillsEducativas);
@@ -2740,80 +2756,6 @@
             this.cboProvincia.TabIndex = 35;
             this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
             // 
-            // tabPagSeguridad
-            // 
-            this.tabPagSeguridad.Controls.Add(this.grbSeguridad);
-            this.tabPagSeguridad.HorizontalScrollbarBarColor = true;
-            this.tabPagSeguridad.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagSeguridad.HorizontalScrollbarSize = 10;
-            this.tabPagSeguridad.Location = new System.Drawing.Point(4, 38);
-            this.tabPagSeguridad.Name = "tabPagSeguridad";
-            this.tabPagSeguridad.Size = new System.Drawing.Size(578, 394);
-            this.tabPagSeguridad.TabIndex = 5;
-            this.tabPagSeguridad.Text = "Seguridad";
-            this.tabPagSeguridad.VerticalScrollbarBarColor = true;
-            this.tabPagSeguridad.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagSeguridad.VerticalScrollbarSize = 10;
-            // 
-            // grbSeguridad
-            // 
-            this.grbSeguridad.BackColor = System.Drawing.Color.Transparent;
-            this.grbSeguridad.Controls.Add(this.txtIdPassword);
-            this.grbSeguridad.Controls.Add(this.lblIdPassword);
-            this.grbSeguridad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbSeguridad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSeguridad.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbSeguridad.Location = new System.Drawing.Point(3, 14);
-            this.grbSeguridad.Name = "grbSeguridad";
-            this.grbSeguridad.Size = new System.Drawing.Size(555, 73);
-            this.grbSeguridad.TabIndex = 57;
-            this.grbSeguridad.TabStop = false;
-            this.grbSeguridad.Text = "Accesibilidad";
-            // 
-            // txtIdPassword
-            // 
-            this.txtIdPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtIdPassword.CustomButton.Image = null;
-            this.txtIdPassword.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtIdPassword.CustomButton.Name = "";
-            this.txtIdPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtIdPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtIdPassword.CustomButton.TabIndex = 1;
-            this.txtIdPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtIdPassword.CustomButton.UseSelectable = true;
-            this.txtIdPassword.CustomButton.Visible = false;
-            this.txtIdPassword.Lines = new string[0];
-            this.txtIdPassword.Location = new System.Drawing.Point(89, 31);
-            this.txtIdPassword.MaxLength = 32767;
-            this.txtIdPassword.Name = "txtIdPassword";
-            this.txtIdPassword.PasswordChar = '\0';
-            this.txtIdPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtIdPassword.SelectedText = "";
-            this.txtIdPassword.SelectionLength = 0;
-            this.txtIdPassword.SelectionStart = 0;
-            this.txtIdPassword.ShortcutsEnabled = true;
-            this.txtIdPassword.Size = new System.Drawing.Size(184, 23);
-            this.txtIdPassword.TabIndex = 11;
-            this.txtIdPassword.UseCustomBackColor = true;
-            this.txtIdPassword.UseSelectable = true;
-            this.txtIdPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtIdPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtIdPassword.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblIdPassword
-            // 
-            this.lblIdPassword.AutoSize = true;
-            this.lblIdPassword.ForeColor = System.Drawing.Color.Navy;
-            this.lblIdPassword.Location = new System.Drawing.Point(6, 33);
-            this.lblIdPassword.Name = "lblIdPassword";
-            this.lblIdPassword.Size = new System.Drawing.Size(82, 19);
-            this.lblIdPassword.TabIndex = 10;
-            this.lblIdPassword.Text = "ID Password:";
-            this.lblIdPassword.UseCustomForeColor = true;
-            // 
             // tabPagInfoExtra
             // 
             this.tabPagInfoExtra.Controls.Add(this.grbInfoExtra);
@@ -3508,29 +3450,6 @@
             this.lblNumReg.TabIndex = 108;
             this.lblNumReg.Text = "Total: ";
             // 
-            // tabPagTrabajo
-            // 
-            this.tabPagTrabajo.Controls.Add(this.dgvConfigFiscalCaja);
-            this.tabPagTrabajo.HorizontalScrollbarBarColor = true;
-            this.tabPagTrabajo.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagTrabajo.HorizontalScrollbarSize = 10;
-            this.tabPagTrabajo.Location = new System.Drawing.Point(4, 38);
-            this.tabPagTrabajo.Name = "tabPagTrabajo";
-            this.tabPagTrabajo.Size = new System.Drawing.Size(578, 394);
-            this.tabPagTrabajo.TabIndex = 7;
-            this.tabPagTrabajo.Text = "Trabajos";
-            this.tabPagTrabajo.VerticalScrollbarBarColor = true;
-            this.tabPagTrabajo.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagTrabajo.VerticalScrollbarSize = 10;
-            // 
-            // dgvConfigFiscalCaja
-            // 
-            this.dgvConfigFiscalCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 13);
-            this.dgvConfigFiscalCaja.Name = "dgvConfigFiscalCaja";
-            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(572, 378);
-            this.dgvConfigFiscalCaja.TabIndex = 3;
-            // 
             // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3564,6 +3483,8 @@
             this.grbLaboralSaludPen.PerformLayout();
             this.grbSalario.ResumeLayout(false);
             this.grbSalario.PerformLayout();
+            this.tabPagTrabajo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).EndInit();
             this.tabPagEducacion.ResumeLayout(false);
             this.grbSkillsEducativas.ResumeLayout(false);
             this.grbSkillsEducativas.PerformLayout();
@@ -3577,17 +3498,12 @@
             this.grbUbicacionDetallada.PerformLayout();
             this.gbrUbigeo.ResumeLayout(false);
             this.gbrUbigeo.PerformLayout();
-            this.tabPagSeguridad.ResumeLayout(false);
-            this.grbSeguridad.ResumeLayout(false);
-            this.grbSeguridad.PerformLayout();
             this.tabPagInfoExtra.ResumeLayout(false);
             this.grbInfoExtra.ResumeLayout(false);
             this.grbInfoExtra.PerformLayout();
             this.panelMantenimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
-            this.tabPagTrabajo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3770,14 +3686,10 @@
         private MetroFramework.Controls.MetroLink btnCategoriaEmp;
         private MetroFramework.Controls.MetroLink btnClaseEmp;
         private MetroFramework.Controls.MetroTabPage tabPagDireccion;
-        private MetroFramework.Controls.MetroTabPage tabPagSeguridad;
         private MetroFramework.Controls.MetroTabPage tabPagEducacion;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox grbUbicacionDetallada;
         private System.Windows.Forms.GroupBox gbrUbigeo;
-        private System.Windows.Forms.GroupBox grbSeguridad;
-        private MetroFramework.Controls.MetroTextBox txtIdPassword;
-        private MetroFramework.Controls.MetroLabel lblIdPassword;
         private MetroFramework.Controls.MetroTabPage tabPagTrabajo;
         private System.Windows.Forms.DataGridView dgvConfigFiscalCaja;
     }

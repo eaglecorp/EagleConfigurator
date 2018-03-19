@@ -158,9 +158,17 @@ namespace ConfigUtilitarios
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", headerFontSize, FontStyle.Regular);
         }
 
-        public static void DgvBaseStyle(DataGridView dgv)
+        public static void DgvBaseStyle(DataGridView dgv, int columnHeaderHeight = 25, int rowHeaderWidth = 25, bool centeHeaderTextColumn = false, int? rowsHeight = null)
         {
-            dgv.ColumnHeadersHeight = 25;
+            dgv.ColumnHeadersHeight = columnHeaderHeight;
+            dgv.RowHeadersWidth = rowHeaderWidth;
+
+            if (rowsHeight != null)
+                dgv.RowTemplate.Height = (int)rowsHeight;
+
+            if (centeHeaderTextColumn)
+                dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             dgv.EnableHeadersVisualStyles = false;
 
             dgv.BackgroundColor = Color.White;
@@ -170,7 +178,6 @@ namespace ConfigUtilitarios
             dgv.BorderStyle = BorderStyle.None;
 
             dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
-            dgv.RowHeadersWidth = 25;
 
             dgv.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
@@ -179,15 +186,17 @@ namespace ConfigUtilitarios
 
         }
 
-        public static void DgvBaseConfig(DataGridView dgv)
+        public static void DgvBaseConfig(DataGridView dgv, bool allowUserToResizeRows = false, bool resizeRowHeader = false)
         {
             dgv.MultiSelect = false;
             dgv.AllowUserToAddRows = false;
             dgv.AllowUserToDeleteRows = false;
-            dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+
+            if (!resizeRowHeader)
+                dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 
             dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            dgv.AllowUserToResizeRows = false;
+            dgv.AllowUserToResizeRows = allowUserToResizeRows;
 
         }
 
@@ -237,6 +246,16 @@ namespace ConfigUtilitarios
             }
         }
 
+        #endregion
+
+        #region DatePicker
+        public static void FormatDatePicker(DateTimePicker dateTimePicker, string customFormat, bool visible = true, bool showUpDown = true, DateTimePickerFormat format = DateTimePickerFormat.Custom)
+        {
+            dateTimePicker.ShowUpDown = showUpDown;
+            dateTimePicker.Visible = visible;
+            dateTimePicker.Format = format;
+            dateTimePicker.CustomFormat = customFormat;
+        }
         #endregion
 
     }

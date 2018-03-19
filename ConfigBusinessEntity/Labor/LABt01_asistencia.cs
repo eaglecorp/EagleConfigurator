@@ -40,7 +40,7 @@ namespace ConfigBusinessEntity
         public int sn_break_in { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public DateTime? clock_in { get; set; }
+        public DateTime clock_in { get; set; }
 
         [StringLength(50)]
         public string clock_in_status { get; set; }
@@ -76,6 +76,8 @@ namespace ConfigBusinessEntity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LABt02_asistencia_ajustada> LABt02_asistencia_ajustada { get; set; }
 
+        public virtual LABt07_emp_trabajo LABt07_emp_trabajo { get; set; }
+
         public virtual MSTt04_canal_vta MSTt04_canal_vta { get; set; }
 
         public virtual MSTt05_razon MSTt05_razon { get; set; }
@@ -83,7 +85,5 @@ namespace ConfigBusinessEntity
         public virtual MSTt08_location MSTt08_location { get; set; }
 
         public virtual PERt04_empleado PERt04_empleado { get; set; }
-
-        public virtual PERt08_emp_trabajo PERt08_emp_trabajo { get; set; }
     }
 }

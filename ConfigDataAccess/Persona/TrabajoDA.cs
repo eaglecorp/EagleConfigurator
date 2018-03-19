@@ -12,19 +12,20 @@ namespace ConfigDataAccess.Persona
 {
     public class TrabajoDA
     {
-        public List<PERt07_trabajo> ListaTrabajo(int? id_estado = null)
+
+        public List<LABt06_trabajo> ListaTrabajo(int? id_estado = null)
         {
-            var lista = new List<PERt07_trabajo>();
+            var lista = new List<LABt06_trabajo>();
             string sentencia = string.Empty;
             sentencia = (id_estado == null) ?
-                @"SELECT * FROM PERt07_trabajo" :
-                @"SELECT * FROM PERt07_trabajo WHERE id_estado=@id_estado";
+                @"SELECT * FROM LABt06_trabajo" :
+                @"SELECT * FROM LABt06_trabajo WHERE id_estado=@id_estado";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    lista = cnn.Query<PERt07_trabajo>(sentencia, new { id_estado }).ToList();
+                    lista = cnn.Query<LABt06_trabajo>(sentencia, new { id_estado }).ToList();
                 }
                 catch (Exception e)
                 {
@@ -34,14 +35,14 @@ namespace ConfigDataAccess.Persona
             }
             return lista;
         }
-        public int InsertarTrabajo(PERt07_trabajo obj)
+        public int InsertarTrabajo(LABt06_trabajo obj)
         {
             int id = 0;
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    ctx.PERt07_trabajo.Add(obj);
+                    ctx.LABt06_trabajo.Add(obj);
                     ctx.SaveChanges();
                     id = obj.id_trabajo;
                 }
@@ -63,7 +64,7 @@ namespace ConfigDataAccess.Persona
                     string txt_estado = Estado.TxtInactivo;
                     using (SqlCommand cmd = cnn.CreateCommand())
                     {
-                        cmd.CommandText = "UPDATE PERt07_trabajo SET id_estado = @id_estado, txt_estado = @txt_estado Where id_trabajo=@id";
+                        cmd.CommandText = "UPDATE LABt06_trabajo SET id_estado = @id_estado, txt_estado = @txt_estado Where id_trabajo=@id";
                         cmd.Parameters.AddWithValue("@id_estado", id_estado);
                         cmd.Parameters.AddWithValue("@txt_estado", txt_estado);
                         cmd.Parameters.AddWithValue("@id", id);
@@ -78,13 +79,13 @@ namespace ConfigDataAccess.Persona
                 }
             }
         }
-        public void ActualizarTrabajo(PERt07_trabajo actualizado)
+        public void ActualizarTrabajo(LABt06_trabajo actualizado)
         {
             using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    var original = ctx.PERt07_trabajo.Find(actualizado.id_trabajo);
+                    var original = ctx.LABt06_trabajo.Find(actualizado.id_trabajo);
                     if (original != null && original.id_trabajo > 0)
                     {
                         ctx.Entry(original).CurrentValues.SetValues(actualizado);
@@ -98,16 +99,16 @@ namespace ConfigDataAccess.Persona
                 }
             }
         }
-        public PERt07_trabajo TrabajoXId(int id)
+        public LABt06_trabajo TrabajoXId(int id)
         {
-            var obj = new PERt07_trabajo();
-            string sentencia = "SELECT * FROM PERt07_trabajo WHERE id_trabajo=@id";
+            var obj = new LABt06_trabajo();
+            string sentencia = "SELECT * FROM LABt06_trabajo WHERE id_trabajo=@id";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    obj = cnn.Query<PERt07_trabajo>(sentencia, new { id }).FirstOrDefault();
+                    obj = cnn.Query<LABt06_trabajo>(sentencia, new { id }).FirstOrDefault();
                 }
                 catch (Exception e)
                 {
@@ -117,16 +118,16 @@ namespace ConfigDataAccess.Persona
             }
             return obj;
         }
-        public PERt07_trabajo TrabajoXCod(string cod)
+        public LABt06_trabajo TrabajoXCod(string cod)
         {
-            var obj = new PERt07_trabajo();
-            string sentencia = "SELECT * FROM PERt07_trabajo WHERE cod_trabajo=@cod";
+            var obj = new LABt06_trabajo();
+            string sentencia = "SELECT * FROM LABt06_trabajo WHERE cod_trabajo=@cod";
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
                     cnn.Open();
-                    obj = cnn.Query<PERt07_trabajo>(sentencia, new { cod }).FirstOrDefault();
+                    obj = cnn.Query<LABt06_trabajo>(sentencia, new { cod }).FirstOrDefault();
                 }
                 catch (Exception e)
                 {
