@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\EagleMonthCalendar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Extensions\ColorExt.cs" />
     <Compile Include="HelperControl\Msg.cs" />
     <Compile Include="HelperGeneric\List\AlphaNumericComparer.cs" />

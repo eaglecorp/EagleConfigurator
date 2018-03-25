@@ -406,7 +406,7 @@ namespace ConfiguradorUI
 
         private void btnHorario_Click(object sender, EventArgs e)
         {
-            var form = new FormHorario();
+            var form = new FormHorarioEmpleado();
             form.ShowDialog();
         }
 
@@ -419,6 +419,5 @@ namespace ConfiguradorUI
         #endregion
 
         #endregion
-
     }
 }

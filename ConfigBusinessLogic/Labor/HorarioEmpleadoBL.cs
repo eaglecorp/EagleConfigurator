@@ -11,13 +11,13 @@ namespace ConfigBusinessLogic.Labor
             return new HorarioEmpleadoDA().InsertarHorario(obj);
         }
 
-        public IEnumerable<LABt03_horario_emp> ListaHorarioXEmpleado(long id)
+        public LABt03_horario_emp HorarioXEmpleado(long id_empleado)
         {
-            return new HorarioEmpleadoDA().ListaHorarioXEmpleado(id);
+            return new HorarioEmpleadoDA().HorarioXEmpleado(id_empleado);
         }
-        public void EliminarHorarioXEmpleado(long id)
+        public bool EliminarHorarioDtl(long id_horario_emp)
         {
-            new HorarioEmpleadoDA().EliminarHorarioXEmpleado(id);
+            return new HorarioEmpleadoDA().EliminarHorarioDtl(id_horario_emp);
         }
     }
 }

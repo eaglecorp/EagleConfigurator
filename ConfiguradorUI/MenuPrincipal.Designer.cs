@@ -106,7 +106,7 @@
             this.tabPanel.Controls.Add(this.tabPagLabor);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 4;
+            this.tabPanel.SelectedIndex = 0;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;

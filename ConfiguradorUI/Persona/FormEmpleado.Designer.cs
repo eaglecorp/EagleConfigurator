@@ -38,6 +38,8 @@
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.tabEmpleado = new MetroFramework.Controls.MetroTabControl();
+            this.tabPagTrabajo = new MetroFramework.Controls.MetroTabPage();
+            this.dgvConfigFiscalCaja = new System.Windows.Forms.DataGridView();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
             this.lblSuspLaboral = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -116,8 +118,6 @@
             this.lblSalHora = new MetroFramework.Controls.MetroLabel();
             this.txtSalMensual = new MetroFramework.Controls.MetroTextBox();
             this.lblSalMensual = new MetroFramework.Controls.MetroLabel();
-            this.tabPagTrabajo = new MetroFramework.Controls.MetroTabPage();
-            this.dgvConfigFiscalCaja = new System.Windows.Forms.DataGridView();
             this.tabPagEducacion = new MetroFramework.Controls.MetroTabPage();
             this.grbSkillsEducativas = new System.Windows.Forms.GroupBox();
             this.cboEspcMedica = new System.Windows.Forms.ComboBox();
@@ -214,12 +214,12 @@
             this.lblNumReg = new System.Windows.Forms.Label();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
+            this.tabPagTrabajo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).BeginInit();
             this.tabPagGeneral.SuspendLayout();
             this.tabPagDetalles.SuspendLayout();
             this.grbLaboralSaludPen.SuspendLayout();
             this.grbSalario.SuspendLayout();
-            this.tabPagTrabajo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).BeginInit();
             this.tabPagEducacion.SuspendLayout();
             this.grbSkillsEducativas.SuspendLayout();
             this.tabPagContacto.SuspendLayout();
@@ -350,19 +350,42 @@
             // 
             // tabEmpleado
             // 
-            this.tabEmpleado.Controls.Add(this.tabPagTrabajo);
             this.tabEmpleado.Controls.Add(this.tabPagGeneral);
             this.tabEmpleado.Controls.Add(this.tabPagDetalles);
             this.tabEmpleado.Controls.Add(this.tabPagEducacion);
             this.tabEmpleado.Controls.Add(this.tabPagContacto);
             this.tabEmpleado.Controls.Add(this.tabPagDireccion);
             this.tabEmpleado.Controls.Add(this.tabPagInfoExtra);
+            this.tabEmpleado.Controls.Add(this.tabPagTrabajo);
             this.tabEmpleado.Location = new System.Drawing.Point(294, 105);
             this.tabEmpleado.Name = "tabEmpleado";
             this.tabEmpleado.SelectedIndex = 0;
             this.tabEmpleado.Size = new System.Drawing.Size(586, 436);
             this.tabEmpleado.TabIndex = 1;
             this.tabEmpleado.UseSelectable = true;
+            // 
+            // tabPagTrabajo
+            // 
+            this.tabPagTrabajo.Controls.Add(this.dgvConfigFiscalCaja);
+            this.tabPagTrabajo.HorizontalScrollbarBarColor = true;
+            this.tabPagTrabajo.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagTrabajo.HorizontalScrollbarSize = 10;
+            this.tabPagTrabajo.Location = new System.Drawing.Point(4, 38);
+            this.tabPagTrabajo.Name = "tabPagTrabajo";
+            this.tabPagTrabajo.Size = new System.Drawing.Size(578, 394);
+            this.tabPagTrabajo.TabIndex = 7;
+            this.tabPagTrabajo.Text = "Trabajos";
+            this.tabPagTrabajo.VerticalScrollbarBarColor = true;
+            this.tabPagTrabajo.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagTrabajo.VerticalScrollbarSize = 10;
+            // 
+            // dgvConfigFiscalCaja
+            // 
+            this.dgvConfigFiscalCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 13);
+            this.dgvConfigFiscalCaja.Name = "dgvConfigFiscalCaja";
+            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(572, 378);
+            this.dgvConfigFiscalCaja.TabIndex = 3;
             // 
             // tabPagGeneral
             // 
@@ -1659,29 +1682,6 @@
             this.lblSalMensual.TabIndex = 8;
             this.lblSalMensual.Text = "Salario Mensual:";
             this.lblSalMensual.UseCustomForeColor = true;
-            // 
-            // tabPagTrabajo
-            // 
-            this.tabPagTrabajo.Controls.Add(this.dgvConfigFiscalCaja);
-            this.tabPagTrabajo.HorizontalScrollbarBarColor = true;
-            this.tabPagTrabajo.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagTrabajo.HorizontalScrollbarSize = 10;
-            this.tabPagTrabajo.Location = new System.Drawing.Point(4, 38);
-            this.tabPagTrabajo.Name = "tabPagTrabajo";
-            this.tabPagTrabajo.Size = new System.Drawing.Size(578, 394);
-            this.tabPagTrabajo.TabIndex = 7;
-            this.tabPagTrabajo.Text = "Trabajos";
-            this.tabPagTrabajo.VerticalScrollbarBarColor = true;
-            this.tabPagTrabajo.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagTrabajo.VerticalScrollbarSize = 10;
-            // 
-            // dgvConfigFiscalCaja
-            // 
-            this.dgvConfigFiscalCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 13);
-            this.dgvConfigFiscalCaja.Name = "dgvConfigFiscalCaja";
-            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(572, 378);
-            this.dgvConfigFiscalCaja.TabIndex = 3;
             // 
             // tabPagEducacion
             // 
@@ -3475,6 +3475,8 @@
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();
             this.tabEmpleado.ResumeLayout(false);
+            this.tabPagTrabajo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).EndInit();
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
             this.tabPagDetalles.ResumeLayout(false);
@@ -3483,8 +3485,6 @@
             this.grbLaboralSaludPen.PerformLayout();
             this.grbSalario.ResumeLayout(false);
             this.grbSalario.PerformLayout();
-            this.tabPagTrabajo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConfigFiscalCaja)).EndInit();
             this.tabPagEducacion.ResumeLayout(false);
             this.grbSkillsEducativas.ResumeLayout(false);
             this.grbSkillsEducativas.PerformLayout();

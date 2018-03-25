@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Labor
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Labor
 {
     partial class FormHorario
     {
@@ -55,7 +57,7 @@
             this.lblTurno = new MetroFramework.Controls.MetroLabel();
             this.lblMes = new MetroFramework.Controls.MetroLabel();
             this.dgvSemana = new System.Windows.Forms.DataGridView();
-            this.mcaMes = new System.Windows.Forms.MonthCalendar();
+            this.mcaMes = new EagleMonthCalendar();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.grbDatosEmpleado.SuspendLayout();
@@ -480,7 +482,7 @@
         private MetroFramework.Controls.MetroLabel lblTurno;
         private MetroFramework.Controls.MetroLabel lblMes;
         private System.Windows.Forms.DataGridView dgvSemana;
-        private System.Windows.Forms.MonthCalendar mcaMes;
+        private EagleMonthCalendar mcaMes;
         private System.Windows.Forms.ComboBox cboTurno;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;

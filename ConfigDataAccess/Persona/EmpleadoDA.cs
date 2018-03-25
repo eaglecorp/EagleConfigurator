@@ -264,21 +264,21 @@ namespace ConfigDataAccess.Persona
             }
             return obj;
         }
-
-
         public PERt04_empleado EmpleadoXNroDoc(string nro_doc)
         {
             var obj = new PERt04_empleado();
-            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            const string sentencia = "SELECT * FROM PERt04_empleado WHERE nro_doc=@nro_doc";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
                 {
-                    obj = ctx.PERt04_empleado.FirstOrDefault(x => x.nro_doc == nro_doc);
+                    cnn.Open();
+                    obj = cnn.Query<PERt04_empleado>(sentencia, new { nro_doc }).FirstOrDefault();
                 }
                 catch (Exception e)
                 {
                     var log = new Log();
-                    log.ArchiveLog("Búsqueda Empleado por número de documento: ", e.Message);
+                    log.ArchiveLog("Búsqueda Empleado por Nro. Doc: ", e.Message);
                 }
             }
             return obj;
