@@ -2,6 +2,7 @@
 using ConfigBusinessLogic.Maestro;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.HelperControl;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -34,13 +35,18 @@ namespace ConfiguradorUI.Maestro
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
+            var txtsNumeric = new[]
+            {
+                 txtLatitud, txtLongitud
+            };
+
             var txts = new[] { txtNombre, txtCodigo,txtAbrev01,txtAbrev02,
                                 txtDato01,txtDato02,txtDato03,txtDato04,
                                 txtFono01,txtFono02,txtNumRuc,txtDireccion01,
                                 txtDireccion02};
-            foreach (var txt in txts)
+            foreach (var txt in txts.Union(txtsNumeric))
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
 
@@ -57,13 +63,13 @@ namespace ConfiguradorUI.Maestro
             {
                 chk.CheckedChanged += new EventHandler(OnContentChanged);
             }
-
-            var dtps = new[] { dtpFechaNegocio };
-            foreach (var dtp in dtps)
+            foreach (var txtNum in txtsNumeric)
             {
-                dtp.ValueChanged += new EventHandler(OnContentChanged);
-                dtp.CloseUp += new EventHandler(OnContentChanged);
+                txtNum.KeyPress += ControlHelper.TxtValidAllDecimal;
             }
+
+            dtpFechaNegocio.ValueChanged += new EventHandler(OnContentChanged);
+            dtpFechaNegocio.CloseUp += new EventHandler(OnContentChanged);
 
         }
 
@@ -87,7 +93,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt08_location();
                         obj = GetObjeto();
@@ -156,7 +162,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt08_location();
                         obj = GetObjeto();
@@ -185,7 +191,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt08_location();
                         obj = GetObjeto();
@@ -235,6 +241,16 @@ namespace ConfiguradorUI.Maestro
                 obj.txt_datos3 = txtDato03.Text.Trim();
                 obj.txt_datos4 = txtDato04.Text.Trim();
 
+
+                if (decimal.TryParse(txtLatitud.Text.Trim(), out decimal latitudTemp))
+                {
+                    obj.latitud = latitudTemp;
+                }
+                if (decimal.TryParse(txtLongitud.Text.Trim(), out decimal longitudTemp))
+                {
+                    obj.longitud = longitudTemp;
+                }
+
                 obj.sn_almacen = chkAlmacen.Checked ? 1 : 0;
                 obj.sn_location_current = chkLocationActual.Checked ? 1 : 0;
 
@@ -243,7 +259,7 @@ namespace ConfiguradorUI.Maestro
             }
             catch (Exception e)
             {
-                MessageBox.Show(this, "Excepción en el Get: " + e.Message);
+                Msg.Ok_Err("Excepción en el Get: " + e.Message);
             }
 
             return obj;
@@ -273,6 +289,8 @@ namespace ConfiguradorUI.Maestro
                 txtAbrev01.Text = obj.txt_abrev1;
                 txtAbrev02.Text = obj.txt_abrev2;
                 txtNumRuc.Text = obj.nro_ruc;
+                txtLatitud.Text = obj.latitud?.RemoveTrailingZeros();
+                txtLongitud.Text = obj.longitud?.RemoveTrailingZeros();
                 txtFono01.Text = obj.fono1;
                 txtFono02.Text = obj.fono2;
                 txtDato01.Text = obj.txt_datos1;
@@ -290,7 +308,7 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             errorProv.Clear();
@@ -351,7 +369,28 @@ namespace ConfiguradorUI.Maestro
                     no_error = false;
                 }
             }
-            //Se podría validar que no tenga hijas al desactivar.
+
+            if (no_error)
+            {
+                var latitudTxt = txtLatitud.Text.Trim();
+                var longitudTxt = txtLongitud.Text.Trim();
+
+                if (decimal.TryParse(longitudTxt, out decimal longitud) && (longitud > 180 || longitud < -180))
+                {
+                    tabLocation.SelectedTab = tabPagGeneral;
+                    errorProv.SetError(txtLongitud, "La longitud debe ser un número entre -180 y 180.");
+                    txtLongitud.Focus();
+                    no_error = false;
+                }
+
+                if (decimal.TryParse(latitudTxt, out decimal latitud) && (latitud > 90 || latitud < -90))
+                {
+                    tabLocation.SelectedTab = tabPagGeneral;
+                    errorProv.SetError(txtLatitud, "La latitud debe ser un número entre -90 y 90.");
+                    txtLatitud.Focus();
+                    no_error = false;
+                }
+            }
 
             return no_error;
         }
@@ -502,6 +541,8 @@ namespace ConfiguradorUI.Maestro
             txtAbrev01.Clear();
             txtAbrev02.Clear();
             txtNumRuc.Clear();
+            txtLatitud.Clear();
+            txtLongitud.Clear();
             txtFono01.Clear();
             txtFono02.Clear();
             txtDato01.Clear();
@@ -712,6 +753,8 @@ namespace ConfiguradorUI.Maestro
             txtDato02.MaxLength = 150;
             txtDato03.MaxLength = 150;
             txtDato04.MaxLength = 150;
+            txtLatitud.MaxLength = 11;
+            txtLongitud.MaxLength = 11;
         }
         private void ContarEstados(List<MSTt08_location> lista)
         {
@@ -751,7 +794,7 @@ namespace ConfiguradorUI.Maestro
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }

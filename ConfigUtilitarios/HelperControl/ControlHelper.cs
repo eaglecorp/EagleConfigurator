@@ -20,13 +20,38 @@ namespace ConfigUtilitarios
 
         public static void TxtValidDecimal(object sender, KeyPressEventArgs e)
         {
-            MetroTextBox txt = (MetroTextBox)sender;
+            var txt = (MetroTextBox)sender;
             if (e.KeyChar >= '0' && e.KeyChar <= '9' || char.IsControl(e.KeyChar))
+            {
                 e.Handled = false;
+            }
             else
             {
                 if (e.KeyChar == '.')
                     e.Handled = txt.Text.Contains(".") || txt.Text.Equals("") ? true : false;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        public static void TxtValidAllDecimal(object sender, KeyPressEventArgs e)
+        {
+            var txt = (MetroTextBox)sender;
+            if (e.KeyChar >= '0' && e.KeyChar <= '9' || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (e.KeyChar == '.')
+                {
+                    e.Handled = txt.Text.Contains(".") || txt.Text.Equals("") ? true : false;
+                }
+                else if (e.KeyChar == '-')
+                {
+                    var selectionStart = txt.SelectionStart;
+                    e.Handled = (!txt.Text.Contains("-") && selectionStart == 0) || (txt.SelectionLength == txt.Text.Length)? false : true;
+                }
                 else
                     e.Handled = true;
             }
