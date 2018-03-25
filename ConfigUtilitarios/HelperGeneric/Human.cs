@@ -8,7 +8,7 @@ namespace ConfigUtilitarios.HelperGeneric
 {
     public class Human
     {
-        public static string Nombre(string apPaterno, string apMaterno, string primerNom, string segundoNom = null, string rznSocial = null)
+        public static string Nombre(string apPaterno, string primerNom, string apMaterno = null, string segundoNom = null, string rznSocial = null)
         {
             string nombre = "";
             if (apPaterno != null && apPaterno.Trim() != "")

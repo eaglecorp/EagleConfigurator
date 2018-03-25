@@ -4,6 +4,7 @@ using ConfigBusinessLogic.Persona;
 using ConfigBusinessLogic.Sunat;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.HelperGeneric;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -95,7 +96,7 @@ namespace ConfiguradorUI.Persona
             cboNacionalidad.DropDownWidth = ControlHelper.DropDownWidth(cboNacionalidad);
 
         }
-        
+
         protected void OnContentChanged(object sender, EventArgs e)
         {
             //Eliminar y agregar eventos... etc etc..
@@ -845,7 +846,7 @@ namespace ConfiguradorUI.Persona
                 cboDepartamento.DataSource = null;
                 cboDepartamento.DisplayMember = "txt_desc";
                 cboDepartamento.ValueMember = "id_dpto";
-                cboDepartamento.DataSource = new DepartamentoBL().ListaDepartamento(Estado.IdActivo,true);
+                cboDepartamento.DataSource = new DepartamentoBL().ListaDepartamento(Estado.IdActivo, true);
 
                 cboProvincia.DataSource = null;
                 cboProvincia.DisplayMember = "txt_desc";
@@ -880,37 +881,19 @@ namespace ConfiguradorUI.Persona
                 MessageBox.Show(this, "Ocurrió una excepción al cargar los combos: " + e.Message, "MENSAJE");
             }
         }
-        private string Nombre(string apPaterno, string primerNom, string rznSocial)
-        {
-            string nombre = "";
-            if (apPaterno != null && apPaterno.Trim() != "")
-            {
-                nombre = apPaterno + " ";
-            }
-            if (primerNom != null && primerNom.Trim() != "")
-            {
-                nombre += primerNom + " ";
-            }
-            if (rznSocial != null && rznSocial.Trim() != "")
-            {
-                if (nombre.Length > 0)
-                {
-                    nombre += "| " + rznSocial;
-                }
-                else
-                {
-                    nombre = rznSocial;
-                }
-            }
-            return nombre;
-        }
         private void CargarGrilla(int? id_estado = null)
         {
             try
             {
                 var lista = new ClienteBL().ListaCliente(id_estado, true);
-                var listaView = lista.Select(x => new { x.id_cliente, CODIGO = x.cod_cliente, NOMBRE = Nombre(x.txt_ape_pat, x.txt_pri_nom, x.txt_rzn_social) })
-                                    .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
+                var listaView = lista.Select(x => new
+                {
+                    x.id_cliente,
+                    CODIGO = x.cod_cliente,
+                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, rznSocial: x.txt_rzn_social)
+                })
+                .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
+
                 if (lista != null)
                 {
                     ContarEstados(lista);

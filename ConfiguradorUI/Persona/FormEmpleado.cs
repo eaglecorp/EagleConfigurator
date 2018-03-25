@@ -16,6 +16,7 @@ using MetroFramework.Controls;
 using ConfigBusinessLogic.Seguridad;
 using ConfigUtilitarios.KeyValues;
 using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.HelperGeneric;
 
 namespace ConfiguradorUI.Persona
 {
@@ -347,7 +348,7 @@ namespace ConfiguradorUI.Persona
 
                 obj.nro_cuenta = txtNumCuenta.Text.Trim();
 
-              
+
 
                 if (string.IsNullOrEmpty(txtNumHorasMes.Text)
                 || string.IsNullOrWhiteSpace(txtNumHorasMes.Text))
@@ -552,7 +553,7 @@ namespace ConfiguradorUI.Persona
                 txtSalQuincenal.Text = (obj.salario_quincenal == null) ? "" : obj.salario_quincenal.RemoveTrailingZeros();
                 txtSalHora.Text = (obj.salario_hora == null) ? "" : obj.salario_hora.RemoveTrailingZeros();
 
-               
+
 
                 if (obj.sexo != null)
                 {
@@ -1439,36 +1440,17 @@ namespace ConfiguradorUI.Persona
                 MessageBox.Show(this, "Ocurrió una excepción al cargar los combos: " + e.Message, "MENSAJE");
             }
         }
-        private string Nombre(string apPaterno, string primerNom, string rznSocial)
-        {
-            string nombre = "";
-            if (apPaterno != null && apPaterno.Trim() != "")
-            {
-                nombre = apPaterno + " ";
-            }
-            if (primerNom != null && primerNom.Trim() != "")
-            {
-                nombre += primerNom + " ";
-            }
-            if (rznSocial != null && rznSocial.Trim() != "")
-            {
-                if (nombre.Length > 0)
-                {
-                    nombre += "| " + rznSocial;
-                }
-                else
-                {
-                    nombre = rznSocial;
-                }
-            }
-            return nombre;
-        }
         private void CargarGrilla(int? id_estado = null)
         {
             try
             {
                 var lista = new EmpleadoBL().ListaEmpleado(id_estado, true);
-                var listaView = lista.Select(x => new { x.id_empleado, CODIGO = x.cod_empleado, NOMBRE = Nombre(x.txt_ape_pat, x.txt_pri_nom, x.txt_rzn_social) })
+                var listaView = lista.Select(x => new
+                {
+                    x.id_empleado,
+                    CODIGO = x.cod_empleado,
+                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, rznSocial: x.txt_rzn_social)
+                })
                                     .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 
                 if (lista != null)

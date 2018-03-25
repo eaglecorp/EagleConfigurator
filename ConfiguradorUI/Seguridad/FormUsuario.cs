@@ -307,7 +307,7 @@ namespace ConfiguradorUI.Seguridad
                     var emp = new EmpleadoBL().EmpleadoXIdMM(idEmp);
                     if (emp != null && emp.id_empleado > 0)
                     {
-                        string nombreCompleto = Human.Nombre(emp.txt_ape_pat, emp.txt_ape_mat, emp.txt_pri_nom, emp.txt_seg_nom, emp.txt_rzn_social);
+                        string nombreCompleto = Human.Nombre(emp.txt_ape_pat, emp.txt_pri_nom, emp.txt_ape_mat, emp.txt_seg_nom, emp.txt_rzn_social);
                         txtNombreEmpleado.Text = nombreCompleto.ToUpper();
                     }
                 }

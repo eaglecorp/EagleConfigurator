@@ -4,6 +4,7 @@ using ConfigBusinessLogic.Persona;
 using ConfigBusinessLogic.Sunat;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.HelperGeneric;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -875,7 +876,7 @@ namespace ConfiguradorUI.Persona
                 cboEstadoCivil.DataSource = null;
                 cboEstadoCivil.DisplayMember = "txt_desc";
                 cboEstadoCivil.ValueMember = "id_estado_civil";
-                cboEstadoCivil.DataSource = new EstadoCivilBL().ListaEstadoCivil(Estado.IdActivo,false,true);
+                cboEstadoCivil.DataSource = new EstadoCivilBL().ListaEstadoCivil(Estado.IdActivo, false, true);
 
                 cboTipoDocIdentidad.DataSource = null;
                 cboTipoDocIdentidad.DisplayMember = "txt_abrv";
@@ -885,7 +886,7 @@ namespace ConfiguradorUI.Persona
                 cboDepartamento.DataSource = null;
                 cboDepartamento.DisplayMember = "txt_desc";
                 cboDepartamento.ValueMember = "id_dpto";
-                cboDepartamento.DataSource = new DepartamentoBL().ListaDepartamento(Estado.IdActivo,true);
+                cboDepartamento.DataSource = new DepartamentoBL().ListaDepartamento(Estado.IdActivo, true);
 
                 cboProvincia.DataSource = null;
                 cboProvincia.DisplayMember = "txt_desc";
@@ -921,36 +922,17 @@ namespace ConfiguradorUI.Persona
                 MessageBox.Show(this, "Ocurrió una excepción al cargar los combos: " + e.Message, "MENSAJE");
             }
         }
-        private string Nombre(string apPaterno, string primerNom, string rznSocial)
-        {
-            string nombre = "";
-            if (apPaterno != null && apPaterno.Trim() != "")
-            {
-                nombre = apPaterno + " ";
-            }
-            if (primerNom != null && primerNom.Trim() != "")
-            {
-                nombre += primerNom + " ";
-            }
-            if (rznSocial != null && rznSocial.Trim() != "")
-            {
-                if (nombre.Length > 0)
-                {
-                    nombre += "| " + rznSocial;
-                }
-                else
-                {
-                    nombre = rznSocial;
-                }
-            }
-            return nombre;
-        }
         private void CargarGrilla(int? id_estado = null)
         {
             try
             {
                 var lista = new ProveedorBL().ListaProveedor(id_estado, true);
-                var listaView = lista.Select(x => new { x.id_proveedor, CODIGO = x.cod_proveedor, NOMBRE = Nombre(x.txt_ape_pat, x.txt_pri_nom, x.txt_rzn_social) })
+                var listaView = lista.Select(x => new
+                {
+                    x.id_proveedor,
+                    CODIGO = x.cod_proveedor,
+                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, rznSocial: x.txt_rzn_social)
+                })
                                         .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
                 if (lista != null)
                 {
@@ -1045,7 +1027,6 @@ namespace ConfiguradorUI.Persona
         }
 
         #endregion
-
 
         #region Eventos de ventana
 
@@ -1158,7 +1139,8 @@ namespace ConfiguradorUI.Persona
                 cboProvincia.DisplayMember = "txt_desc";
                 cboProvincia.ValueMember = "id_prov";
                 cboProvincia.DataSource = new ProvinciaBL().ListaProvinciaXDep(int.Parse(cboDepartamento.SelectedValue.ToString()), Estado.IdActivo);
-            }else cboProvincia.DataSource = null;
+            }
+            else cboProvincia.DataSource = null;
 
             cboProvincia.DropDownWidth = ControlHelper.DropDownWidth(cboProvincia);
 
@@ -1173,7 +1155,8 @@ namespace ConfiguradorUI.Persona
                 cboDistrito.DisplayMember = "txt_desc";
                 cboDistrito.ValueMember = "id_dist";
                 cboDistrito.DataSource = new DistritoBL().ListaDistritoXProv(int.Parse(cboProvincia.SelectedValue.ToString()), Estado.IdActivo);
-            } else cboDistrito.DataSource = null;
+            }
+            else cboDistrito.DataSource = null;
 
             cboDistrito.DropDownWidth = ControlHelper.DropDownWidth(cboDistrito);
 

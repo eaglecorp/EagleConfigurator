@@ -46,6 +46,11 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabUsuario = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtIdPassword = new MetroFramework.Controls.MetroTextBox();
+            this.lblIdPassword = new MetroFramework.Controls.MetroLabel();
+            this.btnEnviarCredenciales = new System.Windows.Forms.Button();
+            this.btnCambiarContrasena = new System.Windows.Forms.Button();
             this.txtNombreEmpleado = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -62,11 +67,6 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.btnCambiarContrasena = new System.Windows.Forms.Button();
-            this.btnEnviarCredenciales = new System.Windows.Forms.Button();
-            this.txtIdPassword = new MetroFramework.Controls.MetroTextBox();
-            this.lblIdPassword = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -85,7 +85,7 @@
             this.dgvUsuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvUsuario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvUsuario.Location = new System.Drawing.Point(42, 141);
+            this.dgvUsuario.Location = new System.Drawing.Point(42, 138);
             this.dgvUsuario.MultiSelect = false;
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -106,7 +106,7 @@
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(314, 346);
+            this.panelFiltro.Location = new System.Drawing.Point(314, 343);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
             this.panelFiltro.TabIndex = 3;
@@ -199,7 +199,7 @@
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(314, 50);
+            this.panelMantenimiento.Location = new System.Drawing.Point(314, 47);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -289,7 +289,7 @@
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(140, 121);
+            this.tglListarInactivos.Location = new System.Drawing.Point(140, 118);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -300,7 +300,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(42, 119);
+            this.lblListarInactivos.Location = new System.Drawing.Point(42, 116);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;
@@ -309,7 +309,7 @@
             // tabUsuario
             // 
             this.tabUsuario.Controls.Add(this.tabPagGeneral);
-            this.tabUsuario.Location = new System.Drawing.Point(314, 106);
+            this.tabUsuario.Location = new System.Drawing.Point(314, 103);
             this.tabUsuario.Name = "tabUsuario";
             this.tabUsuario.SelectedIndex = 0;
             this.tabUsuario.Size = new System.Drawing.Size(562, 234);
@@ -343,6 +343,99 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel2.Location = new System.Drawing.Point(279, 108);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(205, 19);
+            this.metroLabel2.TabIndex = 91;
+            this.metroLabel2.Text = "(Código de acceso rápido al pos)";
+            this.metroLabel2.UseCustomForeColor = true;
+            // 
+            // txtIdPassword
+            // 
+            this.txtIdPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtIdPassword.CustomButton.Image = null;
+            this.txtIdPassword.CustomButton.Location = new System.Drawing.Point(161, 1);
+            this.txtIdPassword.CustomButton.Name = "";
+            this.txtIdPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtIdPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtIdPassword.CustomButton.TabIndex = 1;
+            this.txtIdPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtIdPassword.CustomButton.UseSelectable = true;
+            this.txtIdPassword.CustomButton.Visible = false;
+            this.txtIdPassword.Lines = new string[0];
+            this.txtIdPassword.Location = new System.Drawing.Point(83, 106);
+            this.txtIdPassword.MaxLength = 32767;
+            this.txtIdPassword.Name = "txtIdPassword";
+            this.txtIdPassword.PasswordChar = '\0';
+            this.txtIdPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtIdPassword.SelectedText = "";
+            this.txtIdPassword.SelectionLength = 0;
+            this.txtIdPassword.SelectionStart = 0;
+            this.txtIdPassword.ShortcutsEnabled = true;
+            this.txtIdPassword.Size = new System.Drawing.Size(183, 23);
+            this.txtIdPassword.TabIndex = 90;
+            this.txtIdPassword.UseCustomBackColor = true;
+            this.txtIdPassword.UseSelectable = true;
+            this.txtIdPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtIdPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdPassword.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblIdPassword
+            // 
+            this.lblIdPassword.AutoSize = true;
+            this.lblIdPassword.ForeColor = System.Drawing.Color.Navy;
+            this.lblIdPassword.Location = new System.Drawing.Point(5, 108);
+            this.lblIdPassword.Name = "lblIdPassword";
+            this.lblIdPassword.Size = new System.Drawing.Size(82, 19);
+            this.lblIdPassword.TabIndex = 89;
+            this.lblIdPassword.Text = "Id password:";
+            this.lblIdPassword.UseCustomForeColor = true;
+            // 
+            // btnEnviarCredenciales
+            // 
+            this.btnEnviarCredenciales.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnEnviarCredenciales.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEnviarCredenciales.FlatAppearance.BorderSize = 0;
+            this.btnEnviarCredenciales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnEnviarCredenciales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnEnviarCredenciales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarCredenciales.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarCredenciales.ForeColor = System.Drawing.Color.White;
+            this.btnEnviarCredenciales.Location = new System.Drawing.Point(372, 160);
+            this.btnEnviarCredenciales.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
+            this.btnEnviarCredenciales.Name = "btnEnviarCredenciales";
+            this.btnEnviarCredenciales.Size = new System.Drawing.Size(161, 30);
+            this.btnEnviarCredenciales.TabIndex = 88;
+            this.btnEnviarCredenciales.Text = "Enviar credenciales";
+            this.btnEnviarCredenciales.UseVisualStyleBackColor = false;
+            this.btnEnviarCredenciales.Click += new System.EventHandler(this.btnEnviarCredenciales_Click);
+            // 
+            // btnCambiarContrasena
+            // 
+            this.btnCambiarContrasena.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCambiarContrasena.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCambiarContrasena.FlatAppearance.BorderSize = 0;
+            this.btnCambiarContrasena.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnCambiarContrasena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCambiarContrasena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarContrasena.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarContrasena.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarContrasena.Location = new System.Drawing.Point(207, 160);
+            this.btnCambiarContrasena.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
+            this.btnCambiarContrasena.Name = "btnCambiarContrasena";
+            this.btnCambiarContrasena.Size = new System.Drawing.Size(161, 30);
+            this.btnCambiarContrasena.TabIndex = 87;
+            this.btnCambiarContrasena.Text = "Cambiar Contraseña";
+            this.btnCambiarContrasena.UseVisualStyleBackColor = false;
+            this.btnCambiarContrasena.Click += new System.EventHandler(this.btnCambiarContrasena_Click);
             // 
             // txtNombreEmpleado
             // 
@@ -514,7 +607,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(92, 54);
+            this.lblNombreForm.Location = new System.Drawing.Point(92, 51);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(103, 32);
             this.lblNombreForm.TabIndex = 88;
@@ -525,7 +618,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(30, 42);
+            this.btnCerrar.Location = new System.Drawing.Point(30, 39);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 6;
@@ -550,7 +643,7 @@
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(184, 373);
+            this.lblNumInactivo.Location = new System.Drawing.Point(184, 370);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -563,7 +656,7 @@
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(104, 373);
+            this.lblNumActivo.Location = new System.Drawing.Point(104, 370);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -576,105 +669,12 @@
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(37, 373);
+            this.lblNumReg.Location = new System.Drawing.Point(37, 370);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
-            // 
-            // btnCambiarContrasena
-            // 
-            this.btnCambiarContrasena.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCambiarContrasena.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCambiarContrasena.FlatAppearance.BorderSize = 0;
-            this.btnCambiarContrasena.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnCambiarContrasena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnCambiarContrasena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarContrasena.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarContrasena.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarContrasena.Location = new System.Drawing.Point(207, 160);
-            this.btnCambiarContrasena.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
-            this.btnCambiarContrasena.Name = "btnCambiarContrasena";
-            this.btnCambiarContrasena.Size = new System.Drawing.Size(161, 30);
-            this.btnCambiarContrasena.TabIndex = 87;
-            this.btnCambiarContrasena.Text = "Cambiar Contraseña";
-            this.btnCambiarContrasena.UseVisualStyleBackColor = false;
-            this.btnCambiarContrasena.Click += new System.EventHandler(this.btnCambiarContrasena_Click);
-            // 
-            // btnEnviarCredenciales
-            // 
-            this.btnEnviarCredenciales.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnEnviarCredenciales.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEnviarCredenciales.FlatAppearance.BorderSize = 0;
-            this.btnEnviarCredenciales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnEnviarCredenciales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnEnviarCredenciales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarCredenciales.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarCredenciales.ForeColor = System.Drawing.Color.White;
-            this.btnEnviarCredenciales.Location = new System.Drawing.Point(372, 160);
-            this.btnEnviarCredenciales.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
-            this.btnEnviarCredenciales.Name = "btnEnviarCredenciales";
-            this.btnEnviarCredenciales.Size = new System.Drawing.Size(161, 30);
-            this.btnEnviarCredenciales.TabIndex = 88;
-            this.btnEnviarCredenciales.Text = "Enviar credenciales";
-            this.btnEnviarCredenciales.UseVisualStyleBackColor = false;
-            this.btnEnviarCredenciales.Click += new System.EventHandler(this.btnEnviarCredenciales_Click);
-            // 
-            // txtIdPassword
-            // 
-            this.txtIdPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtIdPassword.CustomButton.Image = null;
-            this.txtIdPassword.CustomButton.Location = new System.Drawing.Point(161, 1);
-            this.txtIdPassword.CustomButton.Name = "";
-            this.txtIdPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtIdPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtIdPassword.CustomButton.TabIndex = 1;
-            this.txtIdPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtIdPassword.CustomButton.UseSelectable = true;
-            this.txtIdPassword.CustomButton.Visible = false;
-            this.txtIdPassword.Lines = new string[0];
-            this.txtIdPassword.Location = new System.Drawing.Point(83, 106);
-            this.txtIdPassword.MaxLength = 32767;
-            this.txtIdPassword.Name = "txtIdPassword";
-            this.txtIdPassword.PasswordChar = '\0';
-            this.txtIdPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtIdPassword.SelectedText = "";
-            this.txtIdPassword.SelectionLength = 0;
-            this.txtIdPassword.SelectionStart = 0;
-            this.txtIdPassword.ShortcutsEnabled = true;
-            this.txtIdPassword.Size = new System.Drawing.Size(183, 23);
-            this.txtIdPassword.TabIndex = 90;
-            this.txtIdPassword.UseCustomBackColor = true;
-            this.txtIdPassword.UseSelectable = true;
-            this.txtIdPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtIdPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtIdPassword.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblIdPassword
-            // 
-            this.lblIdPassword.AutoSize = true;
-            this.lblIdPassword.ForeColor = System.Drawing.Color.Navy;
-            this.lblIdPassword.Location = new System.Drawing.Point(5, 108);
-            this.lblIdPassword.Name = "lblIdPassword";
-            this.lblIdPassword.Size = new System.Drawing.Size(82, 19);
-            this.lblIdPassword.TabIndex = 89;
-            this.lblIdPassword.Text = "Id password:";
-            this.lblIdPassword.UseCustomForeColor = true;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel2.Location = new System.Drawing.Point(279, 108);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(205, 19);
-            this.metroLabel2.TabIndex = 91;
-            this.metroLabel2.Text = "(Código de acceso rápido al pos)";
-            this.metroLabel2.UseCustomForeColor = true;
             // 
             // FormUsuario
             // 
