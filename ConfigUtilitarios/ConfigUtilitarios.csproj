@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="Extensions\ColorExt.cs" />
     <Compile Include="HelperControl\Msg.cs" />
+    <Compile Include="HelperGeneric\Human.cs" />
     <Compile Include="HelperGeneric\List\AlphaNumericComparer.cs" />
     <Compile Include="HelperGeneric\UtilString.cs" />
     <Compile Include="Security\BackupRestore.cs" />

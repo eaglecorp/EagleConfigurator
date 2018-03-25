@@ -4,6 +4,8 @@ using ConfigBusinessLogic.Persona;
 using ConfigBusinessLogic.Seguridad;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.HelperGeneric;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -39,22 +41,22 @@ namespace ConfiguradorUI.Seguridad
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
-            var txts = new[] { txtCodigo };
+            var txts = new[] {
+                txtCodigo,
+                txtIdPassword
+            };
+
             foreach (var txt in txts)
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
-
             }
 
-            var chks = new[] { chkActivo };
+            chkActivo.CheckedChanged += new EventHandler(OnContentChanged);
 
-            foreach (var chk in chks)
-            {
-                chk.CheckedChanged += new EventHandler(OnContentChanged);
-            }
+            txtIdPassword.KeyPress += ControlHelper.TxtValidInteger;
 
         }
 
@@ -144,7 +146,7 @@ namespace ConfiguradorUI.Seguridad
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt01_usuario();
                         obj = GetObjeto();
@@ -175,7 +177,7 @@ namespace ConfiguradorUI.Seguridad
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt01_usuario();
                         obj = GetObjeto();
@@ -209,7 +211,7 @@ namespace ConfiguradorUI.Seguridad
                     if (empleado.txt_email1.Length > 0 || empleado.txt_email2.Length > 0)
                     {
                         bool enviado = false;
-                        string body = new EmpleadoBL().ArmarMsjCredenciales(usuarioSelected, empleado,ParameterCode.SubjectCredentials);
+                        string body = new EmpleadoBL().ArmarMsjCredenciales(usuarioSelected, empleado, ParameterCode.SubjectCredentials);
                         if (empleado.txt_email1.Length > 0)
                         {
                             enviado = new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, empleado.txt_email1, Parameter.SubjectCredentials, body, Parameter.MailServer, Parameter.Port);
@@ -260,6 +262,16 @@ namespace ConfiguradorUI.Seguridad
 
                 if (usuarioSelected.id_empleado != 0)
                     obj.id_empleado = usuarioSelected.id_empleado;
+
+
+                if (long.TryParse(txtIdPassword.Text.Trim(), out long idPasswordPosible) && idPasswordPosible >= 0)
+                {
+                    obj.id_password = idPasswordPosible;
+                }
+                else
+                {
+                    obj.id_password = null;
+                }
                 //De cumplir la condición lo guardaría con 0 generaría un error.
                 //Puede en estos casos guardar con el id del registro vacío u otros(opción).
             }
@@ -295,10 +307,12 @@ namespace ConfiguradorUI.Seguridad
                     var emp = new EmpleadoBL().EmpleadoXIdMM(idEmp);
                     if (emp != null && emp.id_empleado > 0)
                     {
-                        string nombreCompleto = Nombre(emp.txt_ape_pat, emp.txt_ape_mat, emp.txt_pri_nom, emp.txt_seg_nom, emp.txt_rzn_social);
-                        txtNombreEmpleado.Text = nombreCompleto;
+                        string nombreCompleto = Human.Nombre(emp.txt_ape_pat, emp.txt_ape_mat, emp.txt_pri_nom, emp.txt_seg_nom, emp.txt_rzn_social);
+                        txtNombreEmpleado.Text = nombreCompleto.ToUpper();
                     }
                 }
+
+                txtIdPassword.Text = obj.id_password?.ToString();
 
             }
             catch (Exception e)
@@ -307,7 +321,7 @@ namespace ConfiguradorUI.Seguridad
             }
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             errorProv.Clear();
@@ -365,6 +379,7 @@ namespace ConfiguradorUI.Seguridad
                     no_error = false;
                 }
             }
+
             #region lógica de validación cuando se habilite la opción de agregar
             //if (no_error == true)
             //{
@@ -420,6 +435,60 @@ namespace ConfiguradorUI.Seguridad
 
             #endregion
 
+
+            #region Valid ID password único
+            if (no_error)
+            {
+                var txtValorIdPassword = txtIdPassword.Text.Trim();
+                if (txtValorIdPassword != "")
+                {
+                    if (long.TryParse(txtValorIdPassword, out long idPassword))
+                    {
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
+                        {
+                            if (!new UsuarioBL().EsValidoIDPassword(null, idPassword))
+                            {
+                                Msg.Ok_Wng("El ID Password ya existe.");
+                                tabUsuario.SelectedTab = tabPagGeneral;
+                                errorProv.SetError(txtIdPassword, "El ID Password ya existe.");
+                                txtIdPassword.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (long.TryParse(lblIdUsuario.Text, out long idUsuarioActual) && idUsuarioActual > 0)
+                            {
+                                if (!new UsuarioBL().EsValidoIDPassword(idUsuarioActual, idPassword))
+                                {
+                                    Msg.Ok_Wng("El ID Password ya existe.");
+                                    tabUsuario.SelectedTab = tabPagGeneral;
+                                    errorProv.SetError(txtIdPassword, "El ID Password ya existe.");
+                                    txtIdPassword.Focus();
+                                    no_error = false;
+                                }
+                            }
+                            else
+                            {
+                                Msg.Ok_Wng("No se pudo obtener el ID del usuario para validar su ID Password.");
+                                tabUsuario.SelectedTab = tabPagGeneral;
+                                errorProv.SetError(txtIdPassword, "No se puede validar el ID password.");
+                                txtIdPassword.Focus();
+                                no_error = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        tabUsuario.SelectedTab = tabPagGeneral;
+                        errorProv.SetError(txtIdPassword, "Debe ser un número entero.");
+                        txtIdPassword.Focus();
+                        no_error = false;
+                    }
+                }
+            }
+
+            #endregion
 
             return no_error;
         }
@@ -536,7 +605,26 @@ namespace ConfiguradorUI.Seguridad
             }
             return id;
         }
-
+        private void CambiarContrasena()
+        {
+            if (long.TryParse(lblIdUsuario.Text, out long idUsuario) && idUsuario > 0)
+            {
+                var usuario = new UsuarioBL().UsuarioXId(idUsuario);
+                if (usuario != null && usuario.id_usuario > 0)
+                {
+                    var frm = new FormCambiarClave(usuario);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    Msg.Ok_Wng("No se ha encontrado al usuario seleccionado.");
+                }
+            }
+            else
+            {
+                Msg.Ok_Wng("No ha seleccionado a ningún usuario.");
+            }
+        }
 
         //Métodos utilitarios de lógica del Form
         private void CargarComboFiltro()
@@ -562,6 +650,7 @@ namespace ConfiguradorUI.Seguridad
             lblIdUsuario.Text = 0 + "";
             txtUsuario.Clear();
             txtCodigo.Clear();
+            txtIdPassword.Clear();
             txtNombreEmpleado.Clear();
 
 
@@ -677,43 +766,12 @@ namespace ConfiguradorUI.Seguridad
                 }
             }
         }
-        private string Nombre(string apPaterno, string apMaterno, string primerNom, string segundoNom, string rznSocial)
-        {
-            string nombre = "";
-            if (apPaterno != null && apPaterno.Trim() != "")
-            {
-                nombre = apPaterno + " ";
-            }
-            if (apMaterno != null && apMaterno.Trim() != "")
-            {
-                nombre += apMaterno + " ";
-            }
-            if (primerNom != null && primerNom.Trim() != "")
-            {
-                nombre += primerNom + " ";
-            }
-            if (segundoNom != null && segundoNom.Trim() != "")
-            {
-                nombre += segundoNom + " ";
-            }
-            if (rznSocial != null && rznSocial.Trim() != "")
-            {
-                if (nombre.Length > 0)
-                {
-                    nombre += "| " + rznSocial;
-                }
-                else
-                {
-                    nombre = rznSocial;
-                }
-            }
-            return nombre;
-        }
+
         private void CargarGrilla(int? id_estado = null)
         {
             try
             {
-                var lista = new UsuarioBL().ListaUsuario(id_estado,true);
+                var lista = new UsuarioBL().ListaUsuario(id_estado, true);
                 var listaView = lista.Select(x => new { x.id_usuario, CODIGO = x.cod_usuario, NOMBRE = x.txt_usuario })
                 .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 
@@ -753,6 +811,7 @@ namespace ConfiguradorUI.Seguridad
             txtUsuario.Enabled = false;
             txtNombreEmpleado.Enabled = false;
             txtCodigo.MaxLength = 10;
+            txtIdPassword.MaxLength = 10;
             //este es por siacaso porque en realidad 
             //el txt usuario es solo de lectura.
             txtUsuario.MaxLength = 20;
@@ -795,7 +854,7 @@ namespace ConfiguradorUI.Seguridad
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }
@@ -1119,6 +1178,10 @@ namespace ConfiguradorUI.Seguridad
             }
         }
 
+        private void btnCambiarContrasena_Click(object sender, EventArgs e)
+        {
+            CambiarContrasena();
+        }
         #endregion
 
     }
