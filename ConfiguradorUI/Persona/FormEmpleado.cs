@@ -17,6 +17,8 @@ using ConfigBusinessLogic.Seguridad;
 using ConfigUtilitarios.KeyValues;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.HelperGeneric;
+using ConfigBusinessLogic.Labor;
+using ConfigUtilitarios.ViewModels;
 
 namespace ConfiguradorUI.Persona
 {
@@ -468,6 +470,15 @@ namespace ConfiguradorUI.Persona
                     obj.id_suspencion_laboral = int.Parse(cboSuspLaboral.SelectedValue.ToString());
                 else obj.id_suspencion_laboral = null;
 
+                if (TipoOperacion == TipoOperacionABM.Insertar)
+                {
+                    var listaDeTrabajosEmpleado = GetTrabajosDeEmpleadoDeDgv(true);
+
+                    if (listaDeTrabajosEmpleado != null && listaDeTrabajosEmpleado.Count > 0)
+                    {
+                        obj.LABt07_emp_trabajo = listaDeTrabajosEmpleado;
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -674,6 +685,7 @@ namespace ConfiguradorUI.Persona
                     cboSuspLaboral.SelectedValue = obj.id_suspencion_laboral;
                 else cboSuspLaboral.SelectedIndex = -1;
 
+                SetTrabajosDeEmpleado(obj.LABt07_emp_trabajo);
             }
             catch (Exception e)
             {
@@ -1047,6 +1059,244 @@ namespace ConfiguradorUI.Persona
             return id;
         }
 
+        private void SetTrabajosDeEmpleado(ICollection<LABt07_emp_trabajo> trabajosEmpleado)
+        {
+            try
+            {
+                if (trabajosEmpleado != null && trabajosEmpleado.Count > 0)
+                {
+                    dgvTrabajoEmpleado.DataSource = trabajosEmpleado
+                        .Select(x => new TrabajoEmpleadoVM()
+                        {
+                            id_emp_trabajo = x.id_emp_trabajo,
+                            id_trabajo = x.id_trabajo,
+                            id_empleado = x.id_empleado,
+                            txt_nombre = x.LABt06_trabajo.txt_nombre
+                        }).ToList();
+                }
+                else
+                {
+                    DefinirCabeceraGridTrabajos();
+                }
+                RenombrarCabeceraGridTrabajos();
+            }
+            catch (Exception ex)
+            {
+                Msg.Ok_Err("Ocurrió un error cuando se cargaba los trabajos de los empleados. Excepción : " + ex.Message);
+            }
+        }
+        private List<LABt07_emp_trabajo> GetTrabajosDeEmpleadoDeDgv(bool setNullTrabajo = false)
+        {
+            var list = new List<LABt07_emp_trabajo>();
+            if (dgvTrabajoEmpleado.Rows != null)
+            {
+                foreach (DataGridViewRow dr in dgvTrabajoEmpleado.Rows)
+                {
+                    //Create object of your list type pl
+                    var trabajoEmp = new LABt07_emp_trabajo();
+                    if (!setNullTrabajo)
+                    {
+                        trabajoEmp.LABt06_trabajo = new LABt06_trabajo();
+                        trabajoEmp.LABt06_trabajo.txt_nombre = dr.Cells[3].Value.ToString();
+                    }
+                    trabajoEmp.id_emp_trabajo = long.Parse(dr.Cells[0].Value.ToString());
+                    trabajoEmp.id_trabajo = int.Parse(dr.Cells[1].Value.ToString());
+                    trabajoEmp.id_empleado = int.Parse(dr.Cells[2].Value.ToString());
+                    trabajoEmp.id_estado = Estado.IdActivo;
+                    trabajoEmp.txt_estado = Estado.TxtActivo;
+                    //Add pl to your List  
+                    list.Add(trabajoEmp);
+                }
+            }
+            return list;
+        }
+        private void AsignarTrabajo()
+        {
+            if (TipoOperacion == TipoOperacionABM.Nuevo)
+            {
+                if (int.TryParse(cboTrabajo.SelectedValue?.ToString(), out int idTrabajo) && idTrabajo > 0)
+                {
+                    //Ya tiene el trabajo asignado
+                    //Es un nuevo trabajo
+                    var listTrabajosEmpleado = GetTrabajosDeEmpleadoDeDgv();
+                    if (listTrabajosEmpleado != null)
+                    {
+                        //ya está agregad??
+                        if (!(listTrabajosEmpleado.Any(x => x.id_trabajo == idTrabajo)))
+                        {
+                            listTrabajosEmpleado.Add(new LABt07_emp_trabajo()
+                            {
+                                id_emp_trabajo = 0,
+                                id_trabajo = idTrabajo,
+                                id_empleado = 0,
+                                LABt06_trabajo = new LABt06_trabajo()
+                                {
+                                    txt_nombre = cboTrabajo.Text
+                                }
+                            });
+
+                            SetTrabajosDeEmpleado(listTrabajosEmpleado);
+                            cboTrabajo.SelectedIndex = -1;
+                        }
+                        else
+                        {
+                            Msg.Ok_Wng("Este trabajo ya está asignado al empleado.");
+                        }
+                    }
+                    else
+                    {
+                        listTrabajosEmpleado = new List<LABt07_emp_trabajo>();
+                        listTrabajosEmpleado.Add(new LABt07_emp_trabajo()
+                        {
+                            id_emp_trabajo = 0,
+                            id_trabajo = idTrabajo,
+                            id_empleado = 0,
+                            LABt06_trabajo = new LABt06_trabajo()
+                            {
+                                txt_nombre = cboTrabajo.Text
+                            }
+                        });
+
+                        SetTrabajosDeEmpleado(listTrabajosEmpleado);
+                        cboTrabajo.SelectedIndex = -1;
+                    }
+                }
+                else
+                {
+                    Msg.Ok_Wng("Seleccione el trabajo a asignar.");
+                    cboTrabajo.Select();
+                }
+
+            }
+            else
+            {
+                if (long.TryParse(lblIdEmpleado.Text, out long idEmpleado) && idEmpleado > 0)
+                {
+                    if (int.TryParse(cboTrabajo.SelectedValue?.ToString(), out int idTrabajo) && idTrabajo > 0)
+                    {
+                        var empTrabajo = new TrabajoEmpleadoBL().GetTrabajoEmpleado(idEmpleado, idTrabajo);
+
+                        if (empTrabajo != null && empTrabajo.id_emp_trabajo > 0)
+                        {
+                            if (empTrabajo.id_estado != Estado.IdActivo)
+                            {
+                                //Es un trabajo que se encuentra desactivado (reasignar)
+                                empTrabajo.id_estado = Estado.IdActivo;
+                                empTrabajo.txt_estado = Estado.TxtActivo;
+                                var success = new TrabajoEmpleadoBL().ActualizarTrabajoEmpleado(empTrabajo);
+                                MensajeDeOperacion(success);
+                            }
+                            else
+                            {
+                                //Ya tiene el trabajo asignado
+                                Msg.Ok_Wng("Ya tiene este trabajo asignado.");
+                                cboTrabajo.Select();
+                            }
+                        }
+                        else
+                        {
+                            //Es un nuevo trabajo
+                            var nuevoEmpTrabajo = new LABt07_emp_trabajo()
+                            {
+                                id_empleado = idEmpleado,
+                                id_trabajo = idTrabajo,
+                                id_estado = Estado.IdActivo,
+                                txt_estado = Estado.TxtActivo
+                            };
+                            var id = new TrabajoEmpleadoBL().InsertarTrabajoEmpleado(nuevoEmpTrabajo);
+                            MensajeDeOperacion(id > 0);
+                        }
+                    }
+                    else
+                    {
+                        Msg.Ok_Wng("Seleccione el trabajo a asignar.");
+                        cboTrabajo.Select();
+                    }
+                }
+                else
+                {
+                    Msg.Ok_Wng("Seleccione al empleado antes de asignar un trabajo.");
+                }
+
+                void MensajeDeOperacion(bool expresion)
+                {
+                    if (expresion)
+                    {
+                        SetTrabajosDeEmpleado(new TrabajoEmpleadoBL().ListaTrabajoXEmpleado(idEmpleado));
+                        cboTrabajo.SelectedIndex = -1;
+                    }
+                    else
+                    {
+                        Msg.Ok_Err("No se pudo asignar el trabajo.");
+                    }
+                }
+            }
+        }
+        private void DesasignarTrabajoEmpleado()
+        {
+            if (TipoOperacion == TipoOperacionABM.Nuevo)
+            {
+                var idTrabajoSeleccionado = ControlHelper.DgvGetCellValueSelectedFromCell(dgvTrabajoEmpleado, 1);
+
+                if (long.TryParse(idTrabajoSeleccionado, out long idTrabajo) && idTrabajo > 0)
+                {
+                    var list = GetTrabajosDeEmpleadoDeDgv();
+                    if (list != null)
+                    {
+                        var numEliminados = list.RemoveAll(x => x.id_trabajo == idTrabajo);
+                        if (numEliminados > 0)
+                        {
+                            SetTrabajosDeEmpleado(list);
+                        }
+                        else
+                        {
+                            Msg.Ok_Err("No se pudo eliminar el trabajo del empleado.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (long.TryParse(lblIdEmpleado.Text, out long idEmpleado) && idEmpleado > 0)
+                {
+                    var idTrabajoEmpleadoSeleccionado = ControlHelper.DgvGetCellValueSelectedFromCell(dgvTrabajoEmpleado, 0);
+                    if (long.TryParse(idTrabajoEmpleadoSeleccionado, out long idTrabajoEmpleado) && idTrabajoEmpleado > 0)
+                    {
+                        bool eliminado = new TrabajoEmpleadoBL().DesactivarTrabajoEmpleado(idTrabajoEmpleado);
+                        if (eliminado)
+                        {
+                            SetTrabajosDeEmpleado(new TrabajoEmpleadoBL().ListaTrabajoXEmpleado(idEmpleado));
+                        }
+                        else
+                        {
+                            Msg.Ok_Err("No se pudo eliminar el trabajo del empleado.");
+                        }
+                    }
+                }
+                else
+                {
+                    Msg.Ok_Wng("Seleccione al empleado antes de eliminar un trabajo.");
+                }
+            }
+            dgvTrabajoEmpleado.Focus();
+        }
+        private void EnableBtnRemoveTrabajoEmpleado()
+        {
+            string val = ControlHelper.DgvGetCellValueSelectedFromCell(dgvTrabajoEmpleado, 0);
+            if (long.TryParse(val, out long idTrabajoEmpleado) && idTrabajoEmpleado > 0)
+            {
+                btnDesasignarTrabajo.Enabled = true;
+                btnDesasignarTrabajo.BackColor = Color.IndianRed;
+                btnDesasignarTrabajo.FlatAppearance.BorderColor = Color.IndianRed;
+            }
+            else
+            {
+                btnDesasignarTrabajo.Enabled = false;
+                btnDesasignarTrabajo.BackColor = Color.Gray;
+                btnDesasignarTrabajo.FlatAppearance.BorderColor = Color.Gray;
+            }
+        }
+
         private void CargarComboFiltro()
         {
             try
@@ -1170,6 +1420,10 @@ namespace ConfiguradorUI.Persona
             cboSituacion.SelectedIndex = (cboSituacion.Items.Count > 0) ? 0 : -1;
             cboMotivoBaja.SelectedIndex = (cboMotivoBaja.Items.Count > 0) ? 0 : -1;
             cboSuspLaboral.SelectedIndex = (cboSuspLaboral.Items.Count > 0) ? 0 : -1;
+
+            cboTrabajo.SelectedIndex = -1;
+            DefinirCabeceraGridTrabajos();
+            RenombrarCabeceraGridTrabajos();
         }
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
         {
@@ -1434,6 +1688,11 @@ namespace ConfiguradorUI.Persona
                 cboSuspLaboral.ValueMember = "id_suspencion_laboral";
                 cboSuspLaboral.DataSource = new SuspensionLaboralBL().ListaSuspencionLaboral(Estado.IdActivo, true);
 
+                cboTrabajo.DataSource = null;
+                cboTrabajo.DisplayMember = "txt_nombre";
+                cboTrabajo.ValueMember = "id_trabajo";
+                cboTrabajo.DataSource = new TrabajoBL().ListaTrabajo(Estado.IdActivo, true);
+
             }
             catch (Exception e)
             {
@@ -1556,6 +1815,56 @@ namespace ConfiguradorUI.Persona
             Close();
         }
 
+        private void DefinirCabeceraGridTrabajos()
+        {
+            try
+            {
+                var configHeader = new List<LABt07_emp_trabajo>();
+                dgvTrabajoEmpleado.DataSource = configHeader.Select(x => new TrabajoEmpleadoVM()
+                {
+                    id_emp_trabajo = 0,
+                    id_trabajo = 0,
+                    id_empleado = 0,
+                    txt_nombre = ""
+                }).ToList();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"No se pudo definir la cabecera de la grilla de los trabajos. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void RenombrarCabeceraGridTrabajos()
+        {
+            try
+            {
+                dgvTrabajoEmpleado.Columns["txt_nombre"].HeaderText = "TRABAJO";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"No se pudo renombrar la cabecera de la grilla de los trabajos. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ConfigurarGridTrabajos()
+        {
+
+            dgvTrabajoEmpleado.Columns["id_emp_trabajo"].Visible = false;
+            dgvTrabajoEmpleado.Columns["id_trabajo"].Visible = false;
+            dgvTrabajoEmpleado.Columns["id_empleado"].Visible = false;
+            dgvTrabajoEmpleado.Columns["txt_nombre"].Width = 550;
+
+            dgvTrabajoEmpleado.Columns["txt_nombre"].ReadOnly = true;
+        }
+        private void InicializarGridTrabajos()
+        {
+            DefinirCabeceraGridTrabajos();
+            RenombrarCabeceraGridTrabajos();
+            ConfigurarGridTrabajos();
+            ControlHelper.DgvBaseStyle(dgvTrabajoEmpleado);
+            ControlHelper.DgvBaseConfig(dgvTrabajoEmpleado);
+
+        }
+
+
         #endregion
 
         #region Eventos de ventana
@@ -1566,6 +1875,7 @@ namespace ConfiguradorUI.Persona
             lblIdEmpleado.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();
+            InicializarGridTrabajos();
             CargarCombos();
             LimpiarForm();
             CargarGrilla(Estado.IdActivo);
@@ -2005,8 +2315,26 @@ namespace ConfiguradorUI.Persona
             }
         }
 
+        private void btnAsignarTrabajo_Click(object sender, EventArgs e)
+        {
+            AsignarTrabajo();
+        }
+
+        private void btnDesasignarTrabajo_Click(object sender, EventArgs e)
+        {
+            DesasignarTrabajoEmpleado();
+        }
+
+        private void btnAddTrabajo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvTrabajoEmpleado_DataSourceChanged(object sender, EventArgs e)
+        {
+            EnableBtnRemoveTrabajoEmpleado();
+        }
         #endregion
+
     }
-
-
 }

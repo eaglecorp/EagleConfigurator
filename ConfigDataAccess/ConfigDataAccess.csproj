@@ -64,6 +64,7 @@
     <Compile Include="General\HorarioDA.cs" />
     <Compile Include="General\ParametroDA.cs" />
     <Compile Include="Labor\HorarioEmpleadoDA.cs" />
+    <Compile Include="Labor\TrabajoEmpleadoDA.cs" />
     <Compile Include="Maestro\CajaDA.cs" />
     <Compile Include="Maestro\CanalVentaDA.cs" />
     <Compile Include="Maestro\DescuentoDA.cs" />

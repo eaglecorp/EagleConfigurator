@@ -49,6 +49,7 @@
     <Compile Include="General\HorarioBL.cs" />
     <Compile Include="General\ParametroBL.cs" />
     <Compile Include="Labor\HorarioEmpleadoBL.cs" />
+    <Compile Include="Labor\TrabajoEmpleadoBL.cs" />
     <Compile Include="Maestro\CajaBL.cs" />
     <Compile Include="Maestro\CanalVentaBL.cs" />
     <Compile Include="Maestro\DescuentoBL.cs" />

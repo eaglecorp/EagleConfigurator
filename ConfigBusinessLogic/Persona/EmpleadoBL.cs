@@ -7,6 +7,8 @@ using ConfigBusinessLogic.Seguridad;
 using ConfigBusinessLogic.Sunat;
 using System.Linq;
 using ConfigUtilitarios.HelperControl;
+using ConfigBusinessLogic.Labor;
+using ConfigDataAccess.Labor;
 
 namespace ConfigBusinessLogic.Persona
 {
@@ -150,6 +152,11 @@ namespace ConfigBusinessLogic.Persona
                 var provincia = new ProvinciaBL().ProvinciaXId(empleado.SNTt33_distrito.id_prov);
                 empleado.SNTt33_distrito.SNTt32_provincia = provincia;
             }
+            if (empleado != null && empleado.id_empleado > 0)
+            {
+                empleado.LABt07_emp_trabajo = new TrabajoEmpleadoDA().ListaTrabajoXEmpleado(empleado.id_empleado);
+            }
+
             return empleado;
         }
 

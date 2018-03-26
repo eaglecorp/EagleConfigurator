@@ -87,6 +87,7 @@
     <Compile Include="ViewModels\ComboItem.cs" />
     <Compile Include="ViewModels\ParametroFiscalVM.cs" />
     <Compile Include="ViewModels\ParametroFiscalDeCajaVM.cs" />
+    <Compile Include="ViewModels\TrabajoEmpleadoVM.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

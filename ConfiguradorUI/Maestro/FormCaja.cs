@@ -53,7 +53,7 @@ namespace ConfiguradorUI.Maestro
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             var txts = new[] { txtNombre, txtCodigo, txtInfo01, txtInfo02, txtIp };
@@ -113,7 +113,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt12_caja();
                         obj = GetObjeto();
@@ -194,7 +194,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
 
                         var obj = new MSTt12_caja();
@@ -225,7 +225,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt12_caja();
                         obj = GetObjeto();
@@ -308,12 +308,12 @@ namespace ConfiguradorUI.Maestro
                 txtInfo02.Text = obj.txt_info02;
                 txtIp.Text = obj.txt_ip;
 
-                setValueInCbo(cboImpresora, obj.id_impresora);
-                setValueInCbo(cboImpresora02, obj.id_impresora02);
-                setValueInCbo(cboImpresora03, obj.id_impresora03);
-                setValueInCbo(cboImpresora04, obj.id_impresora04);
-                setValueInCbo(cboImpresora05, obj.id_impresora05);
-                setValueInCbo(cboImpresora06, obj.id_impresora06);
+                SetValueInCbo(cboImpresora, obj.id_impresora);
+                SetValueInCbo(cboImpresora02, obj.id_impresora02);
+                SetValueInCbo(cboImpresora03, obj.id_impresora03);
+                SetValueInCbo(cboImpresora04, obj.id_impresora04);
+                SetValueInCbo(cboImpresora05, obj.id_impresora05);
+                SetValueInCbo(cboImpresora06, obj.id_impresora06);
 
                 SetParametrosFiscalesDeCaja(obj.FISt05_configuracion_fiscal_caja);
             }
@@ -459,7 +459,7 @@ namespace ConfiguradorUI.Maestro
             return id_caja;
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             bool no_error = true;
             errorProv.Clear();
@@ -568,7 +568,7 @@ namespace ConfiguradorUI.Maestro
 
             return no_error;
         }
-        private void setValueInCbo(ComboBox cbo, int? id)
+        private void SetValueInCbo(ComboBox cbo, int? id)
         {
             if (id != null)
                 cbo.SelectedValue = id;
@@ -991,10 +991,6 @@ namespace ConfiguradorUI.Maestro
             Close();
         }
 
-        private void SetCabeceraGridDetail()
-        {
-
-        }
         private void DefinirCabeceraGridParametros()
         {
             try
@@ -1055,12 +1051,7 @@ namespace ConfiguradorUI.Maestro
             ControlHelper.DgvBaseConfig(dgvConfigFiscalCaja);
         }
 
-
-        #endregion
-
-        #region Eventos de ventana
-
-        private void FormCaja_Load(object sender, EventArgs e)
+        private void SetInit()
         {
             lblIdCaja.Visible = false;
             SetMaxLengthTxt();
@@ -1071,11 +1062,22 @@ namespace ConfiguradorUI.Maestro
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
             postLoad = true;
         }
+
+
+        #endregion
+
+        #region Eventos de ventana
+
+        private void FormCaja_Load(object sender, EventArgs e)
+        {
+            SetInit();
+        }
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -1351,12 +1353,12 @@ namespace ConfiguradorUI.Maestro
                     cboImpresora05.DropDownWidth = width;
                     cboImpresora06.DropDownWidth = width;
 
-                    setValueInCbo(cboImpresora, oldValue);
-                    setValueInCbo(cboImpresora02, oldValue02);
-                    setValueInCbo(cboImpresora03, oldValue03);
-                    setValueInCbo(cboImpresora04, oldValue04);
-                    setValueInCbo(cboImpresora05, oldValue05);
-                    setValueInCbo(cboImpresora06, oldValue06);
+                    SetValueInCbo(cboImpresora, oldValue);
+                    SetValueInCbo(cboImpresora02, oldValue02);
+                    SetValueInCbo(cboImpresora03, oldValue03);
+                    SetValueInCbo(cboImpresora04, oldValue04);
+                    SetValueInCbo(cboImpresora05, oldValue05);
+                    SetValueInCbo(cboImpresora06, oldValue06);
                     TipoOperacion = op;
                     MantenerEstadoABM();
                 }
