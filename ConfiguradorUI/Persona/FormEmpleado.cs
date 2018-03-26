@@ -1282,8 +1282,7 @@ namespace ConfiguradorUI.Persona
         }
         private void EnableBtnRemoveTrabajoEmpleado()
         {
-            string val = ControlHelper.DgvGetCellValueSelectedFromCell(dgvTrabajoEmpleado, 0);
-            if (long.TryParse(val, out long idTrabajoEmpleado) && idTrabajoEmpleado > 0)
+            if (dgvTrabajoEmpleado.RowCount > 0)
             {
                 btnDesasignarTrabajo.Enabled = true;
                 btnDesasignarTrabajo.BackColor = Color.IndianRed;
@@ -1421,6 +1420,7 @@ namespace ConfiguradorUI.Persona
             cboMotivoBaja.SelectedIndex = (cboMotivoBaja.Items.Count > 0) ? 0 : -1;
             cboSuspLaboral.SelectedIndex = (cboSuspLaboral.Items.Count > 0) ? 0 : -1;
 
+            btnDesasignarTrabajo.Enabled = false;
             cboTrabajo.SelectedIndex = -1;
             DefinirCabeceraGridTrabajos();
             RenombrarCabeceraGridTrabajos();
@@ -2333,6 +2333,7 @@ namespace ConfiguradorUI.Persona
         private void dgvTrabajoEmpleado_DataSourceChanged(object sender, EventArgs e)
         {
             EnableBtnRemoveTrabajoEmpleado();
+
         }
         #endregion
 
