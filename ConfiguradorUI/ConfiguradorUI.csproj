@@ -69,6 +69,9 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MonthCalendarControl">
+      <HintPath>..\..\..\..\..\Resources\MonthCalendar\MonthCalendarDemo\bin\Debug\MonthCalendarControl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -119,10 +122,28 @@
     <Compile Include="Labor\FormHorario.Designer.cs">
       <DependentUpon>FormHorario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Labor\FormHorarioEmpleado.cs">
+    <Compile Include="Labor\Horario\FormAsignarHorario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Labor\FormHorarioEmpleado.Designer.cs">
+    <Compile Include="Labor\Horario\FormAsignarHorario.Designer.cs">
+      <DependentUpon>FormAsignarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Labor\Horario\FormEditarDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Labor\Horario\FormEditarDia.Designer.cs">
+      <DependentUpon>FormEditarDia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Labor\Horario\FormEliminarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Labor\Horario\FormEliminarHorario.Designer.cs">
+      <DependentUpon>FormEliminarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Labor\Horario\FormHorarioEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Labor\Horario\FormHorarioEmpleado.Designer.cs">
       <DependentUpon>FormHorarioEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestro\FormCaja.cs">
@@ -417,7 +438,16 @@
     <EmbeddedResource Include="Labor\FormHorario.resx">
       <DependentUpon>FormHorario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Labor\FormHorarioEmpleado.resx">
+    <EmbeddedResource Include="Labor\Horario\FormAsignarHorario.resx">
+      <DependentUpon>FormAsignarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Labor\Horario\FormEditarDia.resx">
+      <DependentUpon>FormEditarDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Labor\Horario\FormEliminarHorario.resx">
+      <DependentUpon>FormEliminarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Labor\Horario\FormHorarioEmpleado.resx">
       <DependentUpon>FormHorarioEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormCaja.resx">

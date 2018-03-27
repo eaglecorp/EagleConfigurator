@@ -1,20 +1,22 @@
-﻿using ConfigBusinessLogic.Persona;
+﻿using ConfigBusinessEntity;
+using ConfigUtilitarios;
 using MetroFramework.Forms;
 using System;
-using System.Windows.Forms;
 using System.Collections.Generic;
-using System.Linq;
-using ConfigBusinessEntity;
-using ConfigUtilitarios;
-using ConfigBusinessLogic.Labor;
-using ConfigUtilitarios.HelperControl;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
-using ConfigUtilitarios.Controls;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace ConfiguradorUI.Labor
+namespace ConfiguradorUI.Labor.Horario
 {
-    public partial class FormHorarioEmpleado : MetroForm
+    public partial class FormAsignarHorario : MetroForm
     {
+      
+
         #region Varibles Globales
 
         private int _tipoOperacion = TipoOperacionABM.No_Action;
@@ -44,10 +46,13 @@ namespace ConfiguradorUI.Labor
 
         #endregion
 
-        public FormHorarioEmpleado()
+        public FormAsignarHorario()
         {
             InitializeComponent();
         }
+
+        #region Métodos
+
 
         private void AddHandlers()
         {
@@ -381,7 +386,7 @@ namespace ConfiguradorUI.Labor
 
             TimeSpan horaInicio = GetHoraYMinutos(dtp.Value.TimeOfDay);
             TimeSpan horaFin = new TimeSpan(0, 0, 0);
-            
+
             if (nameDtp == dtpIniLabDom.Name)
             {
                 horaFin = GetHoraYMinutos(dtpFinLabDom.Value.TimeOfDay);
@@ -429,7 +434,7 @@ namespace ConfiguradorUI.Labor
             {
                 var tiempoTolerancia = GetHoraYMinutos(dtpTiempoTolerancia.Value.TimeOfDay);
                 var maxTiempoTolerancia = horaFin - horaInicio;
-                if(tiempoTolerancia > maxTiempoTolerancia)
+                if (tiempoTolerancia > maxTiempoTolerancia)
                 {
                     dtpTiempoTolerancia.Value = Convert.ToDateTime(maxTiempoTolerancia.ToString());
                 }
@@ -543,7 +548,7 @@ namespace ConfiguradorUI.Labor
                 Msg.Ok_Wng("La hora \"Inicio break\" no puede ser menor que la \"Hora inicio\".", "Validación");
                 dtp.Value = Convert.ToDateTime(horaInicioLabor.ToString());
             }
-            else if(horaInicioBreak > horaFinBreak)
+            else if (horaInicioBreak > horaFinBreak)
             {
                 Msg.Ok_Wng("La hora \"Inicio break\" no puede ser mayor que la hora \"Fin break\".", "Validación");
                 dtp.Value = Convert.ToDateTime(horaFinBreak.ToString());
@@ -651,7 +656,7 @@ namespace ConfiguradorUI.Labor
             if (tiempoTolerancia > maxTolerancia)
             {
                 Msg.Ok_Wng($"El tiempo de \"Tolerancia\" sobrepasa al rango de horas del día ({maxTolerancia.ToString()} horas).", "Validación");
-                dtp.Value = Convert.ToDateTime(new TimeSpan(0,0,0).ToString());
+                dtp.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
             }
         }
 
@@ -1096,7 +1101,7 @@ namespace ConfiguradorUI.Labor
 
             foreach (var dtpLabor in dtpsLabor.Union(dtpsTolerancia))
             {
-                ControlHelper.FormatDatePicker(dtpLabor, customFormat: "HH:mm");
+                ControlHelper.FormatDatePicker(dtpLabor, customFormat: "HH:mm tt");
             }
 
             #endregion
@@ -1122,7 +1127,7 @@ namespace ConfiguradorUI.Labor
             else if (_tipoOperacion == TipoOperacionABM.Eliminar)
             {
                 LimpiarChecksYDtps();
-            
+
                 lblOperacionActual.Text = "Quitar fechas. Seleccione los días a desasignar y confirme.";
                 pnlControlesGenerales.Visible = true;
                 pnlHoras.Visible = false;
@@ -1186,32 +1191,21 @@ namespace ConfiguradorUI.Labor
             return no_error;
         }
 
-        private void btnBuscarEmp_Click(object sender, EventArgs e)
+        private void QuitarFechas()
         {
-            BuscarEmpleado();
+
         }
 
-        private void FormHorarioEmpleado_Load(object sender, EventArgs e)
-        {
-            ConfigurarControles();
-            LimpiarForm();
-        }
+        #endregion
 
-        private void btnDesasignarFechas_Click(object sender, EventArgs e)
-        {
-            _tipoOperacion = TipoOperacionABM.Eliminar;
-            ControlarAction();
-        }
+        #region Eventos
 
-        private void btnCommit_Click(object sender, EventArgs e)
+
+        private void VisibleOrInvisibleDtps(DateTimePicker[] dtps, bool visible)
         {
-            if (_tipoOperacion == TipoOperacionABM.Insertar)
+            foreach (var dtp in dtps)
             {
-                AsignarHorario();
-            }
-            else if (_tipoOperacion == TipoOperacionABM.Eliminar)
-            {
-                QuitarFechas();
+                dtp.Visible = visible;
             }
         }
 
@@ -1247,68 +1241,11 @@ namespace ConfiguradorUI.Labor
             }
 
         }
-        private void VisibleOrInvisibleDtps(DateTimePicker[] dtps, bool visible)
-        {
-            foreach (var dtp in dtps)
-            {
-                dtp.Visible = visible;
-            }
-        }
-
-        private void QuitarFechas()
-        {
-
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            if (_tipoOperacion != TipoOperacionABM.Insertar)
-            {
-                _tipoOperacion = TipoOperacionABM.Insertar;
-                RemoveHandlers();
-                ControlarAction();
-                AddHandlers();
-            }
-        }
-
-        private void dtpDesde_ValueChanged(object sender, EventArgs e)
-        {
-
-            if (dtpDesde.Value.Date > dtpHasta.Value.Date)
-            {
-                Msg.Ok_Wng("La fecha \"Desde\" no puede ser mayor que la fecha \"Hasta\".");
-                dtpDesde.Value = dtpHasta.Value.Date;
-            }
-            else
-            {
-                AgregarOQuitarFechas();
-            }
-        }
-
-        private void dtpHasta_ValueChanged(object sender, EventArgs e)
-        {
-            if (dtpDesde.Value.Date > dtpHasta.Value.Date)
-            {
-                Msg.Ok_Wng("El fecha \"Hasta\" no puede ser menor que la fecha \"Desde\".");
-                dtpHasta.Value = dtpDesde.Value.Date;
-            }
-            else
-            {
-                AgregarOQuitarFechas();
-            }
-        }
-
-        private void chk_CheckedChanged(object sender, EventArgs e)
-        {
-            var chk = (CheckBox)sender;
-            ToggleHorasDelDia(chk);
-            AgregarOQuitarFechas(chk);
-        }
 
         private void ToggleDtpBreak(DateTimePicker dtp, string customFormat)
         {
             string format = customFormat;
-            if(dtp.Name == dtpIniBrkDom.Name || dtp.Name == dtpFinBrkDom.Name)
+            if (dtp.Name == dtpIniBrkDom.Name || dtp.Name == dtpFinBrkDom.Name)
             {
                 ControlHelper.FormatDatePicker(dtpIniBrkDom, customFormat: format);
                 ControlHelper.FormatDatePicker(dtpFinBrkDom, customFormat: format);
@@ -1345,11 +1282,90 @@ namespace ConfiguradorUI.Labor
             }
         }
 
+        private void btnBuscarEmp_Click(object sender, EventArgs e)
+        {
+            BuscarEmpleado();
+        }
+
+        private void FormHorarioEmpleado_Load(object sender, EventArgs e)
+        {
+            ConfigurarControles();
+            LimpiarForm();
+        }
+
+        private void btnDesasignarFechas_Click(object sender, EventArgs e)
+        {
+            //_tipoOperacion = TipoOperacionABM.Eliminar;
+            //ControlarAction();
+            var frm = new FormEliminarHorario();
+            frm.ShowDialog();
+        }
+
+        private void btnCommit_Click(object sender, EventArgs e)
+        {
+            if (_tipoOperacion == TipoOperacionABM.Insertar)
+            {
+                AsignarHorario();
+            }
+            else if (_tipoOperacion == TipoOperacionABM.Eliminar)
+            {
+                QuitarFechas();
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            //if (_tipoOperacion != TipoOperacionABM.Insertar)
+            //{
+            //    _tipoOperacion = TipoOperacionABM.Insertar;
+            //    RemoveHandlers();
+            //    ControlarAction();
+            //    AddHandlers();
+            //}
+            var frm = new FormAsignarHorario();
+            frm.ShowDialog();
+        }
+
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (dtpDesde.Value.Date > dtpHasta.Value.Date)
+            {
+                Msg.Ok_Wng("La fecha \"Desde\" no puede ser mayor que la fecha \"Hasta\".");
+                dtpDesde.Value = dtpHasta.Value.Date;
+            }
+            else
+            {
+                AgregarOQuitarFechas();
+            }
+        }
+
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpDesde.Value.Date > dtpHasta.Value.Date)
+            {
+                Msg.Ok_Wng("El fecha \"Hasta\" no puede ser menor que la fecha \"Desde\".");
+                dtpHasta.Value = dtpDesde.Value.Date;
+            }
+            else
+            {
+                AgregarOQuitarFechas();
+            }
+        }
+
+        private void chk_CheckedChanged(object sender, EventArgs e)
+        {
+            var chk = (CheckBox)sender;
+            ToggleHorasDelDia(chk);
+            AgregarOQuitarFechas(chk);
+        }
+
         private void txtNroDocEmp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\r')
                 BuscarEmpleado();
         }
+
         private void DtpBreak_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Escape)
@@ -1360,7 +1376,7 @@ namespace ConfiguradorUI.Labor
 
         private void Dtp_MouseDown(object sender, MouseEventArgs e)
         {
-            ToggleDtpBreak((DateTimePicker)sender, "HH:mm");
+            ToggleDtpBreak((DateTimePicker)sender, "HH:mm tt");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1405,5 +1421,8 @@ namespace ConfiguradorUI.Labor
             var dtp = (DateTimePicker)sender;
             ValidarTiempoTolerancia(dtp);
         }
+
+        #endregion
+
     }
 }

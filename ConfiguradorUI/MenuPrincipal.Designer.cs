@@ -106,7 +106,7 @@
             this.tabPanel.Controls.Add(this.tabPagLabor);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 0;
+            this.tabPanel.SelectedIndex = 4;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -1024,7 +1024,7 @@
             this.btnHorario.Name = "btnHorario";
             this.btnHorario.Size = new System.Drawing.Size(145, 37);
             this.btnHorario.TabIndex = 13;
-            this.btnHorario.Text = "Horario";
+            this.btnHorario.Text = "Horarios Emp.";
             this.btnHorario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHorario.UseVisualStyleBackColor = false;
             this.btnHorario.Click += new System.EventHandler(this.btnHorario_Click);

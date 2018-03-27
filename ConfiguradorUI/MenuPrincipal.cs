@@ -2,6 +2,7 @@
 using ConfigBusinessLogic;
 using ConfigBusinessLogic.General;
 using ConfiguradorUI.Labor;
+using ConfiguradorUI.Labor.Horario;
 using ConfiguradorUI.Maestro;
 using ConfiguradorUI.Persona;
 using ConfiguradorUI.Producto;
