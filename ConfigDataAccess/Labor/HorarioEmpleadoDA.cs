@@ -56,6 +56,89 @@ namespace ConfigDataAccess.Labor
             return horario;
         }
 
+        public bool EliminarHorariosDtl(IEnumerable<long> idFechas)
+        {
+            bool success = false;
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    var fechasAEliminar = ctx.LABt04_horario_emp_dtl.Where(x => idFechas.Contains(x.id_horario_emp_dtl));
+                    if (fechasAEliminar != null)
+                    {
+                        ctx.LABt04_horario_emp_dtl.RemoveRange(fechasAEliminar);
+                        ctx.SaveChanges();
+                        success = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Eliminar Horarios Dtl: ", e.Message);
+                }
+            }
+            return success;
+        }
+
+        public bool ActualizarRangoDeHorario(long idHorario)
+        {
+            bool success = false;
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    var horario = ctx.LABt03_horario_emp.FirstOrDefault(x => x.id_horario_emp == idHorario);
+                    if (horario != null &&
+                        horario.id_horario_emp > 0 &&
+                        horario.LABt04_horario_emp_dtl != null &&
+                        horario.LABt04_horario_emp_dtl.Count > 0)
+                    {
+                        DateTime ultimaFecha = horario.LABt04_horario_emp_dtl.Max(x => x.fecha_labor);
+                        DateTime primeraFecha = horario.LABt04_horario_emp_dtl.Min(x => x.fecha_labor);
+
+                        if (primeraFecha != horario.fecha_inicio_horario || ultimaFecha != horario.fecha_fin_horario)
+                        {
+                            horario.fecha_inicio_horario = primeraFecha;
+                            horario.fecha_fin_horario = ultimaFecha;
+                            ctx.SaveChanges();
+                            success = true;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Actualizar Rango De Horario: ", e.Message);
+                }
+            }
+            return success;
+        }
+
+        public bool EliminarHorario(long idHorario)
+        {
+            bool success = false;
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    var horario = ctx.LABt03_horario_emp.FirstOrDefault(x => x.id_horario_emp == idHorario);
+                    if (horario != null && horario.id_horario_emp > 0)
+                    {
+                        ctx.LABt04_horario_emp_dtl.RemoveRange(horario.LABt04_horario_emp_dtl);
+                        ctx.LABt03_horario_emp.Remove(horario);
+                        ctx.SaveChanges();
+                        success = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Eliminar Horario: ", e.Message);
+                }
+            }
+            return success;
+        }
+
         public bool EliminarHorarioDtl(long id_horario_emp)
         {
             var success = false;

@@ -20,6 +20,7 @@ namespace ConfiguradorUI.Labor.Horario
         private int _tipoOperacion = TipoOperacionABM.No_Action;
 
         private PERt04_empleado _empleado;
+        private LABt03_horario_emp _horario;
 
         #endregion
 
@@ -48,6 +49,41 @@ namespace ConfiguradorUI.Labor.Horario
                         : $"{_empleado.txt_ape_pat} {_empleado.txt_ape_mat}, {_empleado.txt_pri_nom} {_empleado.txt_seg_nom}";
             }
 
+        }
+        private void SetHorario(LABt03_horario_emp horario)
+        {
+            try
+            {
+                if (horario != null &&
+                       horario.id_horario_emp > 0)
+                {
+                    _horario = horario;
+
+                    IEnumerable<DateTime> horarioSoloFechas = new List<DateTime>();
+                    if (horario.LABt04_horario_emp_dtl != null)
+                    {
+                        horarioSoloFechas = horario.LABt04_horario_emp_dtl.Select(x => x.fecha_labor);
+                    }
+
+                    var fechasDeLaborRestante = horarioSoloFechas.Count(x => x.Date >= DateTime.Now.Date);
+
+                    lblRangoHorario.ForeColor = Color.Navy;
+                    lblRangoHorario.Text = $"Horario desde {horario.fecha_inicio_horario.ToShortDateString()} " +
+                                            $"hasta {horario.fecha_fin_horario.ToShortDateString()} - {fechasDeLaborRestante} días restantes";
+
+                    ResaltarFechasEnCalendario(horarioSoloFechas);
+                }
+                else
+                {
+                    lblRangoHorario.ForeColor = Color.Red;
+                    lblRangoHorario.Text = "NO TIENE HORARIO ASIGNADO";
+                    btnAsignarHorario.Focus();
+                }
+            }
+            catch (Exception e)
+            {
+                Msg.Ok_Err("No se pudo mostrar el horario correctamente. Error: " + e.Message);
+            }
         }
 
         private void BuscarEmpleado()
@@ -82,40 +118,20 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void LimpiarForm()
         {
+            LimpiarDatosDeMemoria();
             LimpiarEmpleado();
+            LimpiarHorario();
         }
 
-        private void SetHorario(LABt03_horario_emp horario)
+        private void LimpiarDatosDeMemoria()
         {
-            try
-            {
-                if (horario != null &&
-                       horario.id_horario_emp > 0)
-                {
-                    IEnumerable<DateTime> horarioSoloFechas = new List<DateTime>();
-                    if (horario.LABt04_horario_emp_dtl != null)
-                    {
-                        horarioSoloFechas = horario.LABt04_horario_emp_dtl.Select(x => x.fecha_labor);
-                    }
+            _horario = null;
+            _empleado = null;
+        }
 
-                    var fechasDeLaborRestante = horarioSoloFechas.Count(x => x.Date >= DateTime.Now.Date);
-
-                    lblRangoHorario.ForeColor = Color.Navy;
-                    lblRangoHorario.Text = $"Horario desde {horario.fecha_inicio_horario.ToShortDateString()} " +
-                                            $"hasta {horario.fecha_fin_horario.ToShortDateString()} - {fechasDeLaborRestante} días restantes";
-
-                    ResaltarFechasEnCalendario(horarioSoloFechas);
-                }
-                else
-                {
-                    lblRangoHorario.ForeColor = Color.Red;
-                    lblRangoHorario.Text = "NO TIENE HORARIO ASIGNADO";
-                }
-            }
-            catch (Exception e)
-            {
-                Msg.Ok_Err("No se pudo mostrar el horario correctamente. Error: " + e.Message);
-            }
+        private void LimpiarHorario()
+        {
+            ResaltarFechasEnCalendario(null);
         }
 
         private void ResaltarFechasEnCalendario(IEnumerable<DateTime> fechas)
@@ -162,7 +178,7 @@ namespace ConfiguradorUI.Labor.Horario
         #endregion
 
         #region Eventos
-        
+
         private void FormHorarioEmpleado_Load(object sender, EventArgs e)
         {
             ConfigurarControles();
@@ -176,15 +192,57 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void btnAsignarHorario_Click(object sender, EventArgs e)
         {
-            var frm = new FormAsignarHorario();
-            frm.ShowDialog();
+            if (_empleado != null && _empleado.id_empleado > 0)
+            {
+                var frm = new FormAsignarHorario(_empleado, _horario);
+                frm.ShowDialog();
+
+                if (frm._seAsigno)
+                {
+                    LimpiarHorario();
+                    var horario = new HorarioEmpleadoBL().HorarioXEmpleado(_empleado.id_empleado);
+                    SetHorario(horario);
+
+                    btnAsignarHorario.Enabled = true;
+                    btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
+                }
+            }
+            else
+            {
+                Msg.Ok_Wng("Debe buscar un empleado antes de asignar el horario.");
+            }
         }
 
         private void btnDesasignarFechas_Click(object sender, EventArgs e)
         {
-            var frm = new FormEliminarHorario();
-            frm.ShowDialog();
+            if (_empleado != null && _empleado.id_empleado > 0)
+            {
+                if (_horario != null && _horario.LABt04_horario_emp_dtl != null && _horario.LABt04_horario_emp_dtl.Count > 0)
+                {
+                    var frm = new FormEliminarHorario(_empleado, _horario);
+                    frm.ShowDialog();
+
+                    if (frm._seElimino)
+                    {
+                        LimpiarHorario();
+                        var horario = new HorarioEmpleadoBL().HorarioXEmpleado(_empleado.id_empleado);
+                        SetHorario(horario);
+
+                        btnAsignarHorario.Enabled = true;
+                        btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
+                    }
+                }
+                else
+                {
+                    Msg.Ok_Wng("Este empleado no tiene horario o no tiene ninguna fecha asignada.");
+                }
+            }
+            else
+            {
+                Msg.Ok_Wng("Debe buscar un empleado antes de eliminar fechas del horario.");
+            }
         }
+
 
         private void txtNroDocEmp_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -194,15 +252,15 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (_fechasSeleccionadas != null)
-            //{
-            //    string fechas = "";
-            //    foreach (var fecha in _fechasSeleccionadas)
-            //    {
-            //        fechas += fecha.fecha_labor.ToLongDateString() + "\n";
-            //    }
-            //    Msg.Ok_Info(fechas);
-            //}
+            if (_horario.LABt04_horario_emp_dtl != null)
+            {
+                string fechas = "";
+                foreach (var fecha in _horario.LABt04_horario_emp_dtl)
+                {
+                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
+                }
+                Msg.Ok_Info(fechas);
+            }
         }
 
         #endregion

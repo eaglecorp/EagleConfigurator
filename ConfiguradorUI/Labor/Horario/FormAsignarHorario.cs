@@ -1,5 +1,8 @@
 ﻿using ConfigBusinessEntity;
+using ConfigBusinessLogic.Labor;
 using ConfigUtilitarios;
+using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -15,14 +18,15 @@ namespace ConfiguradorUI.Labor.Horario
 {
     public partial class FormAsignarHorario : MetroForm
     {
-      
+
 
         #region Varibles Globales
 
-        private int _tipoOperacion = TipoOperacionABM.No_Action;
         enum TipoControl
         {
             CheckDia,
+            CheckDiaTupla,
+            ChekedDia,
             DtpLabor,
             DtpInicioLabor,
             DtpFinLabor,
@@ -39,16 +43,18 @@ namespace ConfiguradorUI.Labor.Horario
             DtpHoraSab
         };
 
+        public bool _seAsigno = false;
         private PERt04_empleado _empleado;
         private LABt03_horario_emp _horario;
-        IEnumerable<DateTime> _horarioSoloFechas;
-        private List<LABt04_horario_emp_dtl> _fechasSeleccionadas;
 
         #endregion
 
-        public FormAsignarHorario()
+        public FormAsignarHorario(PERt04_empleado empleado, LABt03_horario_emp horario)
         {
             InitializeComponent();
+
+            _empleado = empleado;
+            _horario = horario;
         }
 
         #region Métodos
@@ -63,7 +69,7 @@ namespace ConfiguradorUI.Labor.Horario
 
             foreach (var dtpBreak in (DateTimePicker[])GetControls(TipoControl.DtpBreak))
             {
-                dtpBreak.MouseDown += Dtp_MouseDown;
+                dtpBreak.MouseDown += DtpBreak_MouseDown;
                 dtpBreak.KeyPress += DtpBreak_KeyPress;
             }
 
@@ -71,7 +77,7 @@ namespace ConfiguradorUI.Labor.Horario
             {
                 dtpHoraInicioLabor.ValueChanged += dtpHoraInicioLabor_ValueChanged;
             }
-            //--
+
             foreach (var dtpHoraFinLabor in (DateTimePicker[])GetControls(TipoControl.DtpFinLabor))
             {
                 dtpHoraFinLabor.ValueChanged += dtpHoraFinLabor_ValueChanged;
@@ -91,55 +97,14 @@ namespace ConfiguradorUI.Labor.Horario
             {
                 dtpTiempoTolerancia.ValueChanged += dtpTiempoTolerancia_ValueChanged;
             }
-            //--
 
             dtpDesde.ValueChanged += dtpDesde_ValueChanged;
             dtpHasta.ValueChanged += dtpHasta_ValueChanged;
+
+            dtpHasta.CloseUp += dtpHasta_CloseUp;
         }
 
-        private void RemoveHandlers()
-        {
-            foreach (var chkDia in (CheckBox[])GetControls(TipoControl.CheckDia))
-            {
-                chkDia.CheckedChanged -= chk_CheckedChanged;
-            }
-
-            foreach (var dtpBreak in (DateTimePicker[])GetControls(TipoControl.DtpBreak))
-            {
-                dtpBreak.MouseDown -= Dtp_MouseDown;
-                dtpBreak.KeyPress -= DtpBreak_KeyPress;
-            }
-
-            foreach (var dtpHoraInicio in (DateTimePicker[])GetControls(TipoControl.DtpInicioLabor))
-            {
-                dtpHoraInicio.ValueChanged -= dtpHoraInicioLabor_ValueChanged;
-            }
-
-            foreach (var dtpHoraFinLabor in (DateTimePicker[])GetControls(TipoControl.DtpFinLabor))
-            {
-                dtpHoraFinLabor.ValueChanged -= dtpHoraFinLabor_ValueChanged;
-            }
-
-            foreach (var dtpHoraInicioBreak in (DateTimePicker[])GetControls(TipoControl.DtpInicioBreak))
-            {
-                dtpHoraInicioBreak.ValueChanged -= dtpHoraInicioBreak_ValueChanged;
-            }
-
-            foreach (var dtpHoraFinBreak in (DateTimePicker[])GetControls(TipoControl.DtpFinBreak))
-            {
-                dtpHoraFinBreak.ValueChanged -= dtpHoraFinBreak_ValueChanged;
-            }
-
-            foreach (var dtpTiempoTolerancia in (DateTimePicker[])GetControls(TipoControl.DtpTiempoTolerancia))
-            {
-                dtpTiempoTolerancia.ValueChanged -= dtpTiempoTolerancia_ValueChanged;
-            }
-
-            dtpDesde.ValueChanged -= dtpDesde_ValueChanged;
-            dtpHasta.ValueChanged -= dtpHasta_ValueChanged;
-        }
-
-        private dynamic[] GetControls(TipoControl tipoControl)
+        private dynamic GetControls(TipoControl tipoControl)
         {
             dynamic controls = null;
 
@@ -150,6 +115,52 @@ namespace ConfiguradorUI.Labor.Horario
                     {
                         chkDomingo, chkLunes, chkMartes, chkMiercoles, chkJueves, chkViernes, chkSabado,
                     };
+                    break;
+                case TipoControl.CheckDiaTupla:
+                    controls = new List<Tuple<CheckBox, DayOfWeek>>
+                    {
+                        new Tuple<CheckBox,DayOfWeek>(chkDomingo,DayOfWeek.Sunday),
+                        new Tuple<CheckBox,DayOfWeek>(chkLunes,DayOfWeek.Monday),
+                        new Tuple<CheckBox,DayOfWeek>(chkMartes,DayOfWeek.Tuesday),
+                        new Tuple<CheckBox,DayOfWeek>(chkMiercoles,DayOfWeek.Wednesday),
+                        new Tuple<CheckBox,DayOfWeek>(chkJueves,DayOfWeek.Thursday),
+                        new Tuple<CheckBox,DayOfWeek>(chkViernes,DayOfWeek.Friday),
+                        new Tuple<CheckBox,DayOfWeek>(chkSabado,DayOfWeek.Saturday)
+                    };
+                    break;
+                case TipoControl.ChekedDia:
+                    {
+                        controls = new List<CheckBox>();
+
+                        if (chkDomingo.Checked)
+                        {
+                            controls.Add(chkDomingo);
+                        }
+                        if (chkLunes.Checked)
+                        {
+                            controls.Add(chkLunes);
+                        }
+                        if (chkMartes.Checked)
+                        {
+                            controls.Add(chkMartes);
+                        }
+                        if (chkMiercoles.Checked)
+                        {
+                            controls.Add(chkMiercoles);
+                        }
+                        if (chkJueves.Checked)
+                        {
+                            controls.Add(chkJueves);
+                        }
+                        if (chkViernes.Checked)
+                        {
+                            controls.Add(chkViernes);
+                        }
+                        if (chkSabado.Checked)
+                        {
+                            controls.Add(chkSabado);
+                        }
+                    }
                     break;
                 case TipoControl.DtpLabor:
                     controls = new[]
@@ -312,66 +323,69 @@ namespace ConfiguradorUI.Labor.Horario
             return controls;
         }
 
-        private void SetEmpleado(PERt04_empleado empleado)
+        private void LimpiarDatosEnMemoria()
         {
-            _empleado = empleado;
-
-            var nombreCompleto = GetNombreCompletoDeEmpleado();
-
-            lblNombreEmpleado.Text = nombreCompleto.ToUpper();
-            txtNombreEmpleado.Text = nombreCompleto.ToUpper();
-            txtInicioContrato.Text = _empleado.fecha_ingreso?.ToShortDateString();
-            txtFinContrato.Text = _empleado.fecha_cese?.ToShortDateString();
-
-            string GetNombreCompletoDeEmpleado()
-            {
-                return string.IsNullOrEmpty(_empleado.txt_ape_mat) ?
-                        $"{_empleado.txt_ape_pat}, {_empleado.txt_pri_nom} {_empleado.txt_seg_nom}"
-                        : $"{_empleado.txt_ape_pat} {_empleado.txt_ape_mat}, {_empleado.txt_pri_nom} {_empleado.txt_seg_nom}";
-            }
-
-        }
-
-        // Métodos para buscar y luego cargar el horario de un empleado
-        private void BuscarEmpleado()
-        {
-            string nroDoc = txtNroDocEmp.Text.Trim();
-            if (nroDoc != string.Empty)
-            {
-                var empleado = new EmpleadoBL().EmpleadoXNroDoc(nroDoc);
-
-                if (empleado != null &&
-                    empleado.id_empleado > 0)
-                {
-                    LimpiarForm();
-                    SetHorarioYEmpleado(empleado);
-                    AddHandlers();
-                }
-                else
-                {
-                    //abrir emergente
-                }
-            }
-            else
-            {
-                //abrir emergente
-            }
-        }
-
-        private void LimpiarDatosMemoria()
-        {
-            _fechasSeleccionadas = null;
+            _empleado = null;
+            _horario = null;
         }
 
         private void LimpiarForm()
         {
+            var hoy = DateTime.Now.Date;
+            var fechaDtp = hoy > KeyDates.MaxDate ? KeyDates.MaxDate : hoy;
 
-            _tipoOperacion = TipoOperacionABM.No_Action;
+            dtpDesde.Value = fechaDtp;
+            dtpHasta.Value = fechaDtp;
 
-            LimpiarEmpleado();
-            LimpiarHorario();
-            LimpiarDatosMemoria();
-            btnNuevo.Enabled = btnDesasignarFechas.Enabled = false;
+            ControlHelper.FormatDatePicker(dtpHasta, " ", showUpDown: false);
+
+            foreach (var chkDia in (CheckBox[])GetControls(TipoControl.CheckDia))
+            {
+                chkDia.Checked = false;
+                chkDia.Enabled = false;
+            }
+
+            var dtpsInicioLabor = (DateTimePicker[])GetControls(TipoControl.DtpInicioLabor);
+            var dtpsFinLabor = (DateTimePicker[])GetControls(TipoControl.DtpFinLabor);
+            var dtpsInicioBreak = (DateTimePicker[])GetControls(TipoControl.DtpInicioBreak);
+            var dtpsFinBreak = (DateTimePicker[])GetControls(TipoControl.DtpFinBreak);
+            var dtpsTolerancia = (DateTimePicker[])GetControls(TipoControl.DtpTiempoTolerancia);
+            var dtpsBreak = dtpsInicioBreak.Union(dtpsFinBreak);
+
+            foreach (var dtpLaborInicio in dtpsInicioLabor)
+            {
+                dtpLaborInicio.Value = Convert.ToDateTime(new TimeSpan(8, 0, 0).ToString());
+            }
+
+            foreach (var dtpLaborFin in dtpsFinLabor)
+            {
+                dtpLaborFin.Value = Convert.ToDateTime(new TimeSpan(17, 0, 0).ToString());
+            }
+
+            foreach (var dtpTolerancia in dtpsTolerancia)
+            {
+                dtpTolerancia.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
+            }
+
+            foreach (var dtpInicioBreak in dtpsInicioBreak)
+            {
+                dtpInicioBreak.Value = Convert.ToDateTime(new TimeSpan(12, 0, 0).ToString());
+            }
+
+            foreach (var dtpFinBreak in dtpsFinBreak)
+            {
+                dtpFinBreak.Value = Convert.ToDateTime(new TimeSpan(13, 0, 0).ToString());
+            }
+
+            foreach (var dtpBreak in dtpsBreak)
+            {
+                ControlHelper.FormatDatePicker(dtpBreak, customFormat: " ");
+            }
+
+            foreach (var dtp in dtpsInicioLabor.Union(dtpsFinLabor).Union(dtpsTolerancia).Union(dtpsBreak))
+            {
+                dtp.Visible = false;
+            }
         }
 
         private TimeSpan GetHoraYMinutos(TimeSpan hora)
@@ -660,294 +674,142 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private void SetHorarioYEmpleado(PERt04_empleado empleado)
+        private List<LABt04_horario_emp_dtl> GetRangoDeFechas()
         {
-            SetEmpleado(empleado);
-            var horario = new HorarioEmpleadoBL().HorarioXEmpleado(_empleado.id_empleado);
-            SetHorario(horario);
+            var fechas = new List<LABt04_horario_emp_dtl>();
 
-            btnNuevo.Enabled = true;
-            btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
-        }
-
-        private void LimpiarHorario()
-        {
-            LimpiarChecksYDtps();
-
-            ControlarAction();
-
-            mcaMes.RemoveAllBoldedDates();
-            mcaMes.UpdateBoldedDates();
-        }
-
-        private void SetHorario(LABt03_horario_emp horario)
-        {
             try
             {
-                _horario = horario;
+                var desde = dtpDesde.Value.Date;
+                var hasta = dtpHasta.Value.Date;
+                var diaIterado = desde;
 
-                if (_horario != null &&
-                       _horario.id_horario_emp > 0)
+                var diasChecked = (List<CheckBox>)GetControls(TipoControl.ChekedDia);
+                var listTuplaDiaYHoras = new List<Tuple<DayOfWeek, LABt04_horario_emp_dtl>>();
+                foreach (var chk in diasChecked)
                 {
-                    if (_horario.LABt04_horario_emp_dtl != null)
+                    listTuplaDiaYHoras.Add(GetDiaYHorasDelDia(chk));
+                }
+
+                while (diaIterado <= hasta)
+                {
+                    if (listTuplaDiaYHoras.Any(x => x.Item1 == diaIterado.DayOfWeek))
                     {
-                        _horarioSoloFechas = _horario.LABt04_horario_emp_dtl.Select(x => x.fecha_labor);
+                        var diaYHora = listTuplaDiaYHoras.First(x => x.Item1 == diaIterado.DayOfWeek);
+
+                        fechas.Add(
+                            new LABt04_horario_emp_dtl
+                            {
+                                fecha_labor = diaIterado,
+                                hora_inicio = diaYHora.Item2.hora_inicio,
+                                hora_fin = diaYHora.Item2.hora_fin,
+                                hora_inicio_break = diaYHora.Item2.hora_inicio_break,
+                                hora_fin_break = diaYHora.Item2.hora_fin_break,
+                                tiempo_tolerancia = diaYHora.Item2.tiempo_tolerancia
+                            }
+                            );
                     }
 
-                    var fechasDeLaborRestante = _horarioSoloFechas.Count(x => x.Date >= DateTime.Now.Date);
-
-                    lblRangoHorario.ForeColor = Color.Navy;
-                    lblRangoHorario.Text = $"Horario desde {_horario.fecha_inicio_horario.ToShortDateString()} " +
-                                            $"hasta {_horario.fecha_fin_horario.ToShortDateString()} - {fechasDeLaborRestante} días restantes";
-
-                    MarcarODesmarcarFechas(_horarioSoloFechas);
-                }
-                else
-                {
-                    lblRangoHorario.ForeColor = Color.Red;
-                    lblRangoHorario.Text = "NO TIENE HORARIO ASIGNADO";
+                    diaIterado = diaIterado.AddDays(1);
                 }
             }
             catch (Exception e)
             {
-                Msg.Ok_Err("No se pudo mostrar el horario correctamente. Error: " + e.Message);
-            }
-        }
-
-        private void MarcarODesmarcarFechas(IEnumerable<DateTime> fechas)
-        {
-            if (_horarioSoloFechas == null)
-            {
-                _horarioSoloFechas = new List<DateTime>();
-            }
-
-            if (fechas != null)
-            {
-                if (_tipoOperacion == TipoOperacionABM.Insertar)
-                {
-                    mcaMes.BoldedDates = fechas.Union(_horarioSoloFechas)
-                                                .ToArray();
-                }
-                else if (_tipoOperacion == TipoOperacionABM.Eliminar)
-                {
-
-                }
-                else if (_tipoOperacion == TipoOperacionABM.No_Action)
-                {
-                    mcaMes.BoldedDates = fechas.ToArray();
-                }
-            }
-            else
-            {
-                mcaMes.RemoveAllBoldedDates();
-            }
-
-            mcaMes.UpdateBoldedDates();
-        }
-
-        private IEnumerable<DateTime> GetSoloFechas(IEnumerable<LABt04_horario_emp_dtl> horarioDtl)
-        {
-            return horarioDtl.Select(x => x.fecha_labor);
-        }
-
-        private void AgregarOQuitarFechas(CheckBox checkBox)
-        {
-            var desde = dtpDesde.Value.Date;
-            var hasta = dtpHasta.Value.Date;
-
-            if (_fechasSeleccionadas == null)
-            {
-                _fechasSeleccionadas = new List<LABt04_horario_emp_dtl>();
-            }
-
-            var diaYHorasDelDia = GetDiaYHorasDelDia(checkBox);
-
-            _fechasSeleccionadas.RemoveAll(x => x.fecha_labor.DayOfWeek == diaYHorasDelDia.Item1);
-
-            if (checkBox.Checked)
-            {
-                var fechasSeleccionadas = GetRangoDeFechas(desde, hasta, diaYHorasDelDia.Item1, diaYHorasDelDia.Item2);
-                _fechasSeleccionadas.AddRange(fechasSeleccionadas);
-            }
-            MarcarODesmarcarFechas(GetSoloFechas(_fechasSeleccionadas));
-
-        }
-
-        private void AgregarOQuitarFechas()
-        {
-            var desde = dtpDesde.Value.Date;
-            var hasta = dtpHasta.Value.Date;
-
-            if (_fechasSeleccionadas == null)
-            {
-                _fechasSeleccionadas = new List<LABt04_horario_emp_dtl>();
-            }
-
-            var diasChecked = new List<CheckBox>();
-
-            #region Add días marcados
-            if (chkDomingo.Checked)
-            {
-                diasChecked.Add(chkDomingo);
-            }
-            if (chkLunes.Checked)
-            {
-                diasChecked.Add(chkLunes);
-            }
-            if (chkMartes.Checked)
-            {
-                diasChecked.Add(chkMartes);
-            }
-            if (chkMiercoles.Checked)
-            {
-                diasChecked.Add(chkMiercoles);
-            }
-            if (chkJueves.Checked)
-            {
-                diasChecked.Add(chkJueves);
-            }
-            if (chkViernes.Checked)
-            {
-                diasChecked.Add(chkViernes);
-            }
-            if (chkSabado.Checked)
-            {
-                diasChecked.Add(chkSabado);
-            }
-            #endregion
-
-            foreach (var chk in diasChecked)
-            {
-                var diaYHorasDelDia = GetDiaYHorasDelDia(chk);
-
-                _fechasSeleccionadas.RemoveAll(x => x.fecha_labor.DayOfWeek == diaYHorasDelDia.Item1);
-
-                var fechasSeleccionadas = GetRangoDeFechas(desde, hasta, diaYHorasDelDia.Item1, diaYHorasDelDia.Item2);
-                _fechasSeleccionadas.AddRange(fechasSeleccionadas);
-            }
-
-            MarcarODesmarcarFechas(GetSoloFechas(_fechasSeleccionadas));
-        }
-
-        private List<LABt04_horario_emp_dtl> GetRangoDeFechas(DateTime desde, DateTime hasta, DayOfWeek dia, LABt04_horario_emp_dtl horas)
-        {
-            var fechas = new List<LABt04_horario_emp_dtl>();
-            var diaIterado = desde;
-
-            while (diaIterado <= hasta)
-            {
-                if (diaIterado.DayOfWeek == dia)
-                {
-                    fechas.Add(
-                        new LABt04_horario_emp_dtl
-                        {
-                            fecha_labor = diaIterado,
-                            hora_inicio = horas.hora_inicio,
-                            hora_fin = horas.hora_fin,
-                            hora_inicio_break = horas.hora_inicio_break,
-                            hora_fin_break = horas.hora_fin_break,
-                            tiempo_tolerancia = horas.tiempo_tolerancia
-                        }
-                        );
-                }
-
-                diaIterado = diaIterado.AddDays(1);
+                fechas = new List<LABt04_horario_emp_dtl>();
+                Msg.Ok_Err("No se pudo generar el rango fechas. Excepción: " + e.Message);
             }
 
             return fechas;
-
         }
 
         private Tuple<DayOfWeek, LABt04_horario_emp_dtl> GetDiaYHorasDelDia(CheckBox checkBox)
         {
             DayOfWeek dia = DayOfWeek.Saturday;
             var horasDelDia = new LABt04_horario_emp_dtl();
+            DateTimePicker dtpIni = null;
+            DateTimePicker dtpFin = null;
+            DateTimePicker dtpBrkIni = null;
+            DateTimePicker dtpBrkFin = null;
+            DateTimePicker dtpTol = null;
 
             if (checkBox.Name == chkDomingo.Name)
             {
                 dia = DayOfWeek.Sunday;
-                horasDelDia = new LABt04_horario_emp_dtl()
-                {
-                    hora_inicio = dtpIniLabDom.Value.TimeOfDay,
-                    hora_fin = dtpFinLabDom.Value.TimeOfDay,
-                    hora_inicio_break = dtpIniBrkDom.Value.TimeOfDay,
-                    hora_fin_break = dtpFinBrkDom.Value.TimeOfDay,
-                    tiempo_tolerancia = dtpToleranciaDom.Value.TimeOfDay
-                };
-
+                dtpIni = dtpIniLabDom;
+                dtpFin = dtpFinLabDom;
+                dtpBrkIni = dtpIniBrkDom;
+                dtpBrkFin = dtpFinBrkDom;
+                dtpTol = dtpToleranciaDom;
             }
             else if (checkBox.Name == chkLunes.Name)
             {
                 dia = DayOfWeek.Monday;
-                horasDelDia = new LABt04_horario_emp_dtl()
-                {
-                    hora_inicio = dtpIniLabLun.Value.TimeOfDay,
-                    hora_fin = dtpFinLabLun.Value.TimeOfDay,
-                    hora_inicio_break = dtpIniBrkLun.Value.TimeOfDay,
-                    hora_fin_break = dtpFinBrkLun.Value.TimeOfDay,
-                    tiempo_tolerancia = dtpToleranciaLun.Value.TimeOfDay
-                };
+                dtpIni = dtpIniLabLun;
+                dtpFin = dtpFinLabLun;
+                dtpBrkIni = dtpIniBrkLun;
+                dtpBrkFin = dtpFinBrkLun;
+                dtpTol = dtpToleranciaLun;
             }
             else if (checkBox.Name == chkMartes.Name)
             {
                 dia = DayOfWeek.Tuesday;
-                horasDelDia = new LABt04_horario_emp_dtl()
-                {
-                    hora_inicio = dtpIniLabMar.Value.TimeOfDay,
-                    hora_fin = dtpFinLabMar.Value.TimeOfDay,
-                    hora_inicio_break = dtpIniBrkMar.Value.TimeOfDay,
-                    hora_fin_break = dtpFinBrkMar.Value.TimeOfDay,
-                    tiempo_tolerancia = dtpToleranciaMar.Value.TimeOfDay
-                };
+                dtpIni = dtpIniLabMar;
+                dtpFin = dtpFinLabMar;
+                dtpBrkIni = dtpIniBrkMar;
+                dtpBrkFin = dtpFinBrkMar;
+                dtpTol = dtpToleranciaMar;
             }
             else if (checkBox.Name == chkMiercoles.Name)
             {
                 dia = DayOfWeek.Wednesday;
-                horasDelDia = new LABt04_horario_emp_dtl()
-                {
-                    hora_inicio = dtpIniLabMie.Value.TimeOfDay,
-                    hora_fin = dtpFinLabMie.Value.TimeOfDay,
-                    hora_inicio_break = dtpIniBrkMie.Value.TimeOfDay,
-                    hora_fin_break = dtpFinBrkMie.Value.TimeOfDay,
-                    tiempo_tolerancia = dtpToleranciaMie.Value.TimeOfDay
-                };
+                dtpIni = dtpIniLabMie;
+                dtpFin = dtpFinLabMie;
+                dtpBrkIni = dtpIniBrkMie;
+                dtpBrkFin = dtpFinBrkMie;
+                dtpTol = dtpToleranciaMie;
             }
             else if (checkBox.Name == chkJueves.Name)
             {
                 dia = DayOfWeek.Thursday;
-                horasDelDia = new LABt04_horario_emp_dtl()
-                {
-                    hora_inicio = dtpIniLabJue.Value.TimeOfDay,
-                    hora_fin = dtpFinLabJue.Value.TimeOfDay,
-                    hora_inicio_break = dtpIniBrkJue.Value.TimeOfDay,
-                    hora_fin_break = dtpFinBrkJue.Value.TimeOfDay,
-                    tiempo_tolerancia = dtpToleranciaJue.Value.TimeOfDay
-                };
+                dtpIni = dtpIniLabJue;
+                dtpFin = dtpFinLabJue;
+                dtpBrkIni = dtpIniBrkJue;
+                dtpBrkFin = dtpFinBrkJue;
+                dtpTol = dtpToleranciaJue;
             }
             else if (checkBox.Name == chkViernes.Name)
             {
                 dia = DayOfWeek.Friday;
-                horasDelDia = new LABt04_horario_emp_dtl()
-                {
-                    hora_inicio = dtpIniLabVie.Value.TimeOfDay,
-                    hora_fin = dtpFinLabVie.Value.TimeOfDay,
-                    hora_inicio_break = dtpIniBrkVie.Value.TimeOfDay,
-                    hora_fin_break = dtpFinBrkVie.Value.TimeOfDay,
-                    tiempo_tolerancia = dtpToleranciaVie.Value.TimeOfDay
-                };
+                dtpIni = dtpIniLabVie;
+                dtpFin = dtpFinLabVie;
+                dtpBrkIni = dtpIniBrkVie;
+                dtpBrkFin = dtpFinBrkVie;
+                dtpTol = dtpToleranciaVie;
             }
 
             else if (checkBox.Name == chkSabado.Name)
             {
                 dia = DayOfWeek.Saturday;
-                horasDelDia = new LABt04_horario_emp_dtl()
-                {
-                    hora_inicio = dtpIniLabSab.Value.TimeOfDay,
-                    hora_fin = dtpFinLabSab.Value.TimeOfDay,
-                    hora_inicio_break = dtpIniBrkSab.Value.TimeOfDay,
-                    hora_fin_break = dtpFinBrkSab.Value.TimeOfDay,
-                    tiempo_tolerancia = dtpToleranciaSab.Value.TimeOfDay
-                };
+                dtpIni = dtpIniLabSab;
+                dtpFin = dtpFinLabSab;
+                dtpBrkIni = dtpIniBrkSab;
+                dtpBrkFin = dtpFinBrkSab;
+                dtpTol = dtpToleranciaSab;
+            }
+
+            horasDelDia = new LABt04_horario_emp_dtl()
+            {
+                hora_inicio = dtpIni.Value.TimeOfDay,
+                hora_fin = dtpFin.Value.TimeOfDay,
+                tiempo_tolerancia = dtpTol.Value.TimeOfDay
+            };
+            if (dtpBrkIni.CustomFormat != " ")
+            {
+                horasDelDia.hora_inicio_break = dtpBrkIni.Value.TimeOfDay;
+            }
+            if (dtpBrkFin.CustomFormat != " ")
+            {
+                horasDelDia.hora_fin_break = dtpBrkFin.Value.TimeOfDay;
             }
 
             return new Tuple<DayOfWeek, LABt04_horario_emp_dtl>(dia, horasDelDia);
@@ -955,9 +817,11 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void AsignarHorario()
         {
-
-            if (EsValido())
+            var tuplaValidarFechas = ValidarFechas();
+            if (tuplaValidarFechas.Item1)
             {
+                var fechas = tuplaValidarFechas.Item2;
+
                 //update
                 if (_horario != null && _horario.id_horario_emp > 0)
                 {
@@ -968,127 +832,34 @@ namespace ConfiguradorUI.Labor.Horario
                 {
                     var horario = new LABt03_horario_emp()
                     {
-                        fecha_inicio_horario = dtpDesde.Value.Date,
-                        fecha_fin_horario = dtpHasta.Value.Date,
+                        fecha_inicio_horario = fechas.Min(x => x.fecha_labor),
+                        fecha_fin_horario = fechas.Max(x => x.fecha_labor),
                         id_empleado = _empleado.id_empleado
                     };
 
-                    horario.LABt04_horario_emp_dtl = _fechasSeleccionadas;
+                    horario.LABt04_horario_emp_dtl = fechas;
 
                     long idNuevoHorario = new HorarioEmpleadoBL().InsertarHorario(horario);
                     if (idNuevoHorario > 0)
                     {
-                        Msg.Ok_Info("Se asignó el horario correctamente.");
-                        LimpiarForm();
-                        SetHorarioYEmpleado(_empleado);
+                        _seAsigno = true;
+                        Dispose();
+                    }
+                    else
+                    {
+                        Msg.Ok_Err("No se pudo asignar el horario.");
                     }
                 }
             }
         }
 
-        private List<LABt04_horario_emp_dtl> GetObjetoDtl()
-        {
-            var obj = new List<LABt04_horario_emp_dtl>();
-            try
-            {
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(this, $@"Excepción en el Get: {e.Message}");
-            }
-            return obj;
-        }
-
-        private void LimpiarEmpleado()
-        {
-            lblNombreEmpleado.Text = "EMPLEADO: NINGUNO";
-            lblRangoHorario.Text = "HORARIO: NINGUNO";
-
-            txtNombreEmpleado.Clear();
-            txtInicioContrato.Clear();
-            txtFinContrato.Clear();
-            txtNroDocEmp.Clear();
-        }
-
-        private void LimpiarChecksYDtps()
-        {
-            dtpDesde.Value = DateTime.Now.Date;
-            dtpHasta.Value = DateTime.Now.Date.AddMonths(1);
-
-            foreach (var chkDia in (CheckBox[])GetControls(TipoControl.CheckDia))
-            {
-                chkDia.Checked = false;
-            }
-
-            var dtpsInicioLabor = (DateTimePicker[])GetControls(TipoControl.DtpInicioLabor);
-            var dtpsFinLabor = (DateTimePicker[])GetControls(TipoControl.DtpFinLabor);
-            var dtpsInicioBreak = (DateTimePicker[])GetControls(TipoControl.DtpInicioBreak);
-            var dtpsFinBreak = (DateTimePicker[])GetControls(TipoControl.DtpFinBreak);
-            var dtpsTolerancia = (DateTimePicker[])GetControls(TipoControl.DtpTiempoTolerancia);
-            var dtpsBreak = dtpsInicioBreak.Union(dtpsFinBreak);
-
-            foreach (var dtpLaborInicio in dtpsInicioLabor)
-            {
-                dtpLaborInicio.Value = Convert.ToDateTime(new TimeSpan(8, 0, 0).ToString());
-            }
-
-            foreach (var dtpLaborFin in dtpsFinLabor)
-            {
-                dtpLaborFin.Value = Convert.ToDateTime(new TimeSpan(17, 0, 0).ToString());
-            }
-
-            foreach (var dtpTolerancia in dtpsTolerancia)
-            {
-                dtpTolerancia.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
-            }
-
-            foreach (var dtpInicioBreak in dtpsInicioBreak)
-            {
-                dtpInicioBreak.Value = Convert.ToDateTime(new TimeSpan(12, 0, 0).ToString());
-            }
-
-            foreach (var dtpFinBreak in dtpsFinBreak)
-            {
-                dtpFinBreak.Value = Convert.ToDateTime(new TimeSpan(13, 0, 0).ToString());
-            }
-
-            foreach (var dtpBreak in dtpsBreak)
-            {
-                ControlHelper.FormatDatePicker(dtpBreak, customFormat: " ");
-            }
-
-            foreach (var dtp in dtpsInicioLabor.Union(dtpsFinLabor).Union(dtpsTolerancia).Union(dtpsBreak))
-            {
-                dtp.Visible = false;
-            }
-        }
-
         private void ConfigurarControles()
         {
-            #region labels
-
-            lblRangoHorario.UseCustomForeColor = true;
-
-            #endregion
-
-            #region paneles
-            ControlarAction();
-
-            #endregion
-
-            #region botones
-
-            btnNuevo.Enabled = false;
-            btnDesasignarFechas.Enabled = false;
-
-            #endregion
 
             #region DateTimePicker
 
-            dtpDesde.MinDate = DateTime.Now.Date;
-            dtpDesde.MaxDate = new DateTime(2050, 12, 31).Date;
-            dtpHasta.MaxDate = new DateTime(2050, 12, 31).Date;
+            dtpDesde.MinDate = dtpHasta.MinDate = DateTime.Now.Date;
+            dtpDesde.MaxDate = dtpHasta.MaxDate = KeyDates.MaxDate;
 
             dtpDesde.Format = DateTimePickerFormat.Custom;
             dtpDesde.CustomFormat = "dd/MM/yyyy";
@@ -1096,66 +867,64 @@ namespace ConfiguradorUI.Labor.Horario
             dtpHasta.Format = DateTimePickerFormat.Custom;
             dtpHasta.CustomFormat = "dd/MM/yyyy";
 
-            var dtpsTolerancia = (DateTimePicker[])GetControls(TipoControl.DtpTiempoTolerancia);
             var dtpsLabor = (DateTimePicker[])GetControls(TipoControl.DtpLabor);
 
-            foreach (var dtpLabor in dtpsLabor.Union(dtpsTolerancia))
+            foreach (var dtpLabor in dtpsLabor)
             {
-                ControlHelper.FormatDatePicker(dtpLabor, customFormat: "HH:mm tt");
+                ControlHelper.FormatDatePicker(dtpLabor, customFormat: "hh:mm tt");
+            }
+
+            foreach (var dtpTol in (DateTimePicker[])GetControls(TipoControl.DtpTiempoTolerancia))
+            {
+                ControlHelper.FormatDatePicker(dtpTol, customFormat: "HH:mm");
             }
 
             #endregion
         }
 
-        private void ControlarAction()
+        private void EvaluarDiasDisponibles()
         {
-            if (_tipoOperacion == TipoOperacionABM.No_Action)
+            var fechaDesde = dtpDesde.Value.Date;
+            var fechaHasta = dtpHasta.Value.Date;
+
+            if ((fechaHasta - fechaDesde).Days >= 6)
             {
-                pnlControlesGenerales.Visible = false;
+                foreach (var chkDia in (CheckBox[])GetControls(TipoControl.CheckDia))
+                {
+                    chkDia.Enabled = true;
+                }
             }
-            else if (_tipoOperacion == TipoOperacionABM.Insertar)
+            else
             {
-                LimpiarChecksYDtps();
+                var diasHabilitados = new List<DayOfWeek>();
+                while (fechaDesde <= fechaHasta)
+                {
+                    diasHabilitados.Add(fechaDesde.DayOfWeek);
+                    fechaDesde = fechaDesde.AddDays(1);
+                }
 
-
-                lblOperacionActual.Text = "Asignar horario. Seleccione los días a asignar y comfirme.";
-                pnlHoras.Visible = true;
-                pnlControlesGenerales.Visible = true;
-
-
-            }
-            else if (_tipoOperacion == TipoOperacionABM.Eliminar)
-            {
-                LimpiarChecksYDtps();
-
-                lblOperacionActual.Text = "Quitar fechas. Seleccione los días a desasignar y confirme.";
-                pnlControlesGenerales.Visible = true;
-                pnlHoras.Visible = false;
+                foreach (var tuplaChkDia in (List<Tuple<CheckBox, DayOfWeek>>)GetControls(TipoControl.CheckDiaTupla))
+                {
+                    tuplaChkDia.Item1.Enabled = diasHabilitados.Any(x => x == tuplaChkDia.Item2);
+                    if (!tuplaChkDia.Item1.Enabled)
+                    {
+                        tuplaChkDia.Item1.Checked = false;
+                    }
+                }
             }
         }
 
-        private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
-        {
-            btnNuevo.Enabled = eNuevo;
-            //btnDelete.Enabled = eDelete;
-            //btnCommit.Enabled = eCommit;
-            //btnRollback.Enabled = eRollback;
-            //btnSearch.Enabled = eSearch;
-            //btnFilter.Enabled = eFilter;
-        }
-
-        private bool EsValido()
+        private Tuple<bool, ICollection<LABt04_horario_emp_dtl>> ValidarFechas()
         {
             bool no_error = true;
+            var fechas = new List<LABt04_horario_emp_dtl>();
 
             //validar que existe el empleado
             if (_empleado == null ||
                 !(_empleado.id_empleado > 0))
             {
                 no_error = false;
-                tabHorario.SelectedTab = tabPagGeneral;
                 Msg.Ok_Wng("Busque y seleccione un empleado antes de asignar un horario.", "Validación");
-                txtNroDocEmp.Focus();
             }
 
             //validar el rango de fechas
@@ -1183,23 +952,19 @@ namespace ConfiguradorUI.Labor.Horario
                 }
             }
 
-            if (_fechasSeleccionadas == null || !(_fechasSeleccionadas.Count > 0))
+            //Validar las fechas a asignar/editar
+            if (no_error)
             {
-                no_error = false;
+                fechas = GetRangoDeFechas();
+                if (fechas == null || !(fechas.Count > 0))
+                {
+                    no_error = false;
+                    Msg.Ok_Wng("Debe seleccionar los días que desea asignar al empleado.", "Validación");
+                }
             }
 
-            return no_error;
+            return new Tuple<bool, ICollection<LABt04_horario_emp_dtl>>(no_error, fechas);
         }
-
-        private void QuitarFechas()
-        {
-
-        }
-
-        #endregion
-
-        #region Eventos
-
 
         private void VisibleOrInvisibleDtps(DateTimePicker[] dtps, bool visible)
         {
@@ -1282,53 +1047,24 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private void btnBuscarEmp_Click(object sender, EventArgs e)
-        {
-            BuscarEmpleado();
-        }
+        #endregion
 
-        private void FormHorarioEmpleado_Load(object sender, EventArgs e)
+        #region Eventos
+        private void FormAsignarHorario_Load(object sender, EventArgs e)
         {
             ConfigurarControles();
             LimpiarForm();
+            AddHandlers();
+            dtpHasta.Focus();
         }
 
-        private void btnDesasignarFechas_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //_tipoOperacion = TipoOperacionABM.Eliminar;
-            //ControlarAction();
-            var frm = new FormEliminarHorario();
-            frm.ShowDialog();
-        }
-
-        private void btnCommit_Click(object sender, EventArgs e)
-        {
-            if (_tipoOperacion == TipoOperacionABM.Insertar)
-            {
-                AsignarHorario();
-            }
-            else if (_tipoOperacion == TipoOperacionABM.Eliminar)
-            {
-                QuitarFechas();
-            }
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            //if (_tipoOperacion != TipoOperacionABM.Insertar)
-            //{
-            //    _tipoOperacion = TipoOperacionABM.Insertar;
-            //    RemoveHandlers();
-            //    ControlarAction();
-            //    AddHandlers();
-            //}
-            var frm = new FormAsignarHorario();
-            frm.ShowDialog();
+            AsignarHorario();
         }
 
         private void dtpDesde_ValueChanged(object sender, EventArgs e)
         {
-
             if (dtpDesde.Value.Date > dtpHasta.Value.Date)
             {
                 Msg.Ok_Wng("La fecha \"Desde\" no puede ser mayor que la fecha \"Hasta\".");
@@ -1336,20 +1072,30 @@ namespace ConfiguradorUI.Labor.Horario
             }
             else
             {
-                AgregarOQuitarFechas();
+                EvaluarDiasDisponibles();
             }
+
         }
 
         private void dtpHasta_ValueChanged(object sender, EventArgs e)
         {
             if (dtpDesde.Value.Date > dtpHasta.Value.Date)
             {
-                Msg.Ok_Wng("El fecha \"Hasta\" no puede ser menor que la fecha \"Desde\".");
+                Msg.Ok_Wng("La fecha \"Hasta\" no puede ser menor que la fecha \"Desde\".");
                 dtpHasta.Value = dtpDesde.Value.Date;
             }
             else
             {
-                AgregarOQuitarFechas();
+                EvaluarDiasDisponibles();
+            }
+        }
+
+        private void dtpHasta_CloseUp(object sender, EventArgs e)
+        {
+            if (dtpHasta.CustomFormat == " ")
+            {
+                ControlHelper.FormatDatePicker(dtpHasta, customFormat: "dd/MM/yyyy", showUpDown: false);
+                EvaluarDiasDisponibles();
             }
         }
 
@@ -1357,13 +1103,6 @@ namespace ConfiguradorUI.Labor.Horario
         {
             var chk = (CheckBox)sender;
             ToggleHorasDelDia(chk);
-            AgregarOQuitarFechas(chk);
-        }
-
-        private void txtNroDocEmp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-                BuscarEmpleado();
         }
 
         private void DtpBreak_KeyPress(object sender, KeyPressEventArgs e)
@@ -1374,22 +1113,9 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private void Dtp_MouseDown(object sender, MouseEventArgs e)
+        private void DtpBreak_MouseDown(object sender, MouseEventArgs e)
         {
-            ToggleDtpBreak((DateTimePicker)sender, "HH:mm tt");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (_fechasSeleccionadas != null)
-            {
-                string fechas = "";
-                foreach (var fecha in _fechasSeleccionadas)
-                {
-                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
-                }
-                Msg.Ok_Info(fechas);
-            }
+            ToggleDtpBreak((DateTimePicker)sender, "hh:mm tt");
         }
 
         private void dtpHoraInicioLabor_ValueChanged(object sender, EventArgs e)
@@ -1422,7 +1148,20 @@ namespace ConfiguradorUI.Labor.Horario
             ValidarTiempoTolerancia(dtp);
         }
 
-        #endregion
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var fechasL = GetRangoDeFechas();
+            if (fechasL != null)
+            {
+                string fechas = "";
+                foreach (var fecha in fechasL)
+                {
+                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
+                }
+                Msg.Ok_Info(fechas);
+            }
+        }
 
+        #endregion
     }
 }

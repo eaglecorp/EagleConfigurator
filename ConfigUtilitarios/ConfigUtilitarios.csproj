@@ -59,6 +59,7 @@
     <Compile Include="HelperGeneric\Human.cs" />
     <Compile Include="HelperGeneric\List\AlphaNumericComparer.cs" />
     <Compile Include="HelperGeneric\UtilString.cs" />
+    <Compile Include="KeyValues\KeyDates.cs" />
     <Compile Include="Security\BackupRestore.cs" />
     <Compile Include="HelperMultimedia\CamWeb.cs" />
     <Compile Include="KeyValues\CodValDelete.cs" />

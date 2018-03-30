@@ -28,6 +28,12 @@ namespace ConfigUtilitarios.HelperControl
         {
             return MessageBox.Show(msj, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
+
+        public static DialogResult YesNo_Wng(string msj, string title = "Confirmación")
+        {
+            return MessageBox.Show(msj, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        }
+
         public static DialogResult OkCancel_Ques(string msj, string title = "Mensaje")
         {
             return MessageBox.Show(msj, title, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);

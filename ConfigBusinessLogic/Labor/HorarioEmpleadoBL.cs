@@ -19,5 +19,20 @@ namespace ConfigBusinessLogic.Labor
         {
             return new HorarioEmpleadoDA().EliminarHorarioDtl(id_horario_emp);
         }
+
+        public bool EliminarHorariosDtl(IEnumerable<long> idFechas)
+        {
+            return new HorarioEmpleadoDA().EliminarHorariosDtl(idFechas);
+        }
+
+        public bool EliminarHorario(long idHorario)
+        {
+            return new HorarioEmpleadoDA().EliminarHorario(idHorario);
+        }
+
+        public bool ActualizarRangoDeHorario(long idHorario)
+        {
+            return new HorarioEmpleadoDA().ActualizarRangoDeHorario(idHorario);
+        }
     }
 }

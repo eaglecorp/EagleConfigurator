@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.chkSabado = new MetroFramework.Controls.MetroCheckBox();
-            this.pnlHoras = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtpToleranciaSab = new System.Windows.Forms.DateTimePicker();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -85,94 +84,47 @@
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.pnlHoras.SuspendLayout();
+            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chkSabado
             // 
             this.chkSabado.AutoSize = true;
             this.chkSabado.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkSabado.Location = new System.Drawing.Point(37, 293);
+            this.chkSabado.Location = new System.Drawing.Point(37, 306);
             this.chkSabado.Name = "chkSabado";
             this.chkSabado.Size = new System.Drawing.Size(70, 19);
             this.chkSabado.TabIndex = 125;
             this.chkSabado.Text = "Sábado";
             this.chkSabado.UseSelectable = true;
             // 
-            // pnlHoras
-            // 
-            this.pnlHoras.BackColor = System.Drawing.Color.White;
-            this.pnlHoras.Controls.Add(this.panel3);
-            this.pnlHoras.Controls.Add(this.dtpToleranciaSab);
-            this.pnlHoras.Controls.Add(this.metroLabel1);
-            this.pnlHoras.Controls.Add(this.metroLabel2);
-            this.pnlHoras.Controls.Add(this.dtpToleranciaVie);
-            this.pnlHoras.Controls.Add(this.dtpIniBrkDom);
-            this.pnlHoras.Controls.Add(this.dtpToleranciaJue);
-            this.pnlHoras.Controls.Add(this.dtpFinLabSab);
-            this.pnlHoras.Controls.Add(this.dtpToleranciaMie);
-            this.pnlHoras.Controls.Add(this.dtpFinBrkDom);
-            this.pnlHoras.Controls.Add(this.lblDomHi);
-            this.pnlHoras.Controls.Add(this.dtpIniLabSab);
-            this.pnlHoras.Controls.Add(this.dtpToleranciaMar);
-            this.pnlHoras.Controls.Add(this.dtpIniBrkLun);
-            this.pnlHoras.Controls.Add(this.dtpToleranciaLun);
-            this.pnlHoras.Controls.Add(this.dtpFinLabVie);
-            this.pnlHoras.Controls.Add(this.lblDomHf);
-            this.pnlHoras.Controls.Add(this.dtpFinBrkLun);
-            this.pnlHoras.Controls.Add(this.dtpToleranciaDom);
-            this.pnlHoras.Controls.Add(this.dtpIniLabVie);
-            this.pnlHoras.Controls.Add(this.metroLabel4);
-            this.pnlHoras.Controls.Add(this.dtpIniBrkMar);
-            this.pnlHoras.Controls.Add(this.dtpIniLabDom);
-            this.pnlHoras.Controls.Add(this.dtpFinLabJue);
-            this.pnlHoras.Controls.Add(this.dtpFinBrkSab);
-            this.pnlHoras.Controls.Add(this.dtpFinBrkMar);
-            this.pnlHoras.Controls.Add(this.dtpFinLabDom);
-            this.pnlHoras.Controls.Add(this.dtpIniLabJue);
-            this.pnlHoras.Controls.Add(this.dtpIniBrkSab);
-            this.pnlHoras.Controls.Add(this.dtpIniBrkMie);
-            this.pnlHoras.Controls.Add(this.dtpIniLabLun);
-            this.pnlHoras.Controls.Add(this.dtpFinLabMie);
-            this.pnlHoras.Controls.Add(this.dtpFinBrkVie);
-            this.pnlHoras.Controls.Add(this.dtpFinBrkMie);
-            this.pnlHoras.Controls.Add(this.dtpFinLabLun);
-            this.pnlHoras.Controls.Add(this.dtpIniLabMie);
-            this.pnlHoras.Controls.Add(this.dtpIniBrkVie);
-            this.pnlHoras.Controls.Add(this.dtpIniBrkJue);
-            this.pnlHoras.Controls.Add(this.dtpIniLabMar);
-            this.pnlHoras.Controls.Add(this.dtpFinLabMar);
-            this.pnlHoras.Controls.Add(this.dtpFinBrkJue);
-            this.pnlHoras.Location = new System.Drawing.Point(146, 108);
-            this.pnlHoras.Name = "pnlHoras";
-            this.pnlHoras.Size = new System.Drawing.Size(389, 207);
-            this.pnlHoras.TabIndex = 194;
-            // 
             // panel3
             // 
             this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 22);
+            this.panel3.Location = new System.Drawing.Point(37, 139);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(380, 4);
+            this.panel3.Size = new System.Drawing.Size(530, 4);
             this.panel3.TabIndex = 171;
             // 
             // dtpToleranciaSab
             // 
-            this.dtpToleranciaSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpToleranciaSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaSab.Location = new System.Drawing.Point(315, 183);
+            this.dtpToleranciaSab.Location = new System.Drawing.Point(517, 305);
             this.dtpToleranciaSab.Name = "dtpToleranciaSab";
-            this.dtpToleranciaSab.Size = new System.Drawing.Size(72, 21);
+            this.dtpToleranciaSab.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaSab.TabIndex = 170;
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(237, 2);
+            this.metroLabel1.Location = new System.Drawing.Point(418, 115);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 141;
             this.metroLabel1.Text = "Fin Break";
             this.metroLabel1.UseCustomForeColor = true;
@@ -180,360 +132,364 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel2.Location = new System.Drawing.Point(159, 2);
+            this.metroLabel2.Location = new System.Drawing.Point(327, 116);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(76, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(79, 19);
             this.metroLabel2.TabIndex = 140;
             this.metroLabel2.Text = "Inicio Break";
             this.metroLabel2.UseCustomForeColor = true;
             // 
             // dtpToleranciaVie
             // 
-            this.dtpToleranciaVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpToleranciaVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaVie.Location = new System.Drawing.Point(315, 158);
+            this.dtpToleranciaVie.Location = new System.Drawing.Point(517, 280);
             this.dtpToleranciaVie.Name = "dtpToleranciaVie";
-            this.dtpToleranciaVie.Size = new System.Drawing.Size(72, 21);
+            this.dtpToleranciaVie.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaVie.TabIndex = 168;
             // 
             // dtpIniBrkDom
             // 
             this.dtpIniBrkDom.CustomFormat = "";
-            this.dtpIniBrkDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniBrkDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkDom.Location = new System.Drawing.Point(159, 33);
+            this.dtpIniBrkDom.Location = new System.Drawing.Point(327, 155);
             this.dtpIniBrkDom.Name = "dtpIniBrkDom";
-            this.dtpIniBrkDom.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniBrkDom.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkDom.TabIndex = 142;
             // 
             // dtpToleranciaJue
             // 
-            this.dtpToleranciaJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpToleranciaJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaJue.Location = new System.Drawing.Point(315, 133);
+            this.dtpToleranciaJue.Location = new System.Drawing.Point(517, 255);
             this.dtpToleranciaJue.Name = "dtpToleranciaJue";
-            this.dtpToleranciaJue.Size = new System.Drawing.Size(72, 21);
+            this.dtpToleranciaJue.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaJue.TabIndex = 166;
             // 
             // dtpFinLabSab
             // 
-            this.dtpFinLabSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinLabSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabSab.Location = new System.Drawing.Point(81, 183);
+            this.dtpFinLabSab.Location = new System.Drawing.Point(243, 305);
             this.dtpFinLabSab.Name = "dtpFinLabSab";
-            this.dtpFinLabSab.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinLabSab.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabSab.TabIndex = 139;
             // 
             // dtpToleranciaMie
             // 
-            this.dtpToleranciaMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpToleranciaMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaMie.Location = new System.Drawing.Point(315, 108);
+            this.dtpToleranciaMie.Location = new System.Drawing.Point(517, 230);
             this.dtpToleranciaMie.Name = "dtpToleranciaMie";
-            this.dtpToleranciaMie.Size = new System.Drawing.Size(72, 21);
+            this.dtpToleranciaMie.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaMie.TabIndex = 164;
             // 
             // dtpFinBrkDom
             // 
-            this.dtpFinBrkDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinBrkDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkDom.Location = new System.Drawing.Point(237, 33);
+            this.dtpFinBrkDom.Location = new System.Drawing.Point(411, 155);
             this.dtpFinBrkDom.Name = "dtpFinBrkDom";
-            this.dtpFinBrkDom.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinBrkDom.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkDom.TabIndex = 143;
             // 
             // lblDomHi
             // 
             this.lblDomHi.AutoSize = true;
+            this.lblDomHi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblDomHi.ForeColor = System.Drawing.Color.Navy;
-            this.lblDomHi.Location = new System.Drawing.Point(3, 2);
+            this.lblDomHi.Location = new System.Drawing.Point(161, 115);
             this.lblDomHi.Name = "lblDomHi";
-            this.lblDomHi.Size = new System.Drawing.Size(72, 19);
+            this.lblDomHi.Size = new System.Drawing.Size(75, 19);
             this.lblDomHi.TabIndex = 118;
             this.lblDomHi.Text = "Hora Inicio";
             this.lblDomHi.UseCustomForeColor = true;
             // 
             // dtpIniLabSab
             // 
-            this.dtpIniLabSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniLabSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabSab.Location = new System.Drawing.Point(3, 183);
+            this.dtpIniLabSab.Location = new System.Drawing.Point(159, 305);
             this.dtpIniLabSab.Name = "dtpIniLabSab";
-            this.dtpIniLabSab.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniLabSab.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabSab.TabIndex = 138;
             // 
             // dtpToleranciaMar
             // 
-            this.dtpToleranciaMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpToleranciaMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaMar.Location = new System.Drawing.Point(315, 83);
+            this.dtpToleranciaMar.Location = new System.Drawing.Point(517, 205);
             this.dtpToleranciaMar.Name = "dtpToleranciaMar";
-            this.dtpToleranciaMar.Size = new System.Drawing.Size(72, 21);
+            this.dtpToleranciaMar.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaMar.TabIndex = 162;
             // 
             // dtpIniBrkLun
             // 
-            this.dtpIniBrkLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniBrkLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkLun.Location = new System.Drawing.Point(159, 58);
+            this.dtpIniBrkLun.Location = new System.Drawing.Point(327, 180);
             this.dtpIniBrkLun.Name = "dtpIniBrkLun";
-            this.dtpIniBrkLun.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniBrkLun.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkLun.TabIndex = 144;
             // 
             // dtpToleranciaLun
             // 
-            this.dtpToleranciaLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpToleranciaLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaLun.Location = new System.Drawing.Point(315, 58);
+            this.dtpToleranciaLun.Location = new System.Drawing.Point(517, 180);
             this.dtpToleranciaLun.Name = "dtpToleranciaLun";
-            this.dtpToleranciaLun.Size = new System.Drawing.Size(72, 21);
+            this.dtpToleranciaLun.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaLun.TabIndex = 160;
             // 
             // dtpFinLabVie
             // 
-            this.dtpFinLabVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinLabVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabVie.Location = new System.Drawing.Point(81, 158);
+            this.dtpFinLabVie.Location = new System.Drawing.Point(243, 280);
             this.dtpFinLabVie.Name = "dtpFinLabVie";
-            this.dtpFinLabVie.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinLabVie.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabVie.TabIndex = 137;
             // 
             // lblDomHf
             // 
             this.lblDomHf.AutoSize = true;
+            this.lblDomHf.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblDomHf.ForeColor = System.Drawing.Color.Navy;
-            this.lblDomHf.Location = new System.Drawing.Point(81, 2);
+            this.lblDomHf.Location = new System.Drawing.Point(252, 116);
             this.lblDomHf.Name = "lblDomHf";
-            this.lblDomHf.Size = new System.Drawing.Size(59, 19);
+            this.lblDomHf.Size = new System.Drawing.Size(61, 19);
             this.lblDomHf.TabIndex = 119;
             this.lblDomHf.Text = "Hora Fin";
             this.lblDomHf.UseCustomForeColor = true;
             // 
             // dtpFinBrkLun
             // 
-            this.dtpFinBrkLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinBrkLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkLun.Location = new System.Drawing.Point(237, 58);
+            this.dtpFinBrkLun.Location = new System.Drawing.Point(411, 180);
             this.dtpFinBrkLun.Name = "dtpFinBrkLun";
-            this.dtpFinBrkLun.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinBrkLun.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkLun.TabIndex = 145;
             // 
             // dtpToleranciaDom
             // 
-            this.dtpToleranciaDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpToleranciaDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaDom.Location = new System.Drawing.Point(315, 33);
+            this.dtpToleranciaDom.Location = new System.Drawing.Point(517, 155);
             this.dtpToleranciaDom.Name = "dtpToleranciaDom";
-            this.dtpToleranciaDom.Size = new System.Drawing.Size(72, 21);
+            this.dtpToleranciaDom.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaDom.TabIndex = 158;
             // 
             // dtpIniLabVie
             // 
-            this.dtpIniLabVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniLabVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabVie.Location = new System.Drawing.Point(3, 158);
+            this.dtpIniLabVie.Location = new System.Drawing.Point(159, 280);
             this.dtpIniLabVie.Name = "dtpIniLabVie";
-            this.dtpIniLabVie.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniLabVie.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabVie.TabIndex = 136;
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel4.Location = new System.Drawing.Point(315, 2);
+            this.metroLabel4.Location = new System.Drawing.Point(500, 114);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(69, 19);
             this.metroLabel4.TabIndex = 156;
             this.metroLabel4.Text = "Tolerancia";
             this.metroLabel4.UseCustomForeColor = true;
             // 
             // dtpIniBrkMar
             // 
-            this.dtpIniBrkMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniBrkMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkMar.Location = new System.Drawing.Point(159, 83);
+            this.dtpIniBrkMar.Location = new System.Drawing.Point(327, 205);
             this.dtpIniBrkMar.Name = "dtpIniBrkMar";
-            this.dtpIniBrkMar.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniBrkMar.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkMar.TabIndex = 146;
             // 
             // dtpIniLabDom
             // 
-            this.dtpIniLabDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniLabDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabDom.Location = new System.Drawing.Point(3, 33);
+            this.dtpIniLabDom.Location = new System.Drawing.Point(159, 155);
             this.dtpIniLabDom.Name = "dtpIniLabDom";
-            this.dtpIniLabDom.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniLabDom.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabDom.TabIndex = 126;
             // 
             // dtpFinLabJue
             // 
-            this.dtpFinLabJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinLabJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabJue.Location = new System.Drawing.Point(81, 133);
+            this.dtpFinLabJue.Location = new System.Drawing.Point(243, 255);
             this.dtpFinLabJue.Name = "dtpFinLabJue";
-            this.dtpFinLabJue.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinLabJue.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabJue.TabIndex = 135;
             // 
             // dtpFinBrkSab
             // 
-            this.dtpFinBrkSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinBrkSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkSab.Location = new System.Drawing.Point(237, 183);
+            this.dtpFinBrkSab.Location = new System.Drawing.Point(411, 305);
             this.dtpFinBrkSab.Name = "dtpFinBrkSab";
-            this.dtpFinBrkSab.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinBrkSab.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkSab.TabIndex = 155;
             // 
             // dtpFinBrkMar
             // 
-            this.dtpFinBrkMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinBrkMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkMar.Location = new System.Drawing.Point(237, 83);
+            this.dtpFinBrkMar.Location = new System.Drawing.Point(411, 205);
             this.dtpFinBrkMar.Name = "dtpFinBrkMar";
-            this.dtpFinBrkMar.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinBrkMar.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkMar.TabIndex = 147;
             // 
             // dtpFinLabDom
             // 
-            this.dtpFinLabDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinLabDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabDom.Location = new System.Drawing.Point(81, 33);
+            this.dtpFinLabDom.Location = new System.Drawing.Point(243, 155);
             this.dtpFinLabDom.Name = "dtpFinLabDom";
-            this.dtpFinLabDom.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinLabDom.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabDom.TabIndex = 127;
             this.dtpFinLabDom.Value = new System.DateTime(2018, 1, 31, 0, 0, 0, 0);
             // 
             // dtpIniLabJue
             // 
-            this.dtpIniLabJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniLabJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabJue.Location = new System.Drawing.Point(3, 133);
+            this.dtpIniLabJue.Location = new System.Drawing.Point(159, 255);
             this.dtpIniLabJue.Name = "dtpIniLabJue";
-            this.dtpIniLabJue.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniLabJue.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabJue.TabIndex = 134;
             // 
             // dtpIniBrkSab
             // 
-            this.dtpIniBrkSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniBrkSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkSab.Location = new System.Drawing.Point(159, 183);
+            this.dtpIniBrkSab.Location = new System.Drawing.Point(327, 305);
             this.dtpIniBrkSab.Name = "dtpIniBrkSab";
-            this.dtpIniBrkSab.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniBrkSab.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkSab.TabIndex = 154;
             // 
             // dtpIniBrkMie
             // 
-            this.dtpIniBrkMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniBrkMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkMie.Location = new System.Drawing.Point(159, 108);
+            this.dtpIniBrkMie.Location = new System.Drawing.Point(327, 230);
             this.dtpIniBrkMie.Name = "dtpIniBrkMie";
-            this.dtpIniBrkMie.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniBrkMie.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkMie.TabIndex = 148;
             // 
             // dtpIniLabLun
             // 
-            this.dtpIniLabLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniLabLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabLun.Location = new System.Drawing.Point(3, 58);
+            this.dtpIniLabLun.Location = new System.Drawing.Point(159, 180);
             this.dtpIniLabLun.Name = "dtpIniLabLun";
-            this.dtpIniLabLun.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniLabLun.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabLun.TabIndex = 128;
             // 
             // dtpFinLabMie
             // 
-            this.dtpFinLabMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinLabMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabMie.Location = new System.Drawing.Point(81, 108);
+            this.dtpFinLabMie.Location = new System.Drawing.Point(243, 230);
             this.dtpFinLabMie.Name = "dtpFinLabMie";
-            this.dtpFinLabMie.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinLabMie.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabMie.TabIndex = 133;
             // 
             // dtpFinBrkVie
             // 
-            this.dtpFinBrkVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinBrkVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkVie.Location = new System.Drawing.Point(237, 158);
+            this.dtpFinBrkVie.Location = new System.Drawing.Point(411, 280);
             this.dtpFinBrkVie.Name = "dtpFinBrkVie";
-            this.dtpFinBrkVie.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinBrkVie.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkVie.TabIndex = 153;
             // 
             // dtpFinBrkMie
             // 
-            this.dtpFinBrkMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinBrkMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkMie.Location = new System.Drawing.Point(237, 108);
+            this.dtpFinBrkMie.Location = new System.Drawing.Point(411, 230);
             this.dtpFinBrkMie.Name = "dtpFinBrkMie";
-            this.dtpFinBrkMie.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinBrkMie.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkMie.TabIndex = 149;
             // 
             // dtpFinLabLun
             // 
-            this.dtpFinLabLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinLabLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabLun.Location = new System.Drawing.Point(81, 58);
+            this.dtpFinLabLun.Location = new System.Drawing.Point(243, 180);
             this.dtpFinLabLun.Name = "dtpFinLabLun";
-            this.dtpFinLabLun.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinLabLun.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabLun.TabIndex = 129;
             // 
             // dtpIniLabMie
             // 
-            this.dtpIniLabMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniLabMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabMie.Location = new System.Drawing.Point(3, 108);
+            this.dtpIniLabMie.Location = new System.Drawing.Point(159, 230);
             this.dtpIniLabMie.Name = "dtpIniLabMie";
-            this.dtpIniLabMie.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniLabMie.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabMie.TabIndex = 132;
             // 
             // dtpIniBrkVie
             // 
-            this.dtpIniBrkVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniBrkVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkVie.Location = new System.Drawing.Point(159, 158);
+            this.dtpIniBrkVie.Location = new System.Drawing.Point(327, 280);
             this.dtpIniBrkVie.Name = "dtpIniBrkVie";
-            this.dtpIniBrkVie.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniBrkVie.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkVie.TabIndex = 152;
             // 
             // dtpIniBrkJue
             // 
-            this.dtpIniBrkJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniBrkJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkJue.Location = new System.Drawing.Point(159, 133);
+            this.dtpIniBrkJue.Location = new System.Drawing.Point(327, 255);
             this.dtpIniBrkJue.Name = "dtpIniBrkJue";
-            this.dtpIniBrkJue.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniBrkJue.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkJue.TabIndex = 150;
             // 
             // dtpIniLabMar
             // 
-            this.dtpIniLabMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIniLabMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabMar.Location = new System.Drawing.Point(3, 83);
+            this.dtpIniLabMar.Location = new System.Drawing.Point(159, 205);
             this.dtpIniLabMar.Name = "dtpIniLabMar";
-            this.dtpIniLabMar.Size = new System.Drawing.Size(72, 21);
+            this.dtpIniLabMar.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabMar.TabIndex = 130;
             // 
             // dtpFinLabMar
             // 
-            this.dtpFinLabMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinLabMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabMar.Location = new System.Drawing.Point(81, 83);
+            this.dtpFinLabMar.Location = new System.Drawing.Point(243, 205);
             this.dtpFinLabMar.Name = "dtpFinLabMar";
-            this.dtpFinLabMar.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinLabMar.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabMar.TabIndex = 131;
             // 
             // dtpFinBrkJue
             // 
-            this.dtpFinBrkJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinBrkJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkJue.Location = new System.Drawing.Point(237, 133);
+            this.dtpFinBrkJue.Location = new System.Drawing.Point(411, 255);
             this.dtpFinBrkJue.Name = "dtpFinBrkJue";
-            this.dtpFinBrkJue.Size = new System.Drawing.Size(72, 21);
+            this.dtpFinBrkJue.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkJue.TabIndex = 151;
             // 
             // chkViernes
             // 
             this.chkViernes.AutoSize = true;
             this.chkViernes.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkViernes.Location = new System.Drawing.Point(37, 268);
+            this.chkViernes.Location = new System.Drawing.Point(37, 281);
             this.chkViernes.Name = "chkViernes";
             this.chkViernes.Size = new System.Drawing.Size(70, 19);
             this.chkViernes.TabIndex = 124;
@@ -544,7 +500,7 @@
             // 
             this.chkJueves.AutoSize = true;
             this.chkJueves.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkJueves.Location = new System.Drawing.Point(37, 243);
+            this.chkJueves.Location = new System.Drawing.Point(37, 256);
             this.chkJueves.Name = "chkJueves";
             this.chkJueves.Size = new System.Drawing.Size(65, 19);
             this.chkJueves.TabIndex = 123;
@@ -554,19 +510,20 @@
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
+            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel14.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel14.Location = new System.Drawing.Point(37, 111);
+            this.metroLabel14.Location = new System.Drawing.Point(37, 115);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(28, 19);
+            this.metroLabel14.Size = new System.Drawing.Size(99, 19);
             this.metroLabel14.TabIndex = 181;
-            this.metroLabel14.Text = "Día";
+            this.metroLabel14.Text = "Día de semana";
             this.metroLabel14.UseCustomForeColor = true;
             // 
             // chkMartes
             // 
             this.chkMartes.AutoSize = true;
             this.chkMartes.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkMartes.Location = new System.Drawing.Point(37, 193);
+            this.chkMartes.Location = new System.Drawing.Point(37, 206);
             this.chkMartes.Name = "chkMartes";
             this.chkMartes.Size = new System.Drawing.Size(68, 19);
             this.chkMartes.TabIndex = 121;
@@ -577,7 +534,7 @@
             // 
             this.chkDomingo.AutoSize = true;
             this.chkDomingo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkDomingo.Location = new System.Drawing.Point(37, 143);
+            this.chkDomingo.Location = new System.Drawing.Point(37, 156);
             this.chkDomingo.Name = "chkDomingo";
             this.chkDomingo.Size = new System.Drawing.Size(82, 19);
             this.chkDomingo.TabIndex = 180;
@@ -588,7 +545,7 @@
             // 
             this.chkMiercoles.AutoSize = true;
             this.chkMiercoles.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkMiercoles.Location = new System.Drawing.Point(37, 218);
+            this.chkMiercoles.Location = new System.Drawing.Point(37, 231);
             this.chkMiercoles.Name = "chkMiercoles";
             this.chkMiercoles.Size = new System.Drawing.Size(83, 19);
             this.chkMiercoles.TabIndex = 122;
@@ -599,7 +556,7 @@
             // 
             this.chkLunes.AutoSize = true;
             this.chkLunes.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkLunes.Location = new System.Drawing.Point(37, 168);
+            this.chkLunes.Location = new System.Drawing.Point(37, 181);
             this.chkLunes.Name = "chkLunes";
             this.chkLunes.Size = new System.Drawing.Size(61, 19);
             this.chkLunes.TabIndex = 120;
@@ -667,7 +624,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(457, 325);
+            this.btnCancelar.Location = new System.Drawing.Point(488, 346);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
@@ -685,40 +642,103 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(375, 325);
+            this.btnGuardar.Location = new System.Drawing.Point(406, 346);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 30);
             this.btnGuardar.TabIndex = 195;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // metroCheckBox1
+            // 
+            this.metroCheckBox1.AutoSize = true;
+            this.metroCheckBox1.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.metroCheckBox1.Location = new System.Drawing.Point(37, 346);
+            this.metroCheckBox1.Name = "metroCheckBox1";
+            this.metroCheckBox1.Size = new System.Drawing.Size(165, 19);
+            this.metroCheckBox1.TabIndex = 197;
+            this.metroCheckBox1.Text = "Sobreescribir el horario";
+            this.metroCheckBox1.UseSelectable = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(408, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 198;
+            this.button1.Text = "Ver fechas";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormAsignarHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 380);
+            this.ClientSize = new System.Drawing.Size(605, 407);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dtpToleranciaSab);
+            this.Controls.Add(this.metroCheckBox1);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.dtpToleranciaVie);
             this.Controls.Add(this.lblNombreForm);
-            this.Controls.Add(this.pnlHoras);
+            this.Controls.Add(this.dtpIniBrkDom);
+            this.Controls.Add(this.dtpToleranciaJue);
             this.Controls.Add(this.chkSabado);
+            this.Controls.Add(this.dtpFinLabSab);
             this.Controls.Add(this.dtpDesde);
+            this.Controls.Add(this.dtpToleranciaMie);
             this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.dtpFinBrkDom);
             this.Controls.Add(this.chkViernes);
+            this.Controls.Add(this.lblDomHi);
             this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.dtpIniLabSab);
+            this.Controls.Add(this.dtpToleranciaMar);
             this.Controls.Add(this.chkJueves);
+            this.Controls.Add(this.dtpIniBrkLun);
             this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.dtpToleranciaLun);
             this.Controls.Add(this.metroLabel14);
+            this.Controls.Add(this.dtpFinLabVie);
             this.Controls.Add(this.chkDomingo);
+            this.Controls.Add(this.lblDomHf);
             this.Controls.Add(this.chkMartes);
+            this.Controls.Add(this.dtpFinBrkLun);
             this.Controls.Add(this.chkLunes);
+            this.Controls.Add(this.dtpToleranciaDom);
             this.Controls.Add(this.chkMiercoles);
+            this.Controls.Add(this.dtpIniLabVie);
+            this.Controls.Add(this.dtpFinBrkJue);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.dtpFinLabMar);
+            this.Controls.Add(this.dtpIniBrkMar);
+            this.Controls.Add(this.dtpIniLabMar);
+            this.Controls.Add(this.dtpIniLabDom);
+            this.Controls.Add(this.dtpIniBrkJue);
+            this.Controls.Add(this.dtpFinLabJue);
+            this.Controls.Add(this.dtpIniBrkVie);
+            this.Controls.Add(this.dtpFinBrkSab);
+            this.Controls.Add(this.dtpIniLabMie);
+            this.Controls.Add(this.dtpFinBrkMar);
+            this.Controls.Add(this.dtpFinLabLun);
+            this.Controls.Add(this.dtpFinLabDom);
+            this.Controls.Add(this.dtpFinBrkMie);
+            this.Controls.Add(this.dtpIniLabJue);
+            this.Controls.Add(this.dtpFinBrkVie);
+            this.Controls.Add(this.dtpIniBrkSab);
+            this.Controls.Add(this.dtpFinLabMie);
+            this.Controls.Add(this.dtpIniBrkMie);
+            this.Controls.Add(this.dtpIniLabLun);
             this.MaximizeBox = false;
             this.Name = "FormAsignarHorario";
             this.Resizable = false;
-            this.pnlHoras.ResumeLayout(false);
-            this.pnlHoras.PerformLayout();
+            this.Load += new System.EventHandler(this.FormAsignarHorario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -726,7 +746,6 @@
 
         #endregion
         private MetroFramework.Controls.MetroCheckBox chkSabado;
-        private System.Windows.Forms.Panel pnlHoras;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DateTimePicker dtpToleranciaSab;
         private MetroFramework.Controls.MetroLabel metroLabel1;
@@ -782,5 +801,7 @@
         private System.Windows.Forms.Label lblNombreForm;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
+        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
