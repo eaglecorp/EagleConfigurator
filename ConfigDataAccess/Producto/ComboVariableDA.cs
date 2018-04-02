@@ -346,7 +346,7 @@ namespace ConfigDataAccess.Producto
                         cmd.Parameters.Add(new SqlParameter("@nuevo_pvpu_con_tax", nuevoPrecioConTax));
                         cmd.Parameters.Add(new SqlParameter("@nuevo_pvpu_sin_tax", nuevoPrecioSinTax));
 
-                        var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Bit);
+                        var returnParameter = cmd.Parameters.Add("@success", SqlDbType.Bit);
                         returnParameter.Direction = ParameterDirection.ReturnValue;
 
                         conexion.Open();

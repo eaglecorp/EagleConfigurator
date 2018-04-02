@@ -10,6 +10,7 @@ using ConfigBusinessLogic.Labor;
 using ConfigUtilitarios.HelperControl;
 using System.Drawing;
 using ConfigUtilitarios.Controls;
+using ConfigUtilitarios.KeyValues;
 
 namespace ConfiguradorUI.Labor.Horario
 {
@@ -54,10 +55,11 @@ namespace ConfiguradorUI.Labor.Horario
         {
             try
             {
+                _horario = horario;
+
                 if (horario != null &&
                        horario.id_horario_emp > 0)
                 {
-                    _horario = horario;
 
                     IEnumerable<DateTime> horarioSoloFechas = new List<DateTime>();
                     if (horario.LABt04_horario_emp_dtl != null)
@@ -75,8 +77,9 @@ namespace ConfiguradorUI.Labor.Horario
                 }
                 else
                 {
+                    lblRangoHorario.Text = "HORARIO: NINGUNO";
                     lblRangoHorario.ForeColor = Color.Red;
-                    lblRangoHorario.Text = "NO TIENE HORARIO ASIGNADO";
+                    ResaltarFechasEnCalendario(null);
                     btnAsignarHorario.Focus();
                 }
             }
@@ -157,6 +160,7 @@ namespace ConfiguradorUI.Labor.Horario
             #region labels
 
             lblRangoHorario.UseCustomForeColor = true;
+            lblRangoHorario.ForeColor = Color.Red;
 
             #endregion
 
@@ -174,6 +178,16 @@ namespace ConfiguradorUI.Labor.Horario
             #endregion
         }
 
+
+        private void RefrescarHorario()
+        {
+            LimpiarHorario();
+            var horario = new HorarioEmpleadoBL().HorarioXEmpleado(_empleado.id_empleado);
+            SetHorario(horario);
+
+            btnAsignarHorario.Enabled = true;
+            btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
+        }
 
         #endregion
 
@@ -199,12 +213,7 @@ namespace ConfiguradorUI.Labor.Horario
 
                 if (frm._seAsigno)
                 {
-                    LimpiarHorario();
-                    var horario = new HorarioEmpleadoBL().HorarioXEmpleado(_empleado.id_empleado);
-                    SetHorario(horario);
-
-                    btnAsignarHorario.Enabled = true;
-                    btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
+                    RefrescarHorario();
                 }
             }
             else
@@ -224,12 +233,7 @@ namespace ConfiguradorUI.Labor.Horario
 
                     if (frm._seElimino)
                     {
-                        LimpiarHorario();
-                        var horario = new HorarioEmpleadoBL().HorarioXEmpleado(_empleado.id_empleado);
-                        SetHorario(horario);
-
-                        btnAsignarHorario.Enabled = true;
-                        btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
+                        RefrescarHorario();
                     }
                 }
                 else
@@ -243,7 +247,6 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-
         private void txtNroDocEmp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\r')
@@ -252,7 +255,7 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_horario.LABt04_horario_emp_dtl != null)
+            if (_horario !=null && _horario.LABt04_horario_emp_dtl != null)
             {
                 string fechas = "";
                 foreach (var fecha in _horario.LABt04_horario_emp_dtl)
@@ -264,5 +267,51 @@ namespace ConfiguradorUI.Labor.Horario
         }
 
         #endregion
+
+        private void mcaMes_DoubleClick(object sender, EventArgs e)
+        {
+            if (_empleado != null && _empleado.id_empleado > 0)
+            {
+                var fecha = mcaMes.SelectionRange.Start.Date;
+                if (_horario != null && _horario.id_horario_emp > 0)
+                {
+                    //Cuando ya tiene un horario
+                    if (EsFechaValida(fecha))
+                    {
+                        var horarioDtl = new HorarioEmpleadoBL().GetHorarioDtlXFecha(fecha, _horario.id_horario_emp);
+                        if (horarioDtl != null && horarioDtl.id_horario_emp_dtl > 0)
+                        {
+                            //Actualizar fecha
+                            var frm = new FormEditarDia(horarioDtl, TipoOperacionABM.Modificar);
+                            frm.ShowDialog();
+
+                            if(frm._seOpero)
+                            {
+                                RefrescarHorario();
+                            }
+                        }
+                        else
+                        {
+                            //Agregar fecha
+
+                        }
+                    }
+                }
+                else
+                {
+                    //crear nuevo horario y agregar fecha
+                }
+
+                //no está en el horario (add) (no tiene horario/tiene horario)
+            }
+        }
+
+        //dentro de rango
+        private bool EsFechaValida(DateTime fecha)
+        {
+            var hoy = DateTime.Now.Date;
+            return (fecha >= hoy && fecha <= KeyDates.MaxDate);
+        }
+
     }
 }

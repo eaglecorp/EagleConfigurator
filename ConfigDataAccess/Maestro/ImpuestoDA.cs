@@ -242,7 +242,7 @@ namespace ConfigDataAccess
                         cmd.Parameters.Add(new SqlParameter("@nuevoPorc", nuevoPorcImpto));
                         cmd.Parameters.Add(new SqlParameter("@sn_incluye_impto", Estado.IdActivo));
 
-                        var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Bit);
+                        var returnParameter = cmd.Parameters.Add("@success", SqlDbType.Bit);
                         returnParameter.Direction = ParameterDirection.ReturnValue;
 
                         conexion.Open();

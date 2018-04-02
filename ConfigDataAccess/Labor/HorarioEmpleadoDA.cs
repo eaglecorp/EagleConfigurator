@@ -3,6 +3,7 @@ using ConfigUtilitarios;
 using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -114,6 +115,81 @@ namespace ConfigDataAccess.Labor
             return success;
         }
 
+        public bool ActualizarHorarioDtl(LABt04_horario_emp_dtl actualizado)
+        {
+            bool success = false;
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    var original = ctx.LABt04_horario_emp_dtl.Find(actualizado.id_horario_emp_dtl);
+                    if (original != null && original.id_horario_emp_dtl > 0)
+                    {
+                        ctx.Entry(original).CurrentValues.SetValues(actualizado);
+                        ctx.SaveChanges();
+                        success = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Actualizar Horario Dtl: ", e.Message);
+                }
+            }
+            return success;
+        }
+
+        public bool ActualizarHorariosDtlXDiaDeSemana(LABt04_horario_emp_dtl actualizado, DateTime desde, DateTime diaDeSemana)
+        {
+            bool success = false;
+
+            using (var conexion = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    using (var cmd = new SqlCommand("USP_LAB_UPD_HOR_DTL_X_DIA_SEMANA", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@id_horario_emp", actualizado.id_horario_emp));
+                        cmd.Parameters.Add(new SqlParameter("@hora_inicio", actualizado.hora_inicio));
+                        cmd.Parameters.Add(new SqlParameter("@hora_fin", actualizado.hora_fin));
+                        cmd.Parameters.Add(new SqlParameter("@hora_inicio_break", (dynamic)actualizado.hora_inicio_break ?? DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@hora_fin_break", (dynamic)actualizado.hora_fin_break ?? DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@tiempo_tolerancia", actualizado.tiempo_tolerancia));
+                        cmd.Parameters.Add(new SqlParameter("@desde", desde));
+                        cmd.Parameters.Add(new SqlParameter("@dia_de_semana", diaDeSemana));
+
+                        var returnParameter = cmd.Parameters.Add("@success", SqlDbType.Bit);
+                        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+                        conexion.Open();
+                        cmd.ExecuteNonQuery();
+
+                        #region Evaluando retorno
+                        if (int.TryParse(returnParameter.Value.ToString(), out int result) && result == 1)
+                        {
+                            success = true;
+                        }
+                        else
+                        {
+                            var log = new Log();
+                            log.ArchiveLog("Ocurrió un error en la actualización de los horarios dtl x dia de semana.", "USP_LAB_UPD_HOR_DTL_X_DIA_SEMANA");
+                        }
+                        #endregion
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Actualizar Horarios Dtl. por día de semana: ", e.Message);
+                }
+            }
+            return success;
+
+        }
+
         public bool EliminarHorario(long idHorario)
         {
             bool success = false;
@@ -139,7 +215,7 @@ namespace ConfigDataAccess.Labor
             return success;
         }
 
-        public bool EliminarHorarioDtl(long id_horario_emp)
+        public bool EliminarHorarioDtl(long id_horario_emp_dtl)
         {
             var success = false;
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
@@ -148,11 +224,12 @@ namespace ConfigDataAccess.Labor
                 {
                     using (var cmd = cnn.CreateCommand())
                     {
-                        cmd.CommandText = $"DELETE LABt04_horario_emp_dtl WHERE id_horario_emp = {id_horario_emp}";
+                        cmd.CommandText = $"DELETE LABt04_horario_emp_dtl WHERE id_horario_emp_dtl = {id_horario_emp_dtl}";
                         cnn.Open();
                         cmd.ExecuteNonQuery();
                         success = true;
                     }
+                    LABt04_horario_emp_dtl a = new LABt04_horario_emp_dtl();
                 }
                 catch (Exception e)
                 {
@@ -181,6 +258,24 @@ namespace ConfigDataAccess.Labor
                 }
             }
             return lista;
+        }
+
+        public LABt04_horario_emp_dtl GetHorarioDtlXFecha(DateTime fecha, long idHorario)
+        {
+            var horarioDtl = new LABt04_horario_emp_dtl();
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    horarioDtl = ctx.LABt04_horario_emp_dtl.FirstOrDefault(x => x.id_horario_emp == idHorario && x.fecha_labor == fecha);
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Get Horario Dtl. por fecha: ", e.Message);
+                }
+            }
+            return horarioDtl;
         }
     }
 }

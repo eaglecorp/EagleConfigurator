@@ -42,6 +42,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.tabHorario = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.btnAsignarHorario = new System.Windows.Forms.Button();
@@ -171,6 +172,7 @@ namespace ConfiguradorUI.Labor.Horario
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.button2);
             this.tabPagGeneral.Controls.Add(this.metroLabel16);
             this.tabPagGeneral.Controls.Add(this.metroLabel15);
             this.tabPagGeneral.Controls.Add(this.btnAsignarHorario);
@@ -186,6 +188,15 @@ namespace ConfiguradorUI.Labor.Horario
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(631, 54);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 23);
+            this.button2.TabIndex = 198;
+            this.button2.Text = "Ir a último día";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // metroLabel16
             // 
@@ -471,6 +482,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.mcaMes.Location = new System.Drawing.Point(43, 283);
             this.mcaMes.Name = "mcaMes";
             this.mcaMes.TabIndex = 197;
+            this.mcaMes.DoubleClick += new System.EventHandler(this.mcaMes_DoubleClick);
             // 
             // btnCerrar
             // 
@@ -538,5 +550,6 @@ namespace ConfiguradorUI.Labor.Horario
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private CustomControls.MonthCalendar mcaMes;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -855,7 +855,6 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void ConfigurarControles()
         {
-
             #region DateTimePicker
 
             dtpDesde.MinDate = dtpHasta.MinDate = DateTime.Now.Date;
@@ -1050,6 +1049,7 @@ namespace ConfiguradorUI.Labor.Horario
         #endregion
 
         #region Eventos
+
         private void FormAsignarHorario_Load(object sender, EventArgs e)
         {
             ConfigurarControles();
@@ -1107,15 +1107,20 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void DtpBreak_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Escape)
+            var dtp = ((DateTimePicker)sender);
+            if (e.KeyChar == (char)Keys.Escape && dtp.CustomFormat != " ")
             {
-                ToggleDtpBreak((DateTimePicker)sender, " ");
+                ToggleDtpBreak(dtp, " ");
             }
         }
 
         private void DtpBreak_MouseDown(object sender, MouseEventArgs e)
         {
-            ToggleDtpBreak((DateTimePicker)sender, "hh:mm tt");
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != "hh:mm tt")
+            {
+                ToggleDtpBreak((DateTimePicker)sender, "hh:mm tt");
+            }
         }
 
         private void dtpHoraInicioLabor_ValueChanged(object sender, EventArgs e)
