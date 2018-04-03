@@ -437,6 +437,8 @@ namespace ConfiguradorUI.Labor.Horario
             return new TimeSpan(hora.Hours, hora.Minutes, 0);
         }
 
+        #region Validación de horas
+        //Las validaciones están con los msg no con el error prov (así como editar).
         private void ValidarHoraInicioLabor(DateTimePicker dtp)
         {
             var nameDtp = dtp.Name;
@@ -751,8 +753,9 @@ namespace ConfiguradorUI.Labor.Horario
                 dtp.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
             }
         }
+        #endregion
 
-        private List<LABt04_horario_emp_dtl> GetRangoDeFechas()
+        private List<LABt04_horario_emp_dtl> GetRangoDeFechas(bool ignorarFechasDeHorarioDtl = true)
         {
             var fechas = new List<LABt04_horario_emp_dtl>();
 
@@ -772,7 +775,8 @@ namespace ConfiguradorUI.Labor.Horario
                 while (diaIterado <= hasta)
                 {
                     //Item1 es el día de semana ("DayOfWeek"). Item2 es el objeto "LABt04_horario_emp_dtl"
-                    if (listTuplaDiaYHoras.Any(x => x.Item1 == diaIterado.DayOfWeek))
+                    if (listTuplaDiaYHoras.Any(x => x.Item1 == diaIterado.DayOfWeek) &&
+                       (ignorarFechasDeHorarioDtl || !_horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor == diaIterado)))
                     {
                         var diaYHora = listTuplaDiaYHoras.First(x => x.Item1 == diaIterado.DayOfWeek);
 
@@ -780,6 +784,7 @@ namespace ConfiguradorUI.Labor.Horario
                             new LABt04_horario_emp_dtl
                             {
                                 fecha_labor = diaIterado,
+                                id_horario_emp = diaYHora.Item2.id_horario_emp,
                                 hora_inicio = diaYHora.Item2.hora_inicio,
                                 hora_fin = diaYHora.Item2.hora_fin,
                                 hora_inicio_break = diaYHora.Item2.hora_inicio_break,
@@ -799,6 +804,7 @@ namespace ConfiguradorUI.Labor.Horario
 
             return fechas;
         }
+
 
         private bool ValidarHoras()
         {
@@ -959,13 +965,15 @@ namespace ConfiguradorUI.Labor.Horario
                 hora_fin = dtpFin.Value.TimeOfDay,
                 tiempo_tolerancia = dtpTol.Value.TimeOfDay
             };
-            if (dtpBrkIni.CustomFormat != " ")
+            if (dtpBrkIni.CustomFormat != " " && dtpBrkFin.CustomFormat != " ")
             {
                 horasDelDia.hora_inicio_break = dtpBrkIni.Value.TimeOfDay;
-            }
-            if (dtpBrkFin.CustomFormat != " ")
-            {
                 horasDelDia.hora_fin_break = dtpBrkFin.Value.TimeOfDay;
+            }
+            if (_horario != null && _horario.id_horario_emp > 0)
+            {
+                //Solo ingresará aquí cuando el empleado ya tenga un horario.
+                horasDelDia.id_horario_emp = _horario.id_horario_emp;
             }
 
             return new Tuple<DayOfWeek, LABt04_horario_emp_dtl>(dia, horasDelDia);
@@ -976,14 +984,16 @@ namespace ConfiguradorUI.Labor.Horario
             var tuplaValidarFechas = ValidarFechasYHoras();
             if (tuplaValidarFechas.Item1)
             {
+                bool success = false;
                 var fechas = tuplaValidarFechas.Item2;
 
-                //update
+                //insert en horario existente
                 if (_horario != null && _horario.id_horario_emp > 0)
                 {
-
+                    success = new HorarioEmpleadoBL().InsertarHorariosDtl(fechas);
+                    SalidaDeOperacion();
                 }
-                //insert
+                //insert en nuevo horario
                 else
                 {
                     var horario = new LABt03_horario_emp()
@@ -996,14 +1006,25 @@ namespace ConfiguradorUI.Labor.Horario
                     horario.LABt04_horario_emp_dtl = fechas;
 
                     long idNuevoHorario = new HorarioEmpleadoBL().InsertarHorario(horario);
-                    if (idNuevoHorario > 0)
+                    success = idNuevoHorario > 0;
+                    SalidaDeOperacion(false);
+                }
+
+                void SalidaDeOperacion(bool actualizarRango = true)
+                {
+                    if (success)
                     {
                         _seAsigno = true;
+
+                        if (actualizarRango && !(new HorarioEmpleadoBL().ActualizarRangoDeHorario(_horario.id_horario_emp)))
+                        {
+                            Msg.Ok_Err("No se actualizó el rango de fechas del horario.");
+                        }
                         Dispose();
                     }
                     else
                     {
-                        Msg.Ok_Err("No se pudo asignar el horario.");
+                        Msg.Ok_Err("No se pudo asignar las fechas.");
                     }
                 }
             }
@@ -1129,11 +1150,29 @@ namespace ConfiguradorUI.Labor.Horario
                 no_error = ValidarHoras();
                 if (no_error)
                 {
-                    fechas = GetRangoDeFechas();
+                    string msg = "";
+                    if (_horario != null && _horario.id_horario_emp > 0)
+                    {
+                        //Cuando el empleado ya tiene un horario
+                        if (_horario.LABt04_horario_emp_dtl == null)
+                        {
+                            _horario.LABt04_horario_emp_dtl = new List<LABt04_horario_emp_dtl>();
+                        }
+
+                        fechas = GetRangoDeFechas(false);
+                        msg = "No ha seleccionado ningún día o los días seleccionados ya están asignados.";
+                    }
+                    else
+                    {
+                        //cuando el empleado no tiene un horario todavía
+                        fechas = GetRangoDeFechas();
+                        msg = "Debe seleccionar las fechas que desea asignar.";
+                    }
+
                     if (fechas == null || !(fechas.Count > 0))
                     {
                         no_error = false;
-                        Msg.Ok_Wng("Debe seleccionar los días que desea asignar al empleado.", "Validación");
+                        Msg.Ok_Wng(msg, "Validación");
                     }
                 }
             }
@@ -1434,7 +1473,6 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-
         private void chk_CheckedChanged(object sender, EventArgs e)
         {
             var chk = (CheckBox)sender;
@@ -1460,6 +1498,22 @@ namespace ConfiguradorUI.Labor.Horario
                 FormatoDtpBreak(dtp, "hh:mm tt");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var fechasL = GetRangoDeFechas();
+            if (fechasL != null)
+            {
+                string fechas = "";
+                foreach (var fecha in fechasL)
+                {
+                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
+                }
+                Msg.Ok_Info(fechas);
+            }
+        }
+
+        #region Value changed de las horas
 
         private void dtpHoraInicioLabor_ValueChanged(object sender, EventArgs e)
         {
@@ -1491,19 +1545,7 @@ namespace ConfiguradorUI.Labor.Horario
             ValidarTiempoTolerancia(dtp);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var fechasL = GetRangoDeFechas();
-            if (fechasL != null)
-            {
-                string fechas = "";
-                foreach (var fecha in fechasL)
-                {
-                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
-                }
-                Msg.Ok_Info(fechas);
-            }
-        }
+        #endregion
 
         #endregion
     }

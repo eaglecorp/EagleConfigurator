@@ -31,6 +31,27 @@ namespace ConfigDataAccess.Labor
             return id;
         }
 
+        public bool InsertarHorariosDtl(IEnumerable<LABt04_horario_emp_dtl> horariosDtl)
+        {
+            var success = false;
+
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    ctx.LABt04_horario_emp_dtl.AddRange(horariosDtl);
+                    ctx.SaveChanges();
+                    success = true;
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Insertar Horarios Dtl: ", e.Message);
+                }
+            }
+            return success;
+        }
+
         public LABt03_horario_emp HorarioXEmpleado(long id)
         {
             var horario = new LABt03_horario_emp();
@@ -55,30 +76,6 @@ namespace ConfigDataAccess.Labor
             }
 
             return horario;
-        }
-
-        public bool EliminarHorariosDtl(IEnumerable<long> idFechas)
-        {
-            bool success = false;
-            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
-            {
-                try
-                {
-                    var fechasAEliminar = ctx.LABt04_horario_emp_dtl.Where(x => idFechas.Contains(x.id_horario_emp_dtl));
-                    if (fechasAEliminar != null)
-                    {
-                        ctx.LABt04_horario_emp_dtl.RemoveRange(fechasAEliminar);
-                        ctx.SaveChanges();
-                        success = true;
-                    }
-                }
-                catch (Exception e)
-                {
-                    var log = new Log();
-                    log.ArchiveLog("Eliminar Horarios Dtl: ", e.Message);
-                }
-            }
-            return success;
         }
 
         public bool ActualizarRangoDeHorario(long idHorario)
@@ -235,6 +232,30 @@ namespace ConfigDataAccess.Labor
                 {
                     var log = new Log();
                     log.ArchiveLog("ELiminar Horario dtl. por horario: ", e.Message);
+                }
+            }
+            return success;
+        }
+
+        public bool EliminarHorariosDtl(IEnumerable<long> idFechas)
+        {
+            bool success = false;
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    var fechasAEliminar = ctx.LABt04_horario_emp_dtl.Where(x => idFechas.Contains(x.id_horario_emp_dtl));
+                    if (fechasAEliminar != null)
+                    {
+                        ctx.LABt04_horario_emp_dtl.RemoveRange(fechasAEliminar);
+                        ctx.SaveChanges();
+                        success = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Eliminar Horarios Dtl: ", e.Message);
                 }
             }
             return success;

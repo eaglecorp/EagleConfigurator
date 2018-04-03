@@ -186,7 +186,6 @@ namespace ConfiguradorUI.Labor.Horario
             #endregion
         }
 
-
         private void RefrescarHorario()
         {
             LimpiarHorario();
@@ -338,7 +337,6 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-
         #endregion
 
         #region Eventos
@@ -358,6 +356,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (_empleado != null && _empleado.id_empleado > 0)
             {
+                //EL HORARIO ES != NULL Y EL DTL > 0 CUANDO YA TIENE ASIGNADO.
                 var frm = new FormAsignarHorario(_empleado, _horario);
                 frm.ShowDialog();
 

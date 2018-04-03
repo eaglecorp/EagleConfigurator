@@ -12,10 +12,16 @@ namespace ConfigBusinessLogic.Labor
             return new HorarioEmpleadoDA().InsertarHorario(obj);
         }
 
+        public bool InsertarHorariosDtl(IEnumerable<LABt04_horario_emp_dtl> horariosDtl)
+        {
+            return new HorarioEmpleadoDA().InsertarHorariosDtl(horariosDtl);
+        }
+
         public LABt03_horario_emp HorarioXEmpleado(long id_empleado)
         {
             return new HorarioEmpleadoDA().HorarioXEmpleado(id_empleado);
         }
+
         public bool EliminarHorarioDtl(long id_horario_emp_dtl)
         {
             return new HorarioEmpleadoDA().EliminarHorarioDtl(id_horario_emp_dtl);
@@ -35,6 +41,7 @@ namespace ConfigBusinessLogic.Labor
         {
             return new HorarioEmpleadoDA().ActualizarRangoDeHorario(idHorario);
         }
+
         public LABt04_horario_emp_dtl GetHorarioDtlXFecha(DateTime fecha, long idHorario)
         {
             return new HorarioEmpleadoDA().GetHorarioDtlXFecha(fecha, idHorario);
@@ -47,7 +54,7 @@ namespace ConfigBusinessLogic.Labor
 
         public bool ActualizarHorariosDtlXDiaDeSemana(LABt04_horario_emp_dtl actualizado, DateTime desde, DateTime diaDeSemana)
         {
-            return new HorarioEmpleadoDA().ActualizarHorariosDtlXDiaDeSemana(actualizado,desde,diaDeSemana);
+            return new HorarioEmpleadoDA().ActualizarHorariosDtlXDiaDeSemana(actualizado, desde, diaDeSemana);
         }
     }
 }

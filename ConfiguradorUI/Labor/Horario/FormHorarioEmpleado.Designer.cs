@@ -32,10 +32,10 @@ namespace ConfiguradorUI.Labor.Horario
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHorarioEmpleado));
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Mesero");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Cocinero");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Gerente");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHorarioEmpleado));
             this.grbBuscarEmp = new System.Windows.Forms.GroupBox();
             this.lblNroDocEmp = new MetroFramework.Controls.MetroLabel();
             this.txtNroDocEmp = new MetroFramework.Controls.MetroTextBox();
@@ -43,9 +43,9 @@ namespace ConfiguradorUI.Labor.Horario
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.tabHorario = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.cboCanalVenta = new System.Windows.Forms.ComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.button2 = new System.Windows.Forms.Button();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.btnAsignarHorario = new System.Windows.Forms.Button();
@@ -68,7 +68,6 @@ namespace ConfiguradorUI.Labor.Horario
             this.toolStripMenuItemAgregarOEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.button3 = new System.Windows.Forms.Button();
             this.grbBuscarEmp.SuspendLayout();
             this.tabHorario.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -182,7 +181,6 @@ namespace ConfiguradorUI.Labor.Horario
             // tabPagGeneral
             // 
             this.tabPagGeneral.Controls.Add(this.button3);
-            this.tabPagGeneral.Controls.Add(this.button2);
             this.tabPagGeneral.Controls.Add(this.cboCanalVenta);
             this.tabPagGeneral.Controls.Add(this.metroLabel1);
             this.tabPagGeneral.Controls.Add(this.metroLabel16);
@@ -200,6 +198,25 @@ namespace ConfiguradorUI.Labor.Horario
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SteelBlue;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(265, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(132, 30);
+            this.button3.TabIndex = 201;
+            this.button3.Text = "Editar horario";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // cboCanalVenta
             // 
@@ -223,15 +240,6 @@ namespace ConfiguradorUI.Labor.Horario
             this.metroLabel1.TabIndex = 199;
             this.metroLabel1.Text = "Tema:";
             this.metroLabel1.UseCustomForeColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(335, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 23);
-            this.button2.TabIndex = 198;
-            this.button2.Text = "Ir a último día";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // metroLabel16
             // 
@@ -266,7 +274,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnAsignarHorario.ForeColor = System.Drawing.Color.White;
             this.btnAsignarHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarHorario.Image")));
             this.btnAsignarHorario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarHorario.Location = new System.Drawing.Point(0, 8);
+            this.btnAsignarHorario.Location = new System.Drawing.Point(3, 12);
             this.btnAsignarHorario.Name = "btnAsignarHorario";
             this.btnAsignarHorario.Size = new System.Drawing.Size(132, 30);
             this.btnAsignarHorario.TabIndex = 176;
@@ -286,7 +294,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnDesasignarFechas.ForeColor = System.Drawing.Color.White;
             this.btnDesasignarFechas.Image = ((System.Drawing.Image)(resources.GetObject("btnDesasignarFechas.Image")));
             this.btnDesasignarFechas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesasignarFechas.Location = new System.Drawing.Point(138, 8);
+            this.btnDesasignarFechas.Location = new System.Drawing.Point(141, 12);
             this.btnDesasignarFechas.Name = "btnDesasignarFechas";
             this.btnDesasignarFechas.Size = new System.Drawing.Size(118, 30);
             this.btnDesasignarFechas.TabIndex = 177;
@@ -572,25 +580,6 @@ namespace ConfiguradorUI.Labor.Horario
             this.metroLabel2.Text = "Hoy";
             this.metroLabel2.UseCustomForeColor = true;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 44);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 30);
-            this.button3.TabIndex = 201;
-            this.button3.Text = "Asignar horario";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // FormHorarioEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,7 +637,6 @@ namespace ConfiguradorUI.Labor.Horario
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private CustomControls.MonthCalendar mcaMes;
-        private System.Windows.Forms.Button button2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.ComboBox cboCanalVenta;
         private System.Windows.Forms.ContextMenuStrip ctxMenuDate;
