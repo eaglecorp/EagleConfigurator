@@ -193,7 +193,16 @@ namespace ConfiguradorUI.Labor.Horario
             SetHorario(horario);
 
             btnAsignarHorario.Enabled = true;
-            btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
+            btnDesasignarFechas.Enabled =
+            btnEditarFechas.Enabled = TieneHorarioYFechas();
+        }
+
+        private bool TieneHorarioYFechas()
+        {
+            return (_horario != null &&
+                _horario.id_horario_emp > 0 &&
+                _horario.LABt04_horario_emp_dtl != null &&
+                _horario.LABt04_horario_emp_dtl.Count > 0);
         }
 
         private bool EsFechaValida(DateTime fecha)
@@ -356,8 +365,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (_empleado != null && _empleado.id_empleado > 0)
             {
-                //EL HORARIO ES != NULL Y EL DTL > 0 CUANDO YA TIENE ASIGNADO.
-                var frm = new FormAsignarHorario(_empleado, _horario);
+                var frm = new FormAsignarHorario(_empleado, _horario, TipoOperacionABM.Insertar);
                 frm.ShowDialog();
 
                 if (frm._seAsigno)
@@ -375,7 +383,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (_empleado != null && _empleado.id_empleado > 0)
             {
-                if (_horario != null && _horario.LABt04_horario_emp_dtl != null && _horario.LABt04_horario_emp_dtl.Count > 0)
+                if (TieneHorarioYFechas())
                 {
                     var frm = new FormEliminarHorario(_empleado, _horario);
                     frm.ShowDialog();
@@ -396,24 +404,44 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
+        private void btnEditarFechas_Click(object sender, EventArgs e)
+        {
+            if (_empleado != null && _empleado.id_empleado > 0)
+            {
+                if (TieneHorarioYFechas())
+                {
+                    var hoy = DateTime.Now.Date;
+                    if (_horario.fecha_fin_horario >= hoy)
+                    {
+                        var frm = new FormAsignarHorario(_empleado, _horario, TipoOperacionABM.Modificar);
+                        frm.ShowDialog();
+
+                        if (frm._seAsigno)
+                        {
+                            RefrescarHorario();
+                        }
+                    }
+                    else
+                    {
+                        Msg.Ok_Wng("Las fechas asignadas al empleado han concluido.");
+                    }
+                }
+                else
+                {
+                    Msg.Ok_Wng("Este empleado no tiene horario o no tiene ninguna fecha asignada.");
+                }
+            }
+            else
+            {
+                Msg.Ok_Wng("Debe buscar un empleado antes de eliminar fechas del horario.");
+            }
+        }
         private void txtNroDocEmp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\r')
                 BuscarEmpleado();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (_horario != null && _horario.LABt04_horario_emp_dtl != null)
-            {
-                string fechas = "";
-                foreach (var fecha in _horario.LABt04_horario_emp_dtl)
-                {
-                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
-                }
-                Msg.Ok_Info(fechas);
-            }
-        }
 
         private void mcaMes_DoubleClick(object sender, EventArgs e)
         {
@@ -433,6 +461,19 @@ namespace ConfiguradorUI.Labor.Horario
         private void ctxMenuDate_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             ctxMenuDate.Enabled = ExisteFechasValidasSeleccionadas();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (_horario != null && _horario.LABt04_horario_emp_dtl != null)
+            {
+                string fechas = "";
+                foreach (var fecha in _horario.LABt04_horario_emp_dtl)
+                {
+                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
+                }
+                Msg.Ok_Info(fechas);
+            }
         }
         #endregion
 

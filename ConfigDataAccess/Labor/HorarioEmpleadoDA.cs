@@ -136,6 +136,53 @@ namespace ConfigDataAccess.Labor
             return success;
         }
 
+        public bool ActualizarHorariosDtl(IEnumerable<LABt04_horario_emp_dtl> actualizados)
+        {
+            bool success = false;
+            string sentencia = @"UPDATE [dbo].[LABt04_horario_emp_dtl]
+                                   SET [hora_inicio] = @hora_inicio
+                                      ,[hora_fin] = @hora_fin
+                                      ,[hora_inicio_break] = @hora_inicio_break
+                                      ,[hora_fin_break] = @hora_fin_break
+                                      ,[tiempo_tolerancia] = @tiempo_tolerancia
+                                 WHERE [id_horario_emp_dtl] = @id_horario_emp_dtl";
+
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                using (var tns = ctx.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        foreach (var actualizado in actualizados)
+                        {
+                            var parameterList = new List<SqlParameter>();
+                            parameterList.Add(new SqlParameter("@hora_inicio", actualizado.hora_inicio));
+                            parameterList.Add(new SqlParameter("@hora_fin", actualizado.hora_fin));
+                            parameterList.Add(new SqlParameter("@hora_inicio_break", (dynamic)actualizado.hora_inicio_break ?? DBNull.Value));
+                            parameterList.Add(new SqlParameter("@hora_fin_break", (dynamic)actualizado.hora_fin_break ?? DBNull.Value));
+                            parameterList.Add(new SqlParameter("@tiempo_tolerancia", actualizado.tiempo_tolerancia));
+                            parameterList.Add(new SqlParameter("@id_horario_emp_dtl", actualizado.id_horario_emp_dtl));
+                            SqlParameter[] parameters = parameterList.ToArray();
+
+                            ctx.Database.ExecuteSqlCommand(sentencia, parameters);
+                        }
+
+                        ctx.SaveChanges();
+                        tns.Commit();
+                        success = true;
+                    }
+                    catch (Exception e)
+                    {
+                        tns.Rollback();
+                        var log = new Log();
+                        log.ArchiveLog("Actualizar Horarios Dtl: ", e.Message);
+                    }
+                }
+            }
+            return success;
+        }
+
+
         public bool ActualizarHorariosDtlXDiaDeSemana(LABt04_horario_emp_dtl actualizado, DateTime desde, DateTime diaDeSemana)
         {
             bool success = false;

@@ -16,6 +16,10 @@ namespace ConfigBusinessLogic.Labor
         {
             return new HorarioEmpleadoDA().InsertarHorariosDtl(horariosDtl);
         }
+        public bool ActualizarHorariosDtl(IEnumerable<LABt04_horario_emp_dtl> actualizados)
+        {
+            return new HorarioEmpleadoDA().ActualizarHorariosDtl(actualizados);
+        }
 
         public LABt03_horario_emp HorarioXEmpleado(long id_empleado)
         {

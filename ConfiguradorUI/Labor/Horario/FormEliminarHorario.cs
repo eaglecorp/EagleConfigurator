@@ -181,7 +181,7 @@ namespace ConfiguradorUI.Labor.Horario
             return new TimeSpan(hora.Hours, hora.Minutes, 0);
         }
 
-        private List<LABt04_horario_emp_dtl> GetRangoDeFechas()
+        private List<LABt04_horario_emp_dtl> GetFechasEnRango()
         {
             var fechas = new List<LABt04_horario_emp_dtl>();
             try
@@ -189,14 +189,18 @@ namespace ConfiguradorUI.Labor.Horario
                 var desde = dtpDesde.Value.Date;
                 var hasta = dtpHasta.Value.Date;
 
-                var listTuplaDiaYHoras = (List<Tuple<CheckBox, DayOfWeek>>)GetControls(TipoControl.ChekedDiaTupla);
                 var diasEnRango = _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor >= desde && x.fecha_labor <= hasta);
 
-                foreach (var fechaAsignada in diasEnRango)
+                if (diasEnRango != null && diasEnRango.Count() > 0)
                 {
-                    if (listTuplaDiaYHoras.Any(x => x.Item2 == fechaAsignada.fecha_labor.DayOfWeek))
+                    var listTuplaDiaYHoras = (List<Tuple<CheckBox, DayOfWeek>>)GetControls(TipoControl.ChekedDiaTupla);
+
+                    foreach (var fechaAsignada in diasEnRango)
                     {
-                        fechas.Add(fechaAsignada);
+                        if (listTuplaDiaYHoras.Any(x => x.Item2 == fechaAsignada.fecha_labor.DayOfWeek))
+                        {
+                            fechas.Add(fechaAsignada);
+                        }
                     }
                 }
             }
@@ -309,7 +313,7 @@ namespace ConfiguradorUI.Labor.Horario
             //Validar las fechas a asignar/editar
             if (no_error)
             {
-                fechas = GetRangoDeFechas();
+                fechas = GetFechasEnRango();
                 if (fechas == null || !(fechas.Count > 0))
                 {
                     no_error = false;
@@ -396,17 +400,13 @@ namespace ConfiguradorUI.Labor.Horario
             }
             else
             {
-                //cambuar msj cuando  no selecciojna nada 
-                // ki
-
-
                 btnEliminar.Enabled =
                 dtpDesde.Enabled =
                 dtpHasta.Enabled = false;
 
                 EstadoDias(false);
 
-                lblNoPuedeEliminar.Text = "NO PUEDE ELIMINAR. LAS FECHAS ASIGNADAS CONCLUYERON.";
+                lblNoPuedeEliminar.Text = "TODAS LAS FECHAS ASIGNADAS CONCLUYERON.";
                 btnCancelar.Focus();
             }
         }
@@ -454,7 +454,7 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var fechasL = GetRangoDeFechas();
+            var fechasL = GetFechasEnRango();
             if (fechasL != null)
             {
                 string fechas = "";
