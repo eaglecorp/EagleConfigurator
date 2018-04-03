@@ -157,6 +157,12 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void ConfigurarControles()
         {
+            #region MonthCalendar
+
+            mcaMes.MaxDate = KeyDates.MaxDate;
+
+            #endregion
+
             #region labels
 
             lblRangoHorario.UseCustomForeColor = true;
@@ -175,6 +181,8 @@ namespace ConfiguradorUI.Labor.Horario
             #region Month Calendar
 
             mcaMes.SelectionRange = new SelectionRange();
+            mcaMes.ContextMenuStrip = ctxMenuDate;
+
             #endregion
         }
 
@@ -188,6 +196,148 @@ namespace ConfiguradorUI.Labor.Horario
             btnAsignarHorario.Enabled = true;
             btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
         }
+
+        private bool EsFechaValida(DateTime fecha)
+        {
+            var hoy = DateTime.Now.Date;
+            return (fecha >= hoy && fecha <= KeyDates.MaxDate);
+        }
+
+        private int GetNumeroFechasPasadas()
+        {
+            var hoy = DateTime.Now.Date;
+            return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor < hoy).Count();
+        }
+
+        private int GetNumeroFechasRestantes()
+        {
+            var hoy = DateTime.Now.Date;
+            return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor >= hoy).Count();
+        }
+
+        private IEnumerable<long> GetIdsDeFechasValidasSeleccionadas()
+        {
+            var hoy = DateTime.Now.Date;
+            IEnumerable<long> lista = new List<long>();
+
+            if (_horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null)
+            {
+                try
+                {
+                    lista = _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor >= hoy && mcaMes.SelectionRanges.Any(r => x.fecha_labor >= r.Start.Date && x.fecha_labor <= r.End.Date))
+                                                                    .Select(x => x.id_horario_emp_dtl);
+                }
+                catch (Exception e)
+                {
+                    lista = new List<long>();
+                    Msg.Ok_Err("No se pudo determinar los IDs de las fechas seleccionadas.");
+                }
+            }
+            return lista;
+        }
+
+        private bool ExisteFechasValidasSeleccionadas()
+        {
+            bool success = false;
+            var hoy = DateTime.Now.Date;
+
+
+            if (_horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null)
+            {
+                try
+                {
+                    success = _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor >= hoy && mcaMes.SelectionRanges.Any(r => x.fecha_labor >= r.Start.Date && x.fecha_labor <= r.End.Date));
+                }
+                catch (Exception e)
+                {
+                    Msg.Ok_Err("No se pudo determinar los IDs de las fechas seleccionadas.");
+                }
+            }
+            return success;
+        }
+
+        private void EliminarDiaDeHorario()
+        {
+            if (_empleado != null && _empleado.id_empleado > 0 && _horario != null && _horario.LABt04_horario_emp_dtl != null)
+            {
+                var listaIds = GetIdsDeFechasValidasSeleccionadas();
+                var numeroFechasSeleccionadas = listaIds.Count();
+                if (numeroFechasSeleccionadas > 0)
+                {
+                    var mensajeSegunNumero = numeroFechasSeleccionadas == 1 ? "la fecha seleccionada" : "las fechas seleccionadas";
+                    bool success = false;
+
+                    if (GetNumeroFechasPasadas() > 0 || numeroFechasSeleccionadas < GetNumeroFechasRestantes())
+                    {
+                        if (Msg.YesNo_Wng($"¿Está seguro de eliminar {mensajeSegunNumero}?") == DialogResult.Yes)
+                        {
+                            success = new HorarioEmpleadoBL().EliminarHorariosDtl(listaIds);
+                            SalidaDeOperacion();
+                        }
+                    }
+                    else if (Msg.YesNo_Wng("Está eliminando todas las fechas del horario del empleado. ¿Está seguro de continuar?") == DialogResult.Yes)
+                    {
+                        success = new HorarioEmpleadoBL().EliminarHorario(_horario.id_horario_emp);
+                        SalidaDeOperacion(false);
+                    }
+
+                    void SalidaDeOperacion(bool actualizarRangoDeHorario = true)
+                    {
+                        if (success)
+                        {
+                            if (actualizarRangoDeHorario && !(new HorarioEmpleadoBL().ActualizarRangoDeHorario(_horario.id_horario_emp)))
+                            {
+                                Msg.Ok_Err("No se actualizó el rango de fechas del horario.");
+                            }
+                            RefrescarHorario();
+                        }
+                        else
+                        {
+                            Msg.Ok_Err($"No se pudo eliminar {mensajeSegunNumero} del horario.");
+                        }
+                    }
+                }
+            }
+        }
+
+        private void EditarDiaDeHorario()
+        {
+            if (_empleado != null && _empleado.id_empleado > 0)
+            {
+                var fecha = mcaMes.SelectionRange.Start.Date;
+                if (_horario != null && _horario.id_horario_emp > 0)
+                {
+                    //Cuando ya tiene un horario
+                    if (EsFechaValida(fecha))
+                    {
+                        var horarioDtl = new HorarioEmpleadoBL().GetHorarioDtlXFecha(fecha, _horario.id_horario_emp);
+                        if (horarioDtl != null && horarioDtl.id_horario_emp_dtl > 0)
+                        {
+                            //Actualizar fecha
+                            var frm = new FormEditarDia(horarioDtl, TipoOperacionABM.Modificar);
+                            frm.ShowDialog();
+
+                            if (frm._seOpero)
+                            {
+                                RefrescarHorario();
+                            }
+                        }
+                        else
+                        {
+                            //Agregar fecha
+
+                        }
+                    }
+                }
+                else
+                {
+                    //crear nuevo horario y agregar fecha
+                }
+
+                //no está en el horario (add) (no tiene horario/tiene horario)
+            }
+        }
+
 
         #endregion
 
@@ -255,7 +405,7 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_horario !=null && _horario.LABt04_horario_emp_dtl != null)
+            if (_horario != null && _horario.LABt04_horario_emp_dtl != null)
             {
                 string fechas = "";
                 foreach (var fecha in _horario.LABt04_horario_emp_dtl)
@@ -266,52 +416,26 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        #endregion
-
         private void mcaMes_DoubleClick(object sender, EventArgs e)
         {
-            if (_empleado != null && _empleado.id_empleado > 0)
-            {
-                var fecha = mcaMes.SelectionRange.Start.Date;
-                if (_horario != null && _horario.id_horario_emp > 0)
-                {
-                    //Cuando ya tiene un horario
-                    if (EsFechaValida(fecha))
-                    {
-                        var horarioDtl = new HorarioEmpleadoBL().GetHorarioDtlXFecha(fecha, _horario.id_horario_emp);
-                        if (horarioDtl != null && horarioDtl.id_horario_emp_dtl > 0)
-                        {
-                            //Actualizar fecha
-                            var frm = new FormEditarDia(horarioDtl, TipoOperacionABM.Modificar);
-                            frm.ShowDialog();
-
-                            if(frm._seOpero)
-                            {
-                                RefrescarHorario();
-                            }
-                        }
-                        else
-                        {
-                            //Agregar fecha
-
-                        }
-                    }
-                }
-                else
-                {
-                    //crear nuevo horario y agregar fecha
-                }
-
-                //no está en el horario (add) (no tiene horario/tiene horario)
-            }
+            EditarDiaDeHorario();
         }
 
-        //dentro de rango
-        private bool EsFechaValida(DateTime fecha)
+        private void toolStripMenuItemEliminar_Click(object sender, EventArgs e)
         {
-            var hoy = DateTime.Now.Date;
-            return (fecha >= hoy && fecha <= KeyDates.MaxDate);
+            EliminarDiaDeHorario();
         }
+
+        private void toolStripMenuItemAgregarOEditar_Click(object sender, EventArgs e)
+        {
+            EditarDiaDeHorario();
+        }
+
+        private void ctxMenuDate_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ctxMenuDate.Enabled = ExisteFechasValidasSeleccionadas();
+        }
+        #endregion
 
     }
 }

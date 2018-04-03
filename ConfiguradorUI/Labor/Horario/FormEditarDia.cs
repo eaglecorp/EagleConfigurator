@@ -30,13 +30,13 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void AddHandlers()
         {
-            dtpHoraInicioLabor.ValueChanged += dtpHoraInicioLabor_ValueChanged;
-            dtpHoraFinLabor.ValueChanged += dtpHoraFinLabor_ValueChanged;
+            //dtpHoraInicioLabor.ValueChanged += dtpHoraInicioLabor_ValueChanged;
+            //dtpHoraFinLabor.ValueChanged += dtpHoraFinLabor_ValueChanged;
 
-            dtpHoraInicioBreak.ValueChanged += dtpHoraInicioBreak_ValueChanged;
-            dtpHoraFinBreak.ValueChanged += dtpHoraFinBreak_ValueChanged;
+            //dtpHoraInicioBreak.ValueChanged += dtpHoraInicioBreak_ValueChanged;
+            //dtpHoraFinBreak.ValueChanged += dtpHoraFinBreak_ValueChanged;
 
-            dtpTiempoTolerancia.ValueChanged += dtpTiempoTolerancia_ValueChanged;
+            //dtpTiempoTolerancia.ValueChanged += dtpTiempoTolerancia_ValueChanged;
 
             dtpHoraInicioBreak.KeyPress += DtpBreak_KeyPress;
             dtpHoraFinBreak.KeyPress += DtpBreak_KeyPress;
@@ -81,7 +81,6 @@ namespace ConfiguradorUI.Labor.Horario
                         dtpTiempoTolerancia
                     };
         }
-
 
         private LABt04_horario_emp_dtl GetHorarioDtl()
         {
@@ -143,30 +142,19 @@ namespace ConfiguradorUI.Labor.Horario
             TimeSpan horaInicio = GetHoraYMinutos(dtp.Value.TimeOfDay);
             TimeSpan horaFin = GetHoraYMinutos(dtpHoraFinLabor.Value.TimeOfDay);
 
+            errorProv.SetError(dtpHoraInicioLabor, null);
+
             if (dtpHoraInicioBreak.CustomFormat != " ")
             {
                 var horaInicioBrk = GetHoraYMinutos(dtpHoraInicioBreak.Value.TimeOfDay);
                 if (horaInicio > horaInicioBrk)
                 {
-                    Msg.Ok_Wng("La \"Hora inicio\" no puede ser mayor que la hora \"Inicio break\".", "Validación");
-                    dtp.Value = Convert.ToDateTime(horaInicioBrk.ToString());
+                    errorProv.SetError(dtpHoraInicioLabor, "La \"Hora inicio\" no puede ser mayor que la hora \"Inicio break\".");
                 }
             }
             else if (horaInicio > horaFin)
             {
-                Msg.Ok_Wng("La \"Hora inicio\" no puede ser mayor que la \"Hora fin\".", "Validación");
-
-                dtp.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
-                dtpTiempoTolerancia.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
-            }
-            else
-            {
-                var tiempoTolerancia = GetHoraYMinutos(dtpTiempoTolerancia.Value.TimeOfDay);
-                var maxTiempoTolerancia = horaFin - horaInicio;
-                if (tiempoTolerancia > maxTiempoTolerancia)
-                {
-                    dtpTiempoTolerancia.Value = Convert.ToDateTime(maxTiempoTolerancia.ToString());
-                }
+                errorProv.SetError(dtpHoraInicioLabor, "La \"Hora inicio\" no puede ser mayor que la \"Hora fin\".");
             }
         }
 
@@ -175,29 +163,19 @@ namespace ConfiguradorUI.Labor.Horario
             TimeSpan horaFin = GetHoraYMinutos(dtp.Value.TimeOfDay);
             TimeSpan horaInicio = GetHoraYMinutos(dtpHoraInicioLabor.Value.TimeOfDay);
 
+            errorProv.SetError(dtpHoraFinLabor, null);
+
             if (dtpHoraFinBreak.CustomFormat != " ")
             {
                 var horaFinBrk = GetHoraYMinutos(dtpHoraFinBreak.Value.TimeOfDay);
                 if (horaFin < horaFinBrk)
                 {
-                    Msg.Ok_Wng("La \"Hora fin\" no puede ser menor que la hora \"Fin break\".", "Validación");
-                    dtp.Value = Convert.ToDateTime(horaFinBrk.ToString());
+                    errorProv.SetError(dtpHoraFinLabor, "La \"Hora fin\" no puede ser menor que la hora \"Fin break\".");
                 }
             }
             else if (horaFin < horaInicio)
             {
-                Msg.Ok_Wng("La \"Hora fin\" no puede ser menor que la \"Hora inicio\".", "Validación");
-                dtp.Value = Convert.ToDateTime(horaInicio.ToString());
-                dtpTiempoTolerancia.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
-            }
-            else
-            {
-                var tiempoTolerancia = GetHoraYMinutos(dtpTiempoTolerancia.Value.TimeOfDay);
-                var maxTiempoTolerancia = horaFin - horaInicio;
-                if (tiempoTolerancia > maxTiempoTolerancia)
-                {
-                    dtpTiempoTolerancia.Value = Convert.ToDateTime(maxTiempoTolerancia.ToString());
-                }
+                errorProv.SetError(dtpHoraFinLabor, "La \"Hora fin\" no puede ser menor que la \"Hora inicio\".");
             }
         }
 
@@ -207,15 +185,15 @@ namespace ConfiguradorUI.Labor.Horario
             TimeSpan horaInicioLabor = GetHoraYMinutos(dtpHoraInicioLabor.Value.TimeOfDay);
             TimeSpan horaFinBreak = GetHoraYMinutos(dtpHoraFinBreak.Value.TimeOfDay);
 
+            errorProv.SetError(dtpHoraInicioBreak, null);
+
             if (horaInicioBreak < horaInicioLabor)
             {
-                Msg.Ok_Wng("La hora \"Inicio break\" no puede ser menor que la \"Hora inicio\".", "Validación");
-                dtp.Value = Convert.ToDateTime(horaInicioLabor.ToString());
+                errorProv.SetError(dtpHoraInicioBreak, "La hora \"Inicio break\" no puede ser menor que la \"Hora inicio\".");
             }
             else if (horaInicioBreak > horaFinBreak)
             {
-                Msg.Ok_Wng("La hora \"Inicio break\" no puede ser mayor que la hora \"Fin break\".", "Validación");
-                dtp.Value = Convert.ToDateTime(horaFinBreak.ToString());
+                errorProv.SetError(dtpHoraInicioBreak, "La hora \"Inicio break\" no puede ser mayor que la hora \"Fin break\".");
             }
         }
 
@@ -225,15 +203,15 @@ namespace ConfiguradorUI.Labor.Horario
             TimeSpan horaFinLabor = GetHoraYMinutos(dtpHoraFinLabor.Value.TimeOfDay);
             TimeSpan horaInicioBreak = GetHoraYMinutos(dtpHoraInicioBreak.Value.TimeOfDay);
 
+            errorProv.SetError(dtpHoraFinBreak, null);
+
             if (horaFinBreak > horaFinLabor)
             {
-                Msg.Ok_Wng("La hora \"Fin break\" no puede ser mayor que la \"Hora Fin\".", "Validación");
-                dtp.Value = Convert.ToDateTime(horaInicioBreak.ToString());
+                errorProv.SetError(dtpHoraFinBreak, "La hora \"Fin break\" no puede ser mayor que la \"Hora Fin\".");
             }
             else if (horaFinBreak < horaInicioBreak)
             {
-                Msg.Ok_Wng("La hora \"Fin break\" no puede ser menor que la hora \"Inicio break\".", "Validación");
-                dtp.Value = Convert.ToDateTime(horaInicioBreak.ToString());
+                errorProv.SetError(dtpHoraFinBreak, "La hora \"Fin break\" no puede ser menor que la hora \"Inicio break\".");
             }
         }
 
@@ -244,14 +222,13 @@ namespace ConfiguradorUI.Labor.Horario
             TimeSpan horaFinLabor = GetHoraYMinutos(dtpHoraFinLabor.Value.TimeOfDay);
             TimeSpan maxTolerancia = horaFinLabor - horaInicioLabor;
 
+            errorProv.SetError(dtpTiempoTolerancia, null);
+
             if (tiempoTolerancia > maxTolerancia)
             {
-                Msg.Ok_Wng($"El tiempo de \"Tolerancia\" sobrepasa al rango de horas del día ({maxTolerancia.ToString()} horas).", "Validación");
-                dtp.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
+                errorProv.SetError(dtpTiempoTolerancia, $"El tiempo de \"Tolerancia\" sobrepasa al rango de horas del día ({maxTolerancia.ToString()} horas).");
             }
         }
-
-
 
         private void dtpHoraInicioLabor_ValueChanged(object sender, EventArgs e)
         {
@@ -293,6 +270,9 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (e.KeyChar == (char)Keys.Escape && ((DateTimePicker)sender).CustomFormat != " ")
             {
+                errorProv.SetError(dtpHoraInicioBreak, null);
+                errorProv.SetError(dtpHoraFinBreak, null);
+
                 ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: " ");
                 ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: " ");
             }
@@ -302,13 +282,64 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (((DateTimePicker)sender).CustomFormat != "hh:mm tt")
             {
-                var fecha = Convert.ToDateTime(dtpHoraInicioLabor.Value.TimeOfDay.ToString());
-                dtpHoraInicioBreak.Value = fecha;
-                dtpHoraFinBreak.Value = fecha;
+                var tuplaHorasBrkDisponibles = GetHorasBreakDisponible(GetHoraYMinutos(dtpHoraInicioLabor.Value.TimeOfDay), GetHoraYMinutos(dtpHoraFinLabor.Value.TimeOfDay));
+                dtpHoraInicioBreak.Value = Convert.ToDateTime(tuplaHorasBrkDisponibles.Item1.ToString());
+                dtpHoraFinBreak.Value = Convert.ToDateTime(tuplaHorasBrkDisponibles.Item2.ToString());
 
                 ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: "hh:mm tt");
                 ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: "hh:mm tt");
             }
+        }
+
+        private Tuple<TimeSpan, TimeSpan> GetHorasBreakDisponible(TimeSpan horaInicio, TimeSpan horaFin)
+        {
+            var AnchoHoras = horaFin - horaInicio;
+
+            var horaInicioBreakDisponible = horaInicio;
+            var horaFinBreakDisponible = horaInicio;
+            //Si el ancho de tiempo es mayor a 5 minutos al menos para sugerir los horas brk disponibles
+            if (AnchoHoras >= new TimeSpan(0, 5, 0))
+            {
+                try
+                {
+                    var mitadDeAncho = new TimeSpan(0, AnchoHoras.Minutes / 2, 0);
+                    mitadDeAncho = mitadDeAncho.Add(new TimeSpan(0,
+                                            GetMinutosDeHoras(double.Parse(AnchoHoras.Hours.ToString()) / 2),
+                                            0));
+
+                    horaInicioBreakDisponible = horaInicioBreakDisponible.Add(mitadDeAncho);
+
+                    if (mitadDeAncho >= new TimeSpan(3, 30, 0))
+                    {
+                        horaFinBreakDisponible = horaInicioBreakDisponible.Add(new TimeSpan(1, 0, 0));
+                    }
+                    else if (mitadDeAncho >= new TimeSpan(2, 0, 0))
+                    {
+                        horaFinBreakDisponible = horaInicioBreakDisponible.Add(new TimeSpan(0, 30, 0));
+                    }
+                    else if (mitadDeAncho >= new TimeSpan(1, 0, 0))
+                    {
+                        horaFinBreakDisponible = horaInicioBreakDisponible.Add(new TimeSpan(0, 15, 0));
+                    }
+                    else
+                    {
+                        //entra aquí cuando mitad de ancho es menor a 1 hora
+                        horaFinBreakDisponible = horaInicioBreakDisponible.Add(new TimeSpan(0, mitadDeAncho.Minutes / 2, 0));
+                    }
+                }
+                catch
+                {
+                    horaInicioBreakDisponible = horaInicio;
+                    horaFinBreakDisponible = horaInicio;
+                }
+            }
+
+            int GetMinutosDeHoras(double numHoras)
+            {
+                return int.Parse((numHoras * 60).ToString());
+            }
+
+            return new Tuple<TimeSpan, TimeSpan>(horaInicioBreakDisponible, horaFinBreakDisponible);
         }
 
         private void FormEditarDia_Load(object sender, EventArgs e)
@@ -360,44 +391,68 @@ namespace ConfiguradorUI.Labor.Horario
             var maxTolerancia = (horaFinLabor - horaInicioLabor);
             var tiempoTolerancia = GetHoraYMinutos(dtpTiempoTolerancia.Value.TimeOfDay);
 
-            if(hoy > _horarioDtl.fecha_labor)
+            errorProv.Clear();
+
+            if (hoy > _horarioDtl.fecha_labor)
             {
                 no_error = false;
                 Msg.Ok_Wng("No se puede actualizar una fecha inferior a la fecha actual.", "Validación");
             }
-            else if (horaInicioLabor > horaFinLabor)
-            {
-                no_error = false;
-                Msg.Ok_Wng("La \"Hora Inicio\" no puede ser mayor que la \"Hora Fin\".", "Validación");
-                dtpHoraInicioLabor.Focus();
-            }
-            else if (tiempoTolerancia > maxTolerancia)
-            {
-                no_error = false;
-                Msg.Ok_Wng($"El tiempo de \"Tolerancia\" sobrepasa al rango de horas del día ({maxTolerancia.ToString()} horas).", "Validación");
-                dtpTiempoTolerancia.Focus();
-            }
 
-            if (no_error && dtpHoraInicioBreak.CustomFormat != " " && dtpHoraInicioBreak.CustomFormat != " ")
+            else if (no_error)
             {
-                var horaInicioBrk = GetHoraYMinutos(dtpHoraInicioBreak.Value.TimeOfDay);
-                var horaFinBrk = GetHoraYMinutos(dtpHoraFinBreak.Value.TimeOfDay);
-
-                if (horaInicioBrk < horaInicioLabor)
+                if (horaInicioLabor > horaFinLabor)
                 {
                     no_error = false;
-                    Msg.Ok_Wng("La hora \"Inicio break\" no puede ser menor que la \"Hora inicio\".", "Validación");
-                    dtpHoraInicioBreak.Focus();
+                    errorProv.SetError(dtpHoraInicioLabor, "La \"Hora Inicio\" no puede ser mayor que la \"Hora Fin\".");
+                    dtpHoraInicioLabor.Focus();
                 }
-                else if (horaFinBrk > horaFinLabor)
+                else if (tiempoTolerancia > maxTolerancia)
                 {
                     no_error = false;
-                    Msg.Ok_Wng("La hora \"Fin break\" no puede ser mayor que la \"Hora fin\".", "Validación");
-                    dtpHoraFinBreak.Focus();
+                    errorProv.SetError(dtpTiempoTolerancia, $"El tiempo de \"Tolerancia\" sobrepasa al rango de horas del día ({maxTolerancia.ToString()} horas).");
+                    dtpTiempoTolerancia.Focus();
+                }
+
+                if (dtpHoraInicioBreak.CustomFormat != " " && dtpHoraInicioBreak.CustomFormat != " ")
+                {
+                    var horaInicioBrk = GetHoraYMinutos(dtpHoraInicioBreak.Value.TimeOfDay);
+                    var horaFinBrk = GetHoraYMinutos(dtpHoraFinBreak.Value.TimeOfDay);
+
+                    if (horaInicioBrk < horaInicioLabor)
+                    {
+                        no_error = false;
+                        errorProv.SetError(dtpHoraInicioBreak, "La hora \"Inicio break\" no puede ser menor que la \"Hora inicio\".");
+                        dtpHoraInicioBreak.Focus();
+                    }
+                    else if (horaInicioBrk > horaFinLabor)
+                    {
+                        no_error = false;
+                        errorProv.SetError(dtpHoraInicioBreak, "La hora \"Inicio break\" no puede ser mayor que la \"Hora fin\".");
+                        dtpHoraInicioBreak.Focus();
+                    }
+                    else if (horaFinBrk < horaInicioLabor)
+                    {
+                        no_error = false;
+                        errorProv.SetError(dtpHoraFinBreak, "La hora \"Fin break\" no puede ser menor que la \"Hora inicio\".");
+                        dtpHoraFinBreak.Focus();
+                    }
+                    else if (horaFinBrk > horaFinLabor)
+                    {
+                        no_error = false;
+                        errorProv.SetError(dtpHoraFinBreak, "La hora \"Fin break\" no puede ser mayor que la \"Hora fin\".");
+                        dtpHoraFinBreak.Focus();
+                    }
+                    else if (horaInicioBrk > horaFinBrk)
+                    {
+                        no_error = false;
+                        errorProv.SetError(dtpHoraInicioBreak, "La hora \"Inicio break\" no puede ser mayor que la hora \"Fin break\".");
+                        dtpHoraInicioBreak.Focus();
+                    }
                 }
             }
-
             return no_error;
         }
+
     }
 }

@@ -282,6 +282,22 @@ namespace ConfiguradorUI.Labor.Horario
                 Msg.Ok_Wng("Busque y seleccione un empleado antes de asignar un horario.", "Validación");
             }
 
+            //validando que se inferior a la fecha actual
+            if (no_error)
+            {
+                var hoy = DateTime.Now.Date;
+                if (dtpDesde.Value.Date < hoy)
+                {
+                    no_error = false;
+                    Msg.Ok_Wng($"La fecha \"Desde\" no puede ser menor que la fecha actual ({hoy.ToShortDateString()}).", "Validación");
+                }
+                else if (dtpHasta.Value.Date < hoy)
+                {
+                    no_error = false;
+                    Msg.Ok_Wng($"La fecha \"Hasta\" no puede ser menor que la fecha actual ({hoy.ToShortDateString()}).", "Validación");
+                }
+            }
+
             //validar el rango de fechas
             if (no_error && dtpDesde.Value.Date > dtpHasta.Value.Date)
             {

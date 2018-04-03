@@ -102,9 +102,9 @@ namespace ConfigDataAccess.Labor
                             horario.fecha_inicio_horario = primeraFecha;
                             horario.fecha_fin_horario = ultimaFecha;
                             ctx.SaveChanges();
-                            success = true;
                         }
                     }
+                    success = true;
                 }
                 catch (Exception e)
                 {

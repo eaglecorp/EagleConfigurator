@@ -31,10 +31,11 @@ namespace ConfiguradorUI.Labor.Horario
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHorarioEmpleado));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Mesero");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Cocinero");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Gerente");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHorarioEmpleado));
             this.grbBuscarEmp = new System.Windows.Forms.GroupBox();
             this.lblNroDocEmp = new MetroFramework.Controls.MetroLabel();
             this.txtNroDocEmp = new MetroFramework.Controls.MetroTextBox();
@@ -42,6 +43,8 @@ namespace ConfiguradorUI.Labor.Horario
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.tabHorario = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.cboCanalVenta = new System.Windows.Forms.ComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.button2 = new System.Windows.Forms.Button();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
@@ -61,11 +64,17 @@ namespace ConfiguradorUI.Labor.Horario
             this.button1 = new System.Windows.Forms.Button();
             this.mcaMes = new CustomControls.MonthCalendar();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
+            this.ctxMenuDate = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemAgregarOEditar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEliminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.button3 = new System.Windows.Forms.Button();
             this.grbBuscarEmp.SuspendLayout();
             this.tabHorario.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.ctxMenuDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbBuscarEmp
@@ -172,7 +181,10 @@ namespace ConfiguradorUI.Labor.Horario
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.button3);
             this.tabPagGeneral.Controls.Add(this.button2);
+            this.tabPagGeneral.Controls.Add(this.cboCanalVenta);
+            this.tabPagGeneral.Controls.Add(this.metroLabel1);
             this.tabPagGeneral.Controls.Add(this.metroLabel16);
             this.tabPagGeneral.Controls.Add(this.metroLabel15);
             this.tabPagGeneral.Controls.Add(this.btnAsignarHorario);
@@ -189,9 +201,32 @@ namespace ConfiguradorUI.Labor.Horario
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // cboCanalVenta
+            // 
+            this.cboCanalVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboCanalVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCanalVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboCanalVenta.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCanalVenta.FormattingEnabled = true;
+            this.cboCanalVenta.Location = new System.Drawing.Point(597, 54);
+            this.cboCanalVenta.Name = "cboCanalVenta";
+            this.cboCanalVenta.Size = new System.Drawing.Size(123, 23);
+            this.cboCanalVenta.TabIndex = 200;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel1.Location = new System.Drawing.Point(548, 56);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel1.TabIndex = 199;
+            this.metroLabel1.Text = "Tema:";
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(631, 54);
+            this.button2.Location = new System.Drawing.Point(335, 35);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 23);
             this.button2.TabIndex = 198;
@@ -475,12 +510,17 @@ namespace ConfiguradorUI.Labor.Horario
             // mcaMes
             // 
             this.mcaMes.CalendarDimensions = new System.Drawing.Size(3, 2);
+            this.mcaMes.ColorTable.DayActiveTodayCircleBorder = System.Drawing.Color.DarkOrange;
+            this.mcaMes.ColorTable.DaySelectedTodayCircleBorder = System.Drawing.Color.DarkOrange;
             this.mcaMes.ColorTable.DayTextBold = System.Drawing.Color.MediumSeaGreen;
+            this.mcaMes.ColorTable.DayTodayCircleBorder = System.Drawing.Color.DarkOrange;
             this.mcaMes.Culture = new System.Globalization.CultureInfo("es-PE");
             this.mcaMes.DayHeaderFont = new System.Drawing.Font("Segoe UI", 9F);
             this.mcaMes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mcaMes.Location = new System.Drawing.Point(43, 283);
             this.mcaMes.Name = "mcaMes";
+            this.mcaMes.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2018, 4, 1, 0, 0, 0, 0), new System.DateTime(2018, 4, 1, 0, 0, 0, 0));
+            this.mcaMes.ShowFooter = false;
             this.mcaMes.TabIndex = 197;
             this.mcaMes.DoubleClick += new System.EventHandler(this.mcaMes_DoubleClick);
             // 
@@ -495,11 +535,68 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnCerrar.TabIndex = 113;
             this.btnCerrar.UseSelectable = true;
             // 
+            // ctxMenuDate
+            // 
+            this.ctxMenuDate.AutoSize = false;
+            this.ctxMenuDate.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemAgregarOEditar,
+            this.toolStripMenuItemEliminar});
+            this.ctxMenuDate.Name = "ctxMenuDate";
+            this.ctxMenuDate.Size = new System.Drawing.Size(153, 70);
+            this.ctxMenuDate.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuDate_Opening);
+            // 
+            // toolStripMenuItemAgregarOEditar
+            // 
+            this.toolStripMenuItemAgregarOEditar.Name = "toolStripMenuItemAgregarOEditar";
+            this.toolStripMenuItemAgregarOEditar.Size = new System.Drawing.Size(117, 22);
+            this.toolStripMenuItemAgregarOEditar.Text = "Editar";
+            this.toolStripMenuItemAgregarOEditar.Click += new System.EventHandler(this.toolStripMenuItemAgregarOEditar_Click);
+            // 
+            // toolStripMenuItemEliminar
+            // 
+            this.toolStripMenuItemEliminar.Name = "toolStripMenuItemEliminar";
+            this.toolStripMenuItemEliminar.Size = new System.Drawing.Size(117, 22);
+            this.toolStripMenuItemEliminar.Text = "Eliminar";
+            this.toolStripMenuItemEliminar.Click += new System.EventHandler(this.toolStripMenuItemEliminar_Click);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel2.Location = new System.Drawing.Point(43, 618);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(29, 15);
+            this.metroLabel2.TabIndex = 110;
+            this.metroLabel2.Text = "Hoy";
+            this.metroLabel2.UseCustomForeColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 44);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(132, 30);
+            this.button3.TabIndex = 201;
+            this.button3.Text = "Asignar horario";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // FormHorarioEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 661);
+            this.ClientSize = new System.Drawing.Size(821, 669);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.mcaMes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -518,6 +615,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.ctxMenuDate.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,5 +649,12 @@ namespace ConfiguradorUI.Labor.Horario
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private CustomControls.MonthCalendar mcaMes;
         private System.Windows.Forms.Button button2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.ComboBox cboCanalVenta;
+        private System.Windows.Forms.ContextMenuStrip ctxMenuDate;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAgregarOEditar;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEliminar;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.Button button3;
     }
 }
