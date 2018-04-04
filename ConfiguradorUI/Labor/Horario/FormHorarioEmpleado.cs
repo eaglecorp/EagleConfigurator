@@ -244,26 +244,6 @@ namespace ConfiguradorUI.Labor.Horario
             return lista;
         }
 
-        private bool ExisteFechasValidasSeleccionadas()
-        {
-            bool success = false;
-            var hoy = DateTime.Now.Date;
-
-
-            if (_horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null)
-            {
-                try
-                {
-                    success = _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor >= hoy && mcaMes.SelectionRanges.Any(r => x.fecha_labor >= r.Start.Date && x.fecha_labor <= r.End.Date));
-                }
-                catch (Exception e)
-                {
-                    Msg.Ok_Err("No se pudo determinar los IDs de las fechas seleccionadas.");
-                }
-            }
-            return success;
-        }
-
         private void EliminarDiaDeHorario()
         {
             if (_empleado != null && _empleado.id_empleado > 0 && _horario != null && _horario.LABt04_horario_emp_dtl != null)
@@ -436,12 +416,12 @@ namespace ConfiguradorUI.Labor.Horario
                 Msg.Ok_Wng("Debe buscar un empleado antes de eliminar fechas del horario.");
             }
         }
+
         private void txtNroDocEmp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\r')
                 BuscarEmpleado();
         }
-
 
         private void mcaMes_DoubleClick(object sender, EventArgs e)
         {
@@ -460,7 +440,46 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void ctxMenuDate_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ctxMenuDate.Enabled = ExisteFechasValidasSeleccionadas();
+            ControlarMenuDeCalendario();
+        }
+
+        private void ControlarMenuDeCalendario()
+        {
+            ctxMenuDate.Enabled =
+            ctxMenuDate.Items[0].Enabled =
+            ctxMenuDate.Items[1].Enabled = true;
+
+            ctxMenuDate.Items[0].Text = "Asignar día";
+
+            if (_empleado != null && _empleado.id_empleado > 0)
+            {
+                //Items[0]: agregar o editar e Items[1]: eliminar
+                var hoy = DateTime.Now.Date;
+
+                bool soloUnaFechaSeleccionada = mcaMes.SelectionRanges.Count == 1 && (mcaMes.SelectionRanges[0].Start.Date == mcaMes.SelectionRanges[0].End.Date);
+                bool tieneHorario = _horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null;
+                bool fechaDeHorarioExisteDentroDelRangoSeleccionado = _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor >= hoy && mcaMes.SelectionRanges.Any(r => x.fecha_labor >= r.Start.Date && x.fecha_labor <= r.End.Date));
+
+                //Para agregar o editar. 
+                if (!soloUnaFechaSeleccionada ||
+                    (mcaMes.SelectionRanges[0].Start.Date) < hoy)
+                {
+                    ctxMenuDate.Items[0].Enabled = false;
+                }
+                else
+                {
+                    ctxMenuDate.Items[0].Enabled = true;
+
+                    ctxMenuDate.Items[0].Text = (tieneHorario && _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor == mcaMes.SelectionRanges[0].Start.Date)) ? "Editar día" : "Asignar día";
+                }
+
+                //Para eliminar
+                ctxMenuDate.Items[1].Enabled = tieneHorario && fechaDeHorarioExisteDentroDelRangoSeleccionado;
+            }
+            else
+            {
+                ctxMenuDate.Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

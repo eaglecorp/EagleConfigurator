@@ -43,6 +43,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.tabHorario = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.btnEditarFechas = new System.Windows.Forms.Button();
             this.cboCanalVenta = new System.Windows.Forms.ComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -68,7 +69,6 @@ namespace ConfiguradorUI.Labor.Horario
             this.toolStripMenuItemAgregarOEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.grbBuscarEmp.SuspendLayout();
             this.tabHorario.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -200,6 +200,18 @@ namespace ConfiguradorUI.Labor.Horario
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel3.Location = new System.Drawing.Point(3, 5);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(153, 19);
+            this.metroLabel3.TabIndex = 202;
+            this.metroLabel3.Text = "Operaciones por rango:";
+            this.metroLabel3.UseCustomForeColor = true;
             // 
             // btnEditarFechas
             // 
@@ -559,14 +571,14 @@ namespace ConfiguradorUI.Labor.Horario
             // toolStripMenuItemAgregarOEditar
             // 
             this.toolStripMenuItemAgregarOEditar.Name = "toolStripMenuItemAgregarOEditar";
-            this.toolStripMenuItemAgregarOEditar.Size = new System.Drawing.Size(117, 22);
-            this.toolStripMenuItemAgregarOEditar.Text = "Editar";
+            this.toolStripMenuItemAgregarOEditar.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemAgregarOEditar.Text = "Asignar día";
             this.toolStripMenuItemAgregarOEditar.Click += new System.EventHandler(this.toolStripMenuItemAgregarOEditar_Click);
             // 
             // toolStripMenuItemEliminar
             // 
             this.toolStripMenuItemEliminar.Name = "toolStripMenuItemEliminar";
-            this.toolStripMenuItemEliminar.Size = new System.Drawing.Size(117, 22);
+            this.toolStripMenuItemEliminar.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItemEliminar.Text = "Eliminar";
             this.toolStripMenuItemEliminar.Click += new System.EventHandler(this.toolStripMenuItemEliminar_Click);
             // 
@@ -582,18 +594,6 @@ namespace ConfiguradorUI.Labor.Horario
             this.metroLabel2.TabIndex = 110;
             this.metroLabel2.Text = "Hoy";
             this.metroLabel2.UseCustomForeColor = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel3.Location = new System.Drawing.Point(3, 5);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(153, 19);
-            this.metroLabel3.TabIndex = 202;
-            this.metroLabel3.Text = "Operaciones por rango:";
-            this.metroLabel3.UseCustomForeColor = true;
             // 
             // FormHorarioEmpleado
             // 
