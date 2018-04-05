@@ -51,6 +51,7 @@ namespace ConfiguradorUI.Labor.Horario
             }
 
         }
+
         private void SetHorario(LABt03_horario_emp horario)
         {
             try
@@ -288,40 +289,49 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private void EditarDiaDeHorario()
+        private void AsignarOEditarDiaDeHorario()
         {
             if (_empleado != null && _empleado.id_empleado > 0)
             {
                 var fecha = mcaMes.SelectionRange.Start.Date;
-                if (_horario != null && _horario.id_horario_emp > 0)
+
+                if (EsFechaValida(fecha))
                 {
-                    //Cuando ya tiene un horario
-                    if (EsFechaValida(fecha))
+                    bool seOpero = false;
+                    if (_horario != null && _horario.id_horario_emp > 0)
                     {
+                        int tipoOperacion = TipoOperacionABM.No_Action;
                         var horarioDtl = new HorarioEmpleadoBL().GetHorarioDtlXFecha(fecha, _horario.id_horario_emp);
+
                         if (horarioDtl != null && horarioDtl.id_horario_emp_dtl > 0)
                         {
-                            //Actualizar fecha
-                            var frm = new FormEditarDia(horarioDtl, TipoOperacionABM.Modificar);
+                            //Editar horario Dtl
+                            var frm = new FormAsignarOEditarDia(horarioDtl);
                             frm.ShowDialog();
-
-                            if (frm._seOpero)
-                            {
-                                RefrescarHorario();
-                            }
+                            seOpero = frm._seOpero;
                         }
                         else
                         {
-                            //Agregar fecha
-
+                            //Asignar horario Dtl
+                            var frm = new FormAsignarOEditarDia(_horario.id_horario_emp,fecha);
+                            frm.ShowDialog();
+                            seOpero = frm._seOpero;
                         }
+
+                    }
+                    else
+                    {
+                        //crear nuevo horario y agregar horario Dtl
+                        var frm = new FormAsignarOEditarDia(fecha, _empleado.id_empleado);
+                        frm.ShowDialog();
+                        seOpero = frm._seOpero;
+                    }
+
+                    if (seOpero)
+                    {
+                        RefrescarHorario();
                     }
                 }
-                else
-                {
-                    //crear nuevo horario y agregar fecha
-                }
-
                 //no está en el horario (add) (no tiene horario/tiene horario)
             }
         }
@@ -345,7 +355,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (_empleado != null && _empleado.id_empleado > 0)
             {
-                var frm = new FormAsignarHorario(_empleado, _horario, TipoOperacionABM.Insertar);
+                var frm = new FormAsignarOEditarHorario(_empleado, _horario, TipoOperacionABM.Insertar);
                 frm.ShowDialog();
 
                 if (frm._seAsigno)
@@ -393,7 +403,7 @@ namespace ConfiguradorUI.Labor.Horario
                     var hoy = DateTime.Now.Date;
                     if (_horario.fecha_fin_horario >= hoy)
                     {
-                        var frm = new FormAsignarHorario(_empleado, _horario, TipoOperacionABM.Modificar);
+                        var frm = new FormAsignarOEditarHorario(_empleado, _horario, TipoOperacionABM.Modificar);
                         frm.ShowDialog();
 
                         if (frm._seAsigno)
@@ -425,7 +435,7 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void mcaMes_DoubleClick(object sender, EventArgs e)
         {
-            EditarDiaDeHorario();
+            AsignarOEditarDiaDeHorario();
         }
 
         private void toolStripMenuItemEliminar_Click(object sender, EventArgs e)
@@ -435,7 +445,7 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void toolStripMenuItemAgregarOEditar_Click(object sender, EventArgs e)
         {
-            EditarDiaDeHorario();
+            AsignarOEditarDiaDeHorario();
         }
 
         private void ctxMenuDate_Opening(object sender, System.ComponentModel.CancelEventArgs e)
@@ -450,33 +460,40 @@ namespace ConfiguradorUI.Labor.Horario
             ctxMenuDate.Items[1].Enabled = true;
 
             ctxMenuDate.Items[0].Text = "Asignar día";
-
-            if (_empleado != null && _empleado.id_empleado > 0)
+            try
             {
-                //Items[0]: agregar o editar e Items[1]: eliminar
-                var hoy = DateTime.Now.Date;
 
-                bool soloUnaFechaSeleccionada = mcaMes.SelectionRanges.Count == 1 && (mcaMes.SelectionRanges[0].Start.Date == mcaMes.SelectionRanges[0].End.Date);
-                bool tieneHorario = _horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null;
-                bool fechaDeHorarioExisteDentroDelRangoSeleccionado = _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor >= hoy && mcaMes.SelectionRanges.Any(r => x.fecha_labor >= r.Start.Date && x.fecha_labor <= r.End.Date));
-
-                //Para agregar o editar. 
-                if (!soloUnaFechaSeleccionada ||
-                    (mcaMes.SelectionRanges[0].Start.Date) < hoy)
+                if (_empleado != null && _empleado.id_empleado > 0)
                 {
-                    ctxMenuDate.Items[0].Enabled = false;
+                    //Items[0]: agregar o editar e Items[1]: eliminar
+                    var hoy = DateTime.Now.Date;
+
+                    bool soloUnaFechaSeleccionada = mcaMes.SelectionRanges.Count == 1 && (mcaMes.SelectionRanges[0].Start.Date == mcaMes.SelectionRanges[0].End.Date);
+                    bool tieneHorario = _horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null;
+                    bool fechaDeHorarioExisteDentroDelRangoSeleccionado = _horario !=null && _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor >= hoy && mcaMes.SelectionRanges.Any(r => x.fecha_labor >= r.Start.Date && x.fecha_labor <= r.End.Date));
+
+                    //Para agregar o editar. 
+                    if (!soloUnaFechaSeleccionada ||
+                        (mcaMes.SelectionRanges[0].Start.Date) < hoy)
+                    {
+                        ctxMenuDate.Items[0].Enabled = false;
+                    }
+                    else
+                    {
+                        ctxMenuDate.Items[0].Enabled = true;
+
+                        ctxMenuDate.Items[0].Text = (tieneHorario && _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor == mcaMes.SelectionRanges[0].Start.Date)) ? "Editar día" : "Asignar día";
+                    }
+
+                    //Para eliminar
+                    ctxMenuDate.Items[1].Enabled = tieneHorario && fechaDeHorarioExisteDentroDelRangoSeleccionado;
                 }
                 else
                 {
-                    ctxMenuDate.Items[0].Enabled = true;
-
-                    ctxMenuDate.Items[0].Text = (tieneHorario && _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor == mcaMes.SelectionRanges[0].Start.Date)) ? "Editar día" : "Asignar día";
+                    ctxMenuDate.Enabled = false;
                 }
-
-                //Para eliminar
-                ctxMenuDate.Items[1].Enabled = tieneHorario && fechaDeHorarioExisteDentroDelRangoSeleccionado;
             }
-            else
+            catch
             {
                 ctxMenuDate.Enabled = false;
             }

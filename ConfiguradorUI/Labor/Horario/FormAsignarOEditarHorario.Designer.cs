@@ -1,6 +1,6 @@
 ﻿namespace ConfiguradorUI.Labor.Horario
 {
-    partial class FormAsignarHorario
+    partial class FormAsignarOEditarHorario
     {
         /// <summary>
         /// Required designer variable.
@@ -609,7 +609,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(34, 18);
+            this.lblNombreForm.Location = new System.Drawing.Point(34, 19);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(187, 32);
             this.lblNombreForm.TabIndex = 179;
@@ -667,7 +667,7 @@
             // 
             this.errorProv.ContainerControl = this;
             // 
-            // FormAsignarHorario
+            // FormAsignarOEditarHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -730,9 +730,9 @@
             this.Controls.Add(this.dtpIniBrkMie);
             this.Controls.Add(this.dtpIniLabLun);
             this.MaximizeBox = false;
-            this.Name = "FormAsignarHorario";
+            this.Name = "FormAsignarOEditarHorario";
             this.Resizable = false;
-            this.Load += new System.EventHandler(this.FormAsignarHorario_Load);
+            this.Load += new System.EventHandler(this.FormAsignarOEditarHorario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

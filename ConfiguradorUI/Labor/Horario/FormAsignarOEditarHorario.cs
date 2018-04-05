@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace ConfiguradorUI.Labor.Horario
 {
-    public partial class FormAsignarHorario : MetroForm
+    public partial class FormAsignarOEditarHorario : MetroForm
     {
 
 
@@ -50,7 +50,7 @@ namespace ConfiguradorUI.Labor.Horario
         int _tipoOperacion;
         #endregion
 
-        public FormAsignarHorario(PERt04_empleado empleado, LABt03_horario_emp horario, int tipoOperacion)
+        public FormAsignarOEditarHorario(PERt04_empleado empleado, LABt03_horario_emp horario, int tipoOperacion)
         {
             InitializeComponent();
 
@@ -1557,7 +1557,7 @@ namespace ConfiguradorUI.Labor.Horario
 
         #region Eventos
 
-        private void FormAsignarHorario_Load(object sender, EventArgs e)
+        private void FormAsignarOEditarHorario_Load(object sender, EventArgs e)
         {
             ConfigurarControles();
             LimpiarForm();

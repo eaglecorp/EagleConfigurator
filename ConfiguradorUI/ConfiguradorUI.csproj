@@ -122,17 +122,17 @@
     <Compile Include="Labor\FormHorario.Designer.cs">
       <DependentUpon>FormHorario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Labor\Horario\FormAsignarHorario.cs">
+    <Compile Include="Labor\Horario\FormAsignarOEditarHorario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Labor\Horario\FormAsignarHorario.Designer.cs">
-      <DependentUpon>FormAsignarHorario.cs</DependentUpon>
+    <Compile Include="Labor\Horario\FormAsignarOEditarHorario.Designer.cs">
+      <DependentUpon>FormAsignarOEditarHorario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Labor\Horario\FormEditarDia.cs">
+    <Compile Include="Labor\Horario\FormAsignarOEditarDia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Labor\Horario\FormEditarDia.Designer.cs">
-      <DependentUpon>FormEditarDia.cs</DependentUpon>
+    <Compile Include="Labor\Horario\FormAsignarOEditarDia.Designer.cs">
+      <DependentUpon>FormAsignarOEditarDia.cs</DependentUpon>
     </Compile>
     <Compile Include="Labor\Horario\FormEliminarHorario.cs">
       <SubType>Form</SubType>
@@ -438,11 +438,11 @@
     <EmbeddedResource Include="Labor\FormHorario.resx">
       <DependentUpon>FormHorario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Labor\Horario\FormAsignarHorario.resx">
-      <DependentUpon>FormAsignarHorario.cs</DependentUpon>
+    <EmbeddedResource Include="Labor\Horario\FormAsignarOEditarHorario.resx">
+      <DependentUpon>FormAsignarOEditarHorario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Labor\Horario\FormEditarDia.resx">
-      <DependentUpon>FormEditarDia.cs</DependentUpon>
+    <EmbeddedResource Include="Labor\Horario\FormAsignarOEditarDia.resx">
+      <DependentUpon>FormAsignarOEditarDia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Labor\Horario\FormEliminarHorario.resx">
       <DependentUpon>FormEliminarHorario.cs</DependentUpon>

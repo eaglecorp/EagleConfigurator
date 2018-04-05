@@ -1,6 +1,6 @@
 ﻿namespace ConfiguradorUI.Labor.Horario
 {
-    partial class FormEditarDia
+    partial class FormAsignarOEditarDia
     {
         /// <summary>
         /// Required designer variable.
@@ -217,7 +217,7 @@
             // 
             this.errorProv.ContainerControl = this;
             // 
-            // FormEditarDia
+            // FormAsignarOEditarDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,9 +239,9 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormEditarDia";
+            this.Name = "FormAsignarOEditarDia";
             this.Resizable = false;
-            this.Load += new System.EventHandler(this.FormEditarDia_Load);
+            this.Load += new System.EventHandler(this.FormAsignarOEditarDia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

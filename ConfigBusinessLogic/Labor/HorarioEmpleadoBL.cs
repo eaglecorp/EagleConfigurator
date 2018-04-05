@@ -12,6 +12,11 @@ namespace ConfigBusinessLogic.Labor
             return new HorarioEmpleadoDA().InsertarHorario(obj);
         }
 
+        public long InsertarHorarioDtl(LABt04_horario_emp_dtl obj)
+        {
+            return new HorarioEmpleadoDA().InsertarHorarioDtl(obj);
+        }
+
         public bool InsertarHorariosDtl(IEnumerable<LABt04_horario_emp_dtl> horariosDtl)
         {
             return new HorarioEmpleadoDA().InsertarHorariosDtl(horariosDtl);

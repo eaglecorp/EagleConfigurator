@@ -31,6 +31,26 @@ namespace ConfigDataAccess.Labor
             return id;
         }
 
+        public long InsertarHorarioDtl(LABt04_horario_emp_dtl obj)
+        {
+            long id = 0;
+            using (var ctx = new EagleContext(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    ctx.LABt04_horario_emp_dtl.Add(obj);
+                    ctx.SaveChanges();
+                    id = obj.id_horario_emp_dtl;
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Insertar Horario Dtl: ", e.Message);
+                }
+            }
+            return id;
+        }
+
         public bool InsertarHorariosDtl(IEnumerable<LABt04_horario_emp_dtl> horariosDtl)
         {
             var success = false;
@@ -181,7 +201,6 @@ namespace ConfigDataAccess.Labor
             }
             return success;
         }
-
 
         public bool ActualizarHorariosDtlXDiaDeSemana(LABt04_horario_emp_dtl actualizado, DateTime desde, DateTime diaDeSemana)
         {
