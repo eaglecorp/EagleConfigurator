@@ -87,6 +87,11 @@ namespace ConfigBusinessLogic.Persona
             return idEmpleado;
         }
 
+        public IEnumerable<PERt04_empleado> BuscarEmpleados(string nroDoc, string ruc,string codEmpleado, string nombre, int? idEstado)
+        {
+            return new EmpleadoDA().BuscarEmpleados(nroDoc, ruc, codEmpleado, nombre, idEstado);
+        }
+
         private void RespuestaEmailEnviado(bool sended, string email)
         {
             if (sended)
@@ -130,6 +135,11 @@ namespace ConfigBusinessLogic.Persona
                 }
             }
             return nombre.Trim().ToUpper();
+        }
+
+        public object BuscarProducto(string codProd, string v1, string v2, int idActivo1, int? ignorar, int idActivo2)
+        {
+            throw new NotImplementedException();
         }
 
         public void EliminarEmpleado(long id)

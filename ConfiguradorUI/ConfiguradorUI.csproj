@@ -98,6 +98,12 @@
     <Compile Include="Buscadores\FormBuscarComboVariable.Designer.cs">
       <DependentUpon>FormBuscarComboVariable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Buscadores\FormBuscarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FormBuscarEmpleado.Designer.cs">
+      <DependentUpon>FormBuscarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Buscadores\FormBuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +431,9 @@
     </Compile>
     <EmbeddedResource Include="Buscadores\FormBuscarComboVariable.resx">
       <DependentUpon>FormBuscarComboVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscadores\FormBuscarEmpleado.resx">
+      <DependentUpon>FormBuscarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Buscadores\FormBuscarProducto.resx">
       <DependentUpon>FormBuscarProducto.cs</DependentUpon>

@@ -39,6 +39,7 @@
             this.dgvComboVariable = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvComboVariableDtl = new System.Windows.Forms.DataGridView();
+            this.lblNombreForm = new System.Windows.Forms.Label();
             this.gbxFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -232,16 +233,27 @@
             this.dgvComboVariableDtl.TabIndex = 14;
             this.dgvComboVariableDtl.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvComboVariableDtl_Paint);
             // 
+            // lblNombreForm
+            // 
+            this.lblNombreForm.AutoSize = true;
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblNombreForm.Location = new System.Drawing.Point(35, 22);
+            this.lblNombreForm.Name = "lblNombreForm";
+            this.lblNombreForm.Size = new System.Drawing.Size(295, 32);
+            this.lblNombreForm.TabIndex = 72;
+            this.lblNombreForm.Text = "Seleccionar combo electivo";
+            // 
             // FormBuscarComboVariable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 478);
+            this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.gbxFiltro);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "FormBuscarComboVariable";
-            this.Text = "Seleccionar combo electivo";
             this.Load += new System.EventHandler(this.FormBuscarComboVariable_Load);
             this.gbxFiltro.ResumeLayout(false);
             this.gbxFiltro.PerformLayout();
@@ -249,6 +261,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariableDtl)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -265,5 +278,6 @@
         private System.Windows.Forms.DataGridView dgvComboVariable;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dgvComboVariableDtl;
+        private System.Windows.Forms.Label lblNombreForm;
     }
 }

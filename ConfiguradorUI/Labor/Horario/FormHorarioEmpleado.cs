@@ -11,6 +11,7 @@ using ConfigUtilitarios.HelperControl;
 using System.Drawing;
 using ConfigUtilitarios.Controls;
 using ConfigUtilitarios.KeyValues;
+using ConfiguradorUI.Buscadores;
 
 namespace ConfiguradorUI.Labor.Horario
 {
@@ -90,36 +91,6 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private void BuscarEmpleado()
-        {
-            string nroDoc = txtNroDocEmp.Text.Trim();
-            if (nroDoc != string.Empty)
-            {
-                var empleado = new EmpleadoBL().EmpleadoXNroDoc(nroDoc);
-
-                if (empleado != null &&
-                    empleado.id_empleado > 0)
-                {
-                    LimpiarForm();
-
-                    SetEmpleado(empleado);
-                    var horario = new HorarioEmpleadoBL().HorarioXEmpleado(_empleado.id_empleado);
-                    SetHorario(horario);
-
-                    btnAsignarHorario.Enabled = true;
-                    btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
-                }
-                else
-                {
-                    //abrir emergente
-                }
-            }
-            else
-            {
-                //abrir emergente
-            }
-        }
-
         private void LimpiarForm()
         {
             LimpiarDatosDeMemoria();
@@ -131,6 +102,59 @@ namespace ConfiguradorUI.Labor.Horario
         {
             _horario = null;
             _empleado = null;
+        }
+
+        private void SearchAndSetEmpleado()
+        {
+            if (!BuscarEmpleado())
+            {
+                var form = new FormBuscarEmpleado();
+                form.ShowDialog();
+                if (form._empleado != null && form._empleado.id_empleado > 0)
+                {
+                    SetHorarioXEmpleado(form._empleado);
+                }
+            }
+        }
+
+
+        private void SetHorarioXEmpleado(PERt04_empleado emp)
+        {
+            LimpiarForm();
+
+            SetEmpleado(emp);
+            var horario = new HorarioEmpleadoBL().HorarioXEmpleado(_empleado.id_empleado);
+            SetHorario(horario);
+
+            btnAsignarHorario.Enabled = true;
+            btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
+        }
+
+        private bool BuscarEmpleado()
+        {
+            string numDoc = txtNroDocEmp.Text.Trim();
+            if (numDoc == "")
+                return false;
+
+            var list = new EmpleadoBL().BuscarEmpleados(numDoc, numDoc, "", "", Estado.IdActivo);
+            if (list != null && list.Count() == 1)
+            {
+                foreach (var emp in list)
+                {
+                    if (_empleado == null || emp.id_empleado != _empleado.id_empleado)
+                    {
+                        if (emp != null && emp.id_empleado > 0)
+                        {
+                            SetHorarioXEmpleado(emp);
+                        }
+
+                        return true;
+                    }
+                }
+                return false;
+            }
+            else
+                return false;
         }
 
         private void LimpiarHorario()
@@ -313,7 +337,7 @@ namespace ConfiguradorUI.Labor.Horario
                         else
                         {
                             //Asignar horario Dtl
-                            var frm = new FormAsignarOEditarDia(_horario.id_horario_emp,fecha);
+                            var frm = new FormAsignarOEditarDia(_horario.id_horario_emp, fecha);
                             frm.ShowDialog();
                             seOpero = frm._seOpero;
                         }
@@ -348,7 +372,7 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void btnBuscarEmp_Click(object sender, EventArgs e)
         {
-            BuscarEmpleado();
+            SearchAndSetEmpleado();
         }
 
         private void btnAsignarHorario_Click(object sender, EventArgs e)
@@ -430,7 +454,9 @@ namespace ConfiguradorUI.Labor.Horario
         private void txtNroDocEmp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\r')
-                BuscarEmpleado();
+            {
+                SearchAndSetEmpleado();
+            }
         }
 
         private void mcaMes_DoubleClick(object sender, EventArgs e)
@@ -470,7 +496,7 @@ namespace ConfiguradorUI.Labor.Horario
 
                     bool soloUnaFechaSeleccionada = mcaMes.SelectionRanges.Count == 1 && (mcaMes.SelectionRanges[0].Start.Date == mcaMes.SelectionRanges[0].End.Date);
                     bool tieneHorario = _horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null;
-                    bool fechaDeHorarioExisteDentroDelRangoSeleccionado = _horario !=null && _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor >= hoy && mcaMes.SelectionRanges.Any(r => x.fecha_labor >= r.Start.Date && x.fecha_labor <= r.End.Date));
+                    bool fechaDeHorarioExisteDentroDelRangoSeleccionado = _horario != null && _horario.LABt04_horario_emp_dtl.Any(x => x.fecha_labor >= hoy && mcaMes.SelectionRanges.Any(r => x.fecha_labor >= r.Start.Date && x.fecha_labor <= r.End.Date));
 
                     //Para agregar o editar. 
                     if (!soloUnaFechaSeleccionada ||

@@ -535,7 +535,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.mcaMes.CalendarDimensions = new System.Drawing.Size(3, 2);
             this.mcaMes.ColorTable.DayActiveTodayCircleBorder = System.Drawing.Color.DarkOrange;
             this.mcaMes.ColorTable.DaySelectedTodayCircleBorder = System.Drawing.Color.DarkOrange;
-            this.mcaMes.ColorTable.DayTextBold = System.Drawing.Color.MediumSeaGreen;
+            this.mcaMes.ColorTable.DayTextBold = System.Drawing.Color.Red;
             this.mcaMes.ColorTable.DayTodayCircleBorder = System.Drawing.Color.DarkOrange;
             this.mcaMes.Culture = new System.Globalization.CultureInfo("es-PE");
             this.mcaMes.DayHeaderFont = new System.Drawing.Font("Segoe UI", 9F);
@@ -571,14 +571,14 @@ namespace ConfiguradorUI.Labor.Horario
             // toolStripMenuItemAgregarOEditar
             // 
             this.toolStripMenuItemAgregarOEditar.Name = "toolStripMenuItemAgregarOEditar";
-            this.toolStripMenuItemAgregarOEditar.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemAgregarOEditar.Size = new System.Drawing.Size(133, 22);
             this.toolStripMenuItemAgregarOEditar.Text = "Asignar día";
             this.toolStripMenuItemAgregarOEditar.Click += new System.EventHandler(this.toolStripMenuItemAgregarOEditar_Click);
             // 
             // toolStripMenuItemEliminar
             // 
             this.toolStripMenuItemEliminar.Name = "toolStripMenuItemEliminar";
-            this.toolStripMenuItemEliminar.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemEliminar.Size = new System.Drawing.Size(133, 22);
             this.toolStripMenuItemEliminar.Text = "Eliminar";
             this.toolStripMenuItemEliminar.Click += new System.EventHandler(this.toolStripMenuItemEliminar_Click);
             // 

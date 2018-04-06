@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using ConfigUtilitarios;
+using System.Data;
 
 namespace ConfigDataAccess.Persona
 {
@@ -283,5 +284,26 @@ namespace ConfigDataAccess.Persona
             }
             return obj;
         }
+
+        public IEnumerable<PERt04_empleado> BuscarEmpleados(string nroDoc, string ruc, string codEmpleado, string nombre, int? idEstado)
+        {
+            using (IDbConnection cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    return cnn.Query<PERt04_empleado>("USP_PER_CNS_EMPLEADO",
+                                                        new { nroDoc, ruc, codEmpleado, nombre, idEstado },
+                                                        commandType: CommandType.StoredProcedure);
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Buscar Empleados: ", e.Message);
+                    return new List<PERt04_empleado>();
+                }
+            }
+        }
+
+
     }
 }

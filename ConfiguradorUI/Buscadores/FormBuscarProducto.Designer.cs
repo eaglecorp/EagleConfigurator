@@ -39,6 +39,7 @@
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
             this.dgvProd = new System.Windows.Forms.DataGridView();
             this.gbxFiltro = new System.Windows.Forms.GroupBox();
+            this.lblNombreForm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).BeginInit();
             this.gbxFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -77,10 +78,11 @@
             // 
             this.chkIncluirInactivos.AutoSize = true;
             this.chkIncluirInactivos.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkIncluirInactivos.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkIncluirInactivos.ForeColor = System.Drawing.Color.Navy;
             this.chkIncluirInactivos.Location = new System.Drawing.Point(467, 26);
             this.chkIncluirInactivos.Name = "chkIncluirInactivos";
-            this.chkIncluirInactivos.Size = new System.Drawing.Size(120, 19);
+            this.chkIncluirInactivos.Size = new System.Drawing.Size(112, 19);
             this.chkIncluirInactivos.TabIndex = 8;
             this.chkIncluirInactivos.Text = "Incluir Inactivos";
             this.chkIncluirInactivos.UseCustomForeColor = true;
@@ -249,20 +251,32 @@
             this.gbxFiltro.TabStop = false;
             this.gbxFiltro.Text = "Panel de filtros";
             // 
+            // lblNombreForm
+            // 
+            this.lblNombreForm.AutoSize = true;
+            this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblNombreForm.Location = new System.Drawing.Point(35, 23);
+            this.lblNombreForm.Name = "lblNombreForm";
+            this.lblNombreForm.Size = new System.Drawing.Size(233, 32);
+            this.lblNombreForm.TabIndex = 73;
+            this.lblNombreForm.Text = "Seleccionar producto";
+            // 
             // FormBuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 478);
+            this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.gbxFiltro);
             this.Controls.Add(this.dgvProd);
             this.Name = "FormBuscarProducto";
-            this.Text = "Seleccionar Producto";
             this.Load += new System.EventHandler(this.FormBuscarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).EndInit();
             this.gbxFiltro.ResumeLayout(false);
             this.gbxFiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -279,5 +293,6 @@
         private MetroFramework.Controls.MetroTextBox txtCodigo;
         private System.Windows.Forms.DataGridView dgvProd;
         private System.Windows.Forms.GroupBox gbxFiltro;
+        private System.Windows.Forms.Label lblNombreForm;
     }
 }
