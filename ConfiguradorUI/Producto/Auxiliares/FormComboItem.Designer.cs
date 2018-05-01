@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormComboItem));
             this.txtItemPriceConImp = new MetroFramework.Controls.MetroTextBox();
             this.txtItemPriceSinImp = new MetroFramework.Controls.MetroTextBox();
             this.txtItemQuantity = new MetroFramework.Controls.MetroTextBox();
@@ -63,7 +62,7 @@
             this.txtItemPriceConImp.CustomButton.UseSelectable = true;
             this.txtItemPriceConImp.CustomButton.Visible = false;
             this.txtItemPriceConImp.Lines = new string[0];
-            this.txtItemPriceConImp.Location = new System.Drawing.Point(359, 55);
+            this.txtItemPriceConImp.Location = new System.Drawing.Point(369, 54);
             this.txtItemPriceConImp.MaxLength = 32767;
             this.txtItemPriceConImp.Name = "txtItemPriceConImp";
             this.txtItemPriceConImp.PasswordChar = '\0';
@@ -95,7 +94,7 @@
             this.txtItemPriceSinImp.CustomButton.UseSelectable = true;
             this.txtItemPriceSinImp.CustomButton.Visible = false;
             this.txtItemPriceSinImp.Lines = new string[0];
-            this.txtItemPriceSinImp.Location = new System.Drawing.Point(359, 84);
+            this.txtItemPriceSinImp.Location = new System.Drawing.Point(369, 83);
             this.txtItemPriceSinImp.MaxLength = 32767;
             this.txtItemPriceSinImp.Name = "txtItemPriceSinImp";
             this.txtItemPriceSinImp.PasswordChar = '\0';
@@ -127,7 +126,7 @@
             this.txtItemQuantity.CustomButton.UseSelectable = true;
             this.txtItemQuantity.CustomButton.Visible = false;
             this.txtItemQuantity.Lines = new string[0];
-            this.txtItemQuantity.Location = new System.Drawing.Point(84, 84);
+            this.txtItemQuantity.Location = new System.Drawing.Point(94, 83);
             this.txtItemQuantity.MaxLength = 32767;
             this.txtItemQuantity.Name = "txtItemQuantity";
             this.txtItemQuantity.PasswordChar = '\0';
@@ -147,7 +146,7 @@
             // 
             this.lblItemName.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblItemName.ForeColor = System.Drawing.Color.Navy;
-            this.lblItemName.Location = new System.Drawing.Point(93, 26);
+            this.lblItemName.Location = new System.Drawing.Point(103, 25);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(388, 22);
             this.lblItemName.TabIndex = 144;
@@ -159,7 +158,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel3.Location = new System.Drawing.Point(222, 57);
+            this.metroLabel3.Location = new System.Drawing.Point(232, 56);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(131, 19);
             this.metroLabel3.TabIndex = 146;
@@ -170,7 +169,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel4.Location = new System.Drawing.Point(16, 86);
+            this.metroLabel4.Location = new System.Drawing.Point(26, 85);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(65, 19);
             this.metroLabel4.TabIndex = 147;
@@ -193,7 +192,7 @@
             this.txtItemCod.CustomButton.UseSelectable = true;
             this.txtItemCod.CustomButton.Visible = false;
             this.txtItemCod.Lines = new string[0];
-            this.txtItemCod.Location = new System.Drawing.Point(84, 55);
+            this.txtItemCod.Location = new System.Drawing.Point(94, 54);
             this.txtItemCod.MaxLength = 32767;
             this.txtItemCod.Name = "txtItemCod";
             this.txtItemCod.PasswordChar = '\0';
@@ -213,7 +212,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel5.Location = new System.Drawing.Point(222, 86);
+            this.metroLabel5.Location = new System.Drawing.Point(232, 85);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(125, 19);
             this.metroLabel5.TabIndex = 148;
@@ -224,7 +223,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel6.Location = new System.Drawing.Point(16, 57);
+            this.metroLabel6.Location = new System.Drawing.Point(26, 56);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(56, 19);
             this.metroLabel6.TabIndex = 149;
@@ -241,13 +240,12 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(264, 120);
+            this.btnCancelar.Location = new System.Drawing.Point(413, 130);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(103, 32);
+            this.btnCancelar.Size = new System.Drawing.Size(78, 30);
             this.btnCancelar.TabIndex = 151;
-            this.btnCancelar.Text = "Cerrar";
+            this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -262,11 +260,10 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(378, 120);
+            this.btnEditar.Location = new System.Drawing.Point(331, 130);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(103, 32);
+            this.btnEditar.Size = new System.Drawing.Size(78, 30);
             this.btnEditar.TabIndex = 150;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -281,7 +278,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(84, 113);
+            this.chkActivo.Location = new System.Drawing.Point(94, 112);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 152;
@@ -297,7 +294,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(16, 27);
+            this.metroLabel1.Location = new System.Drawing.Point(26, 26);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(79, 19);
             this.metroLabel1.TabIndex = 153;
@@ -308,7 +305,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 166);
+            this.ClientSize = new System.Drawing.Size(517, 185);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.btnCancelar);

@@ -12,6 +12,8 @@ using System.Drawing;
 using ConfigUtilitarios.Controls;
 using ConfigUtilitarios.KeyValues;
 using ConfiguradorUI.Buscadores;
+using ConfigUtilitarios.HelperGeneric;
+using ConfigUtilitarios.Extensions;
 
 namespace ConfiguradorUI.Labor.Horario
 {
@@ -33,36 +35,48 @@ namespace ConfiguradorUI.Labor.Horario
 
         #region Métodos
 
+        private void AddHandlers()
+        {
+            mcaMes.DoubleClick += mcaMes_DoubleClick;
+            btnHoy.Click += btnDate_Click;
+            btnPrimerDiaTrabajo.Click += btnDate_Click;
+            btnUltimoDiaTrabajo.Click += btnDate_Click;
+        }
+
         private void SetEmpleado(PERt04_empleado empleado)
         {
             _empleado = empleado;
 
-            var nombreCompleto = GetNombreCompletoDeEmpleado();
-
-            lblNombreEmpleado.Text = nombreCompleto.ToUpper();
-            txtNombreEmpleado.Text = nombreCompleto.ToUpper();
-            txtInicioContrato.Text = _empleado.fecha_ingreso?.ToShortDateString();
-            txtFinContrato.Text = _empleado.fecha_cese?.ToShortDateString();
-
-            string GetNombreCompletoDeEmpleado()
+            try
             {
-                return string.IsNullOrEmpty(_empleado.txt_ape_mat) ?
-                        $"{_empleado.txt_ape_pat}, {_empleado.txt_pri_nom} {_empleado.txt_seg_nom}"
-                        : $"{_empleado.txt_ape_pat} {_empleado.txt_ape_mat}, {_empleado.txt_pri_nom} {_empleado.txt_seg_nom}";
-            }
+                var nombreCompleto = Human.Nombre(_empleado.txt_ape_pat, _empleado.txt_pri_nom, _empleado.txt_ape_mat,
+                                                    _empleado.txt_seg_nom, _empleado.txt_rzn_social);
 
+                lblNombreEmpleado.Text = nombreCompleto.ToUpper();
+
+                lblFechaIngreso.Text = _empleado.fecha_ingreso != null ? ((DateTime)_empleado.fecha_ingreso).ToString("dd/MM/yyyy") : "-";
+                lblFechaCese.Text = _empleado.fecha_cese != null ? ((DateTime)_empleado.fecha_cese).ToString("dd/MM/yyyy") : "-";
+                lblNumDoc.Text = !string.IsNullOrEmpty(_empleado.nro_doc) ? _empleado.nro_doc : "-";
+                lblRuc.Text = !string.IsNullOrEmpty(_empleado.nro_ruc) ? _empleado.nro_ruc : "-";
+
+            }
+            catch (Exception e)
+            {
+                Msg.Ok_Err("No se pudo mostrar los datos del empleado correctamente. Excepción: " + e.Message);
+            }
         }
 
         private void SetHorario(LABt03_horario_emp horario)
         {
+            _horario = horario;
+
             try
             {
-                _horario = horario;
-
+                var hoy = DateTime.Now.Date;
                 if (horario != null &&
                        horario.id_horario_emp > 0)
                 {
-
+                    lblMensajeNoTieneHorario.Visible = false;
                     IEnumerable<DateTime> horarioSoloFechas = new List<DateTime>();
                     if (horario.LABt04_horario_emp_dtl != null)
                     {
@@ -71,23 +85,33 @@ namespace ConfiguradorUI.Labor.Horario
 
                     var fechasDeLaborRestante = horarioSoloFechas.Count(x => x.Date >= DateTime.Now.Date);
 
-                    lblRangoHorario.ForeColor = Color.Navy;
-                    lblRangoHorario.Text = $"Horario desde {horario.fecha_inicio_horario.ToShortDateString()} " +
-                                            $"hasta {horario.fecha_fin_horario.ToShortDateString()} - {fechasDeLaborRestante} días restantes";
+                    btnPrimerDiaTrabajo.Text = horario.fecha_inicio_horario.ToString("dd/MM/yyyy");
+                    btnUltimoDiaTrabajo.Text = horario.fecha_fin_horario.ToString("dd/MM/yyyy");
+                    btnHoy.Text = hoy.ToString("dd/MM/yyyy");
+
+                    lblDiasDeTrabajoRestantes.Text = fechasDeLaborRestante.ToString();
 
                     ResaltarFechasEnCalendario(horarioSoloFechas);
                 }
                 else
                 {
-                    lblRangoHorario.Text = "HORARIO: NINGUNO";
-                    lblRangoHorario.ForeColor = Color.Red;
+
+                    lblMensajeNoTieneHorario.Visible = true;
+
+                    btnPrimerDiaTrabajo.Text = "-";
+                    btnUltimoDiaTrabajo.Text = "-";
+                    btnHoy.Text = hoy.ToString("dd/MM/yyyy");
+
+                    lblDiasDeTrabajoRestantes.Text = "-";
+
                     ResaltarFechasEnCalendario(null);
-                    btnAsignarHorario.Focus();
                 }
+                SeleccionarDiaYVer(hoy,true);
+                btnAsignarHorario.Focus();
             }
             catch (Exception e)
             {
-                Msg.Ok_Err("No se pudo mostrar el horario correctamente. Error: " + e.Message);
+                Msg.Ok_Err("No se pudo mostrar el horario correctamente. Excepción: " + e.Message);
             }
         }
 
@@ -117,7 +141,6 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-
         private void SetHorarioXEmpleado(PERt04_empleado emp)
         {
             LimpiarForm();
@@ -127,7 +150,8 @@ namespace ConfiguradorUI.Labor.Horario
             SetHorario(horario);
 
             btnAsignarHorario.Enabled = true;
-            btnDesasignarFechas.Enabled = (horario != null && horario.id_horario_emp > 0);
+            btnQuitarFechas.Enabled =
+            btnEditarHorario.Enabled = TieneHorarioYFechas();
         }
 
         private bool BuscarEmpleado()
@@ -159,6 +183,9 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void LimpiarHorario()
         {
+            btnPrimerDiaTrabajo.Text = "-";
+            btnUltimoDiaTrabajo.Text = "-";
+            btnHoy.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
             ResaltarFechasEnCalendario(null);
         }
 
@@ -172,11 +199,11 @@ namespace ConfiguradorUI.Labor.Horario
         private void LimpiarEmpleado()
         {
             lblNombreEmpleado.Text = "EMPLEADO: NINGUNO";
-            lblRangoHorario.Text = "HORARIO: NINGUNO";
+            lblNumDoc.Text =
+            lblRuc.Text =
+            lblFechaIngreso.Text =
+            lblFechaCese.Text = "-";
 
-            txtNombreEmpleado.Clear();
-            txtInicioContrato.Clear();
-            txtFinContrato.Clear();
             txtNroDocEmp.Clear();
         }
 
@@ -188,27 +215,61 @@ namespace ConfiguradorUI.Labor.Horario
 
             #endregion
 
-            #region labels
+            #region Labels
 
-            lblRangoHorario.UseCustomForeColor = true;
-            lblRangoHorario.ForeColor = Color.Red;
+            lblMensajeNoTieneHorario.Visible = false;
+
 
             #endregion
 
-
             #region botones
 
-            btnAsignarHorario.Enabled = false;
-            btnDesasignarFechas.Enabled = false;
+            btnAsignarHorario.Enabled =
+            btnQuitarFechas.Enabled =
+            btnEditarHorario.Enabled = false;
 
             #endregion
 
             #region Month Calendar
-
-            mcaMes.SelectionRange = new SelectionRange();
+            mcaMes.SelectionStart = DateTime.Now;
+            mcaMes.SelectionEnd = DateTime.Now;
             mcaMes.ContextMenuStrip = ctxMenuDate;
 
             #endregion
+        }
+
+        private void SeleccionarDiaYVer(DateTime fecha, bool setFechaComoPrimerMes = false)
+        {
+            var colorPrevio = mcaMes.ColorTable.DaySelectedGradientBegin;
+            mcaMes.ColorTable.DaySelectedGradientBegin = Color.Transparent;
+            mcaMes.ColorTable.DaySelectedGradientEnd = Color.Transparent;
+
+            mcaMes.SelectionStart =
+            mcaMes.SelectionEnd = fecha;
+
+            FijarMes();
+
+            mcaMes.ColorTable.DaySelectedGradientBegin = colorPrevio;
+            mcaMes.ColorTable.DaySelectedGradientEnd = colorPrevio;
+            mcaMes.Refresh();
+
+            void FijarMes()
+            {
+                if(setFechaComoPrimerMes)
+                {
+                    mcaMes.ViewStart = fecha;
+                }
+                else
+                {
+                    var fechaInicialDelCalendario = mcaMes.ViewStart;
+                    var fechaFinalDelCalendario = mcaMes.ViewEnd;
+
+                    if (!(fecha >= fechaInicialDelCalendario && fecha <= fechaFinalDelCalendario))
+                    {
+                        mcaMes.ViewStart = fecha;
+                    }
+                }
+            }
         }
 
         private void RefrescarHorario()
@@ -218,8 +279,8 @@ namespace ConfiguradorUI.Labor.Horario
             SetHorario(horario);
 
             btnAsignarHorario.Enabled = true;
-            btnDesasignarFechas.Enabled =
-            btnEditarFechas.Enabled = TieneHorarioYFechas();
+            btnQuitarFechas.Enabled =
+            btnEditarHorario.Enabled = TieneHorarioYFechas();
         }
 
         private bool TieneHorarioYFechas()
@@ -233,19 +294,53 @@ namespace ConfiguradorUI.Labor.Horario
         private bool EsFechaValida(DateTime fecha)
         {
             var hoy = DateTime.Now.Date;
-            return (fecha >= hoy && fecha <= KeyDates.MaxDate);
+            var isValid = (fecha >= hoy && fecha <= KeyDates.MaxDate);
+
+            if (isValid && _empleado != null && _empleado.id_empleado > 0)
+            {
+                var fechaIngreso = _empleado.fecha_ingreso?.Date;
+                var fechaCese = _empleado.fecha_cese?.Date;
+
+                if (fechaIngreso != null && fecha < fechaIngreso)
+                {
+                    isValid = false;
+                    Msg.Ok_Info($"La fecha no puede ser menor que la fecha de ingreso ({((DateTime)fechaIngreso).ToString("dd/MM/yyyy")}) del empleado.");
+                }
+                else if (fechaCese != null && fecha > fechaCese)
+                {
+                    isValid = false;
+                    Msg.Ok_Info($"La fecha no puede ser mayor que la fecha de cese ({((DateTime)fechaCese).ToString("dd/MM/yyyy")}) del empleado.");
+                }
+            }
+
+            return isValid;
         }
 
         private int GetNumeroFechasPasadas()
         {
             var hoy = DateTime.Now.Date;
-            return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor < hoy).Count();
+            try
+            {
+                return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor < hoy).Count();
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         private int GetNumeroFechasRestantes()
         {
             var hoy = DateTime.Now.Date;
-            return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor >= hoy).Count();
+
+            try
+            {
+                return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor >= hoy).Count();
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         private IEnumerable<long> GetIdsDeFechasValidasSeleccionadas()
@@ -263,7 +358,7 @@ namespace ConfiguradorUI.Labor.Horario
                 catch (Exception e)
                 {
                     lista = new List<long>();
-                    Msg.Ok_Err("No se pudo determinar los IDs de las fechas seleccionadas.");
+                    Msg.Ok_Err("No se pudo determinar las fechas seleccionadas.");
                 }
             }
             return lista;
@@ -282,7 +377,7 @@ namespace ConfiguradorUI.Labor.Horario
 
                     if (GetNumeroFechasPasadas() > 0 || numeroFechasSeleccionadas < GetNumeroFechasRestantes())
                     {
-                        if (Msg.YesNo_Wng($"¿Está seguro de eliminar {mensajeSegunNumero}?") == DialogResult.Yes)
+                        if (Msg.YesNo_Ques($"¿Está seguro de eliminar {mensajeSegunNumero} del horario?") == DialogResult.Yes)
                         {
                             success = new HorarioEmpleadoBL().EliminarHorariosDtl(listaIds);
                             SalidaDeOperacion();
@@ -300,7 +395,7 @@ namespace ConfiguradorUI.Labor.Horario
                         {
                             if (actualizarRangoDeHorario && !(new HorarioEmpleadoBL().ActualizarRangoDeHorario(_horario.id_horario_emp)))
                             {
-                                Msg.Ok_Err("No se actualizó el rango de fechas del horario.");
+                                Msg.Ok_Err("No se pudo actualizar la cabecera del horario (primera fecha, útlima fecha).");
                             }
                             RefrescarHorario();
                         }
@@ -368,6 +463,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             ConfigurarControles();
             LimpiarForm();
+            AddHandlers();
         }
 
         private void btnBuscarEmp_Click(object sender, EventArgs e)
@@ -389,36 +485,45 @@ namespace ConfiguradorUI.Labor.Horario
             }
             else
             {
-                Msg.Ok_Wng("Debe buscar un empleado antes de asignar el horario.");
+                Msg.Ok_Info("Debe buscar un empleado antes de asignar el horario.");
             }
         }
 
-        private void btnDesasignarFechas_Click(object sender, EventArgs e)
+        private void btnEliminarFechas_Click(object sender, EventArgs e)
         {
             if (_empleado != null && _empleado.id_empleado > 0)
             {
                 if (TieneHorarioYFechas())
                 {
-                    var frm = new FormEliminarHorario(_empleado, _horario);
-                    frm.ShowDialog();
-
-                    if (frm._seElimino)
+                    var hoy = DateTime.Now.Date;
+                    if (_horario.fecha_fin_horario >= hoy)
                     {
-                        RefrescarHorario();
+
+                        var frm = new FormEliminarHorario(_empleado, _horario);
+                        frm.ShowDialog();
+
+                        if (frm._seElimino)
+                        {
+                            RefrescarHorario();
+                        }
+                    }
+                    else
+                    {
+                        Msg.Ok_Info("No puede eliminar las fechas asignadas al empleado porque han concluido.");
                     }
                 }
                 else
                 {
-                    Msg.Ok_Wng("Este empleado no tiene horario o no tiene ninguna fecha asignada.");
+                    Msg.Ok_Info("Este empleado no tiene horario o no tiene ninguna fecha asignada.");
                 }
             }
             else
             {
-                Msg.Ok_Wng("Debe buscar un empleado antes de eliminar fechas del horario.");
+                Msg.Ok_Info("Debe buscar un empleado antes de eliminar fechas del horario.");
             }
         }
 
-        private void btnEditarFechas_Click(object sender, EventArgs e)
+        private void btnEditarHorario_Click(object sender, EventArgs e)
         {
             if (_empleado != null && _empleado.id_empleado > 0)
             {
@@ -437,17 +542,17 @@ namespace ConfiguradorUI.Labor.Horario
                     }
                     else
                     {
-                        Msg.Ok_Wng("Las fechas asignadas al empleado han concluido.");
+                        Msg.Ok_Info("No puede editar el horario porque todas las fechas asignadas al empleado han concluido.");
                     }
                 }
                 else
                 {
-                    Msg.Ok_Wng("Este empleado no tiene horario o no tiene ninguna fecha asignada.");
+                    Msg.Ok_Info("Este empleado no tiene horario o no tiene ninguna fecha asignada.");
                 }
             }
             else
             {
-                Msg.Ok_Wng("Debe buscar un empleado antes de eliminar fechas del horario.");
+                Msg.Ok_Info("Debe buscar un empleado antes de eliminar fechas del horario.");
             }
         }
 
@@ -525,19 +630,15 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (_horario != null && _horario.LABt04_horario_emp_dtl != null)
-            {
-                string fechas = "";
-                foreach (var fecha in _horario.LABt04_horario_emp_dtl)
-                {
-                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
-                }
-                Msg.Ok_Info(fechas);
-            }
-        }
         #endregion
 
+        private void btnDate_Click(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            if (btn != null && DateTime.TryParse(btn.Text, out DateTime fecha))
+            {
+                SeleccionarDiaYVer(fecha);
+            }
+        }
     }
 }

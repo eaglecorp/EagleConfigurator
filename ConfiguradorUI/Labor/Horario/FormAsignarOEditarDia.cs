@@ -122,63 +122,77 @@ namespace ConfiguradorUI.Labor.Horario
         {
             var horarioDtl = new LABt04_horario_emp_dtl();
 
-            if (_TipoOperacion == TipoOperacion.EditarHoratioDtl)
+            try
             {
-                horarioDtl.fecha_labor = _horarioDtl.fecha_labor;
-                horarioDtl.id_horario_emp = _horarioDtl.id_horario_emp;
-                horarioDtl.id_horario_emp_dtl = _horarioDtl.id_horario_emp_dtl;
-            }
-            else if (_TipoOperacion == TipoOperacion.AsignarHorarioDtl)
-            {
-                horarioDtl.fecha_labor = _fechaAAsignar;
-                horarioDtl.id_horario_emp = _idHorario;
-            }
-            else if (_TipoOperacion == TipoOperacion.CrearHorarioYAsignarHorarioDtl)
-            {
-                horarioDtl.fecha_labor = _fechaAAsignar;
-            }
+                if (_TipoOperacion == TipoOperacion.EditarHoratioDtl)
+                {
+                    horarioDtl.fecha_labor = _horarioDtl.fecha_labor;
+                    horarioDtl.id_horario_emp = _horarioDtl.id_horario_emp;
+                    horarioDtl.id_horario_emp_dtl = _horarioDtl.id_horario_emp_dtl;
+                }
+                else if (_TipoOperacion == TipoOperacion.AsignarHorarioDtl)
+                {
+                    horarioDtl.fecha_labor = _fechaAAsignar;
+                    horarioDtl.id_horario_emp = _idHorario;
+                }
+                else if (_TipoOperacion == TipoOperacion.CrearHorarioYAsignarHorarioDtl)
+                {
+                    horarioDtl.fecha_labor = _fechaAAsignar;
+                }
 
-            horarioDtl.hora_inicio = GetHoraYMinutos(dtpHoraInicioLabor.Value.TimeOfDay);
-            horarioDtl.hora_fin = GetHoraYMinutos(dtpHoraFinLabor.Value.TimeOfDay);
-            horarioDtl.tiempo_tolerancia = GetHoraYMinutos(dtpTiempoTolerancia.Value.TimeOfDay);
+                horarioDtl.hora_inicio = GetHoraYMinutos(dtpHoraInicioLabor.Value.TimeOfDay);
+                horarioDtl.hora_fin = GetHoraYMinutos(dtpHoraFinLabor.Value.TimeOfDay);
+                horarioDtl.tiempo_tolerancia = GetHoraYMinutos(dtpTiempoTolerancia.Value.TimeOfDay);
 
-            if (dtpHoraInicioBreak.CustomFormat != " " && dtpHoraFinBreak.CustomFormat != " ")
-            {
-                horarioDtl.hora_inicio_break = GetHoraYMinutos(dtpHoraInicioBreak.Value.TimeOfDay);
-                horarioDtl.hora_fin_break = GetHoraYMinutos(dtpHoraFinBreak.Value.TimeOfDay);
+                if (dtpHoraInicioBreak.CustomFormat != " " && dtpHoraFinBreak.CustomFormat != " ")
+                {
+                    horarioDtl.hora_inicio_break = GetHoraYMinutos(dtpHoraInicioBreak.Value.TimeOfDay);
+                    horarioDtl.hora_fin_break = GetHoraYMinutos(dtpHoraFinBreak.Value.TimeOfDay);
+                }
+
             }
-
+            catch (Exception e)
+            {
+                Msg.Ok_Err("No se pudo obtener el día de horario correctamente. Excepción: " + e.Message);
+            }
             return horarioDtl;
         }
 
         private void SetHorarioDtl()
         {
-            if (_TipoOperacion == TipoOperacion.EditarHoratioDtl)
+            try
             {
-                lblNombreForm.Text = "Editar: " + _horarioDtl.fecha_labor.ToLongDateString();
-
-                dtpHoraInicioLabor.Value = Convert.ToDateTime(_horarioDtl.hora_inicio.ToString());
-                dtpHoraFinLabor.Value = Convert.ToDateTime(_horarioDtl.hora_fin.ToString());
-
-                if (_horarioDtl.hora_inicio_break != null)
+                if (_TipoOperacion == TipoOperacion.EditarHoratioDtl)
                 {
-                    dtpHoraInicioBreak.Value = Convert.ToDateTime(_horarioDtl.hora_inicio_break.ToString());
-                    ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: "hh:mm tt");
-                }
+                    lblNombreForm.Text = "Editar: " + _horarioDtl.fecha_labor.ToLongDateString();
 
-                if (_horarioDtl.hora_fin_break != null)
+                    dtpHoraInicioLabor.Value = Convert.ToDateTime(_horarioDtl.hora_inicio.ToString());
+                    dtpHoraFinLabor.Value = Convert.ToDateTime(_horarioDtl.hora_fin.ToString());
+
+                    if (_horarioDtl.hora_inicio_break != null)
+                    {
+                        dtpHoraInicioBreak.Value = Convert.ToDateTime(_horarioDtl.hora_inicio_break.ToString());
+                        ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: "hh:mm tt");
+                    }
+
+                    if (_horarioDtl.hora_fin_break != null)
+                    {
+                        dtpHoraFinBreak.Value = Convert.ToDateTime(_horarioDtl.hora_fin_break.ToString());
+                        ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: "hh:mm tt");
+                    }
+
+                    dtpTiempoTolerancia.Value = Convert.ToDateTime(_horarioDtl.tiempo_tolerancia.ToString());
+                    chkModificarEnTodosLosMismosDias.Text = "Guardar las mismas horas para todos los " + _horarioDtl.fecha_labor.ToString("dddd");
+                }
+                else
                 {
-                    dtpHoraFinBreak.Value = Convert.ToDateTime(_horarioDtl.hora_fin_break.ToString());
-                    ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: "hh:mm tt");
+                    lblNombreForm.Text = "Asignar: " + _fechaAAsignar.ToLongDateString();
+                    chkModificarEnTodosLosMismosDias.Visible = false;
                 }
-
-                dtpTiempoTolerancia.Value = Convert.ToDateTime(_horarioDtl.tiempo_tolerancia.ToString());
-                chkModificarEnTodosLosMismosDias.Text = "Guardar las mismas horas para todos los " + _horarioDtl.fecha_labor.ToString("dddd");
             }
-            else
+            catch (Exception e)
             {
-                lblNombreForm.Text = "Asignar: " + _fechaAAsignar.ToLongDateString();
-                chkModificarEnTodosLosMismosDias.Visible = false;
+                Msg.Ok_Err("No se pudo mostrar el día de horario correctamente. Excepción: " + e.Message);
             }
         }
 
@@ -460,7 +474,7 @@ namespace ConfiguradorUI.Labor.Horario
 
                         if (actualizarRango && !(new HorarioEmpleadoBL().ActualizarRangoDeHorario(_idHorario)))
                         {
-                            Msg.Ok_Err("No se actualizó el rango de fechas del horario.");
+                            Msg.Ok_Err("No se pudo actualizar la cabecera del horario (primera fecha, útlima fecha).");
                         }
                         Dispose();
                     }
@@ -495,7 +509,7 @@ namespace ConfiguradorUI.Labor.Horario
             if (hoy > fechaAValidar)
             {
                 no_error = false;
-                Msg.Ok_Wng("No se puede actualizar una fecha inferior a la fecha actual.", "Validación");
+                Msg.Ok_Info("No se puede actualizar una fecha inferior a la fecha actual.", "Validación");
             }
 
             else if (no_error)

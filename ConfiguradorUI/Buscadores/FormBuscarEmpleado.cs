@@ -123,7 +123,8 @@ namespace ConfiguradorUI.Buscadores
                 dgvEmpleado.Columns["COD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
-                dgvEmpleado.Columns["NOMBRE"].HeaderText = "APELLIDOS Y NOMBRES - RAZÓN SOCIAL";
+                dgvEmpleado.Columns["NOMBRE"].HeaderText = "APELLIDOS Y NOMBRES | RAZÓN SOCIAL";
+                dgvEmpleado.Columns["NUM_DOC"].Width = 170;
                 dgvEmpleado.Columns["NOMBRE"].Width = 400;
             }
             catch (Exception e)

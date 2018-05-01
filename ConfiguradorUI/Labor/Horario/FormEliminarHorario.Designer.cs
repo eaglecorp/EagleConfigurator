@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblNombreForm = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.chkLunes = new MetroFramework.Controls.MetroCheckBox();
             this.chkMiercoles = new MetroFramework.Controls.MetroCheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblNoPuedeEliminar = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.lblUltimoDiaHorario = new MetroFramework.Controls.MetroLabel();
@@ -49,7 +49,8 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -63,7 +64,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(345, 245);
+            this.btnCancelar.Location = new System.Drawing.Point(345, 233);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
@@ -81,7 +82,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(263, 245);
+            this.btnEliminar.Location = new System.Drawing.Point(263, 233);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(78, 30);
@@ -97,9 +98,9 @@
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblNombreForm.Location = new System.Drawing.Point(23, 17);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(190, 32);
+            this.lblNombreForm.Size = new System.Drawing.Size(167, 32);
             this.lblNombreForm.TabIndex = 207;
-            this.lblNombreForm.Text = "Eliminar Horarios";
+            this.lblNombreForm.Text = "Eliminar fechas";
             // 
             // chkSabado
             // 
@@ -138,7 +139,7 @@
             // 
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel14.Location = new System.Drawing.Point(29, 160);
+            this.metroLabel14.Location = new System.Drawing.Point(29, 159);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(179, 19);
             this.metroLabel14.TabIndex = 209;
@@ -197,17 +198,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(380, 4);
             this.panel3.TabIndex = 213;
-            // 
-            // lblNoPuedeEliminar
-            // 
-            this.lblNoPuedeEliminar.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblNoPuedeEliminar.ForeColor = System.Drawing.Color.Red;
-            this.lblNoPuedeEliminar.Location = new System.Drawing.Point(20, 218);
-            this.lblNoPuedeEliminar.Name = "lblNoPuedeEliminar";
-            this.lblNoPuedeEliminar.Size = new System.Drawing.Size(419, 22);
-            this.lblNoPuedeEliminar.TabIndex = 214;
-            this.lblNoPuedeEliminar.UseCustomForeColor = true;
-            this.lblNoPuedeEliminar.WrapToLine = true;
             // 
             // metroLabel2
             // 
@@ -292,22 +282,15 @@
             this.dtpHasta.Size = new System.Drawing.Size(117, 20);
             this.dtpHasta.TabIndex = 222;
             // 
-            // button1
+            // errorProv
             // 
-            this.button1.Location = new System.Drawing.Point(348, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 223;
-            this.button1.Text = "Ver fechas";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.errorProv.ContainerControl = this;
             // 
             // FormEliminarHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 298);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(454, 291);
             this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel5);
@@ -316,7 +299,6 @@
             this.Controls.Add(this.lblUltimoDiaHorario);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.lblNoPuedeEliminar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
@@ -333,6 +315,7 @@
             this.Name = "FormEliminarHorario";
             this.Resizable = false;
             this.Load += new System.EventHandler(this.FormEliminarHorario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,7 +335,6 @@
         private MetroFramework.Controls.MetroCheckBox chkLunes;
         private MetroFramework.Controls.MetroCheckBox chkMiercoles;
         private System.Windows.Forms.Panel panel3;
-        private MetroFramework.Controls.MetroLabel lblNoPuedeEliminar;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel lblUltimoDiaHorario;
@@ -361,6 +343,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private System.Windows.Forms.DateTimePicker dtpHasta;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider errorProv;
     }
 }

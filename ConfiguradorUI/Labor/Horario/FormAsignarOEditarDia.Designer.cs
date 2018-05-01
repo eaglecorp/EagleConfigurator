@@ -61,7 +61,7 @@
             // chkModificarEnTodosLosMismosDias
             // 
             this.chkModificarEnTodosLosMismosDias.AutoSize = true;
-            this.chkModificarEnTodosLosMismosDias.Location = new System.Drawing.Point(29, 198);
+            this.chkModificarEnTodosLosMismosDias.Location = new System.Drawing.Point(29, 188);
             this.chkModificarEnTodosLosMismosDias.Name = "chkModificarEnTodosLosMismosDias";
             this.chkModificarEnTodosLosMismosDias.Size = new System.Drawing.Size(224, 15);
             this.chkModificarEnTodosLosMismosDias.TabIndex = 192;
@@ -186,7 +186,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(282, 231);
+            this.btnCancelar.Location = new System.Drawing.Point(282, 217);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
@@ -204,7 +204,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(200, 231);
+            this.btnGuardar.Location = new System.Drawing.Point(200, 217);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 30);
@@ -221,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 287);
+            this.ClientSize = new System.Drawing.Size(391, 276);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.chkModificarEnTodosLosMismosDias);

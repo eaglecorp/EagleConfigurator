@@ -102,7 +102,7 @@ namespace ConfiguradorUI.Labor.Horario
             dtpDesde.ValueChanged += dtpDesde_ValueChanged;
             dtpHasta.ValueChanged += dtpHasta_ValueChanged;
 
-            dtpHasta.CloseUp += dtpHasta_CloseUp;
+            dtpHasta.MouseDown += dtpHasta_MouseDown;
         }
 
         private Tuple<DateTimePicker, DateTimePicker, DateTimePicker, DateTimePicker, DateTimePicker> GetDtpsPorDia(CheckBox chkDia)
@@ -413,6 +413,8 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void LimpiarForm()
         {
+            errorProv.Clear();
+
             var hoy = DateTime.Now.Date;
             var fechaDtp = new DateTime();
             if (_tipoOperacion == TipoOperacionABM.Insertar)
@@ -1108,7 +1110,7 @@ namespace ConfiguradorUI.Labor.Horario
                         SalidaDeOperacion(false);
                     }
                 }
-                else if(_tipoOperacion == TipoOperacionABM.Modificar)
+                else if (_tipoOperacion == TipoOperacionABM.Modificar)
                 {
                     success = new HorarioEmpleadoBL().ActualizarHorariosDtl(fechas);
                     msgError = "No se pudo actualizar las fechas.";
@@ -1123,7 +1125,7 @@ namespace ConfiguradorUI.Labor.Horario
 
                         if (actualizarRango && !(new HorarioEmpleadoBL().ActualizarRangoDeHorario(_horario.id_horario_emp)))
                         {
-                            Msg.Ok_Err("No se actualizó el rango de fechas del horario.");
+                            Msg.Ok_Err("No se pudo actualizar la cabecera del horario (primera fecha, útlima fecha).");
                         }
                         Dispose();
                     }
@@ -1176,7 +1178,7 @@ namespace ConfiguradorUI.Labor.Horario
 
             if (_tipoOperacion == TipoOperacionABM.Modificar)
             {
-                lblNombreForm.Text = "Editar fechas del horario";
+                lblNombreForm.Text = "Editar horario";
             }
 
             #endregion
@@ -1216,15 +1218,25 @@ namespace ConfiguradorUI.Labor.Horario
 
         private Tuple<bool, ICollection<LABt04_horario_emp_dtl>> ValidarFechasYHoras()
         {
+
             bool no_error = true;
             var fechas = new List<LABt04_horario_emp_dtl>();
+
+            errorProv.Clear();
 
             //validar que existe el empleado
             if (_empleado == null ||
                 !(_empleado.id_empleado > 0))
             {
                 no_error = false;
-                Msg.Ok_Wng("Busque y seleccione un empleado antes de asignar un horario.", "Validación");
+                Msg.Ok_Info("Busque y seleccione un empleado antes de asignar un horario.", "Validación");
+            }
+
+            //Validando formato
+            if (no_error && dtpHasta.CustomFormat == " ")
+            {
+                no_error = false;
+                errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede estar vacía.");
             }
 
             //validando que se inferior a la fecha actual
@@ -1234,12 +1246,12 @@ namespace ConfiguradorUI.Labor.Horario
                 if (dtpDesde.Value.Date < hoy)
                 {
                     no_error = false;
-                    Msg.Ok_Wng($"La fecha \"Desde\" no puede ser menor que la fecha actual ({hoy.ToShortDateString()}).", "Validación");
+                    errorProv.SetError(dtpDesde, $"La fecha \"Desde\" no puede ser menor que la fecha actual ({hoy.ToString("dd/MM/yyyy")}).");
                 }
                 else if (dtpHasta.Value.Date < hoy)
                 {
                     no_error = false;
-                    Msg.Ok_Wng($"La fecha \"Hasta\" no puede ser menor que la fecha actual ({hoy.ToShortDateString()}).", "Validación");
+                    errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede ser menor que la fecha actual ({hoy.ToString("dd/MM/yyyy")}).");
                 }
             }
 
@@ -1247,7 +1259,7 @@ namespace ConfiguradorUI.Labor.Horario
             if (no_error && dtpDesde.Value.Date > dtpHasta.Value.Date)
             {
                 no_error = false;
-                Msg.Ok_Wng("La fecha \"Desde\" no puede ser mayor que la fecha \"Hasta\".", "Validación");
+                errorProv.SetError(dtpDesde, "La fecha \"Desde\" no puede ser mayor que la fecha \"Hasta\".");
             }
 
             //validar rango de fechas y fechas de ingreso y cese del empleado
@@ -1259,12 +1271,12 @@ namespace ConfiguradorUI.Labor.Horario
                 if (fechaIngreso != null && fechaIngreso > dtpDesde.Value.Date)
                 {
                     no_error = false;
-                    Msg.Ok_Wng("La fecha \"Desde\" no puede ser menor que la fecha de ingreso del empleado.", "Validación");
+                    errorProv.SetError(dtpDesde, $"La fecha \"Desde\" no puede ser menor que la fecha de ingreso ({((DateTime)fechaIngreso).ToString("dd/MM/yyyy")}) del empleado.");
                 }
-                else if (fechaCese != null && fechaCese < dtpHasta.Value.Date)
+                if (fechaCese != null && fechaCese < dtpHasta.Value.Date)
                 {
                     no_error = false;
-                    Msg.Ok_Wng("La fecha \"Hasta\" no puede ser mayor que la fecha de cese del empleado.", "Validación");
+                    errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede ser mayor que la fecha de cese ({((DateTime)fechaCese).ToString("dd/MM/yyyy")}) del empleado.");
                 }
             }
 
@@ -1305,7 +1317,7 @@ namespace ConfiguradorUI.Labor.Horario
                     if (fechas == null || !(fechas.Count > 0))
                     {
                         no_error = false;
-                        Msg.Ok_Wng(msg, "Validación");
+                        Msg.Ok_Info(msg, "Validación");
                     }
                 }
             }
@@ -1572,36 +1584,39 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void dtpDesde_ValueChanged(object sender, EventArgs e)
         {
+
+            if (dtpHasta.CustomFormat == " ")
+            {
+                dtpHasta.Value = dtpDesde.Value.Date;
+                return;
+            }
+
             if (dtpDesde.Value.Date > dtpHasta.Value.Date)
             {
-                Msg.Ok_Wng("La fecha \"Desde\" no puede ser mayor que la fecha \"Hasta\".");
-                dtpDesde.Value = dtpHasta.Value.Date;
+                errorProv.SetError(dtpHasta, null);
+                errorProv.SetError(dtpDesde, "La fecha \"Desde\" no puede ser mayor que la fecha \"Hasta\".");
             }
             else
             {
                 EvaluarDiasDisponibles();
             }
-
         }
 
         private void dtpHasta_ValueChanged(object sender, EventArgs e)
         {
+
+            if (dtpHasta.CustomFormat == " ")
+            {
+                return;
+            }
+
             if (dtpDesde.Value.Date > dtpHasta.Value.Date)
             {
-                Msg.Ok_Wng("La fecha \"Hasta\" no puede ser menor que la fecha \"Desde\".");
-                dtpHasta.Value = dtpDesde.Value.Date;
+                errorProv.SetError(dtpDesde, null);
+                errorProv.SetError(dtpHasta, "La fecha \"Hasta\" no puede ser menor que la fecha \"Desde\".");
             }
             else
             {
-                EvaluarDiasDisponibles();
-            }
-        }
-
-        private void dtpHasta_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpHasta.CustomFormat == " ")
-            {
-                ControlHelper.FormatDatePicker(dtpHasta, customFormat: "dd/MM/yyyy", showUpDown: false);
                 EvaluarDiasDisponibles();
             }
         }
@@ -1632,17 +1647,12 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dtpHasta_MouseDown(object sender, MouseEventArgs e)
         {
-            var fechasL = GetFechasEnRango();
-            if (fechasL != null)
+            if (dtpHasta.CustomFormat == " ")
             {
-                string fechas = "";
-                foreach (var fecha in fechasL)
-                {
-                    fechas += fecha.fecha_labor.ToLongDateString() + "\n";
-                }
-                Msg.Ok_Info(fechas);
+                ControlHelper.FormatDatePicker(dtpHasta, customFormat: "dd/MM/yyyy", showUpDown: false);
+                EvaluarDiasDisponibles();
             }
         }
 
@@ -1680,6 +1690,8 @@ namespace ConfiguradorUI.Labor.Horario
 
         #endregion
 
+
         #endregion
+
     }
 }

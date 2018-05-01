@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigDataAccess.Persona
+namespace ConfigDataAccess.Labor
 {
     public class TrabajoDA
     {

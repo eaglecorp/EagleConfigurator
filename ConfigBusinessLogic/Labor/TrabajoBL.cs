@@ -1,4 +1,5 @@
 ﻿using ConfigBusinessEntity;
+using ConfigDataAccess.Labor;
 using ConfigDataAccess.Persona;
 using ConfigUtilitarios;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigBusinessLogic.Persona
+namespace ConfigBusinessLogic.Labor
 {
     public class TrabajoBL
     {
