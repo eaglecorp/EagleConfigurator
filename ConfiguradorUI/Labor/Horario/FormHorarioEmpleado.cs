@@ -584,6 +584,15 @@ namespace ConfiguradorUI.Labor.Horario
             ControlarMenuDeCalendario();
         }
 
+        private void btnDate_Click(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            if (btn != null && DateTime.TryParse(btn.Text, out DateTime fecha))
+            {
+                SeleccionarDiaYVer(fecha);
+            }
+        }
+
         private void ControlarMenuDeCalendario()
         {
             ctxMenuDate.Enabled =
@@ -632,13 +641,5 @@ namespace ConfiguradorUI.Labor.Horario
 
         #endregion
 
-        private void btnDate_Click(object sender, EventArgs e)
-        {
-            var btn = (Button)sender;
-            if (btn != null && DateTime.TryParse(btn.Text, out DateTime fecha))
-            {
-                SeleccionarDiaYVer(fecha);
-            }
-        }
     }
 }

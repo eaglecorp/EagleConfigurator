@@ -85,7 +85,7 @@ namespace ConfiguradorUI.Seguridad
                                 if (usuario.id_estado == Estado.IdActivo)
                                 {
                                     bool enviado = false;
-                                    string body = new EmpleadoBL().ArmarMsjCredenciales(usuario, empleado, ParameterCode.SubjectCredentials);
+                                    string body = new UsuarioBL().ArmarMsjCredenciales(usuario, empleado, ParameterCode.SubjectCredentials);
                                     enviado = new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, email, Parameter.SubjectCredentials, body, Parameter.MailServer, Parameter.Port);
 
                                     if (enviado)

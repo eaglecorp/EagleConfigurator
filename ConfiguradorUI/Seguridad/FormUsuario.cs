@@ -211,7 +211,7 @@ namespace ConfiguradorUI.Seguridad
                     if (empleado.txt_email1.Length > 0 || empleado.txt_email2.Length > 0)
                     {
                         bool enviado = false;
-                        string body = new EmpleadoBL().ArmarMsjCredenciales(usuarioSelected, empleado, ParameterCode.SubjectCredentials);
+                        string body = new UsuarioBL().ArmarMsjCredenciales(usuarioSelected, empleado, ParameterCode.SubjectCredentials);
                         if (empleado.txt_email1.Length > 0)
                         {
                             enviado = new Email().SendEmail(emailFrom, password, Parameter.DisplayNameEmail, empleado.txt_email1, Parameter.SubjectCredentials, body, Parameter.MailServer, Parameter.Port);

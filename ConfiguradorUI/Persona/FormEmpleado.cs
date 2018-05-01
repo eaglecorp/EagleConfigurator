@@ -686,6 +686,7 @@ namespace ConfiguradorUI.Persona
                 else cboSuspLaboral.SelectedIndex = -1;
 
                 SetTrabajosDeEmpleado(obj.LABt07_emp_trabajo);
+                SetUsuarioDeEmpleado(obj.id_empleado);
             }
             catch (Exception e)
             {
@@ -1370,6 +1371,7 @@ namespace ConfiguradorUI.Persona
             txtInfo09.Clear();
             txtInfo10.Clear();
 
+            LimpiarUsuario();
 
 
             if (TipoOperacion == TipoOperacionABM.Nuevo)
@@ -1791,6 +1793,17 @@ namespace ConfiguradorUI.Persona
             txtNumHorasMes.MaxLength = 9;
             txtNumCuenta.MaxLength = 50;
         }
+
+        private void LimpiarUsuario()
+        {
+            lblUsername.Text = "-";
+            lblUsername.Hide();
+
+            btnCrearUsuario.Show();
+            btnCrearUsuario.Enabled = false;
+        }
+
+
         private void ContarEstados(List<PERt04_empleado> lista)
         {
             try
@@ -1833,6 +1846,7 @@ namespace ConfiguradorUI.Persona
                 MessageBox.Show($"No se pudo definir la cabecera de la grilla de los trabajos. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void RenombrarCabeceraGridTrabajos()
         {
             try
@@ -1885,7 +1899,6 @@ namespace ConfiguradorUI.Persona
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             TipoOperacion = TipoOperacionABM.Nuevo;
@@ -2337,5 +2350,40 @@ namespace ConfiguradorUI.Persona
         }
         #endregion
 
+
+
+        private void btnCrearUsuario_Click(object sender, EventArgs e)
+        {
+            if (long.TryParse(lblIdEmpleado.Text, out long idEmpleado) && idEmpleado > 0)
+            {
+                if (!new UsuarioBL().CrearUsuarioAEmpleado(idEmpleado))
+                {
+                    Msg.Ok_Err("No se pudo crear su usuario.", "Error");
+                }
+                else
+                {
+                    SetUsuarioDeEmpleado(idEmpleado);
+                }
+            }
+        }
+
+        private void SetUsuarioDeEmpleado(long idEmpleado)
+        {
+            var user = new UsuarioBL().UsuarioXEmpleado(idEmpleado);
+            if (user != null && user.id_usuario > 0)
+            {
+                lblUsername.Text = user.txt_usuario;
+                btnCrearUsuario.Hide();
+                lblUsername.Show();
+            }
+            else
+            {
+                lblUsername.Text = "-";
+                lblUsername.Hide();
+
+                btnCrearUsuario.Enabled = true;
+                btnCrearUsuario.Show();
+            }
+        }
     }
 }

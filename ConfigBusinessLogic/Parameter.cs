@@ -194,6 +194,23 @@ namespace ConfigBusinessLogic
             }
         }
 
+        public static int CreateUserAfterRegisterEmployee
+        {
+            get
+            {
+                try
+                {
+                    var p = new ParametroBL().ParametroXCod(ParameterCode.CreateUserAfterRegisterEmployee);
+                    int createUserPostRegisterEmployee = (p != null && p.id_parametro > 0) ? (int)p.dec_valor : 0;
+                    return createUserPostRegisterEmployee;
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+            }
+        }
+
         #endregion
 
         #region Parámetros de Imágenes
@@ -310,16 +327,18 @@ namespace ConfigBusinessLogic
     {
 
         #region Parámetros de Email
-        public static string EmailFrom { get; }          = "100000";
-        public static string DisplayNameEmail { get; }   = "100001";
-        public static string Password { get; }           = "100002";
-        public static string SubjectRegister { get; }    = "100003";
-        public static string SubjectCredentials { get; } = "100004";
-        public static string MailServer { get; }         = "100005";
-        public static string Port { get; }               = "100006";
-        public static string AddMsjRegister { get; }     = "100007";
-        public static string AddMsjCredentials { get; }  = "100008";
-        public static string SendMailRegister { get; }   = "100009";
+        public static string EmailFrom { get; }                         = "100000";
+        public static string DisplayNameEmail { get; }                  = "100001";
+        public static string Password { get; }                          = "100002";
+        public static string SubjectRegister { get; }                   = "100003";
+        public static string SubjectCredentials { get; }                = "100004";
+        public static string MailServer { get; }                        = "100005";
+        public static string Port { get; }                              = "100006";
+        public static string AddMsjRegister { get; }                    = "100007";
+        public static string AddMsjCredentials { get; }                 = "100008";
+        public static string SendMailRegister { get; }                  = "100009";
+        public static string CreateUserAfterRegisterEmployee { get; }    = "100010";
+        
         #endregion
 
         #region Parámetros de Imágenes

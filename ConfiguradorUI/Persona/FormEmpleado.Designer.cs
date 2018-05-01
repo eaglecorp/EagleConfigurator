@@ -39,6 +39,7 @@
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.tabEmpleado = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.btnCrearUsuario = new System.Windows.Forms.Button();
             this.lblSuspLaboral = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboMotivoBaja = new System.Windows.Forms.ComboBox();
@@ -216,6 +217,8 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
+            this.grbUser = new System.Windows.Forms.GroupBox();
+            this.lblUsername = new MetroFramework.Controls.MetroLabel();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -237,6 +240,7 @@
             this.panelMantenimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
+            this.grbUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // tglListarInactivos
@@ -371,6 +375,7 @@
             // tabPagGeneral
             // 
             this.tabPagGeneral.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagGeneral.Controls.Add(this.grbUser);
             this.tabPagGeneral.Controls.Add(this.lblSuspLaboral);
             this.tabPagGeneral.Controls.Add(this.panel2);
             this.tabPagGeneral.Controls.Add(this.cboMotivoBaja);
@@ -424,6 +429,26 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // btnCrearUsuario
+            // 
+            this.btnCrearUsuario.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCrearUsuario.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCrearUsuario.FlatAppearance.BorderSize = 0;
+            this.btnCrearUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnCrearUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnCrearUsuario.Location = new System.Drawing.Point(10, 23);
+            this.btnCrearUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrearUsuario.Name = "btnCrearUsuario";
+            this.btnCrearUsuario.Size = new System.Drawing.Size(113, 24);
+            this.btnCrearUsuario.TabIndex = 111;
+            this.btnCrearUsuario.Text = "Crear usuario";
+            this.btnCrearUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCrearUsuario.UseVisualStyleBackColor = false;
+            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
             // 
             // lblSuspLaboral
             // 
@@ -560,7 +585,7 @@
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(3, 373);
+            this.chkActivo.Location = new System.Drawing.Point(3, 375);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 31;
@@ -3522,6 +3547,30 @@
             this.lblNumReg.TabIndex = 108;
             this.lblNumReg.Text = "Total: ";
             // 
+            // grbUser
+            // 
+            this.grbUser.BackColor = System.Drawing.Color.White;
+            this.grbUser.Controls.Add(this.lblUsername);
+            this.grbUser.Controls.Add(this.btnCrearUsuario);
+            this.grbUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbUser.Location = new System.Drawing.Point(422, 340);
+            this.grbUser.Name = "grbUser";
+            this.grbUser.Size = new System.Drawing.Size(133, 55);
+            this.grbUser.TabIndex = 112;
+            this.grbUser.TabStop = false;
+            this.grbUser.Text = "Usuario";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.ForeColor = System.Drawing.Color.Navy;
+            this.lblUsername.Location = new System.Drawing.Point(10, 23);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(113, 24);
+            this.lblUsername.TabIndex = 108;
+            this.lblUsername.Text = "Username";
+            this.lblUsername.UseCustomForeColor = true;
+            // 
             // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3577,6 +3626,7 @@
             this.panelMantenimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
+            this.grbUser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3769,5 +3819,8 @@
         private System.Windows.Forms.Button btnDesasignarTrabajo;
         private System.Windows.Forms.ComboBox cboTrabajo;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Button btnCrearUsuario;
+        private System.Windows.Forms.GroupBox grbUser;
+        private MetroFramework.Controls.MetroLabel lblUsername;
     }
 }

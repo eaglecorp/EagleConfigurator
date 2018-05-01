@@ -349,7 +349,7 @@ namespace ConfigDataAccess.Seguridad
                 {
                     pUsername = "";
                     var log = new Log();
-                    log.ArchiveLog("Generar Username: ", "Pasó el método satisfactoriamente. No se logró generar un usuario.");
+                    log.ArchiveLog("Generar Username: ", "Pasó el método satisfactoriamente pero no se logró generar un usuario.");
                 }
 
             }
