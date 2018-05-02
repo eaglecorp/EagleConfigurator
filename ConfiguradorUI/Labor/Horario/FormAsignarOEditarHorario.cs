@@ -1,5 +1,6 @@
 ﻿using ConfigBusinessEntity;
 using ConfigBusinessLogic.Labor;
+using ConfigBusinessLogic.Utiles;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
@@ -415,7 +416,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             errorProv.Clear();
 
-            var hoy = DateTime.Now.Date;
+            var hoy =  UtilBL.GetCurrentDateTime.Date;
             var fechaDtp = new DateTime();
             if (_tipoOperacion == TipoOperacionABM.Insertar)
             {
@@ -1140,16 +1141,15 @@ namespace ConfiguradorUI.Labor.Horario
         private void ConfigurarControles()
         {
             #region DateTimePicker
-
+            var hoy = UtilBL.GetCurrentDateTime.Date;
             if (_tipoOperacion == TipoOperacionABM.Insertar)
             {
-                dtpDesde.MinDate = dtpHasta.MinDate = DateTime.Now.Date;
+                dtpDesde.MinDate = dtpHasta.MinDate = hoy;
                 dtpDesde.MaxDate = dtpHasta.MaxDate = KeyDates.MaxDate;
 
             }
             else if (_tipoOperacion == TipoOperacionABM.Modificar)
             {
-                var hoy = DateTime.Now.Date;
                 dtpDesde.MinDate = dtpHasta.MinDate = hoy > _horario.fecha_inicio_horario ? hoy : _horario.fecha_inicio_horario;
                 dtpDesde.MaxDate = dtpHasta.MaxDate = _horario.fecha_fin_horario;
             }
@@ -1242,7 +1242,7 @@ namespace ConfiguradorUI.Labor.Horario
             //validando que se inferior a la fecha actual
             if (no_error)
             {
-                var hoy = DateTime.Now.Date;
+                var hoy = UtilBL.GetCurrentDateTime.Date;
                 if (dtpDesde.Value.Date < hoy)
                 {
                     no_error = false;

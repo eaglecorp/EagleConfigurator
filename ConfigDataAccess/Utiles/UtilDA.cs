@@ -53,6 +53,30 @@ namespace ConfigDataAccess.Utiles
             return valido;
         }
 
+        public DateTime GetCurrentDateTime()
+        {
+            DateTime ahora = new DateTime(2000, 03, 03);
+            using (var conexion = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    using (var cmd = new SqlCommand("USP_SYS_CURRENT_DATE", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        conexion.Open();
+                        ahora = DateTime.Parse(cmd.ExecuteScalar().ToString());
+                    }
+                }
+                catch (Exception e)
+                {
+                    ahora = DateTime.Now.Date;
+                    var log = new Log();
+                    log.ArchiveLog("GetCurrentDateTime: ", e.Message);
+                }
+            }
+            return ahora;
+        }
+
         public bool RunContext(GRLt01_parametro paramRun)
         {
             bool isSuccess = false;

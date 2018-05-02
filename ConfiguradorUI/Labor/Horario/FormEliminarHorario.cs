@@ -1,5 +1,6 @@
 ﻿using ConfigBusinessEntity;
 using ConfigBusinessLogic.Labor;
+using ConfigBusinessLogic.Utiles;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
@@ -162,7 +163,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             errorProv.Clear();
 
-            var hoy = DateTime.Now.Date;
+            var hoy = UtilBL.GetCurrentDateTime.Date;
 
             var fechaDtp = hoy > _horario.fecha_inicio_horario ? hoy : _horario.fecha_inicio_horario;
 
@@ -219,7 +220,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             #region DateTimePicker
 
-            var hoy = DateTime.Now.Date;
+            var hoy = UtilBL.GetCurrentDateTime.Date;
             dtpDesde.MinDate = dtpHasta.MinDate = hoy > _horario.fecha_inicio_horario ? hoy : _horario.fecha_inicio_horario;
             dtpDesde.MaxDate = dtpHasta.MaxDate = _horario.fecha_fin_horario;
 
@@ -287,7 +288,7 @@ namespace ConfiguradorUI.Labor.Horario
             //validando que se inferior a la fecha actual
             if (no_error)
             {
-                var hoy = DateTime.Now.Date;
+                var hoy = UtilBL.GetCurrentDateTime.Date;
                 if (dtpDesde.Value.Date < hoy)
                 {
                     no_error = false;
@@ -328,8 +329,9 @@ namespace ConfiguradorUI.Labor.Horario
             {
                 var fechasParaEliminar = tuplaValidarFechas.Item2;
                 bool success = false;
+                DateTime hoy = UtilBL.GetCurrentDateTime.Date;
 
-                if (GetNumeroFechasPasadas() > 0 || fechasParaEliminar.Count < GetNumeroFechasRestantes())
+                if (GetNumeroFechasPasadas(hoy) > 0 || fechasParaEliminar.Count < GetNumeroFechasRestantes(hoy))
                 {
                     var IdsAEliminar = fechasParaEliminar.Select(x => x.id_horario_emp_dtl);
                     success = new HorarioEmpleadoBL().EliminarHorariosDtl(IdsAEliminar);
@@ -361,10 +363,16 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private int GetNumeroFechasRestantes()
+        private int GetNumeroFechasRestantes(DateTime hoy)
         {
-            var hoy = DateTime.Now.Date;
-            return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor >= hoy).Count();
+            try
+            {
+                return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor >= hoy).Count();
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         private void SetFechasHorario()
@@ -373,14 +381,18 @@ namespace ConfiguradorUI.Labor.Horario
             lblUltimoDiaHorario.Text = _horario.fecha_fin_horario.ToString("dd/MM/yyyy");
         }
 
-        private int GetNumeroFechasPasadas()
+        private int GetNumeroFechasPasadas(DateTime hoy)
         {
-            var hoy = DateTime.Now.Date;
-            return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor < hoy).Count();
+            try
+            {
+                return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor < hoy).Count();
+            }
+            catch
+            {
+                return 0;
+            }
         }
         #endregion
-
-
 
         #region Eventos
 

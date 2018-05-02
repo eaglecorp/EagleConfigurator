@@ -756,15 +756,7 @@ namespace ConfiguradorUI.Persona
             #region Validación fechas
             if (no_error)
             {
-                if (dtpFechaIngreso.Format != DateTimePickerFormat.Short && dtpFechaCese.Checked)
-                {
-                    tabEmpleado.SelectedTab = tabPagDetalles;
-                    errorProv.SetError(dtpFechaIngreso, "La fecha de ingreso es requerida cuando ha asignado una fecha de cese.");
-                    dtpFechaIngreso.Focus();
-                    no_error = false;
-                }
-
-                else if (dtpFechaIngreso.Format == DateTimePickerFormat.Short && dtpFechaCese.Checked)
+                if (dtpFechaIngreso.Format == DateTimePickerFormat.Short && dtpFechaCese.Checked)
                 {
                     if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpFechaIngreso.Value, dtpFechaCese.Value)))
                     {
@@ -1878,6 +1870,25 @@ namespace ConfiguradorUI.Persona
 
         }
 
+        private void SetUsuarioDeEmpleado(long idEmpleado)
+        {
+            var user = new UsuarioBL().UsuarioXEmpleado(idEmpleado);
+            if (user != null && user.id_usuario > 0)
+            {
+                lblUsername.Text = user.txt_usuario;
+                btnCrearUsuario.Hide();
+                lblUsername.Show();
+            }
+            else
+            {
+                lblUsername.Text = "-";
+                lblUsername.Hide();
+
+                btnCrearUsuario.Enabled = true;
+                btnCrearUsuario.Show();
+            }
+        }
+
 
         #endregion
 
@@ -2348,9 +2359,6 @@ namespace ConfiguradorUI.Persona
             EnableBtnRemoveTrabajoEmpleado();
 
         }
-        #endregion
-
-
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
@@ -2367,23 +2375,6 @@ namespace ConfiguradorUI.Persona
             }
         }
 
-        private void SetUsuarioDeEmpleado(long idEmpleado)
-        {
-            var user = new UsuarioBL().UsuarioXEmpleado(idEmpleado);
-            if (user != null && user.id_usuario > 0)
-            {
-                lblUsername.Text = user.txt_usuario;
-                btnCrearUsuario.Hide();
-                lblUsername.Show();
-            }
-            else
-            {
-                lblUsername.Text = "-";
-                lblUsername.Hide();
-
-                btnCrearUsuario.Enabled = true;
-                btnCrearUsuario.Show();
-            }
-        }
+        #endregion
     }
 }

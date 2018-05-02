@@ -9,6 +9,9 @@ using ConfigBusinessLogic.General;
 using System.IO;
 using System.ServiceProcess;
 using ConfigBusinessLogic;
+using ConfigBusinessLogic.Persona;
+using ConfigBusinessLogic.Utiles;
+using ConfigUtilitarios.HelperControl;
 
 namespace ConfiguradorUI.Seguridad
 {
@@ -30,6 +33,31 @@ namespace ConfiguradorUI.Seguridad
 
         #region Métodos de ventana
 
+        private bool EsFechaValida(DateTime hoy, DateTime? fechaIngreso, DateTime? fechaCese)
+        {
+            var success = false;
+
+            if (fechaIngreso == null && fechaCese == null)
+            {
+                success = true;
+            }
+            else if (fechaIngreso == null && fechaCese != null && hoy <= ((DateTime)fechaCese).Date)
+            {
+                success = true;
+            }
+            else if (fechaIngreso != null && fechaCese == null && hoy >= ((DateTime)fechaIngreso).Date)
+            {
+                success = true;
+            }
+            else if (fechaIngreso != null && fechaCese != null && 
+                hoy >= ((DateTime)fechaIngreso).Date && hoy <= ((DateTime)fechaCese).Date)
+            {
+                success = true;
+            }
+
+            return success;
+        }
+
         private void ValidarUsuario()
         {
             try
@@ -45,27 +73,38 @@ namespace ConfiguradorUI.Seguridad
                             FormCambiarClave oForm = new FormCambiarClave(usuarioIn);
                             oForm.ShowDialog();
                         }
-                        else if (usuarioIn.sn_upd_requered == Estado.IdInactivo)
+                        else
                         {
-                            backWorkerLogin.RunWorkerAsync();
+                            var empleado = new EmpleadoBL().EmpleadoXId(usuarioIn.id_empleado);
+                            var hoy = UtilBL.GetCurrentDateTime.Date;
 
-                            usuarioLogin = new PERt01_usuario();
-                            usuarioLogin = usuarioIn;
-                            result = true;
-                            Hide();
-                            Close();
+                            if (EsFechaValida(hoy, empleado.fecha_ingreso, empleado.fecha_cese))
+                            {
+                                backWorkerLogin.RunWorkerAsync();
+
+                                usuarioLogin = new PERt01_usuario();
+                                usuarioLogin = usuarioIn;
+                                result = true;
+                                Hide();
+                                Close();
+                            }
+                            else
+                            {
+                                Msg.Ok_Wng("No puede ingresar al sistema porque está fuera de la fecha de ingreso y cese de empleado.");
+                                btnCancelar.Focus();
+                            }
                         }
                     }
                     else
                     {
-                        txtUsuario.Focus();
                         MessageBox.Show("La cuenta del usuario está deshabilitada.\nPara mayor información contacte al administrador. ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtUsuario.Focus();
                     }
                 }
                 else
                 {
-                    txtUsuario.Focus();
                     MessageBox.Show(" La clave o username es incorrecta ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtUsuario.Focus();
                 }
             }
             catch (Exception e)
@@ -222,17 +261,12 @@ namespace ConfiguradorUI.Seguridad
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             result = false;
-            //Hide();
             Close();
-            //Dispose();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            //if (dbRunning)
             ValidarUsuario();
-            //else
-            //    MessageBox.Show("La base de datos no está disponible en estos momentos.\nContáctese con el administrador.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void linkOlvideCuenta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

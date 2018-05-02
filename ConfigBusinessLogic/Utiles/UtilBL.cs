@@ -11,6 +11,15 @@ namespace ConfigBusinessLogic.Utiles
 {
     public class UtilBL
     {
+
+        public static DateTime GetCurrentDateTime
+        {
+            get
+            {
+                return new UtilDA().GetCurrentDateTime();
+            }
+        }
+
         public bool ValidarDelete(long idPadre, int codValPadre)
         {
             return new UtilDA().ValidarDetele(idPadre, codValPadre);
@@ -32,5 +41,6 @@ namespace ConfigBusinessLogic.Utiles
 
             return isSuccess;
         }
+
     }
 }

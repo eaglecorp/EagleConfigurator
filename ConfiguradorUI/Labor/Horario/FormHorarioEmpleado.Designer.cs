@@ -41,6 +41,8 @@ namespace ConfiguradorUI.Labor.Horario
             this.tabHorario = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnUltimoDiaTrabajo = new System.Windows.Forms.Button();
+            this.btnPrimerDiaTrabajo = new System.Windows.Forms.Button();
             this.lblDiasDeTrabajoRestantes = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.btnHoy = new System.Windows.Forms.Button();
@@ -67,8 +69,6 @@ namespace ConfiguradorUI.Labor.Horario
             this.ctxMenuDate = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemAgregarOEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEliminar = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnPrimerDiaTrabajo = new System.Windows.Forms.Button();
-            this.btnUltimoDiaTrabajo = new System.Windows.Forms.Button();
             this.grbBuscarEmp.SuspendLayout();
             this.tabHorario.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -212,6 +212,34 @@ namespace ConfiguradorUI.Labor.Horario
             this.groupBox3.TabIndex = 204;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos del horario";
+            // 
+            // btnUltimoDiaTrabajo
+            // 
+            this.btnUltimoDiaTrabajo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUltimoDiaTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnUltimoDiaTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUltimoDiaTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltimoDiaTrabajo.ForeColor = System.Drawing.Color.Black;
+            this.btnUltimoDiaTrabajo.Location = new System.Drawing.Point(152, 66);
+            this.btnUltimoDiaTrabajo.Name = "btnUltimoDiaTrabajo";
+            this.btnUltimoDiaTrabajo.Size = new System.Drawing.Size(76, 23);
+            this.btnUltimoDiaTrabajo.TabIndex = 211;
+            this.btnUltimoDiaTrabajo.Text = "-";
+            this.btnUltimoDiaTrabajo.UseVisualStyleBackColor = false;
+            // 
+            // btnPrimerDiaTrabajo
+            // 
+            this.btnPrimerDiaTrabajo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPrimerDiaTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnPrimerDiaTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrimerDiaTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimerDiaTrabajo.ForeColor = System.Drawing.Color.Black;
+            this.btnPrimerDiaTrabajo.Location = new System.Drawing.Point(152, 43);
+            this.btnPrimerDiaTrabajo.Name = "btnPrimerDiaTrabajo";
+            this.btnPrimerDiaTrabajo.Size = new System.Drawing.Size(76, 23);
+            this.btnPrimerDiaTrabajo.TabIndex = 210;
+            this.btnPrimerDiaTrabajo.Text = "-";
+            this.btnPrimerDiaTrabajo.UseVisualStyleBackColor = false;
             // 
             // lblDiasDeTrabajoRestantes
             // 
@@ -540,34 +568,6 @@ namespace ConfiguradorUI.Labor.Horario
             this.toolStripMenuItemEliminar.Size = new System.Drawing.Size(133, 22);
             this.toolStripMenuItemEliminar.Text = "Eliminar";
             this.toolStripMenuItemEliminar.Click += new System.EventHandler(this.toolStripMenuItemEliminar_Click);
-            // 
-            // btnPrimerDiaTrabajo
-            // 
-            this.btnPrimerDiaTrabajo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrimerDiaTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnPrimerDiaTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrimerDiaTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrimerDiaTrabajo.ForeColor = System.Drawing.Color.Black;
-            this.btnPrimerDiaTrabajo.Location = new System.Drawing.Point(152, 43);
-            this.btnPrimerDiaTrabajo.Name = "btnPrimerDiaTrabajo";
-            this.btnPrimerDiaTrabajo.Size = new System.Drawing.Size(76, 23);
-            this.btnPrimerDiaTrabajo.TabIndex = 210;
-            this.btnPrimerDiaTrabajo.Text = "-";
-            this.btnPrimerDiaTrabajo.UseVisualStyleBackColor = false;
-            // 
-            // btnUltimoDiaTrabajo
-            // 
-            this.btnUltimoDiaTrabajo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUltimoDiaTrabajo.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnUltimoDiaTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUltimoDiaTrabajo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUltimoDiaTrabajo.ForeColor = System.Drawing.Color.Black;
-            this.btnUltimoDiaTrabajo.Location = new System.Drawing.Point(152, 66);
-            this.btnUltimoDiaTrabajo.Name = "btnUltimoDiaTrabajo";
-            this.btnUltimoDiaTrabajo.Size = new System.Drawing.Size(76, 23);
-            this.btnUltimoDiaTrabajo.TabIndex = 211;
-            this.btnUltimoDiaTrabajo.Text = "-";
-            this.btnUltimoDiaTrabajo.UseVisualStyleBackColor = false;
             // 
             // FormHorarioEmpleado
             // 

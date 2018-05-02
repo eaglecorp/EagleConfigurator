@@ -14,6 +14,7 @@ using ConfigUtilitarios.KeyValues;
 using ConfiguradorUI.Buscadores;
 using ConfigUtilitarios.HelperGeneric;
 using ConfigUtilitarios.Extensions;
+using ConfigBusinessLogic.Utiles;
 
 namespace ConfiguradorUI.Labor.Horario
 {
@@ -72,7 +73,7 @@ namespace ConfiguradorUI.Labor.Horario
 
             try
             {
-                var hoy = DateTime.Now.Date;
+                var hoy = UtilBL.GetCurrentDateTime.Date;
                 if (horario != null &&
                        horario.id_horario_emp > 0)
                 {
@@ -83,7 +84,7 @@ namespace ConfiguradorUI.Labor.Horario
                         horarioSoloFechas = horario.LABt04_horario_emp_dtl.Select(x => x.fecha_labor);
                     }
 
-                    var fechasDeLaborRestante = horarioSoloFechas.Count(x => x.Date >= DateTime.Now.Date);
+                    var fechasDeLaborRestante = horarioSoloFechas.Count(x => x.Date >= hoy);
 
                     btnPrimerDiaTrabajo.Text = horario.fecha_inicio_horario.ToString("dd/MM/yyyy");
                     btnUltimoDiaTrabajo.Text = horario.fecha_fin_horario.ToString("dd/MM/yyyy");
@@ -185,7 +186,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             btnPrimerDiaTrabajo.Text = "-";
             btnUltimoDiaTrabajo.Text = "-";
-            btnHoy.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+            btnHoy.Text = UtilBL.GetCurrentDateTime.Date.ToString("dd/MM/yyyy");
             ResaltarFechasEnCalendario(null);
         }
 
@@ -231,8 +232,9 @@ namespace ConfiguradorUI.Labor.Horario
             #endregion
 
             #region Month Calendar
-            mcaMes.SelectionStart = DateTime.Now;
-            mcaMes.SelectionEnd = DateTime.Now;
+            var hoy = UtilBL.GetCurrentDateTime.Date;
+            mcaMes.SelectionStart = hoy;
+            mcaMes.SelectionEnd = hoy;
             mcaMes.ContextMenuStrip = ctxMenuDate;
 
             #endregion
@@ -293,7 +295,7 @@ namespace ConfiguradorUI.Labor.Horario
 
         private bool EsFechaValida(DateTime fecha)
         {
-            var hoy = DateTime.Now.Date;
+            var hoy = UtilBL.GetCurrentDateTime.Date;
             var isValid = (fecha >= hoy && fecha <= KeyDates.MaxDate);
 
             if (isValid && _empleado != null && _empleado.id_empleado > 0)
@@ -316,9 +318,8 @@ namespace ConfiguradorUI.Labor.Horario
             return isValid;
         }
 
-        private int GetNumeroFechasPasadas()
+        private int GetNumeroFechasPasadas(DateTime hoy)
         {
-            var hoy = DateTime.Now.Date;
             try
             {
                 return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor < hoy).Count();
@@ -329,10 +330,8 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private int GetNumeroFechasRestantes()
+        private int GetNumeroFechasRestantes(DateTime hoy)
         {
-            var hoy = DateTime.Now.Date;
-
             try
             {
                 return _horario.LABt04_horario_emp_dtl.Where(x => x.fecha_labor >= hoy).Count();
@@ -343,9 +342,8 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        private IEnumerable<long> GetIdsDeFechasValidasSeleccionadas()
+        private IEnumerable<long> GetIdsDeFechasValidasSeleccionadas(DateTime hoy)
         {
-            var hoy = DateTime.Now.Date;
             IEnumerable<long> lista = new List<long>();
 
             if (_horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null)
@@ -368,14 +366,15 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (_empleado != null && _empleado.id_empleado > 0 && _horario != null && _horario.LABt04_horario_emp_dtl != null)
             {
-                var listaIds = GetIdsDeFechasValidasSeleccionadas();
+                var hoy = UtilBL.GetCurrentDateTime.Date;
+                var listaIds = GetIdsDeFechasValidasSeleccionadas(hoy);
                 var numeroFechasSeleccionadas = listaIds.Count();
                 if (numeroFechasSeleccionadas > 0)
                 {
                     var mensajeSegunNumero = numeroFechasSeleccionadas == 1 ? "la fecha seleccionada" : "las fechas seleccionadas";
                     bool success = false;
 
-                    if (GetNumeroFechasPasadas() > 0 || numeroFechasSeleccionadas < GetNumeroFechasRestantes())
+                    if (GetNumeroFechasPasadas(hoy) > 0 || numeroFechasSeleccionadas < GetNumeroFechasRestantes(hoy))
                     {
                         if (Msg.YesNo_Ques($"¿Está seguro de eliminar {mensajeSegunNumero} del horario?") == DialogResult.Yes)
                         {
@@ -495,7 +494,7 @@ namespace ConfiguradorUI.Labor.Horario
             {
                 if (TieneHorarioYFechas())
                 {
-                    var hoy = DateTime.Now.Date;
+                    var hoy = UtilBL.GetCurrentDateTime.Date;
                     if (_horario.fecha_fin_horario >= hoy)
                     {
 
@@ -529,7 +528,7 @@ namespace ConfiguradorUI.Labor.Horario
             {
                 if (TieneHorarioYFechas())
                 {
-                    var hoy = DateTime.Now.Date;
+                    var hoy = UtilBL.GetCurrentDateTime.Date;
                     if (_horario.fecha_fin_horario >= hoy)
                     {
                         var frm = new FormAsignarOEditarHorario(_empleado, _horario, TipoOperacionABM.Modificar);
@@ -606,7 +605,7 @@ namespace ConfiguradorUI.Labor.Horario
                 if (_empleado != null && _empleado.id_empleado > 0)
                 {
                     //Items[0]: agregar o editar e Items[1]: eliminar
-                    var hoy = DateTime.Now.Date;
+                    var hoy = UtilBL.GetCurrentDateTime.Date;
 
                     bool soloUnaFechaSeleccionada = mcaMes.SelectionRanges.Count == 1 && (mcaMes.SelectionRanges[0].Start.Date == mcaMes.SelectionRanges[0].End.Date);
                     bool tieneHorario = _horario != null && _horario.id_horario_emp > 0 && _horario.LABt04_horario_emp_dtl != null;

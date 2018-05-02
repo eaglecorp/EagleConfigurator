@@ -1,5 +1,6 @@
 ﻿using ConfigBusinessEntity;
 using ConfigBusinessLogic.Labor;
+using ConfigBusinessLogic.Utiles;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using MetroFramework.Forms;
@@ -432,7 +433,7 @@ namespace ConfiguradorUI.Labor.Horario
                 {
                     if (chkModificarEnTodosLosMismosDias.Checked)
                     {
-                        var hoy = DateTime.Now.Date;
+                        var hoy = UtilBL.GetCurrentDateTime.Date;
                         success = new HorarioEmpleadoBL().ActualizarHorariosDtlXDiaDeSemana(horarioDtl, hoy, horarioDtl.fecha_labor);
                     }
                     else
@@ -489,14 +490,14 @@ namespace ConfiguradorUI.Labor.Horario
         private bool EsValido()
         {
             bool no_error = true;
-            var hoy = DateTime.Now.Date;
+            var hoy = UtilBL.GetCurrentDateTime.Date;
             var horaInicioLabor = GetHoraYMinutos(dtpHoraInicioLabor.Value.TimeOfDay);
             var horaFinLabor = GetHoraYMinutos(dtpHoraFinLabor.Value.TimeOfDay);
             var maxTolerancia = (horaFinLabor - horaInicioLabor);
             var tiempoTolerancia = GetHoraYMinutos(dtpTiempoTolerancia.Value.TimeOfDay);
 
             errorProv.Clear();
-            var fechaAValidar = DateTime.Now.Date;
+            var fechaAValidar = hoy;
             if(_TipoOperacion == TipoOperacion.EditarHoratioDtl)
             {
                 fechaAValidar = _horarioDtl.fecha_labor;
