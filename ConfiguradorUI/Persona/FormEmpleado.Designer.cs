@@ -39,6 +39,8 @@
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.tabEmpleado = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.grbUser = new System.Windows.Forms.GroupBox();
+            this.lblUsername = new MetroFramework.Controls.MetroLabel();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
             this.lblSuspLaboral = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -217,11 +219,10 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.grbUser = new System.Windows.Forms.GroupBox();
-            this.lblUsername = new MetroFramework.Controls.MetroLabel();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
+            this.grbUser.SuspendLayout();
             this.tabPagDetalles.SuspendLayout();
             this.grbLaboralSaludPen.SuspendLayout();
             this.grbSalario.SuspendLayout();
@@ -240,13 +241,12 @@
             this.panelMantenimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
-            this.grbUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(134, 118);
+            this.tglListarInactivos.Location = new System.Drawing.Point(134, 115);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -257,7 +257,7 @@
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(36, 116);
+            this.lblListarInactivos.Location = new System.Drawing.Point(36, 113);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;
@@ -429,6 +429,31 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // grbUser
+            // 
+            this.grbUser.BackColor = System.Drawing.Color.White;
+            this.grbUser.Controls.Add(this.lblUsername);
+            this.grbUser.Controls.Add(this.btnCrearUsuario);
+            this.grbUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbUser.Location = new System.Drawing.Point(422, 340);
+            this.grbUser.Name = "grbUser";
+            this.grbUser.Size = new System.Drawing.Size(133, 55);
+            this.grbUser.TabIndex = 112;
+            this.grbUser.TabStop = false;
+            this.grbUser.Text = "Usuario";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblUsername.ForeColor = System.Drawing.Color.Navy;
+            this.lblUsername.Location = new System.Drawing.Point(10, 23);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(113, 24);
+            this.lblUsername.TabIndex = 108;
+            this.lblUsername.Text = "Username";
+            this.lblUsername.UseCustomForeColor = true;
             // 
             // btnCrearUsuario
             // 
@@ -992,7 +1017,6 @@
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(179, 23);
             this.dtpFechaNacimiento.TabIndex = 11;
-            this.dtpFechaNacimiento.CloseUp += new System.EventHandler(this.dtpFechaNacimiento_CloseUp);
             this.dtpFechaNacimiento.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // panel1
@@ -1374,7 +1398,6 @@
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(116, 23);
             this.dtpFechaIngreso.TabIndex = 1;
-            this.dtpFechaIngreso.CloseUp += new System.EventHandler(this.dtpFechaIngreso_CloseUp);
             this.dtpFechaIngreso.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // metroLabel4
@@ -3356,7 +3379,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(96, 68);
+            this.lblNombreForm.Location = new System.Drawing.Point(100, 53);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(128, 32);
             this.lblNombreForm.TabIndex = 62;
@@ -3367,7 +3390,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(35, 56);
+            this.btnCerrar.Location = new System.Drawing.Point(39, 41);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 6;
@@ -3547,35 +3570,10 @@
             this.lblNumReg.TabIndex = 108;
             this.lblNumReg.Text = "Total: ";
             // 
-            // grbUser
-            // 
-            this.grbUser.BackColor = System.Drawing.Color.White;
-            this.grbUser.Controls.Add(this.lblUsername);
-            this.grbUser.Controls.Add(this.btnCrearUsuario);
-            this.grbUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbUser.Location = new System.Drawing.Point(422, 340);
-            this.grbUser.Name = "grbUser";
-            this.grbUser.Size = new System.Drawing.Size(133, 55);
-            this.grbUser.TabIndex = 112;
-            this.grbUser.TabStop = false;
-            this.grbUser.Text = "Usuario";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.ForeColor = System.Drawing.Color.Navy;
-            this.lblUsername.Location = new System.Drawing.Point(10, 23);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(113, 24);
-            this.lblUsername.TabIndex = 108;
-            this.lblUsername.Text = "Username";
-            this.lblUsername.UseCustomForeColor = true;
-            // 
             // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(919, 639);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -3598,6 +3596,7 @@
             this.tabEmpleado.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
+            this.grbUser.ResumeLayout(false);
             this.tabPagDetalles.ResumeLayout(false);
             this.tabPagDetalles.PerformLayout();
             this.grbLaboralSaludPen.ResumeLayout(false);
@@ -3626,7 +3625,6 @@
             this.panelMantenimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
-            this.grbUser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

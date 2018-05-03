@@ -8,6 +8,8 @@ namespace ConfigUtilitarios.HelperGeneric
 {
     public class Human
     {
+
+
         public static string Nombre(string apPaterno, string primerNom, string apMaterno = null, string segundoNom = null, string rznSocial = null)
         {
             string nombre = "";
@@ -40,6 +42,14 @@ namespace ConfigUtilitarios.HelperGeneric
             }
             return nombre;
         }
+        public static int CalcularEdad(DateTime fecNacimiento, DateTime hoy)
+        {
+            int years = hoy.Year - fecNacimiento.Year;
 
+            if ((fecNacimiento.Month > hoy.Month) || (fecNacimiento.Month == hoy.Month && fecNacimiento.Day > hoy.Day))
+                years--;
+
+            return years;
+        }
     }
 }

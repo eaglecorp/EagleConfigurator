@@ -19,6 +19,7 @@ using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.HelperGeneric;
 using ConfigBusinessLogic.Labor;
 using ConfigUtilitarios.ViewModels;
+using ConfigBusinessLogic.Utiles;
 
 namespace ConfiguradorUI.Persona
 {
@@ -47,7 +48,7 @@ namespace ConfiguradorUI.Persona
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
             var txts = new[] { txtApPaterno, txtApMaterno,txtPrimerNom,txtSegundoNom,
                                 txtCodigo,txtRazonSocial,txtNomComercial,txtNumDoc,
@@ -93,16 +94,17 @@ namespace ConfiguradorUI.Persona
                 dtp.ValueChanged += new EventHandler(OnContentChanged);
                 if (dtp.ShowCheckBox == false)
                 {
+                    dtp.CloseUp += dtpVer_CloseUp;
+                    dtp.MouseDown += DtpVer_MouseDown;
+                    dtp.KeyPress += DtpLimpiar_KeyPress;
+
                     dtp.CloseUp += new EventHandler(OnContentChanged);
+                    dtp.MouseDown += OnContentChanged;
+                    dtp.KeyPress += OnContentChanged;
                 }
             }
 
-            var chks = new[] { chkActivo };
-
-            foreach (var chk in chks)
-            {
-                chk.CheckedChanged += new EventHandler(OnContentChanged);
-            }
+            chkActivo.CheckedChanged += new EventHandler(OnContentChanged);
 
             txtNumHorasMes.KeyPress += ValidarTxtDecimal;
             txtSalMensual.KeyPress += ValidarTxtDecimal;
@@ -150,7 +152,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt04_empleado();
                         obj = GetObjeto();
@@ -218,7 +220,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt04_empleado();
                         obj = GetObjeto();
@@ -257,7 +259,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt04_empleado();
                         obj = GetObjeto();
@@ -297,18 +299,19 @@ namespace ConfiguradorUI.Persona
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
-                if (dtpFechaNacimiento.Format == DateTimePickerFormat.Short)
+                if (dtpFechaNacimiento.CustomFormat == DateFormat.DateOnly)
                 {
-                    obj.fec_nac = dtpFechaNacimiento.Value;
+                    obj.fec_nac = dtpFechaNacimiento.Value.Date;
                 }
 
-                if (dtpFechaIngreso.Format == DateTimePickerFormat.Short)
+                if (dtpFechaIngreso.CustomFormat == DateFormat.DateOnly)
                 {
-                    obj.fecha_ingreso = dtpFechaIngreso.Value;
+                    obj.fecha_ingreso = dtpFechaIngreso.Value.Date;
                 }
+
                 if (dtpFechaCese.Checked)
                 {
-                    obj.fecha_cese = dtpFechaCese.Value;
+                    obj.fecha_cese = dtpFechaCese.Value.Date;
                 }
 
                 obj.cod_empleado = txtCodigo.Text.Trim();
@@ -502,13 +505,13 @@ namespace ConfiguradorUI.Persona
 
                 if (obj.fec_nac != null)
                 {
-                    dtpFechaNacimiento_CloseUp(null, EventArgs.Empty);
+                    DateFormat.SetFormat(dtpFechaNacimiento, DateFormat.DateOnly);
                     dtpFechaNacimiento.Value = (DateTime)obj.fec_nac;
                 }
 
                 if (obj.fecha_ingreso != null)
                 {
-                    dtpFechaIngreso_CloseUp(null, EventArgs.Empty);
+                    DateFormat.SetFormat(dtpFechaIngreso, DateFormat.DateOnly);
                     dtpFechaIngreso.Value = (DateTime)obj.fecha_ingreso;
                 }
 
@@ -695,7 +698,7 @@ namespace ConfiguradorUI.Persona
 
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             bool no_error = true;
@@ -755,8 +758,22 @@ namespace ConfiguradorUI.Persona
 
             #region Validación fechas
             if (no_error)
-            {
-                if (dtpFechaIngreso.Format == DateTimePickerFormat.Short && dtpFechaCese.Checked)
+            { 
+                if (dtpFechaNacimiento.CustomFormat == DateFormat.DateOnly)
+                {
+                    var hoy = UtilBL.GetCurrentDateTime.Date;
+                    var edad = Human.CalcularEdad(dtpFechaNacimiento.Value, hoy);
+
+                    if (edad < KeyHuman.EdadMinimaParaRegistro)
+                    {
+                        tabEmpleado.SelectedTab = tabPagGeneral;
+                        errorProv.SetError(dtpFechaNacimiento, $"La edad mínima de registro es {KeyHuman.EdadMinimaParaRegistro} años.");
+                        dtpFechaNacimiento.Focus();
+                        no_error = false;
+                    }
+                }
+
+                if (no_error && dtpFechaIngreso.CustomFormat == DateFormat.DateOnly && dtpFechaCese.Checked)
                 {
                     if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpFechaIngreso.Value, dtpFechaCese.Value)))
                     {
@@ -1313,15 +1330,15 @@ namespace ConfiguradorUI.Persona
             codSelected = "";
             esActivo = "";
 
-            dtpFechaNacimiento.Value = DateTime.Now;
-            dtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
-            dtpFechaNacimiento.CustomFormat = " ";
+            var hoy = UtilBL.GetCurrentDateTime.Date;
 
-            dtpFechaIngreso.Value = DateTime.Now;
-            dtpFechaIngreso.Format = DateTimePickerFormat.Custom;
-            dtpFechaIngreso.CustomFormat = " ";
+            DateFormat.SetFormat(dtpFechaNacimiento, DateFormat.Blank);
+            dtpFechaNacimiento.Value = hoy;
 
-            dtpFechaCese.Value = DateTime.Now;
+            DateFormat.SetFormat(dtpFechaIngreso, DateFormat.Blank);
+            dtpFechaIngreso.Value = hoy;
+
+            dtpFechaCese.Value = hoy;
             dtpFechaCese.Checked = false;
 
             emailSelected1 = "";
@@ -1889,6 +1906,11 @@ namespace ConfiguradorUI.Persona
             }
         }
 
+        private void ConfigurarControles()
+        {
+            DateFormat.SetFormat(dtpFechaCese, DateFormat.DateOnly);
+            SetMaxLengthTxt();
+        }
 
         #endregion
 
@@ -1898,7 +1920,8 @@ namespace ConfiguradorUI.Persona
         {
             btnCommit.Cursor = Cursors.Default;
             lblIdEmpleado.Visible = false;
-            SetMaxLengthTxt();
+
+            ConfigurarControles();
             ControlarEventosABM();
             InicializarGridTrabajos();
             CargarCombos();
@@ -1906,10 +1929,12 @@ namespace ConfiguradorUI.Persona
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }
+
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             TipoOperacion = TipoOperacionABM.Nuevo;
@@ -2265,26 +2290,6 @@ namespace ConfiguradorUI.Persona
             }
         }
 
-        private void dtpFechaNacimiento_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpFechaNacimiento.Format != DateTimePickerFormat.Short)
-            {
-                dtpFechaNacimiento.CustomFormat = null;
-                dtpFechaNacimiento.Format = DateTimePickerFormat.Short;
-                isChangedRow = false;
-            }
-        }
-
-        private void dtpFechaIngreso_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpFechaIngreso.Format != DateTimePickerFormat.Short)
-            {
-                dtpFechaIngreso.CustomFormat = null;
-                dtpFechaIngreso.Format = DateTimePickerFormat.Short;
-                isChangedRow = false;
-            }
-        }
-
         private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Convert.ToInt32(Keys.Enter))
@@ -2372,6 +2377,36 @@ namespace ConfiguradorUI.Persona
                 {
                     SetUsuarioDeEmpleado(idEmpleado);
                 }
+            }
+        }
+
+        private void DtpLimpiar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var dtp = ((DateTimePicker)sender);
+            if (e.KeyChar == (char)Keys.Escape && dtp.CustomFormat != DateFormat.Blank)
+            {
+                DateFormat.SetFormat(dtp, DateFormat.Blank);
+                isChangedRow = false;
+            }
+        }
+
+        private void DtpVer_MouseDown(object sender, MouseEventArgs e)
+        {
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != DateFormat.DateOnly)
+            {
+                DateFormat.SetFormat(dtp, DateFormat.DateOnly);
+                isChangedRow = false;
+            }
+        }
+
+        private void dtpVer_CloseUp(object sender, EventArgs e)
+        {
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != DateFormat.DateOnly)
+            {
+                DateFormat.SetFormat(dtp, DateFormat.DateOnly);
+                isChangedRow = false;
             }
         }
 

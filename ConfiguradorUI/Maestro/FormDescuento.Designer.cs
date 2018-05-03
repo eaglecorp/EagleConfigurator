@@ -441,7 +441,7 @@
             this.tabDescuento.Controls.Add(this.tabPagPeriodoDia);
             this.tabDescuento.Location = new System.Drawing.Point(308, 98);
             this.tabDescuento.Name = "tabDescuento";
-            this.tabDescuento.SelectedIndex = 0;
+            this.tabDescuento.SelectedIndex = 1;
             this.tabDescuento.Size = new System.Drawing.Size(582, 520);
             this.tabDescuento.TabIndex = 1;
             this.tabDescuento.UseSelectable = true;
@@ -912,10 +912,10 @@
             // 
             // tabPagPeriodoDia
             // 
-            this.tabPagPeriodoDia.Controls.Add(this.panelDia);
             this.tabPagPeriodoDia.Controls.Add(this.rbtDia);
             this.tabPagPeriodoDia.Controls.Add(this.rbtPeriodo);
             this.tabPagPeriodoDia.Controls.Add(this.panelPeriodo);
+            this.tabPagPeriodoDia.Controls.Add(this.panelDia);
             this.tabPagPeriodoDia.HorizontalScrollbarBarColor = true;
             this.tabPagPeriodoDia.HorizontalScrollbarHighlightOnWheel = false;
             this.tabPagPeriodoDia.HorizontalScrollbarSize = 10;
@@ -1462,11 +1462,11 @@
             this.grbP7.Controls.Add(this.dtpP7Fin);
             this.grbP7.Controls.Add(this.lblP7FecFin);
             this.grbP7.Controls.Add(this.cboP7Hf);
-            this.grbP7.Controls.Add(this.lblP7Hi);
             this.grbP7.Controls.Add(this.cboP7Hi);
             this.grbP7.Controls.Add(this.dtpP7Ini);
             this.grbP7.Controls.Add(this.lblP7FecIni);
             this.grbP7.Controls.Add(this.lblP7Hf);
+            this.grbP7.Controls.Add(this.lblP7Hi);
             this.grbP7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbP7.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbP7.ForeColor = System.Drawing.Color.Black;
@@ -1486,8 +1486,6 @@
             this.dtpP7Fin.Name = "dtpP7Fin";
             this.dtpP7Fin.Size = new System.Drawing.Size(99, 23);
             this.dtpP7Fin.TabIndex = 0;
-            this.dtpP7Fin.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP7Fin.CloseUp += new System.EventHandler(this.dtpP7Fin_CloseUp);
             this.dtpP7Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP7FecFin
@@ -1520,9 +1518,9 @@
             this.lblP7Hi.ForeColor = System.Drawing.Color.Navy;
             this.lblP7Hi.Location = new System.Drawing.Point(314, 24);
             this.lblP7Hi.Name = "lblP7Hi";
-            this.lblP7Hi.Size = new System.Drawing.Size(55, 19);
+            this.lblP7Hi.Size = new System.Drawing.Size(58, 19);
             this.lblP7Hi.TabIndex = 1;
-            this.lblP7Hi.Text = "H. Inico:";
+            this.lblP7Hi.Text = "H. Inicio:";
             this.lblP7Hi.UseCustomForeColor = true;
             // 
             // cboP7Hi
@@ -1547,8 +1545,6 @@
             this.dtpP7Ini.Name = "dtpP7Ini";
             this.dtpP7Ini.Size = new System.Drawing.Size(99, 23);
             this.dtpP7Ini.TabIndex = 86;
-            this.dtpP7Ini.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP7Ini.CloseUp += new System.EventHandler(this.dtpP7Ini_CloseUp);
             this.dtpP7Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP7FecIni
@@ -1579,11 +1575,11 @@
             this.grbP6.Controls.Add(this.dtpP6Fin);
             this.grbP6.Controls.Add(this.lblP6FecFin);
             this.grbP6.Controls.Add(this.cboP6Hf);
-            this.grbP6.Controls.Add(this.lblP6Hi);
             this.grbP6.Controls.Add(this.cboP6Hi);
             this.grbP6.Controls.Add(this.dtpP6Ini);
             this.grbP6.Controls.Add(this.lblP6FecIni);
             this.grbP6.Controls.Add(this.lblP6Hf);
+            this.grbP6.Controls.Add(this.lblP6Hi);
             this.grbP6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbP6.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbP6.ForeColor = System.Drawing.Color.Black;
@@ -1603,8 +1599,6 @@
             this.dtpP6Fin.Name = "dtpP6Fin";
             this.dtpP6Fin.Size = new System.Drawing.Size(99, 23);
             this.dtpP6Fin.TabIndex = 1;
-            this.dtpP6Fin.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP6Fin.CloseUp += new System.EventHandler(this.dtpP6Fin_CloseUp);
             this.dtpP6Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP6FecFin
@@ -1637,9 +1631,9 @@
             this.lblP6Hi.ForeColor = System.Drawing.Color.Navy;
             this.lblP6Hi.Location = new System.Drawing.Point(314, 24);
             this.lblP6Hi.Name = "lblP6Hi";
-            this.lblP6Hi.Size = new System.Drawing.Size(55, 19);
+            this.lblP6Hi.Size = new System.Drawing.Size(58, 19);
             this.lblP6Hi.TabIndex = 2;
-            this.lblP6Hi.Text = "H. Inico:";
+            this.lblP6Hi.Text = "H. Inicio:";
             this.lblP6Hi.UseCustomForeColor = true;
             // 
             // cboP6Hi
@@ -1664,8 +1658,6 @@
             this.dtpP6Ini.Name = "dtpP6Ini";
             this.dtpP6Ini.Size = new System.Drawing.Size(99, 23);
             this.dtpP6Ini.TabIndex = 0;
-            this.dtpP6Ini.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP6Ini.CloseUp += new System.EventHandler(this.dtpP6Ini_CloseUp);
             this.dtpP6Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP6FecIni
@@ -1696,11 +1688,11 @@
             this.grbP5.Controls.Add(this.dtpP5Fin);
             this.grbP5.Controls.Add(this.lblP5FecFin);
             this.grbP5.Controls.Add(this.cboP5Hf);
-            this.grbP5.Controls.Add(this.lblP5Hi);
             this.grbP5.Controls.Add(this.cboP5Hi);
             this.grbP5.Controls.Add(this.dtpP5Ini);
             this.grbP5.Controls.Add(this.lblP5FecIni);
             this.grbP5.Controls.Add(this.lblP5Hf);
+            this.grbP5.Controls.Add(this.lblP5Hi);
             this.grbP5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbP5.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbP5.ForeColor = System.Drawing.Color.Black;
@@ -1720,8 +1712,6 @@
             this.dtpP5Fin.Name = "dtpP5Fin";
             this.dtpP5Fin.Size = new System.Drawing.Size(99, 23);
             this.dtpP5Fin.TabIndex = 0;
-            this.dtpP5Fin.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP5Fin.CloseUp += new System.EventHandler(this.dtpP5Fin_CloseUp);
             this.dtpP5Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP5FecFin
@@ -1754,9 +1744,9 @@
             this.lblP5Hi.ForeColor = System.Drawing.Color.Navy;
             this.lblP5Hi.Location = new System.Drawing.Point(314, 24);
             this.lblP5Hi.Name = "lblP5Hi";
-            this.lblP5Hi.Size = new System.Drawing.Size(55, 19);
+            this.lblP5Hi.Size = new System.Drawing.Size(58, 19);
             this.lblP5Hi.TabIndex = 1;
-            this.lblP5Hi.Text = "H. Inico:";
+            this.lblP5Hi.Text = "H. Inicio:";
             this.lblP5Hi.UseCustomForeColor = true;
             // 
             // cboP5Hi
@@ -1781,8 +1771,6 @@
             this.dtpP5Ini.Name = "dtpP5Ini";
             this.dtpP5Ini.Size = new System.Drawing.Size(99, 23);
             this.dtpP5Ini.TabIndex = 86;
-            this.dtpP5Ini.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP5Ini.CloseUp += new System.EventHandler(this.dtpP5Ini_CloseUp);
             this.dtpP5Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP5FecIni
@@ -1813,11 +1801,11 @@
             this.grbP4.Controls.Add(this.dtpP4Fin);
             this.grbP4.Controls.Add(this.lblP4FecFin);
             this.grbP4.Controls.Add(this.cboP4Hf);
-            this.grbP4.Controls.Add(this.lblP4Hi);
             this.grbP4.Controls.Add(this.cboP4Hi);
             this.grbP4.Controls.Add(this.dtpP4Ini);
             this.grbP4.Controls.Add(this.lblP4FecIni);
             this.grbP4.Controls.Add(this.lblP4Hf);
+            this.grbP4.Controls.Add(this.lblP4Hi);
             this.grbP4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbP4.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbP4.ForeColor = System.Drawing.Color.Black;
@@ -1837,8 +1825,6 @@
             this.dtpP4Fin.Name = "dtpP4Fin";
             this.dtpP4Fin.Size = new System.Drawing.Size(99, 23);
             this.dtpP4Fin.TabIndex = 1;
-            this.dtpP4Fin.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP4Fin.CloseUp += new System.EventHandler(this.dtpP4Fin_CloseUp);
             this.dtpP4Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP4FecFin
@@ -1871,9 +1857,9 @@
             this.lblP4Hi.ForeColor = System.Drawing.Color.Navy;
             this.lblP4Hi.Location = new System.Drawing.Point(314, 24);
             this.lblP4Hi.Name = "lblP4Hi";
-            this.lblP4Hi.Size = new System.Drawing.Size(55, 19);
+            this.lblP4Hi.Size = new System.Drawing.Size(58, 19);
             this.lblP4Hi.TabIndex = 2;
-            this.lblP4Hi.Text = "H. Inico:";
+            this.lblP4Hi.Text = "H. Inicio:";
             this.lblP4Hi.UseCustomForeColor = true;
             // 
             // cboP4Hi
@@ -1898,8 +1884,6 @@
             this.dtpP4Ini.Name = "dtpP4Ini";
             this.dtpP4Ini.Size = new System.Drawing.Size(99, 23);
             this.dtpP4Ini.TabIndex = 0;
-            this.dtpP4Ini.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP4Ini.CloseUp += new System.EventHandler(this.dtpP4Ini_CloseUp);
             this.dtpP4Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP4FecIni
@@ -1930,11 +1914,11 @@
             this.grbP3.Controls.Add(this.dtpP3Fin);
             this.grbP3.Controls.Add(this.lblP3FecFin);
             this.grbP3.Controls.Add(this.cboP3Hf);
-            this.grbP3.Controls.Add(this.lblP3Hi);
             this.grbP3.Controls.Add(this.cboP3Hi);
             this.grbP3.Controls.Add(this.dtpP3Ini);
             this.grbP3.Controls.Add(this.lblP3FecIni);
             this.grbP3.Controls.Add(this.lblP3Hf);
+            this.grbP3.Controls.Add(this.lblP3Hi);
             this.grbP3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbP3.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbP3.ForeColor = System.Drawing.Color.Black;
@@ -1954,8 +1938,6 @@
             this.dtpP3Fin.Name = "dtpP3Fin";
             this.dtpP3Fin.Size = new System.Drawing.Size(99, 23);
             this.dtpP3Fin.TabIndex = 0;
-            this.dtpP3Fin.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP3Fin.CloseUp += new System.EventHandler(this.dtpP3Fin_CloseUp);
             this.dtpP3Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP3FecFin
@@ -1988,9 +1970,9 @@
             this.lblP3Hi.ForeColor = System.Drawing.Color.Navy;
             this.lblP3Hi.Location = new System.Drawing.Point(314, 24);
             this.lblP3Hi.Name = "lblP3Hi";
-            this.lblP3Hi.Size = new System.Drawing.Size(55, 19);
+            this.lblP3Hi.Size = new System.Drawing.Size(58, 19);
             this.lblP3Hi.TabIndex = 1;
-            this.lblP3Hi.Text = "H. Inico:";
+            this.lblP3Hi.Text = "H. Inicio:";
             this.lblP3Hi.UseCustomForeColor = true;
             // 
             // cboP3Hi
@@ -2015,8 +1997,6 @@
             this.dtpP3Ini.Name = "dtpP3Ini";
             this.dtpP3Ini.Size = new System.Drawing.Size(99, 23);
             this.dtpP3Ini.TabIndex = 86;
-            this.dtpP3Ini.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP3Ini.CloseUp += new System.EventHandler(this.dtpP3Ini_CloseUp);
             this.dtpP3Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP3FecIni
@@ -2047,11 +2027,11 @@
             this.grbP2.Controls.Add(this.dtpP2Fin);
             this.grbP2.Controls.Add(this.lblP2FecFin);
             this.grbP2.Controls.Add(this.cboP2Hf);
-            this.grbP2.Controls.Add(this.lblP2Hi);
             this.grbP2.Controls.Add(this.cboP2Hi);
             this.grbP2.Controls.Add(this.dtpP2Ini);
             this.grbP2.Controls.Add(this.lblP2FecIni);
             this.grbP2.Controls.Add(this.lblP2Hf);
+            this.grbP2.Controls.Add(this.lblP2Hi);
             this.grbP2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbP2.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbP2.ForeColor = System.Drawing.Color.Black;
@@ -2071,8 +2051,6 @@
             this.dtpP2Fin.Name = "dtpP2Fin";
             this.dtpP2Fin.Size = new System.Drawing.Size(99, 23);
             this.dtpP2Fin.TabIndex = 3;
-            this.dtpP2Fin.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP2Fin.CloseUp += new System.EventHandler(this.dtpP2Fin_CloseUp);
             this.dtpP2Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP2FecFin
@@ -2105,9 +2083,9 @@
             this.lblP2Hi.ForeColor = System.Drawing.Color.Navy;
             this.lblP2Hi.Location = new System.Drawing.Point(314, 24);
             this.lblP2Hi.Name = "lblP2Hi";
-            this.lblP2Hi.Size = new System.Drawing.Size(55, 19);
+            this.lblP2Hi.Size = new System.Drawing.Size(58, 19);
             this.lblP2Hi.TabIndex = 4;
-            this.lblP2Hi.Text = "H. Inico:";
+            this.lblP2Hi.Text = "H. Inicio:";
             this.lblP2Hi.UseCustomForeColor = true;
             // 
             // cboP2Hi
@@ -2132,8 +2110,6 @@
             this.dtpP2Ini.Name = "dtpP2Ini";
             this.dtpP2Ini.Size = new System.Drawing.Size(99, 23);
             this.dtpP2Ini.TabIndex = 1;
-            this.dtpP2Ini.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP2Ini.CloseUp += new System.EventHandler(this.dtpP2Ini_CloseUp);
             this.dtpP2Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP2FecIni
@@ -2164,11 +2140,11 @@
             this.grbP1.Controls.Add(this.dtpP1Fin);
             this.grbP1.Controls.Add(this.lblP1FecFin);
             this.grbP1.Controls.Add(this.cboP1Hf);
-            this.grbP1.Controls.Add(this.lblP1Hi);
             this.grbP1.Controls.Add(this.cboP1Hi);
             this.grbP1.Controls.Add(this.dtpP1Ini);
             this.grbP1.Controls.Add(this.lblP1FecIni);
             this.grbP1.Controls.Add(this.lblP1Hf);
+            this.grbP1.Controls.Add(this.lblP1Hi);
             this.grbP1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbP1.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbP1.ForeColor = System.Drawing.Color.Black;
@@ -2188,8 +2164,6 @@
             this.dtpP1Fin.Name = "dtpP1Fin";
             this.dtpP1Fin.Size = new System.Drawing.Size(99, 23);
             this.dtpP1Fin.TabIndex = 3;
-            this.dtpP1Fin.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP1Fin.CloseUp += new System.EventHandler(this.dtpP1Fin_CloseUp);
             this.dtpP1Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP1FecFin
@@ -2222,9 +2196,9 @@
             this.lblP1Hi.ForeColor = System.Drawing.Color.Navy;
             this.lblP1Hi.Location = new System.Drawing.Point(314, 24);
             this.lblP1Hi.Name = "lblP1Hi";
-            this.lblP1Hi.Size = new System.Drawing.Size(55, 19);
+            this.lblP1Hi.Size = new System.Drawing.Size(58, 19);
             this.lblP1Hi.TabIndex = 4;
-            this.lblP1Hi.Text = "H. Inico:";
+            this.lblP1Hi.Text = "H. Inicio:";
             this.lblP1Hi.UseCustomForeColor = true;
             // 
             // cboP1Hi
@@ -2249,8 +2223,6 @@
             this.dtpP1Ini.Name = "dtpP1Ini";
             this.dtpP1Ini.Size = new System.Drawing.Size(99, 23);
             this.dtpP1Ini.TabIndex = 1;
-            this.dtpP1Ini.FormatChanged += new System.EventHandler(this.CambioEnControl);
-            this.dtpP1Ini.CloseUp += new System.EventHandler(this.dtpP1Ini_CloseUp);
             this.dtpP1Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP1FecIni
@@ -2352,7 +2324,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(920, 700);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);

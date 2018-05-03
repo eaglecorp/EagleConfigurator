@@ -2,11 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ConfigUtilitarios
 {
+
     public class DateFormat
     {
+        public static string DateOnly = "dd/MM/yyyy";
+        public static string Blank = " ";
+
+        public static void SetFormat(DateTimePicker dtp, string format)
+        {
+            dtp.Format = DateTimePickerFormat.Custom;
+            dtp.CustomFormat = format;
+        }
+
+        public static void SetFormat(DateTimePicker[] dtps, string format)
+        {
+            foreach (var dtp in dtps)
+            {
+                dtp.Format = DateTimePickerFormat.Custom;
+                dtp.CustomFormat = format;
+            }
+        }
+
         public string DateFormatYYYYMMDD(DateTime Fecha)
         {
             string _result = string.Empty;

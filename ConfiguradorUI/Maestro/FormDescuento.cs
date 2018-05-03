@@ -1,6 +1,7 @@
 ﻿using ConfigBusinessEntity;
 using ConfigBusinessLogic.General;
 using ConfigBusinessLogic.Maestro;
+using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using ConfigUtilitarios.KeyValues;
@@ -38,7 +39,7 @@ namespace ConfiguradorUI.Maestro
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             var txts = new[] { txtNombre, txtCodigo,txtPorcentaje,txtMonto,
@@ -69,18 +70,18 @@ namespace ConfiguradorUI.Maestro
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
             }
 
-            var dtps = new[] {  dtpP1Ini, dtpP1Fin,
-                                dtpP2Ini, dtpP2Fin,
-                                dtpP3Ini, dtpP3Fin,
-                                dtpP4Ini, dtpP4Fin,
-                                dtpP5Ini, dtpP5Fin,
-                                dtpP6Ini, dtpP6Fin,
-                                dtpP7Ini, dtpP7Fin
-            };
+            var dtps = GetDtpPeriodos();
+
             foreach (var dtp in dtps)
             {
-                dtp.CloseUp += new EventHandler(OnContentChanged);
-                dtp.ValueChanged += new EventHandler(OnContentChanged);
+                dtp.CloseUp += dtpVer_CloseUp;
+                dtp.MouseDown += DtpVer_MouseDown;
+                dtp.KeyPress += DtpLimpiar_KeyPress;
+
+                dtp.ValueChanged += OnContentChanged;
+                dtp.CloseUp += OnContentChanged;
+                dtp.MouseDown += OnContentChanged;
+                dtp.KeyPress += OnContentChanged;
             }
 
             var chks = new[] { chkActivo, chkDomingo, chkLunes,
@@ -159,7 +160,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt02_descuento();
                         obj = GetObjeto();
@@ -232,7 +233,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt02_descuento();
                         obj = GetObjeto();
@@ -261,7 +262,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt02_descuento();
                         obj = GetObjeto();
@@ -325,88 +326,88 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (rbtPeriodo.Checked)
                     {
-                        obj.sn_descuen_periodo = 1;
-                        obj.sn_descuen_dia = 0;
+                        obj.sn_descuen_periodo = Estado.IdActivo;
+                        obj.sn_descuen_dia = Estado.IdInactivo;
 
-                        if (dtpP1Ini.Format == DateTimePickerFormat.Short || dtpP1Fin.Format == DateTimePickerFormat.Short)
+                        if (dtpP1Ini.CustomFormat == DateFormat.DateOnly || dtpP1Fin.CustomFormat == DateFormat.DateOnly)
                         {
-                            if (dtpP1Ini.Format == DateTimePickerFormat.Short)
-                                obj.p1_fecha_ini = dtpP1Ini.Value;
+                            if (dtpP1Ini.CustomFormat == DateFormat.DateOnly)
+                                obj.p1_fecha_ini = dtpP1Ini.Value.Date;
 
-                            if (dtpP1Fin.Format == DateTimePickerFormat.Short)
-                                obj.p1_fecha_fin = dtpP1Fin.Value;
+                            if (dtpP1Fin.CustomFormat == DateFormat.DateOnly)
+                                obj.p1_fecha_fin = dtpP1Fin.Value.Date;
 
                             obj.p1_hora_ini = TimeSpan.Parse(cboP1Hi.Text);
                             obj.p1_hora_fin = TimeSpan.Parse(cboP1Hf.Text);
                         }
 
-                        if (dtpP2Ini.Format == DateTimePickerFormat.Short || dtpP2Fin.Format == DateTimePickerFormat.Short)
+                        if (dtpP2Ini.CustomFormat == DateFormat.DateOnly || dtpP2Fin.CustomFormat == DateFormat.DateOnly)
                         {
-                            if (dtpP2Ini.Format == DateTimePickerFormat.Short)
-                                obj.p2_fecha_ini = dtpP2Ini.Value;
+                            if (dtpP2Ini.CustomFormat == DateFormat.DateOnly)
+                                obj.p2_fecha_ini = dtpP2Ini.Value.Date;
 
-                            if (dtpP2Fin.Format == DateTimePickerFormat.Short)
-                                obj.p2_fecha_fin = dtpP2Fin.Value;
+                            if (dtpP2Fin.CustomFormat == DateFormat.DateOnly)
+                                obj.p2_fecha_fin = dtpP2Fin.Value.Date;
 
                             obj.p2_hora_ini = TimeSpan.Parse(cboP2Hi.Text);
                             obj.p2_hora_fin = TimeSpan.Parse(cboP2Hf.Text);
                         }
 
-                        if (dtpP3Ini.Format == DateTimePickerFormat.Short || dtpP3Fin.Format == DateTimePickerFormat.Short)
+                        if (dtpP3Ini.CustomFormat == DateFormat.DateOnly || dtpP3Fin.CustomFormat == DateFormat.DateOnly)
                         {
-                            if (dtpP3Ini.Format == DateTimePickerFormat.Short)
-                                obj.p3_fecha_ini = dtpP3Ini.Value;
+                            if (dtpP3Ini.CustomFormat == DateFormat.DateOnly)
+                                obj.p3_fecha_ini = dtpP3Ini.Value.Date;
 
-                            if (dtpP3Fin.Format == DateTimePickerFormat.Short)
-                                obj.p3_fecha_fin = dtpP3Fin.Value;
+                            if (dtpP3Fin.CustomFormat == DateFormat.DateOnly)
+                                obj.p3_fecha_fin = dtpP3Fin.Value.Date;
 
                             obj.p3_hora_ini = TimeSpan.Parse(cboP3Hi.Text);
                             obj.p3_hora_fin = TimeSpan.Parse(cboP3Hf.Text);
                         }
 
-                        if (dtpP4Ini.Format == DateTimePickerFormat.Short || dtpP4Fin.Format == DateTimePickerFormat.Short)
+                        if (dtpP4Ini.CustomFormat == DateFormat.DateOnly || dtpP4Fin.CustomFormat == DateFormat.DateOnly)
                         {
-                            if (dtpP4Ini.Format == DateTimePickerFormat.Short)
-                                obj.p4_fecha_ini = dtpP4Ini.Value;
+                            if (dtpP4Ini.CustomFormat == DateFormat.DateOnly)
+                                obj.p4_fecha_ini = dtpP4Ini.Value.Date;
 
-                            if (dtpP4Fin.Format == DateTimePickerFormat.Short)
-                                obj.p4_fecha_fin = dtpP4Fin.Value;
+                            if (dtpP4Fin.CustomFormat == DateFormat.DateOnly)
+                                obj.p4_fecha_fin = dtpP4Fin.Value.Date;
 
                             obj.p4_hora_ini = TimeSpan.Parse(cboP4Hi.Text);
                             obj.p4_hora_fin = TimeSpan.Parse(cboP4Hf.Text);
                         }
 
-                        if (dtpP5Ini.Format == DateTimePickerFormat.Short || dtpP5Fin.Format == DateTimePickerFormat.Short)
+                        if (dtpP5Ini.CustomFormat == DateFormat.DateOnly || dtpP5Fin.CustomFormat == DateFormat.DateOnly)
                         {
-                            if (dtpP5Ini.Format == DateTimePickerFormat.Short)
-                                obj.p5_fecha_ini = dtpP5Ini.Value;
+                            if (dtpP5Ini.CustomFormat == DateFormat.DateOnly)
+                                obj.p5_fecha_ini = dtpP5Ini.Value.Date;
 
-                            if (dtpP5Fin.Format == DateTimePickerFormat.Short)
-                                obj.p5_fecha_fin = dtpP5Fin.Value;
+                            if (dtpP5Fin.CustomFormat == DateFormat.DateOnly)
+                                obj.p5_fecha_fin = dtpP5Fin.Value.Date;
 
                             obj.p5_hora_ini = TimeSpan.Parse(cboP5Hi.Text);
                             obj.p5_hora_fin = TimeSpan.Parse(cboP5Hf.Text);
                         }
 
-                        if (dtpP6Ini.Format == DateTimePickerFormat.Short || dtpP6Fin.Format == DateTimePickerFormat.Short)
+                        if (dtpP6Ini.CustomFormat == DateFormat.DateOnly || dtpP6Fin.CustomFormat == DateFormat.DateOnly)
                         {
-                            if (dtpP6Ini.Format == DateTimePickerFormat.Short)
-                                obj.p6_fecha_ini = dtpP6Ini.Value;
+                            if (dtpP6Ini.CustomFormat == DateFormat.DateOnly)
+                                obj.p6_fecha_ini = dtpP6Ini.Value.Date;
 
-                            if (dtpP6Fin.Format == DateTimePickerFormat.Short)
-                                obj.p6_fecha_fin = dtpP6Fin.Value;
+                            if (dtpP6Fin.CustomFormat == DateFormat.DateOnly)
+                                obj.p6_fecha_fin = dtpP6Fin.Value.Date;
 
                             obj.p6_hora_ini = TimeSpan.Parse(cboP6Hi.Text);
                             obj.p6_hora_fin = TimeSpan.Parse(cboP6Hf.Text);
                         }
 
-                        if (dtpP7Ini.Format == DateTimePickerFormat.Short || dtpP7Fin.Format == DateTimePickerFormat.Short)
+                        if (dtpP7Ini.CustomFormat == DateFormat.DateOnly || dtpP7Fin.CustomFormat == DateFormat.DateOnly)
                         {
-                            if (dtpP7Ini.Format == DateTimePickerFormat.Short)
-                                obj.p7_fecha_ini = dtpP7Ini.Value;
+                            if (dtpP7Ini.CustomFormat == DateFormat.DateOnly)
+                                obj.p7_fecha_ini = dtpP7Ini.Value.Date;
 
-                            if (dtpP7Fin.Format == DateTimePickerFormat.Short)
-                                obj.p7_fecha_fin = dtpP7Fin.Value;
+                            if (dtpP7Fin.CustomFormat == DateFormat.DateOnly)
+                                obj.p7_fecha_fin = dtpP7Fin.Value.Date;
 
                             obj.p7_hora_ini = TimeSpan.Parse(cboP7Hi.Text);
                             obj.p7_hora_fin = TimeSpan.Parse(cboP7Hf.Text);
@@ -414,64 +415,64 @@ namespace ConfiguradorUI.Maestro
                     }
                     else
                     {
-                        obj.sn_descuen_periodo = 0;
-                        obj.sn_descuen_dia = 1;
+                        obj.sn_descuen_periodo = Estado.IdInactivo;
+                        obj.sn_descuen_dia = Estado.IdActivo;
 
                         if (chkDomingo.Checked)
                         {
-                            obj.sn_domingo = 1;
+                            obj.sn_domingo = Estado.IdActivo;
                             obj.dom_hora_ini = TimeSpan.Parse(cboDomHi.Text);
                             obj.dom_hora_fin = TimeSpan.Parse(cboDomHf.Text);
                         }
-                        else obj.sn_domingo = 0;
+                        else obj.sn_domingo = Estado.IdInactivo;
 
                         if (chkLunes.Checked)
                         {
-                            obj.sn_lunes = 1;
+                            obj.sn_lunes = Estado.IdActivo;
                             obj.lun_hora_ini = TimeSpan.Parse(cboLunHi.Text);
                             obj.lun_hora_fin = TimeSpan.Parse(cboLunHf.Text);
                         }
-                        else obj.sn_lunes = 0;
+                        else obj.sn_lunes = Estado.IdInactivo;
 
                         if (chkMartes.Checked)
                         {
-                            obj.sn_martes = 1;
+                            obj.sn_martes = Estado.IdActivo;
                             obj.mar_hora_ini = TimeSpan.Parse(cboMarHi.Text);
                             obj.mar_hora_fin = TimeSpan.Parse(cboMarHf.Text);
                         }
-                        else obj.sn_martes = 0;
+                        else obj.sn_martes = Estado.IdInactivo;
 
                         if (chkMiercoles.Checked)
                         {
-                            obj.sn_miercoles = 1;
+                            obj.sn_miercoles = Estado.IdActivo;
                             obj.mie_hora_ini = TimeSpan.Parse(cboMieHi.Text);
                             obj.mie_hora_fin = TimeSpan.Parse(cboMieHf.Text);
                         }
-                        else obj.sn_miercoles = 0;
+                        else obj.sn_miercoles = Estado.IdInactivo;
 
                         if (chkJueves.Checked)
                         {
-                            obj.sn_jueves = 1;
+                            obj.sn_jueves = Estado.IdActivo;
                             obj.jue_hora_ini = TimeSpan.Parse(cboJueHi.Text);
                             obj.jue_hora_fin = TimeSpan.Parse(cboJueHf.Text);
                         }
-                        else obj.sn_jueves = 0;
+                        else obj.sn_jueves = Estado.IdInactivo;
 
                         if (chkViernes.Checked)
                         {
-                            obj.sn_viernes = 1;
+                            obj.sn_viernes = Estado.IdActivo;
                             obj.vie_hora_ini = TimeSpan.Parse(cboVieHi.Text);
                             obj.vie_hora_fin = TimeSpan.Parse(cboVieHf.Text);
                         }
-                        else obj.sn_viernes = 0;
+                        else obj.sn_viernes = Estado.IdInactivo;
 
                         if (chkSabado.Checked)
                         {
-                            obj.sn_sabado = 1;
+                            obj.sn_sabado = Estado.IdActivo;
                             obj.sab_hora_ini = TimeSpan.Parse(cboSabHi.Text);
                             obj.sab_hora_fin = TimeSpan.Parse(cboSabHf.Text);
                         }
-                        else obj.sn_sabado = 0;
+                        else obj.sn_sabado = Estado.IdInactivo;
                     }
 
                 }
@@ -483,6 +484,7 @@ namespace ConfiguradorUI.Maestro
 
             return obj;
         }
+
         private void SetObjeto(MSTt02_descuento obj)
         {
             try
@@ -509,24 +511,27 @@ namespace ConfiguradorUI.Maestro
                 rbtPorcentaje.Checked = obj.sn_dscto_porc == Estado.IdActivo;
                 rbtPorcentajeAbierto.Checked = obj.sn_dscto_porc_abierto == Estado.IdActivo;
 
-                if (obj.sn_descuen_dia == 1 || obj.sn_descuen_periodo == 1)
+                if (obj.sn_descuen_dia == Estado.IdActivo || obj.sn_descuen_periodo == Estado.IdActivo)
                 {
-                    if (obj.sn_descuen_periodo == 1)
+                    if (obj.sn_descuen_periodo == Estado.IdActivo)
                     {
                         rbtPeriodo.Checked = true;
 
                         if (obj.p1_fecha_ini != null || obj.p1_fecha_fin != null)
                         {
+                            
                             if (obj.p1_fecha_ini != null)
                             {
-                                dtpP1Ini_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP1Ini, DateFormat.DateOnly);
                                 dtpP1Ini.Value = (DateTime)obj.p1_fecha_ini;
                             }
                             if (obj.p1_fecha_fin != null)
                             {
-                                dtpP1Fin_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP1Fin, DateFormat.DateOnly);
                                 dtpP1Fin.Value = (DateTime)obj.p1_fecha_fin;
                             }
+                            cboP1Hi.Enabled = true;
+                            cboP1Hf.Enabled = true;
                             cboP1Hi.Text = obj.p1_hora_ini.ToString().Substring(0, 5);
                             cboP1Hf.Text = obj.p1_hora_fin.ToString().Substring(0, 5);
                         }
@@ -535,15 +540,17 @@ namespace ConfiguradorUI.Maestro
                         {
                             if (obj.p2_fecha_ini != null)
                             {
-                                dtpP2Ini_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP2Ini, DateFormat.DateOnly);
                                 dtpP2Ini.Value = (DateTime)obj.p2_fecha_ini;
                             }
                             if (obj.p2_fecha_fin != null)
                             {
-                                dtpP2Fin_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP2Fin, DateFormat.DateOnly);
                                 dtpP2Fin.Value = (DateTime)obj.p2_fecha_fin;
                             }
 
+                            cboP2Hi.Enabled = true;
+                            cboP2Hf.Enabled = true;
                             cboP2Hi.Text = obj.p2_hora_ini.ToString().Substring(0, 5);
                             cboP2Hf.Text = obj.p2_hora_fin.ToString().Substring(0, 5);
                         }
@@ -552,15 +559,17 @@ namespace ConfiguradorUI.Maestro
                         {
                             if (obj.p3_fecha_ini != null)
                             {
-                                dtpP3Ini_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP3Ini, DateFormat.DateOnly);
                                 dtpP3Ini.Value = (DateTime)obj.p3_fecha_ini;
                             }
                             if (obj.p3_fecha_fin != null)
                             {
-                                dtpP3Fin_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP3Fin, DateFormat.DateOnly);
                                 dtpP3Fin.Value = (DateTime)obj.p3_fecha_fin;
                             }
 
+                            cboP3Hi.Enabled = true;
+                            cboP3Hf.Enabled = true;
                             cboP3Hi.Text = obj.p3_hora_ini.ToString().Substring(0, 5);
                             cboP3Hf.Text = obj.p3_hora_fin.ToString().Substring(0, 5);
                         }
@@ -569,15 +578,17 @@ namespace ConfiguradorUI.Maestro
                         {
                             if (obj.p4_fecha_ini != null)
                             {
-                                dtpP4Ini_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP4Ini, DateFormat.DateOnly);
                                 dtpP4Ini.Value = (DateTime)obj.p4_fecha_ini;
                             }
                             if (obj.p4_fecha_fin != null)
                             {
-                                dtpP4Fin_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP4Fin, DateFormat.DateOnly);
                                 dtpP4Fin.Value = (DateTime)obj.p4_fecha_fin;
                             }
 
+                            cboP4Hi.Enabled = true;
+                            cboP4Hf.Enabled = true;
                             cboP4Hi.Text = obj.p4_hora_ini.ToString().Substring(0, 5);
                             cboP4Hf.Text = obj.p4_hora_fin.ToString().Substring(0, 5);
                         }
@@ -586,15 +597,17 @@ namespace ConfiguradorUI.Maestro
                         {
                             if (obj.p5_fecha_ini != null)
                             {
-                                dtpP5Ini_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP5Ini, DateFormat.DateOnly);
                                 dtpP5Ini.Value = (DateTime)obj.p5_fecha_ini;
                             }
                             if (obj.p5_fecha_fin != null)
                             {
-                                dtpP5Fin_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP5Fin, DateFormat.DateOnly);
                                 dtpP5Fin.Value = (DateTime)obj.p5_fecha_fin;
                             }
 
+                            cboP5Hi.Enabled = true;
+                            cboP5Hf.Enabled = true;
                             cboP5Hi.Text = obj.p5_hora_ini.ToString().Substring(0, 5);
                             cboP5Hf.Text = obj.p5_hora_fin.ToString().Substring(0, 5);
                         }
@@ -603,15 +616,17 @@ namespace ConfiguradorUI.Maestro
                         {
                             if (obj.p6_fecha_ini != null)
                             {
-                                dtpP6Ini_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP6Ini, DateFormat.DateOnly);
                                 dtpP6Ini.Value = (DateTime)obj.p6_fecha_ini;
                             }
                             if (obj.p6_fecha_fin != null)
                             {
-                                dtpP6Fin_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP6Fin, DateFormat.DateOnly);
                                 dtpP6Fin.Value = (DateTime)obj.p6_fecha_fin;
                             }
 
+                            cboP6Hi.Enabled = true;
+                            cboP6Hf.Enabled = true;
                             cboP6Hi.Text = obj.p6_hora_ini.ToString().Substring(0, 5);
                             cboP6Hf.Text = obj.p6_hora_fin.ToString().Substring(0, 5);
                         }
@@ -620,15 +635,17 @@ namespace ConfiguradorUI.Maestro
                         {
                             if (obj.p7_fecha_ini != null)
                             {
-                                dtpP7Ini_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP7Ini, DateFormat.DateOnly);
                                 dtpP7Ini.Value = (DateTime)obj.p7_fecha_ini;
                             }
                             if (obj.p7_fecha_fin != null)
                             {
-                                dtpP7Fin_CloseUp(null, EventArgs.Empty);
+                                DateFormat.SetFormat(dtpP7Fin, DateFormat.DateOnly);
                                 dtpP7Fin.Value = (DateTime)obj.p7_fecha_fin;
                             }
 
+                            cboP7Hi.Enabled = true;
+                            cboP7Hf.Enabled = true;
                             cboP7Hi.Text = obj.p7_hora_ini.ToString().Substring(0, 5);
                             cboP7Hf.Text = obj.p7_hora_fin.ToString().Substring(0, 5);
                         }
@@ -637,49 +654,49 @@ namespace ConfiguradorUI.Maestro
                     {
                         rbtDia.Checked = true;
 
-                        if (obj.sn_domingo == 1)
+                        if (obj.sn_domingo == Estado.IdActivo)
                         {
                             chkDomingo.Checked = true;
                             cboDomHi.Text = obj.dom_hora_ini.ToString().Substring(0, 5);
                             cboDomHf.Text = obj.dom_hora_fin.ToString().Substring(0, 5);
                         }
 
-                        if (obj.sn_lunes == 1)
+                        if (obj.sn_lunes == Estado.IdActivo)
                         {
                             chkLunes.Checked = true;
                             cboLunHi.Text = obj.lun_hora_ini.ToString().Substring(0, 5);
                             cboLunHf.Text = obj.lun_hora_fin.ToString().Substring(0, 5);
                         }
 
-                        if (obj.sn_martes == 1)
+                        if (obj.sn_martes == Estado.IdActivo)
                         {
                             chkMartes.Checked = true;
                             cboMarHi.Text = obj.mar_hora_ini.ToString().Substring(0, 5);
                             cboMarHf.Text = obj.mar_hora_fin.ToString().Substring(0, 5);
                         }
 
-                        if (obj.sn_miercoles == 1)
+                        if (obj.sn_miercoles == Estado.IdActivo)
                         {
                             chkMiercoles.Checked = true;
                             cboMieHi.Text = obj.mie_hora_ini.ToString().Substring(0, 5);
                             cboMieHf.Text = obj.mie_hora_fin.ToString().Substring(0, 5);
                         }
 
-                        if (obj.sn_jueves == 1)
+                        if (obj.sn_jueves == Estado.IdActivo)
                         {
                             chkJueves.Checked = true;
                             cboJueHi.Text = obj.jue_hora_ini.ToString().Substring(0, 5);
                             cboJueHf.Text = obj.jue_hora_fin.ToString().Substring(0, 5);
                         }
 
-                        if (obj.sn_viernes == 1)
+                        if (obj.sn_viernes == Estado.IdActivo)
                         {
                             chkViernes.Checked = true;
                             cboVieHi.Text = obj.vie_hora_ini.ToString().Substring(0, 5);
                             cboVieHf.Text = obj.vie_hora_fin.ToString().Substring(0, 5);
                         }
 
-                        if (obj.sn_sabado == 1)
+                        if (obj.sn_sabado == Estado.IdActivo)
                         {
                             chkSabado.Checked = true;
                             cboSabHi.Text = obj.sab_hora_ini.ToString().Substring(0, 5);
@@ -695,7 +712,18 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        private bool esValido()
+        DateTimePicker[] GetDtpPeriodos()
+        {
+            return new[] {  dtpP1Ini, dtpP1Fin,
+                                dtpP2Ini, dtpP2Fin,
+                                dtpP3Ini, dtpP3Fin,
+                                dtpP4Ini, dtpP4Fin,
+                                dtpP5Ini, dtpP5Fin,
+                                dtpP6Ini, dtpP6Fin,
+                                dtpP7Ini, dtpP7Fin };
+        }
+
+        private bool EsValido()
         {
             //Por ver - validar combos.
             bool no_error = true;
@@ -876,91 +904,111 @@ namespace ConfiguradorUI.Maestro
             //validando rango de fechas
             if (no_error)
             {
-                if (dtpP1Ini.Format == DateTimePickerFormat.Short && dtpP1Fin.Format == DateTimePickerFormat.Short)
-                {
-                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP1Ini.Value, dtpP1Fin.Value)))
-                    {
-                        tabDescuento.SelectedTab = tabPagPeriodoDia;
+                var dtps = GetDtpPeriodos();
 
-                        errorProv.SetError(dtpP1Ini, "La fecha inicio tiene que ser inferior a la fecha fin.");
-                        errorProv.SetError(dtpP1Fin, "La fecha fin tiene que ser superior a la fecha inicio.");
-                        dtpP1Ini.Focus();
-                        no_error = false;
-                    }
-                }
-                if (dtpP2Ini.Format == DateTimePickerFormat.Short && dtpP2Fin.Format == DateTimePickerFormat.Short)
-                {
-                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP2Ini.Value, dtpP2Fin.Value)))
-                    {
-                        tabDescuento.SelectedTab = tabPagPeriodoDia;
+                var hoy = UtilBL.GetCurrentDateTime.Date;
 
-                        errorProv.SetError(dtpP2Ini, "La fecha inicio tiene que ser inferior a la fecha fin.");
-                        errorProv.SetError(dtpP2Fin, "La fecha fin tiene que ser superior a la fecha inicio.");
-                        dtpP2Ini.Focus();
+                foreach (var dtp in dtps)
+                {
+                    if (dtp.CustomFormat == DateFormat.DateOnly && dtp.Value.Date < hoy)
+                    {
+                        tabDescuento.SelectedTab = tabPagPeriodoDia;
+                        errorProv.SetError(dtp, $"La fecha tiene que ser mayor o igual a fecha actual ({hoy.ToString(DateFormat.DateOnly)}).");
+                        dtp.Focus();
                         no_error = false;
                     }
                 }
-                if (dtpP3Ini.Format == DateTimePickerFormat.Short && dtpP3Fin.Format == DateTimePickerFormat.Short)
-                {
-                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP3Ini.Value, dtpP3Fin.Value)))
-                    {
-                        tabDescuento.SelectedTab = tabPagPeriodoDia;
 
-                        errorProv.SetError(dtpP3Ini, "La fecha inicio tiene que ser inferior a la fecha fin.");
-                        errorProv.SetError(dtpP3Fin, "La fecha fin tiene que ser superior a la fecha inicio.");
-                        dtpP3Ini.Focus();
-                        no_error = false;
-                    }
-                }
-                if (dtpP4Ini.Format == DateTimePickerFormat.Short && dtpP4Fin.Format == DateTimePickerFormat.Short)
+                if (no_error)
                 {
-                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP4Ini.Value, dtpP4Fin.Value)))
-                    {
-                        tabDescuento.SelectedTab = tabPagPeriodoDia;
 
-                        errorProv.SetError(dtpP4Ini, "La fecha inicio tiene que ser inferior a la fecha inicio.");
-                        errorProv.SetError(dtpP4Fin, "La fecha fin tiene que ser superior a la fecha fin.");
-                        dtpP4Ini.Focus();
-                        no_error = false;
-                    }
-                }
-                if (dtpP5Ini.Format == DateTimePickerFormat.Short && dtpP5Fin.Format == DateTimePickerFormat.Short)
-                {
-                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP5Ini.Value, dtpP5Fin.Value)))
+                    if (dtpP1Ini.CustomFormat == DateFormat.DateOnly && dtpP1Fin.CustomFormat == DateFormat.DateOnly)
                     {
-                        tabDescuento.SelectedTab = tabPagPeriodoDia;
+                        if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP1Ini.Value, dtpP1Fin.Value)))
+                        {
+                            tabDescuento.SelectedTab = tabPagPeriodoDia;
+                            errorProv.SetError(dtpP1Ini, "La fecha inicio tiene que ser inferior a la fecha fin.");
+                            errorProv.SetError(dtpP1Fin, "La fecha fin tiene que ser superior a la fecha inicio.");
+                            dtpP1Ini.Focus();
+                            no_error = false;
+                        }
+                    }
+                    if (dtpP2Ini.CustomFormat == DateFormat.DateOnly && dtpP2Fin.CustomFormat == DateFormat.DateOnly)
+                    {
+                        if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP2Ini.Value, dtpP2Fin.Value)))
+                        {
+                            tabDescuento.SelectedTab = tabPagPeriodoDia;
 
-                        errorProv.SetError(dtpP5Ini, "La fecha inicio tiene que ser inferior a la fecha inicio.");
-                        errorProv.SetError(dtpP5Fin, "La fecha fin tiene que ser superior a la fecha fin.");
-                        dtpP5Ini.Focus();
-                        no_error = false;
+                            errorProv.SetError(dtpP2Ini, "La fecha inicio tiene que ser inferior a la fecha fin.");
+                            errorProv.SetError(dtpP2Fin, "La fecha fin tiene que ser superior a la fecha inicio.");
+                            dtpP2Ini.Focus();
+                            no_error = false;
+                        }
                     }
-                }
-                if (dtpP6Ini.Format == DateTimePickerFormat.Short && dtpP6Fin.Format == DateTimePickerFormat.Short)
-                {
-                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP6Ini.Value, dtpP6Fin.Value)))
+                    if (dtpP3Ini.CustomFormat == DateFormat.DateOnly && dtpP3Fin.CustomFormat == DateFormat.DateOnly)
                     {
-                        tabDescuento.SelectedTab = tabPagPeriodoDia;
-                        errorProv.SetError(dtpP6Ini, "La fecha inicio tiene que ser inferior a la fecha inicio.");
-                        errorProv.SetError(dtpP6Fin, "La fecha fin tiene que ser superior a la fecha fin.");
-                        dtpP6Ini.Focus();
-                        no_error = false;
-                    }
-                }
-                if (dtpP7Ini.Format == DateTimePickerFormat.Short && dtpP7Fin.Format == DateTimePickerFormat.Short)
-                {
-                    if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP7Ini.Value, dtpP7Fin.Value)))
-                    {
-                        tabDescuento.SelectedTab = tabPagPeriodoDia;
+                        if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP3Ini.Value, dtpP3Fin.Value)))
+                        {
+                            tabDescuento.SelectedTab = tabPagPeriodoDia;
 
-                        errorProv.SetError(dtpP7Ini, "La fecha inicio tiene que ser inferior a la fecha inicio.");
-                        errorProv.SetError(dtpP7Fin, "La fecha fin tiene que ser superior a la fecha fin.");
-                        dtpP7Ini.Focus();
-                        no_error = false;
+                            errorProv.SetError(dtpP3Ini, "La fecha inicio tiene que ser inferior a la fecha fin.");
+                            errorProv.SetError(dtpP3Fin, "La fecha fin tiene que ser superior a la fecha inicio.");
+                            dtpP3Ini.Focus();
+                            no_error = false;
+                        }
                     }
+                    if (dtpP4Ini.CustomFormat == DateFormat.DateOnly && dtpP4Fin.CustomFormat == DateFormat.DateOnly)
+                    {
+                        if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP4Ini.Value, dtpP4Fin.Value)))
+                        {
+                            tabDescuento.SelectedTab = tabPagPeriodoDia;
+
+                            errorProv.SetError(dtpP4Ini, "La fecha inicio tiene que ser inferior a la fecha inicio.");
+                            errorProv.SetError(dtpP4Fin, "La fecha fin tiene que ser superior a la fecha fin.");
+                            dtpP4Ini.Focus();
+                            no_error = false;
+                        }
+                    }
+                    if (dtpP5Ini.CustomFormat == DateFormat.DateOnly && dtpP5Fin.CustomFormat == DateFormat.DateOnly)
+                    {
+                        if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP5Ini.Value, dtpP5Fin.Value)))
+                        {
+                            tabDescuento.SelectedTab = tabPagPeriodoDia;
+
+                            errorProv.SetError(dtpP5Ini, "La fecha inicio tiene que ser inferior a la fecha inicio.");
+                            errorProv.SetError(dtpP5Fin, "La fecha fin tiene que ser superior a la fecha fin.");
+                            dtpP5Ini.Focus();
+                            no_error = false;
+                        }
+                    }
+                    if (dtpP6Ini.CustomFormat == DateFormat.DateOnly && dtpP6Fin.CustomFormat == DateFormat.DateOnly)
+                    {
+                        if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP6Ini.Value, dtpP6Fin.Value)))
+                        {
+                            tabDescuento.SelectedTab = tabPagPeriodoDia;
+                            errorProv.SetError(dtpP6Ini, "La fecha inicio tiene que ser inferior a la fecha inicio.");
+                            errorProv.SetError(dtpP6Fin, "La fecha fin tiene que ser superior a la fecha fin.");
+                            dtpP6Ini.Focus();
+                            no_error = false;
+                        }
+                    }
+                    if (dtpP7Ini.CustomFormat == DateFormat.DateOnly && dtpP7Fin.CustomFormat == DateFormat.DateOnly)
+                    {
+                        if (!(new DateFormat().Validar_FechaIni_FechaFin(dtpP7Ini.Value, dtpP7Fin.Value)))
+                        {
+                            tabDescuento.SelectedTab = tabPagPeriodoDia;
+
+                            errorProv.SetError(dtpP7Ini, "La fecha inicio tiene que ser inferior a la fecha inicio.");
+                            errorProv.SetError(dtpP7Fin, "La fecha fin tiene que ser superior a la fecha fin.");
+                            dtpP7Ini.Focus();
+                            no_error = false;
+                        }
+                    }
+                    if (no_error == false)
+                        MessageBox.Show("La fecha inicial tiene que ser anterior y/o inferior a la fecha final.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                 }
-                if (no_error == false)
-                    MessageBox.Show("La fecha inicial tiene que ser anterior y/o inferior a la fecha final.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             }
 
 
@@ -1128,62 +1176,39 @@ namespace ConfiguradorUI.Maestro
 
             chkActivo.Checked = true;
 
-            dtpP1Ini.Value = DateTime.Now;
-            dtpP1Ini.Format = DateTimePickerFormat.Custom;
-            dtpP1Ini.CustomFormat = " ";
+            var hoy = UtilBL.GetCurrentDateTime.Date;
 
-            dtpP1Fin.Value = DateTime.Now;
-            dtpP1Fin.Format = DateTimePickerFormat.Custom;
-            dtpP1Fin.CustomFormat = " ";
+            DateFormat.SetFormat(new DateTimePicker[] {
+                dtpP1Ini,
+                dtpP1Fin,
+                dtpP2Ini,
+                dtpP2Fin,
+                dtpP3Ini,
+                dtpP3Fin,
+                dtpP4Ini,
+                dtpP4Fin,
+                dtpP5Ini,
+                dtpP5Fin,
+                dtpP6Ini,
+                dtpP6Fin,
+                dtpP7Ini,
+                dtpP7Fin
+            }, DateFormat.Blank);
 
-            dtpP2Ini.Value = DateTime.Now;
-            dtpP2Ini.Format = DateTimePickerFormat.Custom;
-            dtpP2Ini.CustomFormat = " ";
-
-            dtpP2Fin.Value = DateTime.Now;
-            dtpP2Fin.Format = DateTimePickerFormat.Custom;
-            dtpP2Fin.CustomFormat = " ";
-
-            dtpP3Ini.Value = DateTime.Now;
-            dtpP3Ini.Format = DateTimePickerFormat.Custom;
-            dtpP3Ini.CustomFormat = " ";
-
-            dtpP3Fin.Value = DateTime.Now;
-            dtpP3Fin.Format = DateTimePickerFormat.Custom;
-            dtpP3Fin.CustomFormat = " ";
-
-            dtpP4Ini.Value = DateTime.Now;
-            dtpP4Ini.Format = DateTimePickerFormat.Custom;
-            dtpP4Ini.CustomFormat = " ";
-
-            dtpP4Fin.Value = DateTime.Now;
-            dtpP4Fin.Format = DateTimePickerFormat.Custom;
-            dtpP4Fin.CustomFormat = " ";
-
-            dtpP5Ini.Value = DateTime.Now;
-            dtpP5Ini.Format = DateTimePickerFormat.Custom;
-            dtpP5Ini.CustomFormat = " ";
-
-            dtpP5Fin.Value = DateTime.Now;
-            dtpP5Fin.Format = DateTimePickerFormat.Custom;
-            dtpP5Fin.CustomFormat = " ";
-
-            dtpP6Ini.Value = DateTime.Now;
-            dtpP6Ini.Format = DateTimePickerFormat.Custom;
-            dtpP6Ini.CustomFormat = " ";
-
-            dtpP6Fin.Value = DateTime.Now;
-            dtpP6Fin.Format = DateTimePickerFormat.Custom;
-            dtpP6Fin.CustomFormat = " ";
-
-            dtpP7Ini.Value = DateTime.Now;
-            dtpP7Ini.Format = DateTimePickerFormat.Custom;
-            dtpP7Ini.CustomFormat = " ";
-
-            dtpP7Fin.Value = DateTime.Now;
-            dtpP7Fin.Format = DateTimePickerFormat.Custom;
-            dtpP7Fin.CustomFormat = " ";
-
+            dtpP1Ini.Value = hoy;
+            dtpP1Fin.Value = hoy;
+            dtpP2Ini.Value = hoy;
+            dtpP2Fin.Value = hoy;
+            dtpP3Ini.Value = hoy;
+            dtpP3Fin.Value = hoy;
+            dtpP4Ini.Value = hoy;
+            dtpP4Fin.Value = hoy;
+            dtpP5Ini.Value = hoy;
+            dtpP5Fin.Value = hoy;
+            dtpP6Ini.Value = hoy;
+            dtpP6Fin.Value = hoy;
+            dtpP7Ini.Value = hoy;
+            dtpP7Fin.Value = hoy;
 
             if (cboP1Hi.Items.Count > 0)
                 cboP1Hi.SelectedIndex = 0;
@@ -1663,7 +1688,7 @@ namespace ConfiguradorUI.Maestro
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }
@@ -1673,7 +1698,7 @@ namespace ConfiguradorUI.Maestro
             if (rbtPeriodo.Checked)
             { panelPeriodo.Visible = true; panelDia.Visible = false; }
             else if (rbtDia.Checked)
-            { panelDia.Visible = true; panelPeriodo.Visible = false;}
+            { panelDia.Visible = true; panelPeriodo.Visible = false; }
 
         }
 
@@ -2034,176 +2059,116 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
+        private void ToggleHoraInicioFin(DateTimePicker dtp, bool enabled)
+        {
+            var name = dtp.Name;
+            var cboHi = new ComboBox();
+            var cboHf = new ComboBox();
+            var dtpIni = new DateTimePicker();
+            var dtpFin = new DateTimePicker();
+
+            if (dtpP1Ini.Name == name || dtpP1Fin.Name == name)
+            {
+                cboHi = cboP1Hi;
+                cboHf = cboP1Hf;
+                dtpIni = dtpP1Ini;
+                dtpFin = dtpP1Fin;
+            }
+            else if (dtpP2Ini.Name == name || dtpP2Fin.Name == name)
+            {
+                cboHi = cboP2Hi;
+                cboHf = cboP2Hf;
+                dtpIni = dtpP2Ini;
+                dtpFin = dtpP2Fin;
+            }
+            else if (dtpP3Ini.Name == name || dtpP3Fin.Name == name)
+            {
+                cboHi = cboP3Hi;
+                cboHf = cboP3Hf;
+                dtpIni = dtpP3Ini;
+                dtpFin = dtpP3Fin;
+            }
+            else if (dtpP4Ini.Name == name || dtpP4Fin.Name == name)
+            {
+                cboHi = cboP4Hi;
+                cboHf = cboP4Hf;
+                dtpIni = dtpP4Ini;
+                dtpFin = dtpP4Fin;
+            }
+            else if (dtpP5Ini.Name == name || dtpP5Fin.Name == name)
+            {
+                cboHi = cboP5Hi;
+                cboHf = cboP5Hf;
+                dtpIni = dtpP5Ini;
+                dtpFin = dtpP5Fin;
+            }
+            else if (dtpP6Ini.Name == name || dtpP6Fin.Name == name)
+            {
+                cboHi = cboP6Hi;
+                cboHf = cboP6Hf;
+                dtpIni = dtpP6Ini;
+                dtpFin = dtpP6Fin;
+            }
+            else if (dtpP7Ini.Name == name || dtpP7Fin.Name == name)
+            {
+                cboHi = cboP7Hi;
+                cboHf = cboP7Hf;
+                dtpIni = dtpP7Ini;
+                dtpFin = dtpP7Fin;
+            }
+
+            if (enabled)
+            {
+                cboHi.Enabled = enabled;
+                cboHf.Enabled = enabled;
+            }
+            else if(dtpIni.CustomFormat != DateFormat.DateOnly && dtpFin.CustomFormat != DateFormat.DateOnly)
+            {
+                cboHi.Enabled = false;
+                cboHf.Enabled = false;
+
+                if (cboHi.Items.Count > 0)
+                    cboHi.SelectedIndex = 0;
+                if (cboHf.Items.Count > 0)
+                    cboHf.SelectedIndex = 0;
+            }
+        }
+
         #region Close Up
 
-        private void dtpP1Ini_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP1Ini.Format != DateTimePickerFormat.Short)
-            {
-                dtpP1Ini.CustomFormat = null;
-                dtpP1Ini.Format = DateTimePickerFormat.Short;
 
-                cboP1Hi.Enabled = true;
-                cboP1Hf.Enabled = true;
+        private void DtpLimpiar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var dtp = ((DateTimePicker)sender);
+            if (e.KeyChar == (char)Keys.Escape && dtp.CustomFormat != DateFormat.Blank)
+            {
+                DateFormat.SetFormat(dtp, DateFormat.Blank);
+                ToggleHoraInicioFin(dtp, false);
+                isChangedRow = false;
             }
         }
 
-        private void dtpP1Fin_CloseUp(object sender, EventArgs e)
+        private void DtpVer_MouseDown(object sender, MouseEventArgs e)
         {
-            if (dtpP1Fin.Format != DateTimePickerFormat.Short)
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != DateFormat.DateOnly)
             {
-                dtpP1Fin.CustomFormat = null;
-                dtpP1Fin.Format = DateTimePickerFormat.Short;
-
-                cboP1Hi.Enabled = true;
-                cboP1Hf.Enabled = true;
+                DateFormat.SetFormat(dtp, DateFormat.DateOnly);
+                ToggleHoraInicioFin(dtp, true);
+                isChangedRow = false;
             }
         }
 
-        private void dtpP2Ini_CloseUp(object sender, EventArgs e)
+        private void dtpVer_CloseUp(object sender, EventArgs e)
         {
-            if (dtpP2Ini.Format != DateTimePickerFormat.Short)
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != DateFormat.DateOnly)
             {
-                dtpP2Ini.CustomFormat = null;
-                dtpP2Ini.Format = DateTimePickerFormat.Short;
-
-                cboP2Hi.Enabled = true;
-                cboP2Hf.Enabled = true;
+                DateFormat.SetFormat(dtp, DateFormat.DateOnly);
+                ToggleHoraInicioFin(dtp, true);
+                isChangedRow = false;
             }
         }
-
-        private void dtpP2Fin_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP2Fin.Format != DateTimePickerFormat.Short)
-            {
-                dtpP2Fin.CustomFormat = null;
-                dtpP2Fin.Format = DateTimePickerFormat.Short;
-
-                cboP2Hi.Enabled = true;
-                cboP2Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP3Ini_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP3Ini.Format != DateTimePickerFormat.Short)
-            {
-                dtpP3Ini.CustomFormat = null;
-                dtpP3Ini.Format = DateTimePickerFormat.Short;
-
-                cboP3Hi.Enabled = true;
-                cboP3Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP3Fin_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP3Fin.Format != DateTimePickerFormat.Short)
-            {
-                dtpP3Fin.CustomFormat = null;
-                dtpP3Fin.Format = DateTimePickerFormat.Short;
-
-                cboP3Hi.Enabled = true;
-                cboP3Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP4Ini_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP4Ini.Format != DateTimePickerFormat.Short)
-            {
-                dtpP4Ini.CustomFormat = null;
-                dtpP4Ini.Format = DateTimePickerFormat.Short;
-
-                cboP4Hi.Enabled = true;
-                cboP4Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP4Fin_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP4Fin.Format != DateTimePickerFormat.Short)
-            {
-                dtpP4Fin.CustomFormat = null;
-                dtpP4Fin.Format = DateTimePickerFormat.Short;
-
-                cboP4Hi.Enabled = true;
-                cboP4Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP5Ini_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP5Ini.Format != DateTimePickerFormat.Short)
-            {
-                dtpP5Ini.CustomFormat = null;
-                dtpP5Ini.Format = DateTimePickerFormat.Short;
-
-                cboP5Hi.Enabled = true;
-                cboP5Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP5Fin_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP5Fin.Format != DateTimePickerFormat.Short)
-            {
-                dtpP5Fin.CustomFormat = null;
-                dtpP5Fin.Format = DateTimePickerFormat.Short;
-
-                cboP5Hi.Enabled = true;
-                cboP5Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP6Ini_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP6Ini.Format != DateTimePickerFormat.Short)
-            {
-                dtpP6Ini.CustomFormat = null;
-                dtpP6Ini.Format = DateTimePickerFormat.Short;
-
-                cboP6Hi.Enabled = true;
-                cboP6Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP6Fin_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP6Fin.Format != DateTimePickerFormat.Short)
-            {
-                dtpP6Fin.CustomFormat = null;
-                dtpP6Fin.Format = DateTimePickerFormat.Short;
-
-                cboP6Hi.Enabled = true;
-                cboP6Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP7Ini_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP7Ini.Format != DateTimePickerFormat.Short)
-            {
-                dtpP7Ini.CustomFormat = null;
-                dtpP7Ini.Format = DateTimePickerFormat.Short;
-
-                cboP7Hi.Enabled = true;
-                cboP7Hf.Enabled = true;
-            }
-        }
-
-        private void dtpP7Fin_CloseUp(object sender, EventArgs e)
-        {
-            if (dtpP7Fin.Format != DateTimePickerFormat.Short)
-            {
-                dtpP7Fin.CustomFormat = null;
-                dtpP7Fin.Format = DateTimePickerFormat.Short;
-
-                cboP7Hi.Enabled = true;
-                cboP7Hf.Enabled = true;
-            }
-        }
-
 
         #endregion
 

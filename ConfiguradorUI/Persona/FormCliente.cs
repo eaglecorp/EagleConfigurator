@@ -2,9 +2,11 @@
 using ConfigBusinessLogic.Maestro;
 using ConfigBusinessLogic.Persona;
 using ConfigBusinessLogic.Sunat;
+using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperGeneric;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -38,7 +40,7 @@ namespace ConfiguradorUI.Persona
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             var txts = new[] { txtApPaterno, txtApMaterno,txtPrimerNom,txtSegundoNom,
@@ -76,21 +78,16 @@ namespace ConfiguradorUI.Persona
                 rbt.CheckedChanged += new EventHandler(OnContentChanged);
             }
 
-            //cambio en datetimepicker
-            var dtps = new[] { dtpFechaNacimiento };
-            foreach (var dtp in dtps)
-            {
-                dtp.ValueChanged += new EventHandler(OnContentChanged);
-                dtp.CloseUp += new EventHandler(OnContentChanged);
-            }
+            dtpFechaNacimiento.CloseUp += dtpVer_CloseUp;
+            dtpFechaNacimiento.MouseDown += DtpVer_MouseDown;
+            dtpFechaNacimiento.KeyPress += DtpLimpiar_KeyPress;
 
-            //cambio en chek's
-            var chks = new[] { chkActivo };
+            dtpFechaNacimiento.ValueChanged += new EventHandler(OnContentChanged);
+            dtpFechaNacimiento.CloseUp += new EventHandler(OnContentChanged);
+            dtpFechaNacimiento.MouseDown += OnContentChanged;
+            dtpFechaNacimiento.KeyPress += OnContentChanged;
 
-            foreach (var chk in chks)
-            {
-                chk.CheckedChanged += new EventHandler(OnContentChanged);
-            }
+            chkActivo.CheckedChanged += new EventHandler(OnContentChanged);
 
             cboTipoDocIdentidad.DropDownWidth = ControlHelper.DropDownWidth(cboTipoDocIdentidad);
             cboNacionalidad.DropDownWidth = ControlHelper.DropDownWidth(cboNacionalidad);
@@ -124,7 +121,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt02_cliente();
                         obj = GetObjeto();
@@ -197,7 +194,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
 
                         var obj = new PERt02_cliente();
@@ -227,7 +224,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt02_cliente();
                         obj = GetObjeto();
@@ -257,9 +254,9 @@ namespace ConfiguradorUI.Persona
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
-                if (dtpFechaNacimiento.Format == DateTimePickerFormat.Short)
+                if (dtpFechaNacimiento.CustomFormat == DateFormat.DateOnly)
                 {
-                    obj.fec_nac = dtpFechaNacimiento.Value;
+                    obj.fec_nac = dtpFechaNacimiento.Value.Date;
                 }
 
                 obj.cod_cliente = txtCodigo.Text.Trim();
@@ -351,9 +348,8 @@ namespace ConfiguradorUI.Persona
 
                 if (obj.fec_nac != null)
                 {
-                    dtpFechaNacimiento_CloseUp(null, EventArgs.Empty);
+                    DateFormat.SetFormat(dtpFechaNacimiento, DateFormat.DateOnly);
                     dtpFechaNacimiento.Value = (DateTime)obj.fec_nac;
-
                 }
                 txtCodigo.Text = obj.cod_cliente;
                 txtNumDoc.Text = obj.nro_doc;
@@ -443,7 +439,7 @@ namespace ConfiguradorUI.Persona
 
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             bool no_error = true;
@@ -463,6 +459,26 @@ namespace ConfiguradorUI.Persona
                 }
             }
 
+
+            #region Fecha
+
+            if (no_error)
+            {
+                if (dtpFechaNacimiento.CustomFormat == DateFormat.DateOnly)
+                {
+                    var hoy = UtilBL.GetCurrentDateTime.Date;
+                    var edad = Human.CalcularEdad(dtpFechaNacimiento.Value, hoy);
+
+                    if (edad < KeyHuman.EdadMinimaParaRegistro)
+                    {
+                        tabCliente.SelectedTab = tabPagGeneral;
+                        errorProv.SetError(dtpFechaNacimiento, $"La edad mínima de registro es {KeyHuman.EdadMinimaParaRegistro} años.");
+                        dtpFechaNacimiento.Focus();
+                        no_error = false;
+                    }
+                }
+            }
+            #endregion
 
             #region código único
 
@@ -665,10 +681,9 @@ namespace ConfiguradorUI.Persona
 
             lblIdCliente.Text = 0 + "";
             codSelected = "";
-
-            dtpFechaNacimiento.Value = DateTime.Now;
-            dtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
-            dtpFechaNacimiento.CustomFormat = " ";
+            var hoy = UtilBL.GetCurrentDateTime.Date;
+            dtpFechaNacimiento.Value = hoy;
+            DateFormat.SetFormat(dtpFechaNacimiento, DateFormat.Blank);
 
             txtCodigo.Clear();
             txtNumDoc.Clear();
@@ -1000,7 +1015,7 @@ namespace ConfiguradorUI.Persona
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }
@@ -1280,12 +1295,32 @@ namespace ConfiguradorUI.Persona
             }
         }
 
-        private void dtpFechaNacimiento_CloseUp(object sender, EventArgs e)
+        private void DtpLimpiar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (dtpFechaNacimiento.Format != DateTimePickerFormat.Short)
+            var dtp = ((DateTimePicker)sender);
+            if (e.KeyChar == (char)Keys.Escape && dtp.CustomFormat != DateFormat.Blank)
             {
-                dtpFechaNacimiento.CustomFormat = null;
-                dtpFechaNacimiento.Format = DateTimePickerFormat.Short;
+                DateFormat.SetFormat(dtp, DateFormat.Blank);
+                isChangedRow = false;
+            }
+        }
+
+        private void DtpVer_MouseDown(object sender, MouseEventArgs e)
+        {
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != DateFormat.DateOnly)
+            {
+                DateFormat.SetFormat(dtp, DateFormat.DateOnly);
+                isChangedRow = false;
+            }
+        }
+
+        private void dtpVer_CloseUp(object sender, EventArgs e)
+        {
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != DateFormat.DateOnly)
+            {
+                DateFormat.SetFormat(dtp, DateFormat.DateOnly);
                 isChangedRow = false;
             }
         }

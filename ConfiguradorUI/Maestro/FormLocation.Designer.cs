@@ -45,6 +45,11 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tabLocation = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.txtLongitud = new MetroFramework.Controls.MetroTextBox();
+            this.lblLongitud = new MetroFramework.Controls.MetroLabel();
+            this.txtLatitud = new MetroFramework.Controls.MetroTextBox();
+            this.lblLatitud = new MetroFramework.Controls.MetroLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.cboTipoLocation = new System.Windows.Forms.ComboBox();
             this.txtDireccion02 = new MetroFramework.Controls.MetroTextBox();
             this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
@@ -89,11 +94,6 @@
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtLongitud = new MetroFramework.Controls.MetroTextBox();
-            this.lblLongitud = new MetroFramework.Controls.MetroLabel();
-            this.txtLatitud = new MetroFramework.Controls.MetroTextBox();
-            this.lblLatitud = new MetroFramework.Controls.MetroLabel();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabLocation.SuspendLayout();
@@ -378,6 +378,103 @@
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // txtLongitud
+            // 
+            this.txtLongitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtLongitud.CustomButton.Image = null;
+            this.txtLongitud.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtLongitud.CustomButton.Name = "";
+            this.txtLongitud.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtLongitud.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLongitud.CustomButton.TabIndex = 1;
+            this.txtLongitud.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLongitud.CustomButton.UseSelectable = true;
+            this.txtLongitud.CustomButton.Visible = false;
+            this.txtLongitud.Lines = new string[0];
+            this.txtLongitud.Location = new System.Drawing.Point(359, 185);
+            this.txtLongitud.MaxLength = 32767;
+            this.txtLongitud.Name = "txtLongitud";
+            this.txtLongitud.PasswordChar = '\0';
+            this.txtLongitud.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLongitud.SelectedText = "";
+            this.txtLongitud.SelectionLength = 0;
+            this.txtLongitud.SelectionStart = 0;
+            this.txtLongitud.ShortcutsEnabled = true;
+            this.txtLongitud.Size = new System.Drawing.Size(184, 23);
+            this.txtLongitud.TabIndex = 66;
+            this.txtLongitud.UseCustomBackColor = true;
+            this.txtLongitud.UseSelectable = true;
+            this.txtLongitud.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLongitud.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLongitud.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblLongitud
+            // 
+            this.lblLongitud.AutoSize = true;
+            this.lblLongitud.ForeColor = System.Drawing.Color.Navy;
+            this.lblLongitud.Location = new System.Drawing.Point(283, 187);
+            this.lblLongitud.Name = "lblLongitud";
+            this.lblLongitud.Size = new System.Drawing.Size(63, 19);
+            this.lblLongitud.TabIndex = 65;
+            this.lblLongitud.Text = "Longitud:";
+            this.lblLongitud.UseCustomForeColor = true;
+            // 
+            // txtLatitud
+            // 
+            this.txtLatitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtLatitud.CustomButton.Image = null;
+            this.txtLatitud.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtLatitud.CustomButton.Name = "";
+            this.txtLatitud.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtLatitud.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLatitud.CustomButton.TabIndex = 1;
+            this.txtLatitud.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLatitud.CustomButton.UseSelectable = true;
+            this.txtLatitud.CustomButton.Visible = false;
+            this.txtLatitud.Lines = new string[0];
+            this.txtLatitud.Location = new System.Drawing.Point(75, 185);
+            this.txtLatitud.MaxLength = 32767;
+            this.txtLatitud.Name = "txtLatitud";
+            this.txtLatitud.PasswordChar = '\0';
+            this.txtLatitud.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLatitud.SelectedText = "";
+            this.txtLatitud.SelectionLength = 0;
+            this.txtLatitud.SelectionStart = 0;
+            this.txtLatitud.ShortcutsEnabled = true;
+            this.txtLatitud.Size = new System.Drawing.Size(184, 23);
+            this.txtLatitud.TabIndex = 64;
+            this.txtLatitud.UseCustomBackColor = true;
+            this.txtLatitud.UseSelectable = true;
+            this.txtLatitud.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLatitud.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLatitud.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblLatitud
+            // 
+            this.lblLatitud.AutoSize = true;
+            this.lblLatitud.ForeColor = System.Drawing.Color.Navy;
+            this.lblLatitud.Location = new System.Drawing.Point(1, 187);
+            this.lblLatitud.Name = "lblLatitud";
+            this.lblLatitud.Size = new System.Drawing.Size(51, 19);
+            this.lblLatitud.TabIndex = 63;
+            this.lblLatitud.Text = "Latitud:";
+            this.lblLatitud.UseCustomForeColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(4, 397);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(540, 8);
+            this.panel2.TabIndex = 62;
             // 
             // cboTipoLocation
             // 
@@ -685,7 +782,6 @@
             this.dtpFechaNegocio.Name = "dtpFechaNegocio";
             this.dtpFechaNegocio.Size = new System.Drawing.Size(184, 23);
             this.dtpFechaNegocio.TabIndex = 13;
-            this.dtpFechaNegocio.CloseUp += new System.EventHandler(this.dtpFechaNegocio_CloseUp);
             this.dtpFechaNegocio.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtDato03
@@ -1168,108 +1264,10 @@
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(4, 397);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 8);
-            this.panel2.TabIndex = 62;
-            // 
-            // txtLongitud
-            // 
-            this.txtLongitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtLongitud.CustomButton.Image = null;
-            this.txtLongitud.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtLongitud.CustomButton.Name = "";
-            this.txtLongitud.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtLongitud.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtLongitud.CustomButton.TabIndex = 1;
-            this.txtLongitud.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtLongitud.CustomButton.UseSelectable = true;
-            this.txtLongitud.CustomButton.Visible = false;
-            this.txtLongitud.Lines = new string[0];
-            this.txtLongitud.Location = new System.Drawing.Point(359, 185);
-            this.txtLongitud.MaxLength = 32767;
-            this.txtLongitud.Name = "txtLongitud";
-            this.txtLongitud.PasswordChar = '\0';
-            this.txtLongitud.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLongitud.SelectedText = "";
-            this.txtLongitud.SelectionLength = 0;
-            this.txtLongitud.SelectionStart = 0;
-            this.txtLongitud.ShortcutsEnabled = true;
-            this.txtLongitud.Size = new System.Drawing.Size(184, 23);
-            this.txtLongitud.TabIndex = 66;
-            this.txtLongitud.UseCustomBackColor = true;
-            this.txtLongitud.UseSelectable = true;
-            this.txtLongitud.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtLongitud.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtLongitud.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblLongitud
-            // 
-            this.lblLongitud.AutoSize = true;
-            this.lblLongitud.ForeColor = System.Drawing.Color.Navy;
-            this.lblLongitud.Location = new System.Drawing.Point(283, 187);
-            this.lblLongitud.Name = "lblLongitud";
-            this.lblLongitud.Size = new System.Drawing.Size(63, 19);
-            this.lblLongitud.TabIndex = 65;
-            this.lblLongitud.Text = "Longitud:";
-            this.lblLongitud.UseCustomForeColor = true;
-            // 
-            // txtLatitud
-            // 
-            this.txtLatitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtLatitud.CustomButton.Image = null;
-            this.txtLatitud.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtLatitud.CustomButton.Name = "";
-            this.txtLatitud.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtLatitud.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtLatitud.CustomButton.TabIndex = 1;
-            this.txtLatitud.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtLatitud.CustomButton.UseSelectable = true;
-            this.txtLatitud.CustomButton.Visible = false;
-            this.txtLatitud.Lines = new string[0];
-            this.txtLatitud.Location = new System.Drawing.Point(75, 185);
-            this.txtLatitud.MaxLength = 32767;
-            this.txtLatitud.Name = "txtLatitud";
-            this.txtLatitud.PasswordChar = '\0';
-            this.txtLatitud.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLatitud.SelectedText = "";
-            this.txtLatitud.SelectionLength = 0;
-            this.txtLatitud.SelectionStart = 0;
-            this.txtLatitud.ShortcutsEnabled = true;
-            this.txtLatitud.Size = new System.Drawing.Size(184, 23);
-            this.txtLatitud.TabIndex = 64;
-            this.txtLatitud.UseCustomBackColor = true;
-            this.txtLatitud.UseSelectable = true;
-            this.txtLatitud.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtLatitud.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtLatitud.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblLatitud
-            // 
-            this.lblLatitud.AutoSize = true;
-            this.lblLatitud.ForeColor = System.Drawing.Color.Navy;
-            this.lblLatitud.Location = new System.Drawing.Point(1, 187);
-            this.lblLatitud.Name = "lblLatitud";
-            this.lblLatitud.Size = new System.Drawing.Size(51, 19);
-            this.lblLatitud.TabIndex = 63;
-            this.lblLatitud.Text = "Latitud:";
-            this.lblLatitud.UseCustomForeColor = true;
-            // 
             // FormLocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 655);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);

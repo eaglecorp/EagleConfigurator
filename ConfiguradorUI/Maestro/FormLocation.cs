@@ -1,5 +1,6 @@
 ﻿using ConfigBusinessEntity;
 using ConfigBusinessLogic.Maestro;
+using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
@@ -68,9 +69,14 @@ namespace ConfiguradorUI.Maestro
                 txtNum.KeyPress += ControlHelper.TxtValidAllDecimal;
             }
 
-            dtpFechaNegocio.ValueChanged += new EventHandler(OnContentChanged);
-            dtpFechaNegocio.CloseUp += new EventHandler(OnContentChanged);
+            dtpFechaNegocio.CloseUp += dtpVer_CloseUp;
+            dtpFechaNegocio.MouseDown += DtpVer_MouseDown;
+            dtpFechaNegocio.KeyPress += DtpLimpiar_KeyPress;
 
+            dtpFechaNegocio.ValueChanged += OnContentChanged;
+            dtpFechaNegocio.CloseUp += OnContentChanged;
+            dtpFechaNegocio.MouseDown += OnContentChanged;
+            dtpFechaNegocio.KeyPress += OnContentChanged;
         }
 
         protected void OnContentChanged(object sender, EventArgs e)
@@ -222,9 +228,9 @@ namespace ConfiguradorUI.Maestro
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
-                if (dtpFechaNegocio.Format == DateTimePickerFormat.Short)
+                if (dtpFechaNegocio.CustomFormat == DateFormat.DateOnly)
                 {
-                    obj.fecha_negocio = dtpFechaNegocio.Value;
+                    obj.fecha_negocio = dtpFechaNegocio.Value.Date;
                 }
 
                 obj.txt_desc = txtNombre.Text.Trim();
@@ -278,7 +284,7 @@ namespace ConfiguradorUI.Maestro
 
                 if (obj.fecha_negocio != null)
                 {
-                    dtpFechaNegocio_CloseUp(null, EventArgs.Empty);
+                    DateFormat.SetFormat(dtpFechaNegocio, DateFormat.DateOnly);
                     dtpFechaNegocio.Value = (DateTime)obj.fecha_negocio;
                 }
 
@@ -361,12 +367,23 @@ namespace ConfiguradorUI.Maestro
 
             if (no_error)
             {
-                if (dtpFechaNegocio.Format != DateTimePickerFormat.Short)
+                if (dtpFechaNegocio.CustomFormat != DateFormat.DateOnly)
                 {
                     tabLocation.SelectedTab = tabPagGeneral;
                     errorProv.SetError(dtpFechaNegocio, "Este campo es requerido.");
                     dtpFechaNegocio.Focus();
                     no_error = false;
+                }
+                else
+                {
+                    var hoy = UtilBL.GetCurrentDateTime.Date;
+                    if (dtpFechaNegocio.Value.Date > hoy)
+                    {
+                        tabLocation.SelectedTab = tabPagGeneral;
+                        errorProv.SetError(dtpFechaNegocio, $"La fecha de negocio no puede ser mayor a la fecha actual ({hoy.ToString(DateFormat.DateOnly)}).");
+                        dtpFechaNegocio.Focus();
+                        no_error = false;
+                    }
                 }
             }
 
@@ -529,10 +546,10 @@ namespace ConfiguradorUI.Maestro
             isSelected = false;
             lblIdLocation.Text = 0 + "";
             codSelected = "";
+            var hoy = UtilBL.GetCurrentDateTime.Date;
 
-            dtpFechaNegocio.Value = DateTime.Now;
-            dtpFechaNegocio.Format = DateTimePickerFormat.Custom;
-            dtpFechaNegocio.CustomFormat = " ";
+            dtpFechaNegocio.Value = hoy;
+            DateFormat.SetFormat(dtpFechaNegocio, DateFormat.Blank);
 
             txtNombre.Clear();
             txtCodigo.Clear();
@@ -1040,12 +1057,32 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        private void dtpFechaNegocio_CloseUp(object sender, EventArgs e)
+        private void DtpLimpiar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (dtpFechaNegocio.Format != DateTimePickerFormat.Short)
+            var dtp = ((DateTimePicker)sender);
+            if (e.KeyChar == (char)Keys.Escape && dtp.CustomFormat != DateFormat.Blank)
             {
-                dtpFechaNegocio.CustomFormat = null;
-                dtpFechaNegocio.Format = DateTimePickerFormat.Short;
+                DateFormat.SetFormat(dtp, DateFormat.Blank);
+                isChangedRow = false;
+            }
+        }
+
+        private void DtpVer_MouseDown(object sender, MouseEventArgs e)
+        {
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != DateFormat.DateOnly)
+            {
+                DateFormat.SetFormat(dtp, DateFormat.DateOnly);
+                isChangedRow = false;
+            }
+        }
+
+        private void dtpVer_CloseUp(object sender, EventArgs e)
+        {
+            var dtp = ((DateTimePicker)sender);
+            if (dtp.CustomFormat != DateFormat.DateOnly)
+            {
+                DateFormat.SetFormat(dtp, DateFormat.DateOnly);
                 isChangedRow = false;
             }
         }
