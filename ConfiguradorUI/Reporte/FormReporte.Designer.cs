@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Reporte
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Reporte
 {
     partial class FormReporte
     {
@@ -39,7 +41,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -65,7 +67,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCategoriaReporte = new MetroFramework.Controls.MetroLink();
-            this.cboCategoriaReporte = new System.Windows.Forms.ComboBox();
+            this.cboCategoriaReporte = new BorderedCombo();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.lblCategoriaReporte = new MetroFramework.Controls.MetroLabel();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
@@ -832,7 +834,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
@@ -846,7 +848,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private MetroFramework.Controls.MetroLink btnCategoriaReporte;
-        private System.Windows.Forms.ComboBox cboCategoriaReporte;
+        private BorderedCombo cboCategoriaReporte;
         private MetroFramework.Controls.MetroCheckBox chkActivo;
         private MetroFramework.Controls.MetroLabel lblCategoriaReporte;
         private MetroFramework.Controls.MetroTextBox txtCodigo;

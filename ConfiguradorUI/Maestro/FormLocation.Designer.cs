@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Maestro
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Maestro
 {
     partial class FormLocation
     {
@@ -36,7 +38,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -50,7 +52,7 @@
             this.txtLatitud = new MetroFramework.Controls.MetroTextBox();
             this.lblLatitud = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cboTipoLocation = new System.Windows.Forms.ComboBox();
+            this.cboTipoLocation = new BorderedCombo();
             this.txtDireccion02 = new MetroFramework.Controls.MetroTextBox();
             this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
             this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
@@ -1306,7 +1308,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
@@ -1323,7 +1325,7 @@
         private MetroFramework.Controls.MetroLabel lblDireccion01;
         private MetroFramework.Controls.MetroCheckBox chkLocationActual;
         private MetroFramework.Controls.MetroCheckBox chkAlmacen;
-        private System.Windows.Forms.ComboBox cboTipoLocation;
+        private BorderedCombo cboTipoLocation;
         private MetroFramework.Controls.MetroLabel lblTipoLocation;
         private MetroFramework.Controls.MetroTextBox txtAbrev02;
         private MetroFramework.Controls.MetroLabel lblAbrev02;

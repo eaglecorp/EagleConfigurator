@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Persona
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Persona
 {
     partial class FormCategoriaEmp
     {
@@ -39,7 +41,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.lnkNuevo = new MetroFramework.Controls.MetroLink();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -608,7 +610,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private MetroFramework.Controls.MetroLink lnkNuevo;
         private System.Windows.Forms.Button btnSearch;

@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Producto
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Producto
 {
     partial class FormCombo
     {
@@ -39,7 +41,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -55,7 +57,7 @@
             this.chkIncluyeImpto = new MetroFramework.Controls.MetroCheckBox();
             this.lblPorcentajeAcumuladoImpto = new System.Windows.Forms.Label();
             this.lblSimboloPorcentaje = new System.Windows.Forms.Label();
-            this.cboImpuesto = new System.Windows.Forms.ComboBox();
+            this.cboImpuesto = new BorderedCombo();
             this.lblImpuesto = new MetroFramework.Controls.MetroLabel();
             this.btnImpuesto = new MetroFramework.Controls.MetroLink();
             this.lblPrecioCboSinTax = new MetroFramework.Controls.MetroLabel();
@@ -64,7 +66,7 @@
             this.btnComboGrupo = new MetroFramework.Controls.MetroLink();
             this.lblComboGrupo = new MetroFramework.Controls.MetroLabel();
             this.btnAddItem = new System.Windows.Forms.Button();
-            this.cboComboGrupo = new System.Windows.Forms.ComboBox();
+            this.cboComboGrupo = new BorderedCombo();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.tabDetails = new System.Windows.Forms.TabControl();
             this.tabPagProductos = new System.Windows.Forms.TabPage();
@@ -1308,7 +1310,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
@@ -1348,7 +1350,7 @@
         private System.Windows.Forms.TabPage tabPagProductos;
         private System.Windows.Forms.TabPage tabPagCboElectivo;
         private MetroFramework.Controls.MetroLink btnComboGrupo;
-        private System.Windows.Forms.ComboBox cboComboGrupo;
+        private BorderedCombo cboComboGrupo;
         private MetroFramework.Controls.MetroLabel lblComboGrupo;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Button btnRemoveItem;
@@ -1366,7 +1368,7 @@
         private MetroFramework.Controls.MetroCheckBox chkIncluyeImpto;
         private System.Windows.Forms.Label lblPorcentajeAcumuladoImpto;
         private System.Windows.Forms.Label lblSimboloPorcentaje;
-        private System.Windows.Forms.ComboBox cboImpuesto;
+        private BorderedCombo cboImpuesto;
         private MetroFramework.Controls.MetroLabel lblImpuesto;
         private MetroFramework.Controls.MetroLink btnImpuesto;
         private MetroFramework.Controls.MetroCheckBox chkPrecioAcumulado;

@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Maestro
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Maestro
 {
     partial class FormCaja
     {
@@ -39,7 +41,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -50,12 +52,12 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabCaja = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboImpresora06 = new System.Windows.Forms.ComboBox();
-            this.cboImpresora05 = new System.Windows.Forms.ComboBox();
-            this.cboImpresora04 = new System.Windows.Forms.ComboBox();
-            this.cboImpresora03 = new System.Windows.Forms.ComboBox();
-            this.cboImpresora02 = new System.Windows.Forms.ComboBox();
-            this.cboImpresora = new System.Windows.Forms.ComboBox();
+            this.cboImpresora06 = new BorderedCombo();
+            this.cboImpresora05 = new BorderedCombo();
+            this.cboImpresora04 = new BorderedCombo();
+            this.cboImpresora03 = new BorderedCombo();
+            this.cboImpresora02 = new BorderedCombo();
+            this.cboImpresora = new BorderedCombo();
             this.lblImpresoras = new MetroFramework.Controls.MetroLabel();
             this.btnImpresora06 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora06 = new MetroFramework.Controls.MetroLabel();
@@ -1016,7 +1018,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
@@ -1057,12 +1059,12 @@
         private MetroFramework.Controls.MetroLabel lblIp;
         private System.Windows.Forms.ErrorProvider errorProv;
         private MetroFramework.Controls.MetroLabel lblImpresoras;
-        private System.Windows.Forms.ComboBox cboImpresora;
-        private System.Windows.Forms.ComboBox cboImpresora06;
-        private System.Windows.Forms.ComboBox cboImpresora05;
-        private System.Windows.Forms.ComboBox cboImpresora04;
-        private System.Windows.Forms.ComboBox cboImpresora03;
-        private System.Windows.Forms.ComboBox cboImpresora02;
+        private BorderedCombo cboImpresora;
+        private BorderedCombo cboImpresora06;
+        private BorderedCombo cboImpresora05;
+        private BorderedCombo cboImpresora04;
+        private BorderedCombo cboImpresora03;
+        private BorderedCombo cboImpresora02;
         private MetroFramework.Controls.MetroTabPage tabPagConfigFiscal;
         private System.Windows.Forms.DataGridView dgvConfigFiscalCaja;
     }

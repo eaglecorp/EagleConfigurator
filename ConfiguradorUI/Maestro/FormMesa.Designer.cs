@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Maestro
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Maestro
 {
     partial class FormMesa
     {
@@ -35,7 +37,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -44,8 +46,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tabMesa = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboEstadoMesa = new System.Windows.Forms.ComboBox();
-            this.cboCanalVenta = new System.Windows.Forms.ComboBox();
+            this.cboEstadoMesa = new BorderedCombo();
+            this.cboCanalVenta = new BorderedCombo();
             this.txtCapacidad = new MetroFramework.Controls.MetroTextBox();
             this.lblCapacidad = new MetroFramework.Controls.MetroLabel();
             this.btnCanalVenta = new MetroFramework.Controls.MetroLink();
@@ -597,7 +599,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
@@ -621,7 +623,7 @@
         private MetroFramework.Controls.MetroLink btnCanalVenta;
         private MetroFramework.Controls.MetroLabel lblCanalVenta;
         private System.Windows.Forms.ErrorProvider errorProv;
-        private System.Windows.Forms.ComboBox cboEstadoMesa;
-        private System.Windows.Forms.ComboBox cboCanalVenta;
+        private BorderedCombo cboEstadoMesa;
+        private BorderedCombo cboCanalVenta;
     }
 }

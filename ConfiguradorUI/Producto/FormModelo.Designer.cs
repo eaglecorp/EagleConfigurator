@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Producto
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Producto
 {
     partial class FormModelo
     {
@@ -37,7 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMarca = new MetroFramework.Controls.MetroLink();
-            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.cboMarca = new BorderedCombo();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.lblMarca = new MetroFramework.Controls.MetroLabel();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
@@ -56,7 +58,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblIdModelo = new MetroFramework.Controls.MetroLabel();
             this.dgvModelo = new System.Windows.Forms.DataGridView();
@@ -615,7 +617,7 @@
         private System.Windows.Forms.Label lblNombreForm;
         private MetroFramework.Controls.MetroLink btnCerrar;
         private MetroFramework.Controls.MetroLink btnMarca;
-        private System.Windows.Forms.ComboBox cboMarca;
+        private BorderedCombo cboMarca;
         private MetroFramework.Controls.MetroLabel lblMarca;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
@@ -627,7 +629,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider errorProv;

@@ -15,6 +15,8 @@ using ConfiguradorUI.Buscadores;
 using ConfigUtilitarios.HelperGeneric;
 using ConfigUtilitarios.Extensions;
 using ConfigBusinessLogic.Utiles;
+using System.Diagnostics;
+using ConfiguradorUI.FormUtil;
 
 namespace ConfiguradorUI.Labor.Horario
 {
@@ -26,8 +28,8 @@ namespace ConfiguradorUI.Labor.Horario
 
         private PERt04_empleado _empleado;
         private LABt03_horario_emp _horario;
-
         #endregion
+
 
         public FormHorarioEmpleado()
         {
@@ -640,5 +642,12 @@ namespace ConfiguradorUI.Labor.Horario
 
         #endregion
 
+        private void mcaMes_DateChanged(object sender, DateRangeEventArgs e)
+        {
+                var frm = new CheckBoxDialog();
+                frm.Show();
+                frm.Dispose();
+                frm.Close();
+        }
     }
 }

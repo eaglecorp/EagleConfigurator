@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Producto
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Producto
 {
     partial class FormProducto
     {
@@ -39,7 +41,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboUnidadMedida = new System.Windows.Forms.ComboBox();
+            this.cboUnidadMedida = new BorderedCombo();
             this.lblUnidadMedida = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.btnClaseProd = new MetroFramework.Controls.MetroLink();
@@ -62,18 +64,18 @@
             this.chkProductoCompra = new MetroFramework.Controls.MetroCheckBox();
             this.chkProductoVenta = new MetroFramework.Controls.MetroCheckBox();
             this.lblPeso = new MetroFramework.Controls.MetroLabel();
-            this.cboClaseProd = new System.Windows.Forms.ComboBox();
-            this.cboGrupoProd = new System.Windows.Forms.ComboBox();
-            this.cboTipoExistencia = new System.Windows.Forms.ComboBox();
-            this.cboTipoProd = new System.Windows.Forms.ComboBox();
+            this.cboClaseProd = new BorderedCombo();
+            this.cboGrupoProd = new BorderedCombo();
+            this.cboTipoExistencia = new BorderedCombo();
+            this.cboTipoProd = new BorderedCombo();
             this.lblClaseProd = new MetroFramework.Controls.MetroLabel();
             this.lblGrupo = new MetroFramework.Controls.MetroLabel();
             this.lblTipoExistencia = new MetroFramework.Controls.MetroLabel();
             this.lblTipoProd = new MetroFramework.Controls.MetroLabel();
-            this.cboModelo = new System.Windows.Forms.ComboBox();
-            this.cboMarca = new System.Windows.Forms.ComboBox();
-            this.cboSubFamilia = new System.Windows.Forms.ComboBox();
-            this.cboFamilia = new System.Windows.Forms.ComboBox();
+            this.cboModelo = new BorderedCombo();
+            this.cboMarca = new BorderedCombo();
+            this.cboSubFamilia = new BorderedCombo();
+            this.cboFamilia = new BorderedCombo();
             this.lblModelo = new MetroFramework.Controls.MetroLabel();
             this.lblMarca = new MetroFramework.Controls.MetroLabel();
             this.lblSubFamilia = new MetroFramework.Controls.MetroLabel();
@@ -109,12 +111,12 @@
             this.chkInafecto = new MetroFramework.Controls.MetroCheckBox();
             this.chkExento = new MetroFramework.Controls.MetroCheckBox();
             this.chkImpto = new MetroFramework.Controls.MetroCheckBox();
-            this.cboImpuesto = new System.Windows.Forms.ComboBox();
-            this.cboTipoMoneda = new System.Windows.Forms.ComboBox();
+            this.cboImpuesto = new BorderedCombo();
+            this.cboTipoMoneda = new BorderedCombo();
             this.lblImpuesto = new MetroFramework.Controls.MetroLabel();
             this.lblTipoMoneda = new MetroFramework.Controls.MetroLabel();
             this.btnImpuesto = new MetroFramework.Controls.MetroLink();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -1965,21 +1967,21 @@
         private MetroFramework.Controls.MetroTextBox txtCodigo02;
         private MetroFramework.Controls.MetroLabel lblSubFamilia;
         private MetroFramework.Controls.MetroLabel lblFamilia;
-        private System.Windows.Forms.ComboBox cboFamilia;
+        private BorderedCombo cboFamilia;
         private MetroFramework.Controls.MetroLabel lblModelo;
         private MetroFramework.Controls.MetroLabel lblMarca;
-        private System.Windows.Forms.ComboBox cboSubFamilia;
-        private System.Windows.Forms.ComboBox cboModelo;
-        private System.Windows.Forms.ComboBox cboMarca;
+        private BorderedCombo cboSubFamilia;
+        private BorderedCombo cboModelo;
+        private BorderedCombo cboMarca;
         private MetroFramework.Controls.MetroLabel lblTipoProd;
         private MetroFramework.Controls.MetroLabel lblGrupo;
         private MetroFramework.Controls.MetroLabel lblTipoExistencia;
         private MetroFramework.Controls.MetroLabel lblClaseProd;
         private MetroFramework.Controls.MetroCheckBox chkProductoVenta;
-        private System.Windows.Forms.ComboBox cboClaseProd;
-        private System.Windows.Forms.ComboBox cboGrupoProd;
-        private System.Windows.Forms.ComboBox cboTipoExistencia;
-        private System.Windows.Forms.ComboBox cboTipoProd;
+        private BorderedCombo cboClaseProd;
+        private BorderedCombo cboGrupoProd;
+        private BorderedCombo cboTipoExistencia;
+        private BorderedCombo cboTipoProd;
         private MetroFramework.Controls.MetroCheckBox chkCombo;
         private MetroFramework.Controls.MetroCheckBox chkProductoCompra;
         private MetroFramework.Controls.MetroTextBox txtReferencia;
@@ -1992,7 +1994,7 @@
         private MetroFramework.Controls.MetroTextBox txtLargo;
         private MetroFramework.Controls.MetroTextBox txtAncho;
         private MetroFramework.Controls.MetroTextBox txtAltura;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private MetroFramework.Controls.MetroPanel panelFiltro;
@@ -2015,8 +2017,8 @@
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroCheckBox chkActivo;
         private MetroFramework.Controls.MetroLink btnImpuesto;
-        private System.Windows.Forms.ComboBox cboImpuesto;
-        private System.Windows.Forms.ComboBox cboTipoMoneda;
+        private BorderedCombo cboImpuesto;
+        private BorderedCombo cboTipoMoneda;
         private MetroFramework.Controls.MetroLabel lblImpuesto;
         private MetroFramework.Controls.MetroLabel lblTipoMoneda;
         private System.Windows.Forms.GroupBox grbConImpto;
@@ -2036,7 +2038,7 @@
         private MetroFramework.Controls.MetroLabel lblPvMaSinIGV;
         private MetroFramework.Controls.MetroTextBox txtPvPuSinImpto;
         private MetroFramework.Controls.MetroLabel lblPvPuSinIGV;
-        private System.Windows.Forms.ComboBox cboUnidadMedida;
+        private BorderedCombo cboUnidadMedida;
         private MetroFramework.Controls.MetroLabel lblUnidadMedida;
         private System.Windows.Forms.ErrorProvider errorProv;
         private System.Windows.Forms.Label lblIdProducto;

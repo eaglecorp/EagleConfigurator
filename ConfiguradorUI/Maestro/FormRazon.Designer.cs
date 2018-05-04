@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Maestro
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Maestro
 {
     partial class FormRazon
     {
@@ -35,7 +37,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -61,7 +63,7 @@
             this.lblNumReg = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTipoRazon = new MetroFramework.Controls.MetroLink();
-            this.cboTipoRazon = new System.Windows.Forms.ComboBox();
+            this.cboTipoRazon = new BorderedCombo();
             this.lblTipoRazon = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRazon)).BeginInit();
             this.panelFiltro.SuspendLayout();
@@ -609,7 +611,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
@@ -635,7 +637,7 @@
         private System.Windows.Forms.Label lblNumReg;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroLink btnTipoRazon;
-        private System.Windows.Forms.ComboBox cboTipoRazon;
+        private BorderedCombo cboTipoRazon;
         private MetroFramework.Controls.MetroLabel lblTipoRazon;
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Producto
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Producto
 {
     partial class FormComboVariable
     {
@@ -38,7 +40,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -52,7 +54,7 @@
             this.chkIncluyeImpto = new MetroFramework.Controls.MetroCheckBox();
             this.lblPorcentajeAcumuladoImpto = new System.Windows.Forms.Label();
             this.lblSimboloPorcentaje = new System.Windows.Forms.Label();
-            this.cboImpuesto = new System.Windows.Forms.ComboBox();
+            this.cboImpuesto = new BorderedCombo();
             this.chkMostrarInactivos = new MetroFramework.Controls.MetroCheckBox();
             this.lblImpuesto = new MetroFramework.Controls.MetroLabel();
             this.btnImpuesto = new MetroFramework.Controls.MetroLink();
@@ -1106,7 +1108,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
@@ -1147,7 +1149,7 @@
         private MetroFramework.Controls.MetroCheckBox chkMostrarInactivos;
         private System.Windows.Forms.Label lblPorcentajeAcumuladoImpto;
         private System.Windows.Forms.Label lblSimboloPorcentaje;
-        private System.Windows.Forms.ComboBox cboImpuesto;
+        private BorderedCombo cboImpuesto;
         private MetroFramework.Controls.MetroLabel lblImpuesto;
         private MetroFramework.Controls.MetroLink btnImpuesto;
         private MetroFramework.Controls.MetroLabel lblPrecioConImpto;

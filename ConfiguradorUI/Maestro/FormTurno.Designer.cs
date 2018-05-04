@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Maestro
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Maestro
 {
     partial class FormTurno
     {
@@ -39,7 +41,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -50,12 +52,12 @@
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabTurno = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboHoraSalidaTT = new System.Windows.Forms.ComboBox();
-            this.cboHoraSalidaMM = new System.Windows.Forms.ComboBox();
-            this.cboHoraSalidaHH = new System.Windows.Forms.ComboBox();
-            this.cboHoraEntradaTT = new System.Windows.Forms.ComboBox();
-            this.cboHoraEntradaMM = new System.Windows.Forms.ComboBox();
-            this.cboHoraEntradaHH = new System.Windows.Forms.ComboBox();
+            this.cboHoraSalidaTT = new BorderedCombo();
+            this.cboHoraSalidaMM = new BorderedCombo();
+            this.cboHoraSalidaHH = new BorderedCombo();
+            this.cboHoraEntradaTT = new BorderedCombo();
+            this.cboHoraEntradaMM = new BorderedCombo();
+            this.cboHoraEntradaHH = new BorderedCombo();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -736,7 +738,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroPanel panelMantenimiento;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
@@ -761,11 +763,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cboHoraSalidaTT;
-        private System.Windows.Forms.ComboBox cboHoraSalidaMM;
-        private System.Windows.Forms.ComboBox cboHoraSalidaHH;
-        private System.Windows.Forms.ComboBox cboHoraEntradaTT;
-        private System.Windows.Forms.ComboBox cboHoraEntradaMM;
-        private System.Windows.Forms.ComboBox cboHoraEntradaHH;
+        private BorderedCombo cboHoraSalidaTT;
+        private BorderedCombo cboHoraSalidaMM;
+        private BorderedCombo cboHoraSalidaHH;
+        private BorderedCombo cboHoraEntradaTT;
+        private BorderedCombo cboHoraEntradaMM;
+        private BorderedCombo cboHoraEntradaHH;
     }
 }

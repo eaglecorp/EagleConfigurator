@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Producto
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Producto
 {
     partial class FormSubFamilia
     {
@@ -37,7 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnFamilia = new MetroFramework.Controls.MetroLink();
-            this.cboFamilia = new System.Windows.Forms.ComboBox();
+            this.cboFamilia = new BorderedCombo();
             this.lblFamilia = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
@@ -56,7 +58,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.lblIdSubFamilia = new MetroFramework.Controls.MetroLabel();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvSubfamilia = new System.Windows.Forms.DataGridView();
@@ -609,7 +611,7 @@
         private MetroFramework.Controls.MetroTabControl tabSubFamilia;
         private MetroFramework.Controls.MetroTabPage tabPagGeneral;
         private MetroFramework.Controls.MetroLink btnFamilia;
-        private System.Windows.Forms.ComboBox cboFamilia;
+        private BorderedCombo cboFamilia;
         private MetroFramework.Controls.MetroLabel lblFamilia;
         private MetroFramework.Controls.MetroCheckBox chkActivo;
         private MetroFramework.Controls.MetroTextBox txtCodigo;
@@ -630,7 +632,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroLabel lblIdSubFamilia;
         private System.Windows.Forms.ErrorProvider errorProv;
         private System.Windows.Forms.DataGridView dgvSubfamilia;

@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Persona
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Persona
 {
     partial class FormProveedor
     {
@@ -48,27 +50,27 @@
             this.lblDireccion01 = new MetroFramework.Controls.MetroLabel();
             this.txtNumVia = new MetroFramework.Controls.MetroTextBox();
             this.lblNumVia = new MetroFramework.Controls.MetroLabel();
-            this.cboNacionalidad = new System.Windows.Forms.ComboBox();
+            this.cboNacionalidad = new BorderedCombo();
             this.lblNacionalidad = new MetroFramework.Controls.MetroLabel();
-            this.cboProvincia = new System.Windows.Forms.ComboBox();
+            this.cboProvincia = new BorderedCombo();
             this.lblProvincia = new MetroFramework.Controls.MetroLabel();
-            this.cboDepartamento = new System.Windows.Forms.ComboBox();
+            this.cboDepartamento = new BorderedCombo();
             this.lblDepartamento = new MetroFramework.Controls.MetroLabel();
-            this.cboDistrito = new System.Windows.Forms.ComboBox();
+            this.cboDistrito = new BorderedCombo();
             this.lblDistrito = new MetroFramework.Controls.MetroLabel();
             this.txtNomVia = new MetroFramework.Controls.MetroTextBox();
             this.lblNomVia = new MetroFramework.Controls.MetroLabel();
             this.txtNomZona = new MetroFramework.Controls.MetroTextBox();
             this.lblNomZona = new MetroFramework.Controls.MetroLabel();
-            this.cboVia = new System.Windows.Forms.ComboBox();
+            this.cboVia = new BorderedCombo();
             this.lblVia = new MetroFramework.Controls.MetroLabel();
-            this.cboZona = new System.Windows.Forms.ComboBox();
+            this.cboZona = new BorderedCombo();
             this.lblZona = new MetroFramework.Controls.MetroLabel();
             this.txtNumRuc = new MetroFramework.Controls.MetroTextBox();
             this.lblNumRuc = new MetroFramework.Controls.MetroLabel();
             this.txtNumDoc = new MetroFramework.Controls.MetroTextBox();
             this.lblNumDoc = new MetroFramework.Controls.MetroLabel();
-            this.cboTipoDocIdentidad = new System.Windows.Forms.ComboBox();
+            this.cboTipoDocIdentidad = new BorderedCombo();
             this.lblTipoDocIdentidad = new MetroFramework.Controls.MetroLabel();
             this.txtNomComercial = new MetroFramework.Controls.MetroTextBox();
             this.lblNomComercial = new MetroFramework.Controls.MetroLabel();
@@ -83,7 +85,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblFechaNac = new MetroFramework.Controls.MetroLabel();
-            this.cboEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.cboEstadoCivil = new BorderedCombo();
             this.lblEstadoCivil = new MetroFramework.Controls.MetroLabel();
             this.txtSegundoNom = new MetroFramework.Controls.MetroTextBox();
             this.lblSegundoNom = new MetroFramework.Controls.MetroLabel();
@@ -142,7 +144,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.tglListarInactivos = new MetroFramework.Controls.MetroToggle();
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.lblIdProveedor = new MetroFramework.Controls.MetroLabel();
@@ -2527,7 +2529,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroLabel lblFechaNac;
-        private System.Windows.Forms.ComboBox cboEstadoCivil;
+        private BorderedCombo cboEstadoCivil;
         private MetroFramework.Controls.MetroLabel lblEstadoCivil;
         private MetroFramework.Controls.MetroTextBox txtSegundoNom;
         private MetroFramework.Controls.MetroLabel lblSegundoNom;
@@ -2549,7 +2551,7 @@
         private MetroFramework.Controls.MetroLabel lblNomComercial;
         private MetroFramework.Controls.MetroTextBox txtRazonSocial;
         private MetroFramework.Controls.MetroLabel lblRazonSocial;
-        private System.Windows.Forms.ComboBox cboTipoDocIdentidad;
+        private BorderedCombo cboTipoDocIdentidad;
         private MetroFramework.Controls.MetroLabel lblTipoDocIdentidad;
         private MetroFramework.Controls.MetroTextBox txtNumDoc;
         private MetroFramework.Controls.MetroLabel lblNumDoc;
@@ -2557,27 +2559,27 @@
         private MetroFramework.Controls.MetroLabel lblNumRuc;
         private MetroFramework.Controls.MetroTextBox txtNumVia;
         private MetroFramework.Controls.MetroLabel lblNumVia;
-        private System.Windows.Forms.ComboBox cboNacionalidad;
+        private BorderedCombo cboNacionalidad;
         private MetroFramework.Controls.MetroLabel lblNacionalidad;
-        private System.Windows.Forms.ComboBox cboProvincia;
+        private BorderedCombo cboProvincia;
         private MetroFramework.Controls.MetroLabel lblProvincia;
-        private System.Windows.Forms.ComboBox cboDepartamento;
+        private BorderedCombo cboDepartamento;
         private MetroFramework.Controls.MetroLabel lblDepartamento;
-        private System.Windows.Forms.ComboBox cboDistrito;
+        private BorderedCombo cboDistrito;
         private MetroFramework.Controls.MetroLabel lblDistrito;
         private MetroFramework.Controls.MetroTextBox txtNomVia;
         private MetroFramework.Controls.MetroLabel lblNomVia;
         private MetroFramework.Controls.MetroTextBox txtNomZona;
         private MetroFramework.Controls.MetroLabel lblNomZona;
-        private System.Windows.Forms.ComboBox cboVia;
+        private BorderedCombo cboVia;
         private MetroFramework.Controls.MetroLabel lblVia;
-        private System.Windows.Forms.ComboBox cboZona;
+        private BorderedCombo cboZona;
         private MetroFramework.Controls.MetroLabel lblZona;
         private MetroFramework.Controls.MetroPanel panelFiltro;
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private MetroFramework.Controls.MetroTextBox txtReferencia;
         private MetroFramework.Controls.MetroLabel lblReferencia;
         private MetroFramework.Controls.MetroTextBox txtDireccion02;

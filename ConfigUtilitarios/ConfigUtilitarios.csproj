@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\EagleMonthCalendar.cs">
+    <Compile Include="Controls\BorderedCombo.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensions\ColorExt.cs" />

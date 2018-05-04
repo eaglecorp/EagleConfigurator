@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Seguridad
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Seguridad
 {
     partial class FormConnection
     {
@@ -45,7 +47,7 @@
             this.btnCambiar = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboDatabase = new System.Windows.Forms.ComboBox();
+            this.cboDatabase = new BorderedCombo();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.grbSqlAuthetication.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -414,7 +416,7 @@
         private System.Windows.Forms.GroupBox grbSqlAuthetication;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboDatabase;
+        private BorderedCombo cboDatabase;
         private System.Windows.Forms.Button btnCambiar;
     }
 }

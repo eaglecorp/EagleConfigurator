@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Producto
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Producto
 {
     partial class FormFamilia
     {
@@ -52,7 +54,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblIdFamilia = new MetroFramework.Controls.MetroLabel();
             this.dgvFamilia = new System.Windows.Forms.DataGridView();
@@ -572,7 +574,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ErrorProvider errorProv;
         private MetroFramework.Controls.MetroLabel lblIdFamilia;

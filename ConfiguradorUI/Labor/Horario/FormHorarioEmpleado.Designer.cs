@@ -533,6 +533,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.mcaMes.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2018, 4, 1, 0, 0, 0, 0), new System.DateTime(2018, 4, 1, 0, 0, 0, 0));
             this.mcaMes.ShowFooter = false;
             this.mcaMes.TabIndex = 197;
+            this.mcaMes.DateChanged += new System.EventHandler<System.Windows.Forms.DateRangeEventArgs>(this.mcaMes_DateChanged);
             // 
             // btnCerrar
             // 

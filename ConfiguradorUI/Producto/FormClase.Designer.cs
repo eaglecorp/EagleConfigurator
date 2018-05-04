@@ -1,4 +1,6 @@
-﻿namespace ConfiguradorUI.Producto
+﻿using ConfigUtilitarios.Controls;
+
+namespace ConfiguradorUI.Producto
 {
     partial class FormClase
     {
@@ -37,10 +39,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGrupo = new MetroFramework.Controls.MetroLink();
-            this.cboGrupoProd = new System.Windows.Forms.ComboBox();
+            this.cboGrupoProd = new BorderedCombo();
             this.lblGrupo = new MetroFramework.Controls.MetroLabel();
             this.btnFamilia = new MetroFramework.Controls.MetroLink();
-            this.cboFamilia = new System.Windows.Forms.ComboBox();
+            this.cboFamilia = new BorderedCombo();
             this.lblFamilia = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
@@ -60,7 +62,7 @@
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new BorderedCombo();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvClase = new System.Windows.Forms.DataGridView();
             this.lblNumInactivo = new System.Windows.Forms.Label();
@@ -649,7 +651,7 @@
         private MetroFramework.Controls.MetroTabControl tabClase;
         private MetroFramework.Controls.MetroTabPage tabPagGeneral;
         private MetroFramework.Controls.MetroLink btnFamilia;
-        private System.Windows.Forms.ComboBox cboFamilia;
+        private BorderedCombo cboFamilia;
         private MetroFramework.Controls.MetroLabel lblFamilia;
         private MetroFramework.Controls.MetroCheckBox chkActivo;
         private MetroFramework.Controls.MetroTextBox txtCodigo;
@@ -665,7 +667,7 @@
         private System.Windows.Forms.Button btnCommit;
         private System.Windows.Forms.Button btnDelete;
         private MetroFramework.Controls.MetroLink btnGrupo;
-        private System.Windows.Forms.ComboBox cboGrupoProd;
+        private BorderedCombo cboGrupoProd;
         private MetroFramework.Controls.MetroLabel lblGrupo;
         private MetroFramework.Controls.MetroLabel lblIdClase;
         private System.Windows.Forms.Panel panel2;
@@ -673,7 +675,7 @@
         private MetroFramework.Controls.MetroLabel lblFiltro;
         private System.Windows.Forms.Button btnFilter;
         private MetroFramework.Controls.MetroTextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private BorderedCombo cboFiltro;
         private System.Windows.Forms.ErrorProvider errorProv;
         private System.Windows.Forms.DataGridView dgvClase;
         private System.Windows.Forms.Label lblNumInactivo;
