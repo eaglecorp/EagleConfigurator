@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConfigUtilitarios;
+using ConfigDataAccess.Utiles;
 
 namespace ConfigDataAccess.Seguridad
 {
@@ -59,7 +60,7 @@ namespace ConfigDataAccess.Seguridad
                 {
                     int id_estado = Estado.IdInactivo;
                     string txt_estado = Estado.TxtInactivo;
-                    DateTime fecha_del = DateTime.Now;
+                    DateTime fecha_del = UtilDA.GetCurrentDateTime();
                     using (SqlCommand cmd = cnn.CreateCommand())
                     {
                         cmd.CommandText = "UPDATE PERt01_usuario SET id_estado = @id_estado, txt_estado = @txt_estado, fecha_modificacion=@fecha_del Where id_usuario=@id";
@@ -86,7 +87,7 @@ namespace ConfigDataAccess.Seguridad
                 {
                     int id_estado = Estado.IdInactivo;
                     string txt_estado = Estado.TxtInactivo;
-                    DateTime fecha_del = DateTime.Now;
+                    DateTime fecha_del = UtilDA.GetCurrentDateTime();
                     using (SqlCommand cmd = cnn.CreateCommand())
                     {
                         cmd.CommandText = "UPDATE PERt01_usuario SET id_estado = @id_estado, txt_estado = @txt_estado, fecha_modificacion=@fecha_del Where id_empleado=@id";
@@ -113,7 +114,7 @@ namespace ConfigDataAccess.Seguridad
                 {
                     int id_estado = Estado.IdActivo;
                     string txt_estado = Estado.TxtActivo;
-                    DateTime fecha = DateTime.Now;
+                    DateTime fecha = UtilDA.GetCurrentDateTime();
                     using (SqlCommand cmd = cnn.CreateCommand())
                     {
                         cmd.CommandText = "UPDATE PERt01_usuario SET id_estado = @id_estado, txt_estado = @txt_estado, fecha_modificacion=@fecha Where id_empleado=@id";

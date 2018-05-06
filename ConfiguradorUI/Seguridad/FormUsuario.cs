@@ -2,6 +2,7 @@
 using ConfigBusinessLogic;
 using ConfigBusinessLogic.Persona;
 using ConfigBusinessLogic.Seguridad;
+using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
@@ -154,7 +155,7 @@ namespace ConfiguradorUI.Seguridad
                         if (long.TryParse(lblIdUsuario.Text, out id))
                         {
                             obj.id_usuario = id;
-                            obj.fecha_modificacion = DateTime.Now;
+                            obj.fecha_modificacion = UtilBL.GetCurrentDateTime;
                             new UsuarioBL().ActualizarUsuario(obj);
 
                             ControlarEventosABM(obj.id_usuario);

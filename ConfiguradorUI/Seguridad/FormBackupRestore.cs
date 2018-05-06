@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConfigBusinessEntity;
 using ConfigBusinessLogic;
+using ConfigUtilitarios.HelperDatabase;
 
 namespace ConfiguradorUI.Seguridad
 {

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ConfigBusinessEntity;
 using ConfigUtilitarios;
 using ConfigBusinessLogic;
+using ConfigBusinessLogic.Utiles;
 
 namespace ConfiguradorUI.Seguridad
 {
@@ -91,8 +92,8 @@ namespace ConfiguradorUI.Seguridad
             {
                 var usuarioActualizado = usuarioAnterior;
                 usuarioActualizado.txt_clave = new Encription().Encryption(txtNuevaClave.Text);
-                usuarioActualizado.sn_upd_requered = 0;
-                usuarioActualizado.fecha_modificacion = DateTime.Now;
+                usuarioActualizado.sn_upd_requered = Estado.IdInactivo;
+                usuarioActualizado.fecha_modificacion = UtilBL.GetCurrentDateTime;
                 try
                 {
                     new ConfigBusinessLogic.Seguridad.UsuarioBL().ActualizarUsuario(usuarioActualizado);

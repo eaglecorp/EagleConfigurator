@@ -16,7 +16,7 @@ namespace ConfigBusinessLogic.Utiles
         {
             get
             {
-                return new UtilDA().GetCurrentDateTime();
+                return UtilDA.GetCurrentDateTime();
             }
         }
 

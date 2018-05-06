@@ -127,7 +127,7 @@ namespace ConfigBusinessLogic.Seguridad
 
             string credenciales = $"DATOS DE LA CUENTA\n------------------------------------\n• Username: {usuario.txt_usuario}\n• Contraseña: {new Encription().Decryption(usuario.txt_clave)}";
 
-            string pie = $"Fecha de envío: {DateTime.Now}";
+            string pie = $"¡Que tenga un excelente día!";
 
             string mensaje = $"{saludo}\n\n{parrafo}{credenciales}\n\n{pie}";
 

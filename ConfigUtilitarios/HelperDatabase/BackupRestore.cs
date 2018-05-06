@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfigUtilitarios
+namespace ConfigUtilitarios.HelperDatabase
 {
     public class BackupRestore
     {
@@ -17,7 +16,7 @@ namespace ConfigUtilitarios
             {
                 try
                 {
-                    string backupName = string.Format("{0} {1}.bak", dbName, DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss-fff"));
+                    string backupName = string.Format("{0} {1}.bak", dbName, HelperServer.GetCurrentDateTime().ToString("yyyy-MM-dd HH-mm-ss-fff"));
 
                     string sentence = $"BACKUP DATABASE {dbName} TO DISK = '{path}\\{backupName}'";
                     cn.Open();
@@ -36,17 +35,17 @@ namespace ConfigUtilitarios
             return success;
         }
 
-        public static  bool Restore(string cnString, string dbName, string pathFile)
+        public static bool Restore(string cnString, string dbName, string pathFile)
         {
             bool success = false;
             using (var cn = new SqlConnection(cnString))
             {
                 try
                 {
-                    cn.Open();
                     string masterSentece = "USE master";
                     string sentence = $@"ALTER DATABASE {dbName} SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
                                         RESTORE DATABASE {dbName} FROM DISK = '{pathFile}' WITH REPLACE;";
+                    cn.Open();
                     using (var cmdMaster = new SqlCommand(masterSentece, cn))
                     {
                         cmdMaster.ExecuteNonQuery();
@@ -65,7 +64,5 @@ namespace ConfigUtilitarios
             }
             return success;
         }
-
-
     }
 }

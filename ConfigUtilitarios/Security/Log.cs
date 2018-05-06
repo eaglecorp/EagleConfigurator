@@ -2,8 +2,7 @@
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
-
-
+using ConfigUtilitarios.HelperDatabase;
 
 namespace ConfigUtilitarios
 {
@@ -18,8 +17,9 @@ namespace ConfigUtilitarios
             {
                 try
                 {
+                    var hoy = HelperServer.GetCurrentDateTime();
                     StringBuilder str = new StringBuilder();
-                    str.Append(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString() + " || " + strModulo + " --> " + strMensaje);
+                    str.Append(hoy.ToShortDateString() + " " + hoy.ToShortTimeString() + " || " + strModulo + " --> " + strMensaje);
                     sw.WriteLine(str);
                     str.AppendLine();
                     sw.Close();

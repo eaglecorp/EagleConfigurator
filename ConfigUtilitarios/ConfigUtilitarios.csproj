@@ -56,12 +56,13 @@
     </Compile>
     <Compile Include="Extensions\ColorExt.cs" />
     <Compile Include="HelperControl\Msg.cs" />
+    <Compile Include="HelperDatabase\BackupRestore.cs" />
+    <Compile Include="HelperDatabase\HelperServer.cs" />
     <Compile Include="HelperGeneric\Human.cs" />
     <Compile Include="HelperGeneric\List\AlphaNumericComparer.cs" />
     <Compile Include="HelperGeneric\UtilString.cs" />
     <Compile Include="KeyValues\KeyDates.cs" />
     <Compile Include="KeyValues\KeyHuman.cs" />
-    <Compile Include="Security\BackupRestore.cs" />
     <Compile Include="HelperMultimedia\CamWeb.cs" />
     <Compile Include="KeyValues\CodValDelete.cs" />
     <Compile Include="Security\Connection.cs" />

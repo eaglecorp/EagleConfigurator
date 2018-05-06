@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfigUtilitarios.HelperDatabase;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace ConfigUtilitarios.HelperGeneric
 
         public static string GetRandomName()
         {
-            return DateTime.Now.ToString("yyyyMMddHHmmssfff") + Path.GetFileNameWithoutExtension(Path.GetRandomFileName());
+            return HelperServer.GetCurrentDateTime().ToString("yyyyMMddHHmmssfff") + Path.GetFileNameWithoutExtension(Path.GetRandomFileName());
         }
     }
 }

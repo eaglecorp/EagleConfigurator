@@ -53,9 +53,9 @@ namespace ConfigDataAccess.Utiles
             return valido;
         }
 
-        public DateTime GetCurrentDateTime()
+        public static DateTime GetCurrentDateTime()
         {
-            DateTime ahora = new DateTime(2000, 03, 03);
+            DateTime ahora = DateTime.Now;
             using (var conexion = new SqlConnection(ConnectionManager.GetConnectionString()))
             {
                 try
@@ -69,7 +69,6 @@ namespace ConfigDataAccess.Utiles
                 }
                 catch (Exception e)
                 {
-                    ahora = DateTime.Now.Date;
                     var log = new Log();
                     log.ArchiveLog("GetCurrentDateTime: ", e.Message);
                 }
