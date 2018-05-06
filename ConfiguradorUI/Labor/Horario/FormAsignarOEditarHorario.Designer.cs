@@ -93,7 +93,7 @@
             // 
             this.chkSabado.AutoSize = true;
             this.chkSabado.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkSabado.Location = new System.Drawing.Point(37, 306);
+            this.chkSabado.Location = new System.Drawing.Point(29, 306);
             this.chkSabado.Name = "chkSabado";
             this.chkSabado.Size = new System.Drawing.Size(70, 19);
             this.chkSabado.TabIndex = 125;
@@ -104,7 +104,7 @@
             // 
             this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(37, 139);
+            this.panel3.Location = new System.Drawing.Point(29, 139);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(610, 4);
             this.panel3.TabIndex = 171;
@@ -113,7 +113,7 @@
             // 
             this.dtpToleranciaSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaSab.Location = new System.Drawing.Point(599, 305);
+            this.dtpToleranciaSab.Location = new System.Drawing.Point(591, 305);
             this.dtpToleranciaSab.Name = "dtpToleranciaSab";
             this.dtpToleranciaSab.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaSab.TabIndex = 170;
@@ -123,7 +123,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(484, 115);
+            this.metroLabel1.Location = new System.Drawing.Point(476, 115);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 141;
@@ -135,7 +135,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel2.Location = new System.Drawing.Point(371, 116);
+            this.metroLabel2.Location = new System.Drawing.Point(363, 116);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(79, 19);
             this.metroLabel2.TabIndex = 140;
@@ -146,7 +146,7 @@
             // 
             this.dtpToleranciaVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaVie.Location = new System.Drawing.Point(599, 280);
+            this.dtpToleranciaVie.Location = new System.Drawing.Point(591, 280);
             this.dtpToleranciaVie.Name = "dtpToleranciaVie";
             this.dtpToleranciaVie.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaVie.TabIndex = 168;
@@ -156,7 +156,7 @@
             this.dtpIniBrkDom.CustomFormat = "";
             this.dtpIniBrkDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkDom.Location = new System.Drawing.Point(371, 155);
+            this.dtpIniBrkDom.Location = new System.Drawing.Point(363, 155);
             this.dtpIniBrkDom.Name = "dtpIniBrkDom";
             this.dtpIniBrkDom.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkDom.TabIndex = 142;
@@ -165,7 +165,7 @@
             // 
             this.dtpToleranciaJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaJue.Location = new System.Drawing.Point(599, 255);
+            this.dtpToleranciaJue.Location = new System.Drawing.Point(591, 255);
             this.dtpToleranciaJue.Name = "dtpToleranciaJue";
             this.dtpToleranciaJue.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaJue.TabIndex = 166;
@@ -174,7 +174,7 @@
             // 
             this.dtpFinLabSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabSab.Location = new System.Drawing.Point(265, 305);
+            this.dtpFinLabSab.Location = new System.Drawing.Point(257, 305);
             this.dtpFinLabSab.Name = "dtpFinLabSab";
             this.dtpFinLabSab.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabSab.TabIndex = 139;
@@ -183,7 +183,7 @@
             // 
             this.dtpToleranciaMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaMie.Location = new System.Drawing.Point(599, 230);
+            this.dtpToleranciaMie.Location = new System.Drawing.Point(591, 230);
             this.dtpToleranciaMie.Name = "dtpToleranciaMie";
             this.dtpToleranciaMie.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaMie.TabIndex = 164;
@@ -192,7 +192,7 @@
             // 
             this.dtpFinBrkDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkDom.Location = new System.Drawing.Point(477, 155);
+            this.dtpFinBrkDom.Location = new System.Drawing.Point(469, 155);
             this.dtpFinBrkDom.Name = "dtpFinBrkDom";
             this.dtpFinBrkDom.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkDom.TabIndex = 143;
@@ -202,7 +202,7 @@
             this.lblDomHi.AutoSize = true;
             this.lblDomHi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblDomHi.ForeColor = System.Drawing.Color.Navy;
-            this.lblDomHi.Location = new System.Drawing.Point(161, 115);
+            this.lblDomHi.Location = new System.Drawing.Point(153, 115);
             this.lblDomHi.Name = "lblDomHi";
             this.lblDomHi.Size = new System.Drawing.Size(75, 19);
             this.lblDomHi.TabIndex = 118;
@@ -213,7 +213,7 @@
             // 
             this.dtpIniLabSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabSab.Location = new System.Drawing.Point(159, 305);
+            this.dtpIniLabSab.Location = new System.Drawing.Point(151, 305);
             this.dtpIniLabSab.Name = "dtpIniLabSab";
             this.dtpIniLabSab.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabSab.TabIndex = 138;
@@ -222,7 +222,7 @@
             // 
             this.dtpToleranciaMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaMar.Location = new System.Drawing.Point(599, 205);
+            this.dtpToleranciaMar.Location = new System.Drawing.Point(591, 205);
             this.dtpToleranciaMar.Name = "dtpToleranciaMar";
             this.dtpToleranciaMar.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaMar.TabIndex = 162;
@@ -231,7 +231,7 @@
             // 
             this.dtpIniBrkLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkLun.Location = new System.Drawing.Point(371, 180);
+            this.dtpIniBrkLun.Location = new System.Drawing.Point(363, 180);
             this.dtpIniBrkLun.Name = "dtpIniBrkLun";
             this.dtpIniBrkLun.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkLun.TabIndex = 144;
@@ -240,7 +240,7 @@
             // 
             this.dtpToleranciaLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaLun.Location = new System.Drawing.Point(599, 180);
+            this.dtpToleranciaLun.Location = new System.Drawing.Point(591, 180);
             this.dtpToleranciaLun.Name = "dtpToleranciaLun";
             this.dtpToleranciaLun.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaLun.TabIndex = 160;
@@ -249,7 +249,7 @@
             // 
             this.dtpFinLabVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabVie.Location = new System.Drawing.Point(265, 280);
+            this.dtpFinLabVie.Location = new System.Drawing.Point(257, 280);
             this.dtpFinLabVie.Name = "dtpFinLabVie";
             this.dtpFinLabVie.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabVie.TabIndex = 137;
@@ -259,7 +259,7 @@
             this.lblDomHf.AutoSize = true;
             this.lblDomHf.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblDomHf.ForeColor = System.Drawing.Color.Navy;
-            this.lblDomHf.Location = new System.Drawing.Point(274, 116);
+            this.lblDomHf.Location = new System.Drawing.Point(266, 116);
             this.lblDomHf.Name = "lblDomHf";
             this.lblDomHf.Size = new System.Drawing.Size(61, 19);
             this.lblDomHf.TabIndex = 119;
@@ -270,7 +270,7 @@
             // 
             this.dtpFinBrkLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkLun.Location = new System.Drawing.Point(477, 180);
+            this.dtpFinBrkLun.Location = new System.Drawing.Point(469, 180);
             this.dtpFinBrkLun.Name = "dtpFinBrkLun";
             this.dtpFinBrkLun.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkLun.TabIndex = 145;
@@ -279,7 +279,7 @@
             // 
             this.dtpToleranciaDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToleranciaDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpToleranciaDom.Location = new System.Drawing.Point(599, 155);
+            this.dtpToleranciaDom.Location = new System.Drawing.Point(591, 155);
             this.dtpToleranciaDom.Name = "dtpToleranciaDom";
             this.dtpToleranciaDom.Size = new System.Drawing.Size(49, 20);
             this.dtpToleranciaDom.TabIndex = 158;
@@ -288,7 +288,7 @@
             // 
             this.dtpIniLabVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabVie.Location = new System.Drawing.Point(159, 280);
+            this.dtpIniLabVie.Location = new System.Drawing.Point(151, 280);
             this.dtpIniLabVie.Name = "dtpIniLabVie";
             this.dtpIniLabVie.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabVie.TabIndex = 136;
@@ -298,7 +298,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel4.Location = new System.Drawing.Point(579, 115);
+            this.metroLabel4.Location = new System.Drawing.Point(571, 115);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(69, 19);
             this.metroLabel4.TabIndex = 156;
@@ -309,7 +309,7 @@
             // 
             this.dtpIniBrkMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkMar.Location = new System.Drawing.Point(371, 205);
+            this.dtpIniBrkMar.Location = new System.Drawing.Point(363, 205);
             this.dtpIniBrkMar.Name = "dtpIniBrkMar";
             this.dtpIniBrkMar.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkMar.TabIndex = 146;
@@ -318,7 +318,7 @@
             // 
             this.dtpIniLabDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabDom.Location = new System.Drawing.Point(159, 155);
+            this.dtpIniLabDom.Location = new System.Drawing.Point(151, 155);
             this.dtpIniLabDom.Name = "dtpIniLabDom";
             this.dtpIniLabDom.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabDom.TabIndex = 126;
@@ -327,7 +327,7 @@
             // 
             this.dtpFinLabJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabJue.Location = new System.Drawing.Point(265, 255);
+            this.dtpFinLabJue.Location = new System.Drawing.Point(257, 255);
             this.dtpFinLabJue.Name = "dtpFinLabJue";
             this.dtpFinLabJue.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabJue.TabIndex = 135;
@@ -336,7 +336,7 @@
             // 
             this.dtpFinBrkSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkSab.Location = new System.Drawing.Point(477, 305);
+            this.dtpFinBrkSab.Location = new System.Drawing.Point(469, 305);
             this.dtpFinBrkSab.Name = "dtpFinBrkSab";
             this.dtpFinBrkSab.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkSab.TabIndex = 155;
@@ -345,7 +345,7 @@
             // 
             this.dtpFinBrkMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkMar.Location = new System.Drawing.Point(477, 205);
+            this.dtpFinBrkMar.Location = new System.Drawing.Point(469, 205);
             this.dtpFinBrkMar.Name = "dtpFinBrkMar";
             this.dtpFinBrkMar.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkMar.TabIndex = 147;
@@ -354,7 +354,7 @@
             // 
             this.dtpFinLabDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabDom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabDom.Location = new System.Drawing.Point(265, 155);
+            this.dtpFinLabDom.Location = new System.Drawing.Point(257, 155);
             this.dtpFinLabDom.Name = "dtpFinLabDom";
             this.dtpFinLabDom.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabDom.TabIndex = 127;
@@ -364,7 +364,7 @@
             // 
             this.dtpIniLabJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabJue.Location = new System.Drawing.Point(159, 255);
+            this.dtpIniLabJue.Location = new System.Drawing.Point(151, 255);
             this.dtpIniLabJue.Name = "dtpIniLabJue";
             this.dtpIniLabJue.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabJue.TabIndex = 134;
@@ -373,7 +373,7 @@
             // 
             this.dtpIniBrkSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkSab.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkSab.Location = new System.Drawing.Point(371, 305);
+            this.dtpIniBrkSab.Location = new System.Drawing.Point(363, 305);
             this.dtpIniBrkSab.Name = "dtpIniBrkSab";
             this.dtpIniBrkSab.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkSab.TabIndex = 154;
@@ -382,7 +382,7 @@
             // 
             this.dtpIniBrkMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkMie.Location = new System.Drawing.Point(371, 230);
+            this.dtpIniBrkMie.Location = new System.Drawing.Point(363, 230);
             this.dtpIniBrkMie.Name = "dtpIniBrkMie";
             this.dtpIniBrkMie.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkMie.TabIndex = 148;
@@ -391,7 +391,7 @@
             // 
             this.dtpIniLabLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabLun.Location = new System.Drawing.Point(159, 180);
+            this.dtpIniLabLun.Location = new System.Drawing.Point(151, 180);
             this.dtpIniLabLun.Name = "dtpIniLabLun";
             this.dtpIniLabLun.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabLun.TabIndex = 128;
@@ -400,7 +400,7 @@
             // 
             this.dtpFinLabMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabMie.Location = new System.Drawing.Point(265, 230);
+            this.dtpFinLabMie.Location = new System.Drawing.Point(257, 230);
             this.dtpFinLabMie.Name = "dtpFinLabMie";
             this.dtpFinLabMie.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabMie.TabIndex = 133;
@@ -409,7 +409,7 @@
             // 
             this.dtpFinBrkVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkVie.Location = new System.Drawing.Point(477, 280);
+            this.dtpFinBrkVie.Location = new System.Drawing.Point(469, 280);
             this.dtpFinBrkVie.Name = "dtpFinBrkVie";
             this.dtpFinBrkVie.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkVie.TabIndex = 153;
@@ -418,7 +418,7 @@
             // 
             this.dtpFinBrkMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkMie.Location = new System.Drawing.Point(477, 230);
+            this.dtpFinBrkMie.Location = new System.Drawing.Point(469, 230);
             this.dtpFinBrkMie.Name = "dtpFinBrkMie";
             this.dtpFinBrkMie.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkMie.TabIndex = 149;
@@ -427,7 +427,7 @@
             // 
             this.dtpFinLabLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabLun.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabLun.Location = new System.Drawing.Point(265, 180);
+            this.dtpFinLabLun.Location = new System.Drawing.Point(257, 180);
             this.dtpFinLabLun.Name = "dtpFinLabLun";
             this.dtpFinLabLun.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabLun.TabIndex = 129;
@@ -436,7 +436,7 @@
             // 
             this.dtpIniLabMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabMie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabMie.Location = new System.Drawing.Point(159, 230);
+            this.dtpIniLabMie.Location = new System.Drawing.Point(151, 230);
             this.dtpIniLabMie.Name = "dtpIniLabMie";
             this.dtpIniLabMie.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabMie.TabIndex = 132;
@@ -445,7 +445,7 @@
             // 
             this.dtpIniBrkVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkVie.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkVie.Location = new System.Drawing.Point(371, 280);
+            this.dtpIniBrkVie.Location = new System.Drawing.Point(363, 280);
             this.dtpIniBrkVie.Name = "dtpIniBrkVie";
             this.dtpIniBrkVie.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkVie.TabIndex = 152;
@@ -454,7 +454,7 @@
             // 
             this.dtpIniBrkJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniBrkJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniBrkJue.Location = new System.Drawing.Point(371, 255);
+            this.dtpIniBrkJue.Location = new System.Drawing.Point(363, 255);
             this.dtpIniBrkJue.Name = "dtpIniBrkJue";
             this.dtpIniBrkJue.Size = new System.Drawing.Size(78, 20);
             this.dtpIniBrkJue.TabIndex = 150;
@@ -463,7 +463,7 @@
             // 
             this.dtpIniLabMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIniLabMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpIniLabMar.Location = new System.Drawing.Point(159, 205);
+            this.dtpIniLabMar.Location = new System.Drawing.Point(151, 205);
             this.dtpIniLabMar.Name = "dtpIniLabMar";
             this.dtpIniLabMar.Size = new System.Drawing.Size(78, 20);
             this.dtpIniLabMar.TabIndex = 130;
@@ -472,7 +472,7 @@
             // 
             this.dtpFinLabMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinLabMar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinLabMar.Location = new System.Drawing.Point(265, 205);
+            this.dtpFinLabMar.Location = new System.Drawing.Point(257, 205);
             this.dtpFinLabMar.Name = "dtpFinLabMar";
             this.dtpFinLabMar.Size = new System.Drawing.Size(78, 20);
             this.dtpFinLabMar.TabIndex = 131;
@@ -481,7 +481,7 @@
             // 
             this.dtpFinBrkJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinBrkJue.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFinBrkJue.Location = new System.Drawing.Point(477, 255);
+            this.dtpFinBrkJue.Location = new System.Drawing.Point(469, 255);
             this.dtpFinBrkJue.Name = "dtpFinBrkJue";
             this.dtpFinBrkJue.Size = new System.Drawing.Size(78, 20);
             this.dtpFinBrkJue.TabIndex = 151;
@@ -490,7 +490,7 @@
             // 
             this.chkViernes.AutoSize = true;
             this.chkViernes.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkViernes.Location = new System.Drawing.Point(37, 281);
+            this.chkViernes.Location = new System.Drawing.Point(29, 281);
             this.chkViernes.Name = "chkViernes";
             this.chkViernes.Size = new System.Drawing.Size(70, 19);
             this.chkViernes.TabIndex = 124;
@@ -501,7 +501,7 @@
             // 
             this.chkJueves.AutoSize = true;
             this.chkJueves.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkJueves.Location = new System.Drawing.Point(37, 256);
+            this.chkJueves.Location = new System.Drawing.Point(29, 256);
             this.chkJueves.Name = "chkJueves";
             this.chkJueves.Size = new System.Drawing.Size(65, 19);
             this.chkJueves.TabIndex = 123;
@@ -513,7 +513,7 @@
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel14.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel14.Location = new System.Drawing.Point(37, 115);
+            this.metroLabel14.Location = new System.Drawing.Point(29, 115);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(99, 19);
             this.metroLabel14.TabIndex = 181;
@@ -524,7 +524,7 @@
             // 
             this.chkMartes.AutoSize = true;
             this.chkMartes.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkMartes.Location = new System.Drawing.Point(37, 206);
+            this.chkMartes.Location = new System.Drawing.Point(29, 206);
             this.chkMartes.Name = "chkMartes";
             this.chkMartes.Size = new System.Drawing.Size(68, 19);
             this.chkMartes.TabIndex = 121;
@@ -535,7 +535,7 @@
             // 
             this.chkDomingo.AutoSize = true;
             this.chkDomingo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkDomingo.Location = new System.Drawing.Point(37, 156);
+            this.chkDomingo.Location = new System.Drawing.Point(29, 156);
             this.chkDomingo.Name = "chkDomingo";
             this.chkDomingo.Size = new System.Drawing.Size(82, 19);
             this.chkDomingo.TabIndex = 180;
@@ -546,7 +546,7 @@
             // 
             this.chkMiercoles.AutoSize = true;
             this.chkMiercoles.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkMiercoles.Location = new System.Drawing.Point(37, 231);
+            this.chkMiercoles.Location = new System.Drawing.Point(29, 231);
             this.chkMiercoles.Name = "chkMiercoles";
             this.chkMiercoles.Size = new System.Drawing.Size(83, 19);
             this.chkMiercoles.TabIndex = 122;
@@ -557,7 +557,7 @@
             // 
             this.chkLunes.AutoSize = true;
             this.chkLunes.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkLunes.Location = new System.Drawing.Point(37, 181);
+            this.chkLunes.Location = new System.Drawing.Point(29, 181);
             this.chkLunes.Name = "chkLunes";
             this.chkLunes.Size = new System.Drawing.Size(61, 19);
             this.chkLunes.TabIndex = 120;
@@ -567,7 +567,7 @@
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(91, 69);
+            this.dtpDesde.Location = new System.Drawing.Point(83, 69);
             this.dtpDesde.MinDate = new System.DateTime(2017, 1, 30, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(117, 20);
@@ -576,7 +576,7 @@
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(270, 69);
+            this.dtpHasta.Location = new System.Drawing.Point(262, 69);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(117, 20);
             this.dtpHasta.TabIndex = 174;
@@ -585,7 +585,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel3.Location = new System.Drawing.Point(37, 68);
+            this.metroLabel3.Location = new System.Drawing.Point(29, 68);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(48, 19);
             this.metroLabel3.TabIndex = 171;
@@ -596,7 +596,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel5.Location = new System.Drawing.Point(220, 68);
+            this.metroLabel5.Location = new System.Drawing.Point(212, 68);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(44, 19);
             this.metroLabel5.TabIndex = 173;
@@ -608,7 +608,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(34, 19);
+            this.lblNombreForm.Location = new System.Drawing.Point(26, 19);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(187, 32);
             this.lblNombreForm.TabIndex = 179;
@@ -625,7 +625,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(570, 346);
+            this.btnCancelar.Location = new System.Drawing.Point(562, 346);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
@@ -643,7 +643,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(488, 346);
+            this.btnGuardar.Location = new System.Drawing.Point(480, 346);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 30);
@@ -660,7 +660,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 399);
+            this.ClientSize = new System.Drawing.Size(673, 399);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dtpToleranciaSab);
             this.Controls.Add(this.metroLabel1);

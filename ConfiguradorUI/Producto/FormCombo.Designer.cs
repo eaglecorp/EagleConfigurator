@@ -41,7 +41,7 @@ namespace ConfiguradorUI.Producto
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new BorderedCombo();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@ namespace ConfiguradorUI.Producto
             this.chkIncluyeImpto = new MetroFramework.Controls.MetroCheckBox();
             this.lblPorcentajeAcumuladoImpto = new System.Windows.Forms.Label();
             this.lblSimboloPorcentaje = new System.Windows.Forms.Label();
-            this.cboImpuesto = new BorderedCombo();
+            this.cboImpuesto = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblImpuesto = new MetroFramework.Controls.MetroLabel();
             this.btnImpuesto = new MetroFramework.Controls.MetroLink();
             this.lblPrecioCboSinTax = new MetroFramework.Controls.MetroLabel();
@@ -66,7 +66,7 @@ namespace ConfiguradorUI.Producto
             this.btnComboGrupo = new MetroFramework.Controls.MetroLink();
             this.lblComboGrupo = new MetroFramework.Controls.MetroLabel();
             this.btnAddItem = new System.Windows.Forms.Button();
-            this.cboComboGrupo = new BorderedCombo();
+            this.cboComboGrupo = new ConfigUtilitarios.Controls.BorderedCombo();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.tabDetails = new System.Windows.Forms.TabControl();
             this.tabPagProductos = new System.Windows.Forms.TabPage();
@@ -130,14 +130,14 @@ namespace ConfiguradorUI.Producto
             this.dgvCombo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCombo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCombo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCombo.Location = new System.Drawing.Point(31, 148);
+            this.dgvCombo.Location = new System.Drawing.Point(31, 129);
             this.dgvCombo.MultiSelect = false;
             this.dgvCombo.Name = "dgvCombo";
             this.dgvCombo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCombo.RowHeadersVisible = false;
             this.dgvCombo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCombo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCombo.Size = new System.Drawing.Size(222, 502);
+            this.dgvCombo.Size = new System.Drawing.Size(222, 505);
             this.dgvCombo.TabIndex = 0;
             this.dgvCombo.SelectionChanged += new System.EventHandler(this.dgvCombo_SelectionChanged);
             // 
@@ -147,7 +147,7 @@ namespace ConfiguradorUI.Producto
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(175, 653);
+            this.lblNumInactivo.Location = new System.Drawing.Point(175, 637);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -160,7 +160,7 @@ namespace ConfiguradorUI.Producto
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(95, 653);
+            this.lblNumActivo.Location = new System.Drawing.Point(95, 637);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -173,7 +173,7 @@ namespace ConfiguradorUI.Producto
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(28, 653);
+            this.lblNumReg.Location = new System.Drawing.Point(28, 637);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -198,9 +198,9 @@ namespace ConfiguradorUI.Producto
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(286, 626);
+            this.panelFiltro.Location = new System.Drawing.Point(287, 610);
             this.panelFiltro.Name = "panelFiltro";
-            this.panelFiltro.Size = new System.Drawing.Size(583, 44);
+            this.panelFiltro.Size = new System.Drawing.Size(600, 44);
             this.panelFiltro.TabIndex = 145;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
@@ -228,7 +228,7 @@ namespace ConfiguradorUI.Producto
             this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
-            this.btnFilter.Location = new System.Drawing.Point(539, 6);
+            this.btnFilter.Location = new System.Drawing.Point(553, 6);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(37, 30);
             this.btnFilter.TabIndex = 1;
@@ -241,7 +241,7 @@ namespace ConfiguradorUI.Producto
             // 
             // 
             this.txtFiltro.CustomButton.Image = null;
-            this.txtFiltro.CustomButton.Location = new System.Drawing.Point(180, 1);
+            this.txtFiltro.CustomButton.Location = new System.Drawing.Point(195, 1);
             this.txtFiltro.CustomButton.Name = "";
             this.txtFiltro.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtFiltro.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -260,7 +260,7 @@ namespace ConfiguradorUI.Producto
             this.txtFiltro.SelectionLength = 0;
             this.txtFiltro.SelectionStart = 0;
             this.txtFiltro.ShortcutsEnabled = true;
-            this.txtFiltro.Size = new System.Drawing.Size(202, 23);
+            this.txtFiltro.Size = new System.Drawing.Size(217, 23);
             this.txtFiltro.TabIndex = 0;
             this.txtFiltro.UseSelectable = true;
             this.txtFiltro.WaterMark = "Filtro";
@@ -291,7 +291,7 @@ namespace ConfiguradorUI.Producto
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(286, 51);
+            this.panelMantenimiento.Location = new System.Drawing.Point(286, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(597, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -380,7 +380,7 @@ namespace ConfiguradorUI.Producto
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(135, 125);
+            this.tglListarInactivos.Location = new System.Drawing.Point(142, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 147;
@@ -391,7 +391,7 @@ namespace ConfiguradorUI.Producto
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(37, 123);
+            this.lblListarInactivos.Location = new System.Drawing.Point(31, 104);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 146;
@@ -402,7 +402,7 @@ namespace ConfiguradorUI.Producto
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(87, 55);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(102, 32);
             this.lblNombreForm.TabIndex = 149;
@@ -411,7 +411,7 @@ namespace ConfiguradorUI.Producto
             // tabCombo
             // 
             this.tabCombo.Controls.Add(this.tabPagGeneral);
-            this.tabCombo.Location = new System.Drawing.Point(286, 107);
+            this.tabCombo.Location = new System.Drawing.Point(286, 91);
             this.tabCombo.Name = "tabCombo";
             this.tabCombo.SelectedIndex = 0;
             this.tabCombo.Size = new System.Drawing.Size(601, 513);
@@ -1251,7 +1251,7 @@ namespace ConfiguradorUI.Producto
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(25, 43);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 148;
@@ -1263,7 +1263,7 @@ namespace ConfiguradorUI.Producto
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(910, 709);
+            this.ClientSize = new System.Drawing.Size(922, 683);
             this.Controls.Add(this.dgvCombo);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);

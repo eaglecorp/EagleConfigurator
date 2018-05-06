@@ -36,7 +36,7 @@ namespace ConfiguradorUI.Maestro
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new BorderedCombo();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cboTipoMedioPago = new BorderedCombo();
+            this.cboTipoMedioPago = new ConfigUtilitarios.Controls.BorderedCombo();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.lblTipoMedioPago = new MetroFramework.Controls.MetroLabel();
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
@@ -82,7 +82,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(314, 314);
+            this.panelFiltro.Location = new System.Drawing.Point(314, 280);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(543, 44);
             this.panelFiltro.TabIndex = 3;
@@ -175,7 +175,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(314, 49);
+            this.panelMantenimiento.Location = new System.Drawing.Point(314, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(543, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -264,7 +264,7 @@ namespace ConfiguradorUI.Maestro
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(140, 121);
+            this.tglListarInactivos.Location = new System.Drawing.Point(140, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -275,7 +275,7 @@ namespace ConfiguradorUI.Maestro
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(42, 119);
+            this.lblListarInactivos.Location = new System.Drawing.Point(42, 104);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;
@@ -284,10 +284,10 @@ namespace ConfiguradorUI.Maestro
             // tabMedioPago
             // 
             this.tabMedioPago.Controls.Add(this.tabPagGeneral);
-            this.tabMedioPago.Location = new System.Drawing.Point(314, 105);
+            this.tabMedioPago.Location = new System.Drawing.Point(314, 91);
             this.tabMedioPago.Name = "tabMedioPago";
             this.tabMedioPago.SelectedIndex = 0;
-            this.tabMedioPago.Size = new System.Drawing.Size(560, 202);
+            this.tabMedioPago.Size = new System.Drawing.Size(560, 183);
             this.tabMedioPago.TabIndex = 1;
             this.tabMedioPago.UseSelectable = true;
             // 
@@ -307,7 +307,7 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(552, 160);
+            this.tabPagGeneral.Size = new System.Drawing.Size(552, 141);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
@@ -318,9 +318,9 @@ namespace ConfiguradorUI.Maestro
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(3, 111);
+            this.panel2.Location = new System.Drawing.Point(3, 109);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(530, 8);
+            this.panel2.Size = new System.Drawing.Size(530, 5);
             this.panel2.TabIndex = 86;
             // 
             // panel3
@@ -329,7 +329,7 @@ namespace ConfiguradorUI.Maestro
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(4, 52);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(530, 8);
+            this.panel3.Size = new System.Drawing.Size(530, 5);
             this.panel3.TabIndex = 65;
             // 
             // cboTipoMedioPago
@@ -339,7 +339,7 @@ namespace ConfiguradorUI.Maestro
             this.cboTipoMedioPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoMedioPago.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoMedioPago.FormattingEnabled = true;
-            this.cboTipoMedioPago.Location = new System.Drawing.Point(77, 77);
+            this.cboTipoMedioPago.Location = new System.Drawing.Point(78, 71);
             this.cboTipoMedioPago.Name = "cboTipoMedioPago";
             this.cboTipoMedioPago.Size = new System.Drawing.Size(184, 23);
             this.cboTipoMedioPago.TabIndex = 5;
@@ -353,7 +353,7 @@ namespace ConfiguradorUI.Maestro
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(6, 132);
+            this.chkActivo.Location = new System.Drawing.Point(6, 122);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 6;
@@ -366,7 +366,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblTipoMedioPago.AutoSize = true;
             this.lblTipoMedioPago.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoMedioPago.Location = new System.Drawing.Point(1, 79);
+            this.lblTipoMedioPago.Location = new System.Drawing.Point(1, 73);
             this.lblTipoMedioPago.Name = "lblTipoMedioPago";
             this.lblTipoMedioPago.Size = new System.Drawing.Size(80, 19);
             this.lblTipoMedioPago.TabIndex = 4;
@@ -433,7 +433,7 @@ namespace ConfiguradorUI.Maestro
             this.txtNombre.CustomButton.UseSelectable = true;
             this.txtNombre.CustomButton.Visible = false;
             this.txtNombre.Lines = new string[0];
-            this.txtNombre.Location = new System.Drawing.Point(77, 14);
+            this.txtNombre.Location = new System.Drawing.Point(78, 14);
             this.txtNombre.MaxLength = 32767;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -466,11 +466,11 @@ namespace ConfiguradorUI.Maestro
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(92, 52);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
-            this.lblNombreForm.Size = new System.Drawing.Size(183, 32);
+            this.lblNombreForm.Size = new System.Drawing.Size(185, 32);
             this.lblNombreForm.TabIndex = 88;
-            this.lblNombreForm.Text = "Medios de Pago";
+            this.lblNombreForm.Text = "Medios de pago";
             // 
             // lblIdMedioPago
             // 
@@ -494,14 +494,14 @@ namespace ConfiguradorUI.Maestro
             this.dgvMedioPago.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMedioPago.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMedioPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvMedioPago.Location = new System.Drawing.Point(42, 141);
+            this.dgvMedioPago.Location = new System.Drawing.Point(42, 129);
             this.dgvMedioPago.MultiSelect = false;
             this.dgvMedioPago.Name = "dgvMedioPago";
             this.dgvMedioPago.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMedioPago.RowHeadersVisible = false;
             this.dgvMedioPago.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMedioPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedioPago.Size = new System.Drawing.Size(227, 197);
+            this.dgvMedioPago.Size = new System.Drawing.Size(227, 175);
             this.dgvMedioPago.TabIndex = 0;
             this.dgvMedioPago.SelectionChanged += new System.EventHandler(this.dgvMedioPago_SelectionChanged);
             // 
@@ -510,7 +510,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(30, 41);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 6;
@@ -523,7 +523,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(188, 341);
+            this.lblNumInactivo.Location = new System.Drawing.Point(188, 307);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -536,7 +536,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(108, 341);
+            this.lblNumActivo.Location = new System.Drawing.Point(108, 307);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -549,7 +549,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(41, 341);
+            this.lblNumReg.Location = new System.Drawing.Point(41, 307);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -561,7 +561,7 @@ namespace ConfiguradorUI.Maestro
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 400);
+            this.ClientSize = new System.Drawing.Size(900, 353);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);

@@ -47,7 +47,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnCambiar = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboDatabase = new BorderedCombo();
+            this.cboDatabase = new ConfigUtilitarios.Controls.BorderedCombo();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.grbSqlAuthetication.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -142,7 +142,7 @@ namespace ConfiguradorUI.Seguridad
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(96, 39);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(296, 32);
             this.lblNombreForm.TabIndex = 117;
@@ -286,7 +286,7 @@ namespace ConfiguradorUI.Seguridad
             this.grbSqlAuthetication.Controls.Add(this.txtDataSource);
             this.grbSqlAuthetication.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbSqlAuthetication.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbSqlAuthetication.Location = new System.Drawing.Point(37, 105);
+            this.grbSqlAuthetication.Location = new System.Drawing.Point(37, 102);
             this.grbSqlAuthetication.Name = "grbSqlAuthetication";
             this.grbSqlAuthetication.Size = new System.Drawing.Size(569, 110);
             this.grbSqlAuthetication.TabIndex = 0;
@@ -363,7 +363,7 @@ namespace ConfiguradorUI.Seguridad
             // 
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(34, 27);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 5;
@@ -375,7 +375,7 @@ namespace ConfiguradorUI.Seguridad
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(645, 368);
+            this.ClientSize = new System.Drawing.Size(645, 364);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grbSqlAuthetication);
             this.Controls.Add(this.btnTestConnection);

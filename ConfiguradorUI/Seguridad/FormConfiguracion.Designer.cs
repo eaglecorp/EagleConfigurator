@@ -117,7 +117,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(97, 40);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(281, 32);
             this.lblNombreForm.TabIndex = 110;
@@ -128,7 +128,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(35, 27);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 109;
@@ -141,7 +141,7 @@
             this.tabConfiguracion.Controls.Add(this.tabPagBaseDeDatos);
             this.tabConfiguracion.Controls.Add(this.tabPagComprobante);
             this.tabConfiguracion.Controls.Add(this.tabPagFiscal);
-            this.tabConfiguracion.Location = new System.Drawing.Point(38, 89);
+            this.tabConfiguracion.Location = new System.Drawing.Point(33, 89);
             this.tabConfiguracion.Name = "tabConfiguracion";
             this.tabConfiguracion.SelectedIndex = 4;
             this.tabConfiguracion.Size = new System.Drawing.Size(567, 389);
@@ -1100,7 +1100,7 @@
             // lblCodParametro
             // 
             this.lblCodParametro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodParametro.Location = new System.Drawing.Point(42, 481);
+            this.lblCodParametro.Location = new System.Drawing.Point(37, 481);
             this.lblCodParametro.Name = "lblCodParametro";
             this.lblCodParametro.Size = new System.Drawing.Size(77, 30);
             this.lblCodParametro.TabIndex = 114;
@@ -1109,7 +1109,7 @@
             // lblDescripcionParametro
             // 
             this.lblDescripcionParametro.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionParametro.Location = new System.Drawing.Point(125, 481);
+            this.lblDescripcionParametro.Location = new System.Drawing.Point(120, 481);
             this.lblDescripcionParametro.Name = "lblDescripcionParametro";
             this.lblDescripcionParametro.Size = new System.Drawing.Size(251, 45);
             this.lblDescripcionParametro.TabIndex = 115;
@@ -1128,7 +1128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(645, 546);
+            this.ClientSize = new System.Drawing.Size(632, 537);
             this.Controls.Add(this.lblDescripcionParametro);
             this.Controls.Add(this.lblCodParametro);
             this.Controls.Add(this.btnCancelar);

@@ -85,7 +85,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.grbBuscarEmp.Controls.Add(this.btnBuscarEmp);
             this.grbBuscarEmp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbBuscarEmp.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbBuscarEmp.Location = new System.Drawing.Point(38, 85);
+            this.grbBuscarEmp.Location = new System.Drawing.Point(38, 89);
             this.grbBuscarEmp.Name = "grbBuscarEmp";
             this.grbBuscarEmp.Size = new System.Drawing.Size(289, 87);
             this.grbBuscarEmp.TabIndex = 115;
@@ -161,7 +161,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(85, 35);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(256, 32);
             this.lblNombreForm.TabIndex = 114;
@@ -170,7 +170,7 @@ namespace ConfiguradorUI.Labor.Horario
             // tabHorario
             // 
             this.tabHorario.Controls.Add(this.tabPagGeneral);
-            this.tabHorario.Location = new System.Drawing.Point(43, 166);
+            this.tabHorario.Location = new System.Drawing.Point(43, 170);
             this.tabHorario.Name = "tabHorario";
             this.tabHorario.SelectedIndex = 0;
             this.tabHorario.Size = new System.Drawing.Size(737, 147);
@@ -399,7 +399,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.groupBox1.Controls.Add(this.lblNombreEmpleado);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox1.Location = new System.Drawing.Point(333, 85);
+            this.groupBox1.Location = new System.Drawing.Point(333, 89);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(448, 87);
             this.groupBox1.TabIndex = 116;
@@ -528,7 +528,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.mcaMes.Culture = new System.Globalization.CultureInfo("es-PE");
             this.mcaMes.DayHeaderFont = new System.Drawing.Font("Segoe UI", 9F);
             this.mcaMes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mcaMes.Location = new System.Drawing.Point(43, 315);
+            this.mcaMes.Location = new System.Drawing.Point(43, 319);
             this.mcaMes.Name = "mcaMes";
             this.mcaMes.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2018, 4, 1, 0, 0, 0, 0), new System.DateTime(2018, 4, 1, 0, 0, 0, 0));
             this.mcaMes.ShowFooter = false;
@@ -540,7 +540,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(23, 23);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 113;
@@ -574,7 +574,7 @@ namespace ConfiguradorUI.Labor.Horario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 675);
+            this.ClientSize = new System.Drawing.Size(817, 683);
             this.Controls.Add(this.grbBuscarEmp);
             this.Controls.Add(this.mcaMes);
             this.Controls.Add(this.groupBox1);

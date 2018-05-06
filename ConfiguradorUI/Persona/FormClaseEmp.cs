@@ -985,6 +985,5 @@ namespace ConfiguradorUI.Persona
         }
 
         #endregion
-
     }
 }

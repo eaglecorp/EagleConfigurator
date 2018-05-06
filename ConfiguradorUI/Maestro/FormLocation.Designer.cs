@@ -38,7 +38,7 @@ namespace ConfiguradorUI.Maestro
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new BorderedCombo();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@ namespace ConfiguradorUI.Maestro
             this.txtLatitud = new MetroFramework.Controls.MetroTextBox();
             this.lblLatitud = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cboTipoLocation = new BorderedCombo();
+            this.cboTipoLocation = new ConfigUtilitarios.Controls.BorderedCombo();
             this.txtDireccion02 = new MetroFramework.Controls.MetroTextBox();
             this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
             this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
@@ -109,7 +109,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(95, 48);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(113, 32);
             this.lblNombreForm.TabIndex = 58;
@@ -120,7 +120,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(33, 32);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 6;
@@ -137,7 +137,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(312, 577);
+            this.panelFiltro.Location = new System.Drawing.Point(312, 569);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(551, 49);
             this.panelFiltro.TabIndex = 3;
@@ -230,7 +230,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(312, 44);
+            this.panelMantenimiento.Location = new System.Drawing.Point(312, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(551, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -319,7 +319,7 @@ namespace ConfiguradorUI.Maestro
             // tabLocation
             // 
             this.tabLocation.Controls.Add(this.tabPagGeneral);
-            this.tabLocation.Location = new System.Drawing.Point(312, 99);
+            this.tabLocation.Location = new System.Drawing.Point(312, 91);
             this.tabLocation.Name = "tabLocation";
             this.tabLocation.SelectedIndex = 0;
             this.tabLocation.Size = new System.Drawing.Size(567, 472);
@@ -473,9 +473,9 @@ namespace ConfiguradorUI.Maestro
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(4, 397);
+            this.panel2.Location = new System.Drawing.Point(3, 398);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 8);
+            this.panel2.Size = new System.Drawing.Size(540, 5);
             this.panel2.TabIndex = 62;
             // 
             // cboTipoLocation
@@ -583,9 +583,9 @@ namespace ConfiguradorUI.Maestro
             // 
             this.panel4.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(3, 166);
+            this.panel4.Location = new System.Drawing.Point(3, 167);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(540, 8);
+            this.panel4.Size = new System.Drawing.Size(540, 5);
             this.panel4.TabIndex = 61;
             // 
             // txtFono02
@@ -627,9 +627,9 @@ namespace ConfiguradorUI.Maestro
             this.lblFono02.ForeColor = System.Drawing.Color.Navy;
             this.lblFono02.Location = new System.Drawing.Point(283, 222);
             this.lblFono02.Name = "lblFono02";
-            this.lblFono02.Size = new System.Drawing.Size(60, 19);
+            this.lblFono02.Size = new System.Drawing.Size(51, 19);
             this.lblFono02.TabIndex = 19;
-            this.lblFono02.Text = "Fono 02:";
+            this.lblFono02.Text = "Telf. 02:";
             this.lblFono02.UseCustomForeColor = true;
             // 
             // txtFono01
@@ -671,9 +671,9 @@ namespace ConfiguradorUI.Maestro
             this.lblFono01.ForeColor = System.Drawing.Color.Navy;
             this.lblFono01.Location = new System.Drawing.Point(1, 222);
             this.lblFono01.Name = "lblFono01";
-            this.lblFono01.Size = new System.Drawing.Size(58, 19);
+            this.lblFono01.Size = new System.Drawing.Size(49, 19);
             this.lblFono01.TabIndex = 17;
-            this.lblFono01.Text = "Fono 01:";
+            this.lblFono01.Text = "Telf. 01:";
             this.lblFono01.UseCustomForeColor = true;
             // 
             // txtDato01
@@ -911,9 +911,9 @@ namespace ConfiguradorUI.Maestro
             // 
             this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(3, 78);
+            this.panel1.Location = new System.Drawing.Point(3, 79);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 8);
+            this.panel1.Size = new System.Drawing.Size(540, 5);
             this.panel1.TabIndex = 57;
             // 
             // lblRUC
@@ -1175,7 +1175,7 @@ namespace ConfiguradorUI.Maestro
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(131, 109);
+            this.tglListarInactivos.Location = new System.Drawing.Point(132, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -1186,7 +1186,7 @@ namespace ConfiguradorUI.Maestro
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(33, 107);
+            this.lblListarInactivos.Location = new System.Drawing.Point(34, 104);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;
@@ -1202,14 +1202,14 @@ namespace ConfiguradorUI.Maestro
             this.dgvLocation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvLocation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvLocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvLocation.Location = new System.Drawing.Point(33, 137);
+            this.dgvLocation.Location = new System.Drawing.Point(33, 129);
             this.dgvLocation.MultiSelect = false;
             this.dgvLocation.Name = "dgvLocation";
             this.dgvLocation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvLocation.RowHeadersVisible = false;
             this.dgvLocation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocation.Size = new System.Drawing.Size(230, 456);
+            this.dgvLocation.Size = new System.Drawing.Size(230, 469);
             this.dgvLocation.TabIndex = 0;
             this.dgvLocation.SelectionChanged += new System.EventHandler(this.dgvLocation_SelectionChanged);
             // 
@@ -1233,7 +1233,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(178, 609);
+            this.lblNumInactivo.Location = new System.Drawing.Point(178, 601);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -1246,7 +1246,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(98, 609);
+            this.lblNumActivo.Location = new System.Drawing.Point(98, 601);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -1259,7 +1259,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(31, 609);
+            this.lblNumReg.Location = new System.Drawing.Point(31, 601);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -1270,7 +1270,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 655);
+            this.ClientSize = new System.Drawing.Size(900, 649);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);

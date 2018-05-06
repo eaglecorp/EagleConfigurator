@@ -98,11 +98,11 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTitulo.Location = new System.Drawing.Point(28, 17);
+            this.lblTitulo.Location = new System.Drawing.Point(31, 17);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(159, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(128, 25);
             this.lblTitulo.TabIndex = 4;
-            this.lblTitulo.Text = "CONFIRMACIÓN";
+            this.lblTitulo.Text = "Confirmación";
             // 
             // lblMensaje
             // 

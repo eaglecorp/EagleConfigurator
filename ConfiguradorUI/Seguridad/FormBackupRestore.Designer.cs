@@ -54,7 +54,7 @@
             this.grbRestore.Controls.Add(this.lblLocationRestore);
             this.grbRestore.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbRestore.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbRestore.Location = new System.Drawing.Point(42, 215);
+            this.grbRestore.Location = new System.Drawing.Point(37, 215);
             this.grbRestore.Name = "grbRestore";
             this.grbRestore.Size = new System.Drawing.Size(562, 98);
             this.grbRestore.TabIndex = 1;
@@ -152,7 +152,7 @@
             this.grbBackup.Controls.Add(this.lblLocationBackup);
             this.grbBackup.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbBackup.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbBackup.Location = new System.Drawing.Point(42, 99);
+            this.grbBackup.Location = new System.Drawing.Point(37, 99);
             this.grbBackup.Name = "grbBackup";
             this.grbBackup.Size = new System.Drawing.Size(562, 101);
             this.grbBackup.TabIndex = 0;
@@ -247,7 +247,7 @@
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(34, 27);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 2;
@@ -259,7 +259,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(96, 42);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(191, 32);
             this.lblNombreForm.TabIndex = 108;
@@ -276,7 +276,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(526, 326);
+            this.btnCancelar.Location = new System.Drawing.Point(521, 326);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
@@ -289,7 +289,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(645, 385);
+            this.ClientSize = new System.Drawing.Size(637, 381);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.grbRestore);
             this.Controls.Add(this.grbBackup);

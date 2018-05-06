@@ -40,7 +40,7 @@ namespace ConfiguradorUI.Maestro
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new BorderedCombo();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@ namespace ConfiguradorUI.Maestro
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabImpresora = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboTipoImpresora = new BorderedCombo();
+            this.cboTipoImpresora = new ConfigUtilitarios.Controls.BorderedCombo();
             this.txtIp = new MetroFramework.Controls.MetroTextBox();
             this.txtInfo01 = new MetroFramework.Controls.MetroTextBox();
             this.lblInfo01 = new MetroFramework.Controls.MetroLabel();
@@ -87,7 +87,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(177, 397);
+            this.lblNumInactivo.Location = new System.Drawing.Point(177, 376);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -100,7 +100,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(97, 397);
+            this.lblNumActivo.Location = new System.Drawing.Point(97, 376);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -113,7 +113,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(30, 396);
+            this.lblNumReg.Location = new System.Drawing.Point(30, 376);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -137,7 +137,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvImpresora.RowHeadersVisible = false;
             this.dgvImpresora.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvImpresora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImpresora.Size = new System.Drawing.Size(222, 252);
+            this.dgvImpresora.Size = new System.Drawing.Size(222, 232);
             this.dgvImpresora.TabIndex = 117;
             this.dgvImpresora.SelectionChanged += new System.EventHandler(this.dgvImpresora_SelectionChanged);
             // 
@@ -151,7 +151,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(311, 370);
+            this.panelFiltro.Location = new System.Drawing.Point(314, 349);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
             this.panelFiltro.TabIndex = 120;
@@ -244,7 +244,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(311, 47);
+            this.panelMantenimiento.Location = new System.Drawing.Point(311, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -333,7 +333,7 @@ namespace ConfiguradorUI.Maestro
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(137, 121);
+            this.tglListarInactivos.Location = new System.Drawing.Point(131, 116);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 122;
@@ -344,7 +344,7 @@ namespace ConfiguradorUI.Maestro
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(39, 119);
+            this.lblListarInactivos.Location = new System.Drawing.Point(33, 116);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 121;
@@ -353,10 +353,10 @@ namespace ConfiguradorUI.Maestro
             // tabImpresora
             // 
             this.tabImpresora.Controls.Add(this.tabPagGeneral);
-            this.tabImpresora.Location = new System.Drawing.Point(311, 103);
+            this.tabImpresora.Location = new System.Drawing.Point(311, 91);
             this.tabImpresora.Name = "tabImpresora";
             this.tabImpresora.SelectedIndex = 0;
-            this.tabImpresora.Size = new System.Drawing.Size(562, 261);
+            this.tabImpresora.Size = new System.Drawing.Size(562, 252);
             this.tabImpresora.TabIndex = 118;
             this.tabImpresora.UseSelectable = true;
             // 
@@ -385,7 +385,7 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(554, 219);
+            this.tabPagGeneral.Size = new System.Drawing.Size(554, 210);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
@@ -587,7 +587,7 @@ namespace ConfiguradorUI.Maestro
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(4, 178);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(528, 8);
+            this.panel2.Size = new System.Drawing.Size(528, 5);
             this.panel2.TabIndex = 86;
             // 
             // panel3
@@ -596,7 +596,7 @@ namespace ConfiguradorUI.Maestro
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(4, 50);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(528, 8);
+            this.panel3.Size = new System.Drawing.Size(528, 5);
             this.panel3.TabIndex = 65;
             // 
             // btnTipoImpresora
@@ -731,7 +731,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(89, 51);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(129, 32);
             this.lblNombreForm.TabIndex = 124;
@@ -742,7 +742,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(27, 39);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 123;
@@ -766,7 +766,7 @@ namespace ConfiguradorUI.Maestro
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 450);
+            this.ClientSize = new System.Drawing.Size(900, 422);
             this.Controls.Add(this.lblIdImpresora);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);

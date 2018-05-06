@@ -37,7 +37,7 @@ namespace ConfiguradorUI.Maestro
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new BorderedCombo();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -46,8 +46,8 @@ namespace ConfiguradorUI.Maestro
             this.btnDelete = new System.Windows.Forms.Button();
             this.tabMesa = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboEstadoMesa = new BorderedCombo();
-            this.cboCanalVenta = new BorderedCombo();
+            this.cboEstadoMesa = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboCanalVenta = new ConfigUtilitarios.Controls.BorderedCombo();
             this.txtCapacidad = new MetroFramework.Controls.MetroTextBox();
             this.lblCapacidad = new MetroFramework.Controls.MetroLabel();
             this.btnCanalVenta = new MetroFramework.Controls.MetroLink();
@@ -81,14 +81,14 @@ namespace ConfiguradorUI.Maestro
             this.dgvMesa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMesa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMesa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvMesa.Location = new System.Drawing.Point(39, 106);
+            this.dgvMesa.Location = new System.Drawing.Point(39, 129);
             this.dgvMesa.MultiSelect = false;
             this.dgvMesa.Name = "dgvMesa";
             this.dgvMesa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMesa.RowHeadersVisible = false;
             this.dgvMesa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMesa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMesa.Size = new System.Drawing.Size(222, 240);
+            this.dgvMesa.Size = new System.Drawing.Size(222, 202);
             this.dgvMesa.TabIndex = 117;
             this.dgvMesa.SelectionChanged += new System.EventHandler(this.dgvMesa_SelectionChanged);
             // 
@@ -102,7 +102,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(311, 302);
+            this.panelFiltro.Location = new System.Drawing.Point(311, 287);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
             this.panelFiltro.TabIndex = 120;
@@ -195,7 +195,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(311, 50);
+            this.panelMantenimiento.Location = new System.Drawing.Point(311, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -284,7 +284,7 @@ namespace ConfiguradorUI.Maestro
             // tabMesa
             // 
             this.tabMesa.Controls.Add(this.tabPagGeneral);
-            this.tabMesa.Location = new System.Drawing.Point(311, 106);
+            this.tabMesa.Location = new System.Drawing.Point(311, 91);
             this.tabMesa.Name = "tabMesa";
             this.tabMesa.SelectedIndex = 0;
             this.tabMesa.Size = new System.Drawing.Size(562, 190);
@@ -325,7 +325,7 @@ namespace ConfiguradorUI.Maestro
             this.cboEstadoMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboEstadoMesa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEstadoMesa.FormattingEnabled = true;
-            this.cboEstadoMesa.Location = new System.Drawing.Point(80, 115);
+            this.cboEstadoMesa.Location = new System.Drawing.Point(80, 109);
             this.cboEstadoMesa.Name = "cboEstadoMesa";
             this.cboEstadoMesa.Size = new System.Drawing.Size(161, 23);
             this.cboEstadoMesa.TabIndex = 4;
@@ -338,7 +338,7 @@ namespace ConfiguradorUI.Maestro
             this.cboCanalVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboCanalVenta.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCanalVenta.FormattingEnabled = true;
-            this.cboCanalVenta.Location = new System.Drawing.Point(348, 77);
+            this.cboCanalVenta.Location = new System.Drawing.Point(348, 71);
             this.cboCanalVenta.Name = "cboCanalVenta";
             this.cboCanalVenta.Size = new System.Drawing.Size(161, 23);
             this.cboCanalVenta.TabIndex = 3;
@@ -360,7 +360,7 @@ namespace ConfiguradorUI.Maestro
             this.txtCapacidad.CustomButton.UseSelectable = true;
             this.txtCapacidad.CustomButton.Visible = false;
             this.txtCapacidad.Lines = new string[0];
-            this.txtCapacidad.Location = new System.Drawing.Point(80, 77);
+            this.txtCapacidad.Location = new System.Drawing.Point(80, 71);
             this.txtCapacidad.MaxLength = 32767;
             this.txtCapacidad.Name = "txtCapacidad";
             this.txtCapacidad.PasswordChar = '\0';
@@ -381,7 +381,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblCapacidad.AutoSize = true;
             this.lblCapacidad.ForeColor = System.Drawing.Color.Navy;
-            this.lblCapacidad.Location = new System.Drawing.Point(4, 79);
+            this.lblCapacidad.Location = new System.Drawing.Point(4, 73);
             this.lblCapacidad.Name = "lblCapacidad";
             this.lblCapacidad.Size = new System.Drawing.Size(75, 19);
             this.lblCapacidad.TabIndex = 69;
@@ -393,7 +393,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCanalVenta.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCanalVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnCanalVenta.Image")));
             this.btnCanalVenta.ImageSize = 24;
-            this.btnCanalVenta.Location = new System.Drawing.Point(510, 73);
+            this.btnCanalVenta.Location = new System.Drawing.Point(510, 67);
             this.btnCanalVenta.Name = "btnCanalVenta";
             this.btnCanalVenta.Size = new System.Drawing.Size(29, 27);
             this.btnCanalVenta.TabIndex = 68;
@@ -404,7 +404,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblCanalVenta.AutoSize = true;
             this.lblCanalVenta.ForeColor = System.Drawing.Color.Navy;
-            this.lblCanalVenta.Location = new System.Drawing.Point(283, 79);
+            this.lblCanalVenta.Location = new System.Drawing.Point(283, 73);
             this.lblCanalVenta.Name = "lblCanalVenta";
             this.lblCanalVenta.Size = new System.Drawing.Size(66, 19);
             this.lblCanalVenta.TabIndex = 66;
@@ -415,16 +415,16 @@ namespace ConfiguradorUI.Maestro
             // 
             this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(4, 52);
+            this.panel3.Location = new System.Drawing.Point(4, 51);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(528, 8);
+            this.panel3.Size = new System.Drawing.Size(528, 5);
             this.panel3.TabIndex = 65;
             // 
             // btnEstadoMesa
             // 
             this.btnEstadoMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadoMesa.Image")));
             this.btnEstadoMesa.ImageSize = 24;
-            this.btnEstadoMesa.Location = new System.Drawing.Point(242, 111);
+            this.btnEstadoMesa.Location = new System.Drawing.Point(242, 105);
             this.btnEstadoMesa.Name = "btnEstadoMesa";
             this.btnEstadoMesa.Size = new System.Drawing.Size(29, 27);
             this.btnEstadoMesa.TabIndex = 59;
@@ -435,7 +435,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.ForeColor = System.Drawing.Color.Navy;
-            this.lblEstado.Location = new System.Drawing.Point(4, 117);
+            this.lblEstado.Location = new System.Drawing.Point(4, 111);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(51, 19);
             this.lblEstado.TabIndex = 4;
@@ -535,7 +535,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(89, 54);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(80, 32);
             this.lblNombreForm.TabIndex = 124;
@@ -546,7 +546,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(27, 42);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 123;
@@ -570,7 +570,7 @@ namespace ConfiguradorUI.Maestro
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 379);
+            this.ClientSize = new System.Drawing.Size(900, 360);
             this.Controls.Add(this.lblIdMesa);
             this.Controls.Add(this.dgvMesa);
             this.Controls.Add(this.panelFiltro);

@@ -41,7 +41,7 @@ namespace ConfiguradorUI.Maestro
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new BorderedCombo();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -52,12 +52,12 @@ namespace ConfiguradorUI.Maestro
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabTurno = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboHoraSalidaTT = new BorderedCombo();
-            this.cboHoraSalidaMM = new BorderedCombo();
-            this.cboHoraSalidaHH = new BorderedCombo();
-            this.cboHoraEntradaTT = new BorderedCombo();
-            this.cboHoraEntradaMM = new BorderedCombo();
-            this.cboHoraEntradaHH = new BorderedCombo();
+            this.cboHoraSalidaTT = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboHoraSalidaMM = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboHoraSalidaHH = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboHoraEntradaTT = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboHoraEntradaMM = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboHoraEntradaHH = new ConfigUtilitarios.Controls.BorderedCombo();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -86,7 +86,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(186, 394);
+            this.lblNumInactivo.Location = new System.Drawing.Point(186, 373);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -99,7 +99,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(106, 394);
+            this.lblNumActivo.Location = new System.Drawing.Point(106, 373);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -112,7 +112,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(39, 394);
+            this.lblNumReg.Location = new System.Drawing.Point(39, 373);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -137,14 +137,14 @@ namespace ConfiguradorUI.Maestro
             this.dgvTurno.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTurno.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvTurno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvTurno.Location = new System.Drawing.Point(42, 143);
+            this.dgvTurno.Location = new System.Drawing.Point(42, 129);
             this.dgvTurno.MultiSelect = false;
             this.dgvTurno.Name = "dgvTurno";
             this.dgvTurno.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvTurno.RowHeadersVisible = false;
             this.dgvTurno.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTurno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTurno.Size = new System.Drawing.Size(227, 248);
+            this.dgvTurno.Size = new System.Drawing.Size(227, 241);
             this.dgvTurno.TabIndex = 117;
             this.dgvTurno.SelectionChanged += new System.EventHandler(this.dgvTurno_SelectionChanged);
             // 
@@ -158,7 +158,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(314, 362);
+            this.panelFiltro.Location = new System.Drawing.Point(314, 341);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(547, 49);
             this.panelFiltro.TabIndex = 120;
@@ -251,7 +251,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(314, 52);
+            this.panelMantenimiento.Location = new System.Drawing.Point(314, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(547, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -340,7 +340,7 @@ namespace ConfiguradorUI.Maestro
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(140, 123);
+            this.tglListarInactivos.Location = new System.Drawing.Point(140, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 123;
@@ -351,7 +351,7 @@ namespace ConfiguradorUI.Maestro
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(42, 121);
+            this.lblListarInactivos.Location = new System.Drawing.Point(42, 104);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 122;
@@ -360,10 +360,10 @@ namespace ConfiguradorUI.Maestro
             // tabTurno
             // 
             this.tabTurno.Controls.Add(this.tabPagGeneral);
-            this.tabTurno.Location = new System.Drawing.Point(314, 108);
+            this.tabTurno.Location = new System.Drawing.Point(314, 91);
             this.tabTurno.Name = "tabTurno";
             this.tabTurno.SelectedIndex = 0;
-            this.tabTurno.Size = new System.Drawing.Size(554, 248);
+            this.tabTurno.Size = new System.Drawing.Size(554, 244);
             this.tabTurno.TabIndex = 118;
             this.tabTurno.UseSelectable = true;
             // 
@@ -391,7 +391,7 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(546, 206);
+            this.tabPagGeneral.Size = new System.Drawing.Size(546, 202);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
@@ -405,7 +405,7 @@ namespace ConfiguradorUI.Maestro
             this.cboHoraSalidaTT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboHoraSalidaTT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHoraSalidaTT.FormattingEnabled = true;
-            this.cboHoraSalidaTT.Location = new System.Drawing.Point(432, 124);
+            this.cboHoraSalidaTT.Location = new System.Drawing.Point(432, 128);
             this.cboHoraSalidaTT.Name = "cboHoraSalidaTT";
             this.cboHoraSalidaTT.Size = new System.Drawing.Size(55, 29);
             this.cboHoraSalidaTT.TabIndex = 8;
@@ -418,7 +418,7 @@ namespace ConfiguradorUI.Maestro
             this.cboHoraSalidaMM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboHoraSalidaMM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHoraSalidaMM.FormattingEnabled = true;
-            this.cboHoraSalidaMM.Location = new System.Drawing.Point(380, 124);
+            this.cboHoraSalidaMM.Location = new System.Drawing.Point(380, 128);
             this.cboHoraSalidaMM.Name = "cboHoraSalidaMM";
             this.cboHoraSalidaMM.Size = new System.Drawing.Size(50, 29);
             this.cboHoraSalidaMM.TabIndex = 7;
@@ -431,7 +431,7 @@ namespace ConfiguradorUI.Maestro
             this.cboHoraSalidaHH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboHoraSalidaHH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHoraSalidaHH.FormattingEnabled = true;
-            this.cboHoraSalidaHH.Location = new System.Drawing.Point(328, 124);
+            this.cboHoraSalidaHH.Location = new System.Drawing.Point(328, 128);
             this.cboHoraSalidaHH.Name = "cboHoraSalidaHH";
             this.cboHoraSalidaHH.Size = new System.Drawing.Size(50, 29);
             this.cboHoraSalidaHH.TabIndex = 6;
@@ -444,7 +444,7 @@ namespace ConfiguradorUI.Maestro
             this.cboHoraEntradaTT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboHoraEntradaTT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHoraEntradaTT.FormattingEnabled = true;
-            this.cboHoraEntradaTT.Location = new System.Drawing.Point(179, 124);
+            this.cboHoraEntradaTT.Location = new System.Drawing.Point(179, 128);
             this.cboHoraEntradaTT.Name = "cboHoraEntradaTT";
             this.cboHoraEntradaTT.Size = new System.Drawing.Size(55, 29);
             this.cboHoraEntradaTT.TabIndex = 5;
@@ -457,7 +457,7 @@ namespace ConfiguradorUI.Maestro
             this.cboHoraEntradaMM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboHoraEntradaMM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHoraEntradaMM.FormattingEnabled = true;
-            this.cboHoraEntradaMM.Location = new System.Drawing.Point(126, 124);
+            this.cboHoraEntradaMM.Location = new System.Drawing.Point(126, 128);
             this.cboHoraEntradaMM.Name = "cboHoraEntradaMM";
             this.cboHoraEntradaMM.Size = new System.Drawing.Size(50, 29);
             this.cboHoraEntradaMM.TabIndex = 4;
@@ -470,7 +470,7 @@ namespace ConfiguradorUI.Maestro
             this.cboHoraEntradaHH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboHoraEntradaHH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHoraEntradaHH.FormattingEnabled = true;
-            this.cboHoraEntradaHH.Location = new System.Drawing.Point(74, 124);
+            this.cboHoraEntradaHH.Location = new System.Drawing.Point(74, 128);
             this.cboHoraEntradaHH.Name = "cboHoraEntradaHH";
             this.cboHoraEntradaHH.Size = new System.Drawing.Size(50, 29);
             this.cboHoraEntradaHH.TabIndex = 3;
@@ -479,11 +479,10 @@ namespace ConfiguradorUI.Maestro
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel2.Location = new System.Drawing.Point(358, 100);
+            this.metroLabel2.Location = new System.Drawing.Point(358, 104);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(77, 19);
             this.metroLabel2.TabIndex = 89;
             this.metroLabel2.Text = "Hora Salida";
             this.metroLabel2.UseCustomForeColor = true;
@@ -491,11 +490,10 @@ namespace ConfiguradorUI.Maestro
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(96, 100);
+            this.metroLabel1.Location = new System.Drawing.Point(96, 104);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(90, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(87, 19);
             this.metroLabel1.TabIndex = 88;
             this.metroLabel1.Text = "Hora Entrada";
             this.metroLabel1.UseCustomForeColor = true;
@@ -506,7 +504,7 @@ namespace ConfiguradorUI.Maestro
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(5, 170);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 8);
+            this.panel1.Size = new System.Drawing.Size(533, 5);
             this.panel1.TabIndex = 87;
             // 
             // txtAbreviacion
@@ -525,7 +523,7 @@ namespace ConfiguradorUI.Maestro
             this.txtAbreviacion.CustomButton.UseSelectable = true;
             this.txtAbreviacion.CustomButton.Visible = false;
             this.txtAbreviacion.Lines = new string[0];
-            this.txtAbreviacion.Location = new System.Drawing.Point(82, 52);
+            this.txtAbreviacion.Location = new System.Drawing.Point(84, 52);
             this.txtAbreviacion.MaxLength = 32767;
             this.txtAbreviacion.Name = "txtAbreviacion";
             this.txtAbreviacion.PasswordChar = '\0';
@@ -559,7 +557,7 @@ namespace ConfiguradorUI.Maestro
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(4, 89);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(533, 8);
+            this.panel2.Size = new System.Drawing.Size(533, 5);
             this.panel2.TabIndex = 86;
             // 
             // chkActivo
@@ -570,7 +568,7 @@ namespace ConfiguradorUI.Maestro
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(7, 186);
+            this.chkActivo.Location = new System.Drawing.Point(7, 183);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 9;
@@ -639,7 +637,7 @@ namespace ConfiguradorUI.Maestro
             this.txtNombre.CustomButton.UseSelectable = true;
             this.txtNombre.CustomButton.Visible = false;
             this.txtNombre.Lines = new string[0];
-            this.txtNombre.Location = new System.Drawing.Point(79, 14);
+            this.txtNombre.Location = new System.Drawing.Point(84, 14);
             this.txtNombre.MaxLength = 32767;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -672,7 +670,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(94, 56);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(83, 32);
             this.lblNombreForm.TabIndex = 121;
@@ -683,7 +681,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(32, 44);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 124;
@@ -699,7 +697,7 @@ namespace ConfiguradorUI.Maestro
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 451);
+            this.ClientSize = new System.Drawing.Size(900, 420);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
