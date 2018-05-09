@@ -34,7 +34,7 @@ namespace ConfiguradorUI.Producto.Auxiliares
             _itemVar = item;
             MapItem(item);
             SetItem(_item);
-            AddEventListener();
+            AddHandlers();
         }
 
         public FormComboItem(PROt14_combo_fixed_dtl item)
@@ -43,7 +43,7 @@ namespace ConfiguradorUI.Producto.Auxiliares
             _itemFix = item;
             MapItem(item);
             SetItem(_item);
-            AddEventListener();
+            AddHandlers();
         }
 
         #region Métodos
@@ -106,8 +106,12 @@ namespace ConfiguradorUI.Producto.Auxiliares
             }
         }
 
-        public void AddEventListener()
+        public void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             txtItemCod.TextChanged += CheckChange_Changed;
             txtItemPriceConImp.TextChanged += CheckChange_Changed;
             txtItemPriceSinImp.TextChanged += CheckChange_Changed;

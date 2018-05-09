@@ -321,6 +321,7 @@
             this.Controls.Add(this.txtItemCod);
             this.MaximizeBox = false;
             this.Name = "FormComboItem";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormComboVariableDtl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);

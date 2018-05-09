@@ -62,13 +62,9 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void AddHandlers()
         {
-            //dtpHoraInicioLabor.ValueChanged += dtpHoraInicioLabor_ValueChanged;
-            //dtpHoraFinLabor.ValueChanged += dtpHoraFinLabor_ValueChanged;
-
-            //dtpHoraInicioBreak.ValueChanged += dtpHoraInicioBreak_ValueChanged;
-            //dtpHoraFinBreak.ValueChanged += dtpHoraFinBreak_ValueChanged;
-
-            //dtpTiempoTolerancia.ValueChanged += dtpTiempoTolerancia_ValueChanged;
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
 
             dtpHoraInicioBreak.KeyPress += DtpBreak_KeyPress;
             dtpHoraFinBreak.KeyPress += DtpBreak_KeyPress;

@@ -56,7 +56,7 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(358, 1);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(339, 1);
             this.txtEmail.CustomButton.Name = "";
             this.txtEmail.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -162,7 +162,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(489, 231);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnCancelar);

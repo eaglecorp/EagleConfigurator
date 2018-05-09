@@ -38,8 +38,12 @@ namespace ConfiguradorUI.Producto
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             var txts = new[] {  txtNombre, txtCodBarra, txtCodigo01,txtCodigo02,
                                 txtReferencia,txtAltura,txtAncho,txtLargo,txtPeso,txtDiametro,
@@ -1479,7 +1483,7 @@ namespace ConfiguradorUI.Producto
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }

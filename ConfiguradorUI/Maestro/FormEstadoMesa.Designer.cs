@@ -627,8 +627,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 368);
+            this.ClientSize = new System.Drawing.Size(900, 364);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -641,7 +640,9 @@ namespace ConfiguradorUI.Maestro
             this.Controls.Add(this.tabEstadoMesa);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormEstadoMesa";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormEstadoMesa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoMesa)).EndInit();
             this.panelFiltro.ResumeLayout(false);

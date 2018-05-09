@@ -81,14 +81,14 @@ namespace ConfiguradorUI.Maestro
             this.dgvMesa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMesa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMesa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvMesa.Location = new System.Drawing.Point(39, 129);
+            this.dgvMesa.Location = new System.Drawing.Point(39, 107);
             this.dgvMesa.MultiSelect = false;
             this.dgvMesa.Name = "dgvMesa";
             this.dgvMesa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMesa.RowHeadersVisible = false;
             this.dgvMesa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMesa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMesa.Size = new System.Drawing.Size(222, 202);
+            this.dgvMesa.Size = new System.Drawing.Size(222, 210);
             this.dgvMesa.TabIndex = 117;
             this.dgvMesa.SelectionChanged += new System.EventHandler(this.dgvMesa_SelectionChanged);
             // 
@@ -102,7 +102,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(311, 287);
+            this.panelFiltro.Location = new System.Drawing.Point(311, 273);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
             this.panelFiltro.TabIndex = 120;
@@ -287,7 +287,7 @@ namespace ConfiguradorUI.Maestro
             this.tabMesa.Location = new System.Drawing.Point(311, 91);
             this.tabMesa.Name = "tabMesa";
             this.tabMesa.SelectedIndex = 0;
-            this.tabMesa.Size = new System.Drawing.Size(562, 190);
+            this.tabMesa.Size = new System.Drawing.Size(562, 176);
             this.tabMesa.TabIndex = 118;
             this.tabMesa.UseSelectable = true;
             // 
@@ -311,7 +311,7 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(554, 148);
+            this.tabPagGeneral.Size = new System.Drawing.Size(554, 134);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
@@ -569,8 +569,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(900, 360);
+            this.ClientSize = new System.Drawing.Size(900, 344);
             this.Controls.Add(this.lblIdMesa);
             this.Controls.Add(this.dgvMesa);
             this.Controls.Add(this.panelFiltro);
@@ -578,7 +577,9 @@ namespace ConfiguradorUI.Maestro
             this.Controls.Add(this.tabMesa);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormMesa";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormMesa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMesa)).EndInit();
             this.panelFiltro.ResumeLayout(false);

@@ -161,6 +161,10 @@ namespace ConfiguradorUI.Seguridad
 
         private void FormRecuperarCuenta_Load(object sender, EventArgs e)
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             SetMaxLengthTxt();
         }
 

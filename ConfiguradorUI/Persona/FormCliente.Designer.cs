@@ -2525,6 +2525,7 @@ namespace ConfiguradorUI.Persona
             this.Name = "FormCliente";
             this.Resizable = false;
             this.Load += new System.EventHandler(this.FormCliente_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCliente_KeyDown);
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();
             this.tabCliente.ResumeLayout(false);

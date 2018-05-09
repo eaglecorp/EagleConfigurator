@@ -374,7 +374,6 @@ namespace ConfiguradorUI.Seguridad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(645, 364);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grbSqlAuthetication);

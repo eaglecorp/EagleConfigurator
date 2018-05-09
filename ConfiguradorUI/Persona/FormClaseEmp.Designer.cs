@@ -570,7 +570,6 @@ namespace ConfiguradorUI.Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 419);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -584,7 +583,9 @@ namespace ConfiguradorUI.Persona
             this.Controls.Add(this.tabClaseEmp);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormClaseEmp";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormClaseEmp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClaseEmp)).EndInit();
             this.panelFiltro.ResumeLayout(false);

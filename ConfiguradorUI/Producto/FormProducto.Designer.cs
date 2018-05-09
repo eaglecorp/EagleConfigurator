@@ -1913,7 +1913,6 @@ namespace ConfiguradorUI.Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(1016, 698);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -1930,7 +1929,6 @@ namespace ConfiguradorUI.Producto
             this.MaximizeBox = false;
             this.Name = "FormProducto";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Load += new System.EventHandler(this.FormProducto_Load);
             this.tabProducto.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);

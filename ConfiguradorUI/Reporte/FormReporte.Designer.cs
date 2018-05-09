@@ -555,9 +555,9 @@ namespace ConfiguradorUI.Reporte
             this.lblRuta.ForeColor = System.Drawing.Color.Navy;
             this.lblRuta.Location = new System.Drawing.Point(1, 214);
             this.lblRuta.Name = "lblRuta";
-            this.lblRuta.Size = new System.Drawing.Size(69, 19);
+            this.lblRuta.Size = new System.Drawing.Size(62, 19);
             this.lblRuta.TabIndex = 90;
-            this.lblRuta.Text = "Ruta Rpte:";
+            this.lblRuta.Text = "Ruta Rpt:";
             this.lblRuta.UseCustomForeColor = true;
             // 
             // chkRangoRVC
@@ -670,9 +670,9 @@ namespace ConfiguradorUI.Reporte
             this.lblCategoriaReporte.ForeColor = System.Drawing.Color.Navy;
             this.lblCategoriaReporte.Location = new System.Drawing.Point(1, 73);
             this.lblCategoriaReporte.Name = "lblCategoriaReporte";
-            this.lblCategoriaReporte.Size = new System.Drawing.Size(81, 19);
+            this.lblCategoriaReporte.Size = new System.Drawing.Size(74, 19);
             this.lblCategoriaReporte.TabIndex = 4;
-            this.lblCategoriaReporte.Text = "Categ. Rpte:";
+            this.lblCategoriaReporte.Text = "Categ. Rpt:";
             this.lblCategoriaReporte.UseCustomForeColor = true;
             // 
             // txtCodigo
@@ -794,7 +794,6 @@ namespace ConfiguradorUI.Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 493);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -808,7 +807,9 @@ namespace ConfiguradorUI.Reporte
             this.Controls.Add(this.tabReportes);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormReporte";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormReporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).EndInit();
             this.panelFiltro.ResumeLayout(false);

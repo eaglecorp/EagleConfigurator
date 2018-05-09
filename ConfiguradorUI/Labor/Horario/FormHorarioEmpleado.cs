@@ -40,6 +40,10 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             mcaMes.DoubleClick += mcaMes_DoubleClick;
             btnHoy.Click += btnDate_Click;
             btnPrimerDiaTrabajo.Click += btnDate_Click;

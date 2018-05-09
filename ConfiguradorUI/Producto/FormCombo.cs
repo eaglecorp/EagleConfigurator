@@ -751,8 +751,13 @@ namespace ConfiguradorUI.Producto
 
         #region Métodos Master
 
-        private void addHandlers()
+        private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
+
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             txtItemPriceConImp.KeyPress += ControlHelper.TxtValidDecimal;
             txtItemQuantity.KeyPress += ControlHelper.TxtValidInteger;
@@ -1741,7 +1746,7 @@ namespace ConfiguradorUI.Producto
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }

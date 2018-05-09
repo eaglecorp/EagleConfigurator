@@ -39,8 +39,12 @@ namespace ConfiguradorUI.Maestro
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             var decimalsTxt = new[]{ txtPorcentaje01,
                                 txtPorcentaje02,
@@ -870,7 +874,7 @@ namespace ConfiguradorUI.Maestro
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }

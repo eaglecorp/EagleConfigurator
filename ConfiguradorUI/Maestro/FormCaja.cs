@@ -55,6 +55,10 @@ namespace ConfiguradorUI.Maestro
 
         private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             var txts = new[] { txtNombre, txtCodigo, txtInfo01, txtInfo02, txtIp };
             foreach (var txt in txts)

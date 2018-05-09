@@ -1065,7 +1065,6 @@ namespace ConfiguradorUI.Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 659);
             this.Controls.Add(this.dgvComboVariable);
             this.Controls.Add(this.lblNumInactivo);
@@ -1079,7 +1078,9 @@ namespace ConfiguradorUI.Producto
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.tabComboVariable);
+            this.MaximizeBox = false;
             this.Name = "FormComboVariable";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormComboVariable_Load);
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();

@@ -36,8 +36,12 @@ namespace ConfiguradorUI.Maestro
 
         #region Métodos de ventana
 
-        private void addHandlers()
+        private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             var txts = new[] { txtNombre, txtCodigo, txtInfo01 };
             foreach (var txt in txts)
             {
@@ -693,7 +697,7 @@ namespace ConfiguradorUI.Maestro
             CargarGrilla(Estado.IdActivo);
             CargarComboFiltro();
             panelFiltro.Visible = false;
-            addHandlers();
+            AddHandlers();
             tglListarInactivos.AutoCheck = false;
             ConfigurarGrilla();
         }

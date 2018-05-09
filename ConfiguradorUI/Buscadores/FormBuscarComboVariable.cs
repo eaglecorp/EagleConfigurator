@@ -34,6 +34,9 @@ namespace ConfiguradorUI.Buscadores
 
         void AddHandled()
         {
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             txtCodigo.KeyDown += FocusDgv_KeyDown;
             txtDescripcion.KeyDown += FocusDgv_KeyDown;
         }
@@ -44,17 +47,6 @@ namespace ConfiguradorUI.Buscadores
             {
                 dgvComboVariable.Focus();
             }
-        }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.Escape)
-            {
-                Hide();
-                Close();
-                return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private string GetIdSelected()

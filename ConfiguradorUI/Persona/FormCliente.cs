@@ -42,6 +42,10 @@ namespace ConfiguradorUI.Persona
 
         private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             //Agregando Handlers que se disparan al cambiar el contenido, estado o selección
             var txts = new[] { txtApPaterno, txtApMaterno,txtPrimerNom,txtSegundoNom,
                                 txtCodigo,txtRazonSocial,txtNomComercial,txtNumDoc,
@@ -1381,5 +1385,11 @@ namespace ConfiguradorUI.Persona
 
 
         #endregion
+
+        private void FormCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.Modifiers == Keys.Shift && e.KeyCode == Keys.Escape)
+            //    MessageBox.Show("aaaaaaa");
+        }
     }
 }

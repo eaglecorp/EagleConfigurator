@@ -521,7 +521,6 @@ namespace ConfiguradorUI.Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 297);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -535,7 +534,9 @@ namespace ConfiguradorUI.Reporte
             this.Controls.Add(this.tabCategoriaReporte);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormCategoriaReporte";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormCategoriaReporte_Load);
             this.Click += new System.EventHandler(this.btnCerrar_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriaReporte)).EndInit();

@@ -530,9 +530,9 @@ namespace ConfiguradorUI.Maestro
             this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
             this.lblDireccion02.Location = new System.Drawing.Point(1, 367);
             this.lblDireccion02.Name = "lblDireccion02";
-            this.lblDireccion02.Size = new System.Drawing.Size(77, 19);
+            this.lblDireccion02.Size = new System.Drawing.Size(48, 19);
             this.lblDireccion02.TabIndex = 31;
-            this.lblDireccion02.Text = "Dirección 2:";
+            this.lblDireccion02.Text = "Dir. 02:";
             this.lblDireccion02.UseCustomForeColor = true;
             // 
             // txtDireccion01
@@ -574,9 +574,9 @@ namespace ConfiguradorUI.Maestro
             this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
             this.lblDireccion01.Location = new System.Drawing.Point(1, 330);
             this.lblDireccion01.Name = "lblDireccion01";
-            this.lblDireccion01.Size = new System.Drawing.Size(75, 19);
+            this.lblDireccion01.Size = new System.Drawing.Size(46, 19);
             this.lblDireccion01.TabIndex = 29;
-            this.lblDireccion01.Text = "Dirección 1:";
+            this.lblDireccion01.Text = "Dir. 01:";
             this.lblDireccion01.UseCustomForeColor = true;
             // 
             // panel4

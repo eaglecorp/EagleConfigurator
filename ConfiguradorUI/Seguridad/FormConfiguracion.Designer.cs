@@ -68,12 +68,12 @@
             this.txtCodParamFis = new MetroFramework.Controls.MetroTextBox();
             this.btnAddParametroFiscal = new System.Windows.Forms.Button();
             this.dgvParametrosFiscales = new System.Windows.Forms.DataGridView();
-            this.tabPagBaseDeDatos = new MetroFramework.Controls.MetroTabPage();
-            this.grbBackupRestore = new System.Windows.Forms.GroupBox();
-            this.chkHabilitarRestore = new MetroFramework.Controls.MetroCheckBox();
             this.tabPagUsuario = new MetroFramework.Controls.MetroTabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkCreateUserAfterRegisterEmployee = new MetroFramework.Controls.MetroCheckBox();
+            this.tabPagBaseDeDatos = new MetroFramework.Controls.MetroTabPage();
+            this.grbBackupRestore = new System.Windows.Forms.GroupBox();
+            this.chkHabilitarRestore = new MetroFramework.Controls.MetroCheckBox();
             this.tabPagDiseno = new MetroFramework.Controls.MetroTabPage();
             this.grbLogo = new System.Windows.Forms.GroupBox();
             this.lblPathLogo = new System.Windows.Forms.Label();
@@ -102,10 +102,10 @@
             this.groupBox1.SuspendLayout();
             this.tabPagFiscal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParametrosFiscales)).BeginInit();
-            this.tabPagBaseDeDatos.SuspendLayout();
-            this.grbBackupRestore.SuspendLayout();
             this.tabPagUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabPagBaseDeDatos.SuspendLayout();
+            this.grbBackupRestore.SuspendLayout();
             this.tabPagDiseno.SuspendLayout();
             this.grbLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -832,51 +832,6 @@
             this.dgvParametrosFiscales.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParametrosFiscales_CellValueChanged);
             this.dgvParametrosFiscales.SelectionChanged += new System.EventHandler(this.dgvParametrosFiscales_SelectionChanged);
             // 
-            // tabPagBaseDeDatos
-            // 
-            this.tabPagBaseDeDatos.Controls.Add(this.grbBackupRestore);
-            this.tabPagBaseDeDatos.HorizontalScrollbarBarColor = true;
-            this.tabPagBaseDeDatos.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagBaseDeDatos.HorizontalScrollbarSize = 10;
-            this.tabPagBaseDeDatos.Location = new System.Drawing.Point(4, 38);
-            this.tabPagBaseDeDatos.Name = "tabPagBaseDeDatos";
-            this.tabPagBaseDeDatos.Size = new System.Drawing.Size(559, 347);
-            this.tabPagBaseDeDatos.TabIndex = 2;
-            this.tabPagBaseDeDatos.Text = "Base de Datos";
-            this.tabPagBaseDeDatos.VerticalScrollbarBarColor = true;
-            this.tabPagBaseDeDatos.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagBaseDeDatos.VerticalScrollbarSize = 10;
-            // 
-            // grbBackupRestore
-            // 
-            this.grbBackupRestore.BackColor = System.Drawing.Color.White;
-            this.grbBackupRestore.Controls.Add(this.chkHabilitarRestore);
-            this.grbBackupRestore.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbBackupRestore.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbBackupRestore.Location = new System.Drawing.Point(3, 16);
-            this.grbBackupRestore.Name = "grbBackupRestore";
-            this.grbBackupRestore.Size = new System.Drawing.Size(553, 62);
-            this.grbBackupRestore.TabIndex = 13;
-            this.grbBackupRestore.TabStop = false;
-            this.grbBackupRestore.Text = "Backup y Restore";
-            // 
-            // chkHabilitarRestore
-            // 
-            this.chkHabilitarRestore.AutoSize = true;
-            this.chkHabilitarRestore.Checked = true;
-            this.chkHabilitarRestore.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHabilitarRestore.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkHabilitarRestore.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkHabilitarRestore.ForeColor = System.Drawing.Color.Navy;
-            this.chkHabilitarRestore.Location = new System.Drawing.Point(17, 25);
-            this.chkHabilitarRestore.Name = "chkHabilitarRestore";
-            this.chkHabilitarRestore.Size = new System.Drawing.Size(312, 19);
-            this.chkHabilitarRestore.TabIndex = 0;
-            this.chkHabilitarRestore.Text = "Habilitar botón de restauración de base de datos";
-            this.chkHabilitarRestore.UseCustomForeColor = true;
-            this.chkHabilitarRestore.UseSelectable = true;
-            this.chkHabilitarRestore.MouseEnter += new System.EventHandler(this.chkHabilitarRestore_MouseEnter);
-            // 
             // tabPagUsuario
             // 
             this.tabPagUsuario.Controls.Add(this.groupBox2);
@@ -921,6 +876,51 @@
             this.chkCreateUserAfterRegisterEmployee.UseCustomForeColor = true;
             this.chkCreateUserAfterRegisterEmployee.UseSelectable = true;
             this.chkCreateUserAfterRegisterEmployee.MouseEnter += new System.EventHandler(this.chkCreateUserAfterRegisterEmployee_MouseEnter);
+            // 
+            // tabPagBaseDeDatos
+            // 
+            this.tabPagBaseDeDatos.Controls.Add(this.grbBackupRestore);
+            this.tabPagBaseDeDatos.HorizontalScrollbarBarColor = true;
+            this.tabPagBaseDeDatos.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagBaseDeDatos.HorizontalScrollbarSize = 10;
+            this.tabPagBaseDeDatos.Location = new System.Drawing.Point(4, 38);
+            this.tabPagBaseDeDatos.Name = "tabPagBaseDeDatos";
+            this.tabPagBaseDeDatos.Size = new System.Drawing.Size(559, 347);
+            this.tabPagBaseDeDatos.TabIndex = 2;
+            this.tabPagBaseDeDatos.Text = "Base de Datos";
+            this.tabPagBaseDeDatos.VerticalScrollbarBarColor = true;
+            this.tabPagBaseDeDatos.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagBaseDeDatos.VerticalScrollbarSize = 10;
+            // 
+            // grbBackupRestore
+            // 
+            this.grbBackupRestore.BackColor = System.Drawing.Color.White;
+            this.grbBackupRestore.Controls.Add(this.chkHabilitarRestore);
+            this.grbBackupRestore.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbBackupRestore.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbBackupRestore.Location = new System.Drawing.Point(3, 16);
+            this.grbBackupRestore.Name = "grbBackupRestore";
+            this.grbBackupRestore.Size = new System.Drawing.Size(553, 62);
+            this.grbBackupRestore.TabIndex = 13;
+            this.grbBackupRestore.TabStop = false;
+            this.grbBackupRestore.Text = "Backup y Restore";
+            // 
+            // chkHabilitarRestore
+            // 
+            this.chkHabilitarRestore.AutoSize = true;
+            this.chkHabilitarRestore.Checked = true;
+            this.chkHabilitarRestore.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkHabilitarRestore.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkHabilitarRestore.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkHabilitarRestore.ForeColor = System.Drawing.Color.Navy;
+            this.chkHabilitarRestore.Location = new System.Drawing.Point(17, 25);
+            this.chkHabilitarRestore.Name = "chkHabilitarRestore";
+            this.chkHabilitarRestore.Size = new System.Drawing.Size(312, 19);
+            this.chkHabilitarRestore.TabIndex = 0;
+            this.chkHabilitarRestore.Text = "Habilitar botón de restauración de base de datos";
+            this.chkHabilitarRestore.UseCustomForeColor = true;
+            this.chkHabilitarRestore.UseSelectable = true;
+            this.chkHabilitarRestore.MouseEnter += new System.EventHandler(this.chkHabilitarRestore_MouseEnter);
             // 
             // tabPagDiseno
             // 
@@ -1178,7 +1178,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(632, 537);
             this.Controls.Add(this.lblDescripcionParametro);
             this.Controls.Add(this.lblCodParametro);
@@ -1204,12 +1203,12 @@
             this.groupBox1.PerformLayout();
             this.tabPagFiscal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvParametrosFiscales)).EndInit();
-            this.tabPagBaseDeDatos.ResumeLayout(false);
-            this.grbBackupRestore.ResumeLayout(false);
-            this.grbBackupRestore.PerformLayout();
             this.tabPagUsuario.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPagBaseDeDatos.ResumeLayout(false);
+            this.grbBackupRestore.ResumeLayout(false);
+            this.grbBackupRestore.PerformLayout();
             this.tabPagDiseno.ResumeLayout(false);
             this.grbLogo.ResumeLayout(false);
             this.grbLogo.PerformLayout();

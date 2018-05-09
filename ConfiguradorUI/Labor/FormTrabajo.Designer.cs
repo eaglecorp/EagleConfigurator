@@ -583,7 +583,9 @@ namespace ConfiguradorUI.Labor
             this.Controls.Add(this.tabTrabajo);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormTrabajo";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormTrabajo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajo)).EndInit();
             this.panelFiltro.ResumeLayout(false);

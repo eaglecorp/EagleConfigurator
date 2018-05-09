@@ -48,7 +48,11 @@ namespace ConfiguradorUI.Seguridad
         {
             try
             {
-                if(Parameter.EnableRestore != Estado.IdActivo)
+                //Form
+                KeyPreview = true;
+                KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
+                if (Parameter.EnableRestore != Estado.IdActivo)
                 {
                     btnRestore.Enabled = false;
                 }

@@ -36,6 +36,10 @@ namespace ConfiguradorUI.Seguridad
 
         private void FormCambiarClave_Load(object sender, EventArgs e)
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             SetMaxLengthTxt();
             lblIndicadorContraseña.Text = "";
             NombreUsuario();

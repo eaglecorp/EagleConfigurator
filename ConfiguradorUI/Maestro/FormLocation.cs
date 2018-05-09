@@ -38,6 +38,10 @@ namespace ConfiguradorUI.Maestro
 
         private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             var txtsNumeric = new[]
             {
                  txtLatitud, txtLongitud

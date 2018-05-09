@@ -580,7 +580,6 @@ namespace ConfiguradorUI.Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 362);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -594,7 +593,9 @@ namespace ConfiguradorUI.Maestro
             this.Controls.Add(this.tabTipoImpresora);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormTipoImpresora";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormTipoImpresora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoImpresora)).EndInit();
             this.panelFiltro.ResumeLayout(false);

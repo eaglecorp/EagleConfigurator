@@ -929,7 +929,7 @@ namespace ConfiguradorUI.Maestro
             this.tabPagConfigFiscal.HorizontalScrollbarSize = 10;
             this.tabPagConfigFiscal.Location = new System.Drawing.Point(4, 38);
             this.tabPagConfigFiscal.Name = "tabPagConfigFiscal";
-            this.tabPagConfigFiscal.Size = new System.Drawing.Size(554, 319);
+            this.tabPagConfigFiscal.Size = new System.Drawing.Size(554, 304);
             this.tabPagConfigFiscal.TabIndex = 1;
             this.tabPagConfigFiscal.Text = "Configuración Fiscal";
             this.tabPagConfigFiscal.VerticalScrollbarBarColor = true;
@@ -976,7 +976,6 @@ namespace ConfiguradorUI.Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 516);
             this.Controls.Add(this.lblIdCaja);
             this.Controls.Add(this.lblNumInactivo);
@@ -990,7 +989,9 @@ namespace ConfiguradorUI.Maestro
             this.Controls.Add(this.tabCaja);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormCaja";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaja)).EndInit();
             this.panelFiltro.ResumeLayout(false);

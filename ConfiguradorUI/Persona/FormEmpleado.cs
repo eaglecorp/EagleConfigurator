@@ -50,6 +50,10 @@ namespace ConfiguradorUI.Persona
 
         private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             var txts = new[] { txtApPaterno, txtApMaterno,txtPrimerNom,txtSegundoNom,
                                 txtCodigo,txtRazonSocial,txtNomComercial,txtNumDoc,
                                 txtNumRuc,txtNomZona,txtNomVia,txtNumVia,

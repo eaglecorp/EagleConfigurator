@@ -555,6 +555,10 @@ namespace ConfiguradorUI.Seguridad
 
         private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             var txts = new[]
             {
                 txtMailServer,
@@ -1006,7 +1010,7 @@ namespace ConfiguradorUI.Seguridad
         }
 
         #endregion
-
+        
         #region Eventos de ventana
 
         private void FormConfiguracion_Load(object sender, EventArgs e)

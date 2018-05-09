@@ -534,7 +534,9 @@ namespace ConfiguradorUI.Maestro
             this.Controls.Add(this.tabTipoRazon);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormTipoRazon";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormTipoRazon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoRazon)).EndInit();
             this.panelFiltro.ResumeLayout(false);

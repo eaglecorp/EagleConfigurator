@@ -32,6 +32,10 @@ namespace ConfiguradorUI.Buscadores
 
         void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             txtNumDoc.KeyDown += FocusDgv_KeyDown;
             txtCodigo.KeyDown += FocusDgv_KeyDown;
             txtApellidosYNombres.KeyDown += FocusDgv_KeyDown;
@@ -43,19 +47,6 @@ namespace ConfiguradorUI.Buscadores
             {
                 dgvEmpleado.Focus();
             }
-        }
-
-
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.Escape)
-            {
-                Hide();
-                Close();
-                return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void CargarGrid(IEnumerable<PERt04_empleado> list)

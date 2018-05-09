@@ -238,7 +238,6 @@
             this.Controls.Add(this.lblNombreForm);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormAsignarOEditarDia";
             this.Resizable = false;
             this.Load += new System.EventHandler(this.FormAsignarOEditarDia_Load);

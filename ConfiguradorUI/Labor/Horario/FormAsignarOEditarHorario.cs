@@ -64,6 +64,11 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void AddHandlers()
         {
+
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             foreach (var chkDia in (CheckBox[])GetControls(TipoControl.CheckDia))
             {
                 chkDia.CheckedChanged += chk_CheckedChanged;
@@ -74,31 +79,6 @@ namespace ConfiguradorUI.Labor.Horario
                 dtpBreak.MouseDown += DtpBreak_MouseDown;
                 dtpBreak.KeyPress += DtpBreak_KeyPress;
             }
-
-            //foreach (var dtpHoraInicioLabor in (DateTimePicker[])GetControls(TipoControl.DtpInicioLabor))
-            //{
-            //    dtpHoraInicioLabor.ValueChanged += dtpHoraInicioLabor_ValueChanged;
-            //}
-
-            //foreach (var dtpHoraFinLabor in (DateTimePicker[])GetControls(TipoControl.DtpFinLabor))
-            //{
-            //    dtpHoraFinLabor.ValueChanged += dtpHoraFinLabor_ValueChanged;
-            //}
-
-            //foreach (var dtpHoraInicioBreak in (DateTimePicker[])GetControls(TipoControl.DtpInicioBreak))
-            //{
-            //    dtpHoraInicioBreak.ValueChanged += dtpHoraInicioBreak_ValueChanged;
-            //}
-
-            //foreach (var dtpHoraFinBreak in (DateTimePicker[])GetControls(TipoControl.DtpFinBreak))
-            //{
-            //    dtpHoraFinBreak.ValueChanged += dtpHoraFinBreak_ValueChanged;
-            //}
-
-            //foreach (var dtpTiempoTolerancia in (DateTimePicker[])GetControls(TipoControl.DtpTiempoTolerancia))
-            //{
-            //    dtpTiempoTolerancia.ValueChanged += dtpTiempoTolerancia_ValueChanged;
-            //}
 
             dtpDesde.ValueChanged += dtpDesde_ValueChanged;
             dtpHasta.ValueChanged += dtpHasta_ValueChanged;

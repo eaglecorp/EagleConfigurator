@@ -16,6 +16,17 @@ namespace ConfigUtilitarios
         public static int maxHeightComboBox { get; } = 300;
         public static int maxDropDownItems { get; } = 15;
 
+        #region Form
+
+        public static void FormCloseShiftEsc_KeyDown(object sender, KeyEventArgs e)
+        {
+            var form = (Form)sender;
+            if (e.Modifiers == Keys.Shift && e.KeyCode == Keys.Escape)
+                form.Close();
+        }
+
+        #endregion
+
         #region TextBox
 
         public static void TxtValidDecimal(object sender, KeyPressEventArgs e)

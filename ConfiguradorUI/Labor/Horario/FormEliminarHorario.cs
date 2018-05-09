@@ -48,6 +48,10 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void AddHandlers()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             dtpDesde.ValueChanged += dtpDesde_ValueChanged;
             dtpHasta.ValueChanged += dtpHasta_ValueChanged;
 

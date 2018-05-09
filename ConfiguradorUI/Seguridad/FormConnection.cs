@@ -31,6 +31,10 @@ namespace ConfiguradorUI.Seguridad
 
         private void ConfigurarControles()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             lblTestResult.Visible = false;
 
             txtContrasena.UseSystemPasswordChar = true;

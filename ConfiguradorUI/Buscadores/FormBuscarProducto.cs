@@ -26,6 +26,10 @@ namespace ConfiguradorUI.Buscadores
 
         void AddHandled()
         {
+            //Form
+            KeyPreview = true;
+            KeyDown += ControlHelper.FormCloseShiftEsc_KeyDown;
+
             txtCodigo.KeyDown += FocusDgv_KeyDown;
             txtCodigo02.KeyDown += FocusDgv_KeyDown;
             txtDescripcionProd.KeyDown += FocusDgv_KeyDown;
@@ -37,17 +41,6 @@ namespace ConfiguradorUI.Buscadores
             {
                 dgvProd.Focus();
             }
-        }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.Escape)
-            {
-                Hide();
-                Close();
-                return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void CargarGrid(IEnumerable<PROt09_producto> list)

@@ -311,6 +311,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCommit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -696,7 +697,6 @@ namespace ConfiguradorUI.Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(900, 420);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
@@ -710,7 +710,9 @@ namespace ConfiguradorUI.Maestro
             this.Controls.Add(this.tabTurno);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.btnCerrar);
+            this.MaximizeBox = false;
             this.Name = "FormTurno";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.FormTurno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurno)).EndInit();
             this.panelFiltro.ResumeLayout(false);
