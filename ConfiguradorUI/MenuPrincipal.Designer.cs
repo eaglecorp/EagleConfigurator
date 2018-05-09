@@ -106,7 +106,7 @@
             this.tabPanel.Controls.Add(this.tabPagLabor);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 0;
+            this.tabPanel.SelectedIndex = 3;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -314,7 +314,7 @@
             this.btnClaseProducto.Name = "btnClaseProducto";
             this.btnClaseProducto.Size = new System.Drawing.Size(145, 37);
             this.btnClaseProducto.TabIndex = 5;
-            this.btnClaseProducto.Text = "Clases";
+            this.btnClaseProducto.Text = "Clases Prod";
             this.btnClaseProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClaseProducto.UseVisualStyleBackColor = false;
             this.btnClaseProducto.Click += new System.EventHandler(this.btnClaseProducto_Click);
@@ -945,7 +945,7 @@
             this.btnCategoriaReporte.Name = "btnCategoriaReporte";
             this.btnCategoriaReporte.Size = new System.Drawing.Size(145, 37);
             this.btnCategoriaReporte.TabIndex = 13;
-            this.btnCategoriaReporte.Text = "Categorías";
+            this.btnCategoriaReporte.Text = "Categ. Rpt";
             this.btnCategoriaReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCategoriaReporte.UseVisualStyleBackColor = false;
             this.btnCategoriaReporte.Click += new System.EventHandler(this.btnCategoriaReporte_Click);

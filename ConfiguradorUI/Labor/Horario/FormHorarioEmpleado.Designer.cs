@@ -69,6 +69,8 @@ namespace ConfiguradorUI.Labor.Horario
             this.ctxMenuDate = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemAgregarOEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEliminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.picColorDiaDeTrabajo = new System.Windows.Forms.PictureBox();
+            this.lblColorDiasLaborales = new MetroFramework.Controls.MetroLabel();
             this.grbBuscarEmp.SuspendLayout();
             this.tabHorario.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -76,6 +78,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.ctxMenuDate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picColorDiaDeTrabajo)).BeginInit();
             this.SuspendLayout();
             // 
             // grbBuscarEmp
@@ -196,6 +199,8 @@ namespace ConfiguradorUI.Labor.Horario
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.lblColorDiasLaborales);
+            this.groupBox3.Controls.Add(this.picColorDiaDeTrabajo);
             this.groupBox3.Controls.Add(this.btnUltimoDiaTrabajo);
             this.groupBox3.Controls.Add(this.btnPrimerDiaTrabajo);
             this.groupBox3.Controls.Add(this.lblDiasDeTrabajoRestantes);
@@ -570,6 +575,26 @@ namespace ConfiguradorUI.Labor.Horario
             this.toolStripMenuItemEliminar.Text = "Eliminar";
             this.toolStripMenuItemEliminar.Click += new System.EventHandler(this.toolStripMenuItemEliminar_Click);
             // 
+            // picColorDiaDeTrabajo
+            // 
+            this.picColorDiaDeTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("picColorDiaDeTrabajo.Image")));
+            this.picColorDiaDeTrabajo.Location = new System.Drawing.Point(235, 50);
+            this.picColorDiaDeTrabajo.Name = "picColorDiaDeTrabajo";
+            this.picColorDiaDeTrabajo.Size = new System.Drawing.Size(16, 16);
+            this.picColorDiaDeTrabajo.TabIndex = 110;
+            this.picColorDiaDeTrabajo.TabStop = false;
+            // 
+            // lblColorDiasLaborales
+            // 
+            this.lblColorDiasLaborales.AutoSize = true;
+            this.lblColorDiasLaborales.ForeColor = System.Drawing.Color.Navy;
+            this.lblColorDiasLaborales.Location = new System.Drawing.Point(257, 47);
+            this.lblColorDiasLaborales.Name = "lblColorDiasLaborales";
+            this.lblColorDiasLaborales.Size = new System.Drawing.Size(160, 19);
+            this.lblColorDiasLaborales.TabIndex = 212;
+            this.lblColorDiasLaborales.Text = "Días de trabajo asignados";
+            this.lblColorDiasLaborales.UseCustomForeColor = true;
+            // 
             // FormHorarioEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,6 +619,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ctxMenuDate.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picColorDiaDeTrabajo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -637,5 +663,7 @@ namespace ConfiguradorUI.Labor.Horario
         private MetroFramework.Controls.MetroLabel lblRuc;
         private System.Windows.Forms.Button btnUltimoDiaTrabajo;
         private System.Windows.Forms.Button btnPrimerDiaTrabajo;
+        private MetroFramework.Controls.MetroLabel lblColorDiasLaborales;
+        private System.Windows.Forms.PictureBox picColorDiaDeTrabajo;
     }
 }

@@ -451,7 +451,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(1, 380);
+            this.panel3.Location = new System.Drawing.Point(3, 380);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(555, 5);
             this.panel3.TabIndex = 113;
@@ -505,7 +505,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(1, 294);
+            this.panel2.Location = new System.Drawing.Point(3, 294);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(555, 5);
             this.panel2.TabIndex = 58;
@@ -540,7 +540,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.btnCategoriaEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaEmp.Image")));
             this.btnCategoriaEmp.ImageSize = 24;
-            this.btnCategoriaEmp.Location = new System.Drawing.Point(531, 156);
+            this.btnCategoriaEmp.Location = new System.Drawing.Point(534, 157);
             this.btnCategoriaEmp.Name = "btnCategoriaEmp";
             this.btnCategoriaEmp.Size = new System.Drawing.Size(29, 27);
             this.btnCategoriaEmp.TabIndex = 57;
@@ -551,7 +551,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.btnClaseEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnClaseEmp.Image")));
             this.btnClaseEmp.ImageSize = 24;
-            this.btnClaseEmp.Location = new System.Drawing.Point(244, 156);
+            this.btnClaseEmp.Location = new System.Drawing.Point(244, 157);
             this.btnClaseEmp.Name = "btnClaseEmp";
             this.btnClaseEmp.Size = new System.Drawing.Size(29, 27);
             this.btnClaseEmp.TabIndex = 56;
@@ -587,7 +587,7 @@ namespace ConfiguradorUI.Persona
             this.cboCategoriaEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboCategoriaEmp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoriaEmp.FormattingEnabled = true;
-            this.cboCategoriaEmp.Location = new System.Drawing.Point(373, 160);
+            this.cboCategoriaEmp.Location = new System.Drawing.Point(376, 161);
             this.cboCategoriaEmp.Name = "cboCategoriaEmp";
             this.cboCategoriaEmp.Size = new System.Drawing.Size(157, 23);
             this.cboCategoriaEmp.TabIndex = 20;
@@ -806,7 +806,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumDoc.CustomButton.UseSelectable = true;
             this.txtNumDoc.CustomButton.Visible = false;
             this.txtNumDoc.Lines = new string[0];
-            this.txtNumDoc.Location = new System.Drawing.Point(375, 228);
+            this.txtNumDoc.Location = new System.Drawing.Point(376, 228);
             this.txtNumDoc.MaxLength = 32767;
             this.txtNumDoc.Name = "txtNumDoc";
             this.txtNumDoc.PasswordChar = '\0';
@@ -874,7 +874,7 @@ namespace ConfiguradorUI.Persona
             this.txtNomComercial.CustomButton.UseSelectable = true;
             this.txtNomComercial.CustomButton.Visible = false;
             this.txtNomComercial.Lines = new string[0];
-            this.txtNomComercial.Location = new System.Drawing.Point(375, 194);
+            this.txtNomComercial.Location = new System.Drawing.Point(376, 194);
             this.txtNomComercial.MaxLength = 32767;
             this.txtNomComercial.Name = "txtNomComercial";
             this.txtNomComercial.PasswordChar = '\0';
@@ -1038,7 +1038,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(1, 146);
+            this.panel1.Location = new System.Drawing.Point(3, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(555, 5);
             this.panel1.TabIndex = 57;
@@ -1094,7 +1094,7 @@ namespace ConfiguradorUI.Persona
             this.txtApMaterno.CustomButton.UseSelectable = true;
             this.txtApMaterno.CustomButton.Visible = false;
             this.txtApMaterno.Lines = new string[0];
-            this.txtApMaterno.Location = new System.Drawing.Point(375, 46);
+            this.txtApMaterno.Location = new System.Drawing.Point(376, 46);
             this.txtApMaterno.MaxLength = 32767;
             this.txtApMaterno.Name = "txtApMaterno";
             this.txtApMaterno.PasswordChar = '\0';

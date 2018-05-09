@@ -79,11 +79,12 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void ConfigurarControles()
         {
-            ControlHelper.FormatDatePicker(dtpHoraInicioLabor, customFormat: "hh:mm tt");
-            ControlHelper.FormatDatePicker(dtpHoraFinLabor, customFormat: "hh:mm tt");
-            ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: " ");
-            ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: " ");
-            ControlHelper.FormatDatePicker(dtpTiempoTolerancia, customFormat: "HH:mm");
+           // DateFormat
+            ControlHelper.FormatDatePicker(dtpHoraInicioLabor, customFormat: DateFormat.TimeDefault);
+            ControlHelper.FormatDatePicker(dtpHoraFinLabor, customFormat: DateFormat.TimeDefault);
+            ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: DateFormat.Blank);
+            ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: DateFormat.Blank);
+            ControlHelper.FormatDatePicker(dtpTiempoTolerancia, customFormat: DateFormat.TimeDefault);
 
             if (_TipoOperacion == TipoOperacion.EditarHoratioDtl)
             {
@@ -173,13 +174,13 @@ namespace ConfiguradorUI.Labor.Horario
                     if (_horarioDtl.hora_inicio_break != null)
                     {
                         dtpHoraInicioBreak.Value = Convert.ToDateTime(_horarioDtl.hora_inicio_break.ToString());
-                        ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: "hh:mm tt");
+                        ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: DateFormat.TimeDefault);
                     }
 
                     if (_horarioDtl.hora_fin_break != null)
                     {
                         dtpHoraFinBreak.Value = Convert.ToDateTime(_horarioDtl.hora_fin_break.ToString());
-                        ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: "hh:mm tt");
+                        ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: DateFormat.TimeDefault);
                     }
 
                     dtpTiempoTolerancia.Value = Convert.ToDateTime(_horarioDtl.tiempo_tolerancia.ToString());
@@ -347,14 +348,14 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void DtpBreak_MouseDown(object sender, MouseEventArgs e)
         {
-            if (((DateTimePicker)sender).CustomFormat != "hh:mm tt")
+            if (((DateTimePicker)sender).CustomFormat != DateFormat.TimeDefault)
             {
                 var tuplaHorasBrkDisponibles = GetHorasBreakDisponible(GetHoraYMinutos(dtpHoraInicioLabor.Value.TimeOfDay), GetHoraYMinutos(dtpHoraFinLabor.Value.TimeOfDay));
                 dtpHoraInicioBreak.Value = Convert.ToDateTime(tuplaHorasBrkDisponibles.Item1.ToString());
                 dtpHoraFinBreak.Value = Convert.ToDateTime(tuplaHorasBrkDisponibles.Item2.ToString());
 
-                ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: "hh:mm tt");
-                ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: "hh:mm tt");
+                ControlHelper.FormatDatePicker(dtpHoraInicioBreak, customFormat: DateFormat.TimeDefault);
+                ControlHelper.FormatDatePicker(dtpHoraFinBreak, customFormat: DateFormat.TimeDefault);
             }
         }
 

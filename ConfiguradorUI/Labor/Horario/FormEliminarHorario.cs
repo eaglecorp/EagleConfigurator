@@ -225,10 +225,10 @@ namespace ConfiguradorUI.Labor.Horario
             dtpDesde.MaxDate = dtpHasta.MaxDate = _horario.fecha_fin_horario;
 
             dtpDesde.Format = DateTimePickerFormat.Custom;
-            dtpDesde.CustomFormat = "dd/MM/yyyy";
+            dtpDesde.CustomFormat = DateFormat.DateOnly;
 
             dtpHasta.Format = DateTimePickerFormat.Custom;
-            dtpHasta.CustomFormat = "dd/MM/yyyy";
+            dtpHasta.CustomFormat = DateFormat.DateOnly;
 
             #endregion
         }
@@ -292,12 +292,12 @@ namespace ConfiguradorUI.Labor.Horario
                 if (dtpDesde.Value.Date < hoy)
                 {
                     no_error = false;
-                    errorProv.SetError(dtpDesde, $"La fecha \"Desde\" no puede ser menor que la fecha actual ({hoy.ToString("dd/MM/yyyy")}).");
+                    errorProv.SetError(dtpDesde, $"La fecha \"Desde\" no puede ser menor que la fecha actual ({hoy.ToString(DateFormat.DateOnly)}).");
                 }
                 else if (dtpHasta.Value.Date < hoy)
                 {
                     no_error = false;
-                    errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede ser menor que la fecha actual ({hoy.ToString("dd/MM/yyyy")}).");
+                    errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede ser menor que la fecha actual ({hoy.ToString(DateFormat.DateOnly)}).");
                 }
             }
 
@@ -377,8 +377,8 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void SetFechasHorario()
         {
-            lblPrimerDiaHorario.Text = _horario.fecha_inicio_horario.ToString("dd/MM/yyyy");
-            lblUltimoDiaHorario.Text = _horario.fecha_fin_horario.ToString("dd/MM/yyyy");
+            lblPrimerDiaHorario.Text = _horario.fecha_inicio_horario.ToString(DateFormat.DateOnly);
+            lblUltimoDiaHorario.Text = _horario.fecha_fin_horario.ToString(DateFormat.DateOnly);
         }
 
         private int GetNumeroFechasPasadas(DateTime hoy)
@@ -452,7 +452,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (dtpHasta.CustomFormat == " ")
             {
-                ControlHelper.FormatDatePicker(dtpHasta, customFormat: "dd/MM/yyyy", showUpDown: false);
+                ControlHelper.FormatDatePicker(dtpHasta, customFormat: DateFormat.DateOnly, showUpDown: false);
                 EvaluarDiasDisponibles();
             }
         }

@@ -12,6 +12,11 @@ namespace ConfigUtilitarios
         public static string DateOnly = "dd/MM/yyyy";
         public static string Blank = " ";
 
+        public static string TimeDefault = "HH:mm";
+        public static string TimeAmPm = "hh:mm tt";
+
+        
+
         public static void SetFormat(DateTimePicker dtp, string format)
         {
             dtp.Format = DateTimePickerFormat.Custom;

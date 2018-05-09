@@ -1912,6 +1912,15 @@ namespace ConfiguradorUI.Persona
             SetMaxLengthTxt();
         }
 
+
+        private void PostConfig()
+        {
+            cboTrabajo.IntegralHeight = false;
+            cboTrabajo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+            cboTrabajo.DropDownWidth = ControlHelper.DropDownWidth(cboTrabajo);
+        }
+
+
         #endregion
 
         #region Eventos de ventana
@@ -1931,7 +1940,8 @@ namespace ConfiguradorUI.Persona
             panelFiltro.Visible = false;
             AddHandlers();
             tglListarInactivos.AutoCheck = false;
-            ConfigurarGrilla();
+            PostConfig();
+            ConfigurarGrilla();   
         }
 
 

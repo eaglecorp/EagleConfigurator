@@ -57,8 +57,8 @@ namespace ConfiguradorUI.Labor.Horario
 
                 lblNombreEmpleado.Text = nombreCompleto.ToUpper();
 
-                lblFechaIngreso.Text = _empleado.fecha_ingreso != null ? ((DateTime)_empleado.fecha_ingreso).ToString("dd/MM/yyyy") : "-";
-                lblFechaCese.Text = _empleado.fecha_cese != null ? ((DateTime)_empleado.fecha_cese).ToString("dd/MM/yyyy") : "-";
+                lblFechaIngreso.Text = _empleado.fecha_ingreso != null ? ((DateTime)_empleado.fecha_ingreso).ToString(DateFormat.DateOnly) : "-";
+                lblFechaCese.Text = _empleado.fecha_cese != null ? ((DateTime)_empleado.fecha_cese).ToString(DateFormat.DateOnly) : "-";
                 lblNumDoc.Text = !string.IsNullOrEmpty(_empleado.nro_doc) ? _empleado.nro_doc : "-";
                 lblRuc.Text = !string.IsNullOrEmpty(_empleado.nro_ruc) ? _empleado.nro_ruc : "-";
 
@@ -88,9 +88,9 @@ namespace ConfiguradorUI.Labor.Horario
 
                     var fechasDeLaborRestante = horarioSoloFechas.Count(x => x.Date >= hoy);
 
-                    btnPrimerDiaTrabajo.Text = horario.fecha_inicio_horario.ToString("dd/MM/yyyy");
-                    btnUltimoDiaTrabajo.Text = horario.fecha_fin_horario.ToString("dd/MM/yyyy");
-                    btnHoy.Text = hoy.ToString("dd/MM/yyyy");
+                    btnPrimerDiaTrabajo.Text = horario.fecha_inicio_horario.ToString(DateFormat.DateOnly);
+                    btnUltimoDiaTrabajo.Text = horario.fecha_fin_horario.ToString(DateFormat.DateOnly);
+                    btnHoy.Text = hoy.ToString(DateFormat.DateOnly);
 
                     lblDiasDeTrabajoRestantes.Text = fechasDeLaborRestante.ToString();
 
@@ -103,7 +103,7 @@ namespace ConfiguradorUI.Labor.Horario
 
                     btnPrimerDiaTrabajo.Text = "-";
                     btnUltimoDiaTrabajo.Text = "-";
-                    btnHoy.Text = hoy.ToString("dd/MM/yyyy");
+                    btnHoy.Text = hoy.ToString(DateFormat.DateOnly);
 
                     lblDiasDeTrabajoRestantes.Text = "-";
 
@@ -188,7 +188,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             btnPrimerDiaTrabajo.Text = "-";
             btnUltimoDiaTrabajo.Text = "-";
-            btnHoy.Text = UtilBL.GetCurrentDateTime.Date.ToString("dd/MM/yyyy");
+            btnHoy.Text = UtilBL.GetCurrentDateTime.Date.ToString(DateFormat.DateOnly);
             ResaltarFechasEnCalendario(null);
         }
 
@@ -308,12 +308,12 @@ namespace ConfiguradorUI.Labor.Horario
                 if (fechaIngreso != null && fecha < fechaIngreso)
                 {
                     isValid = false;
-                    Msg.Ok_Info($"La fecha no puede ser menor que la fecha de ingreso ({((DateTime)fechaIngreso).ToString("dd/MM/yyyy")}) del empleado.");
+                    Msg.Ok_Info($"La fecha no puede ser menor que la fecha de ingreso ({((DateTime)fechaIngreso).ToString(DateFormat.DateOnly)}) del empleado.");
                 }
                 else if (fechaCese != null && fecha > fechaCese)
                 {
                     isValid = false;
-                    Msg.Ok_Info($"La fecha no puede ser mayor que la fecha de cese ({((DateTime)fechaCese).ToString("dd/MM/yyyy")}) del empleado.");
+                    Msg.Ok_Info($"La fecha no puede ser mayor que la fecha de cese ({((DateTime)fechaCese).ToString(DateFormat.DateOnly)}) del empleado.");
                 }
             }
 

@@ -1155,21 +1155,21 @@ namespace ConfiguradorUI.Labor.Horario
             }
 
             dtpDesde.Format = DateTimePickerFormat.Custom;
-            dtpDesde.CustomFormat = "dd/MM/yyyy";
+            dtpDesde.CustomFormat = DateFormat.DateOnly;
 
             dtpHasta.Format = DateTimePickerFormat.Custom;
-            dtpHasta.CustomFormat = "dd/MM/yyyy";
+            dtpHasta.CustomFormat = DateFormat.DateOnly;
 
             var dtpsLabor = (DateTimePicker[])GetControls(TipoControl.DtpLabor);
 
             foreach (var dtpLabor in dtpsLabor)
             {
-                ControlHelper.FormatDatePicker(dtpLabor, customFormat: "hh:mm tt");
+                ControlHelper.FormatDatePicker(dtpLabor, customFormat: DateFormat.TimeDefault);
             }
 
             foreach (var dtpTol in (DateTimePicker[])GetControls(TipoControl.DtpTiempoTolerancia))
             {
-                ControlHelper.FormatDatePicker(dtpTol, customFormat: "HH:mm");
+                ControlHelper.FormatDatePicker(dtpTol, customFormat: DateFormat.TimeDefault);
             }
 
             #endregion
@@ -1246,12 +1246,12 @@ namespace ConfiguradorUI.Labor.Horario
                 if (dtpDesde.Value.Date < hoy)
                 {
                     no_error = false;
-                    errorProv.SetError(dtpDesde, $"La fecha \"Desde\" no puede ser menor que la fecha actual ({hoy.ToString("dd/MM/yyyy")}).");
+                    errorProv.SetError(dtpDesde, $"La fecha \"Desde\" no puede ser menor que la fecha actual ({hoy.ToString(DateFormat.DateOnly)}).");
                 }
                 else if (dtpHasta.Value.Date < hoy)
                 {
                     no_error = false;
-                    errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede ser menor que la fecha actual ({hoy.ToString("dd/MM/yyyy")}).");
+                    errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede ser menor que la fecha actual ({hoy.ToString(DateFormat.DateOnly)}).");
                 }
             }
 
@@ -1271,12 +1271,12 @@ namespace ConfiguradorUI.Labor.Horario
                 if (fechaIngreso != null && fechaIngreso > dtpDesde.Value.Date)
                 {
                     no_error = false;
-                    errorProv.SetError(dtpDesde, $"La fecha \"Desde\" no puede ser menor que la fecha de ingreso ({((DateTime)fechaIngreso).ToString("dd/MM/yyyy")}) del empleado.");
+                    errorProv.SetError(dtpDesde, $"La fecha \"Desde\" no puede ser menor que la fecha de ingreso ({((DateTime)fechaIngreso).ToString(DateFormat.DateOnly)}) del empleado.");
                 }
                 if (fechaCese != null && fechaCese < dtpHasta.Value.Date)
                 {
                     no_error = false;
-                    errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede ser mayor que la fecha de cese ({((DateTime)fechaCese).ToString("dd/MM/yyyy")}) del empleado.");
+                    errorProv.SetError(dtpHasta, $"La fecha \"Hasta\" no puede ser mayor que la fecha de cese ({((DateTime)fechaCese).ToString(DateFormat.DateOnly)}) del empleado.");
                 }
             }
 
@@ -1640,10 +1640,10 @@ namespace ConfiguradorUI.Labor.Horario
         private void DtpBreak_MouseDown(object sender, MouseEventArgs e)
         {
             var dtp = ((DateTimePicker)sender);
-            if (dtp.CustomFormat != "hh:mm tt")
+            if (dtp.CustomFormat != DateFormat.TimeDefault)
             {
                 SetHorasDisponiblesBreak(dtp);
-                FormatoDtpBreak(dtp, "hh:mm tt");
+                FormatoDtpBreak(dtp, DateFormat.TimeDefault);
             }
         }
 
@@ -1651,7 +1651,7 @@ namespace ConfiguradorUI.Labor.Horario
         {
             if (dtpHasta.CustomFormat == " ")
             {
-                ControlHelper.FormatDatePicker(dtpHasta, customFormat: "dd/MM/yyyy", showUpDown: false);
+                ControlHelper.FormatDatePicker(dtpHasta, customFormat: DateFormat.DateOnly, showUpDown: false);
                 EvaluarDiasDisponibles();
             }
         }

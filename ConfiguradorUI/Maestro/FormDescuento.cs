@@ -68,6 +68,8 @@ namespace ConfiguradorUI.Maestro
             foreach (var cbo in cbos)
             {
                 cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
             }
 
             var dtps = GetDtpPeriodos();
