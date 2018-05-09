@@ -244,6 +244,7 @@
             this.gbxFiltro.Controls.Add(this.metroLabel2);
             this.gbxFiltro.Controls.Add(this.metroLabel3);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxFiltro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gbxFiltro.Location = new System.Drawing.Point(35, 71);
             this.gbxFiltro.Name = "gbxFiltro";
             this.gbxFiltro.Size = new System.Drawing.Size(710, 91);

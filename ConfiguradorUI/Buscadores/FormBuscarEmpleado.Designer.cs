@@ -65,6 +65,7 @@
             this.gbxFiltro.Controls.Add(this.metroLabel2);
             this.gbxFiltro.Controls.Add(this.metroLabel1);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxFiltro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gbxFiltro.Location = new System.Drawing.Point(35, 71);
             this.gbxFiltro.Name = "gbxFiltro";
             this.gbxFiltro.Size = new System.Drawing.Size(710, 91);
@@ -253,6 +254,7 @@
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.gbxFiltro);
             this.Controls.Add(this.dgvEmpleado);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "FormBuscarEmpleado";
             this.Load += new System.EventHandler(this.FormBuscarEmpleado_Load);
             this.gbxFiltro.ResumeLayout(false);

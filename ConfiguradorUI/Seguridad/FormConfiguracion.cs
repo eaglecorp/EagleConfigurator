@@ -79,6 +79,7 @@ namespace ConfiguradorUI.Seguridad
                 var authAnularComp = GetParametroSistema(ParameterCode.AuthAnularComp);
                 var authReimprComp = GetParametroSistema(ParameterCode.AuthReimpresionComp);
 
+                var createUserAfterRegisterEmployee = GetParametroSistema(ParameterCode.CreateUserAfterRegisterEmployee);
                 #endregion
 
                 SetParametrosFiscales(new ParametroFiscalBL().ListaParametroFiscal());
@@ -108,6 +109,9 @@ namespace ConfiguradorUI.Seguridad
 
                 chkAuthReimprComp.Checked = authReimprComp.dec_valor != null &&
                     (int)authReimprComp.dec_valor == Estado.IdActivo;
+
+                chkCreateUserAfterRegisterEmployee.Checked = createUserAfterRegisterEmployee.dec_valor != null &&
+                    (int)createUserAfterRegisterEmployee.dec_valor == Estado.IdActivo;
 
                 Parameter.CargarParametroImg(splash, picSplash, ParameterCode.SplashImg);
                 lblPathSplash.Text = splash.txt_valor;
@@ -150,6 +154,8 @@ namespace ConfiguradorUI.Seguridad
             var authAnularComp = GetParametroSistema(ParameterCode.AuthAnularComp);
             var authReimprComp = GetParametroSistema(ParameterCode.AuthReimpresionComp);
 
+            var createUserAfterRegisterEmployee = GetParametroSistema(ParameterCode.CreateUserAfterRegisterEmployee);
+
             TryAddParameterFromMetroTxt(mailServer, txtMailServer);
 
             int.TryParse(txtPort.Text.Trim(), out int valuePort);
@@ -173,6 +179,7 @@ namespace ConfiguradorUI.Seguridad
             TryAddParameterFromTxt(addMsjRegister, txtAddMsjRegister);
 
             TryAddParameterFromChk(sendMailPostRegister, chkSendMailPostRegister);
+            TryAddParameterFromChk(createUserAfterRegisterEmployee, chkCreateUserAfterRegisterEmployee);
 
             TryAddParameterFromMetroTxt(subjectCredentials, txtSubjectCredentials);
             TryAddParameterFromTxt(addMsjCredentials, txtAddMsjCredentials);
@@ -185,6 +192,8 @@ namespace ConfiguradorUI.Seguridad
 
             TryAddParameterFromChk(authAnularComp, chkAuthAnularComp);
             TryAddParameterFromChk(authReimprComp, chkAuthReimprComp);
+
+      
 
             #region Métodos locales
             void TryAddParameterFromMetroTxt(GRLt01_parametro parametro, MetroTextBox txtParametro)
@@ -562,7 +571,8 @@ namespace ConfiguradorUI.Seguridad
                 chkSendMailPostRegister,
                 chkHabilitarRestore,
                 chkAuthAnularComp,
-                chkAuthReimprComp
+                chkAuthReimprComp,
+                chkCreateUserAfterRegisterEmployee
             };
 
             var pics = new[]
@@ -1093,6 +1103,10 @@ namespace ConfiguradorUI.Seguridad
         {
             SetCodYDescripcionParametro(ParameterCode.AuthReimpresionComp);
         }
+        private void chkCreateUserAfterRegisterEmployee_MouseEnter(object sender, EventArgs e)
+        {
+            SetCodYDescripcionParametro(ParameterCode.CreateUserAfterRegisterEmployee);
+        }
         private void dgvParametrosFiscales_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == colValorDefault && postLoad)
@@ -1130,12 +1144,5 @@ namespace ConfiguradorUI.Seguridad
 
         #endregion
 
-        private void NoNegative_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-        }
-
-        private void CleanErrorText_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-        }
     }
 }

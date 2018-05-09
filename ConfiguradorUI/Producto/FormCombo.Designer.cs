@@ -64,7 +64,6 @@ namespace ConfiguradorUI.Producto
             this.lblPrecioCboConTax = new MetroFramework.Controls.MetroLabel();
             this.chkMostrarInactivos = new MetroFramework.Controls.MetroCheckBox();
             this.btnComboGrupo = new MetroFramework.Controls.MetroLink();
-            this.lblComboGrupo = new MetroFramework.Controls.MetroLabel();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.cboComboGrupo = new ConfigUtilitarios.Controls.BorderedCombo();
             this.btnRemoveItem = new System.Windows.Forms.Button();
@@ -100,6 +99,7 @@ namespace ConfiguradorUI.Producto
             this.lblCodigo = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
+            this.lblComboGrupo = new MetroFramework.Controls.MetroLabel();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvDtl = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
@@ -432,7 +432,6 @@ namespace ConfiguradorUI.Producto
             this.tabPagGeneral.Controls.Add(this.lblPrecioCboConTax);
             this.tabPagGeneral.Controls.Add(this.chkMostrarInactivos);
             this.tabPagGeneral.Controls.Add(this.btnComboGrupo);
-            this.tabPagGeneral.Controls.Add(this.lblComboGrupo);
             this.tabPagGeneral.Controls.Add(this.btnAddItem);
             this.tabPagGeneral.Controls.Add(this.cboComboGrupo);
             this.tabPagGeneral.Controls.Add(this.btnRemoveItem);
@@ -460,6 +459,7 @@ namespace ConfiguradorUI.Producto
             this.tabPagGeneral.Controls.Add(this.lblCodigo);
             this.tabPagGeneral.Controls.Add(this.txtNombre);
             this.tabPagGeneral.Controls.Add(this.lblNombre);
+            this.tabPagGeneral.Controls.Add(this.lblComboGrupo);
             this.tabPagGeneral.HorizontalScrollbarBarColor = true;
             this.tabPagGeneral.HorizontalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
@@ -613,17 +613,6 @@ namespace ConfiguradorUI.Producto
             this.btnComboGrupo.TabIndex = 155;
             this.btnComboGrupo.UseSelectable = true;
             this.btnComboGrupo.Click += new System.EventHandler(this.btnComboGrupo_Click);
-            // 
-            // lblComboGrupo
-            // 
-            this.lblComboGrupo.AutoSize = true;
-            this.lblComboGrupo.ForeColor = System.Drawing.Color.Navy;
-            this.lblComboGrupo.Location = new System.Drawing.Point(290, 51);
-            this.lblComboGrupo.Name = "lblComboGrupo";
-            this.lblComboGrupo.Size = new System.Drawing.Size(78, 19);
-            this.lblComboGrupo.TabIndex = 153;
-            this.lblComboGrupo.Text = "Grupo Cbo:";
-            this.lblComboGrupo.UseCustomForeColor = true;
             // 
             // btnAddItem
             // 
@@ -1128,9 +1117,9 @@ namespace ConfiguradorUI.Producto
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(114, 87);
+            this.panel2.Location = new System.Drawing.Point(114, 88);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(462, 6);
+            this.panel2.Size = new System.Drawing.Size(462, 5);
             this.panel2.TabIndex = 86;
             // 
             // chkActivo
@@ -1237,6 +1226,17 @@ namespace ConfiguradorUI.Producto
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.UseCustomForeColor = true;
+            // 
+            // lblComboGrupo
+            // 
+            this.lblComboGrupo.AutoSize = true;
+            this.lblComboGrupo.ForeColor = System.Drawing.Color.Navy;
+            this.lblComboGrupo.Location = new System.Drawing.Point(290, 51);
+            this.lblComboGrupo.Name = "lblComboGrupo";
+            this.lblComboGrupo.Size = new System.Drawing.Size(78, 19);
+            this.lblComboGrupo.TabIndex = 153;
+            this.lblComboGrupo.Text = "Grupo Cbo:";
+            this.lblComboGrupo.UseCustomForeColor = true;
             // 
             // errorProv
             // 

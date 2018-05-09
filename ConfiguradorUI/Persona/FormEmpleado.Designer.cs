@@ -38,35 +38,36 @@ namespace ConfiguradorUI.Persona
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new BorderedCombo();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.tabEmpleado = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.lblDescUsername = new MetroFramework.Controls.MetroLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.grbUser = new System.Windows.Forms.GroupBox();
             this.lblUsername = new MetroFramework.Controls.MetroLabel();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
-            this.lblSuspLaboral = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cboMotivoBaja = new BorderedCombo();
-            this.cboSuspLaboral = new BorderedCombo();
+            this.cboMotivoBaja = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboSuspLaboral = new ConfigUtilitarios.Controls.BorderedCombo();
             this.btnCategoriaEmp = new MetroFramework.Controls.MetroLink();
             this.btnClaseEmp = new MetroFramework.Controls.MetroLink();
             this.lblMotivoBaja = new MetroFramework.Controls.MetroLabel();
             this.lblCategoriaEmp = new MetroFramework.Controls.MetroLabel();
-            this.cboCategoriaEmp = new BorderedCombo();
-            this.cboClaseEmp = new BorderedCombo();
+            this.cboCategoriaEmp = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboClaseEmp = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblClaseEmp = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.txtSegundoNom = new MetroFramework.Controls.MetroTextBox();
             this.lblPrimerNom = new MetroFramework.Controls.MetroLabel();
             this.lblSituacion = new MetroFramework.Controls.MetroLabel();
             this.txtPrimerNom = new MetroFramework.Controls.MetroTextBox();
-            this.cboSituacion = new BorderedCombo();
+            this.cboSituacion = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblSegundoNom = new MetroFramework.Controls.MetroLabel();
             this.txtNumRuc = new MetroFramework.Controls.MetroTextBox();
             this.lblNumRuc = new MetroFramework.Controls.MetroLabel();
             this.txtNumDoc = new MetroFramework.Controls.MetroTextBox();
             this.lblNumDoc = new MetroFramework.Controls.MetroLabel();
-            this.cboTipoDocIdentidad = new BorderedCombo();
+            this.cboTipoDocIdentidad = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblTipoDocIdentidad = new MetroFramework.Controls.MetroLabel();
             this.txtNomComercial = new MetroFramework.Controls.MetroTextBox();
             this.lblNomComercial = new MetroFramework.Controls.MetroLabel();
@@ -80,35 +81,36 @@ namespace ConfiguradorUI.Persona
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblFechaNac = new MetroFramework.Controls.MetroLabel();
-            this.cboEstadoCivil = new BorderedCombo();
+            this.cboEstadoCivil = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblEstadoCivil = new MetroFramework.Controls.MetroLabel();
             this.txtApMaterno = new MetroFramework.Controls.MetroTextBox();
             this.lblApMaterno = new MetroFramework.Controls.MetroLabel();
             this.txtApPaterno = new MetroFramework.Controls.MetroTextBox();
             this.lblApPaterno = new MetroFramework.Controls.MetroLabel();
+            this.lblSuspLaboral = new MetroFramework.Controls.MetroLabel();
             this.tabPagDetalles = new MetroFramework.Controls.MetroTabPage();
             this.grbLaboralSaludPen = new System.Windows.Forms.GroupBox();
-            this.cboSaludEps = new BorderedCombo();
+            this.cboSaludEps = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblSaludEps = new MetroFramework.Controls.MetroLabel();
-            this.cboRegSalud = new BorderedCombo();
+            this.cboRegSalud = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblRegSalud = new MetroFramework.Controls.MetroLabel();
-            this.cboRegLaboral = new BorderedCombo();
+            this.cboRegLaboral = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblRegLaboral = new MetroFramework.Controls.MetroLabel();
-            this.cboRegPension = new BorderedCombo();
+            this.cboRegPension = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblRegPension = new MetroFramework.Controls.MetroLabel();
-            this.cboCondicionLaboral = new BorderedCombo();
+            this.cboCondicionLaboral = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblCondicionLaboral = new MetroFramework.Controls.MetroLabel();
-            this.cboOcupacion = new BorderedCombo();
+            this.cboOcupacion = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblOcupacion = new MetroFramework.Controls.MetroLabel();
-            this.cboTipoTrabajador = new BorderedCombo();
+            this.cboTipoTrabajador = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblTipoTrabajador = new MetroFramework.Controls.MetroLabel();
             this.dtpFechaCese = new System.Windows.Forms.DateTimePicker();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.grbSalario = new System.Windows.Forms.GroupBox();
-            this.cboPeriodoPago = new BorderedCombo();
-            this.cboEntidadFinanciera = new BorderedCombo();
+            this.cboPeriodoPago = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboEntidadFinanciera = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblPeriodoPago = new MetroFramework.Controls.MetroLabel();
             this.txtNumHorasMes = new MetroFramework.Controls.MetroTextBox();
             this.lblNumHorasMes = new MetroFramework.Controls.MetroLabel();
@@ -125,7 +127,7 @@ namespace ConfiguradorUI.Persona
             this.btnAsignarTrabajo = new System.Windows.Forms.Button();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnDesasignarTrabajo = new System.Windows.Forms.Button();
-            this.cboTrabajo = new BorderedCombo();
+            this.cboTrabajo = new ConfigUtilitarios.Controls.BorderedCombo();
             this.dgvTrabajoEmpleado = new System.Windows.Forms.DataGridView();
             this.tabPagDireccion = new MetroFramework.Controls.MetroTabPage();
             this.grbUbicacionDetallada = new System.Windows.Forms.GroupBox();
@@ -137,33 +139,33 @@ namespace ConfiguradorUI.Persona
             this.lblNomZona = new MetroFramework.Controls.MetroLabel();
             this.txtNomVia = new MetroFramework.Controls.MetroTextBox();
             this.lblZona = new MetroFramework.Controls.MetroLabel();
-            this.lblNumVia = new MetroFramework.Controls.MetroLabel();
-            this.cboZona = new BorderedCombo();
+            this.cboZona = new ConfigUtilitarios.Controls.BorderedCombo();
             this.txtReferencia = new MetroFramework.Controls.MetroTextBox();
             this.lblNomVia = new MetroFramework.Controls.MetroLabel();
             this.lblReferencia = new MetroFramework.Controls.MetroLabel();
             this.txtNumVia = new MetroFramework.Controls.MetroTextBox();
             this.lblVia = new MetroFramework.Controls.MetroLabel();
-            this.cboVia = new BorderedCombo();
+            this.cboVia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.lblNumVia = new MetroFramework.Controls.MetroLabel();
             this.gbrUbigeo = new System.Windows.Forms.GroupBox();
             this.lblDepartamento = new MetroFramework.Controls.MetroLabel();
-            this.cboDepartamento = new BorderedCombo();
-            this.cboDistrito = new BorderedCombo();
+            this.cboDepartamento = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboDistrito = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblDistrito = new MetroFramework.Controls.MetroLabel();
             this.lblNacionalidad = new MetroFramework.Controls.MetroLabel();
             this.lblProvincia = new MetroFramework.Controls.MetroLabel();
-            this.cboNacionalidad = new BorderedCombo();
-            this.cboProvincia = new BorderedCombo();
+            this.cboNacionalidad = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboProvincia = new ConfigUtilitarios.Controls.BorderedCombo();
             this.tabPagEducacion = new MetroFramework.Controls.MetroTabPage();
             this.grbSkillsEducativas = new System.Windows.Forms.GroupBox();
-            this.cboEspcMedica = new BorderedCombo();
+            this.cboEspcMedica = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblEspcMedica = new MetroFramework.Controls.MetroLabel();
             this.lblSituacionEdu = new MetroFramework.Controls.MetroLabel();
-            this.cboTipoEspc = new BorderedCombo();
-            this.cboSituacionEdu = new BorderedCombo();
+            this.cboTipoEspc = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboSituacionEdu = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblTipoEspc = new MetroFramework.Controls.MetroLabel();
             this.lblModalidadFormativa = new MetroFramework.Controls.MetroLabel();
-            this.cboModalidadFormativa = new BorderedCombo();
+            this.cboModalidadFormativa = new ConfigUtilitarios.Controls.BorderedCombo();
             this.tabPagContacto = new MetroFramework.Controls.MetroTabPage();
             this.grbEmailYWeb = new System.Windows.Forms.GroupBox();
             this.txtEmail02 = new MetroFramework.Controls.MetroTextBox();
@@ -248,7 +250,7 @@ namespace ConfiguradorUI.Persona
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(134, 115);
+            this.tglListarInactivos.Location = new System.Drawing.Point(138, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
             this.tglListarInactivos.TabIndex = 5;
@@ -259,7 +261,7 @@ namespace ConfiguradorUI.Persona
             // lblListarInactivos
             // 
             this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(36, 113);
+            this.lblListarInactivos.Location = new System.Drawing.Point(38, 104);
             this.lblListarInactivos.Name = "lblListarInactivos";
             this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
             this.lblListarInactivos.TabIndex = 4;
@@ -275,9 +277,9 @@ namespace ConfiguradorUI.Persona
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(297, 547);
+            this.panelFiltro.Location = new System.Drawing.Point(293, 561);
             this.panelFiltro.Name = "panelFiltro";
-            this.panelFiltro.Size = new System.Drawing.Size(562, 53);
+            this.panelFiltro.Size = new System.Drawing.Size(564, 44);
             this.panelFiltro.TabIndex = 3;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
@@ -289,7 +291,7 @@ namespace ConfiguradorUI.Persona
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.BackColor = System.Drawing.Color.Transparent;
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
-            this.lblFiltro.Location = new System.Drawing.Point(13, 17);
+            this.lblFiltro.Location = new System.Drawing.Point(13, 13);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
@@ -305,7 +307,7 @@ namespace ConfiguradorUI.Persona
             this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
-            this.btnFilter.Location = new System.Drawing.Point(519, 12);
+            this.btnFilter.Location = new System.Drawing.Point(520, 8);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(37, 30);
             this.btnFilter.TabIndex = 1;
@@ -327,7 +329,7 @@ namespace ConfiguradorUI.Persona
             this.txtFiltro.CustomButton.UseSelectable = true;
             this.txtFiltro.CustomButton.Visible = false;
             this.txtFiltro.Lines = new string[0];
-            this.txtFiltro.Location = new System.Drawing.Point(291, 15);
+            this.txtFiltro.Location = new System.Drawing.Point(291, 11);
             this.txtFiltro.MaxLength = 32767;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.PasswordChar = '\0';
@@ -352,7 +354,7 @@ namespace ConfiguradorUI.Persona
             this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(95, 15);
+            this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
             this.cboFiltro.TabIndex = 3;
@@ -367,18 +369,19 @@ namespace ConfiguradorUI.Persona
             this.tabEmpleado.Controls.Add(this.tabPagEducacion);
             this.tabEmpleado.Controls.Add(this.tabPagContacto);
             this.tabEmpleado.Controls.Add(this.tabPagInfoExtra);
-            this.tabEmpleado.Location = new System.Drawing.Point(294, 105);
+            this.tabEmpleado.Location = new System.Drawing.Point(293, 91);
             this.tabEmpleado.Name = "tabEmpleado";
             this.tabEmpleado.SelectedIndex = 0;
-            this.tabEmpleado.Size = new System.Drawing.Size(586, 436);
+            this.tabEmpleado.Size = new System.Drawing.Size(586, 464);
             this.tabEmpleado.TabIndex = 1;
             this.tabEmpleado.UseSelectable = true;
             // 
             // tabPagGeneral
             // 
             this.tabPagGeneral.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagGeneral.Controls.Add(this.lblDescUsername);
+            this.tabPagGeneral.Controls.Add(this.panel3);
             this.tabPagGeneral.Controls.Add(this.grbUser);
-            this.tabPagGeneral.Controls.Add(this.lblSuspLaboral);
             this.tabPagGeneral.Controls.Add(this.panel2);
             this.tabPagGeneral.Controls.Add(this.cboMotivoBaja);
             this.tabPagGeneral.Controls.Add(this.cboSuspLaboral);
@@ -420,17 +423,38 @@ namespace ConfiguradorUI.Persona
             this.tabPagGeneral.Controls.Add(this.lblApMaterno);
             this.tabPagGeneral.Controls.Add(this.txtApPaterno);
             this.tabPagGeneral.Controls.Add(this.lblApPaterno);
+            this.tabPagGeneral.Controls.Add(this.lblSuspLaboral);
             this.tabPagGeneral.HorizontalScrollbarBarColor = true;
             this.tabPagGeneral.HorizontalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(578, 394);
+            this.tabPagGeneral.Size = new System.Drawing.Size(578, 422);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
+            // 
+            // lblDescUsername
+            // 
+            this.lblDescUsername.AutoSize = true;
+            this.lblDescUsername.ForeColor = System.Drawing.Color.Navy;
+            this.lblDescUsername.Location = new System.Drawing.Point(290, 396);
+            this.lblDescUsername.Name = "lblDescUsername";
+            this.lblDescUsername.Size = new System.Drawing.Size(56, 19);
+            this.lblDescUsername.TabIndex = 114;
+            this.lblDescUsername.Text = "Usuario:";
+            this.lblDescUsername.UseCustomForeColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(1, 380);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(555, 5);
+            this.panel3.TabIndex = 113;
             // 
             // grbUser
             // 
@@ -439,22 +463,22 @@ namespace ConfiguradorUI.Persona
             this.grbUser.Controls.Add(this.btnCrearUsuario);
             this.grbUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbUser.Location = new System.Drawing.Point(422, 340);
+            this.grbUser.Location = new System.Drawing.Point(376, 380);
             this.grbUser.Name = "grbUser";
-            this.grbUser.Size = new System.Drawing.Size(133, 55);
+            this.grbUser.Size = new System.Drawing.Size(177, 41);
             this.grbUser.TabIndex = 112;
             this.grbUser.TabStop = false;
-            this.grbUser.Text = "Usuario";
             // 
             // lblUsername
             // 
             this.lblUsername.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblUsername.ForeColor = System.Drawing.Color.Navy;
-            this.lblUsername.Location = new System.Drawing.Point(10, 23);
+            this.lblUsername.Location = new System.Drawing.Point(5, 12);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(113, 24);
+            this.lblUsername.Size = new System.Drawing.Size(167, 24);
             this.lblUsername.TabIndex = 108;
             this.lblUsername.Text = "Username";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblUsername.UseCustomForeColor = true;
             // 
             // btnCrearUsuario
@@ -467,34 +491,23 @@ namespace ConfiguradorUI.Persona
             this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(10, 23);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(5, 12);
             this.btnCrearUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(113, 24);
+            this.btnCrearUsuario.Size = new System.Drawing.Size(167, 24);
             this.btnCrearUsuario.TabIndex = 111;
             this.btnCrearUsuario.Text = "Crear usuario";
             this.btnCrearUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCrearUsuario.UseVisualStyleBackColor = false;
             this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
             // 
-            // lblSuspLaboral
-            // 
-            this.lblSuspLaboral.AutoSize = true;
-            this.lblSuspLaboral.ForeColor = System.Drawing.Color.Navy;
-            this.lblSuspLaboral.Location = new System.Drawing.Point(2, 345);
-            this.lblSuspLaboral.Name = "lblSuspLaboral";
-            this.lblSuspLaboral.Size = new System.Drawing.Size(81, 19);
-            this.lblSuspLaboral.TabIndex = 4;
-            this.lblSuspLaboral.Text = "Susp. Labor:";
-            this.lblSuspLaboral.UseCustomForeColor = true;
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(1, 293);
+            this.panel2.Location = new System.Drawing.Point(1, 294);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(555, 6);
+            this.panel2.Size = new System.Drawing.Size(555, 5);
             this.panel2.TabIndex = 58;
             // 
             // cboMotivoBaja
@@ -504,7 +517,7 @@ namespace ConfiguradorUI.Persona
             this.cboMotivoBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboMotivoBaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMotivoBaja.FormattingEnabled = true;
-            this.cboMotivoBaja.Location = new System.Drawing.Point(376, 311);
+            this.cboMotivoBaja.Location = new System.Drawing.Point(376, 312);
             this.cboMotivoBaja.Name = "cboMotivoBaja";
             this.cboMotivoBaja.Size = new System.Drawing.Size(180, 23);
             this.cboMotivoBaja.TabIndex = 3;
@@ -517,7 +530,7 @@ namespace ConfiguradorUI.Persona
             this.cboSuspLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboSuspLaboral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSuspLaboral.FormattingEnabled = true;
-            this.cboSuspLaboral.Location = new System.Drawing.Point(82, 345);
+            this.cboSuspLaboral.Location = new System.Drawing.Point(82, 346);
             this.cboSuspLaboral.Name = "cboSuspLaboral";
             this.cboSuspLaboral.Size = new System.Drawing.Size(184, 23);
             this.cboSuspLaboral.TabIndex = 5;
@@ -549,7 +562,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblMotivoBaja.AutoSize = true;
             this.lblMotivoBaja.ForeColor = System.Drawing.Color.Navy;
-            this.lblMotivoBaja.Location = new System.Drawing.Point(289, 311);
+            this.lblMotivoBaja.Location = new System.Drawing.Point(289, 312);
             this.lblMotivoBaja.Name = "lblMotivoBaja";
             this.lblMotivoBaja.Size = new System.Drawing.Size(82, 19);
             this.lblMotivoBaja.TabIndex = 2;
@@ -562,9 +575,9 @@ namespace ConfiguradorUI.Persona
             this.lblCategoriaEmp.ForeColor = System.Drawing.Color.Navy;
             this.lblCategoriaEmp.Location = new System.Drawing.Point(289, 163);
             this.lblCategoriaEmp.Name = "lblCategoriaEmp";
-            this.lblCategoriaEmp.Size = new System.Drawing.Size(70, 19);
+            this.lblCategoriaEmp.Size = new System.Drawing.Size(81, 19);
             this.lblCategoriaEmp.TabIndex = 19;
-            this.lblCategoriaEmp.Text = "Categoría:";
+            this.lblCategoriaEmp.Text = "Categ. Emp:";
             this.lblCategoriaEmp.UseCustomForeColor = true;
             // 
             // cboCategoriaEmp
@@ -612,7 +625,7 @@ namespace ConfiguradorUI.Persona
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(3, 375);
+            this.chkActivo.Location = new System.Drawing.Point(5, 396);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 31;
@@ -669,7 +682,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblSituacion.AutoSize = true;
             this.lblSituacion.ForeColor = System.Drawing.Color.Navy;
-            this.lblSituacion.Location = new System.Drawing.Point(2, 309);
+            this.lblSituacion.Location = new System.Drawing.Point(2, 310);
             this.lblSituacion.Name = "lblSituacion";
             this.lblSituacion.Size = new System.Drawing.Size(64, 19);
             this.lblSituacion.TabIndex = 0;
@@ -716,7 +729,7 @@ namespace ConfiguradorUI.Persona
             this.cboSituacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboSituacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSituacion.FormattingEnabled = true;
-            this.cboSituacion.Location = new System.Drawing.Point(82, 309);
+            this.cboSituacion.Location = new System.Drawing.Point(82, 310);
             this.cboSituacion.Name = "cboSituacion";
             this.cboSituacion.Size = new System.Drawing.Size(184, 23);
             this.cboSituacion.TabIndex = 1;
@@ -749,7 +762,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumRuc.CustomButton.UseSelectable = true;
             this.txtNumRuc.CustomButton.Visible = false;
             this.txtNumRuc.Lines = new string[0];
-            this.txtNumRuc.Location = new System.Drawing.Point(82, 227);
+            this.txtNumRuc.Location = new System.Drawing.Point(82, 262);
             this.txtNumRuc.MaxLength = 32767;
             this.txtNumRuc.Name = "txtNumRuc";
             this.txtNumRuc.PasswordChar = '\0';
@@ -770,11 +783,11 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblNumRuc.AutoSize = true;
             this.lblNumRuc.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumRuc.Location = new System.Drawing.Point(1, 229);
+            this.lblNumRuc.Location = new System.Drawing.Point(2, 264);
             this.lblNumRuc.Name = "lblNumRuc";
             this.lblNumRuc.Size = new System.Drawing.Size(74, 19);
             this.lblNumRuc.TabIndex = 29;
-            this.lblNumRuc.Text = "Num. RUC:";
+            this.lblNumRuc.Text = "Núm. RUC:";
             this.lblNumRuc.UseCustomForeColor = true;
             // 
             // txtNumDoc
@@ -793,7 +806,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumDoc.CustomButton.UseSelectable = true;
             this.txtNumDoc.CustomButton.Visible = false;
             this.txtNumDoc.Lines = new string[0];
-            this.txtNumDoc.Location = new System.Drawing.Point(375, 227);
+            this.txtNumDoc.Location = new System.Drawing.Point(375, 228);
             this.txtNumDoc.MaxLength = 32767;
             this.txtNumDoc.Name = "txtNumDoc";
             this.txtNumDoc.PasswordChar = '\0';
@@ -814,11 +827,11 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblNumDoc.AutoSize = true;
             this.lblNumDoc.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumDoc.Location = new System.Drawing.Point(289, 231);
+            this.lblNumDoc.Location = new System.Drawing.Point(289, 230);
             this.lblNumDoc.Name = "lblNumDoc";
             this.lblNumDoc.Size = new System.Drawing.Size(71, 19);
             this.lblNumDoc.TabIndex = 27;
-            this.lblNumDoc.Text = "Num. Doc:";
+            this.lblNumDoc.Text = "Núm. Doc:";
             this.lblNumDoc.UseCustomForeColor = true;
             // 
             // cboTipoDocIdentidad
@@ -828,7 +841,7 @@ namespace ConfiguradorUI.Persona
             this.cboTipoDocIdentidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoDocIdentidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoDocIdentidad.FormattingEnabled = true;
-            this.cboTipoDocIdentidad.Location = new System.Drawing.Point(82, 262);
+            this.cboTipoDocIdentidad.Location = new System.Drawing.Point(83, 228);
             this.cboTipoDocIdentidad.Name = "cboTipoDocIdentidad";
             this.cboTipoDocIdentidad.Size = new System.Drawing.Size(184, 23);
             this.cboTipoDocIdentidad.TabIndex = 26;
@@ -838,11 +851,11 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblTipoDocIdentidad.AutoSize = true;
             this.lblTipoDocIdentidad.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoDocIdentidad.Location = new System.Drawing.Point(2, 264);
+            this.lblTipoDocIdentidad.Location = new System.Drawing.Point(2, 230);
             this.lblTipoDocIdentidad.Name = "lblTipoDocIdentidad";
-            this.lblTipoDocIdentidad.Size = new System.Drawing.Size(68, 19);
+            this.lblTipoDocIdentidad.Size = new System.Drawing.Size(65, 19);
             this.lblTipoDocIdentidad.TabIndex = 25;
-            this.lblTipoDocIdentidad.Text = "Doc Ident:";
+            this.lblTipoDocIdentidad.Text = "Tipo Doc:";
             this.lblTipoDocIdentidad.UseCustomForeColor = true;
             // 
             // txtNomComercial
@@ -861,7 +874,7 @@ namespace ConfiguradorUI.Persona
             this.txtNomComercial.CustomButton.UseSelectable = true;
             this.txtNomComercial.CustomButton.Visible = false;
             this.txtNomComercial.Lines = new string[0];
-            this.txtNomComercial.Location = new System.Drawing.Point(375, 193);
+            this.txtNomComercial.Location = new System.Drawing.Point(375, 194);
             this.txtNomComercial.MaxLength = 32767;
             this.txtNomComercial.Name = "txtNomComercial";
             this.txtNomComercial.PasswordChar = '\0';
@@ -882,7 +895,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblNomComercial.AutoSize = true;
             this.lblNomComercial.ForeColor = System.Drawing.Color.Navy;
-            this.lblNomComercial.Location = new System.Drawing.Point(289, 195);
+            this.lblNomComercial.Location = new System.Drawing.Point(289, 196);
             this.lblNomComercial.Name = "lblNomComercial";
             this.lblNomComercial.Size = new System.Drawing.Size(89, 19);
             this.lblNomComercial.TabIndex = 23;
@@ -905,7 +918,7 @@ namespace ConfiguradorUI.Persona
             this.txtRazonSocial.CustomButton.UseSelectable = true;
             this.txtRazonSocial.CustomButton.Visible = false;
             this.txtRazonSocial.Lines = new string[0];
-            this.txtRazonSocial.Location = new System.Drawing.Point(82, 193);
+            this.txtRazonSocial.Location = new System.Drawing.Point(82, 194);
             this.txtRazonSocial.MaxLength = 32767;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.PasswordChar = '\0';
@@ -926,7 +939,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblRazonSocial.AutoSize = true;
             this.lblRazonSocial.ForeColor = System.Drawing.Color.Navy;
-            this.lblRazonSocial.Location = new System.Drawing.Point(0, 195);
+            this.lblRazonSocial.Location = new System.Drawing.Point(0, 196);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(86, 19);
             this.lblRazonSocial.TabIndex = 21;
@@ -1025,9 +1038,9 @@ namespace ConfiguradorUI.Persona
             // 
             this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(1, 145);
+            this.panel1.Location = new System.Drawing.Point(1, 146);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(555, 6);
+            this.panel1.Size = new System.Drawing.Size(555, 5);
             this.panel1.TabIndex = 57;
             // 
             // lblFechaNac
@@ -1153,6 +1166,17 @@ namespace ConfiguradorUI.Persona
             this.lblApPaterno.Text = "Ap. Paterno:";
             this.lblApPaterno.UseCustomForeColor = true;
             // 
+            // lblSuspLaboral
+            // 
+            this.lblSuspLaboral.AutoSize = true;
+            this.lblSuspLaboral.ForeColor = System.Drawing.Color.Navy;
+            this.lblSuspLaboral.Location = new System.Drawing.Point(2, 346);
+            this.lblSuspLaboral.Name = "lblSuspLaboral";
+            this.lblSuspLaboral.Size = new System.Drawing.Size(81, 19);
+            this.lblSuspLaboral.TabIndex = 4;
+            this.lblSuspLaboral.Text = "Susp. Labor:";
+            this.lblSuspLaboral.UseCustomForeColor = true;
+            // 
             // tabPagDetalles
             // 
             this.tabPagDetalles.Controls.Add(this.grbLaboralSaludPen);
@@ -1166,7 +1190,7 @@ namespace ConfiguradorUI.Persona
             this.tabPagDetalles.HorizontalScrollbarSize = 10;
             this.tabPagDetalles.Location = new System.Drawing.Point(4, 38);
             this.tabPagDetalles.Name = "tabPagDetalles";
-            this.tabPagDetalles.Size = new System.Drawing.Size(578, 394);
+            this.tabPagDetalles.Size = new System.Drawing.Size(578, 422);
             this.tabPagDetalles.TabIndex = 3;
             this.tabPagDetalles.Text = "Salario y Regimen";
             this.tabPagDetalles.VerticalScrollbarBarColor = true;
@@ -1207,7 +1231,7 @@ namespace ConfiguradorUI.Persona
             this.cboSaludEps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboSaludEps.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSaludEps.FormattingEnabled = true;
-            this.cboSaludEps.Location = new System.Drawing.Point(90, 120);
+            this.cboSaludEps.Location = new System.Drawing.Point(97, 120);
             this.cboSaludEps.Name = "cboSaludEps";
             this.cboSaludEps.Size = new System.Drawing.Size(176, 23);
             this.cboSaludEps.TabIndex = 13;
@@ -1255,7 +1279,7 @@ namespace ConfiguradorUI.Persona
             this.cboRegLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboRegLaboral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRegLaboral.FormattingEnabled = true;
-            this.cboRegLaboral.Location = new System.Drawing.Point(90, 88);
+            this.cboRegLaboral.Location = new System.Drawing.Point(97, 88);
             this.cboRegLaboral.Name = "cboRegLaboral";
             this.cboRegLaboral.Size = new System.Drawing.Size(176, 23);
             this.cboRegLaboral.TabIndex = 9;
@@ -1303,9 +1327,9 @@ namespace ConfiguradorUI.Persona
             this.cboCondicionLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboCondicionLaboral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCondicionLaboral.FormattingEnabled = true;
-            this.cboCondicionLaboral.Location = new System.Drawing.Point(92, 56);
+            this.cboCondicionLaboral.Location = new System.Drawing.Point(97, 56);
             this.cboCondicionLaboral.Name = "cboCondicionLaboral";
-            this.cboCondicionLaboral.Size = new System.Drawing.Size(174, 23);
+            this.cboCondicionLaboral.Size = new System.Drawing.Size(176, 23);
             this.cboCondicionLaboral.TabIndex = 5;
             this.cboCondicionLaboral.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -1351,7 +1375,7 @@ namespace ConfiguradorUI.Persona
             this.cboTipoTrabajador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoTrabajador.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoTrabajador.FormattingEnabled = true;
-            this.cboTipoTrabajador.Location = new System.Drawing.Point(90, 24);
+            this.cboTipoTrabajador.Location = new System.Drawing.Point(97, 24);
             this.cboTipoTrabajador.Name = "cboTipoTrabajador";
             this.cboTipoTrabajador.Size = new System.Drawing.Size(176, 23);
             this.cboTipoTrabajador.TabIndex = 1;
@@ -1447,9 +1471,9 @@ namespace ConfiguradorUI.Persona
             this.cboPeriodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboPeriodoPago.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPeriodoPago.FormattingEnabled = true;
-            this.cboPeriodoPago.Location = new System.Drawing.Point(104, 56);
+            this.cboPeriodoPago.Location = new System.Drawing.Point(98, 56);
             this.cboPeriodoPago.Name = "cboPeriodoPago";
-            this.cboPeriodoPago.Size = new System.Drawing.Size(163, 23);
+            this.cboPeriodoPago.Size = new System.Drawing.Size(176, 23);
             this.cboPeriodoPago.TabIndex = 3;
             this.cboPeriodoPago.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -1460,7 +1484,7 @@ namespace ConfiguradorUI.Persona
             this.cboEntidadFinanciera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboEntidadFinanciera.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEntidadFinanciera.FormattingEnabled = true;
-            this.cboEntidadFinanciera.Location = new System.Drawing.Point(91, 24);
+            this.cboEntidadFinanciera.Location = new System.Drawing.Point(98, 24);
             this.cboEntidadFinanciera.Name = "cboEntidadFinanciera";
             this.cboEntidadFinanciera.Size = new System.Drawing.Size(176, 23);
             this.cboEntidadFinanciera.TabIndex = 5;
@@ -1529,7 +1553,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtNumCuenta.CustomButton.Image = null;
-            this.txtNumCuenta.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.txtNumCuenta.CustomButton.Location = new System.Drawing.Point(154, 1);
             this.txtNumCuenta.CustomButton.Name = "";
             this.txtNumCuenta.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNumCuenta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1538,7 +1562,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumCuenta.CustomButton.UseSelectable = true;
             this.txtNumCuenta.CustomButton.Visible = false;
             this.txtNumCuenta.Lines = new string[0];
-            this.txtNumCuenta.Location = new System.Drawing.Point(104, 88);
+            this.txtNumCuenta.Location = new System.Drawing.Point(98, 88);
             this.txtNumCuenta.MaxLength = 32767;
             this.txtNumCuenta.Name = "txtNumCuenta";
             this.txtNumCuenta.PasswordChar = '\0';
@@ -1547,7 +1571,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumCuenta.SelectionLength = 0;
             this.txtNumCuenta.SelectionStart = 0;
             this.txtNumCuenta.ShortcutsEnabled = true;
-            this.txtNumCuenta.Size = new System.Drawing.Size(164, 23);
+            this.txtNumCuenta.Size = new System.Drawing.Size(176, 23);
             this.txtNumCuenta.TabIndex = 7;
             this.txtNumCuenta.UseCustomBackColor = true;
             this.txtNumCuenta.UseSelectable = true;
@@ -1573,9 +1597,9 @@ namespace ConfiguradorUI.Persona
             this.lblEntidadFinanciera.ForeColor = System.Drawing.Color.Navy;
             this.lblEntidadFinanciera.Location = new System.Drawing.Point(10, 26);
             this.lblEntidadFinanciera.Name = "lblEntidadFinanciera";
-            this.lblEntidadFinanciera.Size = new System.Drawing.Size(79, 19);
+            this.lblEntidadFinanciera.Size = new System.Drawing.Size(71, 19);
             this.lblEntidadFinanciera.TabIndex = 4;
-            this.lblEntidadFinanciera.Text = "Entid. Finan:";
+            this.lblEntidadFinanciera.Text = "Financiera:";
             this.lblEntidadFinanciera.UseCustomForeColor = true;
             // 
             // txtSalQuincenal
@@ -1726,7 +1750,7 @@ namespace ConfiguradorUI.Persona
             this.tabPagTrabajo.HorizontalScrollbarSize = 10;
             this.tabPagTrabajo.Location = new System.Drawing.Point(4, 38);
             this.tabPagTrabajo.Name = "tabPagTrabajo";
-            this.tabPagTrabajo.Size = new System.Drawing.Size(578, 394);
+            this.tabPagTrabajo.Size = new System.Drawing.Size(578, 422);
             this.tabPagTrabajo.TabIndex = 7;
             this.tabPagTrabajo.Text = "Trabajos";
             this.tabPagTrabajo.VerticalScrollbarBarColor = true;
@@ -1744,7 +1768,7 @@ namespace ConfiguradorUI.Persona
             this.btnAsignarTrabajo.ForeColor = System.Drawing.Color.White;
             this.btnAsignarTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarTrabajo.Image")));
             this.btnAsignarTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarTrabajo.Location = new System.Drawing.Point(403, 12);
+            this.btnAsignarTrabajo.Location = new System.Drawing.Point(403, 8);
             this.btnAsignarTrabajo.Name = "btnAsignarTrabajo";
             this.btnAsignarTrabajo.Size = new System.Drawing.Size(81, 30);
             this.btnAsignarTrabajo.TabIndex = 178;
@@ -1757,7 +1781,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 18);
+            this.metroLabel1.Location = new System.Drawing.Point(3, 14);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(191, 19);
             this.metroLabel1.TabIndex = 182;
@@ -1775,7 +1799,7 @@ namespace ConfiguradorUI.Persona
             this.btnDesasignarTrabajo.ForeColor = System.Drawing.Color.White;
             this.btnDesasignarTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnDesasignarTrabajo.Image")));
             this.btnDesasignarTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesasignarTrabajo.Location = new System.Drawing.Point(494, 12);
+            this.btnDesasignarTrabajo.Location = new System.Drawing.Point(494, 8);
             this.btnDesasignarTrabajo.Name = "btnDesasignarTrabajo";
             this.btnDesasignarTrabajo.Size = new System.Drawing.Size(81, 30);
             this.btnDesasignarTrabajo.TabIndex = 179;
@@ -1791,7 +1815,7 @@ namespace ConfiguradorUI.Persona
             this.cboTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTrabajo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTrabajo.FormattingEnabled = true;
-            this.cboTrabajo.Location = new System.Drawing.Point(200, 16);
+            this.cboTrabajo.Location = new System.Drawing.Point(200, 12);
             this.cboTrabajo.Name = "cboTrabajo";
             this.cboTrabajo.Size = new System.Drawing.Size(185, 23);
             this.cboTrabajo.TabIndex = 181;
@@ -1799,9 +1823,9 @@ namespace ConfiguradorUI.Persona
             // dgvTrabajoEmpleado
             // 
             this.dgvTrabajoEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrabajoEmpleado.Location = new System.Drawing.Point(3, 48);
+            this.dgvTrabajoEmpleado.Location = new System.Drawing.Point(3, 44);
             this.dgvTrabajoEmpleado.Name = "dgvTrabajoEmpleado";
-            this.dgvTrabajoEmpleado.Size = new System.Drawing.Size(572, 343);
+            this.dgvTrabajoEmpleado.Size = new System.Drawing.Size(572, 347);
             this.dgvTrabajoEmpleado.TabIndex = 3;
             this.dgvTrabajoEmpleado.DataSourceChanged += new System.EventHandler(this.dgvTrabajoEmpleado_DataSourceChanged);
             // 
@@ -1814,7 +1838,7 @@ namespace ConfiguradorUI.Persona
             this.tabPagDireccion.HorizontalScrollbarSize = 10;
             this.tabPagDireccion.Location = new System.Drawing.Point(4, 38);
             this.tabPagDireccion.Name = "tabPagDireccion";
-            this.tabPagDireccion.Size = new System.Drawing.Size(578, 394);
+            this.tabPagDireccion.Size = new System.Drawing.Size(578, 422);
             this.tabPagDireccion.TabIndex = 4;
             this.tabPagDireccion.Text = "Dirección";
             this.tabPagDireccion.VerticalScrollbarBarColor = true;
@@ -1832,7 +1856,6 @@ namespace ConfiguradorUI.Persona
             this.grbUbicacionDetallada.Controls.Add(this.lblNomZona);
             this.grbUbicacionDetallada.Controls.Add(this.txtNomVia);
             this.grbUbicacionDetallada.Controls.Add(this.lblZona);
-            this.grbUbicacionDetallada.Controls.Add(this.lblNumVia);
             this.grbUbicacionDetallada.Controls.Add(this.cboZona);
             this.grbUbicacionDetallada.Controls.Add(this.txtReferencia);
             this.grbUbicacionDetallada.Controls.Add(this.lblNomVia);
@@ -1840,12 +1863,13 @@ namespace ConfiguradorUI.Persona
             this.grbUbicacionDetallada.Controls.Add(this.txtNumVia);
             this.grbUbicacionDetallada.Controls.Add(this.lblVia);
             this.grbUbicacionDetallada.Controls.Add(this.cboVia);
+            this.grbUbicacionDetallada.Controls.Add(this.lblNumVia);
             this.grbUbicacionDetallada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbUbicacionDetallada.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbUbicacionDetallada.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbUbicacionDetallada.Location = new System.Drawing.Point(4, 123);
+            this.grbUbicacionDetallada.Location = new System.Drawing.Point(5, 106);
             this.grbUbicacionDetallada.Name = "grbUbicacionDetallada";
-            this.grbUbicacionDetallada.Size = new System.Drawing.Size(555, 248);
+            this.grbUbicacionDetallada.Size = new System.Drawing.Size(555, 210);
             this.grbUbicacionDetallada.TabIndex = 57;
             this.grbUbicacionDetallada.TabStop = false;
             this.grbUbicacionDetallada.Text = "Ubicación detallada";
@@ -1857,7 +1881,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtDireccion01.CustomButton.Image = null;
-            this.txtDireccion01.CustomButton.Location = new System.Drawing.Point(434, 1);
+            this.txtDireccion01.CustomButton.Location = new System.Drawing.Point(443, 1);
             this.txtDireccion01.CustomButton.Name = "";
             this.txtDireccion01.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDireccion01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1866,7 +1890,7 @@ namespace ConfiguradorUI.Persona
             this.txtDireccion01.CustomButton.UseSelectable = true;
             this.txtDireccion01.CustomButton.Visible = false;
             this.txtDireccion01.Lines = new string[0];
-            this.txtDireccion01.Location = new System.Drawing.Point(91, 139);
+            this.txtDireccion01.Location = new System.Drawing.Point(82, 105);
             this.txtDireccion01.MaxLength = 32767;
             this.txtDireccion01.Name = "txtDireccion01";
             this.txtDireccion01.PasswordChar = '\0';
@@ -1875,7 +1899,7 @@ namespace ConfiguradorUI.Persona
             this.txtDireccion01.SelectionLength = 0;
             this.txtDireccion01.SelectionStart = 0;
             this.txtDireccion01.ShortcutsEnabled = true;
-            this.txtDireccion01.Size = new System.Drawing.Size(456, 23);
+            this.txtDireccion01.Size = new System.Drawing.Size(465, 23);
             this.txtDireccion01.TabIndex = 53;
             this.txtDireccion01.UseCustomBackColor = true;
             this.txtDireccion01.UseSelectable = true;
@@ -1887,22 +1911,22 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblDireccion02.AutoSize = true;
             this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion02.Location = new System.Drawing.Point(6, 176);
+            this.lblDireccion02.Location = new System.Drawing.Point(6, 142);
             this.lblDireccion02.Name = "lblDireccion02";
-            this.lblDireccion02.Size = new System.Drawing.Size(84, 19);
+            this.lblDireccion02.Size = new System.Drawing.Size(48, 19);
             this.lblDireccion02.TabIndex = 54;
-            this.lblDireccion02.Text = "Dirección 02:";
+            this.lblDireccion02.Text = "Dir. 02:";
             this.lblDireccion02.UseCustomForeColor = true;
             // 
             // lblDireccion01
             // 
             this.lblDireccion01.AutoSize = true;
             this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion01.Location = new System.Drawing.Point(6, 141);
+            this.lblDireccion01.Location = new System.Drawing.Point(6, 107);
             this.lblDireccion01.Name = "lblDireccion01";
-            this.lblDireccion01.Size = new System.Drawing.Size(82, 19);
+            this.lblDireccion01.Size = new System.Drawing.Size(46, 19);
             this.lblDireccion01.TabIndex = 52;
-            this.lblDireccion01.Text = "Dirección 01:";
+            this.lblDireccion01.Text = "Dir. 01:";
             this.lblDireccion01.UseCustomForeColor = true;
             // 
             // txtDireccion02
@@ -1912,7 +1936,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtDireccion02.CustomButton.Image = null;
-            this.txtDireccion02.CustomButton.Location = new System.Drawing.Point(434, 1);
+            this.txtDireccion02.CustomButton.Location = new System.Drawing.Point(443, 1);
             this.txtDireccion02.CustomButton.Name = "";
             this.txtDireccion02.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDireccion02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1921,7 +1945,7 @@ namespace ConfiguradorUI.Persona
             this.txtDireccion02.CustomButton.UseSelectable = true;
             this.txtDireccion02.CustomButton.Visible = false;
             this.txtDireccion02.Lines = new string[0];
-            this.txtDireccion02.Location = new System.Drawing.Point(91, 174);
+            this.txtDireccion02.Location = new System.Drawing.Point(82, 140);
             this.txtDireccion02.MaxLength = 32767;
             this.txtDireccion02.Name = "txtDireccion02";
             this.txtDireccion02.PasswordChar = '\0';
@@ -1930,7 +1954,7 @@ namespace ConfiguradorUI.Persona
             this.txtDireccion02.SelectionLength = 0;
             this.txtDireccion02.SelectionStart = 0;
             this.txtDireccion02.ShortcutsEnabled = true;
-            this.txtDireccion02.Size = new System.Drawing.Size(456, 23);
+            this.txtDireccion02.Size = new System.Drawing.Size(465, 23);
             this.txtDireccion02.TabIndex = 55;
             this.txtDireccion02.UseCustomBackColor = true;
             this.txtDireccion02.UseSelectable = true;
@@ -1989,7 +2013,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtNomVia.CustomButton.Image = null;
-            this.txtNomVia.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtNomVia.CustomButton.Location = new System.Drawing.Point(103, 1);
             this.txtNomVia.CustomButton.Name = "";
             this.txtNomVia.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNomVia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2007,7 +2031,7 @@ namespace ConfiguradorUI.Persona
             this.txtNomVia.SelectionLength = 0;
             this.txtNomVia.SelectionStart = 0;
             this.txtNomVia.ShortcutsEnabled = true;
-            this.txtNomVia.Size = new System.Drawing.Size(184, 23);
+            this.txtNomVia.Size = new System.Drawing.Size(125, 23);
             this.txtNomVia.TabIndex = 47;
             this.txtNomVia.UseCustomBackColor = true;
             this.txtNomVia.UseSelectable = true;
@@ -2025,17 +2049,6 @@ namespace ConfiguradorUI.Persona
             this.lblZona.TabIndex = 40;
             this.lblZona.Text = "Tipo Zona:";
             this.lblZona.UseCustomForeColor = true;
-            // 
-            // lblNumVia
-            // 
-            this.lblNumVia.AutoSize = true;
-            this.lblNumVia.ForeColor = System.Drawing.Color.Navy;
-            this.lblNumVia.Location = new System.Drawing.Point(278, 106);
-            this.lblNumVia.Name = "lblNumVia";
-            this.lblNumVia.Size = new System.Drawing.Size(66, 19);
-            this.lblNumVia.TabIndex = 48;
-            this.lblNumVia.Text = "Num. Vía:";
-            this.lblNumVia.UseCustomForeColor = true;
             // 
             // cboZona
             // 
@@ -2057,7 +2070,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtReferencia.CustomButton.Image = null;
-            this.txtReferencia.CustomButton.Location = new System.Drawing.Point(434, 1);
+            this.txtReferencia.CustomButton.Location = new System.Drawing.Point(443, 1);
             this.txtReferencia.CustomButton.Name = "";
             this.txtReferencia.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtReferencia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2066,7 +2079,7 @@ namespace ConfiguradorUI.Persona
             this.txtReferencia.CustomButton.UseSelectable = true;
             this.txtReferencia.CustomButton.Visible = false;
             this.txtReferencia.Lines = new string[0];
-            this.txtReferencia.Location = new System.Drawing.Point(91, 209);
+            this.txtReferencia.Location = new System.Drawing.Point(82, 175);
             this.txtReferencia.MaxLength = 32767;
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.PasswordChar = '\0';
@@ -2075,7 +2088,7 @@ namespace ConfiguradorUI.Persona
             this.txtReferencia.SelectionLength = 0;
             this.txtReferencia.SelectionStart = 0;
             this.txtReferencia.ShortcutsEnabled = true;
-            this.txtReferencia.Size = new System.Drawing.Size(456, 23);
+            this.txtReferencia.Size = new System.Drawing.Size(465, 23);
             this.txtReferencia.TabIndex = 51;
             this.txtReferencia.UseCustomBackColor = true;
             this.txtReferencia.UseSelectable = true;
@@ -2098,7 +2111,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblReferencia.AutoSize = true;
             this.lblReferencia.ForeColor = System.Drawing.Color.Navy;
-            this.lblReferencia.Location = new System.Drawing.Point(6, 211);
+            this.lblReferencia.Location = new System.Drawing.Point(6, 177);
             this.lblReferencia.Name = "lblReferencia";
             this.lblReferencia.Size = new System.Drawing.Size(73, 19);
             this.lblReferencia.TabIndex = 50;
@@ -2112,7 +2125,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtNumVia.CustomButton.Image = null;
-            this.txtNumVia.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtNumVia.CustomButton.Location = new System.Drawing.Point(11, 1);
             this.txtNumVia.CustomButton.Name = "";
             this.txtNumVia.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNumVia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2121,7 +2134,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumVia.CustomButton.UseSelectable = true;
             this.txtNumVia.CustomButton.Visible = false;
             this.txtNumVia.Lines = new string[0];
-            this.txtNumVia.Location = new System.Drawing.Point(363, 104);
+            this.txtNumVia.Location = new System.Drawing.Point(514, 69);
             this.txtNumVia.MaxLength = 32767;
             this.txtNumVia.Name = "txtNumVia";
             this.txtNumVia.PasswordChar = '\0';
@@ -2130,7 +2143,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumVia.SelectionLength = 0;
             this.txtNumVia.SelectionStart = 0;
             this.txtNumVia.ShortcutsEnabled = true;
-            this.txtNumVia.Size = new System.Drawing.Size(184, 23);
+            this.txtNumVia.Size = new System.Drawing.Size(33, 23);
             this.txtNumVia.TabIndex = 49;
             this.txtNumVia.UseCustomBackColor = true;
             this.txtNumVia.UseSelectable = true;
@@ -2162,6 +2175,17 @@ namespace ConfiguradorUI.Persona
             this.cboVia.TabIndex = 45;
             this.cboVia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
+            // lblNumVia
+            // 
+            this.lblNumVia.AutoSize = true;
+            this.lblNumVia.ForeColor = System.Drawing.Color.Navy;
+            this.lblNumVia.Location = new System.Drawing.Point(489, 71);
+            this.lblNumVia.Name = "lblNumVia";
+            this.lblNumVia.Size = new System.Drawing.Size(24, 19);
+            this.lblNumVia.TabIndex = 48;
+            this.lblNumVia.Text = "N°";
+            this.lblNumVia.UseCustomForeColor = true;
+            // 
             // gbrUbigeo
             // 
             this.gbrUbigeo.BackColor = System.Drawing.Color.Transparent;
@@ -2176,9 +2200,9 @@ namespace ConfiguradorUI.Persona
             this.gbrUbigeo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbrUbigeo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbrUbigeo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbrUbigeo.Location = new System.Drawing.Point(3, 13);
+            this.gbrUbigeo.Location = new System.Drawing.Point(4, 7);
             this.gbrUbigeo.Name = "gbrUbigeo";
-            this.gbrUbigeo.Size = new System.Drawing.Size(555, 104);
+            this.gbrUbigeo.Size = new System.Drawing.Size(555, 93);
             this.gbrUbigeo.TabIndex = 56;
             this.gbrUbigeo.TabStop = false;
             this.gbrUbigeo.Text = "Ubicación general";
@@ -2187,11 +2211,11 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblDepartamento.AutoSize = true;
             this.lblDepartamento.ForeColor = System.Drawing.Color.Navy;
-            this.lblDepartamento.Location = new System.Drawing.Point(6, 29);
+            this.lblDepartamento.Location = new System.Drawing.Point(6, 26);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(41, 19);
+            this.lblDepartamento.Size = new System.Drawing.Size(53, 19);
             this.lblDepartamento.TabIndex = 32;
-            this.lblDepartamento.Text = "Dpto:";
+            this.lblDepartamento.Text = "Región:";
             this.lblDepartamento.UseCustomForeColor = true;
             // 
             // cboDepartamento
@@ -2201,7 +2225,7 @@ namespace ConfiguradorUI.Persona
             this.cboDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDepartamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDepartamento.FormattingEnabled = true;
-            this.cboDepartamento.Location = new System.Drawing.Point(62, 27);
+            this.cboDepartamento.Location = new System.Drawing.Point(62, 24);
             this.cboDepartamento.Name = "cboDepartamento";
             this.cboDepartamento.Size = new System.Drawing.Size(184, 23);
             this.cboDepartamento.TabIndex = 33;
@@ -2214,7 +2238,7 @@ namespace ConfiguradorUI.Persona
             this.cboDistrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDistrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDistrito.FormattingEnabled = true;
-            this.cboDistrito.Location = new System.Drawing.Point(62, 62);
+            this.cboDistrito.Location = new System.Drawing.Point(62, 59);
             this.cboDistrito.Name = "cboDistrito";
             this.cboDistrito.Size = new System.Drawing.Size(184, 23);
             this.cboDistrito.TabIndex = 37;
@@ -2224,7 +2248,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblDistrito.AutoSize = true;
             this.lblDistrito.ForeColor = System.Drawing.Color.Navy;
-            this.lblDistrito.Location = new System.Drawing.Point(6, 64);
+            this.lblDistrito.Location = new System.Drawing.Point(6, 61);
             this.lblDistrito.Name = "lblDistrito";
             this.lblDistrito.Size = new System.Drawing.Size(53, 19);
             this.lblDistrito.TabIndex = 36;
@@ -2235,7 +2259,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblNacionalidad.AutoSize = true;
             this.lblNacionalidad.ForeColor = System.Drawing.Color.Navy;
-            this.lblNacionalidad.Location = new System.Drawing.Point(272, 64);
+            this.lblNacionalidad.Location = new System.Drawing.Point(272, 61);
             this.lblNacionalidad.Name = "lblNacionalidad";
             this.lblNacionalidad.Size = new System.Drawing.Size(89, 19);
             this.lblNacionalidad.TabIndex = 38;
@@ -2246,7 +2270,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.ForeColor = System.Drawing.Color.Navy;
-            this.lblProvincia.Location = new System.Drawing.Point(272, 29);
+            this.lblProvincia.Location = new System.Drawing.Point(272, 26);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(65, 19);
             this.lblProvincia.TabIndex = 34;
@@ -2260,7 +2284,7 @@ namespace ConfiguradorUI.Persona
             this.cboNacionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboNacionalidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNacionalidad.FormattingEnabled = true;
-            this.cboNacionalidad.Location = new System.Drawing.Point(364, 62);
+            this.cboNacionalidad.Location = new System.Drawing.Point(364, 59);
             this.cboNacionalidad.Name = "cboNacionalidad";
             this.cboNacionalidad.Size = new System.Drawing.Size(184, 23);
             this.cboNacionalidad.TabIndex = 39;
@@ -2273,7 +2297,7 @@ namespace ConfiguradorUI.Persona
             this.cboProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(364, 27);
+            this.cboProvincia.Location = new System.Drawing.Point(364, 24);
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(184, 23);
             this.cboProvincia.TabIndex = 35;
@@ -2287,7 +2311,7 @@ namespace ConfiguradorUI.Persona
             this.tabPagEducacion.HorizontalScrollbarSize = 10;
             this.tabPagEducacion.Location = new System.Drawing.Point(4, 38);
             this.tabPagEducacion.Name = "tabPagEducacion";
-            this.tabPagEducacion.Size = new System.Drawing.Size(578, 394);
+            this.tabPagEducacion.Size = new System.Drawing.Size(578, 422);
             this.tabPagEducacion.TabIndex = 6;
             this.tabPagEducacion.Text = "Educación";
             this.tabPagEducacion.VerticalScrollbarBarColor = true;
@@ -2308,7 +2332,7 @@ namespace ConfiguradorUI.Persona
             this.grbSkillsEducativas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbSkillsEducativas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbSkillsEducativas.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbSkillsEducativas.Location = new System.Drawing.Point(4, 13);
+            this.grbSkillsEducativas.Location = new System.Drawing.Point(4, 8);
             this.grbSkillsEducativas.Name = "grbSkillsEducativas";
             this.grbSkillsEducativas.Size = new System.Drawing.Size(571, 91);
             this.grbSkillsEducativas.TabIndex = 6;
@@ -2422,7 +2446,7 @@ namespace ConfiguradorUI.Persona
             this.tabPagContacto.HorizontalScrollbarSize = 10;
             this.tabPagContacto.Location = new System.Drawing.Point(4, 38);
             this.tabPagContacto.Name = "tabPagContacto";
-            this.tabPagContacto.Size = new System.Drawing.Size(578, 394);
+            this.tabPagContacto.Size = new System.Drawing.Size(578, 422);
             this.tabPagContacto.TabIndex = 1;
             this.tabPagContacto.Text = "Contacto";
             this.tabPagContacto.VerticalScrollbarBarColor = true;
@@ -2441,9 +2465,9 @@ namespace ConfiguradorUI.Persona
             this.grbEmailYWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbEmailYWeb.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEmailYWeb.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbEmailYWeb.Location = new System.Drawing.Point(12, 12);
+            this.grbEmailYWeb.Location = new System.Drawing.Point(12, 7);
             this.grbEmailYWeb.Name = "grbEmailYWeb";
-            this.grbEmailYWeb.Size = new System.Drawing.Size(555, 134);
+            this.grbEmailYWeb.Size = new System.Drawing.Size(555, 130);
             this.grbEmailYWeb.TabIndex = 2;
             this.grbEmailYWeb.TabStop = false;
             this.grbEmailYWeb.Text = "Email\'s y Web";
@@ -2464,7 +2488,7 @@ namespace ConfiguradorUI.Persona
             this.txtEmail02.CustomButton.UseSelectable = true;
             this.txtEmail02.CustomButton.Visible = false;
             this.txtEmail02.Lines = new string[0];
-            this.txtEmail02.Location = new System.Drawing.Point(91, 61);
+            this.txtEmail02.Location = new System.Drawing.Point(91, 60);
             this.txtEmail02.MaxLength = 32767;
             this.txtEmail02.Name = "txtEmail02";
             this.txtEmail02.PasswordChar = '\0';
@@ -2486,7 +2510,7 @@ namespace ConfiguradorUI.Persona
             this.lblEmail02.AutoSize = true;
             this.lblEmail02.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail02.ForeColor = System.Drawing.Color.Navy;
-            this.lblEmail02.Location = new System.Drawing.Point(6, 63);
+            this.lblEmail02.Location = new System.Drawing.Point(6, 62);
             this.lblEmail02.Name = "lblEmail02";
             this.lblEmail02.Size = new System.Drawing.Size(62, 19);
             this.lblEmail02.TabIndex = 2;
@@ -2509,7 +2533,7 @@ namespace ConfiguradorUI.Persona
             this.txtPagWeb.CustomButton.UseSelectable = true;
             this.txtPagWeb.CustomButton.Visible = false;
             this.txtPagWeb.Lines = new string[0];
-            this.txtPagWeb.Location = new System.Drawing.Point(91, 95);
+            this.txtPagWeb.Location = new System.Drawing.Point(91, 94);
             this.txtPagWeb.MaxLength = 32767;
             this.txtPagWeb.Name = "txtPagWeb";
             this.txtPagWeb.PasswordChar = '\0';
@@ -2531,7 +2555,7 @@ namespace ConfiguradorUI.Persona
             this.lblPagWeb.AutoSize = true;
             this.lblPagWeb.BackColor = System.Drawing.Color.Transparent;
             this.lblPagWeb.ForeColor = System.Drawing.Color.Navy;
-            this.lblPagWeb.Location = new System.Drawing.Point(6, 97);
+            this.lblPagWeb.Location = new System.Drawing.Point(6, 96);
             this.lblPagWeb.Name = "lblPagWeb";
             this.lblPagWeb.Size = new System.Drawing.Size(79, 19);
             this.lblPagWeb.TabIndex = 4;
@@ -2554,7 +2578,7 @@ namespace ConfiguradorUI.Persona
             this.txtEmail01.CustomButton.UseSelectable = true;
             this.txtEmail01.CustomButton.Visible = false;
             this.txtEmail01.Lines = new string[0];
-            this.txtEmail01.Location = new System.Drawing.Point(91, 27);
+            this.txtEmail01.Location = new System.Drawing.Point(91, 26);
             this.txtEmail01.MaxLength = 32767;
             this.txtEmail01.Name = "txtEmail01";
             this.txtEmail01.PasswordChar = '\0';
@@ -2576,7 +2600,7 @@ namespace ConfiguradorUI.Persona
             this.lblEmail01.AutoSize = true;
             this.lblEmail01.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail01.ForeColor = System.Drawing.Color.Navy;
-            this.lblEmail01.Location = new System.Drawing.Point(6, 29);
+            this.lblEmail01.Location = new System.Drawing.Point(6, 28);
             this.lblEmail01.Name = "lblEmail01";
             this.lblEmail01.Size = new System.Drawing.Size(60, 19);
             this.lblEmail01.TabIndex = 0;
@@ -2601,9 +2625,9 @@ namespace ConfiguradorUI.Persona
             this.grbNumerosContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbNumerosContacto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbNumerosContacto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbNumerosContacto.Location = new System.Drawing.Point(12, 152);
+            this.grbNumerosContacto.Location = new System.Drawing.Point(12, 143);
             this.grbNumerosContacto.Name = "grbNumerosContacto";
-            this.grbNumerosContacto.Size = new System.Drawing.Size(555, 135);
+            this.grbNumerosContacto.Size = new System.Drawing.Size(555, 129);
             this.grbNumerosContacto.TabIndex = 0;
             this.grbNumerosContacto.TabStop = false;
             this.grbNumerosContacto.Text = "Celulares y teléfonos";
@@ -2624,7 +2648,7 @@ namespace ConfiguradorUI.Persona
             this.txtTelfFijo02.CustomButton.UseSelectable = true;
             this.txtTelfFijo02.CustomButton.Visible = false;
             this.txtTelfFijo02.Lines = new string[0];
-            this.txtTelfFijo02.Location = new System.Drawing.Point(381, 61);
+            this.txtTelfFijo02.Location = new System.Drawing.Point(381, 60);
             this.txtTelfFijo02.MaxLength = 32767;
             this.txtTelfFijo02.Name = "txtTelfFijo02";
             this.txtTelfFijo02.PasswordChar = '\0';
@@ -2657,7 +2681,7 @@ namespace ConfiguradorUI.Persona
             this.txtCelular02.CustomButton.UseSelectable = true;
             this.txtCelular02.CustomButton.Visible = false;
             this.txtCelular02.Lines = new string[0];
-            this.txtCelular02.Location = new System.Drawing.Point(91, 61);
+            this.txtCelular02.Location = new System.Drawing.Point(91, 60);
             this.txtCelular02.MaxLength = 32767;
             this.txtCelular02.Name = "txtCelular02";
             this.txtCelular02.PasswordChar = '\0';
@@ -2690,7 +2714,7 @@ namespace ConfiguradorUI.Persona
             this.txtTelfFijo01.CustomButton.UseSelectable = true;
             this.txtTelfFijo01.CustomButton.Visible = false;
             this.txtTelfFijo01.Lines = new string[0];
-            this.txtTelfFijo01.Location = new System.Drawing.Point(381, 27);
+            this.txtTelfFijo01.Location = new System.Drawing.Point(381, 26);
             this.txtTelfFijo01.MaxLength = 32767;
             this.txtTelfFijo01.Name = "txtTelfFijo01";
             this.txtTelfFijo01.PasswordChar = '\0';
@@ -2712,7 +2736,7 @@ namespace ConfiguradorUI.Persona
             this.lblCelular02.AutoSize = true;
             this.lblCelular02.BackColor = System.Drawing.Color.Transparent;
             this.lblCelular02.ForeColor = System.Drawing.Color.Navy;
-            this.lblCelular02.Location = new System.Drawing.Point(6, 63);
+            this.lblCelular02.Location = new System.Drawing.Point(6, 62);
             this.lblCelular02.Name = "lblCelular02";
             this.lblCelular02.Size = new System.Drawing.Size(71, 19);
             this.lblCelular02.TabIndex = 2;
@@ -2724,11 +2748,11 @@ namespace ConfiguradorUI.Persona
             this.lblTelFijo02.AutoSize = true;
             this.lblTelFijo02.BackColor = System.Drawing.Color.Transparent;
             this.lblTelFijo02.ForeColor = System.Drawing.Color.Navy;
-            this.lblTelFijo02.Location = new System.Drawing.Point(292, 63);
+            this.lblTelFijo02.Location = new System.Drawing.Point(294, 62);
             this.lblTelFijo02.Name = "lblTelFijo02";
-            this.lblTelFijo02.Size = new System.Drawing.Size(83, 19);
+            this.lblTelFijo02.Size = new System.Drawing.Size(76, 19);
             this.lblTelFijo02.TabIndex = 2;
-            this.lblTelFijo02.Text = "Telef. Fijo 02:";
+            this.lblTelFijo02.Text = "Telf. Fijo 02:";
             this.lblTelFijo02.UseCustomForeColor = true;
             // 
             // txtCelular03
@@ -2747,7 +2771,7 @@ namespace ConfiguradorUI.Persona
             this.txtCelular03.CustomButton.UseSelectable = true;
             this.txtCelular03.CustomButton.Visible = false;
             this.txtCelular03.Lines = new string[0];
-            this.txtCelular03.Location = new System.Drawing.Point(91, 95);
+            this.txtCelular03.Location = new System.Drawing.Point(91, 93);
             this.txtCelular03.MaxLength = 32767;
             this.txtCelular03.Name = "txtCelular03";
             this.txtCelular03.PasswordChar = '\0';
@@ -2769,11 +2793,11 @@ namespace ConfiguradorUI.Persona
             this.lblTelFijo01.AutoSize = true;
             this.lblTelFijo01.BackColor = System.Drawing.Color.Transparent;
             this.lblTelFijo01.ForeColor = System.Drawing.Color.Navy;
-            this.lblTelFijo01.Location = new System.Drawing.Point(294, 31);
+            this.lblTelFijo01.Location = new System.Drawing.Point(296, 30);
             this.lblTelFijo01.Name = "lblTelFijo01";
-            this.lblTelFijo01.Size = new System.Drawing.Size(81, 19);
+            this.lblTelFijo01.Size = new System.Drawing.Size(74, 19);
             this.lblTelFijo01.TabIndex = 0;
-            this.lblTelFijo01.Text = "Telef. Fijo 01:";
+            this.lblTelFijo01.Text = "Telf. Fijo 01:";
             this.lblTelFijo01.UseCustomForeColor = true;
             // 
             // lblCelular03
@@ -2781,7 +2805,7 @@ namespace ConfiguradorUI.Persona
             this.lblCelular03.AutoSize = true;
             this.lblCelular03.BackColor = System.Drawing.Color.Transparent;
             this.lblCelular03.ForeColor = System.Drawing.Color.Navy;
-            this.lblCelular03.Location = new System.Drawing.Point(6, 97);
+            this.lblCelular03.Location = new System.Drawing.Point(6, 95);
             this.lblCelular03.Name = "lblCelular03";
             this.lblCelular03.Size = new System.Drawing.Size(71, 19);
             this.lblCelular03.TabIndex = 4;
@@ -2804,7 +2828,7 @@ namespace ConfiguradorUI.Persona
             this.txtTelfFijo03.CustomButton.UseSelectable = true;
             this.txtTelfFijo03.CustomButton.Visible = false;
             this.txtTelfFijo03.Lines = new string[0];
-            this.txtTelfFijo03.Location = new System.Drawing.Point(381, 95);
+            this.txtTelfFijo03.Location = new System.Drawing.Point(381, 93);
             this.txtTelfFijo03.MaxLength = 32767;
             this.txtTelfFijo03.Name = "txtTelfFijo03";
             this.txtTelfFijo03.PasswordChar = '\0';
@@ -2826,11 +2850,11 @@ namespace ConfiguradorUI.Persona
             this.lblTelFijo03.AutoSize = true;
             this.lblTelFijo03.BackColor = System.Drawing.Color.Transparent;
             this.lblTelFijo03.ForeColor = System.Drawing.Color.Navy;
-            this.lblTelFijo03.Location = new System.Drawing.Point(292, 97);
+            this.lblTelFijo03.Location = new System.Drawing.Point(294, 95);
             this.lblTelFijo03.Name = "lblTelFijo03";
-            this.lblTelFijo03.Size = new System.Drawing.Size(83, 19);
+            this.lblTelFijo03.Size = new System.Drawing.Size(76, 19);
             this.lblTelFijo03.TabIndex = 4;
-            this.lblTelFijo03.Text = "Telef. Fijo 03:";
+            this.lblTelFijo03.Text = "Telf. Fijo 03:";
             this.lblTelFijo03.UseCustomForeColor = true;
             // 
             // txtCelular01
@@ -2849,7 +2873,7 @@ namespace ConfiguradorUI.Persona
             this.txtCelular01.CustomButton.UseSelectable = true;
             this.txtCelular01.CustomButton.Visible = false;
             this.txtCelular01.Lines = new string[0];
-            this.txtCelular01.Location = new System.Drawing.Point(91, 27);
+            this.txtCelular01.Location = new System.Drawing.Point(91, 26);
             this.txtCelular01.MaxLength = 32767;
             this.txtCelular01.Name = "txtCelular01";
             this.txtCelular01.PasswordChar = '\0';
@@ -2871,7 +2895,7 @@ namespace ConfiguradorUI.Persona
             this.lblCelular01.AutoSize = true;
             this.lblCelular01.BackColor = System.Drawing.Color.Transparent;
             this.lblCelular01.ForeColor = System.Drawing.Color.Navy;
-            this.lblCelular01.Location = new System.Drawing.Point(6, 28);
+            this.lblCelular01.Location = new System.Drawing.Point(6, 27);
             this.lblCelular01.Name = "lblCelular01";
             this.lblCelular01.Size = new System.Drawing.Size(69, 19);
             this.lblCelular01.TabIndex = 0;
@@ -2886,7 +2910,7 @@ namespace ConfiguradorUI.Persona
             this.tabPagInfoExtra.HorizontalScrollbarSize = 10;
             this.tabPagInfoExtra.Location = new System.Drawing.Point(4, 38);
             this.tabPagInfoExtra.Name = "tabPagInfoExtra";
-            this.tabPagInfoExtra.Size = new System.Drawing.Size(578, 394);
+            this.tabPagInfoExtra.Size = new System.Drawing.Size(578, 422);
             this.tabPagInfoExtra.TabIndex = 2;
             this.tabPagInfoExtra.Text = "Info. Extra";
             this.tabPagInfoExtra.VerticalScrollbarBarColor = true;
@@ -2919,9 +2943,9 @@ namespace ConfiguradorUI.Persona
             this.grbInfoExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbInfoExtra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbInfoExtra.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbInfoExtra.Location = new System.Drawing.Point(11, 15);
+            this.grbInfoExtra.Location = new System.Drawing.Point(11, 8);
             this.grbInfoExtra.Name = "grbInfoExtra";
-            this.grbInfoExtra.Size = new System.Drawing.Size(555, 376);
+            this.grbInfoExtra.Size = new System.Drawing.Size(555, 201);
             this.grbInfoExtra.TabIndex = 0;
             this.grbInfoExtra.TabStop = false;
             this.grbInfoExtra.Text = "Agregue la información extra que necesite";
@@ -2933,7 +2957,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo10.CustomButton.Image = null;
-            this.txtInfo10.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo10.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo10.CustomButton.Name = "";
             this.txtInfo10.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo10.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2942,7 +2966,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo10.CustomButton.UseSelectable = true;
             this.txtInfo10.CustomButton.Visible = false;
             this.txtInfo10.Lines = new string[0];
-            this.txtInfo10.Location = new System.Drawing.Point(91, 336);
+            this.txtInfo10.Location = new System.Drawing.Point(353, 165);
             this.txtInfo10.MaxLength = 32767;
             this.txtInfo10.Name = "txtInfo10";
             this.txtInfo10.PasswordChar = '\0';
@@ -2951,7 +2975,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo10.SelectionLength = 0;
             this.txtInfo10.SelectionStart = 0;
             this.txtInfo10.ShortcutsEnabled = true;
-            this.txtInfo10.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo10.Size = new System.Drawing.Size(184, 23);
             this.txtInfo10.TabIndex = 19;
             this.txtInfo10.UseCustomBackColor = true;
             this.txtInfo10.UseSelectable = true;
@@ -2964,7 +2988,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo10.AutoSize = true;
             this.lblInfo10.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo10.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo10.Location = new System.Drawing.Point(6, 338);
+            this.lblInfo10.Location = new System.Drawing.Point(292, 167);
             this.lblInfo10.Name = "lblInfo10";
             this.lblInfo10.Size = new System.Drawing.Size(53, 19);
             this.lblInfo10.TabIndex = 18;
@@ -2978,7 +3002,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo08.CustomButton.Image = null;
-            this.txtInfo08.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo08.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo08.CustomButton.Name = "";
             this.txtInfo08.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo08.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2987,7 +3011,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo08.CustomButton.UseSelectable = true;
             this.txtInfo08.CustomButton.Visible = false;
             this.txtInfo08.Lines = new string[0];
-            this.txtInfo08.Location = new System.Drawing.Point(91, 268);
+            this.txtInfo08.Location = new System.Drawing.Point(353, 97);
             this.txtInfo08.MaxLength = 32767;
             this.txtInfo08.Name = "txtInfo08";
             this.txtInfo08.PasswordChar = '\0';
@@ -2996,7 +3020,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo08.SelectionLength = 0;
             this.txtInfo08.SelectionStart = 0;
             this.txtInfo08.ShortcutsEnabled = true;
-            this.txtInfo08.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo08.Size = new System.Drawing.Size(184, 23);
             this.txtInfo08.TabIndex = 15;
             this.txtInfo08.UseCustomBackColor = true;
             this.txtInfo08.UseSelectable = true;
@@ -3009,7 +3033,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo08.AutoSize = true;
             this.lblInfo08.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo08.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo08.Location = new System.Drawing.Point(6, 270);
+            this.lblInfo08.Location = new System.Drawing.Point(292, 99);
             this.lblInfo08.Name = "lblInfo08";
             this.lblInfo08.Size = new System.Drawing.Size(55, 19);
             this.lblInfo08.TabIndex = 14;
@@ -3023,7 +3047,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo09.CustomButton.Image = null;
-            this.txtInfo09.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo09.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo09.CustomButton.Name = "";
             this.txtInfo09.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo09.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3032,7 +3056,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo09.CustomButton.UseSelectable = true;
             this.txtInfo09.CustomButton.Visible = false;
             this.txtInfo09.Lines = new string[0];
-            this.txtInfo09.Location = new System.Drawing.Point(91, 302);
+            this.txtInfo09.Location = new System.Drawing.Point(353, 131);
             this.txtInfo09.MaxLength = 32767;
             this.txtInfo09.Name = "txtInfo09";
             this.txtInfo09.PasswordChar = '\0';
@@ -3041,7 +3065,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo09.SelectionLength = 0;
             this.txtInfo09.SelectionStart = 0;
             this.txtInfo09.ShortcutsEnabled = true;
-            this.txtInfo09.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo09.Size = new System.Drawing.Size(184, 23);
             this.txtInfo09.TabIndex = 17;
             this.txtInfo09.UseCustomBackColor = true;
             this.txtInfo09.UseSelectable = true;
@@ -3054,7 +3078,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo09.AutoSize = true;
             this.lblInfo09.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo09.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo09.Location = new System.Drawing.Point(6, 304);
+            this.lblInfo09.Location = new System.Drawing.Point(292, 133);
             this.lblInfo09.Name = "lblInfo09";
             this.lblInfo09.Size = new System.Drawing.Size(55, 19);
             this.lblInfo09.TabIndex = 16;
@@ -3068,7 +3092,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo07.CustomButton.Image = null;
-            this.txtInfo07.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo07.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo07.CustomButton.Name = "";
             this.txtInfo07.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo07.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3077,7 +3101,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo07.CustomButton.UseSelectable = true;
             this.txtInfo07.CustomButton.Visible = false;
             this.txtInfo07.Lines = new string[0];
-            this.txtInfo07.Location = new System.Drawing.Point(91, 234);
+            this.txtInfo07.Location = new System.Drawing.Point(353, 63);
             this.txtInfo07.MaxLength = 32767;
             this.txtInfo07.Name = "txtInfo07";
             this.txtInfo07.PasswordChar = '\0';
@@ -3086,7 +3110,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo07.SelectionLength = 0;
             this.txtInfo07.SelectionStart = 0;
             this.txtInfo07.ShortcutsEnabled = true;
-            this.txtInfo07.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo07.Size = new System.Drawing.Size(184, 23);
             this.txtInfo07.TabIndex = 13;
             this.txtInfo07.UseCustomBackColor = true;
             this.txtInfo07.UseSelectable = true;
@@ -3099,7 +3123,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo07.AutoSize = true;
             this.lblInfo07.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo07.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo07.Location = new System.Drawing.Point(6, 236);
+            this.lblInfo07.Location = new System.Drawing.Point(292, 65);
             this.lblInfo07.Name = "lblInfo07";
             this.lblInfo07.Size = new System.Drawing.Size(55, 19);
             this.lblInfo07.TabIndex = 12;
@@ -3113,7 +3137,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo05.CustomButton.Image = null;
-            this.txtInfo05.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo05.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo05.CustomButton.Name = "";
             this.txtInfo05.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo05.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3122,7 +3146,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo05.CustomButton.UseSelectable = true;
             this.txtInfo05.CustomButton.Visible = false;
             this.txtInfo05.Lines = new string[0];
-            this.txtInfo05.Location = new System.Drawing.Point(91, 167);
+            this.txtInfo05.Location = new System.Drawing.Point(74, 165);
             this.txtInfo05.MaxLength = 32767;
             this.txtInfo05.Name = "txtInfo05";
             this.txtInfo05.PasswordChar = '\0';
@@ -3131,7 +3155,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo05.SelectionLength = 0;
             this.txtInfo05.SelectionStart = 0;
             this.txtInfo05.ShortcutsEnabled = true;
-            this.txtInfo05.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo05.Size = new System.Drawing.Size(184, 23);
             this.txtInfo05.TabIndex = 9;
             this.txtInfo05.UseCustomBackColor = true;
             this.txtInfo05.UseSelectable = true;
@@ -3144,7 +3168,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo05.AutoSize = true;
             this.lblInfo05.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo05.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo05.Location = new System.Drawing.Point(6, 169);
+            this.lblInfo05.Location = new System.Drawing.Point(13, 167);
             this.lblInfo05.Name = "lblInfo05";
             this.lblInfo05.Size = new System.Drawing.Size(55, 19);
             this.lblInfo05.TabIndex = 8;
@@ -3158,7 +3182,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo06.CustomButton.Image = null;
-            this.txtInfo06.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo06.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo06.CustomButton.Name = "";
             this.txtInfo06.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo06.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3167,7 +3191,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo06.CustomButton.UseSelectable = true;
             this.txtInfo06.CustomButton.Visible = false;
             this.txtInfo06.Lines = new string[0];
-            this.txtInfo06.Location = new System.Drawing.Point(91, 201);
+            this.txtInfo06.Location = new System.Drawing.Point(353, 29);
             this.txtInfo06.MaxLength = 32767;
             this.txtInfo06.Name = "txtInfo06";
             this.txtInfo06.PasswordChar = '\0';
@@ -3176,7 +3200,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo06.SelectionLength = 0;
             this.txtInfo06.SelectionStart = 0;
             this.txtInfo06.ShortcutsEnabled = true;
-            this.txtInfo06.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo06.Size = new System.Drawing.Size(184, 23);
             this.txtInfo06.TabIndex = 11;
             this.txtInfo06.UseCustomBackColor = true;
             this.txtInfo06.UseSelectable = true;
@@ -3189,7 +3213,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo06.AutoSize = true;
             this.lblInfo06.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo06.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo06.Location = new System.Drawing.Point(6, 203);
+            this.lblInfo06.Location = new System.Drawing.Point(292, 31);
             this.lblInfo06.Name = "lblInfo06";
             this.lblInfo06.Size = new System.Drawing.Size(55, 19);
             this.lblInfo06.TabIndex = 10;
@@ -3203,7 +3227,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo04.CustomButton.Image = null;
-            this.txtInfo04.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo04.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo04.CustomButton.Name = "";
             this.txtInfo04.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo04.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3212,7 +3236,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo04.CustomButton.UseSelectable = true;
             this.txtInfo04.CustomButton.Visible = false;
             this.txtInfo04.Lines = new string[0];
-            this.txtInfo04.Location = new System.Drawing.Point(91, 133);
+            this.txtInfo04.Location = new System.Drawing.Point(74, 131);
             this.txtInfo04.MaxLength = 32767;
             this.txtInfo04.Name = "txtInfo04";
             this.txtInfo04.PasswordChar = '\0';
@@ -3221,7 +3245,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo04.SelectionLength = 0;
             this.txtInfo04.SelectionStart = 0;
             this.txtInfo04.ShortcutsEnabled = true;
-            this.txtInfo04.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo04.Size = new System.Drawing.Size(184, 23);
             this.txtInfo04.TabIndex = 7;
             this.txtInfo04.UseCustomBackColor = true;
             this.txtInfo04.UseSelectable = true;
@@ -3234,7 +3258,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo04.AutoSize = true;
             this.lblInfo04.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo04.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo04.Location = new System.Drawing.Point(6, 135);
+            this.lblInfo04.Location = new System.Drawing.Point(13, 133);
             this.lblInfo04.Name = "lblInfo04";
             this.lblInfo04.Size = new System.Drawing.Size(55, 19);
             this.lblInfo04.TabIndex = 6;
@@ -3248,7 +3272,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo02.CustomButton.Image = null;
-            this.txtInfo02.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo02.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo02.CustomButton.Name = "";
             this.txtInfo02.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3257,7 +3281,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo02.CustomButton.UseSelectable = true;
             this.txtInfo02.CustomButton.Visible = false;
             this.txtInfo02.Lines = new string[0];
-            this.txtInfo02.Location = new System.Drawing.Point(91, 65);
+            this.txtInfo02.Location = new System.Drawing.Point(74, 63);
             this.txtInfo02.MaxLength = 32767;
             this.txtInfo02.Name = "txtInfo02";
             this.txtInfo02.PasswordChar = '\0';
@@ -3266,7 +3290,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo02.SelectionLength = 0;
             this.txtInfo02.SelectionStart = 0;
             this.txtInfo02.ShortcutsEnabled = true;
-            this.txtInfo02.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo02.Size = new System.Drawing.Size(184, 23);
             this.txtInfo02.TabIndex = 3;
             this.txtInfo02.UseCustomBackColor = true;
             this.txtInfo02.UseSelectable = true;
@@ -3279,7 +3303,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo02.AutoSize = true;
             this.lblInfo02.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo02.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo02.Location = new System.Drawing.Point(6, 67);
+            this.lblInfo02.Location = new System.Drawing.Point(13, 65);
             this.lblInfo02.Name = "lblInfo02";
             this.lblInfo02.Size = new System.Drawing.Size(55, 19);
             this.lblInfo02.TabIndex = 2;
@@ -3293,7 +3317,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo03.CustomButton.Image = null;
-            this.txtInfo03.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo03.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo03.CustomButton.Name = "";
             this.txtInfo03.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo03.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3302,7 +3326,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo03.CustomButton.UseSelectable = true;
             this.txtInfo03.CustomButton.Visible = false;
             this.txtInfo03.Lines = new string[0];
-            this.txtInfo03.Location = new System.Drawing.Point(91, 99);
+            this.txtInfo03.Location = new System.Drawing.Point(74, 97);
             this.txtInfo03.MaxLength = 32767;
             this.txtInfo03.Name = "txtInfo03";
             this.txtInfo03.PasswordChar = '\0';
@@ -3311,7 +3335,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo03.SelectionLength = 0;
             this.txtInfo03.SelectionStart = 0;
             this.txtInfo03.ShortcutsEnabled = true;
-            this.txtInfo03.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo03.Size = new System.Drawing.Size(184, 23);
             this.txtInfo03.TabIndex = 5;
             this.txtInfo03.UseCustomBackColor = true;
             this.txtInfo03.UseSelectable = true;
@@ -3324,7 +3348,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo03.AutoSize = true;
             this.lblInfo03.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo03.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo03.Location = new System.Drawing.Point(6, 101);
+            this.lblInfo03.Location = new System.Drawing.Point(13, 99);
             this.lblInfo03.Name = "lblInfo03";
             this.lblInfo03.Size = new System.Drawing.Size(55, 19);
             this.lblInfo03.TabIndex = 4;
@@ -3338,7 +3362,7 @@ namespace ConfiguradorUI.Persona
             // 
             // 
             this.txtInfo01.CustomButton.Image = null;
-            this.txtInfo01.CustomButton.Location = new System.Drawing.Point(424, 1);
+            this.txtInfo01.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.txtInfo01.CustomButton.Name = "";
             this.txtInfo01.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtInfo01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3347,7 +3371,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo01.CustomButton.UseSelectable = true;
             this.txtInfo01.CustomButton.Visible = false;
             this.txtInfo01.Lines = new string[0];
-            this.txtInfo01.Location = new System.Drawing.Point(91, 31);
+            this.txtInfo01.Location = new System.Drawing.Point(74, 29);
             this.txtInfo01.MaxLength = 32767;
             this.txtInfo01.Name = "txtInfo01";
             this.txtInfo01.PasswordChar = '\0';
@@ -3356,7 +3380,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo01.SelectionLength = 0;
             this.txtInfo01.SelectionStart = 0;
             this.txtInfo01.ShortcutsEnabled = true;
-            this.txtInfo01.Size = new System.Drawing.Size(446, 23);
+            this.txtInfo01.Size = new System.Drawing.Size(184, 23);
             this.txtInfo01.TabIndex = 1;
             this.txtInfo01.UseCustomBackColor = true;
             this.txtInfo01.UseSelectable = true;
@@ -3369,7 +3393,7 @@ namespace ConfiguradorUI.Persona
             this.lblInfo01.AutoSize = true;
             this.lblInfo01.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo01.ForeColor = System.Drawing.Color.Navy;
-            this.lblInfo01.Location = new System.Drawing.Point(6, 33);
+            this.lblInfo01.Location = new System.Drawing.Point(15, 31);
             this.lblInfo01.Name = "lblInfo01";
             this.lblInfo01.Size = new System.Drawing.Size(53, 19);
             this.lblInfo01.TabIndex = 0;
@@ -3381,7 +3405,7 @@ namespace ConfiguradorUI.Persona
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(100, 53);
+            this.lblNombreForm.Location = new System.Drawing.Point(90, 40);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(128, 32);
             this.lblNombreForm.TabIndex = 62;
@@ -3392,7 +3416,7 @@ namespace ConfiguradorUI.Persona
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(39, 41);
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
             this.btnCerrar.TabIndex = 6;
@@ -3410,9 +3434,9 @@ namespace ConfiguradorUI.Persona
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(293, 48);
+            this.panelMantenimiento.Location = new System.Drawing.Point(293, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
-            this.panelMantenimiento.Size = new System.Drawing.Size(566, 55);
+            this.panelMantenimiento.Size = new System.Drawing.Size(572, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
             this.panelMantenimiento.TabIndex = 2;
             this.panelMantenimiento.UseCustomBackColor = true;
@@ -3429,7 +3453,7 @@ namespace ConfiguradorUI.Persona
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(6, 7);
+            this.btnSearch.Location = new System.Drawing.Point(4, 5);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(40, 40);
             this.btnSearch.TabIndex = 4;
@@ -3444,7 +3468,7 @@ namespace ConfiguradorUI.Persona
             this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(394, 7);
+            this.btnNuevo.Location = new System.Drawing.Point(397, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 1;
@@ -3459,7 +3483,7 @@ namespace ConfiguradorUI.Persona
             this.btnRollback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnRollback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRollback.Image = ((System.Drawing.Image)(resources.GetObject("btnRollback.Image")));
-            this.btnRollback.Location = new System.Drawing.Point(520, 7);
+            this.btnRollback.Location = new System.Drawing.Point(523, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
             this.btnRollback.TabIndex = 3;
@@ -3475,7 +3499,7 @@ namespace ConfiguradorUI.Persona
             this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
-            this.btnCommit.Location = new System.Drawing.Point(478, 7);
+            this.btnCommit.Location = new System.Drawing.Point(481, 5);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Size = new System.Drawing.Size(40, 40);
             this.btnCommit.TabIndex = 0;
@@ -3491,7 +3515,7 @@ namespace ConfiguradorUI.Persona
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(436, 7);
+            this.btnDelete.Location = new System.Drawing.Point(439, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
             this.btnDelete.TabIndex = 2;
@@ -3522,14 +3546,14 @@ namespace ConfiguradorUI.Persona
             this.dgvEmpleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvEmpleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEmpleado.Location = new System.Drawing.Point(38, 141);
+            this.dgvEmpleado.Location = new System.Drawing.Point(38, 129);
             this.dgvEmpleado.MultiSelect = false;
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEmpleado.RowHeadersVisible = false;
             this.dgvEmpleado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleado.Size = new System.Drawing.Size(240, 439);
+            this.dgvEmpleado.Size = new System.Drawing.Size(240, 456);
             this.dgvEmpleado.TabIndex = 0;
             this.dgvEmpleado.SelectionChanged += new System.EventHandler(this.dgvEmpleado_SelectionChanged);
             // 
@@ -3539,7 +3563,7 @@ namespace ConfiguradorUI.Persona
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(183, 583);
+            this.lblNumInactivo.Location = new System.Drawing.Point(183, 588);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -3552,7 +3576,7 @@ namespace ConfiguradorUI.Persona
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(103, 583);
+            this.lblNumActivo.Location = new System.Drawing.Point(103, 588);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -3565,7 +3589,7 @@ namespace ConfiguradorUI.Persona
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(34, 583);
+            this.lblNumReg.Location = new System.Drawing.Point(34, 588);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
@@ -3576,7 +3600,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 639);
+            this.ClientSize = new System.Drawing.Size(903, 636);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -3822,5 +3846,7 @@ namespace ConfiguradorUI.Persona
         private System.Windows.Forms.Button btnCrearUsuario;
         private System.Windows.Forms.GroupBox grbUser;
         private MetroFramework.Controls.MetroLabel lblUsername;
+        private MetroFramework.Controls.MetroLabel lblDescUsername;
+        private System.Windows.Forms.Panel panel3;
     }
 }

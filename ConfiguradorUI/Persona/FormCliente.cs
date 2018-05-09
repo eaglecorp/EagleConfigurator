@@ -1381,6 +1381,5 @@ namespace ConfiguradorUI.Persona
 
 
         #endregion
-
     }
 }
