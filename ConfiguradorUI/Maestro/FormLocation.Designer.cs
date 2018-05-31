@@ -57,7 +57,6 @@ namespace ConfiguradorUI.Maestro
             this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
             this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
             this.lblDireccion01 = new MetroFramework.Controls.MetroLabel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.txtFono02 = new MetroFramework.Controls.MetroTextBox();
             this.lblFono02 = new MetroFramework.Controls.MetroLabel();
             this.txtFono01 = new MetroFramework.Controls.MetroTextBox();
@@ -96,12 +95,29 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
+            this.tabPagDireccion = new MetroFramework.Controls.MetroTabPage();
+            this.gbrUbigeo = new System.Windows.Forms.GroupBox();
+            this.lblDepartamento = new MetroFramework.Controls.MetroLabel();
+            this.cboDepartamento = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboDistrito = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.lblDistrito = new MetroFramework.Controls.MetroLabel();
+            this.lblProvincia = new MetroFramework.Controls.MetroLabel();
+            this.cboProvincia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.grbUbicacionDetallada = new System.Windows.Forms.GroupBox();
+            this.tabPagInfoExtra = new MetroFramework.Controls.MetroTabPage();
+            this.grbInfoExtra = new System.Windows.Forms.GroupBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabLocation.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
+            this.tabPagDireccion.SuspendLayout();
+            this.gbrUbigeo.SuspendLayout();
+            this.grbUbicacionDetallada.SuspendLayout();
+            this.tabPagInfoExtra.SuspendLayout();
+            this.grbInfoExtra.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombreForm
@@ -137,7 +153,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(312, 569);
+            this.panelFiltro.Location = new System.Drawing.Point(312, 375);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(551, 49);
             this.panelFiltro.TabIndex = 3;
@@ -319,41 +335,26 @@ namespace ConfiguradorUI.Maestro
             // tabLocation
             // 
             this.tabLocation.Controls.Add(this.tabPagGeneral);
+            this.tabLocation.Controls.Add(this.tabPagDireccion);
+            this.tabLocation.Controls.Add(this.tabPagInfoExtra);
             this.tabLocation.Location = new System.Drawing.Point(312, 91);
             this.tabLocation.Name = "tabLocation";
             this.tabLocation.SelectedIndex = 0;
-            this.tabLocation.Size = new System.Drawing.Size(567, 472);
+            this.tabLocation.Size = new System.Drawing.Size(567, 282);
             this.tabLocation.TabIndex = 1;
             this.tabLocation.UseSelectable = true;
             // 
             // tabPagGeneral
             // 
-            this.tabPagGeneral.Controls.Add(this.txtLongitud);
-            this.tabPagGeneral.Controls.Add(this.lblLongitud);
-            this.tabPagGeneral.Controls.Add(this.txtLatitud);
-            this.tabPagGeneral.Controls.Add(this.lblLatitud);
             this.tabPagGeneral.Controls.Add(this.panel2);
             this.tabPagGeneral.Controls.Add(this.cboTipoLocation);
-            this.tabPagGeneral.Controls.Add(this.txtDireccion02);
-            this.tabPagGeneral.Controls.Add(this.lblDireccion02);
-            this.tabPagGeneral.Controls.Add(this.txtDireccion01);
-            this.tabPagGeneral.Controls.Add(this.lblDireccion01);
-            this.tabPagGeneral.Controls.Add(this.panel4);
             this.tabPagGeneral.Controls.Add(this.txtFono02);
             this.tabPagGeneral.Controls.Add(this.lblFono02);
             this.tabPagGeneral.Controls.Add(this.txtFono01);
             this.tabPagGeneral.Controls.Add(this.lblFono01);
-            this.tabPagGeneral.Controls.Add(this.txtDato01);
-            this.tabPagGeneral.Controls.Add(this.lblDato01);
-            this.tabPagGeneral.Controls.Add(this.txtDato04);
-            this.tabPagGeneral.Controls.Add(this.lblDato03);
-            this.tabPagGeneral.Controls.Add(this.lblDato04);
             this.tabPagGeneral.Controls.Add(this.dtpFechaNegocio);
-            this.tabPagGeneral.Controls.Add(this.txtDato03);
             this.tabPagGeneral.Controls.Add(this.lblFechaNegocio);
-            this.tabPagGeneral.Controls.Add(this.txtDato02);
             this.tabPagGeneral.Controls.Add(this.txtNumRuc);
-            this.tabPagGeneral.Controls.Add(this.lblDato02);
             this.tabPagGeneral.Controls.Add(this.panel1);
             this.tabPagGeneral.Controls.Add(this.lblRUC);
             this.tabPagGeneral.Controls.Add(this.chkActivo);
@@ -374,7 +375,7 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
             this.tabPagGeneral.Location = new System.Drawing.Point(4, 38);
             this.tabPagGeneral.Name = "tabPagGeneral";
-            this.tabPagGeneral.Size = new System.Drawing.Size(559, 430);
+            this.tabPagGeneral.Size = new System.Drawing.Size(559, 240);
             this.tabPagGeneral.TabIndex = 0;
             this.tabPagGeneral.Text = "General";
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
@@ -397,7 +398,7 @@ namespace ConfiguradorUI.Maestro
             this.txtLongitud.CustomButton.UseSelectable = true;
             this.txtLongitud.CustomButton.Visible = false;
             this.txtLongitud.Lines = new string[0];
-            this.txtLongitud.Location = new System.Drawing.Point(359, 185);
+            this.txtLongitud.Location = new System.Drawing.Point(442, 95);
             this.txtLongitud.MaxLength = 32767;
             this.txtLongitud.Name = "txtLongitud";
             this.txtLongitud.PasswordChar = '\0';
@@ -406,7 +407,7 @@ namespace ConfiguradorUI.Maestro
             this.txtLongitud.SelectionLength = 0;
             this.txtLongitud.SelectionStart = 0;
             this.txtLongitud.ShortcutsEnabled = true;
-            this.txtLongitud.Size = new System.Drawing.Size(184, 23);
+            this.txtLongitud.Size = new System.Drawing.Size(93, 23);
             this.txtLongitud.TabIndex = 66;
             this.txtLongitud.UseCustomBackColor = true;
             this.txtLongitud.UseSelectable = true;
@@ -418,7 +419,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblLongitud.AutoSize = true;
             this.lblLongitud.ForeColor = System.Drawing.Color.Navy;
-            this.lblLongitud.Location = new System.Drawing.Point(283, 187);
+            this.lblLongitud.Location = new System.Drawing.Point(379, 97);
             this.lblLongitud.Name = "lblLongitud";
             this.lblLongitud.Size = new System.Drawing.Size(63, 19);
             this.lblLongitud.TabIndex = 65;
@@ -441,7 +442,7 @@ namespace ConfiguradorUI.Maestro
             this.txtLatitud.CustomButton.UseSelectable = true;
             this.txtLatitud.CustomButton.Visible = false;
             this.txtLatitud.Lines = new string[0];
-            this.txtLatitud.Location = new System.Drawing.Point(75, 185);
+            this.txtLatitud.Location = new System.Drawing.Point(269, 95);
             this.txtLatitud.MaxLength = 32767;
             this.txtLatitud.Name = "txtLatitud";
             this.txtLatitud.PasswordChar = '\0';
@@ -450,7 +451,7 @@ namespace ConfiguradorUI.Maestro
             this.txtLatitud.SelectionLength = 0;
             this.txtLatitud.SelectionStart = 0;
             this.txtLatitud.ShortcutsEnabled = true;
-            this.txtLatitud.Size = new System.Drawing.Size(184, 23);
+            this.txtLatitud.Size = new System.Drawing.Size(93, 23);
             this.txtLatitud.TabIndex = 64;
             this.txtLatitud.UseCustomBackColor = true;
             this.txtLatitud.UseSelectable = true;
@@ -462,7 +463,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblLatitud.AutoSize = true;
             this.lblLatitud.ForeColor = System.Drawing.Color.Navy;
-            this.lblLatitud.Location = new System.Drawing.Point(1, 187);
+            this.lblLatitud.Location = new System.Drawing.Point(219, 97);
             this.lblLatitud.Name = "lblLatitud";
             this.lblLatitud.Size = new System.Drawing.Size(51, 19);
             this.lblLatitud.TabIndex = 63;
@@ -473,7 +474,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(3, 398);
+            this.panel2.Location = new System.Drawing.Point(3, 205);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(540, 5);
             this.panel2.TabIndex = 62;
@@ -485,7 +486,7 @@ namespace ConfiguradorUI.Maestro
             this.cboTipoLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoLocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoLocation.FormattingEnabled = true;
-            this.cboTipoLocation.Location = new System.Drawing.Point(75, 97);
+            this.cboTipoLocation.Location = new System.Drawing.Point(75, 133);
             this.cboTipoLocation.Name = "cboTipoLocation";
             this.cboTipoLocation.Size = new System.Drawing.Size(158, 23);
             this.cboTipoLocation.TabIndex = 9;
@@ -507,7 +508,7 @@ namespace ConfiguradorUI.Maestro
             this.txtDireccion02.CustomButton.UseSelectable = true;
             this.txtDireccion02.CustomButton.Visible = false;
             this.txtDireccion02.Lines = new string[0];
-            this.txtDireccion02.Location = new System.Drawing.Point(75, 363);
+            this.txtDireccion02.Location = new System.Drawing.Point(80, 61);
             this.txtDireccion02.MaxLength = 32767;
             this.txtDireccion02.Name = "txtDireccion02";
             this.txtDireccion02.PasswordChar = '\0';
@@ -528,7 +529,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblDireccion02.AutoSize = true;
             this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion02.Location = new System.Drawing.Point(1, 367);
+            this.lblDireccion02.Location = new System.Drawing.Point(6, 65);
             this.lblDireccion02.Name = "lblDireccion02";
             this.lblDireccion02.Size = new System.Drawing.Size(48, 19);
             this.lblDireccion02.TabIndex = 31;
@@ -551,7 +552,7 @@ namespace ConfiguradorUI.Maestro
             this.txtDireccion01.CustomButton.UseSelectable = true;
             this.txtDireccion01.CustomButton.Visible = false;
             this.txtDireccion01.Lines = new string[0];
-            this.txtDireccion01.Location = new System.Drawing.Point(75, 328);
+            this.txtDireccion01.Location = new System.Drawing.Point(80, 26);
             this.txtDireccion01.MaxLength = 32767;
             this.txtDireccion01.Name = "txtDireccion01";
             this.txtDireccion01.PasswordChar = '\0';
@@ -572,21 +573,12 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblDireccion01.AutoSize = true;
             this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion01.Location = new System.Drawing.Point(1, 330);
+            this.lblDireccion01.Location = new System.Drawing.Point(6, 28);
             this.lblDireccion01.Name = "lblDireccion01";
             this.lblDireccion01.Size = new System.Drawing.Size(46, 19);
             this.lblDireccion01.TabIndex = 29;
             this.lblDireccion01.Text = "Dir. 01:";
             this.lblDireccion01.UseCustomForeColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(3, 167);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(540, 5);
-            this.panel4.TabIndex = 61;
             // 
             // txtFono02
             // 
@@ -604,7 +596,7 @@ namespace ConfiguradorUI.Maestro
             this.txtFono02.CustomButton.UseSelectable = true;
             this.txtFono02.CustomButton.Visible = false;
             this.txtFono02.Lines = new string[0];
-            this.txtFono02.Location = new System.Drawing.Point(359, 220);
+            this.txtFono02.Location = new System.Drawing.Point(359, 168);
             this.txtFono02.MaxLength = 32767;
             this.txtFono02.Name = "txtFono02";
             this.txtFono02.PasswordChar = '\0';
@@ -625,7 +617,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblFono02.AutoSize = true;
             this.lblFono02.ForeColor = System.Drawing.Color.Navy;
-            this.lblFono02.Location = new System.Drawing.Point(283, 222);
+            this.lblFono02.Location = new System.Drawing.Point(283, 170);
             this.lblFono02.Name = "lblFono02";
             this.lblFono02.Size = new System.Drawing.Size(51, 19);
             this.lblFono02.TabIndex = 19;
@@ -648,7 +640,7 @@ namespace ConfiguradorUI.Maestro
             this.txtFono01.CustomButton.UseSelectable = true;
             this.txtFono01.CustomButton.Visible = false;
             this.txtFono01.Lines = new string[0];
-            this.txtFono01.Location = new System.Drawing.Point(75, 220);
+            this.txtFono01.Location = new System.Drawing.Point(75, 168);
             this.txtFono01.MaxLength = 32767;
             this.txtFono01.Name = "txtFono01";
             this.txtFono01.PasswordChar = '\0';
@@ -669,7 +661,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblFono01.AutoSize = true;
             this.lblFono01.ForeColor = System.Drawing.Color.Navy;
-            this.lblFono01.Location = new System.Drawing.Point(1, 222);
+            this.lblFono01.Location = new System.Drawing.Point(1, 170);
             this.lblFono01.Name = "lblFono01";
             this.lblFono01.Size = new System.Drawing.Size(49, 19);
             this.lblFono01.TabIndex = 17;
@@ -692,7 +684,7 @@ namespace ConfiguradorUI.Maestro
             this.txtDato01.CustomButton.UseSelectable = true;
             this.txtDato01.CustomButton.Visible = false;
             this.txtDato01.Lines = new string[0];
-            this.txtDato01.Location = new System.Drawing.Point(75, 256);
+            this.txtDato01.Location = new System.Drawing.Point(90, 26);
             this.txtDato01.MaxLength = 32767;
             this.txtDato01.Name = "txtDato01";
             this.txtDato01.PasswordChar = '\0';
@@ -713,11 +705,11 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblDato01.AutoSize = true;
             this.lblDato01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato01.Location = new System.Drawing.Point(1, 258);
+            this.lblDato01.Location = new System.Drawing.Point(14, 28);
             this.lblDato01.Name = "lblDato01";
-            this.lblDato01.Size = new System.Drawing.Size(56, 19);
+            this.lblDato01.Size = new System.Drawing.Size(53, 19);
             this.lblDato01.TabIndex = 21;
-            this.lblDato01.Text = "Dato 01:";
+            this.lblDato01.Text = "Info. 01:";
             this.lblDato01.UseCustomForeColor = true;
             // 
             // txtDato04
@@ -736,7 +728,7 @@ namespace ConfiguradorUI.Maestro
             this.txtDato04.CustomButton.UseSelectable = true;
             this.txtDato04.CustomButton.Visible = false;
             this.txtDato04.Lines = new string[0];
-            this.txtDato04.Location = new System.Drawing.Point(359, 292);
+            this.txtDato04.Location = new System.Drawing.Point(362, 62);
             this.txtDato04.MaxLength = 32767;
             this.txtDato04.Name = "txtDato04";
             this.txtDato04.PasswordChar = '\0';
@@ -757,22 +749,22 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblDato03.AutoSize = true;
             this.lblDato03.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato03.Location = new System.Drawing.Point(1, 294);
+            this.lblDato03.Location = new System.Drawing.Point(288, 26);
             this.lblDato03.Name = "lblDato03";
-            this.lblDato03.Size = new System.Drawing.Size(58, 19);
+            this.lblDato03.Size = new System.Drawing.Size(55, 19);
             this.lblDato03.TabIndex = 25;
-            this.lblDato03.Text = "Dato 03:";
+            this.lblDato03.Text = "Info. 03:";
             this.lblDato03.UseCustomForeColor = true;
             // 
             // lblDato04
             // 
             this.lblDato04.AutoSize = true;
             this.lblDato04.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato04.Location = new System.Drawing.Point(283, 294);
+            this.lblDato04.Location = new System.Drawing.Point(288, 64);
             this.lblDato04.Name = "lblDato04";
-            this.lblDato04.Size = new System.Drawing.Size(58, 19);
+            this.lblDato04.Size = new System.Drawing.Size(55, 19);
             this.lblDato04.TabIndex = 27;
-            this.lblDato04.Text = "Dato 04:";
+            this.lblDato04.Text = "Info. 04:";
             this.lblDato04.UseCustomForeColor = true;
             // 
             // dtpFechaNegocio
@@ -780,7 +772,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpFechaNegocio.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dtpFechaNegocio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNegocio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNegocio.Location = new System.Drawing.Point(75, 133);
+            this.dtpFechaNegocio.Location = new System.Drawing.Point(75, 98);
             this.dtpFechaNegocio.Name = "dtpFechaNegocio";
             this.dtpFechaNegocio.Size = new System.Drawing.Size(184, 23);
             this.dtpFechaNegocio.TabIndex = 13;
@@ -802,7 +794,7 @@ namespace ConfiguradorUI.Maestro
             this.txtDato03.CustomButton.UseSelectable = true;
             this.txtDato03.CustomButton.Visible = false;
             this.txtDato03.Lines = new string[0];
-            this.txtDato03.Location = new System.Drawing.Point(75, 292);
+            this.txtDato03.Location = new System.Drawing.Point(362, 24);
             this.txtDato03.MaxLength = 32767;
             this.txtDato03.Name = "txtDato03";
             this.txtDato03.PasswordChar = '\0';
@@ -823,7 +815,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblFechaNegocio.AutoSize = true;
             this.lblFechaNegocio.ForeColor = System.Drawing.Color.Navy;
-            this.lblFechaNegocio.Location = new System.Drawing.Point(-1, 137);
+            this.lblFechaNegocio.Location = new System.Drawing.Point(1, 100);
             this.lblFechaNegocio.Name = "lblFechaNegocio";
             this.lblFechaNegocio.Size = new System.Drawing.Size(74, 19);
             this.lblFechaNegocio.TabIndex = 12;
@@ -846,7 +838,7 @@ namespace ConfiguradorUI.Maestro
             this.txtDato02.CustomButton.UseSelectable = true;
             this.txtDato02.CustomButton.Visible = false;
             this.txtDato02.Lines = new string[0];
-            this.txtDato02.Location = new System.Drawing.Point(359, 256);
+            this.txtDato02.Location = new System.Drawing.Point(90, 62);
             this.txtDato02.MaxLength = 32767;
             this.txtDato02.Name = "txtDato02";
             this.txtDato02.PasswordChar = '\0';
@@ -879,7 +871,7 @@ namespace ConfiguradorUI.Maestro
             this.txtNumRuc.CustomButton.UseSelectable = true;
             this.txtNumRuc.CustomButton.Visible = false;
             this.txtNumRuc.Lines = new string[0];
-            this.txtNumRuc.Location = new System.Drawing.Point(359, 97);
+            this.txtNumRuc.Location = new System.Drawing.Point(359, 133);
             this.txtNumRuc.MaxLength = 32767;
             this.txtNumRuc.Name = "txtNumRuc";
             this.txtNumRuc.PasswordChar = '\0';
@@ -900,11 +892,11 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblDato02.AutoSize = true;
             this.lblDato02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato02.Location = new System.Drawing.Point(283, 258);
+            this.lblDato02.Location = new System.Drawing.Point(14, 64);
             this.lblDato02.Name = "lblDato02";
-            this.lblDato02.Size = new System.Drawing.Size(58, 19);
+            this.lblDato02.Size = new System.Drawing.Size(55, 19);
             this.lblDato02.TabIndex = 23;
-            this.lblDato02.Text = "Dato 02:";
+            this.lblDato02.Text = "Info. 02:";
             this.lblDato02.UseCustomForeColor = true;
             // 
             // panel1
@@ -920,7 +912,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblRUC.AutoSize = true;
             this.lblRUC.ForeColor = System.Drawing.Color.Navy;
-            this.lblRUC.Location = new System.Drawing.Point(283, 99);
+            this.lblRUC.Location = new System.Drawing.Point(283, 135);
             this.lblRUC.Name = "lblRUC";
             this.lblRUC.Size = new System.Drawing.Size(57, 19);
             this.lblRUC.TabIndex = 10;
@@ -935,7 +927,7 @@ namespace ConfiguradorUI.Maestro
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(3, 413);
+            this.chkActivo.Location = new System.Drawing.Point(3, 218);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 16;
@@ -948,7 +940,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.btnTipoLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoLocation.Image")));
             this.btnTipoLocation.ImageSize = 24;
-            this.btnTipoLocation.Location = new System.Drawing.Point(235, 92);
+            this.btnTipoLocation.Location = new System.Drawing.Point(235, 128);
             this.btnTipoLocation.Name = "btnTipoLocation";
             this.btnTipoLocation.Size = new System.Drawing.Size(29, 27);
             this.btnTipoLocation.TabIndex = 46;
@@ -961,7 +953,7 @@ namespace ConfiguradorUI.Maestro
             this.chkLocationActual.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkLocationActual.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkLocationActual.ForeColor = System.Drawing.Color.Navy;
-            this.chkLocationActual.Location = new System.Drawing.Point(177, 413);
+            this.chkLocationActual.Location = new System.Drawing.Point(177, 218);
             this.chkLocationActual.Name = "chkLocationActual";
             this.chkLocationActual.Size = new System.Drawing.Size(114, 19);
             this.chkLocationActual.TabIndex = 15;
@@ -976,7 +968,7 @@ namespace ConfiguradorUI.Maestro
             this.chkAlmacen.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkAlmacen.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkAlmacen.ForeColor = System.Drawing.Color.Navy;
-            this.chkAlmacen.Location = new System.Drawing.Point(83, 413);
+            this.chkAlmacen.Location = new System.Drawing.Point(83, 218);
             this.chkAlmacen.Name = "chkAlmacen";
             this.chkAlmacen.Size = new System.Drawing.Size(76, 19);
             this.chkAlmacen.TabIndex = 14;
@@ -989,7 +981,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblTipoLocation.AutoSize = true;
             this.lblTipoLocation.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoLocation.Location = new System.Drawing.Point(-2, 99);
+            this.lblTipoLocation.Location = new System.Drawing.Point(1, 135);
             this.lblTipoLocation.Name = "lblTipoLocation";
             this.lblTipoLocation.Size = new System.Drawing.Size(73, 19);
             this.lblTipoLocation.TabIndex = 8;
@@ -1209,7 +1201,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvLocation.RowHeadersVisible = false;
             this.dgvLocation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocation.Size = new System.Drawing.Size(230, 469);
+            this.dgvLocation.Size = new System.Drawing.Size(230, 275);
             this.dgvLocation.TabIndex = 0;
             this.dgvLocation.SelectionChanged += new System.EventHandler(this.dgvLocation_SelectionChanged);
             // 
@@ -1233,7 +1225,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(178, 601);
+            this.lblNumInactivo.Location = new System.Drawing.Point(178, 407);
             this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumInactivo.Name = "lblNumInactivo";
             this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
@@ -1246,7 +1238,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
             this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(98, 601);
+            this.lblNumActivo.Location = new System.Drawing.Point(98, 407);
             this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumActivo.Name = "lblNumActivo";
             this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
@@ -1259,18 +1251,193 @@ namespace ConfiguradorUI.Maestro
             this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(31, 601);
+            this.lblNumReg.Location = new System.Drawing.Point(31, 407);
             this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
             this.lblNumReg.Name = "lblNumReg";
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
             // 
+            // tabPagDireccion
+            // 
+            this.tabPagDireccion.Controls.Add(this.grbUbicacionDetallada);
+            this.tabPagDireccion.Controls.Add(this.gbrUbigeo);
+            this.tabPagDireccion.HorizontalScrollbarBarColor = true;
+            this.tabPagDireccion.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagDireccion.HorizontalScrollbarSize = 10;
+            this.tabPagDireccion.Location = new System.Drawing.Point(4, 38);
+            this.tabPagDireccion.Name = "tabPagDireccion";
+            this.tabPagDireccion.Size = new System.Drawing.Size(559, 240);
+            this.tabPagDireccion.TabIndex = 1;
+            this.tabPagDireccion.Text = "Dirección";
+            this.tabPagDireccion.VerticalScrollbarBarColor = true;
+            this.tabPagDireccion.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagDireccion.VerticalScrollbarSize = 10;
+            // 
+            // gbrUbigeo
+            // 
+            this.gbrUbigeo.BackColor = System.Drawing.Color.Transparent;
+            this.gbrUbigeo.Controls.Add(this.lblDepartamento);
+            this.gbrUbigeo.Controls.Add(this.cboDepartamento);
+            this.gbrUbigeo.Controls.Add(this.cboDistrito);
+            this.gbrUbigeo.Controls.Add(this.lblDistrito);
+            this.gbrUbigeo.Controls.Add(this.lblProvincia);
+            this.gbrUbigeo.Controls.Add(this.cboProvincia);
+            this.gbrUbigeo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbrUbigeo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbrUbigeo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gbrUbigeo.Location = new System.Drawing.Point(1, 10);
+            this.gbrUbigeo.Name = "gbrUbigeo";
+            this.gbrUbigeo.Size = new System.Drawing.Size(555, 93);
+            this.gbrUbigeo.TabIndex = 57;
+            this.gbrUbigeo.TabStop = false;
+            this.gbrUbigeo.Text = "Ubicación general";
+            // 
+            // lblDepartamento
+            // 
+            this.lblDepartamento.AutoSize = true;
+            this.lblDepartamento.ForeColor = System.Drawing.Color.Navy;
+            this.lblDepartamento.Location = new System.Drawing.Point(6, 26);
+            this.lblDepartamento.Name = "lblDepartamento";
+            this.lblDepartamento.Size = new System.Drawing.Size(53, 19);
+            this.lblDepartamento.TabIndex = 32;
+            this.lblDepartamento.Text = "Región:";
+            this.lblDepartamento.UseCustomForeColor = true;
+            // 
+            // cboDepartamento
+            // 
+            this.cboDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDepartamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDepartamento.FormattingEnabled = true;
+            this.cboDepartamento.Location = new System.Drawing.Point(62, 24);
+            this.cboDepartamento.Name = "cboDepartamento";
+            this.cboDepartamento.Size = new System.Drawing.Size(184, 23);
+            this.cboDepartamento.TabIndex = 33;
+            this.cboDepartamento.SelectedIndexChanged += new System.EventHandler(this.cboDepartamento_SelectedIndexChanged);
+            // 
+            // cboDistrito
+            // 
+            this.cboDistrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDistrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDistrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDistrito.FormattingEnabled = true;
+            this.cboDistrito.Location = new System.Drawing.Point(62, 59);
+            this.cboDistrito.Name = "cboDistrito";
+            this.cboDistrito.Size = new System.Drawing.Size(184, 23);
+            this.cboDistrito.TabIndex = 37;
+            // 
+            // lblDistrito
+            // 
+            this.lblDistrito.AutoSize = true;
+            this.lblDistrito.ForeColor = System.Drawing.Color.Navy;
+            this.lblDistrito.Location = new System.Drawing.Point(6, 61);
+            this.lblDistrito.Name = "lblDistrito";
+            this.lblDistrito.Size = new System.Drawing.Size(53, 19);
+            this.lblDistrito.TabIndex = 36;
+            this.lblDistrito.Text = "Distrito:";
+            this.lblDistrito.UseCustomForeColor = true;
+            // 
+            // lblProvincia
+            // 
+            this.lblProvincia.AutoSize = true;
+            this.lblProvincia.ForeColor = System.Drawing.Color.Navy;
+            this.lblProvincia.Location = new System.Drawing.Point(272, 26);
+            this.lblProvincia.Name = "lblProvincia";
+            this.lblProvincia.Size = new System.Drawing.Size(65, 19);
+            this.lblProvincia.TabIndex = 34;
+            this.lblProvincia.Text = "Provincia:";
+            this.lblProvincia.UseCustomForeColor = true;
+            // 
+            // cboProvincia
+            // 
+            this.cboProvincia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboProvincia.FormattingEnabled = true;
+            this.cboProvincia.Location = new System.Drawing.Point(364, 24);
+            this.cboProvincia.Name = "cboProvincia";
+            this.cboProvincia.Size = new System.Drawing.Size(184, 23);
+            this.cboProvincia.TabIndex = 35;
+            this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
+            // 
+            // grbUbicacionDetallada
+            // 
+            this.grbUbicacionDetallada.BackColor = System.Drawing.Color.Transparent;
+            this.grbUbicacionDetallada.Controls.Add(this.metroLabel1);
+            this.grbUbicacionDetallada.Controls.Add(this.lblLongitud);
+            this.grbUbicacionDetallada.Controls.Add(this.txtLongitud);
+            this.grbUbicacionDetallada.Controls.Add(this.txtDireccion01);
+            this.grbUbicacionDetallada.Controls.Add(this.lblDireccion01);
+            this.grbUbicacionDetallada.Controls.Add(this.lblDireccion02);
+            this.grbUbicacionDetallada.Controls.Add(this.txtLatitud);
+            this.grbUbicacionDetallada.Controls.Add(this.txtDireccion02);
+            this.grbUbicacionDetallada.Controls.Add(this.lblLatitud);
+            this.grbUbicacionDetallada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbUbicacionDetallada.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbUbicacionDetallada.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbUbicacionDetallada.Location = new System.Drawing.Point(1, 109);
+            this.grbUbicacionDetallada.Name = "grbUbicacionDetallada";
+            this.grbUbicacionDetallada.Size = new System.Drawing.Size(555, 129);
+            this.grbUbicacionDetallada.TabIndex = 58;
+            this.grbUbicacionDetallada.TabStop = false;
+            this.grbUbicacionDetallada.Text = "Ubicación detallada";
+            // 
+            // tabPagInfoExtra
+            // 
+            this.tabPagInfoExtra.Controls.Add(this.grbInfoExtra);
+            this.tabPagInfoExtra.HorizontalScrollbarBarColor = true;
+            this.tabPagInfoExtra.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagInfoExtra.HorizontalScrollbarSize = 10;
+            this.tabPagInfoExtra.Location = new System.Drawing.Point(4, 38);
+            this.tabPagInfoExtra.Name = "tabPagInfoExtra";
+            this.tabPagInfoExtra.Size = new System.Drawing.Size(559, 240);
+            this.tabPagInfoExtra.TabIndex = 2;
+            this.tabPagInfoExtra.Text = "Info. Extra";
+            this.tabPagInfoExtra.VerticalScrollbarBarColor = true;
+            this.tabPagInfoExtra.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagInfoExtra.VerticalScrollbarSize = 10;
+            // 
+            // grbInfoExtra
+            // 
+            this.grbInfoExtra.BackColor = System.Drawing.Color.Transparent;
+            this.grbInfoExtra.Controls.Add(this.txtDato04);
+            this.grbInfoExtra.Controls.Add(this.txtDato01);
+            this.grbInfoExtra.Controls.Add(this.lblDato02);
+            this.grbInfoExtra.Controls.Add(this.txtDato03);
+            this.grbInfoExtra.Controls.Add(this.lblDato04);
+            this.grbInfoExtra.Controls.Add(this.lblDato03);
+            this.grbInfoExtra.Controls.Add(this.txtDato02);
+            this.grbInfoExtra.Controls.Add(this.lblDato01);
+            this.grbInfoExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbInfoExtra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbInfoExtra.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbInfoExtra.Location = new System.Drawing.Point(1, 6);
+            this.grbInfoExtra.Name = "grbInfoExtra";
+            this.grbInfoExtra.Size = new System.Drawing.Size(555, 99);
+            this.grbInfoExtra.TabIndex = 2;
+            this.grbInfoExtra.TabStop = false;
+            this.grbInfoExtra.Text = "Agregue la información extra que necesite";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel1.Location = new System.Drawing.Point(6, 97);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(139, 19);
+            this.metroLabel1.TabIndex = 67;
+            this.metroLabel1.Text = "Ubicación en el mapa:";
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
             // FormLocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 649);
+            this.ClientSize = new System.Drawing.Size(900, 455);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -1295,6 +1462,14 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
+            this.tabPagDireccion.ResumeLayout(false);
+            this.gbrUbigeo.ResumeLayout(false);
+            this.gbrUbigeo.PerformLayout();
+            this.grbUbicacionDetallada.ResumeLayout(false);
+            this.grbUbicacionDetallada.PerformLayout();
+            this.tabPagInfoExtra.ResumeLayout(false);
+            this.grbInfoExtra.ResumeLayout(false);
+            this.grbInfoExtra.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1355,7 +1530,6 @@ namespace ConfiguradorUI.Maestro
         private MetroFramework.Controls.MetroLabel lblFono01;
         private MetroFramework.Controls.MetroTextBox txtDireccion02;
         private MetroFramework.Controls.MetroLabel lblDireccion02;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ErrorProvider errorProv;
         private MetroFramework.Controls.MetroLabel lblIdLocation;
         private System.Windows.Forms.Label lblNumInactivo;
@@ -1366,5 +1540,17 @@ namespace ConfiguradorUI.Maestro
         private MetroFramework.Controls.MetroTextBox txtLatitud;
         private MetroFramework.Controls.MetroLabel lblLatitud;
         private System.Windows.Forms.Panel panel2;
+        private MetroFramework.Controls.MetroTabPage tabPagDireccion;
+        private System.Windows.Forms.GroupBox gbrUbigeo;
+        private MetroFramework.Controls.MetroLabel lblDepartamento;
+        private BorderedCombo cboDepartamento;
+        private BorderedCombo cboDistrito;
+        private MetroFramework.Controls.MetroLabel lblDistrito;
+        private MetroFramework.Controls.MetroLabel lblProvincia;
+        private BorderedCombo cboProvincia;
+        private System.Windows.Forms.GroupBox grbUbicacionDetallada;
+        private MetroFramework.Controls.MetroTabPage tabPagInfoExtra;
+        private System.Windows.Forms.GroupBox grbInfoExtra;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

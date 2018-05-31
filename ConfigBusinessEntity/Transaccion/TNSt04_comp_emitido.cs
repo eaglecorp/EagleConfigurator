@@ -20,7 +20,8 @@ namespace ConfigBusinessEntity
         [Key]
         public long id_comp_emitido { get; set; }
 
-        [StringLength(20)]
+        [Required]
+        [StringLength(30)]
         public string nro_comp_emitido { get; set; }
 
         public long? nro_cheque { get; set; }
@@ -36,9 +37,11 @@ namespace ConfigBusinessEntity
         [StringLength(50)]
         public string cod_caja { get; set; }
 
+        [Required]
         [StringLength(6)]
         public string txt_serie { get; set; }
 
+        [Required]
         [StringLength(14)]
         public string txt_numero { get; set; }
 
@@ -52,7 +55,10 @@ namespace ConfigBusinessEntity
         public DateTime fec_negocio { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public DateTime fec_reg_emitido { get; set; }
+        public DateTime? fec_reg_emitido { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime fec_registro { get; set; }
 
         [Column(TypeName = "datetime2")]
         public DateTime fec_emi { get; set; }
@@ -63,11 +69,11 @@ namespace ConfigBusinessEntity
         [Column(TypeName = "datetime2")]
         public DateTime? fec_canc { get; set; }
 
-        public int id_tipo_moneda { get; set; }
+        public int? id_tipo_moneda { get; set; }
 
-        public int id_can_vta { get; set; }
+        public int? id_can_vta { get; set; }
 
-        public int id_tipo_orden { get; set; }
+        public int? id_tipo_orden { get; set; }
 
         public int id_location { get; set; }
 
@@ -97,7 +103,7 @@ namespace ConfigBusinessEntity
         [StringLength(10)]
         public string ref_tipo_comprobante { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? ref_fecha { get; set; }
 
         [StringLength(10)]
@@ -106,9 +112,9 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string ref_numero { get; set; }
 
-        public int? sn_chk_abierto { get; set; }
+        public bool sn_chk_abierto { get; set; }
 
-        public int? sn_chk_enviado { get; set; }
+        public bool sn_chk_enviado { get; set; }
 
         public decimal? tax_por01 { get; set; }
 
@@ -172,19 +178,19 @@ namespace ConfigBusinessEntity
         [StringLength(500)]
         public string info10 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date01 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date02 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date03 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date04 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date05 { get; set; }
 
         public decimal? info_mto01 { get; set; }
@@ -204,13 +210,11 @@ namespace ConfigBusinessEntity
 
         public int? num_comensales { get; set; }
 
-        public long? id_usuario { get; set; }
+        public long id_usuario { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string txt_usuario { get; set; }
-
-        [Column(TypeName = "datetime2")]
-        public DateTime fec_registro { get; set; }
 
         public long? id_usuario_modificador { get; set; }
 
@@ -220,14 +224,15 @@ namespace ConfigBusinessEntity
         [Column(TypeName = "datetime2")]
         public DateTime? fecha_modificacion { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 
         public int? id_mesa { get; set; }
 
-        public int id_turno { get; set; }
+        public int? id_turno { get; set; }
 
         public virtual MSTt03_tipo_orden MSTt03_tipo_orden { get; set; }
 

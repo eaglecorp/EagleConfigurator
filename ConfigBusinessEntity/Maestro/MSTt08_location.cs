@@ -77,6 +77,8 @@ namespace ConfigBusinessEntity
         [StringLength(20)]
         public string txt_estado { get; set; }
 
+        public int? id_dist { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LABt01_asistencia> LABt01_asistencia { get; set; }
 
@@ -87,5 +89,7 @@ namespace ConfigBusinessEntity
         public virtual ICollection<TNSt01_comp_recibido> TNSt01_comp_recibido { get; set; }
 
         public virtual MSTt09_tipo_location MSTt09_tipo_location { get; set; }
+
+        public virtual SNTt33_distrito SNTt33_distrito { get; set; }
     }
 }

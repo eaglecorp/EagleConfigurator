@@ -1699,6 +1699,8 @@ namespace ConfiguradorUI.Producto
             txtItemPriceConImp.ReadOnly = true;
             txtItemPriceSinImp.ReadOnly = true;
             txtItemQuantity.TextAlign = HorizontalAlignment.Right;
+            txtItemPriceConImp.TextAlign = HorizontalAlignment.Right;
+            txtItemPriceSinImp.TextAlign = HorizontalAlignment.Right;
             txtPrecioCboConTax.TextAlign = HorizontalAlignment.Right;
             txtPrecioCboSinTax.TextAlign = HorizontalAlignment.Right;
 

@@ -17,7 +17,7 @@ namespace ConfigUtilitarios.HelperDatabase
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("USP_SYS_CURRENT_DATE", conexion))
+                    using (var cmd = new SqlCommand("USP_SYS_CNS_CURRENT_DATE", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         conexion.Open();

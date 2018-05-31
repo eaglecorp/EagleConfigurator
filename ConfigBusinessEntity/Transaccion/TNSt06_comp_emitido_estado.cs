@@ -11,15 +11,19 @@ namespace ConfigBusinessEntity
         [Key]
         public long id_comp_emitido_estado { get; set; }
 
-        public long? id_comp_emitido { get; set; }
+        public long id_comp_emitido { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string txt_usuario { get; set; }
+
+        public long id_usuario { get; set; }
 
         [Column(TypeName = "datetime2")]
         public DateTime? fecha_modificacion { get; set; }

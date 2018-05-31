@@ -117,7 +117,7 @@ namespace ConfigDataAccess
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("SP_CASCADE_UPDATE_PRICE_PRODUCTO", conexion))
+                    using (var cmd = new SqlCommand("USP_PROD_UPD_CASCADE_PRICE_PROD", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -139,7 +139,7 @@ namespace ConfigDataAccess
                         else
                         {
                             var log = new Log();
-                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "SP_CASCADE_UPDATE_PRICE_PRODUCTO");
+                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "USP_PROD_UPD_CASCADE_PRICE_PROD");
                         }
                         #endregion
                     }
@@ -414,7 +414,7 @@ namespace ConfigDataAccess
             {
                 try
                 {
-                    return cnn.Query<PROt09_producto>("SP_PROD_CNS_PRODUCTO",
+                    return cnn.Query<PROt09_producto>("USP_PROD_CNS_PROD",
                                                         new { cod, cod02, nombre, snVenta, snCompra, idEstado },
                                                         commandType: CommandType.StoredProcedure);
                 }

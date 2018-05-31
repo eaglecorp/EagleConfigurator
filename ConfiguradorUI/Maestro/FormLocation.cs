@@ -1,5 +1,6 @@
 ﻿using ConfigBusinessEntity;
 using ConfigBusinessLogic.Maestro;
+using ConfigBusinessLogic.Sunat;
 using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
@@ -54,13 +55,16 @@ namespace ConfiguradorUI.Maestro
             foreach (var txt in txts.Union(txtsNumeric))
             {
                 txt.TextChanged += new EventHandler(OnContentChanged);
-
             }
-            cboTipoLocation.SelectedIndexChanged += new EventHandler(OnContentChanged);
-            cboTipoLocation.IntegralHeight = false;
-            cboTipoLocation.MaxDropDownItems = ControlHelper.maxDropDownItems;
-            cboTipoLocation.DropDownWidth = ControlHelper.DropDownWidth(cboTipoLocation);
 
+            var cbos = new[] { cboTipoLocation, cboDepartamento, cboProvincia, cboDistrito };
+            foreach (var cbo in cbos)
+            {
+                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+                cbo.IntegralHeight = false;
+                cbo.MaxDropDownItems = ControlHelper.maxDropDownItems;
+                cbo.DropDownWidth = ControlHelper.DropDownWidth(cboTipoLocation);
+            }
 
             var chks = new[] { chkActivo, chkAlmacen, chkLocationActual };
 
@@ -237,6 +241,9 @@ namespace ConfiguradorUI.Maestro
                     obj.fecha_negocio = dtpFechaNegocio.Value.Date;
                 }
 
+                if (cboDistrito.SelectedValue != null)
+                    obj.id_dist = int.Parse(cboDistrito.SelectedValue.ToString());
+
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.cod_location = txtCodigo.Text.Trim();
                 obj.txt_direccion1 = txtDireccion01.Text.Trim();
@@ -311,6 +318,19 @@ namespace ConfiguradorUI.Maestro
                 chkLocationActual.Checked = obj.sn_location_current == 1 ? true : false;
 
                 cboTipoLocation.SelectedValue = obj.id_tipo_location;
+
+                if (obj.id_dist != null)
+                {
+                    cboDepartamento.SelectedValue = obj.SNTt33_distrito.SNTt32_provincia.id_dpto;
+                    cboProvincia.SelectedValue = obj.SNTt33_distrito.id_prov;
+                    cboDistrito.SelectedValue = obj.id_dist;
+                }
+                else
+                {
+                    cboDepartamento.SelectedIndex = -1;
+                    cboProvincia.SelectedIndex = -1;
+                    cboDistrito.SelectedIndex = -1;
+                }
             }
             catch (Exception e)
             {
@@ -398,7 +418,7 @@ namespace ConfiguradorUI.Maestro
 
                 if (decimal.TryParse(longitudTxt, out decimal longitud) && (longitud > 180 || longitud < -180))
                 {
-                    tabLocation.SelectedTab = tabPagGeneral;
+                    tabLocation.SelectedTab = tabPagDireccion;
                     errorProv.SetError(txtLongitud, "La longitud debe ser un número entre -180 y 180.");
                     txtLongitud.Focus();
                     no_error = false;
@@ -406,7 +426,7 @@ namespace ConfiguradorUI.Maestro
 
                 if (decimal.TryParse(latitudTxt, out decimal latitud) && (latitud > 90 || latitud < -90))
                 {
-                    tabLocation.SelectedTab = tabPagGeneral;
+                    tabLocation.SelectedTab = tabPagDireccion;
                     errorProv.SetError(txtLatitud, "La latitud debe ser un número entre -90 y 90.");
                     txtLatitud.Focus();
                     no_error = false;
@@ -496,7 +516,7 @@ namespace ConfiguradorUI.Maestro
                 {
                     if (id > 0)
                     {
-                        var obj = new LocationBL().LocationXId(id);
+                        var obj = new LocationBL().LocationXIdMM(id);
                         if (obj != null)
                         {
                             isSelected = false;
@@ -581,6 +601,9 @@ namespace ConfiguradorUI.Maestro
             chkActivo.Checked = true;
 
             if (cboTipoLocation.Items.Count > 0) cboTipoLocation.SelectedIndex = 0;
+            cboDepartamento.SelectedIndex = (cboDepartamento.Items.Count > 0) ? 0 : -1;
+            cboProvincia.SelectedIndex = (cboProvincia.Items.Count > 0) ? 0 : -1;
+            cboDistrito.SelectedIndex = (cboDistrito.Items.Count > 0) ? 0 : -1;
         }
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
         {
@@ -714,6 +737,24 @@ namespace ConfiguradorUI.Maestro
                 cboTipoLocation.DisplayMember = "txt_desc";
                 cboTipoLocation.ValueMember = "id_tipo_location";
                 cboTipoLocation.DataSource = new TipoLocationBL().ListaTipoLocation(Estado.IdActivo, false, true);
+
+                cboDepartamento.DataSource = null;
+                cboDepartamento.DisplayMember = "txt_desc";
+                cboDepartamento.ValueMember = "id_dpto";
+                cboDepartamento.DataSource = new DepartamentoBL().ListaDepartamento(Estado.IdActivo, true);
+
+                cboProvincia.DataSource = null;
+                cboProvincia.DisplayMember = "txt_desc";
+                cboProvincia.ValueMember = "id_prov";
+                cboProvincia.DataSource = (cboDepartamento.SelectedValue != null) ?
+                    new ProvinciaBL().ListaProvinciaXDep(int.Parse(cboDepartamento.SelectedValue.ToString()), Estado.IdActivo) : null;
+
+                cboDistrito.DataSource = null;
+                cboDistrito.DisplayMember = "txt_desc";
+                cboDistrito.ValueMember = "id_dist";
+                cboDistrito.DataSource = (cboProvincia.SelectedValue != null) ?
+                    new DistritoBL().ListaDistritoXProv(int.Parse(cboProvincia.SelectedValue.ToString()), Estado.IdActivo) : null;
+
             }
             catch (Exception e)
             {
@@ -984,6 +1025,39 @@ namespace ConfiguradorUI.Maestro
                 ControlarEventosABM();
             }
         }
+
+        private void cboDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboDepartamento.SelectedValue != null)
+            {
+                cboProvincia.DataSource = null;
+                cboProvincia.DisplayMember = "txt_desc";
+                cboProvincia.ValueMember = "id_prov";
+                cboProvincia.DataSource = new ProvinciaBL().ListaProvinciaXDep(int.Parse(cboDepartamento.SelectedValue.ToString()), Estado.IdActivo);
+            }
+            else cboProvincia.DataSource = null;
+
+            cboProvincia.DropDownWidth = ControlHelper.DropDownWidth(cboProvincia);
+
+            isChangedRow = false;
+        }
+
+        private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboProvincia.SelectedValue != null)
+            {
+                cboDistrito.DataSource = null;
+                cboDistrito.DisplayMember = "txt_desc";
+                cboDistrito.ValueMember = "id_dist";
+                cboDistrito.DataSource = new DistritoBL().ListaDistritoXProv(int.Parse(cboProvincia.SelectedValue.ToString()), Estado.IdActivo);
+            }
+            else cboDistrito.DataSource = null;
+
+            cboDistrito.DropDownWidth = ControlHelper.DropDownWidth(cboDistrito);
+
+            isChangedRow = false;
+        }
+
 
         private void tglListarInactivos_Click(object sender, EventArgs e)
         {

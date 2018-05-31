@@ -11,21 +11,25 @@ namespace ConfigBusinessEntity
         [Key]
         public long id_medio_pago_dtl { get; set; }
 
-        public long? id_comp_emitido { get; set; }
+        public long id_comp_emitido { get; set; }
 
-        public int? id_medio_pago { get; set; }
+        public int id_medio_pago { get; set; }
 
-        public decimal? impuesto { get; set; }
+        public decimal impuesto { get; set; }
 
-        public decimal? monto { get; set; }
+        public decimal monto { get; set; }
 
-        public decimal? mto_tipo_cambio { get; set; }
+        public decimal mto_tipo_cambio { get; set; }
 
         [StringLength(300)]
         public string txt_observ { get; set; }
 
-        public int? id_estado { get; set; }
+        [StringLength(100)]
+        public string txt_ref { get; set; }
 
+        public int id_estado { get; set; }
+
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 

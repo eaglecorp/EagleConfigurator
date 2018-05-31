@@ -1,4 +1,5 @@
 ﻿using ConfigBusinessEntity;
+using ConfigBusinessLogic.Sunat;
 using ConfigDataAccess.Maestro;
 using System;
 using System.Collections.Generic;
@@ -25,9 +26,16 @@ namespace ConfigBusinessLogic.Maestro
             new LocationDA().ActualizarLocation(obj);
         }
 
-        public MSTt08_location LocationXId(int id)
+        public MSTt08_location LocationXIdMM(int id)
         {
-            return new LocationDA().LocationXId(id);
+            var location = new LocationDA().LocationXIdMM(id);
+
+            if (location.SNTt33_distrito != null && location.SNTt33_distrito.id_dist > 0)
+            {
+                var provincia = new ProvinciaBL().ProvinciaXId(location.SNTt33_distrito.id_prov);
+                location.SNTt33_distrito.SNTt32_provincia = provincia;
+            }
+            return location;
         }
 
         public MSTt08_location LocationXCod(string cod)

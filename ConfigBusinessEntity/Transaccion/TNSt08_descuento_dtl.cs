@@ -11,23 +11,24 @@ namespace ConfigBusinessEntity
         [Key]
         public long id_descuento_dtl { get; set; }
 
-        public long? id_comp_emitido { get; set; }
+        public decimal porcentaje { get; set; }
 
-        public int? id_descuento { get; set; }
-
-        public decimal? porcentaje { get; set; }
-
-        public decimal? monto { get; set; }
-
-        public int? id_razon { get; set; }
+        public decimal monto { get; set; }
 
         [StringLength(600)]
         public string txt_observ { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
+
+        public long id_comp_emitido { get; set; }
+
+        public int id_descuento { get; set; }
+
+        public int? id_razon { get; set; }
 
         public long? id_emp_autorizador { get; set; }
 

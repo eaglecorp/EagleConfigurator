@@ -11,6 +11,7 @@ namespace ConfigBusinessEntity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SNTt33_distrito()
         {
+            MSTt08_location = new HashSet<MSTt08_location>();
             PERt02_cliente = new HashSet<PERt02_cliente>();
             PERt03_proveedor = new HashSet<PERt03_proveedor>();
             PERt04_empleado = new HashSet<PERt04_empleado>();
@@ -36,6 +37,9 @@ namespace ConfigBusinessEntity
 
         [StringLength(20)]
         public string txt_estado { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MSTt08_location> MSTt08_location { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PERt02_cliente> PERt02_cliente { get; set; }

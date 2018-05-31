@@ -464,6 +464,7 @@ namespace ConfiguradorUI.Producto
             this.chkMostrarInactivos.TabIndex = 156;
             this.chkMostrarInactivos.Text = "Ver inactivos";
             this.chkMostrarInactivos.UseCustomBackColor = true;
+            this.chkMostrarInactivos.UseCustomForeColor = true;
             this.chkMostrarInactivos.UseSelectable = true;
             this.chkMostrarInactivos.CheckedChanged += new System.EventHandler(this.chkMostrarInactivos_CheckedChanged);
             // 

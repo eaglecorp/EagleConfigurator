@@ -23,7 +23,7 @@ namespace ConfigDataAccess.Utiles
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("SP_NUM_HIJOS_ACTIVOS", conexion))
+                    using (var cmd = new SqlCommand("USP_SYS_CNS_NUM_HIJOS_ACTIVOS", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -60,7 +60,7 @@ namespace ConfigDataAccess.Utiles
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("USP_SYS_CURRENT_DATE", conexion))
+                    using (var cmd = new SqlCommand("USP_SYS_CNS_CURRENT_DATE", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         conexion.Open();

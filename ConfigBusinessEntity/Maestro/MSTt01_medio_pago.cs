@@ -20,11 +20,15 @@ namespace ConfigBusinessEntity
         [StringLength(10)]
         public string cod_medio_pago { get; set; }
 
+        [Required]
         [StringLength(150)]
         public string txt_desc { get; set; }
 
-        public int? id_estado { get; set; }
+        public bool req_ref { get; set; }
 
+        public int id_estado { get; set; }
+
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 

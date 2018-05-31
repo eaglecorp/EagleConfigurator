@@ -19,19 +19,24 @@ namespace ConfigBusinessEntity
         public long id_comp_recibido { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(30)]
         public string nro_comp_recibido { get; set; }
 
         public int id_tipo_comp { get; set; }
 
+        [Required]
         [StringLength(6)]
         public string txt_serie { get; set; }
 
+        [Required]
         [StringLength(14)]
         public string txt_numero { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public DateTime fec_reg_recibido { get; set; }
+        public DateTime fec_registro { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime? fec_reg_recibido { get; set; }
 
         [Column(TypeName = "datetime2")]
         public DateTime fec_emi { get; set; }
@@ -40,7 +45,7 @@ namespace ConfigBusinessEntity
         public DateTime? fec_vcto { get; set; }
 
         [Column(TypeName = "datetime2")]
-        public DateTime fec_canc { get; set; }
+        public DateTime? fec_canc { get; set; }
 
         public int id_tipo_moneda { get; set; }
 
@@ -76,7 +81,7 @@ namespace ConfigBusinessEntity
         [StringLength(10)]
         public string ref_tipo_comprobante { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? ref_fecha { get; set; }
 
         [StringLength(6)]
@@ -85,19 +90,37 @@ namespace ConfigBusinessEntity
         [StringLength(14)]
         public string ref_numero { get; set; }
 
-        public decimal? tax_por01 { get; set; }
+        public decimal tax_por01 { get; set; }
 
-        public decimal? tax_por02 { get; set; }
+        public decimal tax_por02 { get; set; }
 
-        public decimal? tax_por03 { get; set; }
+        public decimal tax_por03 { get; set; }
 
-        public decimal? tax_por04 { get; set; }
+        public decimal tax_por04 { get; set; }
 
-        public decimal? tax_por05 { get; set; }
+        public decimal tax_por05 { get; set; }
 
-        public decimal? tax_por07 { get; set; }
+        public decimal tax_por06 { get; set; }
 
-        public decimal? tax_por08 { get; set; }
+        public decimal tax_por07 { get; set; }
+
+        public decimal tax_por08 { get; set; }
+
+        public decimal tax_mto01 { get; set; }
+
+        public decimal tax_mto02 { get; set; }
+
+        public decimal tax_mto03 { get; set; }
+
+        public decimal tax_mto04 { get; set; }
+
+        public decimal tax_mto05 { get; set; }
+
+        public decimal tax_mto06 { get; set; }
+
+        public decimal tax_mto07 { get; set; }
+
+        public decimal tax_mto08 { get; set; }
 
         [StringLength(500)]
         public string info01 { get; set; }
@@ -129,19 +152,19 @@ namespace ConfigBusinessEntity
         [StringLength(500)]
         public string info10 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date01 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date02 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date03 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date04 { get; set; }
 
-        [Column(TypeName = "datetime2")]
+        [Column(TypeName = "date")]
         public DateTime? info_date05 { get; set; }
 
         public decimal? info_mto01 { get; set; }
@@ -159,9 +182,9 @@ namespace ConfigBusinessEntity
         [Column(TypeName = "datetime2")]
         public DateTime? post_date { get; set; }
 
-        public int? sn_credito { get; set; }
+        public bool sn_credito { get; set; }
 
-        public int? sn_cancelada { get; set; }
+        public bool sn_cancelada { get; set; }
 
         public long? id_usuario_modificador { get; set; }
 
@@ -171,20 +194,19 @@ namespace ConfigBusinessEntity
         [Column(TypeName = "datetime2")]
         public DateTime? fecha_modificacion { get; set; }
 
-        [Column(TypeName = "datetime2")]
-        public DateTime fec_registro { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string txt_usuario { get; set; }
 
-        public int? id_estado { get; set; }
+        public int id_estado { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string txt_estado { get; set; }
 
-        public long? id_proveedor { get; set; }
+        public long id_proveedor { get; set; }
 
-        public long? id_usuario { get; set; }
+        public long id_usuario { get; set; }
 
         public int id_location { get; set; }
 

@@ -234,7 +234,7 @@ namespace ConfigDataAccess
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("SP_CASCADE_UPDATE_IMPTO", conexion))
+                    using (var cmd = new SqlCommand("USP_MST_UDP_CASCADE_IMPTO", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -256,7 +256,7 @@ namespace ConfigDataAccess
                         else
                         {
                             var log = new Log();
-                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "SP_CASCADE_UPDATE_IMPTO");
+                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "USP_MST_UDP_CASCADE_IMPTO");
                         }
                         #endregion
                     }

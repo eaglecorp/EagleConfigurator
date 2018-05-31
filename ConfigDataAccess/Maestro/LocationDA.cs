@@ -117,6 +117,36 @@ namespace ConfigDataAccess.Maestro
             }
             return obj;
         }
+        public MSTt08_location LocationXIdMM(int id)
+        {
+            var obj = new MSTt08_location();
+            //obteniendo
+            obj = LocationXId(id);
+            const string sentencia =
+                    @"SELECT * FROM SNTt33_distrito WHERE id_dist=@id_dist";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    var multi = cnn.QueryMultiple(sentencia, new
+                    {
+                        id_dist = obj.id_dist
+                    });
+                    var distrito = multi.Read<SNTt33_distrito>().FirstOrDefault();
+                    obj.SNTt33_distrito = distrito;
+
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda Location MM por ID: ", e.Message);
+                }
+            }
+            return obj;
+        }
+
+
         public MSTt08_location LocationXCod(string cod)
         {
             var obj = new MSTt08_location();
