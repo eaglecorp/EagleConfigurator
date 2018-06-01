@@ -47,31 +47,15 @@ namespace ConfiguradorUI.Maestro
             this.btnDelete = new System.Windows.Forms.Button();
             this.tabLocation = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.txtLongitud = new MetroFramework.Controls.MetroTextBox();
-            this.lblLongitud = new MetroFramework.Controls.MetroLabel();
-            this.txtLatitud = new MetroFramework.Controls.MetroTextBox();
-            this.lblLatitud = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboTipoLocation = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.txtDireccion02 = new MetroFramework.Controls.MetroTextBox();
-            this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
-            this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
-            this.lblDireccion01 = new MetroFramework.Controls.MetroLabel();
             this.txtFono02 = new MetroFramework.Controls.MetroTextBox();
             this.lblFono02 = new MetroFramework.Controls.MetroLabel();
             this.txtFono01 = new MetroFramework.Controls.MetroTextBox();
             this.lblFono01 = new MetroFramework.Controls.MetroLabel();
-            this.txtDato01 = new MetroFramework.Controls.MetroTextBox();
-            this.lblDato01 = new MetroFramework.Controls.MetroLabel();
-            this.txtDato04 = new MetroFramework.Controls.MetroTextBox();
-            this.lblDato03 = new MetroFramework.Controls.MetroLabel();
-            this.lblDato04 = new MetroFramework.Controls.MetroLabel();
             this.dtpFechaNegocio = new System.Windows.Forms.DateTimePicker();
-            this.txtDato03 = new MetroFramework.Controls.MetroTextBox();
             this.lblFechaNegocio = new MetroFramework.Controls.MetroLabel();
-            this.txtDato02 = new MetroFramework.Controls.MetroTextBox();
             this.txtNumRuc = new MetroFramework.Controls.MetroTextBox();
-            this.lblDato02 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRUC = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
@@ -87,6 +71,34 @@ namespace ConfiguradorUI.Maestro
             this.lblAbrev01 = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
+            this.tabPagDireccion = new MetroFramework.Controls.MetroTabPage();
+            this.grbUbicacionDetallada = new System.Windows.Forms.GroupBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblLongitud = new MetroFramework.Controls.MetroLabel();
+            this.txtLongitud = new MetroFramework.Controls.MetroTextBox();
+            this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
+            this.lblDireccion01 = new MetroFramework.Controls.MetroLabel();
+            this.lblDireccion02 = new MetroFramework.Controls.MetroLabel();
+            this.txtLatitud = new MetroFramework.Controls.MetroTextBox();
+            this.txtDireccion02 = new MetroFramework.Controls.MetroTextBox();
+            this.lblLatitud = new MetroFramework.Controls.MetroLabel();
+            this.gbrUbigeo = new System.Windows.Forms.GroupBox();
+            this.lblDepartamento = new MetroFramework.Controls.MetroLabel();
+            this.cboDepartamento = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboDistrito = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.lblDistrito = new MetroFramework.Controls.MetroLabel();
+            this.lblProvincia = new MetroFramework.Controls.MetroLabel();
+            this.cboProvincia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.tabPagInfoExtra = new MetroFramework.Controls.MetroTabPage();
+            this.grbInfoExtra = new System.Windows.Forms.GroupBox();
+            this.txtDato04 = new MetroFramework.Controls.MetroTextBox();
+            this.txtDato01 = new MetroFramework.Controls.MetroTextBox();
+            this.lblDato02 = new MetroFramework.Controls.MetroLabel();
+            this.txtDato03 = new MetroFramework.Controls.MetroTextBox();
+            this.lblDato04 = new MetroFramework.Controls.MetroLabel();
+            this.lblDato03 = new MetroFramework.Controls.MetroLabel();
+            this.txtDato02 = new MetroFramework.Controls.MetroTextBox();
+            this.lblDato01 = new MetroFramework.Controls.MetroLabel();
             this.tglListarInactivos = new MetroFramework.Controls.MetroToggle();
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.dgvLocation = new System.Windows.Forms.DataGridView();
@@ -95,29 +107,17 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.tabPagDireccion = new MetroFramework.Controls.MetroTabPage();
-            this.gbrUbigeo = new System.Windows.Forms.GroupBox();
-            this.lblDepartamento = new MetroFramework.Controls.MetroLabel();
-            this.cboDepartamento = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboDistrito = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.lblDistrito = new MetroFramework.Controls.MetroLabel();
-            this.lblProvincia = new MetroFramework.Controls.MetroLabel();
-            this.cboProvincia = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.grbUbicacionDetallada = new System.Windows.Forms.GroupBox();
-            this.tabPagInfoExtra = new MetroFramework.Controls.MetroTabPage();
-            this.grbInfoExtra = new System.Windows.Forms.GroupBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabLocation.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLocation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.tabPagDireccion.SuspendLayout();
-            this.gbrUbigeo.SuspendLayout();
             this.grbUbicacionDetallada.SuspendLayout();
+            this.gbrUbigeo.SuspendLayout();
             this.tabPagInfoExtra.SuspendLayout();
             this.grbInfoExtra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombreForm
@@ -382,94 +382,6 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
-            // txtLongitud
-            // 
-            this.txtLongitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtLongitud.CustomButton.Image = null;
-            this.txtLongitud.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtLongitud.CustomButton.Name = "";
-            this.txtLongitud.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtLongitud.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtLongitud.CustomButton.TabIndex = 1;
-            this.txtLongitud.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtLongitud.CustomButton.UseSelectable = true;
-            this.txtLongitud.CustomButton.Visible = false;
-            this.txtLongitud.Lines = new string[0];
-            this.txtLongitud.Location = new System.Drawing.Point(442, 95);
-            this.txtLongitud.MaxLength = 32767;
-            this.txtLongitud.Name = "txtLongitud";
-            this.txtLongitud.PasswordChar = '\0';
-            this.txtLongitud.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLongitud.SelectedText = "";
-            this.txtLongitud.SelectionLength = 0;
-            this.txtLongitud.SelectionStart = 0;
-            this.txtLongitud.ShortcutsEnabled = true;
-            this.txtLongitud.Size = new System.Drawing.Size(93, 23);
-            this.txtLongitud.TabIndex = 66;
-            this.txtLongitud.UseCustomBackColor = true;
-            this.txtLongitud.UseSelectable = true;
-            this.txtLongitud.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtLongitud.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtLongitud.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblLongitud
-            // 
-            this.lblLongitud.AutoSize = true;
-            this.lblLongitud.ForeColor = System.Drawing.Color.Navy;
-            this.lblLongitud.Location = new System.Drawing.Point(379, 97);
-            this.lblLongitud.Name = "lblLongitud";
-            this.lblLongitud.Size = new System.Drawing.Size(63, 19);
-            this.lblLongitud.TabIndex = 65;
-            this.lblLongitud.Text = "Longitud:";
-            this.lblLongitud.UseCustomForeColor = true;
-            // 
-            // txtLatitud
-            // 
-            this.txtLatitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtLatitud.CustomButton.Image = null;
-            this.txtLatitud.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtLatitud.CustomButton.Name = "";
-            this.txtLatitud.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtLatitud.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtLatitud.CustomButton.TabIndex = 1;
-            this.txtLatitud.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtLatitud.CustomButton.UseSelectable = true;
-            this.txtLatitud.CustomButton.Visible = false;
-            this.txtLatitud.Lines = new string[0];
-            this.txtLatitud.Location = new System.Drawing.Point(269, 95);
-            this.txtLatitud.MaxLength = 32767;
-            this.txtLatitud.Name = "txtLatitud";
-            this.txtLatitud.PasswordChar = '\0';
-            this.txtLatitud.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLatitud.SelectedText = "";
-            this.txtLatitud.SelectionLength = 0;
-            this.txtLatitud.SelectionStart = 0;
-            this.txtLatitud.ShortcutsEnabled = true;
-            this.txtLatitud.Size = new System.Drawing.Size(93, 23);
-            this.txtLatitud.TabIndex = 64;
-            this.txtLatitud.UseCustomBackColor = true;
-            this.txtLatitud.UseSelectable = true;
-            this.txtLatitud.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtLatitud.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtLatitud.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblLatitud
-            // 
-            this.lblLatitud.AutoSize = true;
-            this.lblLatitud.ForeColor = System.Drawing.Color.Navy;
-            this.lblLatitud.Location = new System.Drawing.Point(219, 97);
-            this.lblLatitud.Name = "lblLatitud";
-            this.lblLatitud.Size = new System.Drawing.Size(51, 19);
-            this.lblLatitud.TabIndex = 63;
-            this.lblLatitud.Text = "Latitud:";
-            this.lblLatitud.UseCustomForeColor = true;
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
@@ -491,94 +403,6 @@ namespace ConfiguradorUI.Maestro
             this.cboTipoLocation.Size = new System.Drawing.Size(158, 23);
             this.cboTipoLocation.TabIndex = 9;
             this.cboTipoLocation.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // txtDireccion02
-            // 
-            this.txtDireccion02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDireccion02.CustomButton.Image = null;
-            this.txtDireccion02.CustomButton.Location = new System.Drawing.Point(446, 1);
-            this.txtDireccion02.CustomButton.Name = "";
-            this.txtDireccion02.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDireccion02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDireccion02.CustomButton.TabIndex = 1;
-            this.txtDireccion02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDireccion02.CustomButton.UseSelectable = true;
-            this.txtDireccion02.CustomButton.Visible = false;
-            this.txtDireccion02.Lines = new string[0];
-            this.txtDireccion02.Location = new System.Drawing.Point(80, 61);
-            this.txtDireccion02.MaxLength = 32767;
-            this.txtDireccion02.Name = "txtDireccion02";
-            this.txtDireccion02.PasswordChar = '\0';
-            this.txtDireccion02.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDireccion02.SelectedText = "";
-            this.txtDireccion02.SelectionLength = 0;
-            this.txtDireccion02.SelectionStart = 0;
-            this.txtDireccion02.ShortcutsEnabled = true;
-            this.txtDireccion02.Size = new System.Drawing.Size(468, 23);
-            this.txtDireccion02.TabIndex = 32;
-            this.txtDireccion02.UseCustomBackColor = true;
-            this.txtDireccion02.UseSelectable = true;
-            this.txtDireccion02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDireccion02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDireccion02.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblDireccion02
-            // 
-            this.lblDireccion02.AutoSize = true;
-            this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion02.Location = new System.Drawing.Point(6, 65);
-            this.lblDireccion02.Name = "lblDireccion02";
-            this.lblDireccion02.Size = new System.Drawing.Size(48, 19);
-            this.lblDireccion02.TabIndex = 31;
-            this.lblDireccion02.Text = "Dir. 02:";
-            this.lblDireccion02.UseCustomForeColor = true;
-            // 
-            // txtDireccion01
-            // 
-            this.txtDireccion01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDireccion01.CustomButton.Image = null;
-            this.txtDireccion01.CustomButton.Location = new System.Drawing.Point(446, 1);
-            this.txtDireccion01.CustomButton.Name = "";
-            this.txtDireccion01.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDireccion01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDireccion01.CustomButton.TabIndex = 1;
-            this.txtDireccion01.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDireccion01.CustomButton.UseSelectable = true;
-            this.txtDireccion01.CustomButton.Visible = false;
-            this.txtDireccion01.Lines = new string[0];
-            this.txtDireccion01.Location = new System.Drawing.Point(80, 26);
-            this.txtDireccion01.MaxLength = 32767;
-            this.txtDireccion01.Name = "txtDireccion01";
-            this.txtDireccion01.PasswordChar = '\0';
-            this.txtDireccion01.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDireccion01.SelectedText = "";
-            this.txtDireccion01.SelectionLength = 0;
-            this.txtDireccion01.SelectionStart = 0;
-            this.txtDireccion01.ShortcutsEnabled = true;
-            this.txtDireccion01.Size = new System.Drawing.Size(468, 23);
-            this.txtDireccion01.TabIndex = 30;
-            this.txtDireccion01.UseCustomBackColor = true;
-            this.txtDireccion01.UseSelectable = true;
-            this.txtDireccion01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDireccion01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDireccion01.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblDireccion01
-            // 
-            this.lblDireccion01.AutoSize = true;
-            this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDireccion01.Location = new System.Drawing.Point(6, 28);
-            this.lblDireccion01.Name = "lblDireccion01";
-            this.lblDireccion01.Size = new System.Drawing.Size(46, 19);
-            this.lblDireccion01.TabIndex = 29;
-            this.lblDireccion01.Text = "Dir. 01:";
-            this.lblDireccion01.UseCustomForeColor = true;
             // 
             // txtFono02
             // 
@@ -668,105 +492,6 @@ namespace ConfiguradorUI.Maestro
             this.lblFono01.Text = "Telf. 01:";
             this.lblFono01.UseCustomForeColor = true;
             // 
-            // txtDato01
-            // 
-            this.txtDato01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDato01.CustomButton.Image = null;
-            this.txtDato01.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtDato01.CustomButton.Name = "";
-            this.txtDato01.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDato01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDato01.CustomButton.TabIndex = 1;
-            this.txtDato01.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDato01.CustomButton.UseSelectable = true;
-            this.txtDato01.CustomButton.Visible = false;
-            this.txtDato01.Lines = new string[0];
-            this.txtDato01.Location = new System.Drawing.Point(90, 26);
-            this.txtDato01.MaxLength = 32767;
-            this.txtDato01.Name = "txtDato01";
-            this.txtDato01.PasswordChar = '\0';
-            this.txtDato01.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDato01.SelectedText = "";
-            this.txtDato01.SelectionLength = 0;
-            this.txtDato01.SelectionStart = 0;
-            this.txtDato01.ShortcutsEnabled = true;
-            this.txtDato01.Size = new System.Drawing.Size(184, 23);
-            this.txtDato01.TabIndex = 22;
-            this.txtDato01.UseCustomBackColor = true;
-            this.txtDato01.UseSelectable = true;
-            this.txtDato01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDato01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDato01.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblDato01
-            // 
-            this.lblDato01.AutoSize = true;
-            this.lblDato01.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato01.Location = new System.Drawing.Point(14, 28);
-            this.lblDato01.Name = "lblDato01";
-            this.lblDato01.Size = new System.Drawing.Size(53, 19);
-            this.lblDato01.TabIndex = 21;
-            this.lblDato01.Text = "Info. 01:";
-            this.lblDato01.UseCustomForeColor = true;
-            // 
-            // txtDato04
-            // 
-            this.txtDato04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDato04.CustomButton.Image = null;
-            this.txtDato04.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtDato04.CustomButton.Name = "";
-            this.txtDato04.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDato04.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDato04.CustomButton.TabIndex = 1;
-            this.txtDato04.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDato04.CustomButton.UseSelectable = true;
-            this.txtDato04.CustomButton.Visible = false;
-            this.txtDato04.Lines = new string[0];
-            this.txtDato04.Location = new System.Drawing.Point(362, 62);
-            this.txtDato04.MaxLength = 32767;
-            this.txtDato04.Name = "txtDato04";
-            this.txtDato04.PasswordChar = '\0';
-            this.txtDato04.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDato04.SelectedText = "";
-            this.txtDato04.SelectionLength = 0;
-            this.txtDato04.SelectionStart = 0;
-            this.txtDato04.ShortcutsEnabled = true;
-            this.txtDato04.Size = new System.Drawing.Size(184, 23);
-            this.txtDato04.TabIndex = 28;
-            this.txtDato04.UseCustomBackColor = true;
-            this.txtDato04.UseSelectable = true;
-            this.txtDato04.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDato04.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDato04.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblDato03
-            // 
-            this.lblDato03.AutoSize = true;
-            this.lblDato03.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato03.Location = new System.Drawing.Point(288, 26);
-            this.lblDato03.Name = "lblDato03";
-            this.lblDato03.Size = new System.Drawing.Size(55, 19);
-            this.lblDato03.TabIndex = 25;
-            this.lblDato03.Text = "Info. 03:";
-            this.lblDato03.UseCustomForeColor = true;
-            // 
-            // lblDato04
-            // 
-            this.lblDato04.AutoSize = true;
-            this.lblDato04.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato04.Location = new System.Drawing.Point(288, 64);
-            this.lblDato04.Name = "lblDato04";
-            this.lblDato04.Size = new System.Drawing.Size(55, 19);
-            this.lblDato04.TabIndex = 27;
-            this.lblDato04.Text = "Info. 04:";
-            this.lblDato04.UseCustomForeColor = true;
-            // 
             // dtpFechaNegocio
             // 
             this.dtpFechaNegocio.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -778,39 +503,6 @@ namespace ConfiguradorUI.Maestro
             this.dtpFechaNegocio.TabIndex = 13;
             this.dtpFechaNegocio.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
-            // txtDato03
-            // 
-            this.txtDato03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDato03.CustomButton.Image = null;
-            this.txtDato03.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtDato03.CustomButton.Name = "";
-            this.txtDato03.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDato03.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDato03.CustomButton.TabIndex = 1;
-            this.txtDato03.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDato03.CustomButton.UseSelectable = true;
-            this.txtDato03.CustomButton.Visible = false;
-            this.txtDato03.Lines = new string[0];
-            this.txtDato03.Location = new System.Drawing.Point(362, 24);
-            this.txtDato03.MaxLength = 32767;
-            this.txtDato03.Name = "txtDato03";
-            this.txtDato03.PasswordChar = '\0';
-            this.txtDato03.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDato03.SelectedText = "";
-            this.txtDato03.SelectionLength = 0;
-            this.txtDato03.SelectionStart = 0;
-            this.txtDato03.ShortcutsEnabled = true;
-            this.txtDato03.Size = new System.Drawing.Size(184, 23);
-            this.txtDato03.TabIndex = 26;
-            this.txtDato03.UseCustomBackColor = true;
-            this.txtDato03.UseSelectable = true;
-            this.txtDato03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDato03.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDato03.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
             // lblFechaNegocio
             // 
             this.lblFechaNegocio.AutoSize = true;
@@ -821,39 +513,6 @@ namespace ConfiguradorUI.Maestro
             this.lblFechaNegocio.TabIndex = 12;
             this.lblFechaNegocio.Text = "F. Negocio:";
             this.lblFechaNegocio.UseCustomForeColor = true;
-            // 
-            // txtDato02
-            // 
-            this.txtDato02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDato02.CustomButton.Image = null;
-            this.txtDato02.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txtDato02.CustomButton.Name = "";
-            this.txtDato02.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDato02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDato02.CustomButton.TabIndex = 1;
-            this.txtDato02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDato02.CustomButton.UseSelectable = true;
-            this.txtDato02.CustomButton.Visible = false;
-            this.txtDato02.Lines = new string[0];
-            this.txtDato02.Location = new System.Drawing.Point(90, 62);
-            this.txtDato02.MaxLength = 32767;
-            this.txtDato02.Name = "txtDato02";
-            this.txtDato02.PasswordChar = '\0';
-            this.txtDato02.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDato02.SelectedText = "";
-            this.txtDato02.SelectionLength = 0;
-            this.txtDato02.SelectionStart = 0;
-            this.txtDato02.ShortcutsEnabled = true;
-            this.txtDato02.Size = new System.Drawing.Size(184, 23);
-            this.txtDato02.TabIndex = 24;
-            this.txtDato02.UseCustomBackColor = true;
-            this.txtDato02.UseSelectable = true;
-            this.txtDato02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDato02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDato02.TextChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtNumRuc
             // 
@@ -887,17 +546,6 @@ namespace ConfiguradorUI.Maestro
             this.txtNumRuc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNumRuc.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtNumRuc.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblDato02
-            // 
-            this.lblDato02.AutoSize = true;
-            this.lblDato02.ForeColor = System.Drawing.Color.Navy;
-            this.lblDato02.Location = new System.Drawing.Point(14, 64);
-            this.lblDato02.Name = "lblDato02";
-            this.lblDato02.Size = new System.Drawing.Size(55, 19);
-            this.lblDato02.TabIndex = 23;
-            this.lblDato02.Text = "Info. 02:";
-            this.lblDato02.UseCustomForeColor = true;
             // 
             // panel1
             // 
@@ -1164,6 +812,533 @@ namespace ConfiguradorUI.Maestro
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.UseCustomForeColor = true;
             // 
+            // tabPagDireccion
+            // 
+            this.tabPagDireccion.Controls.Add(this.grbUbicacionDetallada);
+            this.tabPagDireccion.Controls.Add(this.gbrUbigeo);
+            this.tabPagDireccion.HorizontalScrollbarBarColor = true;
+            this.tabPagDireccion.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagDireccion.HorizontalScrollbarSize = 10;
+            this.tabPagDireccion.Location = new System.Drawing.Point(4, 38);
+            this.tabPagDireccion.Name = "tabPagDireccion";
+            this.tabPagDireccion.Size = new System.Drawing.Size(559, 240);
+            this.tabPagDireccion.TabIndex = 1;
+            this.tabPagDireccion.Text = "Dirección";
+            this.tabPagDireccion.VerticalScrollbarBarColor = true;
+            this.tabPagDireccion.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagDireccion.VerticalScrollbarSize = 10;
+            // 
+            // grbUbicacionDetallada
+            // 
+            this.grbUbicacionDetallada.BackColor = System.Drawing.Color.Transparent;
+            this.grbUbicacionDetallada.Controls.Add(this.metroLabel1);
+            this.grbUbicacionDetallada.Controls.Add(this.lblLongitud);
+            this.grbUbicacionDetallada.Controls.Add(this.txtLongitud);
+            this.grbUbicacionDetallada.Controls.Add(this.txtDireccion01);
+            this.grbUbicacionDetallada.Controls.Add(this.lblDireccion01);
+            this.grbUbicacionDetallada.Controls.Add(this.lblDireccion02);
+            this.grbUbicacionDetallada.Controls.Add(this.txtLatitud);
+            this.grbUbicacionDetallada.Controls.Add(this.txtDireccion02);
+            this.grbUbicacionDetallada.Controls.Add(this.lblLatitud);
+            this.grbUbicacionDetallada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbUbicacionDetallada.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbUbicacionDetallada.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbUbicacionDetallada.Location = new System.Drawing.Point(1, 109);
+            this.grbUbicacionDetallada.Name = "grbUbicacionDetallada";
+            this.grbUbicacionDetallada.Size = new System.Drawing.Size(555, 129);
+            this.grbUbicacionDetallada.TabIndex = 58;
+            this.grbUbicacionDetallada.TabStop = false;
+            this.grbUbicacionDetallada.Text = "Ubicación detallada";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.metroLabel1.Location = new System.Drawing.Point(6, 97);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(139, 19);
+            this.metroLabel1.TabIndex = 67;
+            this.metroLabel1.Text = "Ubicación en el mapa:";
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
+            // lblLongitud
+            // 
+            this.lblLongitud.AutoSize = true;
+            this.lblLongitud.ForeColor = System.Drawing.Color.Navy;
+            this.lblLongitud.Location = new System.Drawing.Point(379, 97);
+            this.lblLongitud.Name = "lblLongitud";
+            this.lblLongitud.Size = new System.Drawing.Size(63, 19);
+            this.lblLongitud.TabIndex = 65;
+            this.lblLongitud.Text = "Longitud:";
+            this.lblLongitud.UseCustomForeColor = true;
+            // 
+            // txtLongitud
+            // 
+            this.txtLongitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtLongitud.CustomButton.Image = null;
+            this.txtLongitud.CustomButton.Location = new System.Drawing.Point(71, 1);
+            this.txtLongitud.CustomButton.Name = "";
+            this.txtLongitud.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtLongitud.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLongitud.CustomButton.TabIndex = 1;
+            this.txtLongitud.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLongitud.CustomButton.UseSelectable = true;
+            this.txtLongitud.CustomButton.Visible = false;
+            this.txtLongitud.Lines = new string[0];
+            this.txtLongitud.Location = new System.Drawing.Point(442, 95);
+            this.txtLongitud.MaxLength = 32767;
+            this.txtLongitud.Name = "txtLongitud";
+            this.txtLongitud.PasswordChar = '\0';
+            this.txtLongitud.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLongitud.SelectedText = "";
+            this.txtLongitud.SelectionLength = 0;
+            this.txtLongitud.SelectionStart = 0;
+            this.txtLongitud.ShortcutsEnabled = true;
+            this.txtLongitud.Size = new System.Drawing.Size(93, 23);
+            this.txtLongitud.TabIndex = 66;
+            this.txtLongitud.UseCustomBackColor = true;
+            this.txtLongitud.UseSelectable = true;
+            this.txtLongitud.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLongitud.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLongitud.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // txtDireccion01
+            // 
+            this.txtDireccion01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDireccion01.CustomButton.Image = null;
+            this.txtDireccion01.CustomButton.Location = new System.Drawing.Point(446, 1);
+            this.txtDireccion01.CustomButton.Name = "";
+            this.txtDireccion01.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDireccion01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDireccion01.CustomButton.TabIndex = 1;
+            this.txtDireccion01.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDireccion01.CustomButton.UseSelectable = true;
+            this.txtDireccion01.CustomButton.Visible = false;
+            this.txtDireccion01.Lines = new string[0];
+            this.txtDireccion01.Location = new System.Drawing.Point(80, 26);
+            this.txtDireccion01.MaxLength = 32767;
+            this.txtDireccion01.Name = "txtDireccion01";
+            this.txtDireccion01.PasswordChar = '\0';
+            this.txtDireccion01.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDireccion01.SelectedText = "";
+            this.txtDireccion01.SelectionLength = 0;
+            this.txtDireccion01.SelectionStart = 0;
+            this.txtDireccion01.ShortcutsEnabled = true;
+            this.txtDireccion01.Size = new System.Drawing.Size(468, 23);
+            this.txtDireccion01.TabIndex = 30;
+            this.txtDireccion01.UseCustomBackColor = true;
+            this.txtDireccion01.UseSelectable = true;
+            this.txtDireccion01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDireccion01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDireccion01.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblDireccion01
+            // 
+            this.lblDireccion01.AutoSize = true;
+            this.lblDireccion01.ForeColor = System.Drawing.Color.Navy;
+            this.lblDireccion01.Location = new System.Drawing.Point(6, 28);
+            this.lblDireccion01.Name = "lblDireccion01";
+            this.lblDireccion01.Size = new System.Drawing.Size(46, 19);
+            this.lblDireccion01.TabIndex = 29;
+            this.lblDireccion01.Text = "Dir. 01:";
+            this.lblDireccion01.UseCustomForeColor = true;
+            // 
+            // lblDireccion02
+            // 
+            this.lblDireccion02.AutoSize = true;
+            this.lblDireccion02.ForeColor = System.Drawing.Color.Navy;
+            this.lblDireccion02.Location = new System.Drawing.Point(6, 65);
+            this.lblDireccion02.Name = "lblDireccion02";
+            this.lblDireccion02.Size = new System.Drawing.Size(48, 19);
+            this.lblDireccion02.TabIndex = 31;
+            this.lblDireccion02.Text = "Dir. 02:";
+            this.lblDireccion02.UseCustomForeColor = true;
+            // 
+            // txtLatitud
+            // 
+            this.txtLatitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtLatitud.CustomButton.Image = null;
+            this.txtLatitud.CustomButton.Location = new System.Drawing.Point(71, 1);
+            this.txtLatitud.CustomButton.Name = "";
+            this.txtLatitud.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtLatitud.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLatitud.CustomButton.TabIndex = 1;
+            this.txtLatitud.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLatitud.CustomButton.UseSelectable = true;
+            this.txtLatitud.CustomButton.Visible = false;
+            this.txtLatitud.Lines = new string[0];
+            this.txtLatitud.Location = new System.Drawing.Point(269, 95);
+            this.txtLatitud.MaxLength = 32767;
+            this.txtLatitud.Name = "txtLatitud";
+            this.txtLatitud.PasswordChar = '\0';
+            this.txtLatitud.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLatitud.SelectedText = "";
+            this.txtLatitud.SelectionLength = 0;
+            this.txtLatitud.SelectionStart = 0;
+            this.txtLatitud.ShortcutsEnabled = true;
+            this.txtLatitud.Size = new System.Drawing.Size(93, 23);
+            this.txtLatitud.TabIndex = 64;
+            this.txtLatitud.UseCustomBackColor = true;
+            this.txtLatitud.UseSelectable = true;
+            this.txtLatitud.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLatitud.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLatitud.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // txtDireccion02
+            // 
+            this.txtDireccion02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDireccion02.CustomButton.Image = null;
+            this.txtDireccion02.CustomButton.Location = new System.Drawing.Point(446, 1);
+            this.txtDireccion02.CustomButton.Name = "";
+            this.txtDireccion02.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDireccion02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDireccion02.CustomButton.TabIndex = 1;
+            this.txtDireccion02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDireccion02.CustomButton.UseSelectable = true;
+            this.txtDireccion02.CustomButton.Visible = false;
+            this.txtDireccion02.Lines = new string[0];
+            this.txtDireccion02.Location = new System.Drawing.Point(80, 61);
+            this.txtDireccion02.MaxLength = 32767;
+            this.txtDireccion02.Name = "txtDireccion02";
+            this.txtDireccion02.PasswordChar = '\0';
+            this.txtDireccion02.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDireccion02.SelectedText = "";
+            this.txtDireccion02.SelectionLength = 0;
+            this.txtDireccion02.SelectionStart = 0;
+            this.txtDireccion02.ShortcutsEnabled = true;
+            this.txtDireccion02.Size = new System.Drawing.Size(468, 23);
+            this.txtDireccion02.TabIndex = 32;
+            this.txtDireccion02.UseCustomBackColor = true;
+            this.txtDireccion02.UseSelectable = true;
+            this.txtDireccion02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDireccion02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDireccion02.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblLatitud
+            // 
+            this.lblLatitud.AutoSize = true;
+            this.lblLatitud.ForeColor = System.Drawing.Color.Navy;
+            this.lblLatitud.Location = new System.Drawing.Point(219, 97);
+            this.lblLatitud.Name = "lblLatitud";
+            this.lblLatitud.Size = new System.Drawing.Size(51, 19);
+            this.lblLatitud.TabIndex = 63;
+            this.lblLatitud.Text = "Latitud:";
+            this.lblLatitud.UseCustomForeColor = true;
+            // 
+            // gbrUbigeo
+            // 
+            this.gbrUbigeo.BackColor = System.Drawing.Color.Transparent;
+            this.gbrUbigeo.Controls.Add(this.lblDepartamento);
+            this.gbrUbigeo.Controls.Add(this.cboDepartamento);
+            this.gbrUbigeo.Controls.Add(this.cboDistrito);
+            this.gbrUbigeo.Controls.Add(this.lblDistrito);
+            this.gbrUbigeo.Controls.Add(this.lblProvincia);
+            this.gbrUbigeo.Controls.Add(this.cboProvincia);
+            this.gbrUbigeo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbrUbigeo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbrUbigeo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gbrUbigeo.Location = new System.Drawing.Point(1, 10);
+            this.gbrUbigeo.Name = "gbrUbigeo";
+            this.gbrUbigeo.Size = new System.Drawing.Size(555, 93);
+            this.gbrUbigeo.TabIndex = 57;
+            this.gbrUbigeo.TabStop = false;
+            this.gbrUbigeo.Text = "Ubicación general";
+            // 
+            // lblDepartamento
+            // 
+            this.lblDepartamento.AutoSize = true;
+            this.lblDepartamento.ForeColor = System.Drawing.Color.Navy;
+            this.lblDepartamento.Location = new System.Drawing.Point(6, 26);
+            this.lblDepartamento.Name = "lblDepartamento";
+            this.lblDepartamento.Size = new System.Drawing.Size(53, 19);
+            this.lblDepartamento.TabIndex = 32;
+            this.lblDepartamento.Text = "Región:";
+            this.lblDepartamento.UseCustomForeColor = true;
+            // 
+            // cboDepartamento
+            // 
+            this.cboDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDepartamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDepartamento.FormattingEnabled = true;
+            this.cboDepartamento.Location = new System.Drawing.Point(62, 24);
+            this.cboDepartamento.Name = "cboDepartamento";
+            this.cboDepartamento.Size = new System.Drawing.Size(184, 23);
+            this.cboDepartamento.TabIndex = 33;
+            this.cboDepartamento.SelectedIndexChanged += new System.EventHandler(this.cboDepartamento_SelectedIndexChanged);
+            // 
+            // cboDistrito
+            // 
+            this.cboDistrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDistrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDistrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDistrito.FormattingEnabled = true;
+            this.cboDistrito.Location = new System.Drawing.Point(62, 59);
+            this.cboDistrito.Name = "cboDistrito";
+            this.cboDistrito.Size = new System.Drawing.Size(184, 23);
+            this.cboDistrito.TabIndex = 37;
+            // 
+            // lblDistrito
+            // 
+            this.lblDistrito.AutoSize = true;
+            this.lblDistrito.ForeColor = System.Drawing.Color.Navy;
+            this.lblDistrito.Location = new System.Drawing.Point(6, 61);
+            this.lblDistrito.Name = "lblDistrito";
+            this.lblDistrito.Size = new System.Drawing.Size(53, 19);
+            this.lblDistrito.TabIndex = 36;
+            this.lblDistrito.Text = "Distrito:";
+            this.lblDistrito.UseCustomForeColor = true;
+            // 
+            // lblProvincia
+            // 
+            this.lblProvincia.AutoSize = true;
+            this.lblProvincia.ForeColor = System.Drawing.Color.Navy;
+            this.lblProvincia.Location = new System.Drawing.Point(272, 26);
+            this.lblProvincia.Name = "lblProvincia";
+            this.lblProvincia.Size = new System.Drawing.Size(65, 19);
+            this.lblProvincia.TabIndex = 34;
+            this.lblProvincia.Text = "Provincia:";
+            this.lblProvincia.UseCustomForeColor = true;
+            // 
+            // cboProvincia
+            // 
+            this.cboProvincia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboProvincia.FormattingEnabled = true;
+            this.cboProvincia.Location = new System.Drawing.Point(364, 24);
+            this.cboProvincia.Name = "cboProvincia";
+            this.cboProvincia.Size = new System.Drawing.Size(184, 23);
+            this.cboProvincia.TabIndex = 35;
+            this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
+            // 
+            // tabPagInfoExtra
+            // 
+            this.tabPagInfoExtra.Controls.Add(this.grbInfoExtra);
+            this.tabPagInfoExtra.HorizontalScrollbarBarColor = true;
+            this.tabPagInfoExtra.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagInfoExtra.HorizontalScrollbarSize = 10;
+            this.tabPagInfoExtra.Location = new System.Drawing.Point(4, 38);
+            this.tabPagInfoExtra.Name = "tabPagInfoExtra";
+            this.tabPagInfoExtra.Size = new System.Drawing.Size(559, 240);
+            this.tabPagInfoExtra.TabIndex = 2;
+            this.tabPagInfoExtra.Text = "Info. Extra";
+            this.tabPagInfoExtra.VerticalScrollbarBarColor = true;
+            this.tabPagInfoExtra.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagInfoExtra.VerticalScrollbarSize = 10;
+            // 
+            // grbInfoExtra
+            // 
+            this.grbInfoExtra.BackColor = System.Drawing.Color.Transparent;
+            this.grbInfoExtra.Controls.Add(this.txtDato04);
+            this.grbInfoExtra.Controls.Add(this.txtDato01);
+            this.grbInfoExtra.Controls.Add(this.lblDato02);
+            this.grbInfoExtra.Controls.Add(this.txtDato03);
+            this.grbInfoExtra.Controls.Add(this.lblDato04);
+            this.grbInfoExtra.Controls.Add(this.lblDato03);
+            this.grbInfoExtra.Controls.Add(this.txtDato02);
+            this.grbInfoExtra.Controls.Add(this.lblDato01);
+            this.grbInfoExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbInfoExtra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbInfoExtra.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbInfoExtra.Location = new System.Drawing.Point(1, 6);
+            this.grbInfoExtra.Name = "grbInfoExtra";
+            this.grbInfoExtra.Size = new System.Drawing.Size(555, 99);
+            this.grbInfoExtra.TabIndex = 2;
+            this.grbInfoExtra.TabStop = false;
+            this.grbInfoExtra.Text = "Agregue la información extra que necesite";
+            // 
+            // txtDato04
+            // 
+            this.txtDato04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDato04.CustomButton.Image = null;
+            this.txtDato04.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtDato04.CustomButton.Name = "";
+            this.txtDato04.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDato04.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDato04.CustomButton.TabIndex = 1;
+            this.txtDato04.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDato04.CustomButton.UseSelectable = true;
+            this.txtDato04.CustomButton.Visible = false;
+            this.txtDato04.Lines = new string[0];
+            this.txtDato04.Location = new System.Drawing.Point(362, 62);
+            this.txtDato04.MaxLength = 32767;
+            this.txtDato04.Name = "txtDato04";
+            this.txtDato04.PasswordChar = '\0';
+            this.txtDato04.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDato04.SelectedText = "";
+            this.txtDato04.SelectionLength = 0;
+            this.txtDato04.SelectionStart = 0;
+            this.txtDato04.ShortcutsEnabled = true;
+            this.txtDato04.Size = new System.Drawing.Size(184, 23);
+            this.txtDato04.TabIndex = 28;
+            this.txtDato04.UseCustomBackColor = true;
+            this.txtDato04.UseSelectable = true;
+            this.txtDato04.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDato04.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDato04.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // txtDato01
+            // 
+            this.txtDato01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDato01.CustomButton.Image = null;
+            this.txtDato01.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtDato01.CustomButton.Name = "";
+            this.txtDato01.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDato01.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDato01.CustomButton.TabIndex = 1;
+            this.txtDato01.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDato01.CustomButton.UseSelectable = true;
+            this.txtDato01.CustomButton.Visible = false;
+            this.txtDato01.Lines = new string[0];
+            this.txtDato01.Location = new System.Drawing.Point(90, 26);
+            this.txtDato01.MaxLength = 32767;
+            this.txtDato01.Name = "txtDato01";
+            this.txtDato01.PasswordChar = '\0';
+            this.txtDato01.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDato01.SelectedText = "";
+            this.txtDato01.SelectionLength = 0;
+            this.txtDato01.SelectionStart = 0;
+            this.txtDato01.ShortcutsEnabled = true;
+            this.txtDato01.Size = new System.Drawing.Size(184, 23);
+            this.txtDato01.TabIndex = 22;
+            this.txtDato01.UseCustomBackColor = true;
+            this.txtDato01.UseSelectable = true;
+            this.txtDato01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDato01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDato01.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblDato02
+            // 
+            this.lblDato02.AutoSize = true;
+            this.lblDato02.ForeColor = System.Drawing.Color.Navy;
+            this.lblDato02.Location = new System.Drawing.Point(14, 64);
+            this.lblDato02.Name = "lblDato02";
+            this.lblDato02.Size = new System.Drawing.Size(55, 19);
+            this.lblDato02.TabIndex = 23;
+            this.lblDato02.Text = "Info. 02:";
+            this.lblDato02.UseCustomForeColor = true;
+            // 
+            // txtDato03
+            // 
+            this.txtDato03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDato03.CustomButton.Image = null;
+            this.txtDato03.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtDato03.CustomButton.Name = "";
+            this.txtDato03.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDato03.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDato03.CustomButton.TabIndex = 1;
+            this.txtDato03.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDato03.CustomButton.UseSelectable = true;
+            this.txtDato03.CustomButton.Visible = false;
+            this.txtDato03.Lines = new string[0];
+            this.txtDato03.Location = new System.Drawing.Point(362, 24);
+            this.txtDato03.MaxLength = 32767;
+            this.txtDato03.Name = "txtDato03";
+            this.txtDato03.PasswordChar = '\0';
+            this.txtDato03.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDato03.SelectedText = "";
+            this.txtDato03.SelectionLength = 0;
+            this.txtDato03.SelectionStart = 0;
+            this.txtDato03.ShortcutsEnabled = true;
+            this.txtDato03.Size = new System.Drawing.Size(184, 23);
+            this.txtDato03.TabIndex = 26;
+            this.txtDato03.UseCustomBackColor = true;
+            this.txtDato03.UseSelectable = true;
+            this.txtDato03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDato03.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDato03.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblDato04
+            // 
+            this.lblDato04.AutoSize = true;
+            this.lblDato04.ForeColor = System.Drawing.Color.Navy;
+            this.lblDato04.Location = new System.Drawing.Point(288, 64);
+            this.lblDato04.Name = "lblDato04";
+            this.lblDato04.Size = new System.Drawing.Size(55, 19);
+            this.lblDato04.TabIndex = 27;
+            this.lblDato04.Text = "Info. 04:";
+            this.lblDato04.UseCustomForeColor = true;
+            // 
+            // lblDato03
+            // 
+            this.lblDato03.AutoSize = true;
+            this.lblDato03.ForeColor = System.Drawing.Color.Navy;
+            this.lblDato03.Location = new System.Drawing.Point(288, 26);
+            this.lblDato03.Name = "lblDato03";
+            this.lblDato03.Size = new System.Drawing.Size(55, 19);
+            this.lblDato03.TabIndex = 25;
+            this.lblDato03.Text = "Info. 03:";
+            this.lblDato03.UseCustomForeColor = true;
+            // 
+            // txtDato02
+            // 
+            this.txtDato02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDato02.CustomButton.Image = null;
+            this.txtDato02.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.txtDato02.CustomButton.Name = "";
+            this.txtDato02.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDato02.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDato02.CustomButton.TabIndex = 1;
+            this.txtDato02.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDato02.CustomButton.UseSelectable = true;
+            this.txtDato02.CustomButton.Visible = false;
+            this.txtDato02.Lines = new string[0];
+            this.txtDato02.Location = new System.Drawing.Point(90, 62);
+            this.txtDato02.MaxLength = 32767;
+            this.txtDato02.Name = "txtDato02";
+            this.txtDato02.PasswordChar = '\0';
+            this.txtDato02.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDato02.SelectedText = "";
+            this.txtDato02.SelectionLength = 0;
+            this.txtDato02.SelectionStart = 0;
+            this.txtDato02.ShortcutsEnabled = true;
+            this.txtDato02.Size = new System.Drawing.Size(184, 23);
+            this.txtDato02.TabIndex = 24;
+            this.txtDato02.UseCustomBackColor = true;
+            this.txtDato02.UseSelectable = true;
+            this.txtDato02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDato02.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDato02.TextChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // lblDato01
+            // 
+            this.lblDato01.AutoSize = true;
+            this.lblDato01.ForeColor = System.Drawing.Color.Navy;
+            this.lblDato01.Location = new System.Drawing.Point(14, 28);
+            this.lblDato01.Name = "lblDato01";
+            this.lblDato01.Size = new System.Drawing.Size(53, 19);
+            this.lblDato01.TabIndex = 21;
+            this.lblDato01.Text = "Info. 01:";
+            this.lblDato01.UseCustomForeColor = true;
+            // 
             // tglListarInactivos
             // 
             this.tglListarInactivos.AutoSize = true;
@@ -1258,186 +1433,11 @@ namespace ConfiguradorUI.Maestro
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
             // 
-            // tabPagDireccion
-            // 
-            this.tabPagDireccion.Controls.Add(this.grbUbicacionDetallada);
-            this.tabPagDireccion.Controls.Add(this.gbrUbigeo);
-            this.tabPagDireccion.HorizontalScrollbarBarColor = true;
-            this.tabPagDireccion.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagDireccion.HorizontalScrollbarSize = 10;
-            this.tabPagDireccion.Location = new System.Drawing.Point(4, 38);
-            this.tabPagDireccion.Name = "tabPagDireccion";
-            this.tabPagDireccion.Size = new System.Drawing.Size(559, 240);
-            this.tabPagDireccion.TabIndex = 1;
-            this.tabPagDireccion.Text = "Dirección";
-            this.tabPagDireccion.VerticalScrollbarBarColor = true;
-            this.tabPagDireccion.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagDireccion.VerticalScrollbarSize = 10;
-            // 
-            // gbrUbigeo
-            // 
-            this.gbrUbigeo.BackColor = System.Drawing.Color.Transparent;
-            this.gbrUbigeo.Controls.Add(this.lblDepartamento);
-            this.gbrUbigeo.Controls.Add(this.cboDepartamento);
-            this.gbrUbigeo.Controls.Add(this.cboDistrito);
-            this.gbrUbigeo.Controls.Add(this.lblDistrito);
-            this.gbrUbigeo.Controls.Add(this.lblProvincia);
-            this.gbrUbigeo.Controls.Add(this.cboProvincia);
-            this.gbrUbigeo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbrUbigeo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbrUbigeo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbrUbigeo.Location = new System.Drawing.Point(1, 10);
-            this.gbrUbigeo.Name = "gbrUbigeo";
-            this.gbrUbigeo.Size = new System.Drawing.Size(555, 93);
-            this.gbrUbigeo.TabIndex = 57;
-            this.gbrUbigeo.TabStop = false;
-            this.gbrUbigeo.Text = "Ubicación general";
-            // 
-            // lblDepartamento
-            // 
-            this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.ForeColor = System.Drawing.Color.Navy;
-            this.lblDepartamento.Location = new System.Drawing.Point(6, 26);
-            this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(53, 19);
-            this.lblDepartamento.TabIndex = 32;
-            this.lblDepartamento.Text = "Región:";
-            this.lblDepartamento.UseCustomForeColor = true;
-            // 
-            // cboDepartamento
-            // 
-            this.cboDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboDepartamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDepartamento.FormattingEnabled = true;
-            this.cboDepartamento.Location = new System.Drawing.Point(62, 24);
-            this.cboDepartamento.Name = "cboDepartamento";
-            this.cboDepartamento.Size = new System.Drawing.Size(184, 23);
-            this.cboDepartamento.TabIndex = 33;
-            this.cboDepartamento.SelectedIndexChanged += new System.EventHandler(this.cboDepartamento_SelectedIndexChanged);
-            // 
-            // cboDistrito
-            // 
-            this.cboDistrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDistrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboDistrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDistrito.FormattingEnabled = true;
-            this.cboDistrito.Location = new System.Drawing.Point(62, 59);
-            this.cboDistrito.Name = "cboDistrito";
-            this.cboDistrito.Size = new System.Drawing.Size(184, 23);
-            this.cboDistrito.TabIndex = 37;
-            // 
-            // lblDistrito
-            // 
-            this.lblDistrito.AutoSize = true;
-            this.lblDistrito.ForeColor = System.Drawing.Color.Navy;
-            this.lblDistrito.Location = new System.Drawing.Point(6, 61);
-            this.lblDistrito.Name = "lblDistrito";
-            this.lblDistrito.Size = new System.Drawing.Size(53, 19);
-            this.lblDistrito.TabIndex = 36;
-            this.lblDistrito.Text = "Distrito:";
-            this.lblDistrito.UseCustomForeColor = true;
-            // 
-            // lblProvincia
-            // 
-            this.lblProvincia.AutoSize = true;
-            this.lblProvincia.ForeColor = System.Drawing.Color.Navy;
-            this.lblProvincia.Location = new System.Drawing.Point(272, 26);
-            this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(65, 19);
-            this.lblProvincia.TabIndex = 34;
-            this.lblProvincia.Text = "Provincia:";
-            this.lblProvincia.UseCustomForeColor = true;
-            // 
-            // cboProvincia
-            // 
-            this.cboProvincia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(364, 24);
-            this.cboProvincia.Name = "cboProvincia";
-            this.cboProvincia.Size = new System.Drawing.Size(184, 23);
-            this.cboProvincia.TabIndex = 35;
-            this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
-            // 
-            // grbUbicacionDetallada
-            // 
-            this.grbUbicacionDetallada.BackColor = System.Drawing.Color.Transparent;
-            this.grbUbicacionDetallada.Controls.Add(this.metroLabel1);
-            this.grbUbicacionDetallada.Controls.Add(this.lblLongitud);
-            this.grbUbicacionDetallada.Controls.Add(this.txtLongitud);
-            this.grbUbicacionDetallada.Controls.Add(this.txtDireccion01);
-            this.grbUbicacionDetallada.Controls.Add(this.lblDireccion01);
-            this.grbUbicacionDetallada.Controls.Add(this.lblDireccion02);
-            this.grbUbicacionDetallada.Controls.Add(this.txtLatitud);
-            this.grbUbicacionDetallada.Controls.Add(this.txtDireccion02);
-            this.grbUbicacionDetallada.Controls.Add(this.lblLatitud);
-            this.grbUbicacionDetallada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbUbicacionDetallada.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbUbicacionDetallada.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbUbicacionDetallada.Location = new System.Drawing.Point(1, 109);
-            this.grbUbicacionDetallada.Name = "grbUbicacionDetallada";
-            this.grbUbicacionDetallada.Size = new System.Drawing.Size(555, 129);
-            this.grbUbicacionDetallada.TabIndex = 58;
-            this.grbUbicacionDetallada.TabStop = false;
-            this.grbUbicacionDetallada.Text = "Ubicación detallada";
-            // 
-            // tabPagInfoExtra
-            // 
-            this.tabPagInfoExtra.Controls.Add(this.grbInfoExtra);
-            this.tabPagInfoExtra.HorizontalScrollbarBarColor = true;
-            this.tabPagInfoExtra.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagInfoExtra.HorizontalScrollbarSize = 10;
-            this.tabPagInfoExtra.Location = new System.Drawing.Point(4, 38);
-            this.tabPagInfoExtra.Name = "tabPagInfoExtra";
-            this.tabPagInfoExtra.Size = new System.Drawing.Size(559, 240);
-            this.tabPagInfoExtra.TabIndex = 2;
-            this.tabPagInfoExtra.Text = "Info. Extra";
-            this.tabPagInfoExtra.VerticalScrollbarBarColor = true;
-            this.tabPagInfoExtra.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagInfoExtra.VerticalScrollbarSize = 10;
-            // 
-            // grbInfoExtra
-            // 
-            this.grbInfoExtra.BackColor = System.Drawing.Color.Transparent;
-            this.grbInfoExtra.Controls.Add(this.txtDato04);
-            this.grbInfoExtra.Controls.Add(this.txtDato01);
-            this.grbInfoExtra.Controls.Add(this.lblDato02);
-            this.grbInfoExtra.Controls.Add(this.txtDato03);
-            this.grbInfoExtra.Controls.Add(this.lblDato04);
-            this.grbInfoExtra.Controls.Add(this.lblDato03);
-            this.grbInfoExtra.Controls.Add(this.txtDato02);
-            this.grbInfoExtra.Controls.Add(this.lblDato01);
-            this.grbInfoExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbInfoExtra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbInfoExtra.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbInfoExtra.Location = new System.Drawing.Point(1, 6);
-            this.grbInfoExtra.Name = "grbInfoExtra";
-            this.grbInfoExtra.Size = new System.Drawing.Size(555, 99);
-            this.grbInfoExtra.TabIndex = 2;
-            this.grbInfoExtra.TabStop = false;
-            this.grbInfoExtra.Text = "Agregue la información extra que necesite";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.metroLabel1.Location = new System.Drawing.Point(6, 97);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(139, 19);
-            this.metroLabel1.TabIndex = 67;
-            this.metroLabel1.Text = "Ubicación en el mapa:";
-            this.metroLabel1.UseCustomForeColor = true;
-            // 
             // FormLocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 455);
+            this.ClientSize = new System.Drawing.Size(900, 452);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -1460,16 +1460,16 @@ namespace ConfiguradorUI.Maestro
             this.tabLocation.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLocation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.tabPagDireccion.ResumeLayout(false);
-            this.gbrUbigeo.ResumeLayout(false);
-            this.gbrUbigeo.PerformLayout();
             this.grbUbicacionDetallada.ResumeLayout(false);
             this.grbUbicacionDetallada.PerformLayout();
+            this.gbrUbigeo.ResumeLayout(false);
+            this.gbrUbigeo.PerformLayout();
             this.tabPagInfoExtra.ResumeLayout(false);
             this.grbInfoExtra.ResumeLayout(false);
             this.grbInfoExtra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

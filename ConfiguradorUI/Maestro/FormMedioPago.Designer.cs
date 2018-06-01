@@ -64,6 +64,7 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
+            this.chkRequiereRef = new MetroFramework.Controls.MetroCheckBox();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabMedioPago.SuspendLayout();
@@ -293,6 +294,7 @@ namespace ConfiguradorUI.Maestro
             // 
             // tabPagGeneral
             // 
+            this.tabPagGeneral.Controls.Add(this.chkRequiereRef);
             this.tabPagGeneral.Controls.Add(this.panel2);
             this.tabPagGeneral.Controls.Add(this.panel3);
             this.tabPagGeneral.Controls.Add(this.cboTipoMedioPago);
@@ -556,6 +558,23 @@ namespace ConfiguradorUI.Maestro
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
             // 
+            // chkRequiereRef
+            // 
+            this.chkRequiereRef.AutoSize = true;
+            this.chkRequiereRef.Checked = true;
+            this.chkRequiereRef.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkRequiereRef.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkRequiereRef.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkRequiereRef.ForeColor = System.Drawing.Color.Navy;
+            this.chkRequiereRef.Location = new System.Drawing.Point(78, 122);
+            this.chkRequiereRef.Name = "chkRequiereRef";
+            this.chkRequiereRef.Size = new System.Drawing.Size(139, 19);
+            this.chkRequiereRef.TabIndex = 87;
+            this.chkRequiereRef.Text = "Requiere referencia";
+            this.chkRequiereRef.UseCustomForeColor = true;
+            this.chkRequiereRef.UseSelectable = true;
+            this.chkRequiereRef.CheckedChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // FormMedioPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -624,5 +643,6 @@ namespace ConfiguradorUI.Maestro
         private System.Windows.Forms.Label lblNumInactivo;
         private System.Windows.Forms.Label lblNumActivo;
         private System.Windows.Forms.Label lblNumReg;
+        private MetroFramework.Controls.MetroCheckBox chkRequiereRef;
     }
 }

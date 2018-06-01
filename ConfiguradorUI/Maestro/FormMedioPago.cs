@@ -55,7 +55,7 @@ namespace ConfiguradorUI.Maestro
             cboTipoMedioPago.MaxDropDownItems = ControlHelper.maxDropDownItems;
             cboTipoMedioPago.DropDownWidth = ControlHelper.DropDownWidth(cboTipoMedioPago);
             
-            var chks = new[] { chkActivo };
+            var chks = new[] { chkActivo,chkRequiereRef };
 
             foreach (var chk in chks)
             {
@@ -85,7 +85,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt01_medio_pago();
                         obj = GetObjeto();
@@ -158,7 +158,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt01_medio_pago();
                         obj = GetObjeto();
@@ -187,7 +187,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt01_medio_pago();
                         obj = GetObjeto();
@@ -217,6 +217,7 @@ namespace ConfiguradorUI.Maestro
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.cod_medio_pago = txtCodigo.Text.Trim();
 
+                obj.req_ref = chkRequiereRef.Checked;
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
@@ -241,7 +242,7 @@ namespace ConfiguradorUI.Maestro
                 LimpiarForm();
 
                 chkActivo.Checked = (obj.id_estado == Estado.IdActivo) ? true : false;
-
+                chkRequiereRef.Checked = obj.req_ref;
                 lblIdMedioPago.Text = obj.id_medio_pago.ToString();
                 codSelected = obj.cod_medio_pago;
                 txtNombre.Text = obj.txt_desc;
@@ -259,7 +260,7 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             bool no_error = true;
@@ -462,6 +463,7 @@ namespace ConfiguradorUI.Maestro
                 chkActivo.Enabled = true;
 
             chkActivo.Checked = true;
+            chkRequiereRef.Checked = false;
 
             cboTipoMedioPago.SelectedIndex = (cboTipoMedioPago.Items.Count > 0)? 0 : -1;
 
