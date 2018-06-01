@@ -1,22 +1,21 @@
-﻿using MetroFramework.Forms;
+﻿using ConfigBusinessEntity;
+using ConfigBusinessLogic;
+using ConfigBusinessLogic.Producto;
+using ConfiguradorUI.Buscadores;
+using ConfiguradorUI.FormUtil;
+using ConfiguradorUI.Maestro;
+using ConfiguradorUI.Producto.Auxiliares;
+using ConfigUtilitarios;
+using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.KeyValues;
+using ConfigUtilitarios.ViewModels;
+using MetroFramework.Forms;
 using System;
-using ConfigBusinessEntity;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using ConfigUtilitarios;
-using ConfigUtilitarios.HelperControl;
-using ConfigBusinessLogic;
-using ConfigUtilitarios.KeyValues;
-using ConfigBusinessLogic.Producto;
-using ConfigBusinessLogic.Utiles;
-using ConfiguradorUI.FormUtil;
-using ConfiguradorUI.Producto.Auxiliares;
-using ConfiguradorUI.Buscadores;
-using ConfigUtilitarios.ViewModels;
-using ConfiguradorUI.Maestro;
 
 namespace ConfiguradorUI.Producto
 {
@@ -538,7 +537,7 @@ namespace ConfiguradorUI.Producto
                             CANTIDAD = x.cantidad.RemoveTrailingZeros(),
                             P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
                             P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
-                            ACTIVO = x.id_estado == Estado.IdActivo ? true : false
+                            ACTIVO = x.id_estado == Estado.IdActivo
                         }).OrderBy(x => x.PRODUCTO).ThenByDescending(x => x.P_UNIT_C_TAX).ToList();
                     }
                     else
@@ -599,12 +598,12 @@ namespace ConfiguradorUI.Producto
         {
             if (list != null)
             {
+                list = list.Where(x => x.id_estado == Estado.IdActivo);
                 dgvProductOfCboVarDetail.DataSource = list.Select(x => new
                 {
                     CANTIDAD = x.cantidad.RemoveTrailingZeros(),
-                    DESC = x.txt_desc_item,
-                    ACTIVO = x.id_estado == Estado.IdActivo ? "SÍ" : "NO"
-                }).OrderByDescending(x => x.ACTIVO).ThenBy(x => x.DESC).ToList();
+                    DESC = x.txt_desc_item
+                }).OrderBy(x => x.DESC).ToList();
 
             }
             else
@@ -634,10 +633,10 @@ namespace ConfiguradorUI.Producto
 
                 dgvCboVariableDetail.Columns["ID_CBO_VAR"].Visible = false;
 
-                dgvCboVariableDetail.Columns["DESC"].HeaderText = "CBO. ELEC";
+                dgvCboVariableDetail.Columns["DESC"].HeaderText = "CBO. ELECTIVO";
                 dgvCboVariableDetail.Columns["CANTIDAD"].HeaderText = "CANT";
 
-                dgvCboVariableDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvCboVariableDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvCboVariableDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvCboVariableDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P.UNIT. C/I";
@@ -648,11 +647,11 @@ namespace ConfiguradorUI.Producto
                 dgvCboVariableDetail.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvCboVariableDetail.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvCboVariableDetail.Columns["DESC"].Width = 110;
-                dgvCboVariableDetail.Columns["ACTIVO"].Width = 50;
-                dgvCboVariableDetail.Columns["CANTIDAD"].Width = 38;
-                dgvCboVariableDetail.Columns["P_UNIT_C_TAX"].Width = 67;
-                dgvCboVariableDetail.Columns["P_UNIT_S_TAX"].Width = 67;
+                dgvCboVariableDetail.Columns["DESC"].Width = 250;
+                dgvCboVariableDetail.Columns["ACTIVO"].Width = 55;
+                dgvCboVariableDetail.Columns["CANTIDAD"].Width = 70;
+                dgvCboVariableDetail.Columns["P_UNIT_C_TAX"].Width = 100;
+                dgvCboVariableDetail.Columns["P_UNIT_S_TAX"].Width = 100;
 
             }
             catch (Exception e)
@@ -679,7 +678,8 @@ namespace ConfiguradorUI.Producto
             {
                 dgvProductDetail.Columns["ID_PROD"].Visible = false;
 
-                dgvProductDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvProductDetail.Columns["CANTIDAD"].HeaderText = "CANT";
+                dgvProductDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvProductDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvProductDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
@@ -690,11 +690,11 @@ namespace ConfiguradorUI.Producto
                 dgvProductDetail.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvProductDetail.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvProductDetail.Columns["PRODUCTO"].Width = 218;
-                dgvProductDetail.Columns["CANTIDAD"].Width = 80;
-                dgvProductDetail.Columns["P_UNIT_C_TAX"].Width = 97;
-                dgvProductDetail.Columns["P_UNIT_S_TAX"].Width = 97;
-                dgvProductDetail.Columns["ACTIVO"].Width = 54;
+                dgvProductDetail.Columns["PRODUCTO"].Width = 350;
+                dgvProductDetail.Columns["CANTIDAD"].Width = 70;
+                dgvProductDetail.Columns["P_UNIT_C_TAX"].Width = 100;
+                dgvProductDetail.Columns["P_UNIT_S_TAX"].Width = 100;
+                dgvProductDetail.Columns["ACTIVO"].Width = 55;
 
             }
             catch (Exception e)
@@ -708,25 +708,20 @@ namespace ConfiguradorUI.Producto
             dgvProductOfCboVarDetail.DataSource = detailHeader.Select(x => new
             {
                 CANTIDAD = "",
-                DESC = "",
-                ACTIVO = ""
+                DESC = ""
             }).ToList();
         }
         private void DefinirCabeceraProductOfCboVarDetail()
         {
             try
             {
-                dgvProductOfCboVarDetail.Columns["DESC"].HeaderText = "PROD";
+                dgvProductOfCboVarDetail.Columns["DESC"].HeaderText = "PRODUCTO";
                 dgvProductOfCboVarDetail.Columns["CANTIDAD"].HeaderText = "CANT";
-                dgvProductOfCboVarDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvProductOfCboVarDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvProductOfCboVarDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvProductOfCboVarDetail.Columns["ACTIVO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvProductOfCboVarDetail.Columns["ACTIVO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-                dgvProductOfCboVarDetail.Columns["DESC"].Width = 100;
-                dgvProductOfCboVarDetail.Columns["CANTIDAD"].Width = 37;
-                dgvProductOfCboVarDetail.Columns["ACTIVO"].Width = 44;
+                dgvProductOfCboVarDetail.Columns["DESC"].Width = 350;
+                dgvProductOfCboVarDetail.Columns["CANTIDAD"].Width = 70;
 
             }
             catch (Exception e)
@@ -987,7 +982,7 @@ namespace ConfiguradorUI.Producto
                 isChangedRow = true;
                 LimpiarForm();
 
-                chkActivo.Checked = (obj.id_estado == Estado.IdActivo) ? true : false;
+                chkActivo.Checked = (obj.id_estado == Estado.IdActivo);
 
                 lblIdCombo.Text = obj.id_combo.ToString();
                 codSelected = obj.cod_combo;
@@ -1718,7 +1713,7 @@ namespace ConfiguradorUI.Producto
             SetCabeceraGridProductOfCboVarDetail();
             DefinirCabeceraProductOfCboVarDetail();
             ControlHelper.DgvReadOnly(dgvProductOfCboVarDetail);
-            ControlHelper.DgvLightStyle(dgvProductOfCboVarDetail, 8F, 8F);
+            ControlHelper.DgvLightStyle(dgvProductOfCboVarDetail);
 
             SetCabeceraGridDetailProduct();
             DefinirCabeceraGridDetailProduct();
@@ -1728,7 +1723,7 @@ namespace ConfiguradorUI.Producto
             SetCabeceraGridDetailCboVariable();
             DefinirCabeceraGridDetailCboVariable();
             ControlHelper.DgvReadOnly(dgvCboVariableDetail);
-            ControlHelper.DgvLightStyle(dgvCboVariableDetail, 8F, 8F);
+            ControlHelper.DgvLightStyle(dgvCboVariableDetail);
 
             chkIncluyeImpto.Enabled = true;
             chkPrecioAcumulado.Checked = false;

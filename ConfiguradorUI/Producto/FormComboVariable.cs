@@ -1,24 +1,21 @@
-﻿using MetroFramework.Forms;
-using ConfigBusinessEntity;
+﻿using ConfigBusinessEntity;
+using ConfigBusinessLogic;
+using ConfigBusinessLogic.Producto;
+using ConfigBusinessLogic.Utiles;
+using ConfiguradorUI.Buscadores;
+using ConfiguradorUI.FormUtil;
+using ConfiguradorUI.Maestro;
+using ConfiguradorUI.Producto.Auxiliares;
+using ConfigUtilitarios;
+using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.KeyValues;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ConfigUtilitarios;
-using ConfigBusinessLogic.Producto;
-using ConfigBusinessLogic.Utiles;
-using ConfiguradorUI.FormUtil;
-using ConfigUtilitarios.HelperControl;
-using ConfiguradorUI.Buscadores;
-using ConfigBusinessLogic;
-using ConfigUtilitarios.KeyValues;
-using ConfiguradorUI.Producto.Auxiliares;
-using ConfiguradorUI.Maestro;
 
 namespace ConfiguradorUI.Producto
 {
@@ -323,29 +320,28 @@ namespace ConfiguradorUI.Producto
                 if (!Validation.PositiveAmount(txtItemPriceSinImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(txtItemPriceSinImp, ValidationMsg.Amount);
+                    errorProvDtl.SetError(lblPrecioSinImp, ValidationMsg.Amount);
                     txtItemPriceSinImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemPriceConImp.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(txtItemPriceConImp, ValidationMsg.Amount);
+                    errorProvDtl.SetError(lblPrecioConImp, ValidationMsg.Amount);
                     txtItemPriceConImp.Focus();
                 }
                 if (!Validation.PositiveAmount(txtItemQuantity.Text.Trim()))
                 {
                     valid = false;
-                    errorProvDtl.SetError(txtItemQuantity, ValidationMsg.Amount);
+                    errorProvDtl.SetError(lblCantidad, ValidationMsg.Amount);
                     txtItemQuantity.Focus();
                 }
                 if (txtItemDesc.Text.Trim() == "")
                 {
                     valid = false;
-                    errorProvDtl.SetError(txtItemDesc, ValidationMsg.Required);
+                    errorProvDtl.SetError(lblProducto, ValidationMsg.Required);
                     txtItemDesc.Focus();
                 }
             }
-
             return valid;
         }
 
@@ -362,7 +358,7 @@ namespace ConfiguradorUI.Producto
                     CANTIDAD = x.cantidad.RemoveTrailingZeros(),
                     P_UNIT_C_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
                     P_UNIT_S_TAX = x.mto_pvpu_sin_tax.RemoveTrailingZeros(),
-                    ACTIVO = x.id_estado == Estado.IdActivo ? true : false
+                    ACTIVO = x.id_estado == Estado.IdActivo
                 }).OrderBy(x => x.PRODUCTO).ThenByDescending(x => x.P_UNIT_C_TAX).ToList();
 
             }
@@ -407,7 +403,8 @@ namespace ConfiguradorUI.Producto
             {
                 dgvDetail.Columns["ID_PROD"].Visible = false;
 
-                dgvDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvDetail.Columns["CANTIDAD"].HeaderText = "CANT";
+                dgvDetail.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvDetail.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvDetail.Columns["P_UNIT_C_TAX"].HeaderText = "P. UNIT. C/I";
@@ -418,11 +415,11 @@ namespace ConfiguradorUI.Producto
                 dgvDetail.Columns["P_UNIT_S_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvDetail.Columns["P_UNIT_S_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvDetail.Columns["PRODUCTO"].Width = 200;
+                dgvDetail.Columns["PRODUCTO"].Width = 350;
                 dgvDetail.Columns["CANTIDAD"].Width = 70;
-                dgvDetail.Columns["P_UNIT_C_TAX"].Width = 97;
-                dgvDetail.Columns["P_UNIT_S_TAX"].Width = 97;
-                dgvDetail.Columns["ACTIVO"].Width = 54;
+                dgvDetail.Columns["P_UNIT_C_TAX"].Width = 100;
+                dgvDetail.Columns["P_UNIT_S_TAX"].Width = 100;
+                dgvDetail.Columns["ACTIVO"].Width = 55;
 
             }
             catch (Exception e)
@@ -1328,7 +1325,6 @@ namespace ConfiguradorUI.Producto
         {
 
             #region Controls
-            btnProducto.Visible = false;
             lblIdComboVariable.Visible = false;
             txtItemDesc.ReadOnly = true;
             txtItemPriceConImp.ReadOnly = true;
@@ -1805,12 +1801,6 @@ namespace ConfiguradorUI.Producto
             RemoveItem(DeleteDtlAction.Remove);
         }
 
-        private void btnProducto_Click(object sender, EventArgs e)
-        {
-            var form = new FormProducto();
-            form.ShowDialog();
-        }
-
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             SearchAndSetItem();
@@ -1868,7 +1858,6 @@ namespace ConfiguradorUI.Producto
         #endregion
 
         #endregion
-
     }
 }
 

@@ -113,7 +113,7 @@ namespace ConfiguradorUI.Labor.Horario
 
                     ResaltarFechasEnCalendario(null);
                 }
-                SeleccionarDiaYVer(hoy,true);
+                SeleccionarDiaYVer(hoy, true);
                 btnAsignarHorario.Focus();
             }
             catch (Exception e)
@@ -263,7 +263,7 @@ namespace ConfiguradorUI.Labor.Horario
 
             void FijarMes()
             {
-                if(setFechaComoPrimerMes)
+                if (setFechaComoPrimerMes)
                 {
                     mcaMes.ViewStart = fecha;
                 }
@@ -648,10 +648,10 @@ namespace ConfiguradorUI.Labor.Horario
 
         private void mcaMes_DateChanged(object sender, DateRangeEventArgs e)
         {
-                var frm = new CheckBoxDialog();
-                frm.Show();
-                frm.Dispose();
-                frm.Close();
+            var frm = new Transparent();
+            frm.Show();
+            frm.Dispose();
+            frm.Close();
         }
     }
 }

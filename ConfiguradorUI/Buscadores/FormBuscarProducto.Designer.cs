@@ -51,7 +51,7 @@
             this.btnVerTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerTodos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTodos.ForeColor = System.Drawing.Color.White;
-            this.btnVerTodos.Location = new System.Drawing.Point(617, 24);
+            this.btnVerTodos.Location = new System.Drawing.Point(737, 24);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(87, 25);
             this.btnVerTodos.TabIndex = 10;
@@ -66,7 +66,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(617, 51);
+            this.btnSeleccionar.Location = new System.Drawing.Point(737, 51);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(87, 25);
             this.btnSeleccionar.TabIndex = 1;
@@ -80,7 +80,7 @@
             this.chkIncluirInactivos.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkIncluirInactivos.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkIncluirInactivos.ForeColor = System.Drawing.Color.Navy;
-            this.chkIncluirInactivos.Location = new System.Drawing.Point(467, 26);
+            this.chkIncluirInactivos.Location = new System.Drawing.Point(619, 28);
             this.chkIncluirInactivos.Name = "chkIncluirInactivos";
             this.chkIncluirInactivos.Size = new System.Drawing.Size(112, 19);
             this.chkIncluirInactivos.TabIndex = 8;
@@ -107,7 +107,7 @@
             // 
             // 
             this.txtDescripcionProd.CustomButton.Image = null;
-            this.txtDescripcionProd.CustomButton.Location = new System.Drawing.Point(474, 1);
+            this.txtDescripcionProd.CustomButton.Location = new System.Drawing.Point(570, 1);
             this.txtDescripcionProd.CustomButton.Name = "";
             this.txtDescripcionProd.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDescripcionProd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -125,7 +125,7 @@
             this.txtDescripcionProd.SelectionLength = 0;
             this.txtDescripcionProd.SelectionStart = 0;
             this.txtDescripcionProd.ShortcutsEnabled = true;
-            this.txtDescripcionProd.Size = new System.Drawing.Size(496, 23);
+            this.txtDescripcionProd.Size = new System.Drawing.Size(640, 23);
             this.txtDescripcionProd.TabIndex = 5;
             this.txtDescripcionProd.UseCustomBackColor = true;
             this.txtDescripcionProd.UseSelectable = true;
@@ -224,9 +224,9 @@
             // dgvProd
             // 
             this.dgvProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProd.Location = new System.Drawing.Point(35, 168);
+            this.dgvProd.Location = new System.Drawing.Point(23, 168);
             this.dgvProd.Name = "dgvProd";
-            this.dgvProd.Size = new System.Drawing.Size(710, 277);
+            this.dgvProd.Size = new System.Drawing.Size(834, 309);
             this.dgvProd.TabIndex = 0;
             this.dgvProd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProd_CellDoubleClick);
             this.dgvProd.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvProd_Paint);
@@ -245,9 +245,9 @@
             this.gbxFiltro.Controls.Add(this.metroLabel3);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxFiltro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbxFiltro.Location = new System.Drawing.Point(35, 71);
+            this.gbxFiltro.Location = new System.Drawing.Point(23, 71);
             this.gbxFiltro.Name = "gbxFiltro";
-            this.gbxFiltro.Size = new System.Drawing.Size(710, 91);
+            this.gbxFiltro.Size = new System.Drawing.Size(834, 91);
             this.gbxFiltro.TabIndex = 12;
             this.gbxFiltro.TabStop = false;
             this.gbxFiltro.Text = "Panel de filtros";
@@ -257,7 +257,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(35, 23);
+            this.lblNombreForm.Location = new System.Drawing.Point(23, 23);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(233, 32);
             this.lblNombreForm.TabIndex = 73;
@@ -267,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 478);
+            this.ClientSize = new System.Drawing.Size(880, 500);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.gbxFiltro);
             this.Controls.Add(this.dgvProd);

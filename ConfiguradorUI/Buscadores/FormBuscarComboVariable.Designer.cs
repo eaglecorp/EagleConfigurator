@@ -57,9 +57,9 @@
             this.gbxFiltro.Controls.Add(this.metroLabel3);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxFiltro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbxFiltro.Location = new System.Drawing.Point(35, 66);
+            this.gbxFiltro.Location = new System.Drawing.Point(26, 66);
             this.gbxFiltro.Name = "gbxFiltro";
-            this.gbxFiltro.Size = new System.Drawing.Size(710, 91);
+            this.gbxFiltro.Size = new System.Drawing.Size(831, 91);
             this.gbxFiltro.TabIndex = 14;
             this.gbxFiltro.TabStop = false;
             this.gbxFiltro.Text = "Panel de filtros";
@@ -71,7 +71,7 @@
             // 
             // 
             this.txtDescripcion.CustomButton.Image = null;
-            this.txtDescripcion.CustomButton.Location = new System.Drawing.Point(471, 1);
+            this.txtDescripcion.CustomButton.Location = new System.Drawing.Point(614, 1);
             this.txtDescripcion.CustomButton.Name = "";
             this.txtDescripcion.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDescripcion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -89,7 +89,7 @@
             this.txtDescripcion.SelectionLength = 0;
             this.txtDescripcion.SelectionStart = 0;
             this.txtDescripcion.ShortcutsEnabled = true;
-            this.txtDescripcion.Size = new System.Drawing.Size(493, 23);
+            this.txtDescripcion.Size = new System.Drawing.Size(636, 23);
             this.txtDescripcion.TabIndex = 5;
             this.txtDescripcion.UseCustomBackColor = true;
             this.txtDescripcion.UseSelectable = true;
@@ -104,7 +104,7 @@
             this.btnVerTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerTodos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTodos.ForeColor = System.Drawing.Color.White;
-            this.btnVerTodos.Location = new System.Drawing.Point(617, 24);
+            this.btnVerTodos.Location = new System.Drawing.Point(733, 24);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(87, 25);
             this.btnVerTodos.TabIndex = 10;
@@ -119,7 +119,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(617, 51);
+            this.btnSeleccionar.Location = new System.Drawing.Point(733, 51);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(87, 25);
             this.btnSeleccionar.TabIndex = 1;
@@ -176,7 +176,7 @@
             this.chkIncluirInactivos.AutoSize = true;
             this.chkIncluirInactivos.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkIncluirInactivos.ForeColor = System.Drawing.Color.Navy;
-            this.chkIncluirInactivos.Location = new System.Drawing.Point(464, 26);
+            this.chkIncluirInactivos.Location = new System.Drawing.Point(607, 28);
             this.chkIncluirInactivos.Name = "chkIncluirInactivos";
             this.chkIncluirInactivos.Size = new System.Drawing.Size(120, 19);
             this.chkIncluirInactivos.TabIndex = 8;
@@ -202,44 +202,44 @@
             this.dgvComboVariable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComboVariable.Location = new System.Drawing.Point(3, 3);
             this.dgvComboVariable.Name = "dgvComboVariable";
-            this.dgvComboVariable.Size = new System.Drawing.Size(417, 286);
+            this.dgvComboVariable.Size = new System.Drawing.Size(536, 308);
             this.dgvComboVariable.TabIndex = 0;
             this.dgvComboVariable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComboVariable_CellDoubleClick);
             this.dgvComboVariable.SelectionChanged += new System.EventHandler(this.dgvComboVariable_SelectionChanged);
-            this.dgvComboVariable.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvComboVariable_Paint);
+            this.dgvComboVariable.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             this.dgvComboVariable.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvComboVariable_KeyDown);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.57747F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.42253F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.00639F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.99361F));
             this.tableLayoutPanel1.Controls.Add(this.dgvComboVariableDtl, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvComboVariable, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 163);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 163);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 292F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 292);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 314);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // dgvComboVariableDtl
             // 
             this.dgvComboVariableDtl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComboVariableDtl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvComboVariableDtl.Location = new System.Drawing.Point(426, 3);
+            this.dgvComboVariableDtl.Location = new System.Drawing.Point(545, 3);
             this.dgvComboVariableDtl.Name = "dgvComboVariableDtl";
-            this.dgvComboVariableDtl.Size = new System.Drawing.Size(281, 286);
+            this.dgvComboVariableDtl.Size = new System.Drawing.Size(286, 308);
             this.dgvComboVariableDtl.TabIndex = 14;
-            this.dgvComboVariableDtl.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvComboVariableDtl_Paint);
+            this.dgvComboVariableDtl.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(35, 22);
+            this.lblNombreForm.Location = new System.Drawing.Point(26, 22);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(295, 32);
             this.lblNombreForm.TabIndex = 72;
@@ -249,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 478);
+            this.ClientSize = new System.Drawing.Size(880, 500);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.gbxFiltro);

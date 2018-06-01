@@ -48,7 +48,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(35, 24);
+            this.lblNombreForm.Location = new System.Drawing.Point(23, 24);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(240, 32);
             this.lblNombreForm.TabIndex = 76;
@@ -66,9 +66,9 @@
             this.gbxFiltro.Controls.Add(this.metroLabel1);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxFiltro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbxFiltro.Location = new System.Drawing.Point(35, 71);
+            this.gbxFiltro.Location = new System.Drawing.Point(23, 71);
             this.gbxFiltro.Name = "gbxFiltro";
-            this.gbxFiltro.Size = new System.Drawing.Size(710, 91);
+            this.gbxFiltro.Size = new System.Drawing.Size(834, 91);
             this.gbxFiltro.TabIndex = 75;
             this.gbxFiltro.TabStop = false;
             this.gbxFiltro.Text = "Panel de filtros";
@@ -80,7 +80,7 @@
             // 
             // 
             this.txtApellidosYNombres.CustomButton.Image = null;
-            this.txtApellidosYNombres.CustomButton.Location = new System.Drawing.Point(402, 1);
+            this.txtApellidosYNombres.CustomButton.Location = new System.Drawing.Point(545, 1);
             this.txtApellidosYNombres.CustomButton.Name = "";
             this.txtApellidosYNombres.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtApellidosYNombres.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -98,7 +98,7 @@
             this.txtApellidosYNombres.SelectionLength = 0;
             this.txtApellidosYNombres.SelectionStart = 0;
             this.txtApellidosYNombres.ShortcutsEnabled = true;
-            this.txtApellidosYNombres.Size = new System.Drawing.Size(424, 23);
+            this.txtApellidosYNombres.Size = new System.Drawing.Size(567, 23);
             this.txtApellidosYNombres.TabIndex = 5;
             this.txtApellidosYNombres.UseCustomBackColor = true;
             this.txtApellidosYNombres.UseSelectable = true;
@@ -113,7 +113,7 @@
             this.btnVerTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerTodos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTodos.ForeColor = System.Drawing.Color.White;
-            this.btnVerTodos.Location = new System.Drawing.Point(617, 24);
+            this.btnVerTodos.Location = new System.Drawing.Point(737, 24);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(87, 25);
             this.btnVerTodos.TabIndex = 10;
@@ -128,7 +128,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(617, 51);
+            this.btnSeleccionar.Location = new System.Drawing.Point(737, 51);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(87, 25);
             this.btnSeleccionar.TabIndex = 1;
@@ -196,7 +196,7 @@
             this.txtCodigo.CustomButton.UseSelectable = true;
             this.txtCodigo.CustomButton.Visible = false;
             this.txtCodigo.Lines = new string[0];
-            this.txtCodigo.Location = new System.Drawing.Point(451, 24);
+            this.txtCodigo.Location = new System.Drawing.Point(387, 24);
             this.txtCodigo.MaxLength = 32767;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -219,9 +219,9 @@
             this.metroLabel2.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel2.Location = new System.Drawing.Point(325, 26);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(120, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(56, 19);
             this.metroLabel2.TabIndex = 6;
-            this.metroLabel2.Text = "Código empleado:";
+            this.metroLabel2.Text = "Código:";
             this.metroLabel2.UseCustomForeColor = true;
             // 
             // metroLabel1
@@ -230,17 +230,17 @@
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel1.Location = new System.Drawing.Point(7, 26);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(151, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(103, 19);
             this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Número de documento:";
+            this.metroLabel1.Text = "Nro. doc / RUC:";
             this.metroLabel1.UseCustomForeColor = true;
             // 
             // dgvEmpleado
             // 
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleado.Location = new System.Drawing.Point(35, 168);
+            this.dgvEmpleado.Location = new System.Drawing.Point(23, 168);
             this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.Size = new System.Drawing.Size(710, 277);
+            this.dgvEmpleado.Size = new System.Drawing.Size(834, 309);
             this.dgvEmpleado.TabIndex = 74;
             this.dgvEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
             this.dgvEmpleado.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvEmpleado_Paint);
@@ -250,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 475);
+            this.ClientSize = new System.Drawing.Size(880, 500);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.gbxFiltro);
             this.Controls.Add(this.dgvEmpleado);

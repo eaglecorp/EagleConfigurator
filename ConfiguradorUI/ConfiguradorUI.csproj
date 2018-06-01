@@ -122,6 +122,12 @@
     <Compile Include="FormUtil\CustomDialog.Designer.cs">
       <DependentUpon>CustomDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUtil\Transparent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUtil\Transparent.Designer.cs">
+      <DependentUpon>Transparent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Labor\Horario\FormAsignarOEditarHorario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtil\CustomDialog.resx">
       <DependentUpon>CustomDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUtil\Transparent.resx">
+      <DependentUpon>Transparent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Labor\Horario\FormAsignarOEditarHorario.resx">
       <DependentUpon>FormAsignarOEditarHorario.cs</DependentUpon>

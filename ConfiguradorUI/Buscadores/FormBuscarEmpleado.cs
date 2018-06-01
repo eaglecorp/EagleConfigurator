@@ -56,9 +56,10 @@ namespace ConfiguradorUI.Buscadores
                 dgvEmpleado.DataSource = list.Select(x => new
                 {
                     ID = x.id_empleado,
-                    NUM_DOC = x.nro_doc + (string.IsNullOrEmpty(x.nro_ruc) ? "" : " - " + x.nro_ruc),
                     COD = x.cod_empleado,
-                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, x.txt_ape_mat, x.txt_seg_nom, x.txt_rzn_social),
+                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, x.txt_ape_mat, x.txt_seg_nom, x.txt_rzn_social).ToUpper(),
+                    NUM_DOC = x.nro_doc,
+                    RUC = x.nro_ruc
                 }).ToList();
             }
             else
@@ -67,9 +68,10 @@ namespace ConfiguradorUI.Buscadores
                 dgvEmpleado.DataSource = empHeader.Select(x => new
                 {
                     ID = "",
-                    NUM_DOC = "",
                     COD = "",
-                    NOMBRE = ""
+                    NOMBRE = "",
+                    NUM_DOC = "",
+                    RUC = "",
                 }).ToList();
             }
             DefinirCabeceraGrid();
@@ -105,18 +107,23 @@ namespace ConfiguradorUI.Buscadores
             {
                 dgvEmpleado.Columns["ID"].Visible = false;
 
-                dgvEmpleado.Columns["NUM_DOC"].HeaderText = "NRO. DOC - RUC";
+                dgvEmpleado.Columns["NUM_DOC"].HeaderText = "NRO. DOC";
                 dgvEmpleado.Columns["NUM_DOC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvEmpleado.Columns["NUM_DOC"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgvEmpleado.Columns["RUC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvEmpleado.Columns["RUC"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvEmpleado.Columns["COD"].HeaderText = "CÓDIGO";
                 dgvEmpleado.Columns["COD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvEmpleado.Columns["COD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
+                dgvEmpleado.Columns["NUM_DOC"].Width = 100;
+                dgvEmpleado.Columns["RUC"].Width = 100;
+                dgvEmpleado.Columns["COD"].Width = 100;
                 dgvEmpleado.Columns["NOMBRE"].HeaderText = "APELLIDOS Y NOMBRES | RAZÓN SOCIAL";
-                dgvEmpleado.Columns["NUM_DOC"].Width = 170;
-                dgvEmpleado.Columns["NOMBRE"].Width = 400;
+                dgvEmpleado.Columns["NOMBRE"].Width = 535;
             }
             catch (Exception e)
             {
@@ -144,9 +151,10 @@ namespace ConfiguradorUI.Buscadores
             dgvEmpleado.DataSource = empHeader.Select(x => new
             {
                 ID = "",
-                NUM_DOC = "",
                 COD = "",
-                NOMBRE = ""
+                NOMBRE = "",
+                NUM_DOC = "",
+                RUC=""
             }).ToList();
             DefinirCabeceraGrid();
             ControlHelper.DgvReadOnly(dgvEmpleado);

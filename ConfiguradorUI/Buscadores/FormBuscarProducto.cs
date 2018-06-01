@@ -52,10 +52,10 @@ namespace ConfiguradorUI.Buscadores
                     ID = x.id_producto,
                     CODIGO = x.cod_producto,
                     CODIGO02 = x.cod_producto2,
-                    DESCRIPCION = x.txt_desc,
-                    ESTADO = x.txt_estado,
-                    PVPU_CON_IGV = x.mto_pvpu_con_igv,
+                    DESCRIPCION = x.txt_desc?.ToUpper(),
+                    PVPU_CON_IGV = x.mto_pvpu_con_igv.RemoveTrailingZeros(),
                     PVPU_SIN_IGV = x.mto_pvpu_sin_igv,
+                    ESTADO = x.txt_estado?.ToUpper(),
                     POR_IMPTO = x.por_impto,
                     PESO = x.peso_prod,
                     UM = x.id_um
@@ -71,9 +71,9 @@ namespace ConfiguradorUI.Buscadores
                     CODIGO = "",
                     CODIGO02 = "",
                     DESCRIPCION = "",
-                    ESTADO = "",
                     PVPU_CON_IGV = "",
                     PVPU_SIN_IGV = "",
+                    ESTADO = "",
                     POR_IMPTO = "",
                     PESO = "",
                     UM = ""
@@ -112,7 +112,7 @@ namespace ConfiguradorUI.Buscadores
             try
             {
                 dgvProd.Columns["ID"].Visible = false;
-                dgvProd.Columns["PVPU_CON_IGV"].Visible = false;
+                //dgvProd.Columns["PVPU_CON_IGV"].Visible = false;
                 dgvProd.Columns["PVPU_SIN_IGV"].Visible = false;
                 dgvProd.Columns["POR_IMPTO"].Visible = false;
                 dgvProd.Columns["PESO"].Visible = false;
@@ -128,10 +128,18 @@ namespace ConfiguradorUI.Buscadores
 
                 dgvProd.Columns["DESCRIPCION"].HeaderText = "DESCRIPCIÓN";
 
+                dgvProd.Columns["PVPU_CON_IGV"].HeaderText = "PREC. UNIT";
+                dgvProd.Columns["PVPU_CON_IGV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvProd.Columns["PVPU_CON_IGV"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
                 dgvProd.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvProd.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvProd.Columns["DESCRIPCION"].Width = 387;
+                dgvProd.Columns["DESCRIPCION"].Width = 435;
+                dgvProd.Columns["CODIGO"].Width = 100;
+                dgvProd.Columns["CODIGO02"].Width = 100;
+                dgvProd.Columns["PVPU_CON_IGV"].Width = 100;
+                dgvProd.Columns["ESTADO"].Width = 90;
             }
             catch (Exception e)
             {
@@ -168,9 +176,9 @@ namespace ConfiguradorUI.Buscadores
                 CODIGO = "",
                 CODIGO02 = "",
                 DESCRIPCION = "",
-                ESTADO = "",
                 PVPU_CON_IGV = "",
                 PVPU_SIN_IGV = "",
+                ESTADO = "",
                 POR_IMPTO = "",
                 PESO = "",
                 UM = ""

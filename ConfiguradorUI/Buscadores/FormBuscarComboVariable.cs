@@ -80,17 +80,15 @@ namespace ConfiguradorUI.Buscadores
         {
             try
             {
+                dgvComboVariableDtl.Columns["ESTADO"].Visible = false;
+
                 dgvComboVariableDtl.Columns["DESC"].HeaderText = "PRODUCTO";
-                dgvComboVariableDtl.Columns["CANTIDAD"].HeaderText = "CANT";
-                dgvComboVariableDtl.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvComboVariableDtl.Columns["CANTIDAD"].HeaderText = "CANT.";
+                dgvComboVariableDtl.Columns["CANTIDAD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvComboVariableDtl.Columns["CANTIDAD"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvComboVariableDtl.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvComboVariableDtl.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-                dgvComboVariableDtl.Columns["DESC"].Width = 155;
-                dgvComboVariableDtl.Columns["CANTIDAD"].Width = 45;
-                dgvComboVariableDtl.Columns["ESTADO"].Width = 65;
+                dgvComboVariableDtl.Columns["DESC"].Width = 400;
+                dgvComboVariableDtl.Columns["CANTIDAD"].Width = 70;
 
             }
             catch (Exception e)
@@ -103,11 +101,12 @@ namespace ConfiguradorUI.Buscadores
         {
             if (list != null)
             {
+                list = list.Where(x => x.id_estado == Estado.IdActivo);
                 dgvComboVariableDtl.DataSource = list.Select(x => new
                 {
                     CANTIDAD = x.cantidad.RemoveTrailingZeros(),
-                    DESC = x.txt_desc_item,
-                    ESTADO = x.id_estado == Estado.IdActivo ? Estado.TxtActivo : Estado.TxtInactivo
+                    DESC = x.txt_desc_item?.ToUpper(),
+                    ESTADO = Estado.TxtActivo
                 }).ToList();
 
             }
@@ -143,10 +142,10 @@ namespace ConfiguradorUI.Buscadores
                 {
                     ID = x.id_combo_variable,
                     CODIGO = x.cod_combo_variable,
-                    DESCRIPCION = x.txt_desc,
-                    PVPU_CON_IGV = x.mto_pvpu_con_tax,
+                    DESCRIPCION = x.txt_desc?.ToUpper(),
+                    PVPU_CON_IGV = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
                     PVPU_SIN_IGV = x.mto_pvpu_sin_tax,
-                    ESTADO = x.txt_estado
+                    ESTADO = x.txt_estado?.ToUpper()
                 }).ToList();
             }
             else
@@ -200,19 +199,24 @@ namespace ConfiguradorUI.Buscadores
             {
                 dgvComboVariable.Columns["ID"].Visible = false;
                 dgvComboVariable.Columns["PVPU_SIN_IGV"].Visible = false;
-                dgvComboVariable.Columns["PVPU_CON_IGV"].Visible = false;
 
                 dgvComboVariable.Columns["CODIGO"].HeaderText = "CÓDIGO";
                 dgvComboVariable.Columns["CODIGO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvComboVariable.Columns["CODIGO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgvComboVariable.Columns["PVPU_CON_IGV"].HeaderText = "PREC. UNIT";
+                dgvComboVariable.Columns["PVPU_CON_IGV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvComboVariable.Columns["PVPU_CON_IGV"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvComboVariable.Columns["DESCRIPCION"].HeaderText = "COMBO ELECTIVO";
 
                 dgvComboVariable.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvComboVariable.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvComboVariable.Columns["DESCRIPCION"].Width = 232;
-                dgvComboVariable.Columns["ESTADO"].Width = 65;
+                dgvComboVariable.Columns["CODIGO"].Width = 100;
+                dgvComboVariable.Columns["DESCRIPCION"].Width = 260;
+                dgvComboVariable.Columns["PVPU_CON_IGV"].Width = 100;
+                dgvComboVariable.Columns["ESTADO"].Width = 90;
             }
             catch (Exception e)
             {
@@ -291,7 +295,7 @@ namespace ConfiguradorUI.Buscadores
             }
             return null;
         }
-        
+
         private void SeleccionarComboVariable()
         {
             if (dgvComboVariable.CurrentRow != null)
@@ -315,7 +319,7 @@ namespace ConfiguradorUI.Buscadores
                                 if (new ComboVariableBL().ActivarComboVariable(id))
                                 {
                                     cboVariable = GetComboVariable();
-                                    if(cboVariable!=null)
+                                    if (cboVariable != null)
                                     {
                                         cboVariable.id_estado = Estado.IdActivo;
                                         cboVariable.txt_estado = Estado.TxtActivo;
@@ -400,7 +404,7 @@ namespace ConfiguradorUI.Buscadores
             ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
         }
 
-        private void dgvComboVariableDtl_Paint(object sender, PaintEventArgs e)
+        private void dgvBordered_Paint(object sender, PaintEventArgs e)
         {
             ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
         }
