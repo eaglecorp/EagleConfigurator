@@ -51,11 +51,10 @@ namespace ConfiguradorUI.Maestro
                 txt.TextChanged += new EventHandler(OnContentChanged);
             }
 
-            var cbos = new[] { cboHoraEntradaHH, cboHoraEntradaMM, cboHoraEntradaTT,
-                                cboHoraSalidaHH, cboHoraSalidaMM, cboHoraSalidaTT};
-            foreach (var cbo in cbos)
+            var dtps = new[] { dtpHoraEntrada, dtpHoraSalida };
+            foreach (var dtp in dtps)
             {
-                cbo.SelectedIndexChanged += new EventHandler(OnContentChanged);
+                dtp.ValueChanged += new EventHandler(OnContentChanged);
             }
 
             var chks = new[] { chkActivo };
@@ -216,35 +215,11 @@ namespace ConfiguradorUI.Maestro
             return isValid;
         }
 
-        private bool ValidTimeFromCbos(ComboBox cboHH, ComboBox cboMM, ComboBox cboTT)
+        private TimeSpan GetHoraYMinutos(TimeSpan hora)
         {
-            var hh = cboHH.SelectedValue?.ToString();
-            var mm = cboMM.SelectedValue?.ToString();
-            var tt = cboTT.SelectedValue?.ToString();
-            var time = $"{hh}:{mm} {tt}";
-            return DateTime.TryParseExact(time, "hh:mm tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dt);
+            return new TimeSpan(hora.Hours, hora.Minutes, 0);
         }
-        private TimeSpan GetTimeFromCbos(ComboBox cboHH, ComboBox cboMM, ComboBox cboTT)
-        {
-            var hh = cboHH.SelectedValue?.ToString();
-            var mm = cboMM.SelectedValue?.ToString();
-            var tt = cboTT.SelectedValue?.ToString();
-            var full = $"{hh}:{mm} {tt}";
-            return DateTime.ParseExact(full, "hh:mm tt", CultureInfo.InvariantCulture).TimeOfDay;
-        }
-        private void SetTimeToCbos(TimeSpan time, ComboBox cboHH, ComboBox cboMM, ComboBox cboTT)
-        {
-            var dateTime = new DateTime(time.Ticks); // Date es 01-01-0001
-            var dt = dateTime.ToString("hh:mm tt", CultureInfo.InvariantCulture);
 
-            var hh = dt.Substring(0, 2);
-            var mm = dt.Substring(3, 2);
-            var tt = dt.Substring(6, 2);
-
-            cboHH.SelectedValue = hh;
-            cboMM.SelectedValue = mm;
-            cboTT.SelectedValue = tt;
-        }
 
         private MSTt13_turno GetObjeto()
         {
@@ -254,8 +229,8 @@ namespace ConfiguradorUI.Maestro
                 obj.txt_desc = txtNombre.Text.Trim();
                 obj.txt_abrv = txtAbreviacion.Text.Trim();
                 obj.cod_turno = txtCodigo.Text.Trim();
-                obj.hora_inicio = GetTimeFromCbos(cboHoraEntradaHH, cboHoraEntradaMM, cboHoraEntradaTT);
-                obj.hora_fin = GetTimeFromCbos(cboHoraSalidaHH, cboHoraSalidaMM, cboHoraSalidaTT);
+                obj.hora_inicio = GetHoraYMinutos(dtpHoraEntrada.Value.TimeOfDay);
+                obj.hora_fin = GetHoraYMinutos(dtpHoraSalida.Value.TimeOfDay);
                 obj.id_estado = chkActivo.Checked ? Estado.IdActivo : Estado.IdInactivo;
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
             }
@@ -284,9 +259,8 @@ namespace ConfiguradorUI.Maestro
                 txtAbreviacion.Text = obj.txt_abrv;
                 txtCodigo.Text = obj.cod_turno;
                 //hora inicio
-                SetTimeToCbos(obj.hora_inicio, cboHoraEntradaHH, cboHoraEntradaMM, cboHoraEntradaTT);
-                SetTimeToCbos(obj.hora_fin, cboHoraSalidaHH, cboHoraSalidaMM, cboHoraSalidaTT);
-                //hora salida
+                dtpHoraEntrada.Value = Convert.ToDateTime(obj.hora_inicio.ToString());
+                dtpHoraSalida.Value = Convert.ToDateTime(obj.hora_fin.ToString());
 
             }
             catch (Exception e)
@@ -303,19 +277,14 @@ namespace ConfiguradorUI.Maestro
             //Foreach en caso se requiera validar más controles - por ver.
             errorProv.Clear();
 
-            if (!ValidTimeFromCbos(cboHoraSalidaHH, cboHoraSalidaMM, cboHoraSalidaTT))
-            {
-                tabTurno.SelectedTab = tabPagGeneral;
-                errorProv.SetError(cboHoraSalidaTT, "Formato de hora incorrecto.");
-                cboHoraSalidaHH.Focus();
-                no_error = false;
-            }
+            var hora_inicio = GetHoraYMinutos(dtpHoraEntrada.Value.TimeOfDay);
+            var hora_fin = GetHoraYMinutos(dtpHoraSalida.Value.TimeOfDay);
 
-            if (!ValidTimeFromCbos(cboHoraEntradaHH, cboHoraEntradaMM, cboHoraEntradaTT))
+            if (hora_inicio > hora_fin)
             {
                 tabTurno.SelectedTab = tabPagGeneral;
-                errorProv.SetError(cboHoraEntradaTT, "Formato de hora incorrecto.");
-                cboHoraEntradaHH.Focus();
+                errorProv.SetError(dtpHoraEntrada, "La hora de entrada no puede ser mayor que la hora de salida.");
+                dtpHoraEntrada.Focus();
                 no_error = false;
             }
 
@@ -476,44 +445,6 @@ namespace ConfiguradorUI.Maestro
             return id;
         }
 
-        private void CargarComboHHMMTT()
-        {
-
-            try
-            {
-
-                var hhs = new ComboItem().GetHHs().ToList();
-                var mms = new ComboItem().GetMMs();
-                var tts = new ComboItem().GetTTs();
-
-                //entrada
-                cboHoraEntradaHH.DisplayMember = "Value";
-                cboHoraEntradaHH.ValueMember = "Key";
-                cboHoraEntradaHH.DataSource = hhs;
-                cboHoraEntradaMM.DisplayMember = "Value";
-                cboHoraEntradaMM.ValueMember = "Key";
-                cboHoraEntradaMM.DataSource = mms;
-                cboHoraEntradaTT.DisplayMember = "Value";
-                cboHoraEntradaTT.ValueMember = "Key";
-                cboHoraEntradaTT.DataSource = tts;
-
-                //salida
-                //se asigna una lista apartir de la otra para disolver el binding
-                cboHoraSalidaHH.DisplayMember = "Value";
-                cboHoraSalidaHH.ValueMember = "Key";
-                cboHoraSalidaHH.DataSource = hhs.ToList();
-                cboHoraSalidaMM.DisplayMember = "Value";
-                cboHoraSalidaMM.ValueMember = "Key";
-                cboHoraSalidaMM.DataSource = mms.ToList();
-                cboHoraSalidaTT.DisplayMember = "Value";
-                cboHoraSalidaTT.ValueMember = "Key";
-                cboHoraSalidaTT.DataSource = tts.ToList();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(this, "Ocurrió una excepción al cargar el combo de las horas-minutos-tiempo: " + e.Message, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
         private void CargarComboFiltro()
         {
             try
@@ -545,15 +476,11 @@ namespace ConfiguradorUI.Maestro
             else
                 chkActivo.Enabled = true;
 
+            dtpHoraEntrada.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
+            dtpHoraSalida.Value = Convert.ToDateTime(new TimeSpan(0, 0, 0).ToString());
+
             chkActivo.Checked = true;
 
-            if (cboHoraEntradaHH.Items.Count > 0) cboHoraEntradaHH.SelectedIndex = 0;
-            if (cboHoraEntradaMM.Items.Count > 0) cboHoraEntradaMM.SelectedIndex = 0;
-            if (cboHoraEntradaTT.Items.Count > 0) cboHoraEntradaTT.SelectedIndex = 0;
-
-            if (cboHoraSalidaHH.Items.Count > 0) cboHoraSalidaHH.SelectedIndex = 0;
-            if (cboHoraSalidaMM.Items.Count > 0) cboHoraSalidaMM.SelectedIndex = 0;
-            if (cboHoraSalidaTT.Items.Count > 0) cboHoraSalidaTT.SelectedIndex = 0;
         }
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
         {
@@ -722,6 +649,12 @@ namespace ConfiguradorUI.Maestro
                 MessageBox.Show(this, $"Excepción el contar los estados: {e.Message}");
             }
         }
+        private void ConfigurarDtp()
+        {
+            ControlHelper.FormatDatePicker(dtpHoraEntrada, customFormat: DateFormat.TimeDefault);
+            ControlHelper.FormatDatePicker(dtpHoraSalida, customFormat: DateFormat.TimeDefault);
+        }
+
         private void CerrarForm()
         {
             Dispose();
@@ -729,25 +662,29 @@ namespace ConfiguradorUI.Maestro
             Close();
         }
 
-
+        private void SetInit()
+        {
+            lblIdTurno.Visible = false;
+            SetMaxLengthTxt();
+            ControlarEventosABM();
+            LimpiarForm();
+            CargarGrilla(Estado.IdActivo);
+            CargarComboFiltro();
+            panelFiltro.Visible = false;
+            AddHandlers();
+            tglListarInactivos.AutoCheck = false;
+            ConfigurarDtp();
+            ConfigurarGrilla();
+        }
         #endregion
 
         #region Eventos de ventana
 
         private void FormTurno_Load(object sender, EventArgs e)
         {
-            lblIdTurno.Visible = false;
-            SetMaxLengthTxt();
-            ControlarEventosABM();
-            LimpiarForm();
-            CargarComboHHMMTT();
-            CargarGrilla(Estado.IdActivo);
-            CargarComboFiltro();
-            panelFiltro.Visible = false;
-            AddHandlers();
-            tglListarInactivos.AutoCheck = false;
-            ConfigurarGrilla();
+            SetInit();
         }
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {

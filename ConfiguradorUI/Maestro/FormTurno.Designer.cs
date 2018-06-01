@@ -52,12 +52,6 @@ namespace ConfiguradorUI.Maestro
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabTurno = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
-            this.cboHoraSalidaTT = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboHoraSalidaMM = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboHoraSalidaHH = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboHoraEntradaTT = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboHoraEntradaMM = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboHoraEntradaHH = new ConfigUtilitarios.Controls.BorderedCombo();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -72,6 +66,8 @@ namespace ConfiguradorUI.Maestro
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dtpHoraEntrada = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraSalida = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurno)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -311,7 +307,6 @@ namespace ConfiguradorUI.Maestro
             // 
             this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCommit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -370,12 +365,8 @@ namespace ConfiguradorUI.Maestro
             // 
             // tabPagGeneral
             // 
-            this.tabPagGeneral.Controls.Add(this.cboHoraSalidaTT);
-            this.tabPagGeneral.Controls.Add(this.cboHoraSalidaMM);
-            this.tabPagGeneral.Controls.Add(this.cboHoraSalidaHH);
-            this.tabPagGeneral.Controls.Add(this.cboHoraEntradaTT);
-            this.tabPagGeneral.Controls.Add(this.cboHoraEntradaMM);
-            this.tabPagGeneral.Controls.Add(this.cboHoraEntradaHH);
+            this.tabPagGeneral.Controls.Add(this.dtpHoraSalida);
+            this.tabPagGeneral.Controls.Add(this.dtpHoraEntrada);
             this.tabPagGeneral.Controls.Add(this.metroLabel2);
             this.tabPagGeneral.Controls.Add(this.metroLabel1);
             this.tabPagGeneral.Controls.Add(this.panel1);
@@ -398,84 +389,6 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.VerticalScrollbarBarColor = true;
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
-            // 
-            // cboHoraSalidaTT
-            // 
-            this.cboHoraSalidaTT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboHoraSalidaTT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHoraSalidaTT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboHoraSalidaTT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHoraSalidaTT.FormattingEnabled = true;
-            this.cboHoraSalidaTT.Location = new System.Drawing.Point(432, 128);
-            this.cboHoraSalidaTT.Name = "cboHoraSalidaTT";
-            this.cboHoraSalidaTT.Size = new System.Drawing.Size(55, 29);
-            this.cboHoraSalidaTT.TabIndex = 8;
-            this.cboHoraSalidaTT.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboHoraSalidaMM
-            // 
-            this.cboHoraSalidaMM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboHoraSalidaMM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHoraSalidaMM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboHoraSalidaMM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHoraSalidaMM.FormattingEnabled = true;
-            this.cboHoraSalidaMM.Location = new System.Drawing.Point(380, 128);
-            this.cboHoraSalidaMM.Name = "cboHoraSalidaMM";
-            this.cboHoraSalidaMM.Size = new System.Drawing.Size(50, 29);
-            this.cboHoraSalidaMM.TabIndex = 7;
-            this.cboHoraSalidaMM.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboHoraSalidaHH
-            // 
-            this.cboHoraSalidaHH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboHoraSalidaHH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHoraSalidaHH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboHoraSalidaHH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHoraSalidaHH.FormattingEnabled = true;
-            this.cboHoraSalidaHH.Location = new System.Drawing.Point(328, 128);
-            this.cboHoraSalidaHH.Name = "cboHoraSalidaHH";
-            this.cboHoraSalidaHH.Size = new System.Drawing.Size(50, 29);
-            this.cboHoraSalidaHH.TabIndex = 6;
-            this.cboHoraSalidaHH.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboHoraEntradaTT
-            // 
-            this.cboHoraEntradaTT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboHoraEntradaTT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHoraEntradaTT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboHoraEntradaTT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHoraEntradaTT.FormattingEnabled = true;
-            this.cboHoraEntradaTT.Location = new System.Drawing.Point(179, 128);
-            this.cboHoraEntradaTT.Name = "cboHoraEntradaTT";
-            this.cboHoraEntradaTT.Size = new System.Drawing.Size(55, 29);
-            this.cboHoraEntradaTT.TabIndex = 5;
-            this.cboHoraEntradaTT.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboHoraEntradaMM
-            // 
-            this.cboHoraEntradaMM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboHoraEntradaMM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHoraEntradaMM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboHoraEntradaMM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHoraEntradaMM.FormattingEnabled = true;
-            this.cboHoraEntradaMM.Location = new System.Drawing.Point(126, 128);
-            this.cboHoraEntradaMM.Name = "cboHoraEntradaMM";
-            this.cboHoraEntradaMM.Size = new System.Drawing.Size(50, 29);
-            this.cboHoraEntradaMM.TabIndex = 4;
-            this.cboHoraEntradaMM.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboHoraEntradaHH
-            // 
-            this.cboHoraEntradaHH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboHoraEntradaHH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHoraEntradaHH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboHoraEntradaHH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHoraEntradaHH.FormattingEnabled = true;
-            this.cboHoraEntradaHH.Location = new System.Drawing.Point(74, 128);
-            this.cboHoraEntradaHH.Name = "cboHoraEntradaHH";
-            this.cboHoraEntradaHH.Size = new System.Drawing.Size(50, 29);
-            this.cboHoraEntradaHH.TabIndex = 3;
-            this.cboHoraEntradaHH.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // metroLabel2
             // 
@@ -693,6 +606,28 @@ namespace ConfiguradorUI.Maestro
             // 
             this.errorProv.ContainerControl = this;
             // 
+            // dtpHoraEntrada
+            // 
+            this.dtpHoraEntrada.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraEntrada.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraEntrada.Location = new System.Drawing.Point(87, 126);
+            this.dtpHoraEntrada.Name = "dtpHoraEntrada";
+            this.dtpHoraEntrada.Size = new System.Drawing.Size(105, 33);
+            this.dtpHoraEntrada.TabIndex = 90;
+            this.dtpHoraEntrada.ValueChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // dtpHoraSalida
+            // 
+            this.dtpHoraSalida.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraSalida.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraSalida.Location = new System.Drawing.Point(344, 126);
+            this.dtpHoraSalida.Name = "dtpHoraSalida";
+            this.dtpHoraSalida.Size = new System.Drawing.Size(105, 33);
+            this.dtpHoraSalida.TabIndex = 91;
+            this.dtpHoraSalida.ValueChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // FormTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -763,11 +698,7 @@ namespace ConfiguradorUI.Maestro
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.Panel panel1;
-        private BorderedCombo cboHoraSalidaTT;
-        private BorderedCombo cboHoraSalidaMM;
-        private BorderedCombo cboHoraSalidaHH;
-        private BorderedCombo cboHoraEntradaTT;
-        private BorderedCombo cboHoraEntradaMM;
-        private BorderedCombo cboHoraEntradaHH;
+        private System.Windows.Forms.DateTimePicker dtpHoraSalida;
+        private System.Windows.Forms.DateTimePicker dtpHoraEntrada;
     }
 }
