@@ -530,6 +530,7 @@ namespace ConfiguradorUI.Producto
             this.dgvSubfamilia.Size = new System.Drawing.Size(222, 182);
             this.dgvSubfamilia.TabIndex = 0;
             this.dgvSubfamilia.SelectionChanged += new System.EventHandler(this.dgvSubfamilia_SelectionChanged);
+            this.dgvSubfamilia.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNumInactivo
             // 

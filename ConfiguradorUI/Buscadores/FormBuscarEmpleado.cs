@@ -99,6 +99,7 @@ namespace ConfiguradorUI.Buscadores
             AddHandlers();
             ConfigurarControles();
             BuscarEmpleado();
+            txtApellidosYNombres.Focus();
         }
 
         private void DefinirCabeceraGrid()
@@ -250,7 +251,7 @@ namespace ConfiguradorUI.Buscadores
 
         private void dgvEmpleado_Paint(object sender, PaintEventArgs e)
         {
-            ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
+            ControlHelper.DgvSetColorBorder(sender, e);
         }
 
         #endregion

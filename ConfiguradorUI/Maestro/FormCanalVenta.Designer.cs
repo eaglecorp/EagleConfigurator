@@ -91,6 +91,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvCanalVenta.Size = new System.Drawing.Size(227, 171);
             this.dgvCanalVenta.TabIndex = 0;
             this.dgvCanalVenta.SelectionChanged += new System.EventHandler(this.dgvCanalVenta_SelectionChanged);
+            this.dgvCanalVenta.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

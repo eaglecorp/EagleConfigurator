@@ -155,7 +155,7 @@ namespace ConfiguradorUI.Producto
             this.tabProducto.Controls.Add(this.tabPagPrecio);
             this.tabProducto.Location = new System.Drawing.Point(428, 91);
             this.tabProducto.Name = "tabProducto";
-            this.tabProducto.SelectedIndex = 0;
+            this.tabProducto.SelectedIndex = 1;
             this.tabProducto.Size = new System.Drawing.Size(564, 527);
             this.tabProducto.TabIndex = 1;
             this.tabProducto.UseSelectable = true;
@@ -1551,7 +1551,7 @@ namespace ConfiguradorUI.Producto
             this.cboImpuesto.FormattingEnabled = true;
             this.cboImpuesto.Location = new System.Drawing.Point(348, 12);
             this.cboImpuesto.Name = "cboImpuesto";
-            this.cboImpuesto.Size = new System.Drawing.Size(166, 23);
+            this.cboImpuesto.Size = new System.Drawing.Size(163, 23);
             this.cboImpuesto.TabIndex = 3;
             this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
             // 
@@ -1869,6 +1869,7 @@ namespace ConfiguradorUI.Producto
             this.dgvProducto.Size = new System.Drawing.Size(349, 515);
             this.dgvProducto.TabIndex = 0;
             this.dgvProducto.SelectionChanged += new System.EventHandler(this.dgvProducto_SelectionChanged);
+            this.dgvProducto.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNumInactivo
             // 

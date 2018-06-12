@@ -144,6 +144,7 @@ namespace ConfiguradorUI.Reporte
             this.dgvReporte.Size = new System.Drawing.Size(222, 314);
             this.dgvReporte.TabIndex = 117;
             this.dgvReporte.SelectionChanged += new System.EventHandler(this.dgvReporte_SelectionChanged);
+            this.dgvReporte.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblIdReporte
             // 
@@ -643,7 +644,7 @@ namespace ConfiguradorUI.Reporte
             this.cboCategoriaReporte.FormattingEnabled = true;
             this.cboCategoriaReporte.Location = new System.Drawing.Point(80, 71);
             this.cboCategoriaReporte.Name = "cboCategoriaReporte";
-            this.cboCategoriaReporte.Size = new System.Drawing.Size(157, 23);
+            this.cboCategoriaReporte.Size = new System.Drawing.Size(154, 23);
             this.cboCategoriaReporte.TabIndex = 2;
             this.cboCategoriaReporte.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 

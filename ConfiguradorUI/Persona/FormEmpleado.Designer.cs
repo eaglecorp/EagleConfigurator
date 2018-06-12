@@ -277,7 +277,7 @@ namespace ConfiguradorUI.Persona
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(293, 561);
+            this.panelFiltro.Location = new System.Drawing.Point(407, 561);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(564, 44);
             this.panelFiltro.TabIndex = 3;
@@ -369,7 +369,7 @@ namespace ConfiguradorUI.Persona
             this.tabEmpleado.Controls.Add(this.tabPagEducacion);
             this.tabEmpleado.Controls.Add(this.tabPagContacto);
             this.tabEmpleado.Controls.Add(this.tabPagInfoExtra);
-            this.tabEmpleado.Location = new System.Drawing.Point(293, 91);
+            this.tabEmpleado.Location = new System.Drawing.Point(407, 91);
             this.tabEmpleado.Name = "tabEmpleado";
             this.tabEmpleado.SelectedIndex = 0;
             this.tabEmpleado.Size = new System.Drawing.Size(586, 464);
@@ -589,7 +589,7 @@ namespace ConfiguradorUI.Persona
             this.cboCategoriaEmp.FormattingEnabled = true;
             this.cboCategoriaEmp.Location = new System.Drawing.Point(376, 161);
             this.cboCategoriaEmp.Name = "cboCategoriaEmp";
-            this.cboCategoriaEmp.Size = new System.Drawing.Size(157, 23);
+            this.cboCategoriaEmp.Size = new System.Drawing.Size(152, 23);
             this.cboCategoriaEmp.TabIndex = 20;
             this.cboCategoriaEmp.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -602,7 +602,7 @@ namespace ConfiguradorUI.Persona
             this.cboClaseEmp.FormattingEnabled = true;
             this.cboClaseEmp.Location = new System.Drawing.Point(83, 161);
             this.cboClaseEmp.Name = "cboClaseEmp";
-            this.cboClaseEmp.Size = new System.Drawing.Size(159, 23);
+            this.cboClaseEmp.Size = new System.Drawing.Size(155, 23);
             this.cboClaseEmp.TabIndex = 18;
             this.cboClaseEmp.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -3434,7 +3434,7 @@ namespace ConfiguradorUI.Persona
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(293, 36);
+            this.panelMantenimiento.Location = new System.Drawing.Point(407, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(572, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -3553,9 +3553,10 @@ namespace ConfiguradorUI.Persona
             this.dgvEmpleado.RowHeadersVisible = false;
             this.dgvEmpleado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleado.Size = new System.Drawing.Size(240, 456);
+            this.dgvEmpleado.Size = new System.Drawing.Size(320, 456);
             this.dgvEmpleado.TabIndex = 0;
             this.dgvEmpleado.SelectionChanged += new System.EventHandler(this.dgvEmpleado_SelectionChanged);
+            this.dgvEmpleado.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNumInactivo
             // 
@@ -3600,7 +3601,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 636);
+            this.ClientSize = new System.Drawing.Size(1015, 636);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);

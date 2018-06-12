@@ -400,7 +400,7 @@ namespace ConfiguradorUI.Maestro
             this.cboTipoLocation.FormattingEnabled = true;
             this.cboTipoLocation.Location = new System.Drawing.Point(75, 133);
             this.cboTipoLocation.Name = "cboTipoLocation";
-            this.cboTipoLocation.Size = new System.Drawing.Size(158, 23);
+            this.cboTipoLocation.Size = new System.Drawing.Size(154, 23);
             this.cboTipoLocation.TabIndex = 9;
             this.cboTipoLocation.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -1379,6 +1379,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvLocation.Size = new System.Drawing.Size(230, 275);
             this.dgvLocation.TabIndex = 0;
             this.dgvLocation.SelectionChanged += new System.EventHandler(this.dgvLocation_SelectionChanged);
+            this.dgvLocation.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // errorProv
             // 

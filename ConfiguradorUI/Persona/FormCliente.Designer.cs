@@ -201,7 +201,7 @@ namespace ConfiguradorUI.Persona
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(288, 447);
+            this.panelFiltro.Location = new System.Drawing.Point(408, 447);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(564, 44);
             this.panelFiltro.TabIndex = 3;
@@ -289,7 +289,7 @@ namespace ConfiguradorUI.Persona
             this.tabCliente.Controls.Add(this.tabPagDireccion);
             this.tabCliente.Controls.Add(this.tabPagContacto);
             this.tabCliente.Controls.Add(this.tabPagInfoExtra);
-            this.tabCliente.Location = new System.Drawing.Point(291, 91);
+            this.tabCliente.Location = new System.Drawing.Point(411, 91);
             this.tabCliente.Name = "tabCliente";
             this.tabCliente.SelectedIndex = 0;
             this.tabCliente.Size = new System.Drawing.Size(586, 350);
@@ -2344,7 +2344,7 @@ namespace ConfiguradorUI.Persona
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(288, 36);
+            this.panelMantenimiento.Location = new System.Drawing.Point(408, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(572, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -2461,9 +2461,10 @@ namespace ConfiguradorUI.Persona
             this.dgvCliente.RowHeadersVisible = false;
             this.dgvCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCliente.Size = new System.Drawing.Size(240, 339);
+            this.dgvCliente.Size = new System.Drawing.Size(320, 339);
             this.dgvCliente.TabIndex = 0;
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
+            this.dgvCliente.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNumInactivo
             // 
@@ -2508,7 +2509,7 @@ namespace ConfiguradorUI.Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 521);
+            this.ClientSize = new System.Drawing.Size(1015, 521);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -2525,7 +2526,6 @@ namespace ConfiguradorUI.Persona
             this.Name = "FormCliente";
             this.Resizable = false;
             this.Load += new System.EventHandler(this.FormCliente_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCliente_KeyDown);
             this.panelFiltro.ResumeLayout(false);
             this.panelFiltro.PerformLayout();
             this.tabCliente.ResumeLayout(false);

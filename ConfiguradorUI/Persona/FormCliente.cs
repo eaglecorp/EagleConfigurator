@@ -943,6 +943,12 @@ namespace ConfiguradorUI.Persona
 
             //Para que no sobreescriba los estilos de cabecera
             dgvCliente.EnableHeadersVisualStyles = false;
+            //Configurando columnas del grid
+            dgvCliente.AllowUserToResizeColumns = true;
+            dgvCliente.Columns["CODIGO"].HeaderText = "CÓDIGO";
+
+            dgvCliente.Columns["CODIGO"].Width = 100;
+            dgvCliente.Columns["NOMBRE"].Width = 300;
         }
         private void SetMaxLengthTxt()
         {
@@ -1062,14 +1068,8 @@ namespace ConfiguradorUI.Persona
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (panelFiltro.Visible)
-            {
-                panelFiltro.Visible = false;
-            }
-            else
-            {
-                panelFiltro.Visible = true;
-            }
+            panelFiltro.Visible = !panelFiltro.Visible;
+            txtFiltro.Focus();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -1337,6 +1337,12 @@ namespace ConfiguradorUI.Persona
             }
         }
 
+        private void dgvBordered_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e);
+        }
+
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if (isPending)
@@ -1386,10 +1392,5 @@ namespace ConfiguradorUI.Persona
 
         #endregion
 
-        private void FormCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.Modifiers == Keys.Shift && e.KeyCode == Keys.Escape)
-            //    MessageBox.Show("aaaaaaa");
-        }
     }
 }

@@ -131,6 +131,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvTipoImpresora.Size = new System.Drawing.Size(222, 185);
             this.dgvTipoImpresora.TabIndex = 117;
             this.dgvTipoImpresora.SelectionChanged += new System.EventHandler(this.dgvTipoImpresora_SelectionChanged);
+            this.dgvTipoImpresora.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblIdTipoImpresora
             // 

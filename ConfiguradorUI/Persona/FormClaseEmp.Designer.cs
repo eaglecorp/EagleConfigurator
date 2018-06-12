@@ -140,6 +140,7 @@ namespace ConfiguradorUI.Persona
             this.dgvClaseEmp.Size = new System.Drawing.Size(227, 242);
             this.dgvClaseEmp.TabIndex = 129;
             this.dgvClaseEmp.SelectionChanged += new System.EventHandler(this.dgvClaseEmp_SelectionChanged);
+            this.dgvClaseEmp.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

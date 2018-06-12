@@ -140,6 +140,7 @@ namespace ConfiguradorUI.Producto
             this.dgvCombo.Size = new System.Drawing.Size(222, 505);
             this.dgvCombo.TabIndex = 0;
             this.dgvCombo.SelectionChanged += new System.EventHandler(this.dgvCombo_SelectionChanged);
+            this.dgvCombo.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNumInactivo
             // 
@@ -540,7 +541,7 @@ namespace ConfiguradorUI.Producto
             this.cboImpuesto.FormattingEnabled = true;
             this.cboImpuesto.Location = new System.Drawing.Point(77, 360);
             this.cboImpuesto.Name = "cboImpuesto";
-            this.cboImpuesto.Size = new System.Drawing.Size(190, 23);
+            this.cboImpuesto.Size = new System.Drawing.Size(187, 23);
             this.cboImpuesto.TabIndex = 6;
             this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
             // 
@@ -640,7 +641,7 @@ namespace ConfiguradorUI.Producto
             this.cboComboGrupo.FormattingEnabled = true;
             this.cboComboGrupo.Location = new System.Drawing.Point(77, 50);
             this.cboComboGrupo.Name = "cboComboGrupo";
-            this.cboComboGrupo.Size = new System.Drawing.Size(190, 23);
+            this.cboComboGrupo.Size = new System.Drawing.Size(187, 23);
             this.cboComboGrupo.TabIndex = 2;
             this.cboComboGrupo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 

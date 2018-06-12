@@ -93,6 +93,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvRazon.Size = new System.Drawing.Size(227, 181);
             this.dgvRazon.TabIndex = 0;
             this.dgvRazon.SelectionChanged += new System.EventHandler(this.dgvRazon_SelectionChanged);
+            this.dgvRazon.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

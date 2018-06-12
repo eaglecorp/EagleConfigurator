@@ -105,6 +105,7 @@ namespace ConfiguradorUI.Buscadores
             AddHandled();
             ConfigurarControles();
             BuscarProducto();
+            txtDescripcionProd.Focus();
         }
 
         private void DefinirCabeceraGrid()
@@ -341,7 +342,7 @@ namespace ConfiguradorUI.Buscadores
 
         private void dgvProd_Paint(object sender, PaintEventArgs e)
         {
-            ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
+            ControlHelper.DgvSetColorBorder(sender, e);
         }
 
         #endregion

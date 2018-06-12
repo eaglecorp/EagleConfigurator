@@ -140,6 +140,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvImpresora.Size = new System.Drawing.Size(222, 232);
             this.dgvImpresora.TabIndex = 117;
             this.dgvImpresora.SelectionChanged += new System.EventHandler(this.dgvImpresora_SelectionChanged);
+            this.dgvImpresora.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

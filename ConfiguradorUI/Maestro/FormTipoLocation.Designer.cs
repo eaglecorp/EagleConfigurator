@@ -91,6 +91,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvTipoLocation.Size = new System.Drawing.Size(227, 161);
             this.dgvTipoLocation.TabIndex = 0;
             this.dgvTipoLocation.SelectionChanged += new System.EventHandler(this.dgvTipoLocation_SelectionChanged);
+            this.dgvTipoLocation.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

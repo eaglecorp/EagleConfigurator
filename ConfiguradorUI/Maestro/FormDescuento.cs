@@ -1647,6 +1647,13 @@ namespace ConfiguradorUI.Maestro
 
             //Para que no sobreescriba los estilos de cabecera
             dgvDescuento.EnableHeadersVisualStyles = false;
+
+            //Configurando columnas del grid
+            dgvDescuento.AllowUserToResizeColumns = true;
+            dgvDescuento.Columns["CODIGO"].HeaderText = "CÓDIGO";
+
+            dgvDescuento.Columns["CODIGO"].Width = 100;
+            dgvDescuento.Columns["NOMBRE"].Width = 300;
         }
         private void SetMaxLengthTxt()
         {
@@ -1858,17 +1865,8 @@ namespace ConfiguradorUI.Maestro
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (panelFiltro.Visible)
-            {
-                panelFiltro.Visible = false;
-            }
-            else
-            {
-                panelFiltro.Visible = true;
-            }
-
-
-
+            panelFiltro.Visible = !panelFiltro.Visible;
+            txtFiltro.Focus();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -2298,6 +2296,12 @@ namespace ConfiguradorUI.Maestro
             errorProv.SetError(txtMonto, string.Empty);
             errorProv.SetError(txtPorcentaje, string.Empty);
         }
+
+        private void dgvBordered_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e);
+        }
+
 
 
         #endregion

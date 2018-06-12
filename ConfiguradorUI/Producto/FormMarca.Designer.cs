@@ -477,6 +477,7 @@ namespace ConfiguradorUI.Producto
             this.dgvMarca.Size = new System.Drawing.Size(222, 126);
             this.dgvMarca.TabIndex = 0;
             this.dgvMarca.SelectionChanged += new System.EventHandler(this.dgvMarca_SelectionChanged);
+            this.dgvMarca.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNumInactivo
             // 
@@ -538,6 +539,7 @@ namespace ConfiguradorUI.Producto
             this.Name = "FormMarca";
             this.Resizable = false;
             this.Load += new System.EventHandler(this.FormMarca_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             this.tabMarca.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();

@@ -223,6 +223,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvDescuento.Size = new System.Drawing.Size(227, 506);
             this.dgvDescuento.TabIndex = 0;
             this.dgvDescuento.SelectionChanged += new System.EventHandler(this.dgvDescuento_SelectionChanged);
+            this.dgvDescuento.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNombreForm
             // 
@@ -273,7 +274,7 @@ namespace ConfiguradorUI.Maestro
             this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
             this.lblFiltro.Location = new System.Drawing.Point(12, 14);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(77, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
             this.lblFiltro.TabIndex = 2;
             this.lblFiltro.Text = "Buscar por:";
             this.lblFiltro.UseCustomBackColor = true;
@@ -922,7 +923,7 @@ namespace ConfiguradorUI.Maestro
             this.tabPagPeriodoDia.HorizontalScrollbarSize = 10;
             this.tabPagPeriodoDia.Location = new System.Drawing.Point(4, 38);
             this.tabPagPeriodoDia.Name = "tabPagPeriodoDia";
-            this.tabPagPeriodoDia.Size = new System.Drawing.Size(574, 478);
+            this.tabPagPeriodoDia.Size = new System.Drawing.Size(574, 468);
             this.tabPagPeriodoDia.TabIndex = 1;
             this.tabPagPeriodoDia.Text = "Periodo / Día";
             this.tabPagPeriodoDia.VerticalScrollbarBarColor = true;

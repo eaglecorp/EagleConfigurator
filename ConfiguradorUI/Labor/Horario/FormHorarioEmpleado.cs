@@ -456,7 +456,6 @@ namespace ConfiguradorUI.Labor.Horario
                         RefrescarHorario();
                     }
                 }
-                //no está en el horario (add) (no tiene horario/tiene horario)
             }
         }
 
@@ -469,6 +468,8 @@ namespace ConfiguradorUI.Labor.Horario
             ConfigurarControles();
             LimpiarForm();
             AddHandlers();
+            txtNroDocEmp.Select();
+            txtNroDocEmp.Focus();
         }
 
         private void btnBuscarEmp_Click(object sender, EventArgs e)
@@ -644,8 +645,6 @@ namespace ConfiguradorUI.Labor.Horario
             }
         }
 
-        #endregion
-
         private void mcaMes_DateChanged(object sender, DateRangeEventArgs e)
         {
             var frm = new Transparent();
@@ -653,5 +652,7 @@ namespace ConfiguradorUI.Labor.Horario
             frm.Dispose();
             frm.Close();
         }
+        #endregion
+
     }
 }

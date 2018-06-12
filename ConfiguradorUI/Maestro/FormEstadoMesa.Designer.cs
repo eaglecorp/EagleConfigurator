@@ -143,6 +143,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvEstadoMesa.Size = new System.Drawing.Size(227, 185);
             this.dgvEstadoMesa.TabIndex = 117;
             this.dgvEstadoMesa.SelectionChanged += new System.EventHandler(this.dgvEstadoMesa_SelectionChanged);
+            this.dgvEstadoMesa.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

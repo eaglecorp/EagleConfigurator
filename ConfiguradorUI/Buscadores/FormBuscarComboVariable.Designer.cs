@@ -90,7 +90,7 @@
             this.txtDescripcion.SelectionStart = 0;
             this.txtDescripcion.ShortcutsEnabled = true;
             this.txtDescripcion.Size = new System.Drawing.Size(636, 23);
-            this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.UseCustomBackColor = true;
             this.txtDescripcion.UseSelectable = true;
             this.txtDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -220,7 +220,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 292F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 314F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 314);
             this.tableLayoutPanel1.TabIndex = 15;
             // 

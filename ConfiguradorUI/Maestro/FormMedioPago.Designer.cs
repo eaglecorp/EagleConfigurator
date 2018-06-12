@@ -47,6 +47,7 @@ namespace ConfiguradorUI.Maestro
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabMedioPago = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.chkRequiereRef = new MetroFramework.Controls.MetroCheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cboTipoMedioPago = new ConfigUtilitarios.Controls.BorderedCombo();
@@ -64,7 +65,6 @@ namespace ConfiguradorUI.Maestro
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.chkRequiereRef = new MetroFramework.Controls.MetroCheckBox();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
             this.tabMedioPago.SuspendLayout();
@@ -316,6 +316,23 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // chkRequiereRef
+            // 
+            this.chkRequiereRef.AutoSize = true;
+            this.chkRequiereRef.Checked = true;
+            this.chkRequiereRef.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkRequiereRef.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkRequiereRef.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chkRequiereRef.ForeColor = System.Drawing.Color.Navy;
+            this.chkRequiereRef.Location = new System.Drawing.Point(78, 122);
+            this.chkRequiereRef.Name = "chkRequiereRef";
+            this.chkRequiereRef.Size = new System.Drawing.Size(139, 19);
+            this.chkRequiereRef.TabIndex = 87;
+            this.chkRequiereRef.Text = "Requiere referencia";
+            this.chkRequiereRef.UseCustomForeColor = true;
+            this.chkRequiereRef.UseSelectable = true;
+            this.chkRequiereRef.CheckedChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
@@ -506,6 +523,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvMedioPago.Size = new System.Drawing.Size(227, 175);
             this.dgvMedioPago.TabIndex = 0;
             this.dgvMedioPago.SelectionChanged += new System.EventHandler(this.dgvMedioPago_SelectionChanged);
+            this.dgvMedioPago.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // btnCerrar
             // 
@@ -557,23 +575,6 @@ namespace ConfiguradorUI.Maestro
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
-            // 
-            // chkRequiereRef
-            // 
-            this.chkRequiereRef.AutoSize = true;
-            this.chkRequiereRef.Checked = true;
-            this.chkRequiereRef.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkRequiereRef.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkRequiereRef.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chkRequiereRef.ForeColor = System.Drawing.Color.Navy;
-            this.chkRequiereRef.Location = new System.Drawing.Point(78, 122);
-            this.chkRequiereRef.Name = "chkRequiereRef";
-            this.chkRequiereRef.Size = new System.Drawing.Size(139, 19);
-            this.chkRequiereRef.TabIndex = 87;
-            this.chkRequiereRef.Text = "Requiere referencia";
-            this.chkRequiereRef.UseCustomForeColor = true;
-            this.chkRequiereRef.UseSelectable = true;
-            this.chkRequiereRef.CheckedChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // FormMedioPago
             // 

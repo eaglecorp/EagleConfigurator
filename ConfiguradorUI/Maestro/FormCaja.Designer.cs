@@ -167,6 +167,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvCaja.Size = new System.Drawing.Size(222, 338);
             this.dgvCaja.TabIndex = 129;
             this.dgvCaja.SelectionChanged += new System.EventHandler(this.dgvCaja_SelectionChanged);
+            this.dgvCaja.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 
@@ -444,7 +445,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora06.FormattingEnabled = true;
             this.cboImpresora06.Location = new System.Drawing.Point(348, 236);
             this.cboImpresora06.Name = "cboImpresora06";
-            this.cboImpresora06.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora06.Size = new System.Drawing.Size(150, 23);
             this.cboImpresora06.TabIndex = 10;
             this.cboImpresora06.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -457,7 +458,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora05.FormattingEnabled = true;
             this.cboImpresora05.Location = new System.Drawing.Point(348, 200);
             this.cboImpresora05.Name = "cboImpresora05";
-            this.cboImpresora05.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora05.Size = new System.Drawing.Size(150, 23);
             this.cboImpresora05.TabIndex = 9;
             this.cboImpresora05.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -470,7 +471,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora04.FormattingEnabled = true;
             this.cboImpresora04.Location = new System.Drawing.Point(348, 164);
             this.cboImpresora04.Name = "cboImpresora04";
-            this.cboImpresora04.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora04.Size = new System.Drawing.Size(150, 23);
             this.cboImpresora04.TabIndex = 8;
             this.cboImpresora04.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -483,7 +484,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora03.FormattingEnabled = true;
             this.cboImpresora03.Location = new System.Drawing.Point(77, 236);
             this.cboImpresora03.Name = "cboImpresora03";
-            this.cboImpresora03.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora03.Size = new System.Drawing.Size(150, 23);
             this.cboImpresora03.TabIndex = 7;
             this.cboImpresora03.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -496,7 +497,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora02.FormattingEnabled = true;
             this.cboImpresora02.Location = new System.Drawing.Point(77, 200);
             this.cboImpresora02.Name = "cboImpresora02";
-            this.cboImpresora02.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora02.Size = new System.Drawing.Size(150, 23);
             this.cboImpresora02.TabIndex = 6;
             this.cboImpresora02.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -509,7 +510,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora.FormattingEnabled = true;
             this.cboImpresora.Location = new System.Drawing.Point(77, 164);
             this.cboImpresora.Name = "cboImpresora";
-            this.cboImpresora.Size = new System.Drawing.Size(156, 23);
+            this.cboImpresora.Size = new System.Drawing.Size(150, 23);
             this.cboImpresora.TabIndex = 5;
             this.cboImpresora.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -529,7 +530,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.btnImpresora06.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora06.Image")));
             this.btnImpresora06.ImageSize = 24;
-            this.btnImpresora06.Location = new System.Drawing.Point(504, 235);
+            this.btnImpresora06.Location = new System.Drawing.Point(504, 232);
             this.btnImpresora06.Name = "btnImpresora06";
             this.btnImpresora06.Size = new System.Drawing.Size(29, 27);
             this.btnImpresora06.TabIndex = 116;
@@ -573,7 +574,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.btnImpresora04.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora04.Image")));
             this.btnImpresora04.ImageSize = 24;
-            this.btnImpresora04.Location = new System.Drawing.Point(504, 163);
+            this.btnImpresora04.Location = new System.Drawing.Point(504, 160);
             this.btnImpresora04.Name = "btnImpresora04";
             this.btnImpresora04.Size = new System.Drawing.Size(29, 27);
             this.btnImpresora04.TabIndex = 110;
@@ -617,7 +618,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.btnImpresora02.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora02.Image")));
             this.btnImpresora02.ImageSize = 24;
-            this.btnImpresora02.Location = new System.Drawing.Point(233, 199);
+            this.btnImpresora02.Location = new System.Drawing.Point(233, 196);
             this.btnImpresora02.Name = "btnImpresora02";
             this.btnImpresora02.Size = new System.Drawing.Size(29, 27);
             this.btnImpresora02.TabIndex = 104;
@@ -941,9 +942,10 @@ namespace ConfiguradorUI.Maestro
             this.dgvConfigFiscalCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 15);
             this.dgvConfigFiscalCaja.Name = "dgvConfigFiscalCaja";
-            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(548, 196);
+            this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(548, 286);
             this.dgvConfigFiscalCaja.TabIndex = 2;
             this.dgvConfigFiscalCaja.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConfigFiscalCaja_CellValueChanged);
+            this.dgvConfigFiscalCaja.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNombreForm
             // 

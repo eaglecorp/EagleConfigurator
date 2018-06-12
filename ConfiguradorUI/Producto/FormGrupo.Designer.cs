@@ -477,6 +477,7 @@ namespace ConfiguradorUI.Producto
             this.dgvGrupo.Size = new System.Drawing.Size(222, 119);
             this.dgvGrupo.TabIndex = 0;
             this.dgvGrupo.SelectionChanged += new System.EventHandler(this.dgvGrupo_SelectionChanged);
+            this.dgvGrupo.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNumInactivo
             // 

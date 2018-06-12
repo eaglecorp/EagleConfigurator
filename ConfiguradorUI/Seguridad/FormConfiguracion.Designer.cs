@@ -831,6 +831,7 @@
             this.dgvParametrosFiscales.TabIndex = 3;
             this.dgvParametrosFiscales.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParametrosFiscales_CellValueChanged);
             this.dgvParametrosFiscales.SelectionChanged += new System.EventHandler(this.dgvParametrosFiscales_SelectionChanged);
+            this.dgvParametrosFiscales.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // tabPagUsuario
             // 

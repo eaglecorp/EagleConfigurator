@@ -136,6 +136,7 @@ namespace ConfiguradorUI.Reporte
             this.dgvCategoriaReporte.Size = new System.Drawing.Size(227, 121);
             this.dgvCategoriaReporte.TabIndex = 117;
             this.dgvCategoriaReporte.SelectionChanged += new System.EventHandler(this.dgvCategoriaReporte_SelectionChanged);
+            this.dgvCategoriaReporte.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

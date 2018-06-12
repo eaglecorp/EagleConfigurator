@@ -1402,7 +1402,6 @@ namespace ConfiguradorUI.Producto
             catch (Exception e)
             {
                 MessageBox.Show(this, $"Excepción en cargar la grilla: {e.Message}", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
         private void ActualizarGrilla(int? id_estado = null)
@@ -1414,16 +1413,18 @@ namespace ConfiguradorUI.Producto
             dgvProducto.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#ecf0f1");
             dgvProducto.AlternatingRowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FAFAFA");
 
-
             dgvProducto.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#00B2EE");
             dgvProducto.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             dgvProducto.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
-
-            dgvProducto.Columns["CODIGO"].Width = 70;
-            dgvProducto.Columns["NOMBRE"].Width = 260;
-
             dgvProducto.EnableHeadersVisualStyles = false;
+
+            //Configurando columnas del grid
+            dgvProducto.AllowUserToResizeColumns = true;
+            dgvProducto.Columns["CODIGO"].HeaderText = "CÓDIGO";
+
+            dgvProducto.Columns["CODIGO"].Width = 100;
+            dgvProducto.Columns["NOMBRE"].Width = 300;
         }
         private void ConfigurarControles()
         {
@@ -1529,14 +1530,8 @@ namespace ConfiguradorUI.Producto
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (panelFiltro.Visible)
-            {
-                panelFiltro.Visible = false;
-            }
-            else
-            {
-                panelFiltro.Visible = true;
-            }
+            panelFiltro.Visible = !panelFiltro.Visible;
+            txtFiltro.Focus();
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {
@@ -2165,6 +2160,11 @@ namespace ConfiguradorUI.Producto
         }
 
         #endregion
+
+        private void dgvBordered_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e);
+        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {

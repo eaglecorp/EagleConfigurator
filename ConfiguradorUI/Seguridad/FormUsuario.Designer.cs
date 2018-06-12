@@ -97,6 +97,7 @@ namespace ConfiguradorUI.Seguridad
             this.dgvUsuario.Size = new System.Drawing.Size(222, 226);
             this.dgvUsuario.TabIndex = 0;
             this.dgvUsuario.SelectionChanged += new System.EventHandler(this.dgvUsuario_SelectionChanged);
+            this.dgvUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

@@ -71,22 +71,6 @@ namespace ConfiguradorUI.Persona
             this.lblPrimerNom = new MetroFramework.Controls.MetroLabel();
             this.txtApPaterno = new MetroFramework.Controls.MetroTextBox();
             this.lblApPaterno = new MetroFramework.Controls.MetroLabel();
-            this.tabPagContacto = new MetroFramework.Controls.MetroTabPage();
-            this.tabPagInfoExtra = new MetroFramework.Controls.MetroTabPage();
-            this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panelFiltro = new MetroFramework.Controls.MetroPanel();
-            this.lblFiltro = new MetroFramework.Controls.MetroLabel();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
-            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.tglListarInactivos = new MetroFramework.Controls.MetroToggle();
-            this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
-            this.lblIdProveedor = new MetroFramework.Controls.MetroLabel();
-            this.btnCerrar = new MetroFramework.Controls.MetroLink();
-            this.dgvProveedor = new System.Windows.Forms.DataGridView();
-            this.lblNumInactivo = new System.Windows.Forms.Label();
-            this.lblNumActivo = new System.Windows.Forms.Label();
-            this.lblNumReg = new System.Windows.Forms.Label();
             this.tabPagDireccion = new MetroFramework.Controls.MetroTabPage();
             this.grbUbicacionDetallada = new System.Windows.Forms.GroupBox();
             this.txtDireccion01 = new MetroFramework.Controls.MetroTextBox();
@@ -114,6 +98,7 @@ namespace ConfiguradorUI.Persona
             this.lblProvincia = new MetroFramework.Controls.MetroLabel();
             this.cboNacionalidad = new ConfigUtilitarios.Controls.BorderedCombo();
             this.cboProvincia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.tabPagContacto = new MetroFramework.Controls.MetroTabPage();
             this.grbEmailYWeb = new System.Windows.Forms.GroupBox();
             this.txtEmail02 = new MetroFramework.Controls.MetroTextBox();
             this.lblEmail02 = new MetroFramework.Controls.MetroLabel();
@@ -134,6 +119,7 @@ namespace ConfiguradorUI.Persona
             this.lblTelFijo03 = new MetroFramework.Controls.MetroLabel();
             this.txtCelular01 = new MetroFramework.Controls.MetroTextBox();
             this.lblCelular01 = new MetroFramework.Controls.MetroLabel();
+            this.tabPagInfoExtra = new MetroFramework.Controls.MetroTabPage();
             this.grbInfoExtra = new System.Windows.Forms.GroupBox();
             this.txtInfo10 = new MetroFramework.Controls.MetroTextBox();
             this.lblInfo10 = new MetroFramework.Controls.MetroLabel();
@@ -155,20 +141,34 @@ namespace ConfiguradorUI.Persona
             this.lblInfo03 = new MetroFramework.Controls.MetroLabel();
             this.txtInfo01 = new MetroFramework.Controls.MetroTextBox();
             this.lblInfo01 = new MetroFramework.Controls.MetroLabel();
+            this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panelFiltro = new MetroFramework.Controls.MetroPanel();
+            this.lblFiltro = new MetroFramework.Controls.MetroLabel();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.tglListarInactivos = new MetroFramework.Controls.MetroToggle();
+            this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
+            this.lblIdProveedor = new MetroFramework.Controls.MetroLabel();
+            this.btnCerrar = new MetroFramework.Controls.MetroLink();
+            this.dgvProveedor = new System.Windows.Forms.DataGridView();
+            this.lblNumInactivo = new System.Windows.Forms.Label();
+            this.lblNumActivo = new System.Windows.Forms.Label();
+            this.lblNumReg = new System.Windows.Forms.Label();
             this.panelMantenimiento.SuspendLayout();
             this.tabProveedor.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
-            this.tabPagContacto.SuspendLayout();
-            this.tabPagInfoExtra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
-            this.panelFiltro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.tabPagDireccion.SuspendLayout();
             this.grbUbicacionDetallada.SuspendLayout();
             this.gbrUbigeo.SuspendLayout();
+            this.tabPagContacto.SuspendLayout();
             this.grbEmailYWeb.SuspendLayout();
             this.grbNumerosContacto.SuspendLayout();
+            this.tabPagInfoExtra.SuspendLayout();
             this.grbInfoExtra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).BeginInit();
+            this.panelFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombreForm
@@ -193,7 +193,7 @@ namespace ConfiguradorUI.Persona
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
-            this.panelMantenimiento.Location = new System.Drawing.Point(292, 36);
+            this.panelMantenimiento.Location = new System.Drawing.Point(407, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(572, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -285,7 +285,7 @@ namespace ConfiguradorUI.Persona
             this.tabProveedor.Controls.Add(this.tabPagDireccion);
             this.tabProveedor.Controls.Add(this.tabPagContacto);
             this.tabProveedor.Controls.Add(this.tabPagInfoExtra);
-            this.tabProveedor.Location = new System.Drawing.Point(292, 91);
+            this.tabProveedor.Location = new System.Drawing.Point(407, 91);
             this.tabProveedor.Name = "tabProveedor";
             this.tabProveedor.SelectedIndex = 0;
             this.tabProveedor.Size = new System.Drawing.Size(586, 348);
@@ -870,235 +870,6 @@ namespace ConfiguradorUI.Persona
             this.lblApPaterno.Text = "Ap. Paterno:";
             this.lblApPaterno.UseCustomForeColor = true;
             // 
-            // tabPagContacto
-            // 
-            this.tabPagContacto.Controls.Add(this.grbEmailYWeb);
-            this.tabPagContacto.Controls.Add(this.grbNumerosContacto);
-            this.tabPagContacto.HorizontalScrollbarBarColor = true;
-            this.tabPagContacto.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagContacto.HorizontalScrollbarSize = 10;
-            this.tabPagContacto.Location = new System.Drawing.Point(4, 38);
-            this.tabPagContacto.Name = "tabPagContacto";
-            this.tabPagContacto.Size = new System.Drawing.Size(578, 306);
-            this.tabPagContacto.TabIndex = 1;
-            this.tabPagContacto.Text = "Contacto";
-            this.tabPagContacto.VerticalScrollbarBarColor = true;
-            this.tabPagContacto.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagContacto.VerticalScrollbarSize = 10;
-            // 
-            // tabPagInfoExtra
-            // 
-            this.tabPagInfoExtra.Controls.Add(this.grbInfoExtra);
-            this.tabPagInfoExtra.HorizontalScrollbarBarColor = true;
-            this.tabPagInfoExtra.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagInfoExtra.HorizontalScrollbarSize = 10;
-            this.tabPagInfoExtra.Location = new System.Drawing.Point(4, 38);
-            this.tabPagInfoExtra.Name = "tabPagInfoExtra";
-            this.tabPagInfoExtra.Size = new System.Drawing.Size(578, 306);
-            this.tabPagInfoExtra.TabIndex = 2;
-            this.tabPagInfoExtra.Text = "Info. Extra";
-            this.tabPagInfoExtra.VerticalScrollbarBarColor = true;
-            this.tabPagInfoExtra.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagInfoExtra.VerticalScrollbarSize = 10;
-            // 
-            // errorProv
-            // 
-            this.errorProv.ContainerControl = this;
-            // 
-            // panelFiltro
-            // 
-            this.panelFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.panelFiltro.Controls.Add(this.lblFiltro);
-            this.panelFiltro.Controls.Add(this.btnFilter);
-            this.panelFiltro.Controls.Add(this.txtFiltro);
-            this.panelFiltro.Controls.Add(this.cboFiltro);
-            this.panelFiltro.HorizontalScrollbarBarColor = true;
-            this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
-            this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(291, 445);
-            this.panelFiltro.Name = "panelFiltro";
-            this.panelFiltro.Size = new System.Drawing.Size(566, 42);
-            this.panelFiltro.TabIndex = 3;
-            this.panelFiltro.UseCustomBackColor = true;
-            this.panelFiltro.VerticalScrollbarBarColor = true;
-            this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
-            this.panelFiltro.VerticalScrollbarSize = 10;
-            // 
-            // lblFiltro
-            // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.BackColor = System.Drawing.Color.Transparent;
-            this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
-            this.lblFiltro.Location = new System.Drawing.Point(13, 12);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
-            this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Buscar por:";
-            this.lblFiltro.UseCustomBackColor = true;
-            this.lblFiltro.UseCustomForeColor = true;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
-            this.btnFilter.Location = new System.Drawing.Point(521, 5);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(37, 30);
-            this.btnFilter.TabIndex = 1;
-            this.btnFilter.UseVisualStyleBackColor = false;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // txtFiltro
-            // 
-            // 
-            // 
-            // 
-            this.txtFiltro.CustomButton.Image = null;
-            this.txtFiltro.CustomButton.Location = new System.Drawing.Point(202, 1);
-            this.txtFiltro.CustomButton.Name = "";
-            this.txtFiltro.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtFiltro.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtFiltro.CustomButton.TabIndex = 1;
-            this.txtFiltro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFiltro.CustomButton.UseSelectable = true;
-            this.txtFiltro.CustomButton.Visible = false;
-            this.txtFiltro.Lines = new string[0];
-            this.txtFiltro.Location = new System.Drawing.Point(291, 10);
-            this.txtFiltro.MaxLength = 32767;
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.PasswordChar = '\0';
-            this.txtFiltro.PromptText = "Filtro";
-            this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtFiltro.SelectedText = "";
-            this.txtFiltro.SelectionLength = 0;
-            this.txtFiltro.SelectionStart = 0;
-            this.txtFiltro.ShortcutsEnabled = true;
-            this.txtFiltro.Size = new System.Drawing.Size(224, 23);
-            this.txtFiltro.TabIndex = 0;
-            this.txtFiltro.UseSelectable = true;
-            this.txtFiltro.WaterMark = "Filtro";
-            this.txtFiltro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtFiltro.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);
-            // 
-            // cboFiltro
-            // 
-            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(95, 10);
-            this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(172, 23);
-            this.cboFiltro.TabIndex = 3;
-            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
-            // 
-            // tglListarInactivos
-            // 
-            this.tglListarInactivos.AutoSize = true;
-            this.tglListarInactivos.Location = new System.Drawing.Point(133, 104);
-            this.tglListarInactivos.Name = "tglListarInactivos";
-            this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 5;
-            this.tglListarInactivos.Text = "Off";
-            this.tglListarInactivos.UseSelectable = true;
-            this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
-            // 
-            // lblListarInactivos
-            // 
-            this.lblListarInactivos.AutoSize = true;
-            this.lblListarInactivos.Location = new System.Drawing.Point(35, 104);
-            this.lblListarInactivos.Name = "lblListarInactivos";
-            this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
-            this.lblListarInactivos.TabIndex = 4;
-            this.lblListarInactivos.Text = "Listar inactivos";
-            // 
-            // lblIdProveedor
-            // 
-            this.lblIdProveedor.AutoSize = true;
-            this.lblIdProveedor.ForeColor = System.Drawing.Color.Navy;
-            this.lblIdProveedor.Location = new System.Drawing.Point(540, 12);
-            this.lblIdProveedor.Name = "lblIdProveedor";
-            this.lblIdProveedor.Size = new System.Drawing.Size(0, 0);
-            this.lblIdProveedor.TabIndex = 107;
-            this.lblIdProveedor.UseCustomForeColor = true;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.ImageSize = 48;
-            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 6;
-            this.btnCerrar.UseSelectable = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // dgvProveedor
-            // 
-            this.dgvProveedor.AllowUserToAddRows = false;
-            this.dgvProveedor.AllowUserToResizeColumns = false;
-            this.dgvProveedor.AllowUserToResizeRows = false;
-            this.dgvProveedor.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProveedor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvProveedor.Location = new System.Drawing.Point(36, 129);
-            this.dgvProveedor.MultiSelect = false;
-            this.dgvProveedor.Name = "dgvProveedor";
-            this.dgvProveedor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvProveedor.RowHeadersVisible = false;
-            this.dgvProveedor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProveedor.Size = new System.Drawing.Size(240, 338);
-            this.dgvProveedor.TabIndex = 0;
-            this.dgvProveedor.SelectionChanged += new System.EventHandler(this.dgvProveedor_SelectionChanged);
-            // 
-            // lblNumInactivo
-            // 
-            this.lblNumInactivo.AutoSize = true;
-            this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
-            this.lblNumInactivo.Location = new System.Drawing.Point(179, 470);
-            this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
-            this.lblNumInactivo.Name = "lblNumInactivo";
-            this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
-            this.lblNumInactivo.TabIndex = 113;
-            this.lblNumInactivo.Text = "Inactivos: ";
-            // 
-            // lblNumActivo
-            // 
-            this.lblNumActivo.AutoSize = true;
-            this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblNumActivo.Location = new System.Drawing.Point(99, 470);
-            this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
-            this.lblNumActivo.Name = "lblNumActivo";
-            this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
-            this.lblNumActivo.TabIndex = 112;
-            this.lblNumActivo.Text = "Activos: ";
-            // 
-            // lblNumReg
-            // 
-            this.lblNumReg.AutoSize = true;
-            this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNumReg.Location = new System.Drawing.Point(32, 470);
-            this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
-            this.lblNumReg.Name = "lblNumReg";
-            this.lblNumReg.Size = new System.Drawing.Size(43, 17);
-            this.lblNumReg.TabIndex = 111;
-            this.lblNumReg.Text = "Total: ";
-            // 
             // tabPagDireccion
             // 
             this.tabPagDireccion.Controls.Add(this.grbUbicacionDetallada);
@@ -1573,6 +1344,22 @@ namespace ConfiguradorUI.Persona
             this.cboProvincia.TabIndex = 35;
             this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
             // 
+            // tabPagContacto
+            // 
+            this.tabPagContacto.Controls.Add(this.grbEmailYWeb);
+            this.tabPagContacto.Controls.Add(this.grbNumerosContacto);
+            this.tabPagContacto.HorizontalScrollbarBarColor = true;
+            this.tabPagContacto.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagContacto.HorizontalScrollbarSize = 10;
+            this.tabPagContacto.Location = new System.Drawing.Point(4, 38);
+            this.tabPagContacto.Name = "tabPagContacto";
+            this.tabPagContacto.Size = new System.Drawing.Size(578, 306);
+            this.tabPagContacto.TabIndex = 1;
+            this.tabPagContacto.Text = "Contacto";
+            this.tabPagContacto.VerticalScrollbarBarColor = true;
+            this.tabPagContacto.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagContacto.VerticalScrollbarSize = 10;
+            // 
             // grbEmailYWeb
             // 
             this.grbEmailYWeb.BackColor = System.Drawing.Color.Transparent;
@@ -2021,6 +1808,21 @@ namespace ConfiguradorUI.Persona
             this.lblCelular01.TabIndex = 0;
             this.lblCelular01.Text = "Celular 01:";
             this.lblCelular01.UseCustomForeColor = true;
+            // 
+            // tabPagInfoExtra
+            // 
+            this.tabPagInfoExtra.Controls.Add(this.grbInfoExtra);
+            this.tabPagInfoExtra.HorizontalScrollbarBarColor = true;
+            this.tabPagInfoExtra.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagInfoExtra.HorizontalScrollbarSize = 10;
+            this.tabPagInfoExtra.Location = new System.Drawing.Point(4, 38);
+            this.tabPagInfoExtra.Name = "tabPagInfoExtra";
+            this.tabPagInfoExtra.Size = new System.Drawing.Size(578, 306);
+            this.tabPagInfoExtra.TabIndex = 2;
+            this.tabPagInfoExtra.Text = "Info. Extra";
+            this.tabPagInfoExtra.VerticalScrollbarBarColor = true;
+            this.tabPagInfoExtra.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagInfoExtra.VerticalScrollbarSize = 10;
             // 
             // grbInfoExtra
             // 
@@ -2505,11 +2307,210 @@ namespace ConfiguradorUI.Persona
             this.lblInfo01.Text = "Info. 01:";
             this.lblInfo01.UseCustomForeColor = true;
             // 
+            // errorProv
+            // 
+            this.errorProv.ContainerControl = this;
+            // 
+            // panelFiltro
+            // 
+            this.panelFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.panelFiltro.Controls.Add(this.lblFiltro);
+            this.panelFiltro.Controls.Add(this.btnFilter);
+            this.panelFiltro.Controls.Add(this.txtFiltro);
+            this.panelFiltro.Controls.Add(this.cboFiltro);
+            this.panelFiltro.HorizontalScrollbarBarColor = true;
+            this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
+            this.panelFiltro.HorizontalScrollbarSize = 10;
+            this.panelFiltro.Location = new System.Drawing.Point(406, 445);
+            this.panelFiltro.Name = "panelFiltro";
+            this.panelFiltro.Size = new System.Drawing.Size(566, 42);
+            this.panelFiltro.TabIndex = 3;
+            this.panelFiltro.UseCustomBackColor = true;
+            this.panelFiltro.VerticalScrollbarBarColor = true;
+            this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
+            this.panelFiltro.VerticalScrollbarSize = 10;
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.BackColor = System.Drawing.Color.Transparent;
+            this.lblFiltro.ForeColor = System.Drawing.Color.Navy;
+            this.lblFiltro.Location = new System.Drawing.Point(13, 12);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(76, 19);
+            this.lblFiltro.TabIndex = 2;
+            this.lblFiltro.Text = "Buscar por:";
+            this.lblFiltro.UseCustomBackColor = true;
+            this.lblFiltro.UseCustomForeColor = true;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
+            this.btnFilter.Location = new System.Drawing.Point(521, 5);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(37, 30);
+            this.btnFilter.TabIndex = 1;
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // txtFiltro
+            // 
+            // 
+            // 
+            // 
+            this.txtFiltro.CustomButton.Image = null;
+            this.txtFiltro.CustomButton.Location = new System.Drawing.Point(202, 1);
+            this.txtFiltro.CustomButton.Name = "";
+            this.txtFiltro.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtFiltro.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFiltro.CustomButton.TabIndex = 1;
+            this.txtFiltro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFiltro.CustomButton.UseSelectable = true;
+            this.txtFiltro.CustomButton.Visible = false;
+            this.txtFiltro.Lines = new string[0];
+            this.txtFiltro.Location = new System.Drawing.Point(291, 10);
+            this.txtFiltro.MaxLength = 32767;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.PasswordChar = '\0';
+            this.txtFiltro.PromptText = "Filtro";
+            this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFiltro.SelectedText = "";
+            this.txtFiltro.SelectionLength = 0;
+            this.txtFiltro.SelectionStart = 0;
+            this.txtFiltro.ShortcutsEnabled = true;
+            this.txtFiltro.Size = new System.Drawing.Size(224, 23);
+            this.txtFiltro.TabIndex = 0;
+            this.txtFiltro.UseSelectable = true;
+            this.txtFiltro.WaterMark = "Filtro";
+            this.txtFiltro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFiltro.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);
+            // 
+            // cboFiltro
+            // 
+            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Location = new System.Drawing.Point(95, 10);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(172, 23);
+            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
+            // 
+            // tglListarInactivos
+            // 
+            this.tglListarInactivos.AutoSize = true;
+            this.tglListarInactivos.Location = new System.Drawing.Point(133, 104);
+            this.tglListarInactivos.Name = "tglListarInactivos";
+            this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
+            this.tglListarInactivos.TabIndex = 5;
+            this.tglListarInactivos.Text = "Off";
+            this.tglListarInactivos.UseSelectable = true;
+            this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
+            // 
+            // lblListarInactivos
+            // 
+            this.lblListarInactivos.AutoSize = true;
+            this.lblListarInactivos.Location = new System.Drawing.Point(35, 104);
+            this.lblListarInactivos.Name = "lblListarInactivos";
+            this.lblListarInactivos.Size = new System.Drawing.Size(92, 19);
+            this.lblListarInactivos.TabIndex = 4;
+            this.lblListarInactivos.Text = "Listar inactivos";
+            // 
+            // lblIdProveedor
+            // 
+            this.lblIdProveedor.AutoSize = true;
+            this.lblIdProveedor.ForeColor = System.Drawing.Color.Navy;
+            this.lblIdProveedor.Location = new System.Drawing.Point(540, 12);
+            this.lblIdProveedor.Name = "lblIdProveedor";
+            this.lblIdProveedor.Size = new System.Drawing.Size(0, 0);
+            this.lblIdProveedor.TabIndex = 107;
+            this.lblIdProveedor.UseCustomForeColor = true;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageSize = 48;
+            this.btnCerrar.Location = new System.Drawing.Point(28, 28);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.UseSelectable = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // dgvProveedor
+            // 
+            this.dgvProveedor.AllowUserToAddRows = false;
+            this.dgvProveedor.AllowUserToResizeColumns = false;
+            this.dgvProveedor.AllowUserToResizeRows = false;
+            this.dgvProveedor.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProveedor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvProveedor.Location = new System.Drawing.Point(36, 129);
+            this.dgvProveedor.MultiSelect = false;
+            this.dgvProveedor.Name = "dgvProveedor";
+            this.dgvProveedor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvProveedor.RowHeadersVisible = false;
+            this.dgvProveedor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProveedor.Size = new System.Drawing.Size(320, 338);
+            this.dgvProveedor.TabIndex = 0;
+            this.dgvProveedor.SelectionChanged += new System.EventHandler(this.dgvProveedor_SelectionChanged);
+            this.dgvProveedor.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
+            // 
+            // lblNumInactivo
+            // 
+            this.lblNumInactivo.AutoSize = true;
+            this.lblNumInactivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumInactivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumInactivo.ForeColor = System.Drawing.Color.Red;
+            this.lblNumInactivo.Location = new System.Drawing.Point(179, 470);
+            this.lblNumInactivo.MaximumSize = new System.Drawing.Size(550, 1500);
+            this.lblNumInactivo.Name = "lblNumInactivo";
+            this.lblNumInactivo.Size = new System.Drawing.Size(65, 17);
+            this.lblNumInactivo.TabIndex = 113;
+            this.lblNumInactivo.Text = "Inactivos: ";
+            // 
+            // lblNumActivo
+            // 
+            this.lblNumActivo.AutoSize = true;
+            this.lblNumActivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumActivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumActivo.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblNumActivo.Location = new System.Drawing.Point(99, 470);
+            this.lblNumActivo.MaximumSize = new System.Drawing.Size(550, 1500);
+            this.lblNumActivo.Name = "lblNumActivo";
+            this.lblNumActivo.Size = new System.Drawing.Size(56, 17);
+            this.lblNumActivo.TabIndex = 112;
+            this.lblNumActivo.Text = "Activos: ";
+            // 
+            // lblNumReg
+            // 
+            this.lblNumReg.AutoSize = true;
+            this.lblNumReg.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumReg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumReg.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblNumReg.Location = new System.Drawing.Point(32, 470);
+            this.lblNumReg.MaximumSize = new System.Drawing.Size(550, 1500);
+            this.lblNumReg.Name = "lblNumReg";
+            this.lblNumReg.Size = new System.Drawing.Size(43, 17);
+            this.lblNumReg.TabIndex = 111;
+            this.lblNumReg.Text = "Total: ";
+            // 
             // FormProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 521);
+            this.ClientSize = new System.Drawing.Size(1015, 521);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);
@@ -2530,23 +2531,23 @@ namespace ConfiguradorUI.Persona
             this.tabProveedor.ResumeLayout(false);
             this.tabPagGeneral.ResumeLayout(false);
             this.tabPagGeneral.PerformLayout();
-            this.tabPagContacto.ResumeLayout(false);
-            this.tabPagInfoExtra.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
-            this.panelFiltro.ResumeLayout(false);
-            this.panelFiltro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.tabPagDireccion.ResumeLayout(false);
             this.grbUbicacionDetallada.ResumeLayout(false);
             this.grbUbicacionDetallada.PerformLayout();
             this.gbrUbigeo.ResumeLayout(false);
             this.gbrUbigeo.PerformLayout();
+            this.tabPagContacto.ResumeLayout(false);
             this.grbEmailYWeb.ResumeLayout(false);
             this.grbEmailYWeb.PerformLayout();
             this.grbNumerosContacto.ResumeLayout(false);
             this.grbNumerosContacto.PerformLayout();
+            this.tabPagInfoExtra.ResumeLayout(false);
             this.grbInfoExtra.ResumeLayout(false);
             this.grbInfoExtra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProv)).EndInit();
+            this.panelFiltro.ResumeLayout(false);
+            this.panelFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

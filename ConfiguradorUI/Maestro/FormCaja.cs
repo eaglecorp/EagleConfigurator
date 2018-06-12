@@ -26,22 +26,22 @@ namespace ConfiguradorUI.Maestro
         #region Variables
         List<int> _idsParametrosFiscalesCambiados = null;
 
-        bool isSelected      = false,
+        bool isSelected = false,
                 isChangedRow = false,
-                isPending    = false,
-                preguntar    = true,
-                postLoad     = false;
+                isPending = false,
+                preguntar = true,
+                postLoad = false;
 
         public bool actualizar = false;
 
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
-        const int colIdConfigCaja            = 0,
-                    colIdCaja                = 1,
-                    colIdParametroFiscal     = 2,
-                    colCodParametroFiscal    = 3,
+        const int colIdConfigCaja = 0,
+                    colIdCaja = 1,
+                    colIdParametroFiscal = 2,
+                    colCodParametroFiscal = 3,
                     colNombreParametroFiscal = 4,
-                    colValorParametroCaja    = 5;
+                    colValorParametroCaja = 5;
 
         string codSelected = "";
         #endregion
@@ -961,6 +961,13 @@ namespace ConfiguradorUI.Maestro
 
             //Para que no sobreescriba los estilos de cabecera
             dgvCaja.EnableHeadersVisualStyles = false;
+
+            //Configurando columnas del grid
+            dgvCaja.AllowUserToResizeColumns = true;
+            dgvCaja.Columns["CODIGO"].HeaderText = "CÓDIGO";
+
+            dgvCaja.Columns["CODIGO"].Width = 100;
+            dgvCaja.Columns["NOMBRE"].Width = 300;
         }
         private void SetMaxLengthTxt()
         {
@@ -1043,7 +1050,7 @@ namespace ConfiguradorUI.Maestro
 
             dgvConfigFiscalCaja.Columns["cod"].Width = 100;
             dgvConfigFiscalCaja.Columns["parametro"].Width = 300;
-            dgvConfigFiscalCaja.Columns["valor"].Width = 110;
+            dgvConfigFiscalCaja.Columns["valor"].Width = 130;
         }
         private void InicializarGridParametros()
         {
@@ -1119,14 +1126,8 @@ namespace ConfiguradorUI.Maestro
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (panelFiltro.Visible)
-            {
-                panelFiltro.Visible = false;
-            }
-            else
-            {
-                panelFiltro.Visible = true;
-            }
+            panelFiltro.Visible = !panelFiltro.Visible;
+            txtFiltro.Focus();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -1376,6 +1377,11 @@ namespace ConfiguradorUI.Maestro
         }
 
         #endregion
+        private void dgvBordered_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e);
+        }
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {

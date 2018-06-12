@@ -128,6 +128,7 @@ namespace ConfiguradorUI.Producto
             this.dgvComboGrupo.Size = new System.Drawing.Size(222, 128);
             this.dgvComboGrupo.TabIndex = 129;
             this.dgvComboGrupo.SelectionChanged += new System.EventHandler(this.dgvComboGrupo_SelectionChanged);
+            this.dgvComboGrupo.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblIdComboGrupo
             // 

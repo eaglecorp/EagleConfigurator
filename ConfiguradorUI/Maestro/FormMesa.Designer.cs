@@ -91,6 +91,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvMesa.Size = new System.Drawing.Size(222, 210);
             this.dgvMesa.TabIndex = 117;
             this.dgvMesa.SelectionChanged += new System.EventHandler(this.dgvMesa_SelectionChanged);
+            this.dgvMesa.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 
@@ -327,7 +328,7 @@ namespace ConfiguradorUI.Maestro
             this.cboEstadoMesa.FormattingEnabled = true;
             this.cboEstadoMesa.Location = new System.Drawing.Point(80, 109);
             this.cboEstadoMesa.Name = "cboEstadoMesa";
-            this.cboEstadoMesa.Size = new System.Drawing.Size(161, 23);
+            this.cboEstadoMesa.Size = new System.Drawing.Size(156, 23);
             this.cboEstadoMesa.TabIndex = 4;
             this.cboEstadoMesa.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -340,7 +341,7 @@ namespace ConfiguradorUI.Maestro
             this.cboCanalVenta.FormattingEnabled = true;
             this.cboCanalVenta.Location = new System.Drawing.Point(348, 71);
             this.cboCanalVenta.Name = "cboCanalVenta";
-            this.cboCanalVenta.Size = new System.Drawing.Size(161, 23);
+            this.cboCanalVenta.Size = new System.Drawing.Size(156, 23);
             this.cboCanalVenta.TabIndex = 3;
             this.cboCanalVenta.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 

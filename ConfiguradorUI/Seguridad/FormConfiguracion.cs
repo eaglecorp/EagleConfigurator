@@ -797,9 +797,9 @@ namespace ConfiguradorUI.Seguridad
             dgvParametrosFiscales.Columns[colCodParametroFiscal].ReadOnly = true;
             dgvParametrosFiscales.Columns[colNombreParametroFiscal].ReadOnly = true;
 
-            dgvParametrosFiscales.Columns["cod_parametro_fiscal"].Width = 110;
+            dgvParametrosFiscales.Columns["cod_parametro_fiscal"].Width = 100;
             dgvParametrosFiscales.Columns["txt_desc"].Width = 300;
-            dgvParametrosFiscales.Columns["valor_default"].Width = 110;
+            dgvParametrosFiscales.Columns["valor_default"].Width = 130;
         }
         private List<FISt04_parametro_fiscal> GetParametrosFiscales()
         {
@@ -1143,6 +1143,10 @@ namespace ConfiguradorUI.Seguridad
                 }
             }
 
+        }
+        private void dgvBordered_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e);
         }
 
 

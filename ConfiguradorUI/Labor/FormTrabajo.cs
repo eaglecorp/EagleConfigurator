@@ -650,6 +650,13 @@ namespace ConfiguradorUI.Labor
 
             //Para que no sobreescriba los estilos de cabecera
             dgvTrabajo.EnableHeadersVisualStyles = false;
+
+            //Configurando columnas del grid
+            dgvTrabajo.AllowUserToResizeColumns = true;
+            dgvTrabajo.Columns["CODIGO"].HeaderText = "CÓDIGO";
+
+            dgvTrabajo.Columns["CODIGO"].Width = 100;
+            dgvTrabajo.Columns["NOMBRE"].Width = 300;
         }
         private void SetMaxLengthTxt()
         {
@@ -740,14 +747,8 @@ namespace ConfiguradorUI.Labor
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (panelFiltro.Visible)
-            {
-                panelFiltro.Visible = false;
-            }
-            else
-            {
-                panelFiltro.Visible = true;
-            }
+            panelFiltro.Visible = !panelFiltro.Visible;
+            txtFiltro.Focus();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -986,6 +987,10 @@ namespace ConfiguradorUI.Labor
             }
         }
 
+        private void dgvBordered_Paint(object sender, PaintEventArgs e)
+        {
+            ControlHelper.DgvSetColorBorder(sender, e);
+        }
         #endregion
     }
 }

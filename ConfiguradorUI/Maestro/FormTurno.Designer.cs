@@ -52,6 +52,8 @@ namespace ConfiguradorUI.Maestro
             this.lblListarInactivos = new MetroFramework.Controls.MetroLabel();
             this.tabTurno = new MetroFramework.Controls.MetroTabControl();
             this.tabPagGeneral = new MetroFramework.Controls.MetroTabPage();
+            this.dtpHoraSalida = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraEntrada = new System.Windows.Forms.DateTimePicker();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -66,8 +68,6 @@ namespace ConfiguradorUI.Maestro
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dtpHoraEntrada = new System.Windows.Forms.DateTimePicker();
-            this.dtpHoraSalida = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurno)).BeginInit();
             this.panelFiltro.SuspendLayout();
             this.panelMantenimiento.SuspendLayout();
@@ -143,6 +143,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvTurno.Size = new System.Drawing.Size(227, 241);
             this.dgvTurno.TabIndex = 117;
             this.dgvTurno.SelectionChanged += new System.EventHandler(this.dgvTurno_SelectionChanged);
+            this.dgvTurno.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 
@@ -390,6 +391,28 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.VerticalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.VerticalScrollbarSize = 10;
             // 
+            // dtpHoraSalida
+            // 
+            this.dtpHoraSalida.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraSalida.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraSalida.Location = new System.Drawing.Point(344, 126);
+            this.dtpHoraSalida.Name = "dtpHoraSalida";
+            this.dtpHoraSalida.Size = new System.Drawing.Size(105, 33);
+            this.dtpHoraSalida.TabIndex = 91;
+            this.dtpHoraSalida.ValueChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // dtpHoraEntrada
+            // 
+            this.dtpHoraEntrada.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraEntrada.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraEntrada.Location = new System.Drawing.Point(87, 126);
+            this.dtpHoraEntrada.Name = "dtpHoraEntrada";
+            this.dtpHoraEntrada.Size = new System.Drawing.Size(105, 33);
+            this.dtpHoraEntrada.TabIndex = 90;
+            this.dtpHoraEntrada.ValueChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
@@ -437,7 +460,7 @@ namespace ConfiguradorUI.Maestro
             this.txtAbreviacion.CustomButton.UseSelectable = true;
             this.txtAbreviacion.CustomButton.Visible = false;
             this.txtAbreviacion.Lines = new string[0];
-            this.txtAbreviacion.Location = new System.Drawing.Point(84, 52);
+            this.txtAbreviacion.Location = new System.Drawing.Point(84, 51);
             this.txtAbreviacion.MaxLength = 32767;
             this.txtAbreviacion.Name = "txtAbreviacion";
             this.txtAbreviacion.PasswordChar = '\0';
@@ -458,7 +481,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.lblAbreviacion.AutoSize = true;
             this.lblAbreviacion.ForeColor = System.Drawing.Color.Navy;
-            this.lblAbreviacion.Location = new System.Drawing.Point(3, 54);
+            this.lblAbreviacion.Location = new System.Drawing.Point(3, 53);
             this.lblAbreviacion.Name = "lblAbreviacion";
             this.lblAbreviacion.Size = new System.Drawing.Size(81, 19);
             this.lblAbreviacion.TabIndex = 2;
@@ -469,7 +492,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(4, 89);
+            this.panel2.Location = new System.Drawing.Point(4, 88);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(533, 5);
             this.panel2.TabIndex = 86;
@@ -605,28 +628,6 @@ namespace ConfiguradorUI.Maestro
             // errorProv
             // 
             this.errorProv.ContainerControl = this;
-            // 
-            // dtpHoraEntrada
-            // 
-            this.dtpHoraEntrada.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHoraEntrada.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraEntrada.Location = new System.Drawing.Point(87, 126);
-            this.dtpHoraEntrada.Name = "dtpHoraEntrada";
-            this.dtpHoraEntrada.Size = new System.Drawing.Size(105, 33);
-            this.dtpHoraEntrada.TabIndex = 90;
-            this.dtpHoraEntrada.ValueChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // dtpHoraSalida
-            // 
-            this.dtpHoraSalida.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHoraSalida.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraSalida.Location = new System.Drawing.Point(344, 126);
-            this.dtpHoraSalida.Name = "dtpHoraSalida";
-            this.dtpHoraSalida.Size = new System.Drawing.Size(105, 33);
-            this.dtpHoraSalida.TabIndex = 91;
-            this.dtpHoraSalida.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // FormTurno
             // 

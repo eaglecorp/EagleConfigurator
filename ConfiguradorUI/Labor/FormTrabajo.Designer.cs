@@ -140,6 +140,7 @@ namespace ConfiguradorUI.Labor
             this.dgvTrabajo.Size = new System.Drawing.Size(227, 242);
             this.dgvTrabajo.TabIndex = 141;
             this.dgvTrabajo.SelectionChanged += new System.EventHandler(this.dgvTrabajo_SelectionChanged);
+            this.dgvTrabajo.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 

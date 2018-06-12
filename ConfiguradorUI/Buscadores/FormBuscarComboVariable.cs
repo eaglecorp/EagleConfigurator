@@ -191,6 +191,7 @@ namespace ConfiguradorUI.Buscadores
             AddHandled();
             ConfigurarControles();
             BuscarComboVariable();
+            txtDescripcion.Focus();
         }
 
         private void DefinirCabeceraGrid()
@@ -401,12 +402,12 @@ namespace ConfiguradorUI.Buscadores
 
         private void dgvComboVariable_Paint(object sender, PaintEventArgs e)
         {
-            ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
+            ControlHelper.DgvSetColorBorder(sender, e);
         }
 
         private void dgvBordered_Paint(object sender, PaintEventArgs e)
         {
-            ControlHelper.DgvSetColorBorder(sender, e, Color.LightGray);
+            ControlHelper.DgvSetColorBorder(sender, e);
         }
         #endregion
 

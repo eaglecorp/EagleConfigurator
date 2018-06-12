@@ -121,6 +121,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvImpuesto.Size = new System.Drawing.Size(227, 308);
             this.dgvImpuesto.TabIndex = 0;
             this.dgvImpuesto.SelectionChanged += new System.EventHandler(this.dgvImpuesto_SelectionChanged);
+            this.dgvImpuesto.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // panelFiltro
             // 
