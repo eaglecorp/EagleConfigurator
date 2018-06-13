@@ -49,7 +49,6 @@ namespace ConfiguradorUI
             RunTimer();
             btnPrecio.Enabled = false;
             btnReceta.Enabled = false;
-            btnParametro.Visible = false;
         }
 
         private void NombreUsuario()
@@ -376,14 +375,7 @@ namespace ConfiguradorUI
             form.ShowDialog();
         }
 
-        private void btnParametro_Click(object sender, EventArgs e)
-        {
-            FormParametro oForm = new FormParametro();
-            oForm.ShowDialog();
 
-            if (true)
-                AsignarImagenHeader();
-        }
 
         #endregion
 

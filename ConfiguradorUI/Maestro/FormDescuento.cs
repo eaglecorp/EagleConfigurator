@@ -526,7 +526,7 @@ namespace ConfiguradorUI.Maestro
 
                         if (obj.p1_fecha_ini != null || obj.p1_fecha_fin != null)
                         {
-                            
+
                             if (obj.p1_fecha_ini != null)
                             {
                                 DateFormat.SetFormat(dtpP1Ini, DateFormat.DateOnly);
@@ -750,35 +750,50 @@ namespace ConfiguradorUI.Maestro
 
             #endregion
 
-            #region código único
+            #region 
+
 
             if (no_error)
             {
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new DescuentoBL().DescuentoXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_descuento > 0)
-                        {
-                            tabDescuento.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
+                        tabDescuento.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != codSelected && obj != null && obj.id_descuento > 0)
+                        var obj = new DescuentoBL().DescuentoXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabDescuento.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_descuento > 0)
+                            {
+                                tabDescuento.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_descuento > 0)
+                            {
+                                tabDescuento.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+
                     }
                 }
             }
@@ -786,7 +801,8 @@ namespace ConfiguradorUI.Maestro
             #endregion
 
             #region validación de porcetanje y monto
-
+            if (no_error)
+            {
             //si tiene algo dentro
             if (rbtPorcentaje.Checked)
             {
@@ -854,6 +870,7 @@ namespace ConfiguradorUI.Maestro
                 }
             }
 
+            }
 
             if (no_error)
             {
@@ -2127,7 +2144,7 @@ namespace ConfiguradorUI.Maestro
                 cboHi.Enabled = enabled;
                 cboHf.Enabled = enabled;
             }
-            else if(dtpIni.CustomFormat != DateFormat.DateOnly && dtpFin.CustomFormat != DateFormat.DateOnly)
+            else if (dtpIni.CustomFormat != DateFormat.DateOnly && dtpFin.CustomFormat != DateFormat.DateOnly)
             {
                 cboHi.Enabled = false;
                 cboHf.Enabled = false;

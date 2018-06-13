@@ -215,7 +215,6 @@ namespace ConfiguradorUI.Persona
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnRollback = new System.Windows.Forms.Button();
-            this.btnCommit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblIdEmpleado = new MetroFramework.Controls.MetroLabel();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
@@ -223,6 +222,7 @@ namespace ConfiguradorUI.Persona
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
+            this.btnCommit = new System.Windows.Forms.Button();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -3426,10 +3426,10 @@ namespace ConfiguradorUI.Persona
             // panelMantenimiento
             // 
             this.panelMantenimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.panelMantenimiento.Controls.Add(this.btnCommit);
             this.panelMantenimiento.Controls.Add(this.btnSearch);
             this.panelMantenimiento.Controls.Add(this.btnNuevo);
             this.panelMantenimiento.Controls.Add(this.btnRollback);
-            this.panelMantenimiento.Controls.Add(this.btnCommit);
             this.panelMantenimiento.Controls.Add(this.btnDelete);
             this.panelMantenimiento.HorizontalScrollbarBarColor = true;
             this.panelMantenimiento.HorizontalScrollbarHighlightOnWheel = false;
@@ -3489,23 +3489,6 @@ namespace ConfiguradorUI.Persona
             this.btnRollback.TabIndex = 3;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
-            // 
-            // btnCommit
-            // 
-            this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCommit.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
-            this.btnCommit.Location = new System.Drawing.Point(481, 5);
-            this.btnCommit.Name = "btnCommit";
-            this.btnCommit.Size = new System.Drawing.Size(40, 40);
-            this.btnCommit.TabIndex = 0;
-            this.btnCommit.UseVisualStyleBackColor = false;
-            this.btnCommit.UseWaitCursor = true;
-            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 
             // btnDelete
             // 
@@ -3596,6 +3579,21 @@ namespace ConfiguradorUI.Persona
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
             this.lblNumReg.TabIndex = 108;
             this.lblNumReg.Text = "Total: ";
+            // 
+            // btnCommit
+            // 
+            this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
+            this.btnCommit.Location = new System.Drawing.Point(481, 5);
+            this.btnCommit.Name = "btnCommit";
+            this.btnCommit.Size = new System.Drawing.Size(40, 40);
+            this.btnCommit.TabIndex = 111;
+            this.btnCommit.UseVisualStyleBackColor = false;
+            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 
             // FormEmpleado
             // 
@@ -3769,7 +3767,6 @@ namespace ConfiguradorUI.Persona
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnRollback;
-        private System.Windows.Forms.Button btnCommit;
         private System.Windows.Forms.Button btnDelete;
         private MetroFramework.Controls.MetroLabel lblIdEmpleado;
         private MetroFramework.Controls.MetroTabPage tabPagDetalles;
@@ -3849,5 +3846,6 @@ namespace ConfiguradorUI.Persona
         private MetroFramework.Controls.MetroLabel lblUsername;
         private MetroFramework.Controls.MetroLabel lblDescUsername;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnCommit;
     }
 }

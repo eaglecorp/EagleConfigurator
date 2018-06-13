@@ -3,6 +3,7 @@ using ConfigBusinessLogic.Reporte;
 using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -86,7 +87,7 @@ namespace ConfiguradorUI.Reporte
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new RPTt01_reporte();
                         obj = GetObjeto();
@@ -154,7 +155,7 @@ namespace ConfiguradorUI.Reporte
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new RPTt01_reporte();
                         obj = GetObjeto();
@@ -183,7 +184,7 @@ namespace ConfiguradorUI.Reporte
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new RPTt01_reporte();
                         obj = GetObjeto();
@@ -275,43 +276,11 @@ namespace ConfiguradorUI.Reporte
 
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //pathAndFile = null;
             bool no_error = true;
             errorProv.Clear();
-
-
-
-            if (string.IsNullOrEmpty(txtPath.Text.Trim()))
-            {
-                errorProv.SetError(txtPath, "Debe seleccionar un reporte.");
-                txtPath.Focus();
-                no_error = false;
-            }
-            else
-            {
-                var path = txtPath.Text.Trim();
-                if (!File.Exists(path))
-                {
-                    errorProv.SetError(txtPath, "La ruta del archivo no existe.");
-                    txtPath.Focus();
-                    no_error = false;
-                }
-                else if (!path.ToLower().EndsWith(".rpt"))
-                {
-                    errorProv.SetError(txtPath, "El formato del archivo debe ser '.rpt'.");
-                    txtPath.Focus();
-                    no_error = false;
-                }
-            }
-
-            if (!int.TryParse(cboCategoriaReporte.SelectedValue?.ToString(), out int id))
-            {
-                errorProv.SetError(cboCategoriaReporte, "Este campo es requerido.");
-                cboCategoriaReporte.Focus();
-                no_error = false;
-            }
 
             if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
             {
@@ -320,7 +289,6 @@ namespace ConfiguradorUI.Reporte
                 txtNombre.Focus();
                 no_error = false;
             }
-
 
             #region validación copia de rpt
             //if (no_error)
@@ -355,33 +323,81 @@ namespace ConfiguradorUI.Reporte
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new ReporteBL().ReporteXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_reporte > 0)
-                        {
-                            tabReportes.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
+                        tabReportes.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != codSelected && obj != null && obj.id_reporte > 0)
+                        var obj = new ReporteBL().ReporteXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabReportes.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_reporte > 0)
+                            {
+                                tabReportes.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_reporte > 0)
+                            {
+                                tabReportes.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+
                     }
+
                 }
             }
 
             #endregion
+
+            if (no_error && !int.TryParse(cboCategoriaReporte.SelectedValue?.ToString(), out int id))
+            {
+                errorProv.SetError(cboCategoriaReporte, "Este campo es requerido.");
+                cboCategoriaReporte.Focus();
+                no_error = false;
+            }
+
+            if (no_error)
+            {
+                if (string.IsNullOrEmpty(txtPath.Text.Trim()))
+                {
+                    errorProv.SetError(txtPath, "Debe seleccionar un reporte.");
+                    txtPath.Focus();
+                    no_error = false;
+                }
+                else
+                {
+                    var path = txtPath.Text.Trim();
+                    if (!File.Exists(path))
+                    {
+                        errorProv.SetError(txtPath, "La ruta del archivo no existe.");
+                        txtPath.Focus();
+                        no_error = false;
+                    }
+                    else if (!path.ToLower().EndsWith(".rpt"))
+                    {
+                        errorProv.SetError(txtPath, "El formato del archivo debe ser '.rpt'.");
+                        txtPath.Focus();
+                        no_error = false;
+                    }
+                }
+            }
 
             return no_error;
         }

@@ -3,6 +3,7 @@ using ConfigBusinessLogic.Persona;
 using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -77,7 +78,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt05_categoria_emp();
                         obj = GetObjeto();
@@ -158,7 +159,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
 
                         var obj = new PERt05_categoria_emp();
@@ -189,7 +190,7 @@ namespace ConfiguradorUI.Persona
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PERt05_categoria_emp();
                         obj = GetObjeto();
@@ -258,7 +259,7 @@ namespace ConfiguradorUI.Persona
 
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             bool no_error = true;
             errorProv.Clear();
@@ -280,29 +281,44 @@ namespace ConfiguradorUI.Persona
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new CategoriaEmpBL().CategoriaEmpXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_categoria_emp > 0)
+                        tabCategoriaEmp.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
+                    }
+                    else
+                    {
+
+                        var obj = new CategoriaEmpBL().CategoriaEmpXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabCategoriaEmp.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_categoria_emp > 0)
+                            {
+                                tabCategoriaEmp.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_categoria_emp > 0)
+                            {
+                                tabCategoriaEmp.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
-                    {
-                        if (cod != codSelected && obj != null && obj.id_categoria_emp > 0)
-                        {
-                            tabCategoriaEmp.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
-                    }
+
                 }
             }
 

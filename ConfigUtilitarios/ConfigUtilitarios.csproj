@@ -65,6 +65,7 @@
     <Compile Include="KeyValues\KeyHuman.cs" />
     <Compile Include="HelperMultimedia\CamWeb.cs" />
     <Compile Include="KeyValues\CodValDelete.cs" />
+    <Compile Include="KeyValues\Reserved.cs" />
     <Compile Include="Security\Connection.cs" />
     <Compile Include="HelperGeneric\List\ConvertToTable.cs" />
     <Compile Include="HelperControl\CursorWait.cs" />

@@ -125,7 +125,7 @@ namespace ConfiguradorUI.Producto
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         PROt09_producto oProducto = new PROt09_producto();
                         oProducto = GetProducto();
@@ -202,7 +202,7 @@ namespace ConfiguradorUI.Producto
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
 
                         PROt09_producto oProducto = new PROt09_producto();
@@ -236,7 +236,7 @@ namespace ConfiguradorUI.Producto
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         PROt09_producto oProducto = new PROt09_producto();
                         oProducto = GetProducto();
@@ -480,7 +480,7 @@ namespace ConfiguradorUI.Producto
             txtCostoProd.Text = (obj.costo_prod == null) ? "" : obj.costo_prod.RemoveTrailingZeros();
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             errorProv.Clear();
 
@@ -494,41 +494,6 @@ namespace ConfiguradorUI.Producto
                 no_error = false;
             }
 
-            #region codBarra único
-
-            if (no_error)
-            {
-                string cod = txtCodBarra.Text.Trim();
-                if (cod.Length > 0)
-                {
-                    var obj = new ProductoBL().ProductoXCodBarra(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
-                    {
-                        if (obj != null && obj.id_producto > 0)
-                        {
-                            tabProducto.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código de barras ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodBarra, "El código de barras ya está en uso.");
-                            txtCodBarra.Focus();
-                            no_error = false;
-                        }
-                    }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
-                    {
-                        if (cod != codBarraSelected && obj != null && obj.id_producto > 0)
-                        {
-                            tabProducto.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código de barras ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodBarra, "El código de barras ya está en uso.");
-                            txtCodBarra.Focus();
-                            no_error = false;
-                        }
-                    }
-                }
-            }
-
-            #endregion
-
             #region cod1 único
 
             if (no_error)
@@ -536,28 +501,42 @@ namespace ConfiguradorUI.Producto
                 string cod = txtCodigo01.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new ProductoBL().ProductoXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_producto > 0)
-                        {
-                            tabProducto.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo01, "El código ya está en uso.");
-                            txtCodigo01.Focus();
-                            no_error = false;
-                        }
+                        tabProducto.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo01, msg);
+                        txtCodigo01.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != cod1Selected && obj != null && obj.id_producto > 0)
+                        var obj = new ProductoBL().ProductoXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabProducto.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo01, "El código ya está en uso.");
-                            txtCodigo01.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_producto > 0)
+                            {
+                                tabProducto.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo01, "El código ya está en uso.");
+                                txtCodigo01.Focus();
+                                no_error = false;
+                            }
                         }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != cod1Selected && obj != null && obj.id_producto > 0)
+                            {
+                                tabProducto.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo01, "El código ya está en uso.");
+                                txtCodigo01.Focus();
+                                no_error = false;
+                            }
+                        }
+
                     }
                 }
             }
@@ -571,33 +550,98 @@ namespace ConfiguradorUI.Producto
                 string cod = txtCodigo02.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new ProductoBL().ProductoXCod2(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_producto > 0)
-                        {
-                            tabProducto.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo02, "El código ya está en uso.");
-                            txtCodigo02.Focus();
-                            no_error = false;
-                        }
+                        tabProducto.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo02, msg);
+                        txtCodigo02.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != cod2Selected && obj != null && obj.id_producto > 0)
+                        var obj = new ProductoBL().ProductoXCod2(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabProducto.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo02, "El código ya está en uso.");
-                            txtCodigo02.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_producto > 0)
+                            {
+                                tabProducto.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo02, "El código ya está en uso.");
+                                txtCodigo02.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != cod2Selected && obj != null && obj.id_producto > 0)
+                            {
+                                tabProducto.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo02, "El código ya está en uso.");
+                                txtCodigo02.Focus();
+                                no_error = false;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+            #endregion
+
+            #region codBarra único
+
+            if (no_error)
+            {
+                string cod = txtCodBarra.Text.Trim();
+                if (cod.Length > 0)
+                {
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
+                    {
+                        tabProducto.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodBarra, msg);
+                        txtCodBarra.Focus();
+                        no_error = false;
+                    }
+                    else
+                    {
+                        var obj = new ProductoBL().ProductoXCodBarra(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
+                        {
+                            if (obj != null && obj.id_producto > 0)
+                            {
+                                tabProducto.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código de barras ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodBarra, "El código de barras ya está en uso.");
+                                txtCodBarra.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codBarraSelected && obj != null && obj.id_producto > 0)
+                            {
+                                tabProducto.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código de barras ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodBarra, "El código de barras ya está en uso.");
+                                txtCodBarra.Focus();
+                                no_error = false;
+                            }
                         }
                     }
                 }
             }
 
             #endregion
+
+
 
             #region precios y costo
 
@@ -1090,15 +1134,22 @@ namespace ConfiguradorUI.Producto
 
                     grbConImpto.Enabled = false;
                     grbSinImpto.Enabled = true;
+
+                    cboImpuesto.Enabled = false;
+                    cboImpuesto.SelectedIndex = cboImpuesto.Items.Count > 0 ? 0 : -1;
+
                     txtPvPuSinImpto.Focus();
                 }
                 else
                 {
                     grbSinImpto.Enabled = false;
                     grbConImpto.Enabled = true;
+
+                    cboImpuesto.Enabled = true;
+                    cboImpuesto.SelectedValue = (int)DefaultValueInComboBox.Impuesto;
+
                     ActualizarPreciosConImpto();
                     txtPvPuConImpto.Focus();
-
                 }
             }
             catch (Exception e)
@@ -1167,8 +1218,6 @@ namespace ConfiguradorUI.Producto
             cboClaseProd.SelectedIndex = (cboClaseProd.Items.Count > 0) ? 0 : -1;
 
             cboTipoMoneda.SelectedIndex = (cboTipoMoneda.Items.Count > 0) ? 0 : -1;
-            cboImpuesto.SelectedIndex = (cboImpuesto.Items.Count > 0) ? 0 : -1;
-
 
             chkProductoVenta.Checked = true;
             chkProductoCompra.Checked = false;
@@ -1182,10 +1231,11 @@ namespace ConfiguradorUI.Producto
             txtPvMiConImpto.Clear();
             txtPvMaConImpto.Clear();
 
-            chkImpto.Checked = false;
+            chkImpto.Checked = true;
+            cboImpuesto.SelectedValue = (int)DefaultValueInComboBox.Impuesto;
 
-            grbSinImpto.Enabled = true;
-            grbConImpto.Enabled = false;
+            grbSinImpto.Enabled = false;
+            grbConImpto.Enabled = true;
 
             txtPvPuSinImpto.Clear();
             txtPvMiSinImpto.Clear();

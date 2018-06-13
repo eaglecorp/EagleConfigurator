@@ -18,6 +18,7 @@ using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.HelperGeneric;
 using ConfigBusinessLogic.Fiscal;
 using ConfigUtilitarios.ViewModels;
+using ConfigUtilitarios.KeyValues;
 
 namespace ConfiguradorUI.Seguridad
 {
@@ -193,7 +194,7 @@ namespace ConfiguradorUI.Seguridad
             TryAddParameterFromChk(authAnularComp, chkAuthAnularComp);
             TryAddParameterFromChk(authReimprComp, chkAuthReimprComp);
 
-      
+
 
             #region Métodos locales
             void TryAddParameterFromMetroTxt(GRLt01_parametro parametro, MetroTextBox txtParametro)
@@ -876,7 +877,14 @@ namespace ConfiguradorUI.Seguridad
             }
             else
             {
-                if (!new ParametroFiscalBL().EstaDisponibleCodigo(null, codigo) ||
+                if (int.TryParse(codigo, out int numCod) && numCod == Reserved.Code)
+                {
+                    esValido = false;
+                    SetErrorProv(txtCodParamFis, tabConfiguracion, tabPagFiscal, errorProvParamFis,
+                        $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.");
+                }
+
+                if (esValido && !new ParametroFiscalBL().EstaDisponibleCodigo(null, codigo) ||
                     !EstaDisponibleEnCodigosParamFisSinConfirmar(codigo))
                 {
                     esValido = false;
@@ -1010,7 +1018,7 @@ namespace ConfiguradorUI.Seguridad
         }
 
         #endregion
-        
+
         #region Eventos de ventana
 
         private void FormConfiguracion_Load(object sender, EventArgs e)

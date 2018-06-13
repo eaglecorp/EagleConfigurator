@@ -493,7 +493,7 @@ namespace ConfiguradorUI.Producto
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new PROt15_combo_variable();
                         obj = GetObjeto();
@@ -576,7 +576,7 @@ namespace ConfiguradorUI.Producto
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         PROt15_combo_variable obj = new PROt15_combo_variable();
                         obj = GetObjeto();
@@ -610,7 +610,7 @@ namespace ConfiguradorUI.Producto
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         PROt15_combo_variable obj = new PROt15_combo_variable();
                         obj = GetObjeto();
@@ -650,11 +650,7 @@ namespace ConfiguradorUI.Producto
                 obj.txt_estado = chkActivo.Checked ? Estado.TxtActivo : Estado.TxtInactivo;
 
                 obj.sn_incluye_impto = chkIncluyeImpto.Checked ? Estado.IdActivo : Estado.IdInactivo;
-                //IMPORTANTE
-                /*
-                 Colocar null al producto de cada detalle. De los contrario EF al
-                 momento de grabar insertería también estos productos.
-                 */
+
                 if (details != null)
                     details.ForEach(x => x.PROt09_producto = null);
                 obj.PROt16_combo_variable_dtl = details;
@@ -723,7 +719,7 @@ namespace ConfiguradorUI.Producto
 
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             bool no_error = true;
             errorProv.Clear();
@@ -737,69 +733,6 @@ namespace ConfiguradorUI.Producto
                 no_error = false;
             }
 
-            if (!chkIncluyeImpto.Checked && !Validation.PositiveAmount(txtPrecioCboSinTax.Text.Trim()))
-            {
-                errorProv.SetError(txtPrecioCboSinTax, ValidationMsg.Amount);
-                txtPrecioCboSinTax.Focus();
-                no_error = false;
-            }
-            else if (!Validation.PositiveAmount(txtPrecioCboConTax.Text.Trim()))
-            {
-                errorProv.SetError(txtPrecioCboConTax, ValidationMsg.Amount);
-                txtPrecioCboConTax.Focus();
-                no_error = false;
-            }
-
-            #region Validación Details
-            if (details == null || details.Count == 0)
-            {
-                errorProvDtl.SetError(dgvDetail, "Se requiere al menos de un item.");
-                txtItemCod.Focus();
-                no_error = false;
-            }
-            else
-            {
-                var msjValid = "";
-                var numActivos = 0;
-                foreach (var item in details)
-                {
-                    //if (!ValidAmountRange(item.cantidad))
-                    if (!Validation.PositiveAmount(item.cantidad))
-                    {
-                        no_error = false;
-                        msjValid += $"- La cantidad del producto:'{item.PROt09_producto.txt_desc}' " +
-                            $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
-                    }
-                    if (!Validation.PositiveAmount(item.mto_pvpu_con_tax))
-                    {
-                        no_error = false;
-                        msjValid += $"- El precio de venta con impuesto del producto:'{item.PROt09_producto.txt_desc}' " +
-                            $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
-                    }
-
-                    if (!Validation.PositiveAmount(item.mto_pvpu_sin_tax))
-                    {
-                        no_error = false;
-                        msjValid += $"- El precio de venta sin impuesto del producto:'{item.PROt09_producto.txt_desc}' " +
-                            $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
-                    }
-                    if (item.id_estado == Estado.IdActivo)
-                    {
-                        numActivos++;
-                    }
-                }
-                if (numActivos == 0)
-                {
-                    no_error = false;
-                    msjValid = "- Al menos un producto del combo debe estar activo.\n" + msjValid;
-                }
-                if (msjValid != "")
-                {
-                    Msg.Ok_Info(msjValid, "VALIDACIÓN DEL COMBO ELECTIVO");
-                }
-            }
-            #endregion
-
             #region código único
 
             if (no_error)
@@ -807,33 +740,120 @@ namespace ConfiguradorUI.Producto
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new ComboVariableBL().ComboVariableXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_combo_variable > 0)
+                        tabComboVariable.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
+                    }
+                    else
+                    {
+
+                        var obj = new ComboVariableBL().ComboVariableXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabComboVariable.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_combo_variable > 0)
+                            {
+                                tabComboVariable.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_combo_variable > 0)
+                            {
+                                tabComboVariable.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
-                    {
-                        if (cod != codSelected && obj != null && obj.id_combo_variable > 0)
-                        {
-                            tabComboVariable.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
-                    }
+
                 }
             }
 
             #endregion
+
+            #region Validación Details
+
+            if (no_error)
+            {
+                if (details == null || details.Count == 0)
+                {
+                    errorProvDtl.SetError(dgvDetail, "Se requiere al menos de un item.");
+                    txtItemCod.Focus();
+                    no_error = false;
+                }
+                else
+                {
+                    var msjValid = "";
+                    var numActivos = 0;
+                    foreach (var item in details)
+                    {
+                        //if (!ValidAmountRange(item.cantidad))
+                        if (!Validation.PositiveAmount(item.cantidad))
+                        {
+                            no_error = false;
+                            msjValid += $"- La cantidad del producto:'{item.PROt09_producto.txt_desc}' " +
+                                $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
+                        }
+                        if (!Validation.PositiveAmount(item.mto_pvpu_con_tax))
+                        {
+                            no_error = false;
+                            msjValid += $"- El precio de venta con impuesto del producto:'{item.PROt09_producto.txt_desc}' " +
+                                $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
+                        }
+
+                        if (!Validation.PositiveAmount(item.mto_pvpu_sin_tax))
+                        {
+                            no_error = false;
+                            msjValid += $"- El precio de venta sin impuesto del producto:'{item.PROt09_producto.txt_desc}' " +
+                                $"debe ser un número positivo menor a {KeyAmounts.MaxAmount}.\n";
+                        }
+                        if (item.id_estado == Estado.IdActivo)
+                        {
+                            numActivos++;
+                        }
+                    }
+                    if (numActivos == 0)
+                    {
+                        no_error = false;
+                        msjValid = "- Al menos un producto del combo debe estar activo.\n" + msjValid;
+                    }
+                    if (msjValid != "")
+                    {
+                        Msg.Ok_Info(msjValid, "VALIDACIÓN DEL COMBO ELECTIVO");
+                    }
+                }
+
+            }
+
+            #endregion
+
+            if (no_error)
+            {
+                if (!chkIncluyeImpto.Checked && !Validation.PositiveAmount(txtPrecioCboSinTax.Text.Trim()))
+                {
+                    errorProv.SetError(txtPrecioCboSinTax, ValidationMsg.Amount);
+                    txtPrecioCboSinTax.Focus();
+                    no_error = false;
+                }
+                else if (!Validation.PositiveAmount(txtPrecioCboConTax.Text.Trim()))
+                {
+                    errorProv.SetError(txtPrecioCboConTax, ValidationMsg.Amount);
+                    txtPrecioCboConTax.Focus();
+                    no_error = false;
+                }
+            }
 
             #region validación delete
 
@@ -859,7 +879,6 @@ namespace ConfiguradorUI.Producto
                     no_error = false;
                 }
             }
-
 
             #endregion
 
@@ -1063,10 +1082,9 @@ namespace ConfiguradorUI.Producto
                     txtPrecioCboSinTax.Enabled = false;
 
                     cboImpuesto.Enabled = true;
-                    cboImpuesto.SelectedIndex = cboImpuesto.Items.Count > 0 ? 0 : -1;
+                    cboImpuesto.SelectedValue = (int)DefaultValueInComboBox.Impuesto;
 
                     ActualizarPreciosConImpto();
-
                     txtPrecioCboConTax.Focus();
                 }
             }
@@ -1076,7 +1094,6 @@ namespace ConfiguradorUI.Producto
             }
         }
 
-        //Métodos utilitarios de lógica del Form
         private void CargarComboFiltro()
         {
             try
@@ -1104,7 +1121,6 @@ namespace ConfiguradorUI.Producto
             lblIdComboVariable.Text = 0 + "";
 
             chkActivo.Checked = true;
-            chkIncluyeImpto.Checked = true;
             codSelected = "";
             txtNombre.Clear();
             txtCodigo.Clear();
@@ -1112,7 +1128,8 @@ namespace ConfiguradorUI.Producto
             CleanItem(true);
             CleanDetail(true);
 
-            cboImpuesto.SelectedIndex = (cboImpuesto.Items.Count > 0) ? 0 : -1;
+            chkIncluyeImpto.Checked = true;
+            cboImpuesto.SelectedValue = (int)DefaultValueInComboBox.Impuesto;
 
             txtPrecioCboConTax.Clear();
             txtPrecioCboSinTax.Clear();
@@ -1349,7 +1366,7 @@ namespace ConfiguradorUI.Producto
 
             #region Dgv
 
-            dgvDetail.AutoSizeRowsMode          = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dgvDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dgvDetail.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
             SetCabeceraGridDetail();
@@ -1357,8 +1374,8 @@ namespace ConfiguradorUI.Producto
             ControlHelper.DgvReadOnly(dgvDetail);
             ControlHelper.DgvLightStyle(dgvDetail);
 
-            chkIncluyeImpto.Enabled    = true;
-            cboImpuesto.Enabled        = true;
+            chkIncluyeImpto.Enabled = true;
+            cboImpuesto.Enabled = true;
             txtPrecioCboSinTax.Enabled = false;
             txtPrecioCboConTax.Enabled = true;
             #endregion
@@ -1664,6 +1681,9 @@ namespace ConfiguradorUI.Producto
             {
                 ActualizarPreciosSinImpto();
             }
+
+            if (cboImpuesto.Enabled)
+                txtPrecioCboConTax.Focus();
 
             isChangedRow = false;
         }

@@ -731,29 +731,43 @@ namespace ConfiguradorUI.Persona
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new EmpleadoBL().EmpleadoXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_empleado > 0)
-                        {
-                            tabEmpleado.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
+                        tabEmpleado.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != codSelected && obj != null && obj.id_empleado > 0)
+                        var obj = new EmpleadoBL().EmpleadoXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabEmpleado.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_empleado > 0)
+                            {
+                                tabEmpleado.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_empleado > 0)
+                            {
+                                tabEmpleado.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+
                     }
+
                 }
             }
 
@@ -762,7 +776,7 @@ namespace ConfiguradorUI.Persona
 
             #region Validación fechas
             if (no_error)
-            { 
+            {
                 if (dtpFechaNacimiento.CustomFormat == DateFormat.DateOnly)
                 {
                     var hoy = UtilBL.GetCurrentDateTime.Date;
@@ -1934,7 +1948,6 @@ namespace ConfiguradorUI.Persona
 
         private void FormEmpleado_Load(object sender, EventArgs e)
         {
-            btnCommit.Cursor = Cursors.Default;
             lblIdEmpleado.Visible = false;
 
             ConfigurarControles();
@@ -1948,7 +1961,7 @@ namespace ConfiguradorUI.Persona
             AddHandlers();
             tglListarInactivos.AutoCheck = false;
             PostConfig();
-            ConfigurarGrilla();   
+            ConfigurarGrilla();
         }
 
 

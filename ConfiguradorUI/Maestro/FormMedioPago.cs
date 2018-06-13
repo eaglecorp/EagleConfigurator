@@ -13,6 +13,7 @@ using ConfigBusinessEntity;
 using ConfigBusinessLogic.Maestro;
 using ConfigBusinessLogic.Sunat;
 using ConfiguradorUI.FormUtil;
+using ConfigUtilitarios.KeyValues;
 
 namespace ConfiguradorUI.Maestro
 {
@@ -54,8 +55,8 @@ namespace ConfiguradorUI.Maestro
             cboTipoMedioPago.IntegralHeight = false;
             cboTipoMedioPago.MaxDropDownItems = ControlHelper.maxDropDownItems;
             cboTipoMedioPago.DropDownWidth = ControlHelper.DropDownWidth(cboTipoMedioPago);
-            
-            var chks = new[] { chkActivo,chkRequiereRef };
+
+            var chks = new[] { chkActivo, chkRequiereRef };
 
             foreach (var chk in chks)
             {
@@ -285,29 +286,42 @@ namespace ConfiguradorUI.Maestro
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new MedioPagoBL().MedioPagoXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_medio_pago > 0)
+                        tabMedioPago.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
+                    }
+                    else
+                    {
+                        var obj = new MedioPagoBL().MedioPagoXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabMedioPago.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_medio_pago > 0)
+                            {
+                                tabMedioPago.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_medio_pago > 0)
+                            {
+                                tabMedioPago.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
-                    {
-                        if (cod != codSelected && obj != null && obj.id_medio_pago > 0)
-                        {
-                            tabMedioPago.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
-                    }
+
                 }
             }
 
@@ -465,7 +479,7 @@ namespace ConfiguradorUI.Maestro
             chkActivo.Checked = true;
             chkRequiereRef.Checked = false;
 
-            cboTipoMedioPago.SelectedIndex = (cboTipoMedioPago.Items.Count > 0)? 0 : -1;
+            cboTipoMedioPago.SelectedIndex = (cboTipoMedioPago.Items.Count > 0) ? 0 : -1;
 
         }
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)
@@ -590,7 +604,7 @@ namespace ConfiguradorUI.Maestro
         {
             try
             {
-                var lista = new MedioPagoBL().ListaMedioPago(id_estado,true);
+                var lista = new MedioPagoBL().ListaMedioPago(id_estado, true);
                 var listaView = lista.Select(x => new { x.id_medio_pago, CODIGO = x.cod_medio_pago, NOMBRE = x.txt_desc })
                .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 

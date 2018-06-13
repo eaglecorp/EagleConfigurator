@@ -14,6 +14,7 @@ using ConfigUtilitarios;
 using ConfiguradorUI.FormUtil;
 using ConfigBusinessLogic.Utiles;
 using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.KeyValues;
 
 namespace ConfiguradorUI.Producto
 {
@@ -292,29 +293,43 @@ namespace ConfiguradorUI.Producto
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new ModeloBL().ModeloXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_modelo > 0)
-                        {
-                            tabModelo.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
+                        tabModelo.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != codSelected && obj != null && obj.id_modelo > 0)
+                        var obj = new ModeloBL().ModeloXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabModelo.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_modelo > 0)
+                            {
+                                tabModelo.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_modelo > 0)
+                            {
+                                tabModelo.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+
                     }
+
                 }
             }
 
@@ -424,7 +439,7 @@ namespace ConfiguradorUI.Producto
         private void SeleccionarRegistro()
         {
             isPending = false;
-            if (dgvModelo.RowCount > 0 && 
+            if (dgvModelo.RowCount > 0 &&
                 dgvModelo.SelectedRows.Count > 0 &&
                 dgvModelo.CurrentRow.Index != -1)
             {

@@ -7,6 +7,7 @@ using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.HelperGeneric;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -341,36 +342,54 @@ namespace ConfiguradorUI.Seguridad
                 no_error = false;
             }
 
+            #region código único
+
             if (no_error)
             {
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var usuario = new UsuarioBL().UsuarioXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (usuario != null && usuario.id_usuario > 0)
-                        {
-                            tabUsuario.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
+                        tabUsuario.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != usuarioSelected.cod_usuario && usuario != null && usuario.id_usuario > 0)
+                        var usuario = new UsuarioBL().UsuarioXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabUsuario.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (usuario != null && usuario.id_usuario > 0)
+                            {
+                                tabUsuario.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != usuarioSelected.cod_usuario && usuario != null && usuario.id_usuario > 0)
+                            {
+                                tabUsuario.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
                     }
                 }
             }
+
+            #endregion
+
 
             if (no_error == true)
             {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarProducto));
             this.btnVerTodos = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.chkIncluirInactivos = new MetroFramework.Controls.MetroCheckBox();
@@ -40,6 +41,7 @@
             this.dgvProd = new System.Windows.Forms.DataGridView();
             this.gbxFiltro = new System.Windows.Forms.GroupBox();
             this.lblNombreForm = new System.Windows.Forms.Label();
+            this.btnCerrar = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).BeginInit();
             this.gbxFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +109,7 @@
             // 
             // 
             this.txtDescripcionProd.CustomButton.Image = null;
-            this.txtDescripcionProd.CustomButton.Location = new System.Drawing.Point(570, 1);
+            this.txtDescripcionProd.CustomButton.Location = new System.Drawing.Point(618, 1);
             this.txtDescripcionProd.CustomButton.Name = "";
             this.txtDescripcionProd.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDescripcionProd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -224,9 +226,9 @@
             // dgvProd
             // 
             this.dgvProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProd.Location = new System.Drawing.Point(23, 168);
+            this.dgvProd.Location = new System.Drawing.Point(23, 180);
             this.dgvProd.Name = "dgvProd";
-            this.dgvProd.Size = new System.Drawing.Size(834, 309);
+            this.dgvProd.Size = new System.Drawing.Size(834, 342);
             this.dgvProd.TabIndex = 0;
             this.dgvProd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProd_CellDoubleClick);
             this.dgvProd.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvProd_Paint);
@@ -245,7 +247,7 @@
             this.gbxFiltro.Controls.Add(this.metroLabel3);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxFiltro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbxFiltro.Location = new System.Drawing.Point(23, 71);
+            this.gbxFiltro.Location = new System.Drawing.Point(23, 83);
             this.gbxFiltro.Name = "gbxFiltro";
             this.gbxFiltro.Size = new System.Drawing.Size(834, 91);
             this.gbxFiltro.TabIndex = 12;
@@ -257,17 +259,29 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(23, 23);
+            this.lblNombreForm.Location = new System.Drawing.Point(85, 31);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(233, 32);
             this.lblNombreForm.TabIndex = 73;
             this.lblNombreForm.Text = "Seleccionar producto";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageSize = 48;
+            this.btnCerrar.Location = new System.Drawing.Point(23, 20);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
+            this.btnCerrar.TabIndex = 78;
+            this.btnCerrar.UseSelectable = true;
+            // 
             // FormBuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 500);
+            this.ClientSize = new System.Drawing.Size(880, 545);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.gbxFiltro);
             this.Controls.Add(this.dgvProd);
@@ -295,5 +309,6 @@
         private System.Windows.Forms.DataGridView dgvProd;
         private System.Windows.Forms.GroupBox gbxFiltro;
         private System.Windows.Forms.Label lblNombreForm;
+        private MetroFramework.Controls.MetroLink btnCerrar;
     }
 }

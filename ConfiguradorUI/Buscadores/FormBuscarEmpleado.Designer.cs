@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarEmpleado));
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.gbxFiltro = new System.Windows.Forms.GroupBox();
             this.txtApellidosYNombres = new MetroFramework.Controls.MetroTextBox();
@@ -39,6 +40,7 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.gbxFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +50,7 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(23, 24);
+            this.lblNombreForm.Location = new System.Drawing.Point(85, 31);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(240, 32);
             this.lblNombreForm.TabIndex = 76;
@@ -66,7 +68,7 @@
             this.gbxFiltro.Controls.Add(this.metroLabel1);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxFiltro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbxFiltro.Location = new System.Drawing.Point(23, 71);
+            this.gbxFiltro.Location = new System.Drawing.Point(23, 83);
             this.gbxFiltro.Name = "gbxFiltro";
             this.gbxFiltro.Size = new System.Drawing.Size(834, 91);
             this.gbxFiltro.TabIndex = 75;
@@ -238,19 +240,31 @@
             // dgvEmpleado
             // 
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleado.Location = new System.Drawing.Point(23, 168);
+            this.dgvEmpleado.Location = new System.Drawing.Point(23, 180);
             this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.Size = new System.Drawing.Size(834, 309);
+            this.dgvEmpleado.Size = new System.Drawing.Size(834, 342);
             this.dgvEmpleado.TabIndex = 74;
             this.dgvEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
             this.dgvEmpleado.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvEmpleado_Paint);
             this.dgvEmpleado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvEmpleado_KeyDown);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageSize = 48;
+            this.btnCerrar.Location = new System.Drawing.Point(23, 20);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
+            this.btnCerrar.TabIndex = 77;
+            this.btnCerrar.UseSelectable = true;
+            // 
             // FormBuscarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 500);
+            this.ClientSize = new System.Drawing.Size(880, 545);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.gbxFiltro);
             this.Controls.Add(this.dgvEmpleado);
@@ -278,5 +292,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.DataGridView dgvEmpleado;
+        private MetroFramework.Controls.MetroLink btnCerrar;
     }
 }

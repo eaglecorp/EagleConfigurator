@@ -60,7 +60,6 @@
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnImpresora = new System.Windows.Forms.Button();
             this.btnTipoImpresora = new System.Windows.Forms.Button();
-            this.btnParametro = new System.Windows.Forms.Button();
             this.btnTipoLocation = new System.Windows.Forms.Button();
             this.btnLocation = new System.Windows.Forms.Button();
             this.btnMedioPago = new System.Windows.Forms.Button();
@@ -106,7 +105,7 @@
             this.tabPanel.Controls.Add(this.tabPagLabor);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 3;
+            this.tabPanel.SelectedIndex = 2;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -554,7 +553,6 @@
             this.tabPagMaestros.Controls.Add(this.btnCaja);
             this.tabPagMaestros.Controls.Add(this.btnImpresora);
             this.tabPagMaestros.Controls.Add(this.btnTipoImpresora);
-            this.tabPagMaestros.Controls.Add(this.btnParametro);
             this.tabPagMaestros.Controls.Add(this.btnTipoLocation);
             this.tabPagMaestros.Controls.Add(this.btnLocation);
             this.tabPagMaestros.Controls.Add(this.btnMedioPago);
@@ -721,27 +719,6 @@
             this.btnTipoImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTipoImpresora.UseVisualStyleBackColor = false;
             this.btnTipoImpresora.Click += new System.EventHandler(this.btnTipoImpresora_Click);
-            // 
-            // btnParametro
-            // 
-            this.btnParametro.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnParametro.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnParametro.FlatAppearance.BorderSize = 0;
-            this.btnParametro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnParametro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnParametro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnParametro.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnParametro.ForeColor = System.Drawing.Color.White;
-            this.btnParametro.Image = ((System.Drawing.Image)(resources.GetObject("btnParametro.Image")));
-            this.btnParametro.Location = new System.Drawing.Point(526, 176);
-            this.btnParametro.Margin = new System.Windows.Forms.Padding(2);
-            this.btnParametro.Name = "btnParametro";
-            this.btnParametro.Size = new System.Drawing.Size(145, 37);
-            this.btnParametro.TabIndex = 8;
-            this.btnParametro.Text = "Parámetros";
-            this.btnParametro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnParametro.UseVisualStyleBackColor = false;
-            this.btnParametro.Click += new System.EventHandler(this.btnParametro_Click);
             // 
             // btnTipoLocation
             // 
@@ -1217,7 +1194,6 @@
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Button btnMedioPago;
-        private System.Windows.Forms.Button btnParametro;
         private System.Windows.Forms.Button btnTipoLocation;
         private System.Windows.Forms.Button btnLocation;
         private System.Windows.Forms.Button btnImpuesto;

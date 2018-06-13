@@ -142,8 +142,8 @@
             // tabConfiguracion
             // 
             this.tabConfiguracion.Controls.Add(this.tabPagEmail);
-            this.tabConfiguracion.Controls.Add(this.tabPagComprobante);
             this.tabConfiguracion.Controls.Add(this.tabPagFiscal);
+            this.tabConfiguracion.Controls.Add(this.tabPagComprobante);
             this.tabConfiguracion.Controls.Add(this.tabPagUsuario);
             this.tabConfiguracion.Controls.Add(this.tabPagBaseDeDatos);
             this.tabConfiguracion.Controls.Add(this.tabPagDiseno);
@@ -221,9 +221,9 @@
             this.lblAddMsjCredentials.ForeColor = System.Drawing.Color.Navy;
             this.lblAddMsjCredentials.Location = new System.Drawing.Point(16, 246);
             this.lblAddMsjCredentials.Name = "lblAddMsjCredentials";
-            this.lblAddMsjCredentials.Size = new System.Drawing.Size(250, 19);
+            this.lblAddMsjCredentials.Size = new System.Drawing.Size(253, 19);
             this.lblAddMsjCredentials.TabIndex = 14;
-            this.lblAddMsjCredentials.Text = "Adjuntar mensaje - Envío de credenciales";
+            this.lblAddMsjCredentials.Text = "Adjuntar mensaje - Envío de credenciales:";
             this.lblAddMsjCredentials.UseCustomForeColor = true;
             // 
             // lblSubjectCredentials
@@ -232,9 +232,9 @@
             this.lblSubjectCredentials.ForeColor = System.Drawing.Color.Navy;
             this.lblSubjectCredentials.Location = new System.Drawing.Point(16, 198);
             this.lblSubjectCredentials.Name = "lblSubjectCredentials";
-            this.lblSubjectCredentials.Size = new System.Drawing.Size(188, 19);
+            this.lblSubjectCredentials.Size = new System.Drawing.Size(191, 19);
             this.lblSubjectCredentials.TabIndex = 12;
-            this.lblSubjectCredentials.Text = "Asunto - Envío de credenciales";
+            this.lblSubjectCredentials.Text = "Asunto - Envío de credenciales:";
             this.lblSubjectCredentials.UseCustomForeColor = true;
             // 
             // txtSubjectCredentials

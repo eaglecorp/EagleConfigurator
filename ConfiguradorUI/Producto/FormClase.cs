@@ -13,6 +13,7 @@ using ConfigBusinessLogic;
 using ConfigBusinessEntity;
 using ConfiguradorUI.FormUtil;
 using ConfigBusinessLogic.Utiles;
+using ConfigUtilitarios.KeyValues;
 
 namespace ConfiguradorUI.Producto
 {
@@ -306,29 +307,43 @@ namespace ConfiguradorUI.Producto
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new ClaseProdBL().ClaseProdXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_clase_prod > 0)
+                        tabClase.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
+                    }
+                    else
+                    {
+
+                        var obj = new ClaseProdBL().ClaseProdXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabClase.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_clase_prod > 0)
+                            {
+                                tabClase.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_clase_prod > 0)
+                            {
+                                tabClase.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
-                    {
-                        if (cod != codSelected && obj != null && obj.id_clase_prod > 0)
-                        {
-                            tabClase.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
-                    }
+
                 }
             }
 
@@ -667,9 +682,12 @@ namespace ConfiguradorUI.Producto
             try
             {
                 var lista = new ClaseProdBL().ListaClaseProd(id_estado, true);
-                var listaView = lista.Select(x => new { x.id_clase_prod,
+                var listaView = lista.Select(x => new
+                {
+                    x.id_clase_prod,
                     CODIGO = x.cod_clase_prod,
-                    NOMBRE = x.txt_desc })
+                    NOMBRE = x.txt_desc
+                })
                 .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 
                 if (lista != null)

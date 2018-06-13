@@ -116,12 +116,6 @@
     <Compile Include="FormUtil\CheckBoxDialog.Designer.cs">
       <DependentUpon>CheckBoxDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUtil\CustomDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUtil\CustomDialog.Designer.cs">
-      <DependentUpon>CustomDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormUtil\Transparent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,12 +199,6 @@
     </Compile>
     <Compile Include="Maestro\FormMesa.Designer.cs">
       <DependentUpon>FormMesa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maestro\FormParametro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maestro\FormParametro.Designer.cs">
-      <DependentUpon>FormParametro.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestro\FormRazon.cs">
       <SubType>Form</SubType>
@@ -441,9 +429,6 @@
     <EmbeddedResource Include="FormUtil\CheckBoxDialog.resx">
       <DependentUpon>CheckBoxDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUtil\CustomDialog.resx">
-      <DependentUpon>CustomDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormUtil\Transparent.resx">
       <DependentUpon>Transparent.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,9 +470,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormMesa.resx">
       <DependentUpon>FormMesa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maestro\FormParametro.resx">
-      <DependentUpon>FormParametro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestro\FormRazon.resx">
       <DependentUpon>FormRazon.cs</DependentUpon>

@@ -4,6 +4,7 @@ using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperClass;
 using ConfigUtilitarios.HelperControl;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -86,7 +87,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt13_turno();
                         obj = GetObjeto();
@@ -162,7 +163,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt13_turno();
                         obj = GetObjeto();
@@ -192,7 +193,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt13_turno();
                         obj = GetObjeto();
@@ -269,7 +270,7 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             bool no_error = true;
@@ -295,37 +296,55 @@ namespace ConfiguradorUI.Maestro
                 txtNombre.Focus();
                 no_error = false;
             }
-
+            #region código único
             if (no_error)
             {
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new TurnoBL().TurnoXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_turno > 0)
-                        {
-                            tabTurno.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
+                        tabTurno.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != codSelected && obj != null && obj.id_turno > 0)
+                        var obj = new TurnoBL().TurnoXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabTurno.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_turno > 0)
+                            {
+                                tabTurno.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_turno > 0)
+                            {
+                                tabTurno.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+
                     }
+
                 }
             }
+
+            #endregion
+
+
 
             //Se podría validar que no tenga hijas al desactivar.
 

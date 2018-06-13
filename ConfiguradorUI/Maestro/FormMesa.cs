@@ -2,6 +2,7 @@
 using ConfigBusinessLogic.Maestro;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
+using ConfigUtilitarios.KeyValues;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -92,7 +93,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt14_mesa();
                         obj = GetObjeto();
@@ -177,7 +178,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
 
                         var obj = new MSTt14_mesa();
@@ -208,7 +209,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt14_mesa();
                         obj = GetObjeto();
@@ -276,34 +277,11 @@ namespace ConfiguradorUI.Maestro
 
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             bool no_error = true;
             errorProv.Clear();
-            //validando los controles para el tabPageGeneral
-            //Foreach en caso se requiera validar más controles - por ver.
-
-
-            if (!int.TryParse(cboEstadoMesa.SelectedValue?.ToString(), out int id))
-            {
-                errorProv.SetError(cboEstadoMesa, "Este campo es requerido.");
-                cboEstadoMesa.Focus();
-                no_error = false;
-            }
-
-            if (string.IsNullOrEmpty(txtCapacidad.Text.Trim()))
-            {
-                errorProv.SetError(txtCapacidad, "Este campo es requerido.");
-                txtCapacidad.Focus();
-                no_error = false;
-            }
-            else if (!int.TryParse(txtCapacidad.Text.Trim(), out int capacidad) || capacidad <= 0)
-            {
-                errorProv.SetError(txtCapacidad, "Debe ser un número entero positivo.");
-                txtCapacidad.Focus();
-                no_error = false;
-            }
 
             if (string.IsNullOrEmpty(txtNumero.Text.Trim()))
             {
@@ -312,6 +290,7 @@ namespace ConfiguradorUI.Maestro
                 txtNumero.Focus();
                 no_error = false;
             }
+
             #region código único
 
             if (no_error)
@@ -319,33 +298,71 @@ namespace ConfiguradorUI.Maestro
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new MesaBL().MesaXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_mesa > 0)
-                        {
-                            tabMesa.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
+                        tabMesa.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != codSelected && obj != null && obj.id_mesa > 0)
+                        var obj = new MesaBL().MesaXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabMesa.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_mesa > 0)
+                            {
+                                tabMesa.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_mesa > 0)
+                            {
+                                tabMesa.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+
                     }
+
                 }
             }
 
             #endregion
+
+            if (no_error)
+            {
+                if (string.IsNullOrEmpty(txtCapacidad.Text.Trim()))
+                {
+                    errorProv.SetError(txtCapacidad, "Este campo es requerido.");
+                    txtCapacidad.Focus();
+                    no_error = false;
+                }
+                else if (!int.TryParse(txtCapacidad.Text.Trim(), out int capacidad) || capacidad <= 0)
+                {
+                    errorProv.SetError(txtCapacidad, "Debe ser un número entero positivo.");
+                    txtCapacidad.Focus();
+                    no_error = false;
+                }
+            }
+
+            if (no_error && !int.TryParse(cboEstadoMesa.SelectedValue?.ToString(), out int id))
+            {
+                errorProv.SetError(cboEstadoMesa, "Este campo es requerido.");
+                cboEstadoMesa.Focus();
+                no_error = false;
+            }
 
             return no_error;
         }

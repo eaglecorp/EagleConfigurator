@@ -63,4 +63,9 @@ namespace ConfigUtilitarios
         public static string TipoRazon { get; } = "0";
 
     }
+
+    public enum DefaultValueInComboBox
+    {
+        Impuesto = 2
+    }
 }

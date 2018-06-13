@@ -190,6 +190,13 @@ namespace ConfiguradorUI.Producto.Auxiliares
             }
             else
             {
+                if (int.TryParse(txtItemCod.Text.Trim(), out int numCod) && numCod == Reserved.Code)
+                {
+                    valid = false;
+                    errorProv.SetError(txtItemCod, $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.");
+                    txtItemCod.Focus();
+                }
+
                 if (!Validation.PositiveAmount(txtItemPriceSinImp.Text.Trim()))
                 {
                     valid = false;

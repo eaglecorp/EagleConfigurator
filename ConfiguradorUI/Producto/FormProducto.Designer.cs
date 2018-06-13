@@ -155,7 +155,7 @@ namespace ConfiguradorUI.Producto
             this.tabProducto.Controls.Add(this.tabPagPrecio);
             this.tabProducto.Location = new System.Drawing.Point(428, 91);
             this.tabProducto.Name = "tabProducto";
-            this.tabProducto.SelectedIndex = 1;
+            this.tabProducto.SelectedIndex = 0;
             this.tabProducto.Size = new System.Drawing.Size(564, 527);
             this.tabProducto.TabIndex = 1;
             this.tabProducto.UseSelectable = true;
@@ -186,7 +186,6 @@ namespace ConfiguradorUI.Producto
             this.tabPagGeneral.Controls.Add(this.txtAncho);
             this.tabPagGeneral.Controls.Add(this.txtReferencia);
             this.tabPagGeneral.Controls.Add(this.txtPeso);
-            this.tabPagGeneral.Controls.Add(this.lblReferencia);
             this.tabPagGeneral.Controls.Add(this.chkCombo);
             this.tabPagGeneral.Controls.Add(this.lblAncho);
             this.tabPagGeneral.Controls.Add(this.chkProductoCompra);
@@ -216,6 +215,7 @@ namespace ConfiguradorUI.Producto
             this.tabPagGeneral.Controls.Add(this.lblCodigo01);
             this.tabPagGeneral.Controls.Add(this.txtNombre);
             this.tabPagGeneral.Controls.Add(this.lblNombre);
+            this.tabPagGeneral.Controls.Add(this.lblReferencia);
             this.tabPagGeneral.HorizontalScrollbarBarColor = true;
             this.tabPagGeneral.HorizontalScrollbarHighlightOnWheel = false;
             this.tabPagGeneral.HorizontalScrollbarSize = 10;
@@ -244,7 +244,7 @@ namespace ConfiguradorUI.Producto
             this.txtDiametro.CustomButton.UseSelectable = true;
             this.txtDiametro.CustomButton.Visible = false;
             this.txtDiametro.Lines = new string[0];
-            this.txtDiametro.Location = new System.Drawing.Point(75, 460);
+            this.txtDiametro.Location = new System.Drawing.Point(75, 375);
             this.txtDiametro.MaxLength = 32767;
             this.txtDiametro.Name = "txtDiametro";
             this.txtDiametro.PasswordChar = '\0';
@@ -265,7 +265,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblDiametro.AutoSize = true;
             this.lblDiametro.ForeColor = System.Drawing.Color.Navy;
-            this.lblDiametro.Location = new System.Drawing.Point(5, 462);
+            this.lblDiametro.Location = new System.Drawing.Point(0, 377);
             this.lblDiametro.Name = "lblDiametro";
             this.lblDiametro.Size = new System.Drawing.Size(67, 19);
             this.lblDiametro.TabIndex = 41;
@@ -278,7 +278,7 @@ namespace ConfiguradorUI.Producto
             this.chkReceta.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkReceta.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkReceta.ForeColor = System.Drawing.Color.Navy;
-            this.chkReceta.Location = new System.Drawing.Point(371, 338);
+            this.chkReceta.Location = new System.Drawing.Point(371, 466);
             this.chkReceta.Name = "chkReceta";
             this.chkReceta.Size = new System.Drawing.Size(64, 19);
             this.chkReceta.TabIndex = 28;
@@ -291,36 +291,36 @@ namespace ConfiguradorUI.Producto
             // 
             this.panel4.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(5, 407);
+            this.panel4.Location = new System.Drawing.Point(4, 450);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(530, 5);
+            this.panel4.Size = new System.Drawing.Size(533, 5);
             this.panel4.TabIndex = 60;
             // 
             // panel3
             // 
             this.panel3.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(5, 316);
+            this.panel3.Location = new System.Drawing.Point(4, 316);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(530, 5);
+            this.panel3.Size = new System.Drawing.Size(533, 5);
             this.panel3.TabIndex = 59;
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(5, 218);
+            this.panel2.Location = new System.Drawing.Point(4, 218);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(530, 5);
+            this.panel2.Size = new System.Drawing.Size(533, 5);
             this.panel2.TabIndex = 58;
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(5, 120);
+            this.panel1.Location = new System.Drawing.Point(4, 120);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(530, 5);
+            this.panel1.Size = new System.Drawing.Size(533, 5);
             this.panel1.TabIndex = 57;
             // 
             // cboUnidadMedida
@@ -355,7 +355,7 @@ namespace ConfiguradorUI.Producto
             this.chkActivo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkActivo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkActivo.ForeColor = System.Drawing.Color.Navy;
-            this.chkActivo.Location = new System.Drawing.Point(5, 338);
+            this.chkActivo.Location = new System.Drawing.Point(5, 466);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
             this.chkActivo.TabIndex = 30;
@@ -457,7 +457,7 @@ namespace ConfiguradorUI.Producto
             this.txtAltura.CustomButton.UseSelectable = true;
             this.txtAltura.CustomButton.Visible = false;
             this.txtAltura.Lines = new string[0];
-            this.txtAltura.Location = new System.Drawing.Point(257, 426);
+            this.txtAltura.Location = new System.Drawing.Point(257, 338);
             this.txtAltura.MaxLength = 32767;
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.PasswordChar = '\0';
@@ -490,7 +490,7 @@ namespace ConfiguradorUI.Producto
             this.txtLargo.CustomButton.UseSelectable = true;
             this.txtLargo.CustomButton.Visible = false;
             this.txtLargo.Lines = new string[0];
-            this.txtLargo.Location = new System.Drawing.Point(433, 426);
+            this.txtLargo.Location = new System.Drawing.Point(433, 338);
             this.txtLargo.MaxLength = 32767;
             this.txtLargo.Name = "txtLargo";
             this.txtLargo.PasswordChar = '\0';
@@ -511,7 +511,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblAltura.AutoSize = true;
             this.lblAltura.ForeColor = System.Drawing.Color.Navy;
-            this.lblAltura.Location = new System.Drawing.Point(204, 428);
+            this.lblAltura.Location = new System.Drawing.Point(204, 340);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(47, 19);
             this.lblAltura.TabIndex = 39;
@@ -522,7 +522,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblLargo.AutoSize = true;
             this.lblLargo.ForeColor = System.Drawing.Color.Navy;
-            this.lblLargo.Location = new System.Drawing.Point(379, 428);
+            this.lblLargo.Location = new System.Drawing.Point(379, 340);
             this.lblLargo.Name = "lblLargo";
             this.lblLargo.Size = new System.Drawing.Size(46, 19);
             this.lblLargo.TabIndex = 37;
@@ -545,7 +545,7 @@ namespace ConfiguradorUI.Producto
             this.txtAncho.CustomButton.UseSelectable = true;
             this.txtAncho.CustomButton.Visible = false;
             this.txtAncho.Lines = new string[0];
-            this.txtAncho.Location = new System.Drawing.Point(75, 426);
+            this.txtAncho.Location = new System.Drawing.Point(75, 338);
             this.txtAncho.MaxLength = 32767;
             this.txtAncho.Name = "txtAncho";
             this.txtAncho.PasswordChar = '\0';
@@ -578,7 +578,7 @@ namespace ConfiguradorUI.Producto
             this.txtReferencia.CustomButton.UseSelectable = true;
             this.txtReferencia.CustomButton.Visible = false;
             this.txtReferencia.Lines = new string[0];
-            this.txtReferencia.Location = new System.Drawing.Point(75, 371);
+            this.txtReferencia.Location = new System.Drawing.Point(75, 411);
             this.txtReferencia.MaxLength = 32767;
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.PasswordChar = '\0';
@@ -611,7 +611,7 @@ namespace ConfiguradorUI.Producto
             this.txtPeso.CustomButton.UseSelectable = true;
             this.txtPeso.CustomButton.Visible = false;
             this.txtPeso.Lines = new string[0];
-            this.txtPeso.Location = new System.Drawing.Point(257, 460);
+            this.txtPeso.Location = new System.Drawing.Point(257, 375);
             this.txtPeso.MaxLength = 32767;
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.PasswordChar = '\0';
@@ -632,7 +632,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblReferencia.AutoSize = true;
             this.lblReferencia.ForeColor = System.Drawing.Color.Navy;
-            this.lblReferencia.Location = new System.Drawing.Point(1, 373);
+            this.lblReferencia.Location = new System.Drawing.Point(0, 413);
             this.lblReferencia.Name = "lblReferencia";
             this.lblReferencia.Size = new System.Drawing.Size(73, 19);
             this.lblReferencia.TabIndex = 31;
@@ -645,7 +645,7 @@ namespace ConfiguradorUI.Producto
             this.chkCombo.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkCombo.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkCombo.ForeColor = System.Drawing.Color.Navy;
-            this.chkCombo.Location = new System.Drawing.Point(455, 338);
+            this.chkCombo.Location = new System.Drawing.Point(455, 466);
             this.chkCombo.Name = "chkCombo";
             this.chkCombo.Size = new System.Drawing.Size(70, 19);
             this.chkCombo.TabIndex = 29;
@@ -658,7 +658,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblAncho.AutoSize = true;
             this.lblAncho.ForeColor = System.Drawing.Color.Navy;
-            this.lblAncho.Location = new System.Drawing.Point(5, 428);
+            this.lblAncho.Location = new System.Drawing.Point(0, 340);
             this.lblAncho.Name = "lblAncho";
             this.lblAncho.Size = new System.Drawing.Size(49, 19);
             this.lblAncho.TabIndex = 35;
@@ -671,7 +671,7 @@ namespace ConfiguradorUI.Producto
             this.chkProductoCompra.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkProductoCompra.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkProductoCompra.ForeColor = System.Drawing.Color.Navy;
-            this.chkProductoCompra.Location = new System.Drawing.Point(223, 338);
+            this.chkProductoCompra.Location = new System.Drawing.Point(223, 466);
             this.chkProductoCompra.Name = "chkProductoCompra";
             this.chkProductoCompra.Size = new System.Drawing.Size(132, 19);
             this.chkProductoCompra.TabIndex = 27;
@@ -688,7 +688,7 @@ namespace ConfiguradorUI.Producto
             this.chkProductoVenta.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkProductoVenta.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkProductoVenta.ForeColor = System.Drawing.Color.Navy;
-            this.chkProductoVenta.Location = new System.Drawing.Point(87, 338);
+            this.chkProductoVenta.Location = new System.Drawing.Point(87, 466);
             this.chkProductoVenta.Name = "chkProductoVenta";
             this.chkProductoVenta.Size = new System.Drawing.Size(115, 19);
             this.chkProductoVenta.TabIndex = 26;
@@ -701,7 +701,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblPeso.AutoSize = true;
             this.lblPeso.ForeColor = System.Drawing.Color.Navy;
-            this.lblPeso.Location = new System.Drawing.Point(204, 462);
+            this.lblPeso.Location = new System.Drawing.Point(204, 377);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(39, 19);
             this.lblPeso.TabIndex = 33;
@@ -786,7 +786,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblTipoExistencia.AutoSize = true;
             this.lblTipoExistencia.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoExistencia.Location = new System.Drawing.Point(-1, 279);
+            this.lblTipoExistencia.Location = new System.Drawing.Point(0, 279);
             this.lblTipoExistencia.Name = "lblTipoExistencia";
             this.lblTipoExistencia.Size = new System.Drawing.Size(79, 19);
             this.lblTipoExistencia.TabIndex = 22;
@@ -797,7 +797,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblTipoProd.AutoSize = true;
             this.lblTipoProd.ForeColor = System.Drawing.Color.Navy;
-            this.lblTipoProd.Location = new System.Drawing.Point(-2, 243);
+            this.lblTipoProd.Location = new System.Drawing.Point(0, 243);
             this.lblTipoProd.Name = "lblTipoProd";
             this.lblTipoProd.Size = new System.Drawing.Size(71, 19);
             this.lblTipoProd.TabIndex = 18;
@@ -882,18 +882,18 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblSubFamilia.AutoSize = true;
             this.lblSubFamilia.ForeColor = System.Drawing.Color.Navy;
-            this.lblSubFamilia.Location = new System.Drawing.Point(-2, 180);
+            this.lblSubFamilia.Location = new System.Drawing.Point(0, 180);
             this.lblSubFamilia.Name = "lblSubFamilia";
-            this.lblSubFamilia.Size = new System.Drawing.Size(79, 19);
+            this.lblSubFamilia.Size = new System.Drawing.Size(73, 19);
             this.lblSubFamilia.TabIndex = 14;
-            this.lblSubFamilia.Text = "Sub Familia:";
+            this.lblSubFamilia.Text = "Subfamilia:";
             this.lblSubFamilia.UseCustomForeColor = true;
             // 
             // lblFamilia
             // 
             this.lblFamilia.AutoSize = true;
             this.lblFamilia.ForeColor = System.Drawing.Color.Navy;
-            this.lblFamilia.Location = new System.Drawing.Point(-2, 144);
+            this.lblFamilia.Location = new System.Drawing.Point(0, 144);
             this.lblFamilia.Name = "lblFamilia";
             this.lblFamilia.Size = new System.Drawing.Size(53, 19);
             this.lblFamilia.TabIndex = 10;
@@ -981,7 +981,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblCodBarra.AutoSize = true;
             this.lblCodBarra.ForeColor = System.Drawing.Color.Navy;
-            this.lblCodBarra.Location = new System.Drawing.Point(3, 85);
+            this.lblCodBarra.Location = new System.Drawing.Point(0, 85);
             this.lblCodBarra.Name = "lblCodBarra";
             this.lblCodBarra.Size = new System.Drawing.Size(76, 19);
             this.lblCodBarra.TabIndex = 6;
@@ -1025,7 +1025,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblCodigo01.AutoSize = true;
             this.lblCodigo01.ForeColor = System.Drawing.Color.Navy;
-            this.lblCodigo01.Location = new System.Drawing.Point(1, 49);
+            this.lblCodigo01.Location = new System.Drawing.Point(0, 49);
             this.lblCodigo01.Name = "lblCodigo01";
             this.lblCodigo01.Size = new System.Drawing.Size(72, 19);
             this.lblCodigo01.TabIndex = 2;
@@ -1069,7 +1069,7 @@ namespace ConfiguradorUI.Producto
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.ForeColor = System.Drawing.Color.Navy;
-            this.lblNombre.Location = new System.Drawing.Point(1, 13);
+            this.lblNombre.Location = new System.Drawing.Point(0, 13);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(62, 19);
             this.lblNombre.TabIndex = 0;
@@ -1134,11 +1134,11 @@ namespace ConfiguradorUI.Producto
             this.grbCostoProd.Controls.Add(this.txtCostoProd);
             this.grbCostoProd.Controls.Add(this.lblCosto);
             this.grbCostoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbCostoProd.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbCostoProd.ForeColor = System.Drawing.Color.Black;
-            this.grbCostoProd.Location = new System.Drawing.Point(9, 267);
+            this.grbCostoProd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbCostoProd.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbCostoProd.Location = new System.Drawing.Point(9, 241);
             this.grbCostoProd.Name = "grbCostoProd";
-            this.grbCostoProd.Size = new System.Drawing.Size(251, 81);
+            this.grbCostoProd.Size = new System.Drawing.Size(251, 73);
             this.grbCostoProd.TabIndex = 9;
             this.grbCostoProd.TabStop = false;
             this.grbCostoProd.Text = "Costo del producto";
@@ -1159,7 +1159,7 @@ namespace ConfiguradorUI.Producto
             this.txtCostoProd.CustomButton.UseSelectable = true;
             this.txtCostoProd.CustomButton.Visible = false;
             this.txtCostoProd.Lines = new string[0];
-            this.txtCostoProd.Location = new System.Drawing.Point(96, 35);
+            this.txtCostoProd.Location = new System.Drawing.Point(96, 32);
             this.txtCostoProd.MaxLength = 32767;
             this.txtCostoProd.Name = "txtCostoProd";
             this.txtCostoProd.PasswordChar = '\0';
@@ -1181,7 +1181,7 @@ namespace ConfiguradorUI.Producto
             this.lblCosto.AutoSize = true;
             this.lblCosto.BackColor = System.Drawing.Color.Transparent;
             this.lblCosto.ForeColor = System.Drawing.Color.Navy;
-            this.lblCosto.Location = new System.Drawing.Point(20, 35);
+            this.lblCosto.Location = new System.Drawing.Point(20, 32);
             this.lblCosto.Name = "lblCosto";
             this.lblCosto.Size = new System.Drawing.Size(50, 19);
             this.lblCosto.TabIndex = 0;
@@ -1197,10 +1197,11 @@ namespace ConfiguradorUI.Producto
             this.grbConImpto.Controls.Add(this.lblPvMaConIGV);
             this.grbConImpto.Controls.Add(this.txtPvPuConImpto);
             this.grbConImpto.Controls.Add(this.lblPvPuConIGV);
-            this.grbConImpto.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbConImpto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbConImpto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbConImpto.Location = new System.Drawing.Point(287, 88);
             this.grbConImpto.Name = "grbConImpto";
-            this.grbConImpto.Size = new System.Drawing.Size(251, 160);
+            this.grbConImpto.Size = new System.Drawing.Size(251, 147);
             this.grbConImpto.TabIndex = 8;
             this.grbConImpto.TabStop = false;
             this.grbConImpto.Text = "Precio con impuesto";
@@ -1221,7 +1222,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMiConImpto.CustomButton.UseSelectable = true;
             this.txtPvMiConImpto.CustomButton.Visible = false;
             this.txtPvMiConImpto.Lines = new string[0];
-            this.txtPvMiConImpto.Location = new System.Drawing.Point(100, 69);
+            this.txtPvMiConImpto.Location = new System.Drawing.Point(100, 68);
             this.txtPvMiConImpto.MaxLength = 32767;
             this.txtPvMiConImpto.Name = "txtPvMiConImpto";
             this.txtPvMiConImpto.PasswordChar = '\0';
@@ -1243,7 +1244,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvMiConIGV.AutoSize = true;
             this.lblPvMiConIGV.BackColor = System.Drawing.Color.Transparent;
             this.lblPvMiConIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMiConIGV.Location = new System.Drawing.Point(24, 70);
+            this.lblPvMiConIGV.Location = new System.Drawing.Point(24, 69);
             this.lblPvMiConIGV.Name = "lblPvMiConIGV";
             this.lblPvMiConIGV.Size = new System.Drawing.Size(69, 19);
             this.lblPvMiConIGV.TabIndex = 2;
@@ -1266,7 +1267,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMaConImpto.CustomButton.UseSelectable = true;
             this.txtPvMaConImpto.CustomButton.Visible = false;
             this.txtPvMaConImpto.Lines = new string[0];
-            this.txtPvMaConImpto.Location = new System.Drawing.Point(100, 110);
+            this.txtPvMaConImpto.Location = new System.Drawing.Point(100, 104);
             this.txtPvMaConImpto.MaxLength = 32767;
             this.txtPvMaConImpto.Name = "txtPvMaConImpto";
             this.txtPvMaConImpto.PasswordChar = '\0';
@@ -1288,7 +1289,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvMaConIGV.AutoSize = true;
             this.lblPvMaConIGV.BackColor = System.Drawing.Color.Transparent;
             this.lblPvMaConIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMaConIGV.Location = new System.Drawing.Point(24, 112);
+            this.lblPvMaConIGV.Location = new System.Drawing.Point(24, 106);
             this.lblPvMaConIGV.Name = "lblPvMaConIGV";
             this.lblPvMaConIGV.Size = new System.Drawing.Size(72, 19);
             this.lblPvMaConIGV.TabIndex = 4;
@@ -1311,7 +1312,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvPuConImpto.CustomButton.UseSelectable = true;
             this.txtPvPuConImpto.CustomButton.Visible = false;
             this.txtPvPuConImpto.Lines = new string[0];
-            this.txtPvPuConImpto.Location = new System.Drawing.Point(100, 28);
+            this.txtPvPuConImpto.Location = new System.Drawing.Point(100, 32);
             this.txtPvPuConImpto.MaxLength = 32767;
             this.txtPvPuConImpto.Name = "txtPvPuConImpto";
             this.txtPvPuConImpto.PasswordChar = '\0';
@@ -1333,7 +1334,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvPuConIGV.AutoSize = true;
             this.lblPvPuConIGV.BackColor = System.Drawing.Color.Transparent;
             this.lblPvPuConIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvPuConIGV.Location = new System.Drawing.Point(24, 30);
+            this.lblPvPuConIGV.Location = new System.Drawing.Point(24, 34);
             this.lblPvPuConIGV.Name = "lblPvPuConIGV";
             this.lblPvPuConIGV.Size = new System.Drawing.Size(70, 19);
             this.lblPvPuConIGV.TabIndex = 0;
@@ -1350,11 +1351,11 @@ namespace ConfiguradorUI.Producto
             this.grbSinImpto.Controls.Add(this.txtPvPuSinImpto);
             this.grbSinImpto.Controls.Add(this.lblPvPuSinIGV);
             this.grbSinImpto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbSinImpto.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSinImpto.ForeColor = System.Drawing.Color.Black;
+            this.grbSinImpto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSinImpto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbSinImpto.Location = new System.Drawing.Point(9, 88);
             this.grbSinImpto.Name = "grbSinImpto";
-            this.grbSinImpto.Size = new System.Drawing.Size(251, 160);
+            this.grbSinImpto.Size = new System.Drawing.Size(251, 147);
             this.grbSinImpto.TabIndex = 7;
             this.grbSinImpto.TabStop = false;
             this.grbSinImpto.Text = "Precio sin impuesto";
@@ -1375,7 +1376,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMiSinImpto.CustomButton.UseSelectable = true;
             this.txtPvMiSinImpto.CustomButton.Visible = false;
             this.txtPvMiSinImpto.Lines = new string[0];
-            this.txtPvMiSinImpto.Location = new System.Drawing.Point(98, 74);
+            this.txtPvMiSinImpto.Location = new System.Drawing.Point(98, 68);
             this.txtPvMiSinImpto.MaxLength = 32767;
             this.txtPvMiSinImpto.Name = "txtPvMiSinImpto";
             this.txtPvMiSinImpto.PasswordChar = '\0';
@@ -1397,7 +1398,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvMiSinIGV.AutoSize = true;
             this.lblPvMiSinIGV.BackColor = System.Drawing.Color.Transparent;
             this.lblPvMiSinIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMiSinIGV.Location = new System.Drawing.Point(22, 75);
+            this.lblPvMiSinIGV.Location = new System.Drawing.Point(22, 69);
             this.lblPvMiSinIGV.Name = "lblPvMiSinIGV";
             this.lblPvMiSinIGV.Size = new System.Drawing.Size(69, 19);
             this.lblPvMiSinIGV.TabIndex = 2;
@@ -1420,7 +1421,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMaSinImpto.CustomButton.UseSelectable = true;
             this.txtPvMaSinImpto.CustomButton.Visible = false;
             this.txtPvMaSinImpto.Lines = new string[0];
-            this.txtPvMaSinImpto.Location = new System.Drawing.Point(98, 115);
+            this.txtPvMaSinImpto.Location = new System.Drawing.Point(98, 104);
             this.txtPvMaSinImpto.MaxLength = 32767;
             this.txtPvMaSinImpto.Name = "txtPvMaSinImpto";
             this.txtPvMaSinImpto.PasswordChar = '\0';
@@ -1442,7 +1443,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvMaSinIGV.AutoSize = true;
             this.lblPvMaSinIGV.BackColor = System.Drawing.Color.Transparent;
             this.lblPvMaSinIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMaSinIGV.Location = new System.Drawing.Point(22, 117);
+            this.lblPvMaSinIGV.Location = new System.Drawing.Point(22, 106);
             this.lblPvMaSinIGV.Name = "lblPvMaSinIGV";
             this.lblPvMaSinIGV.Size = new System.Drawing.Size(72, 19);
             this.lblPvMaSinIGV.TabIndex = 4;
@@ -1465,7 +1466,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvPuSinImpto.CustomButton.UseSelectable = true;
             this.txtPvPuSinImpto.CustomButton.Visible = false;
             this.txtPvPuSinImpto.Lines = new string[0];
-            this.txtPvPuSinImpto.Location = new System.Drawing.Point(98, 33);
+            this.txtPvPuSinImpto.Location = new System.Drawing.Point(98, 32);
             this.txtPvPuSinImpto.MaxLength = 32767;
             this.txtPvPuSinImpto.Name = "txtPvPuSinImpto";
             this.txtPvPuSinImpto.PasswordChar = '\0';
@@ -1487,7 +1488,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvPuSinIGV.AutoSize = true;
             this.lblPvPuSinIGV.BackColor = System.Drawing.Color.Transparent;
             this.lblPvPuSinIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvPuSinIGV.Location = new System.Drawing.Point(22, 35);
+            this.lblPvPuSinIGV.Location = new System.Drawing.Point(22, 34);
             this.lblPvPuSinIGV.Name = "lblPvPuSinIGV";
             this.lblPvPuSinIGV.Size = new System.Drawing.Size(70, 19);
             this.lblPvPuSinIGV.TabIndex = 0;

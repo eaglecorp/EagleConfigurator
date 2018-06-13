@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarComboVariable));
             this.gbxFiltro = new System.Windows.Forms.GroupBox();
             this.txtDescripcion = new MetroFramework.Controls.MetroTextBox();
             this.btnVerTodos = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvComboVariableDtl = new System.Windows.Forms.DataGridView();
             this.lblNombreForm = new System.Windows.Forms.Label();
+            this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.gbxFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComboVariable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -57,7 +59,7 @@
             this.gbxFiltro.Controls.Add(this.metroLabel3);
             this.gbxFiltro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxFiltro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbxFiltro.Location = new System.Drawing.Point(26, 66);
+            this.gbxFiltro.Location = new System.Drawing.Point(23, 83);
             this.gbxFiltro.Name = "gbxFiltro";
             this.gbxFiltro.Size = new System.Drawing.Size(831, 91);
             this.gbxFiltro.TabIndex = 14;
@@ -202,7 +204,7 @@
             this.dgvComboVariable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComboVariable.Location = new System.Drawing.Point(3, 3);
             this.dgvComboVariable.Name = "dgvComboVariable";
-            this.dgvComboVariable.Size = new System.Drawing.Size(536, 308);
+            this.dgvComboVariable.Size = new System.Drawing.Size(534, 336);
             this.dgvComboVariable.TabIndex = 0;
             this.dgvComboVariable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComboVariable_CellDoubleClick);
             this.dgvComboVariable.SelectionChanged += new System.EventHandler(this.dgvComboVariable_SelectionChanged);
@@ -216,21 +218,21 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.99361F));
             this.tableLayoutPanel1.Controls.Add(this.dgvComboVariableDtl, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvComboVariable, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 163);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 180);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 314F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 314);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 342);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // dgvComboVariableDtl
             // 
             this.dgvComboVariableDtl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComboVariableDtl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvComboVariableDtl.Location = new System.Drawing.Point(545, 3);
+            this.dgvComboVariableDtl.Location = new System.Drawing.Point(543, 3);
             this.dgvComboVariableDtl.Name = "dgvComboVariableDtl";
-            this.dgvComboVariableDtl.Size = new System.Drawing.Size(286, 308);
+            this.dgvComboVariableDtl.Size = new System.Drawing.Size(285, 336);
             this.dgvComboVariableDtl.TabIndex = 14;
             this.dgvComboVariableDtl.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
@@ -239,17 +241,29 @@
             this.lblNombreForm.AutoSize = true;
             this.lblNombreForm.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreForm.Location = new System.Drawing.Point(26, 22);
+            this.lblNombreForm.Location = new System.Drawing.Point(85, 31);
             this.lblNombreForm.Name = "lblNombreForm";
             this.lblNombreForm.Size = new System.Drawing.Size(295, 32);
             this.lblNombreForm.TabIndex = 72;
             this.lblNombreForm.Text = "Seleccionar combo electivo";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageSize = 48;
+            this.btnCerrar.Location = new System.Drawing.Point(23, 20);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(56, 57);
+            this.btnCerrar.TabIndex = 73;
+            this.btnCerrar.UseSelectable = true;
+            // 
             // FormBuscarComboVariable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 500);
+            this.ClientSize = new System.Drawing.Size(880, 545);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblNombreForm);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.gbxFiltro);
@@ -280,5 +294,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dgvComboVariableDtl;
         private System.Windows.Forms.Label lblNombreForm;
+        private MetroFramework.Controls.MetroLink btnCerrar;
     }
 }

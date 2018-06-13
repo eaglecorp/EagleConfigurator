@@ -151,7 +151,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt06_impuesto();
                         obj = GetObjeto();
@@ -230,7 +230,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt06_impuesto();
                         obj = GetObjeto();
@@ -264,7 +264,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt06_impuesto();
                         obj = GetObjeto();
@@ -363,7 +363,7 @@ namespace ConfiguradorUI.Maestro
             }
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             bool no_error = true;
@@ -371,13 +371,6 @@ namespace ConfiguradorUI.Maestro
             //Foreach en caso se requiera validar más controles - por ver.
             errorProv.Clear();
 
-            if (txtAbreviacion.Text.Trim().Length == 0)
-            {
-                tabImpuesto.SelectedTab = tabPagGeneral;
-                errorProv.SetError(txtAbreviacion, "Este campo es requerido.");
-                txtAbreviacion.Focus();
-                no_error = false;
-            }
 
             if (txtNombre.Text.Trim().Length == 0)
             {
@@ -387,40 +380,65 @@ namespace ConfiguradorUI.Maestro
                 no_error = false;
             }
 
-            #region código único
+
+            #region 
+
 
             if (no_error)
             {
                 string cod = txtCodigo.Text.Trim();
                 if (cod.Length > 0)
                 {
-                    var obj = new ImpuestoBL().ImpuestoXCod(cod);
-                    if (TipoOperacion == TipoOperacionABM.Insertar)
+                    if (int.TryParse(cod, out int numCod) && numCod == Reserved.Code)
                     {
-                        if (obj != null && obj.id_impuesto > 0)
-                        {
-                            tabImpuesto.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
-                        }
+                        tabImpuesto.SelectedTab = tabPagGeneral;
+                        string msg = $"El código '{Reserved.Code.ToString()}' es reservado para el sistema.";
+                        MessageBox.Show(msg, "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        errorProv.SetError(txtCodigo, msg);
+                        txtCodigo.Focus();
+                        no_error = false;
                     }
-                    else if (TipoOperacion == TipoOperacionABM.Modificar)
+                    else
                     {
-                        if (cod != codSelected && obj != null && obj.id_impuesto > 0)
+                        var obj = new ImpuestoBL().ImpuestoXCod(cod);
+                        if (TipoOperacion == TipoOperacionABM.Insertar)
                         {
-                            tabImpuesto.SelectedTab = tabPagGeneral;
-                            MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            errorProv.SetError(txtCodigo, "El código ya está en uso.");
-                            txtCodigo.Focus();
-                            no_error = false;
+                            if (obj != null && obj.id_impuesto > 0)
+                            {
+                                tabImpuesto.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
                         }
+                        else if (TipoOperacion == TipoOperacionABM.Modificar)
+                        {
+                            if (cod != codSelected && obj != null && obj.id_impuesto > 0)
+                            {
+                                tabImpuesto.SelectedTab = tabPagGeneral;
+                                MessageBox.Show("El código ya está en uso.", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                errorProv.SetError(txtCodigo, "El código ya está en uso.");
+                                txtCodigo.Focus();
+                                no_error = false;
+                            }
+                        }
+
                     }
+
                 }
             }
 
             #endregion
+
+            if (no_error && txtAbreviacion.Text.Trim().Length == 0)
+            {
+                tabImpuesto.SelectedTab = tabPagGeneral;
+                errorProv.SetError(txtAbreviacion, "Este campo es requerido.");
+                txtAbreviacion.Focus();
+                no_error = false;
+            }
+
 
             #region validación numérica
 
