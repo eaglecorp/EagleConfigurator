@@ -58,7 +58,6 @@ namespace ConfiguradorUI.Producto
             this.txtAncho = new MetroFramework.Controls.MetroTextBox();
             this.txtReferencia = new MetroFramework.Controls.MetroTextBox();
             this.txtPeso = new MetroFramework.Controls.MetroTextBox();
-            this.lblReferencia = new MetroFramework.Controls.MetroLabel();
             this.chkCombo = new MetroFramework.Controls.MetroCheckBox();
             this.lblAncho = new MetroFramework.Controls.MetroLabel();
             this.chkProductoCompra = new MetroFramework.Controls.MetroCheckBox();
@@ -88,6 +87,7 @@ namespace ConfiguradorUI.Producto
             this.lblCodigo01 = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
+            this.lblReferencia = new MetroFramework.Controls.MetroLabel();
             this.tabPagPrecio = new MetroFramework.Controls.MetroTabPage();
             this.lblPorcentajeAcumuladoImpto = new System.Windows.Forms.Label();
             this.lblSimboloPorcentaje = new System.Windows.Forms.Label();
@@ -254,7 +254,7 @@ namespace ConfiguradorUI.Producto
             this.txtDiametro.SelectionStart = 0;
             this.txtDiametro.ShortcutsEnabled = true;
             this.txtDiametro.Size = new System.Drawing.Size(104, 23);
-            this.txtDiametro.TabIndex = 42;
+            this.txtDiametro.TabIndex = 16;
             this.txtDiametro.UseCustomBackColor = true;
             this.txtDiametro.UseSelectable = true;
             this.txtDiametro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -281,7 +281,7 @@ namespace ConfiguradorUI.Producto
             this.chkReceta.Location = new System.Drawing.Point(371, 466);
             this.chkReceta.Name = "chkReceta";
             this.chkReceta.Size = new System.Drawing.Size(64, 19);
-            this.chkReceta.TabIndex = 28;
+            this.chkReceta.TabIndex = 22;
             this.chkReceta.Text = "Receta";
             this.chkReceta.UseCustomForeColor = true;
             this.chkReceta.UseSelectable = true;
@@ -333,7 +333,7 @@ namespace ConfiguradorUI.Producto
             this.cboUnidadMedida.Location = new System.Drawing.Point(354, 83);
             this.cboUnidadMedida.Name = "cboUnidadMedida";
             this.cboUnidadMedida.Size = new System.Drawing.Size(183, 23);
-            this.cboUnidadMedida.TabIndex = 9;
+            this.cboUnidadMedida.TabIndex = 4;
             this.cboUnidadMedida.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblUnidadMedida
@@ -358,7 +358,7 @@ namespace ConfiguradorUI.Producto
             this.chkActivo.Location = new System.Drawing.Point(5, 466);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 30;
+            this.chkActivo.TabIndex = 19;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -371,7 +371,7 @@ namespace ConfiguradorUI.Producto
             this.btnClaseProd.Location = new System.Drawing.Point(510, 273);
             this.btnClaseProd.Name = "btnClaseProd";
             this.btnClaseProd.Size = new System.Drawing.Size(29, 27);
-            this.btnClaseProd.TabIndex = 52;
+            this.btnClaseProd.TabIndex = 30;
             this.btnClaseProd.UseSelectable = true;
             this.btnClaseProd.Click += new System.EventHandler(this.btnClaseProd_Click);
             // 
@@ -382,7 +382,7 @@ namespace ConfiguradorUI.Producto
             this.btnGrupoProd.Location = new System.Drawing.Point(510, 237);
             this.btnGrupoProd.Name = "btnGrupoProd";
             this.btnGrupoProd.Size = new System.Drawing.Size(29, 27);
-            this.btnGrupoProd.TabIndex = 51;
+            this.btnGrupoProd.TabIndex = 29;
             this.btnGrupoProd.UseSelectable = true;
             this.btnGrupoProd.Click += new System.EventHandler(this.btnGrupoProd_Click);
             // 
@@ -393,7 +393,7 @@ namespace ConfiguradorUI.Producto
             this.btnTipoProd.Location = new System.Drawing.Point(234, 237);
             this.btnTipoProd.Name = "btnTipoProd";
             this.btnTipoProd.Size = new System.Drawing.Size(29, 27);
-            this.btnTipoProd.TabIndex = 50;
+            this.btnTipoProd.TabIndex = 28;
             this.btnTipoProd.UseSelectable = true;
             this.btnTipoProd.Click += new System.EventHandler(this.btnTipoProd_Click);
             // 
@@ -404,7 +404,7 @@ namespace ConfiguradorUI.Producto
             this.btnModelo.Location = new System.Drawing.Point(510, 174);
             this.btnModelo.Name = "btnModelo";
             this.btnModelo.Size = new System.Drawing.Size(29, 27);
-            this.btnModelo.TabIndex = 49;
+            this.btnModelo.TabIndex = 27;
             this.btnModelo.UseSelectable = true;
             this.btnModelo.Click += new System.EventHandler(this.btnModelo_Click);
             // 
@@ -415,7 +415,7 @@ namespace ConfiguradorUI.Producto
             this.btnMarca.Location = new System.Drawing.Point(510, 138);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Size = new System.Drawing.Size(29, 27);
-            this.btnMarca.TabIndex = 48;
+            this.btnMarca.TabIndex = 25;
             this.btnMarca.UseSelectable = true;
             this.btnMarca.Click += new System.EventHandler(this.btnMarca_Click);
             // 
@@ -426,7 +426,7 @@ namespace ConfiguradorUI.Producto
             this.btnSubFamilia.Location = new System.Drawing.Point(233, 174);
             this.btnSubFamilia.Name = "btnSubFamilia";
             this.btnSubFamilia.Size = new System.Drawing.Size(29, 27);
-            this.btnSubFamilia.TabIndex = 47;
+            this.btnSubFamilia.TabIndex = 26;
             this.btnSubFamilia.UseSelectable = true;
             this.btnSubFamilia.Click += new System.EventHandler(this.btnSubFamilia_Click);
             // 
@@ -437,7 +437,7 @@ namespace ConfiguradorUI.Producto
             this.btnFamilia.Location = new System.Drawing.Point(233, 138);
             this.btnFamilia.Name = "btnFamilia";
             this.btnFamilia.Size = new System.Drawing.Size(29, 27);
-            this.btnFamilia.TabIndex = 46;
+            this.btnFamilia.TabIndex = 24;
             this.btnFamilia.UseSelectable = true;
             this.btnFamilia.Click += new System.EventHandler(this.btnFamilia_Click);
             // 
@@ -467,7 +467,7 @@ namespace ConfiguradorUI.Producto
             this.txtAltura.SelectionStart = 0;
             this.txtAltura.ShortcutsEnabled = true;
             this.txtAltura.Size = new System.Drawing.Size(104, 23);
-            this.txtAltura.TabIndex = 40;
+            this.txtAltura.TabIndex = 14;
             this.txtAltura.UseCustomBackColor = true;
             this.txtAltura.UseSelectable = true;
             this.txtAltura.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -500,7 +500,7 @@ namespace ConfiguradorUI.Producto
             this.txtLargo.SelectionStart = 0;
             this.txtLargo.ShortcutsEnabled = true;
             this.txtLargo.Size = new System.Drawing.Size(104, 23);
-            this.txtLargo.TabIndex = 38;
+            this.txtLargo.TabIndex = 15;
             this.txtLargo.UseCustomBackColor = true;
             this.txtLargo.UseSelectable = true;
             this.txtLargo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -555,7 +555,7 @@ namespace ConfiguradorUI.Producto
             this.txtAncho.SelectionStart = 0;
             this.txtAncho.ShortcutsEnabled = true;
             this.txtAncho.Size = new System.Drawing.Size(104, 23);
-            this.txtAncho.TabIndex = 36;
+            this.txtAncho.TabIndex = 13;
             this.txtAncho.UseCustomBackColor = true;
             this.txtAncho.UseSelectable = true;
             this.txtAncho.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -588,7 +588,7 @@ namespace ConfiguradorUI.Producto
             this.txtReferencia.SelectionStart = 0;
             this.txtReferencia.ShortcutsEnabled = true;
             this.txtReferencia.Size = new System.Drawing.Size(462, 23);
-            this.txtReferencia.TabIndex = 32;
+            this.txtReferencia.TabIndex = 18;
             this.txtReferencia.UseCustomBackColor = true;
             this.txtReferencia.UseSelectable = true;
             this.txtReferencia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -621,23 +621,12 @@ namespace ConfiguradorUI.Producto
             this.txtPeso.SelectionStart = 0;
             this.txtPeso.ShortcutsEnabled = true;
             this.txtPeso.Size = new System.Drawing.Size(104, 23);
-            this.txtPeso.TabIndex = 34;
+            this.txtPeso.TabIndex = 17;
             this.txtPeso.UseCustomBackColor = true;
             this.txtPeso.UseSelectable = true;
             this.txtPeso.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPeso.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtPeso.TextChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblReferencia
-            // 
-            this.lblReferencia.AutoSize = true;
-            this.lblReferencia.ForeColor = System.Drawing.Color.Navy;
-            this.lblReferencia.Location = new System.Drawing.Point(0, 413);
-            this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(73, 19);
-            this.lblReferencia.TabIndex = 31;
-            this.lblReferencia.Text = "Referencia:";
-            this.lblReferencia.UseCustomForeColor = true;
             // 
             // chkCombo
             // 
@@ -648,7 +637,7 @@ namespace ConfiguradorUI.Producto
             this.chkCombo.Location = new System.Drawing.Point(455, 466);
             this.chkCombo.Name = "chkCombo";
             this.chkCombo.Size = new System.Drawing.Size(70, 19);
-            this.chkCombo.TabIndex = 29;
+            this.chkCombo.TabIndex = 23;
             this.chkCombo.Text = "Combo";
             this.chkCombo.UseCustomForeColor = true;
             this.chkCombo.UseSelectable = true;
@@ -674,7 +663,7 @@ namespace ConfiguradorUI.Producto
             this.chkProductoCompra.Location = new System.Drawing.Point(223, 466);
             this.chkProductoCompra.Name = "chkProductoCompra";
             this.chkProductoCompra.Size = new System.Drawing.Size(132, 19);
-            this.chkProductoCompra.TabIndex = 27;
+            this.chkProductoCompra.TabIndex = 21;
             this.chkProductoCompra.Text = "Producto Compra";
             this.chkProductoCompra.UseCustomForeColor = true;
             this.chkProductoCompra.UseSelectable = true;
@@ -691,7 +680,7 @@ namespace ConfiguradorUI.Producto
             this.chkProductoVenta.Location = new System.Drawing.Point(87, 466);
             this.chkProductoVenta.Name = "chkProductoVenta";
             this.chkProductoVenta.Size = new System.Drawing.Size(115, 19);
-            this.chkProductoVenta.TabIndex = 26;
+            this.chkProductoVenta.TabIndex = 20;
             this.chkProductoVenta.Text = "Producto Venta";
             this.chkProductoVenta.UseCustomForeColor = true;
             this.chkProductoVenta.UseSelectable = true;
@@ -718,7 +707,7 @@ namespace ConfiguradorUI.Producto
             this.cboClaseProd.Location = new System.Drawing.Point(353, 277);
             this.cboClaseProd.Name = "cboClaseProd";
             this.cboClaseProd.Size = new System.Drawing.Size(152, 23);
-            this.cboClaseProd.TabIndex = 25;
+            this.cboClaseProd.TabIndex = 12;
             this.cboClaseProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboGrupoProd
@@ -731,7 +720,7 @@ namespace ConfiguradorUI.Producto
             this.cboGrupoProd.Location = new System.Drawing.Point(353, 241);
             this.cboGrupoProd.Name = "cboGrupoProd";
             this.cboGrupoProd.Size = new System.Drawing.Size(152, 23);
-            this.cboGrupoProd.TabIndex = 21;
+            this.cboGrupoProd.TabIndex = 10;
             this.cboGrupoProd.SelectedIndexChanged += new System.EventHandler(this.cboGrupoProd_SelectedIndexChanged);
             // 
             // cboTipoExistencia
@@ -744,7 +733,7 @@ namespace ConfiguradorUI.Producto
             this.cboTipoExistencia.Location = new System.Drawing.Point(75, 277);
             this.cboTipoExistencia.Name = "cboTipoExistencia";
             this.cboTipoExistencia.Size = new System.Drawing.Size(184, 23);
-            this.cboTipoExistencia.TabIndex = 23;
+            this.cboTipoExistencia.TabIndex = 11;
             this.cboTipoExistencia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboTipoProd
@@ -757,7 +746,7 @@ namespace ConfiguradorUI.Producto
             this.cboTipoProd.Location = new System.Drawing.Point(76, 241);
             this.cboTipoProd.Name = "cboTipoProd";
             this.cboTipoProd.Size = new System.Drawing.Size(152, 23);
-            this.cboTipoProd.TabIndex = 19;
+            this.cboTipoProd.TabIndex = 9;
             this.cboTipoProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblClaseProd
@@ -814,7 +803,7 @@ namespace ConfiguradorUI.Producto
             this.cboModelo.Location = new System.Drawing.Point(353, 178);
             this.cboModelo.Name = "cboModelo";
             this.cboModelo.Size = new System.Drawing.Size(152, 23);
-            this.cboModelo.TabIndex = 17;
+            this.cboModelo.TabIndex = 8;
             this.cboModelo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboMarca
@@ -827,7 +816,7 @@ namespace ConfiguradorUI.Producto
             this.cboMarca.Location = new System.Drawing.Point(353, 142);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(152, 23);
-            this.cboMarca.TabIndex = 13;
+            this.cboMarca.TabIndex = 6;
             this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // cboSubFamilia
@@ -840,7 +829,7 @@ namespace ConfiguradorUI.Producto
             this.cboSubFamilia.Location = new System.Drawing.Point(75, 178);
             this.cboSubFamilia.Name = "cboSubFamilia";
             this.cboSubFamilia.Size = new System.Drawing.Size(152, 23);
-            this.cboSubFamilia.TabIndex = 15;
+            this.cboSubFamilia.TabIndex = 7;
             this.cboSubFamilia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboFamilia
@@ -853,7 +842,7 @@ namespace ConfiguradorUI.Producto
             this.cboFamilia.Location = new System.Drawing.Point(75, 142);
             this.cboFamilia.Name = "cboFamilia";
             this.cboFamilia.Size = new System.Drawing.Size(152, 23);
-            this.cboFamilia.TabIndex = 11;
+            this.cboFamilia.TabIndex = 5;
             this.cboFamilia.SelectedIndexChanged += new System.EventHandler(this.cboFamilia_SelectedIndexChanged);
             // 
             // lblModelo
@@ -926,7 +915,7 @@ namespace ConfiguradorUI.Producto
             this.txtCodigo02.SelectionStart = 0;
             this.txtCodigo02.ShortcutsEnabled = true;
             this.txtCodigo02.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo02.TabIndex = 5;
+            this.txtCodigo02.TabIndex = 2;
             this.txtCodigo02.UseCustomBackColor = true;
             this.txtCodigo02.UseSelectable = true;
             this.txtCodigo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -970,7 +959,7 @@ namespace ConfiguradorUI.Producto
             this.txtCodBarra.SelectionStart = 0;
             this.txtCodBarra.ShortcutsEnabled = true;
             this.txtCodBarra.Size = new System.Drawing.Size(184, 23);
-            this.txtCodBarra.TabIndex = 7;
+            this.txtCodBarra.TabIndex = 3;
             this.txtCodBarra.UseCustomBackColor = true;
             this.txtCodBarra.UseSelectable = true;
             this.txtCodBarra.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1014,7 +1003,7 @@ namespace ConfiguradorUI.Producto
             this.txtCodigo01.SelectionStart = 0;
             this.txtCodigo01.ShortcutsEnabled = true;
             this.txtCodigo01.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo01.TabIndex = 3;
+            this.txtCodigo01.TabIndex = 1;
             this.txtCodigo01.UseCustomBackColor = true;
             this.txtCodigo01.UseSelectable = true;
             this.txtCodigo01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1058,7 +1047,7 @@ namespace ConfiguradorUI.Producto
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(462, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1075,6 +1064,17 @@ namespace ConfiguradorUI.Producto
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.UseCustomForeColor = true;
+            // 
+            // lblReferencia
+            // 
+            this.lblReferencia.AutoSize = true;
+            this.lblReferencia.ForeColor = System.Drawing.Color.Navy;
+            this.lblReferencia.Location = new System.Drawing.Point(0, 413);
+            this.lblReferencia.Name = "lblReferencia";
+            this.lblReferencia.Size = new System.Drawing.Size(73, 19);
+            this.lblReferencia.TabIndex = 31;
+            this.lblReferencia.Text = "Referencia:";
+            this.lblReferencia.UseCustomForeColor = true;
             // 
             // tabPagPrecio
             // 
@@ -1139,7 +1139,7 @@ namespace ConfiguradorUI.Producto
             this.grbCostoProd.Location = new System.Drawing.Point(9, 241);
             this.grbCostoProd.Name = "grbCostoProd";
             this.grbCostoProd.Size = new System.Drawing.Size(251, 73);
-            this.grbCostoProd.TabIndex = 9;
+            this.grbCostoProd.TabIndex = 7;
             this.grbCostoProd.TabStop = false;
             this.grbCostoProd.Text = "Costo del producto";
             // 
@@ -1169,7 +1169,7 @@ namespace ConfiguradorUI.Producto
             this.txtCostoProd.SelectionStart = 0;
             this.txtCostoProd.ShortcutsEnabled = true;
             this.txtCostoProd.Size = new System.Drawing.Size(128, 23);
-            this.txtCostoProd.TabIndex = 1;
+            this.txtCostoProd.TabIndex = 0;
             this.txtCostoProd.UseCustomBackColor = true;
             this.txtCostoProd.UseSelectable = true;
             this.txtCostoProd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1202,7 +1202,7 @@ namespace ConfiguradorUI.Producto
             this.grbConImpto.Location = new System.Drawing.Point(287, 88);
             this.grbConImpto.Name = "grbConImpto";
             this.grbConImpto.Size = new System.Drawing.Size(251, 147);
-            this.grbConImpto.TabIndex = 8;
+            this.grbConImpto.TabIndex = 5;
             this.grbConImpto.TabStop = false;
             this.grbConImpto.Text = "Precio con impuesto";
             // 
@@ -1232,7 +1232,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMiConImpto.SelectionStart = 0;
             this.txtPvMiConImpto.ShortcutsEnabled = true;
             this.txtPvMiConImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMiConImpto.TabIndex = 3;
+            this.txtPvMiConImpto.TabIndex = 1;
             this.txtPvMiConImpto.UseCustomBackColor = true;
             this.txtPvMiConImpto.UseSelectable = true;
             this.txtPvMiConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1277,7 +1277,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMaConImpto.SelectionStart = 0;
             this.txtPvMaConImpto.ShortcutsEnabled = true;
             this.txtPvMaConImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMaConImpto.TabIndex = 5;
+            this.txtPvMaConImpto.TabIndex = 2;
             this.txtPvMaConImpto.UseCustomBackColor = true;
             this.txtPvMaConImpto.UseSelectable = true;
             this.txtPvMaConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1322,7 +1322,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvPuConImpto.SelectionStart = 0;
             this.txtPvPuConImpto.ShortcutsEnabled = true;
             this.txtPvPuConImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvPuConImpto.TabIndex = 1;
+            this.txtPvPuConImpto.TabIndex = 0;
             this.txtPvPuConImpto.UseCustomBackColor = true;
             this.txtPvPuConImpto.UseSelectable = true;
             this.txtPvPuConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1356,7 +1356,7 @@ namespace ConfiguradorUI.Producto
             this.grbSinImpto.Location = new System.Drawing.Point(9, 88);
             this.grbSinImpto.Name = "grbSinImpto";
             this.grbSinImpto.Size = new System.Drawing.Size(251, 147);
-            this.grbSinImpto.TabIndex = 7;
+            this.grbSinImpto.TabIndex = 6;
             this.grbSinImpto.TabStop = false;
             this.grbSinImpto.Text = "Precio sin impuesto";
             // 
@@ -1386,7 +1386,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMiSinImpto.SelectionStart = 0;
             this.txtPvMiSinImpto.ShortcutsEnabled = true;
             this.txtPvMiSinImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMiSinImpto.TabIndex = 3;
+            this.txtPvMiSinImpto.TabIndex = 1;
             this.txtPvMiSinImpto.UseCustomBackColor = true;
             this.txtPvMiSinImpto.UseSelectable = true;
             this.txtPvMiSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1431,7 +1431,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMaSinImpto.SelectionStart = 0;
             this.txtPvMaSinImpto.ShortcutsEnabled = true;
             this.txtPvMaSinImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMaSinImpto.TabIndex = 5;
+            this.txtPvMaSinImpto.TabIndex = 2;
             this.txtPvMaSinImpto.UseCustomBackColor = true;
             this.txtPvMaSinImpto.UseSelectable = true;
             this.txtPvMaSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1476,7 +1476,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvPuSinImpto.SelectionStart = 0;
             this.txtPvPuSinImpto.ShortcutsEnabled = true;
             this.txtPvPuSinImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvPuSinImpto.TabIndex = 1;
+            this.txtPvPuSinImpto.TabIndex = 0;
             this.txtPvPuSinImpto.UseCustomBackColor = true;
             this.txtPvPuSinImpto.UseSelectable = true;
             this.txtPvPuSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1505,7 +1505,7 @@ namespace ConfiguradorUI.Producto
             this.chkInafecto.Location = new System.Drawing.Point(317, 56);
             this.chkInafecto.Name = "chkInafecto";
             this.chkInafecto.Size = new System.Drawing.Size(129, 19);
-            this.chkInafecto.TabIndex = 6;
+            this.chkInafecto.TabIndex = 4;
             this.chkInafecto.Text = "Producto Inafecto";
             this.chkInafecto.UseCustomForeColor = true;
             this.chkInafecto.UseSelectable = true;
@@ -1521,7 +1521,7 @@ namespace ConfiguradorUI.Producto
             this.chkExento.Location = new System.Drawing.Point(189, 56);
             this.chkExento.Name = "chkExento";
             this.chkExento.Size = new System.Drawing.Size(122, 19);
-            this.chkExento.TabIndex = 5;
+            this.chkExento.TabIndex = 3;
             this.chkExento.Text = "Producto Exento";
             this.chkExento.UseCustomForeColor = true;
             this.chkExento.UseSelectable = true;
@@ -1537,7 +1537,7 @@ namespace ConfiguradorUI.Producto
             this.chkImpto.Location = new System.Drawing.Point(8, 56);
             this.chkImpto.Name = "chkImpto";
             this.chkImpto.Size = new System.Drawing.Size(175, 19);
-            this.chkImpto.TabIndex = 4;
+            this.chkImpto.TabIndex = 2;
             this.chkImpto.Text = "Precios incluyen impuesto";
             this.chkImpto.UseCustomForeColor = true;
             this.chkImpto.UseSelectable = true;
@@ -1553,7 +1553,7 @@ namespace ConfiguradorUI.Producto
             this.cboImpuesto.Location = new System.Drawing.Point(348, 12);
             this.cboImpuesto.Name = "cboImpuesto";
             this.cboImpuesto.Size = new System.Drawing.Size(163, 23);
-            this.cboImpuesto.TabIndex = 3;
+            this.cboImpuesto.TabIndex = 1;
             this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
             // 
             // cboTipoMoneda
@@ -1566,7 +1566,7 @@ namespace ConfiguradorUI.Producto
             this.cboTipoMoneda.Location = new System.Drawing.Point(78, 12);
             this.cboTipoMoneda.Name = "cboTipoMoneda";
             this.cboTipoMoneda.Size = new System.Drawing.Size(182, 23);
-            this.cboTipoMoneda.TabIndex = 1;
+            this.cboTipoMoneda.TabIndex = 0;
             this.cboTipoMoneda.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblImpuesto
@@ -1600,7 +1600,7 @@ namespace ConfiguradorUI.Producto
             this.btnImpuesto.Location = new System.Drawing.Point(517, 8);
             this.btnImpuesto.Name = "btnImpuesto";
             this.btnImpuesto.Size = new System.Drawing.Size(29, 27);
-            this.btnImpuesto.TabIndex = 54;
+            this.btnImpuesto.TabIndex = 8;
             this.btnImpuesto.UseSelectable = true;
             this.btnImpuesto.Click += new System.EventHandler(this.btnImpuesto_Click);
             // 
@@ -1613,7 +1613,7 @@ namespace ConfiguradorUI.Producto
             this.cboFiltro.Location = new System.Drawing.Point(91, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(176, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // txtFiltro
@@ -1699,7 +1699,7 @@ namespace ConfiguradorUI.Producto
             this.btnNuevo.Location = new System.Drawing.Point(375, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -1714,7 +1714,7 @@ namespace ConfiguradorUI.Producto
             this.btnRollback.Location = new System.Drawing.Point(501, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -1744,7 +1744,7 @@ namespace ConfiguradorUI.Producto
             this.btnDelete.Location = new System.Drawing.Point(417, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -1754,7 +1754,7 @@ namespace ConfiguradorUI.Producto
             this.tglListarInactivos.Location = new System.Drawing.Point(138, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 5;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -1846,7 +1846,7 @@ namespace ConfiguradorUI.Producto
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

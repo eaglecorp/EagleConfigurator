@@ -362,6 +362,45 @@ namespace ConfigDataAccess
             }
             return obj;
         }
+
+        public PROt09_producto ProductoViewXId(long id)
+        {
+            var obj = new PROt09_producto();
+            obj = ProductoXId(id);
+            const string sentencia =
+                    @"SELECT * FROM PROt04_subfamilia WHERE id_subfamilia=@id_subfamilia
+                    SELECT * FROM PROt02_modelo WHERE id_modelo=@id_modelo
+                    SELECT * FROM PROt06_clase_prod WHERE id_clase_prod=@id_clase_prod";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    var multi = cnn.QueryMultiple(sentencia, new
+                    {
+                        id_subfamilia = obj.id_subfamilia,
+                        id_modelo = obj.id_modelo,
+                        id_clase_prod = obj.id_clase_prod
+                    });
+
+                    var subFam = multi.Read<PROt04_subfamilia>().FirstOrDefault();
+                    var model = multi.Read<PROt02_modelo>().FirstOrDefault();
+                    var clase = multi.Read<PROt06_clase_prod>().FirstOrDefault();
+
+                    obj.PROt04_subfamilia = subFam;
+                    obj.PROt02_modelo = model;
+                    obj.PROt06_clase_prod = clase;
+
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda Producto View por ID: ", e.Message);
+                }
+            }
+            return obj;
+        }
+
         public List<PROt09_producto> ListaProductoXNom(string nombre, int? id_estado = null)
         {
             var lista = new List<PROt09_producto>();

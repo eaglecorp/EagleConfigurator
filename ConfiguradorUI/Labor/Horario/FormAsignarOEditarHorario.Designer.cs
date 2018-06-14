@@ -96,7 +96,7 @@
             this.chkSabado.Location = new System.Drawing.Point(29, 306);
             this.chkSabado.Name = "chkSabado";
             this.chkSabado.Size = new System.Drawing.Size(70, 19);
-            this.chkSabado.TabIndex = 125;
+            this.chkSabado.TabIndex = 38;
             this.chkSabado.Text = "Sábado";
             this.chkSabado.UseSelectable = true;
             // 
@@ -116,7 +116,7 @@
             this.dtpToleranciaSab.Location = new System.Drawing.Point(591, 305);
             this.dtpToleranciaSab.Name = "dtpToleranciaSab";
             this.dtpToleranciaSab.Size = new System.Drawing.Size(49, 20);
-            this.dtpToleranciaSab.TabIndex = 170;
+            this.dtpToleranciaSab.TabIndex = 43;
             // 
             // metroLabel1
             // 
@@ -149,7 +149,7 @@
             this.dtpToleranciaVie.Location = new System.Drawing.Point(591, 280);
             this.dtpToleranciaVie.Name = "dtpToleranciaVie";
             this.dtpToleranciaVie.Size = new System.Drawing.Size(49, 20);
-            this.dtpToleranciaVie.TabIndex = 168;
+            this.dtpToleranciaVie.TabIndex = 37;
             // 
             // dtpIniBrkDom
             // 
@@ -159,7 +159,7 @@
             this.dtpIniBrkDom.Location = new System.Drawing.Point(363, 155);
             this.dtpIniBrkDom.Name = "dtpIniBrkDom";
             this.dtpIniBrkDom.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniBrkDom.TabIndex = 142;
+            this.dtpIniBrkDom.TabIndex = 5;
             // 
             // dtpToleranciaJue
             // 
@@ -168,7 +168,7 @@
             this.dtpToleranciaJue.Location = new System.Drawing.Point(591, 255);
             this.dtpToleranciaJue.Name = "dtpToleranciaJue";
             this.dtpToleranciaJue.Size = new System.Drawing.Size(49, 20);
-            this.dtpToleranciaJue.TabIndex = 166;
+            this.dtpToleranciaJue.TabIndex = 31;
             // 
             // dtpFinLabSab
             // 
@@ -177,7 +177,7 @@
             this.dtpFinLabSab.Location = new System.Drawing.Point(257, 305);
             this.dtpFinLabSab.Name = "dtpFinLabSab";
             this.dtpFinLabSab.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinLabSab.TabIndex = 139;
+            this.dtpFinLabSab.TabIndex = 40;
             // 
             // dtpToleranciaMie
             // 
@@ -186,7 +186,7 @@
             this.dtpToleranciaMie.Location = new System.Drawing.Point(591, 230);
             this.dtpToleranciaMie.Name = "dtpToleranciaMie";
             this.dtpToleranciaMie.Size = new System.Drawing.Size(49, 20);
-            this.dtpToleranciaMie.TabIndex = 164;
+            this.dtpToleranciaMie.TabIndex = 25;
             // 
             // dtpFinBrkDom
             // 
@@ -195,7 +195,7 @@
             this.dtpFinBrkDom.Location = new System.Drawing.Point(469, 155);
             this.dtpFinBrkDom.Name = "dtpFinBrkDom";
             this.dtpFinBrkDom.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinBrkDom.TabIndex = 143;
+            this.dtpFinBrkDom.TabIndex = 6;
             // 
             // lblDomHi
             // 
@@ -216,7 +216,7 @@
             this.dtpIniLabSab.Location = new System.Drawing.Point(151, 305);
             this.dtpIniLabSab.Name = "dtpIniLabSab";
             this.dtpIniLabSab.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniLabSab.TabIndex = 138;
+            this.dtpIniLabSab.TabIndex = 39;
             // 
             // dtpToleranciaMar
             // 
@@ -225,7 +225,7 @@
             this.dtpToleranciaMar.Location = new System.Drawing.Point(591, 205);
             this.dtpToleranciaMar.Name = "dtpToleranciaMar";
             this.dtpToleranciaMar.Size = new System.Drawing.Size(49, 20);
-            this.dtpToleranciaMar.TabIndex = 162;
+            this.dtpToleranciaMar.TabIndex = 19;
             // 
             // dtpIniBrkLun
             // 
@@ -234,7 +234,7 @@
             this.dtpIniBrkLun.Location = new System.Drawing.Point(363, 180);
             this.dtpIniBrkLun.Name = "dtpIniBrkLun";
             this.dtpIniBrkLun.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniBrkLun.TabIndex = 144;
+            this.dtpIniBrkLun.TabIndex = 11;
             // 
             // dtpToleranciaLun
             // 
@@ -243,7 +243,7 @@
             this.dtpToleranciaLun.Location = new System.Drawing.Point(591, 180);
             this.dtpToleranciaLun.Name = "dtpToleranciaLun";
             this.dtpToleranciaLun.Size = new System.Drawing.Size(49, 20);
-            this.dtpToleranciaLun.TabIndex = 160;
+            this.dtpToleranciaLun.TabIndex = 13;
             // 
             // dtpFinLabVie
             // 
@@ -252,7 +252,7 @@
             this.dtpFinLabVie.Location = new System.Drawing.Point(257, 280);
             this.dtpFinLabVie.Name = "dtpFinLabVie";
             this.dtpFinLabVie.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinLabVie.TabIndex = 137;
+            this.dtpFinLabVie.TabIndex = 34;
             // 
             // lblDomHf
             // 
@@ -273,7 +273,7 @@
             this.dtpFinBrkLun.Location = new System.Drawing.Point(469, 180);
             this.dtpFinBrkLun.Name = "dtpFinBrkLun";
             this.dtpFinBrkLun.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinBrkLun.TabIndex = 145;
+            this.dtpFinBrkLun.TabIndex = 12;
             // 
             // dtpToleranciaDom
             // 
@@ -282,7 +282,7 @@
             this.dtpToleranciaDom.Location = new System.Drawing.Point(591, 155);
             this.dtpToleranciaDom.Name = "dtpToleranciaDom";
             this.dtpToleranciaDom.Size = new System.Drawing.Size(49, 20);
-            this.dtpToleranciaDom.TabIndex = 158;
+            this.dtpToleranciaDom.TabIndex = 7;
             // 
             // dtpIniLabVie
             // 
@@ -291,7 +291,7 @@
             this.dtpIniLabVie.Location = new System.Drawing.Point(151, 280);
             this.dtpIniLabVie.Name = "dtpIniLabVie";
             this.dtpIniLabVie.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniLabVie.TabIndex = 136;
+            this.dtpIniLabVie.TabIndex = 33;
             // 
             // metroLabel4
             // 
@@ -312,7 +312,7 @@
             this.dtpIniBrkMar.Location = new System.Drawing.Point(363, 205);
             this.dtpIniBrkMar.Name = "dtpIniBrkMar";
             this.dtpIniBrkMar.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniBrkMar.TabIndex = 146;
+            this.dtpIniBrkMar.TabIndex = 17;
             // 
             // dtpIniLabDom
             // 
@@ -321,7 +321,7 @@
             this.dtpIniLabDom.Location = new System.Drawing.Point(151, 155);
             this.dtpIniLabDom.Name = "dtpIniLabDom";
             this.dtpIniLabDom.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniLabDom.TabIndex = 126;
+            this.dtpIniLabDom.TabIndex = 3;
             // 
             // dtpFinLabJue
             // 
@@ -330,7 +330,7 @@
             this.dtpFinLabJue.Location = new System.Drawing.Point(257, 255);
             this.dtpFinLabJue.Name = "dtpFinLabJue";
             this.dtpFinLabJue.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinLabJue.TabIndex = 135;
+            this.dtpFinLabJue.TabIndex = 28;
             // 
             // dtpFinBrkSab
             // 
@@ -339,7 +339,7 @@
             this.dtpFinBrkSab.Location = new System.Drawing.Point(469, 305);
             this.dtpFinBrkSab.Name = "dtpFinBrkSab";
             this.dtpFinBrkSab.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinBrkSab.TabIndex = 155;
+            this.dtpFinBrkSab.TabIndex = 42;
             // 
             // dtpFinBrkMar
             // 
@@ -348,7 +348,7 @@
             this.dtpFinBrkMar.Location = new System.Drawing.Point(469, 205);
             this.dtpFinBrkMar.Name = "dtpFinBrkMar";
             this.dtpFinBrkMar.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinBrkMar.TabIndex = 147;
+            this.dtpFinBrkMar.TabIndex = 18;
             // 
             // dtpFinLabDom
             // 
@@ -357,7 +357,7 @@
             this.dtpFinLabDom.Location = new System.Drawing.Point(257, 155);
             this.dtpFinLabDom.Name = "dtpFinLabDom";
             this.dtpFinLabDom.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinLabDom.TabIndex = 127;
+            this.dtpFinLabDom.TabIndex = 4;
             this.dtpFinLabDom.Value = new System.DateTime(2018, 1, 31, 0, 0, 0, 0);
             // 
             // dtpIniLabJue
@@ -367,7 +367,7 @@
             this.dtpIniLabJue.Location = new System.Drawing.Point(151, 255);
             this.dtpIniLabJue.Name = "dtpIniLabJue";
             this.dtpIniLabJue.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniLabJue.TabIndex = 134;
+            this.dtpIniLabJue.TabIndex = 27;
             // 
             // dtpIniBrkSab
             // 
@@ -376,7 +376,7 @@
             this.dtpIniBrkSab.Location = new System.Drawing.Point(363, 305);
             this.dtpIniBrkSab.Name = "dtpIniBrkSab";
             this.dtpIniBrkSab.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniBrkSab.TabIndex = 154;
+            this.dtpIniBrkSab.TabIndex = 41;
             // 
             // dtpIniBrkMie
             // 
@@ -385,7 +385,7 @@
             this.dtpIniBrkMie.Location = new System.Drawing.Point(363, 230);
             this.dtpIniBrkMie.Name = "dtpIniBrkMie";
             this.dtpIniBrkMie.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniBrkMie.TabIndex = 148;
+            this.dtpIniBrkMie.TabIndex = 23;
             // 
             // dtpIniLabLun
             // 
@@ -394,7 +394,7 @@
             this.dtpIniLabLun.Location = new System.Drawing.Point(151, 180);
             this.dtpIniLabLun.Name = "dtpIniLabLun";
             this.dtpIniLabLun.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniLabLun.TabIndex = 128;
+            this.dtpIniLabLun.TabIndex = 9;
             // 
             // dtpFinLabMie
             // 
@@ -403,7 +403,7 @@
             this.dtpFinLabMie.Location = new System.Drawing.Point(257, 230);
             this.dtpFinLabMie.Name = "dtpFinLabMie";
             this.dtpFinLabMie.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinLabMie.TabIndex = 133;
+            this.dtpFinLabMie.TabIndex = 22;
             // 
             // dtpFinBrkVie
             // 
@@ -412,7 +412,7 @@
             this.dtpFinBrkVie.Location = new System.Drawing.Point(469, 280);
             this.dtpFinBrkVie.Name = "dtpFinBrkVie";
             this.dtpFinBrkVie.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinBrkVie.TabIndex = 153;
+            this.dtpFinBrkVie.TabIndex = 36;
             // 
             // dtpFinBrkMie
             // 
@@ -421,7 +421,7 @@
             this.dtpFinBrkMie.Location = new System.Drawing.Point(469, 230);
             this.dtpFinBrkMie.Name = "dtpFinBrkMie";
             this.dtpFinBrkMie.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinBrkMie.TabIndex = 149;
+            this.dtpFinBrkMie.TabIndex = 24;
             // 
             // dtpFinLabLun
             // 
@@ -430,7 +430,7 @@
             this.dtpFinLabLun.Location = new System.Drawing.Point(257, 180);
             this.dtpFinLabLun.Name = "dtpFinLabLun";
             this.dtpFinLabLun.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinLabLun.TabIndex = 129;
+            this.dtpFinLabLun.TabIndex = 10;
             // 
             // dtpIniLabMie
             // 
@@ -439,7 +439,7 @@
             this.dtpIniLabMie.Location = new System.Drawing.Point(151, 230);
             this.dtpIniLabMie.Name = "dtpIniLabMie";
             this.dtpIniLabMie.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniLabMie.TabIndex = 132;
+            this.dtpIniLabMie.TabIndex = 21;
             // 
             // dtpIniBrkVie
             // 
@@ -448,7 +448,7 @@
             this.dtpIniBrkVie.Location = new System.Drawing.Point(363, 280);
             this.dtpIniBrkVie.Name = "dtpIniBrkVie";
             this.dtpIniBrkVie.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniBrkVie.TabIndex = 152;
+            this.dtpIniBrkVie.TabIndex = 35;
             // 
             // dtpIniBrkJue
             // 
@@ -457,7 +457,7 @@
             this.dtpIniBrkJue.Location = new System.Drawing.Point(363, 255);
             this.dtpIniBrkJue.Name = "dtpIniBrkJue";
             this.dtpIniBrkJue.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniBrkJue.TabIndex = 150;
+            this.dtpIniBrkJue.TabIndex = 29;
             // 
             // dtpIniLabMar
             // 
@@ -466,7 +466,7 @@
             this.dtpIniLabMar.Location = new System.Drawing.Point(151, 205);
             this.dtpIniLabMar.Name = "dtpIniLabMar";
             this.dtpIniLabMar.Size = new System.Drawing.Size(78, 20);
-            this.dtpIniLabMar.TabIndex = 130;
+            this.dtpIniLabMar.TabIndex = 15;
             // 
             // dtpFinLabMar
             // 
@@ -475,7 +475,7 @@
             this.dtpFinLabMar.Location = new System.Drawing.Point(257, 205);
             this.dtpFinLabMar.Name = "dtpFinLabMar";
             this.dtpFinLabMar.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinLabMar.TabIndex = 131;
+            this.dtpFinLabMar.TabIndex = 16;
             // 
             // dtpFinBrkJue
             // 
@@ -484,7 +484,7 @@
             this.dtpFinBrkJue.Location = new System.Drawing.Point(469, 255);
             this.dtpFinBrkJue.Name = "dtpFinBrkJue";
             this.dtpFinBrkJue.Size = new System.Drawing.Size(78, 20);
-            this.dtpFinBrkJue.TabIndex = 151;
+            this.dtpFinBrkJue.TabIndex = 30;
             // 
             // chkViernes
             // 
@@ -493,7 +493,7 @@
             this.chkViernes.Location = new System.Drawing.Point(29, 281);
             this.chkViernes.Name = "chkViernes";
             this.chkViernes.Size = new System.Drawing.Size(70, 19);
-            this.chkViernes.TabIndex = 124;
+            this.chkViernes.TabIndex = 32;
             this.chkViernes.Text = "Viernes";
             this.chkViernes.UseSelectable = true;
             // 
@@ -504,7 +504,7 @@
             this.chkJueves.Location = new System.Drawing.Point(29, 256);
             this.chkJueves.Name = "chkJueves";
             this.chkJueves.Size = new System.Drawing.Size(65, 19);
-            this.chkJueves.TabIndex = 123;
+            this.chkJueves.TabIndex = 26;
             this.chkJueves.Text = "Jueves";
             this.chkJueves.UseSelectable = true;
             // 
@@ -527,7 +527,7 @@
             this.chkMartes.Location = new System.Drawing.Point(29, 206);
             this.chkMartes.Name = "chkMartes";
             this.chkMartes.Size = new System.Drawing.Size(68, 19);
-            this.chkMartes.TabIndex = 121;
+            this.chkMartes.TabIndex = 14;
             this.chkMartes.Text = "Martes";
             this.chkMartes.UseSelectable = true;
             // 
@@ -538,7 +538,7 @@
             this.chkDomingo.Location = new System.Drawing.Point(29, 156);
             this.chkDomingo.Name = "chkDomingo";
             this.chkDomingo.Size = new System.Drawing.Size(82, 19);
-            this.chkDomingo.TabIndex = 180;
+            this.chkDomingo.TabIndex = 2;
             this.chkDomingo.Text = "Domingo";
             this.chkDomingo.UseSelectable = true;
             // 
@@ -549,7 +549,7 @@
             this.chkMiercoles.Location = new System.Drawing.Point(29, 231);
             this.chkMiercoles.Name = "chkMiercoles";
             this.chkMiercoles.Size = new System.Drawing.Size(83, 19);
-            this.chkMiercoles.TabIndex = 122;
+            this.chkMiercoles.TabIndex = 20;
             this.chkMiercoles.Text = "Miércoles";
             this.chkMiercoles.UseSelectable = true;
             // 
@@ -560,7 +560,7 @@
             this.chkLunes.Location = new System.Drawing.Point(29, 181);
             this.chkLunes.Name = "chkLunes";
             this.chkLunes.Size = new System.Drawing.Size(61, 19);
-            this.chkLunes.TabIndex = 120;
+            this.chkLunes.TabIndex = 8;
             this.chkLunes.Text = "Lunes";
             this.chkLunes.UseSelectable = true;
             // 
@@ -571,7 +571,7 @@
             this.dtpDesde.MinDate = new System.DateTime(2017, 1, 30, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(117, 20);
-            this.dtpDesde.TabIndex = 172;
+            this.dtpDesde.TabIndex = 0;
             // 
             // dtpHasta
             // 
@@ -579,7 +579,7 @@
             this.dtpHasta.Location = new System.Drawing.Point(262, 69);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(117, 20);
-            this.dtpHasta.TabIndex = 174;
+            this.dtpHasta.TabIndex = 1;
             // 
             // metroLabel3
             // 
@@ -629,7 +629,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
-            this.btnCancelar.TabIndex = 196;
+            this.btnCancelar.TabIndex = 45;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -647,7 +647,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 30);
-            this.btnGuardar.TabIndex = 195;
+            this.btnGuardar.TabIndex = 44;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

@@ -1371,7 +1371,6 @@ namespace ConfiguradorUI.Maestro
                 isPending = false;
                 ControlarBotones(true, true, false, false, true, true);
                 errorProv.Clear();
-                //tab
             }
             else
             {
@@ -1395,7 +1394,6 @@ namespace ConfiguradorUI.Maestro
 
                         int idInsertado = (int)id;
                         SeleccionarPorId(idInsertado);
-                        tabDescuento.SelectedTab = tabPagGeneral;
                         btnNuevo.Focus();
                     }
                     else
@@ -1407,7 +1405,6 @@ namespace ConfiguradorUI.Maestro
                             ControlarBotones(true, true, false, false, true, true);
                             LimpiarForm();
                             if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
-                            tabDescuento.SelectedTab = tabPagGeneral;
                             btnNuevo.Focus();
                         }
                         else
@@ -1419,7 +1416,6 @@ namespace ConfiguradorUI.Maestro
                                 errorProv.Clear();
                                 LimpiarForm();
                                 SeleccionarRegistro();
-                                tabDescuento.SelectedTab = tabPagGeneral;
                                 btnNuevo.Focus();
 
                             }
@@ -1443,7 +1439,6 @@ namespace ConfiguradorUI.Maestro
 
                                         if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
 
-                                        tabDescuento.SelectedTab = tabPagGeneral;
 
                                         if (id != null)
                                         {

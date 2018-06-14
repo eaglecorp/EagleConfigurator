@@ -1008,7 +1008,7 @@ namespace ConfiguradorUI.Producto
                 {
                     if (id > 0)
                     {
-                        var oProducto = new ProductoBL().ProductoXIdMM(id);
+                        var oProducto = new ProductoBL().ProductoViewXId(id);
                         if (oProducto != null)
                         {
                             isSelected = false;
@@ -1283,7 +1283,6 @@ namespace ConfiguradorUI.Producto
 
                         long idInsertado = (long)id;
                         SeleccionarProdPorId(idInsertado);
-                        tabProducto.SelectedTab = tabPagGeneral;
                         btnNuevo.Focus();
                     }
                     else
@@ -1296,7 +1295,6 @@ namespace ConfiguradorUI.Producto
                             if (tglListarInactivos.Checked)
                             { ActualizarGrilla(); }
                             else { ActualizarGrilla(Estado.IdActivo); }
-                            tabProducto.SelectedTab = tabPagGeneral;
                             btnNuevo.Focus();
                         }
                         else
@@ -1308,7 +1306,6 @@ namespace ConfiguradorUI.Producto
                                 errorProv.Clear();
                                 LimpiarForm();
                                 SeleccionarRegistro();
-                                tabProducto.SelectedTab = tabPagGeneral;
                                 btnNuevo.Focus();
                             }
                             else
@@ -1331,7 +1328,6 @@ namespace ConfiguradorUI.Producto
                                         if (tglListarInactivos.Checked)
                                         { ActualizarGrilla(); }
                                         else { ActualizarGrilla(Estado.IdActivo); }
-                                        tabProducto.SelectedTab = tabPagGeneral;
                                         if (id != null)
                                         {
                                             long idAct = (long)id;

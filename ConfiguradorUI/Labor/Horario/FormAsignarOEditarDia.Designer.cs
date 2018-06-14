@@ -64,7 +64,7 @@
             this.chkModificarEnTodosLosMismosDias.Location = new System.Drawing.Point(29, 188);
             this.chkModificarEnTodosLosMismosDias.Name = "chkModificarEnTodosLosMismosDias";
             this.chkModificarEnTodosLosMismosDias.Size = new System.Drawing.Size(224, 15);
-            this.chkModificarEnTodosLosMismosDias.TabIndex = 192;
+            this.chkModificarEnTodosLosMismosDias.TabIndex = 5;
             this.chkModificarEnTodosLosMismosDias.Text = "Modificar en todos los _ _ _ _ _ _ _ _ _ _ ";
             this.chkModificarEnTodosLosMismosDias.UseSelectable = true;
             // 
@@ -87,7 +87,7 @@
             this.dtpHoraFinLabor.Location = new System.Drawing.Point(150, 86);
             this.dtpHoraFinLabor.Name = "dtpHoraFinLabor";
             this.dtpHoraFinLabor.Size = new System.Drawing.Size(101, 25);
-            this.dtpHoraFinLabor.TabIndex = 196;
+            this.dtpHoraFinLabor.TabIndex = 1;
             this.dtpHoraFinLabor.Value = new System.DateTime(2018, 1, 31, 0, 0, 0, 0);
             // 
             // metroLabel10
@@ -120,7 +120,7 @@
             this.dtpTiempoTolerancia.Location = new System.Drawing.Point(293, 86);
             this.dtpTiempoTolerancia.Name = "dtpTiempoTolerancia";
             this.dtpTiempoTolerancia.Size = new System.Drawing.Size(67, 25);
-            this.dtpTiempoTolerancia.TabIndex = 202;
+            this.dtpTiempoTolerancia.TabIndex = 2;
             // 
             // metroLabel12
             // 
@@ -153,7 +153,7 @@
             this.dtpHoraInicioBreak.Location = new System.Drawing.Point(29, 150);
             this.dtpHoraInicioBreak.Name = "dtpHoraInicioBreak";
             this.dtpHoraInicioBreak.Size = new System.Drawing.Size(101, 25);
-            this.dtpHoraInicioBreak.TabIndex = 199;
+            this.dtpHoraInicioBreak.TabIndex = 3;
             // 
             // dtpHoraInicioLabor
             // 
@@ -163,7 +163,7 @@
             this.dtpHoraInicioLabor.Location = new System.Drawing.Point(29, 86);
             this.dtpHoraInicioLabor.Name = "dtpHoraInicioLabor";
             this.dtpHoraInicioLabor.Size = new System.Drawing.Size(101, 25);
-            this.dtpHoraInicioLabor.TabIndex = 195;
+            this.dtpHoraInicioLabor.TabIndex = 0;
             // 
             // dtpHoraFinBreak
             // 
@@ -173,7 +173,7 @@
             this.dtpHoraFinBreak.Location = new System.Drawing.Point(150, 150);
             this.dtpHoraFinBreak.Name = "dtpHoraFinBreak";
             this.dtpHoraFinBreak.Size = new System.Drawing.Size(101, 25);
-            this.dtpHoraFinBreak.TabIndex = 200;
+            this.dtpHoraFinBreak.TabIndex = 4;
             // 
             // btnCancelar
             // 
@@ -190,7 +190,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
-            this.btnCancelar.TabIndex = 205;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -208,7 +208,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 30);
-            this.btnGuardar.TabIndex = 204;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

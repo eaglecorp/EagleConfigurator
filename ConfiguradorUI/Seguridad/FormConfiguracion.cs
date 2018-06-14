@@ -412,20 +412,31 @@ namespace ConfiguradorUI.Seguridad
             errorProvParamSis.Clear();
 
             #region Email
-            if (txtContrasena.Text.Length == 0)
-            {
-                tabConfiguracion.SelectedTab = tabPagEmail;
-                errorProvParamSis.SetError(txtContrasena, "Debe ingresar una contraseña.");
-                txtContrasena.Focus();
-                esValido = false;
-            }
+            var email = txtEmail.Text.Trim();
+            var password = txtContrasena.Text.Trim();
 
-            if (txtEmail.Text.Trim().Length == 0 || !Validation.EsEmail(txtEmail.Text.Trim()))
+            var tieneEmail = email.Length > 0;
+            var tienePassword = password.Length > 0;
+            var validarEmailyPassword = tieneEmail || tienePassword;
+
+            if(validarEmailyPassword)
             {
-                tabConfiguracion.SelectedTab = tabPagEmail;
-                errorProvParamSis.SetError(txtEmail, "Debe ingresar un correo electrónico.");
-                txtEmail.Focus();
-                esValido = false;
+                if (!tienePassword)
+                {
+                    tabConfiguracion.SelectedTab = tabPagEmail;
+                    errorProvParamSis.SetError(txtContrasena, "Debe ingresar una contraseña.");
+                    txtContrasena.Focus();
+                    esValido = false;
+                }
+
+                if (!tieneEmail  || !Validation.EsEmail(email))
+                {
+                    tabConfiguracion.SelectedTab = tabPagEmail;
+                    errorProvParamSis.SetError(txtEmail, "El correo electrónico ingresado no es válido.");
+                    txtEmail.Focus();
+                    esValido = false;
+                }
+
             }
 
             if (txtPort.Text.Trim().Length == 0 || !int.TryParse(txtPort.Text, out int puerto))

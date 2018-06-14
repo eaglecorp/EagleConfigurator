@@ -1054,7 +1054,7 @@ namespace ConfiguradorUI.Persona
                 {
                     if (id > 0)
                     {
-                        var obj = new EmpleadoBL().EmpleadoXIdMM(id);
+                        var obj = new EmpleadoBL().EmpleadoViewXId(id);
                         if (obj != null)
                         {
                             isSelected = false;
@@ -1515,7 +1515,6 @@ namespace ConfiguradorUI.Persona
 
                         long idInsertado = (long)id;
                         SeleccionarPorId(idInsertado);
-                        tabEmpleado.SelectedTab = tabPagGeneral;
                         btnNuevo.Focus();
                     }
                     else
@@ -1526,7 +1525,6 @@ namespace ConfiguradorUI.Persona
                             ControlarBotones(true, true, false, false, true, true);
                             LimpiarForm();
                             if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
-                            tabEmpleado.SelectedTab = tabPagGeneral;
                             btnNuevo.Focus();
                         }
                         else
@@ -1538,7 +1536,6 @@ namespace ConfiguradorUI.Persona
                                 errorProv.Clear();
                                 LimpiarForm();
                                 SeleccionarRegistro();
-                                tabEmpleado.SelectedTab = tabPagGeneral;
                                 btnNuevo.Focus();
                             }
                             else
@@ -1560,8 +1557,6 @@ namespace ConfiguradorUI.Persona
                                         isChangedRow = false;
 
                                         if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
-
-                                        tabEmpleado.SelectedTab = tabPagGeneral;
 
                                         if (id != null)
                                         {
@@ -1737,7 +1732,7 @@ namespace ConfiguradorUI.Persona
                 {
                     x.id_empleado,
                     CODIGO = x.cod_empleado,
-                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, rznSocial: x.txt_rzn_social)
+                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, x.txt_ape_mat, x.txt_seg_nom, x.txt_rzn_social)
                 })
                                     .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 

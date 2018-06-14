@@ -224,7 +224,7 @@ namespace ConfiguradorUI.Seguridad
                     lblTestResult.Visible = false;
                     lblTestResult.Text = "";
                     isRight = true;
-                    MessageBox.Show("Los cambios se han modificado exitosamente. Cierre y vuelva abrir el programa para que los cambios surgan efecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La conexión se estableció correctamente.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
                 else

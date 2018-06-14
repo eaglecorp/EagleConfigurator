@@ -71,7 +71,7 @@
             this.gbxFiltro.Location = new System.Drawing.Point(23, 83);
             this.gbxFiltro.Name = "gbxFiltro";
             this.gbxFiltro.Size = new System.Drawing.Size(834, 91);
-            this.gbxFiltro.TabIndex = 75;
+            this.gbxFiltro.TabIndex = 0;
             this.gbxFiltro.TabStop = false;
             this.gbxFiltro.Text = "Panel de filtros";
             // 
@@ -101,7 +101,7 @@
             this.txtApellidosYNombres.SelectionStart = 0;
             this.txtApellidosYNombres.ShortcutsEnabled = true;
             this.txtApellidosYNombres.Size = new System.Drawing.Size(567, 23);
-            this.txtApellidosYNombres.TabIndex = 5;
+            this.txtApellidosYNombres.TabIndex = 2;
             this.txtApellidosYNombres.UseCustomBackColor = true;
             this.txtApellidosYNombres.UseSelectable = true;
             this.txtApellidosYNombres.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -118,7 +118,7 @@
             this.btnVerTodos.Location = new System.Drawing.Point(737, 24);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(87, 25);
-            this.btnVerTodos.TabIndex = 10;
+            this.btnVerTodos.TabIndex = 4;
             this.btnVerTodos.Text = "Ver todos";
             this.btnVerTodos.UseVisualStyleBackColor = false;
             this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
@@ -133,7 +133,7 @@
             this.btnSeleccionar.Location = new System.Drawing.Point(737, 51);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(87, 25);
-            this.btnSeleccionar.TabIndex = 1;
+            this.btnSeleccionar.TabIndex = 3;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
@@ -175,7 +175,7 @@
             this.txtNumDoc.SelectionStart = 0;
             this.txtNumDoc.ShortcutsEnabled = true;
             this.txtNumDoc.Size = new System.Drawing.Size(137, 23);
-            this.txtNumDoc.TabIndex = 3;
+            this.txtNumDoc.TabIndex = 0;
             this.txtNumDoc.UseCustomBackColor = true;
             this.txtNumDoc.UseSelectable = true;
             this.txtNumDoc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -208,7 +208,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(137, 23);
-            this.txtCodigo.TabIndex = 7;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -233,7 +233,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(7, 26);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(103, 19);
-            this.metroLabel1.TabIndex = 2;
+            this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Nro. doc / RUC:";
             this.metroLabel1.UseCustomForeColor = true;
             // 
@@ -243,7 +243,7 @@
             this.dgvEmpleado.Location = new System.Drawing.Point(23, 180);
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.Size = new System.Drawing.Size(834, 342);
-            this.dgvEmpleado.TabIndex = 74;
+            this.dgvEmpleado.TabIndex = 1;
             this.dgvEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
             this.dgvEmpleado.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvEmpleado_Paint);
             this.dgvEmpleado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvEmpleado_KeyDown);
@@ -256,7 +256,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(23, 20);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 77;
+            this.btnCerrar.TabIndex = 2;
             this.btnCerrar.UseSelectable = true;
             // 
             // FormBuscarEmpleado

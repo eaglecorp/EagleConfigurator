@@ -246,6 +246,40 @@ namespace ConfigDataAccess.Persona
             }
             return obj;
         }
+
+        public PERt04_empleado EmpleadoViewXId(long id)
+        {
+            var obj = new PERt04_empleado();
+            obj = EmpleadoXId(id);
+            const string sentencia =
+                    @"SELECT * FROM SNTt33_distrito WHERE id_dist=@id_dist
+                    SELECT * FROM CLIt07_especialidad_medica WHERE id_especialidad_medica=@id_especialidad_medica";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    var multi = cnn.QueryMultiple(sentencia, new
+                    {
+                        id_dist = obj.id_dist,
+                        id_especialidad_medica = obj.id_especialidad_medica
+                    });
+
+                    var distrito = multi.Read<SNTt33_distrito>().FirstOrDefault();
+                    var espcMedica = multi.Read<CLIt07_especialidad_medica>().FirstOrDefault();
+
+                    obj.SNTt33_distrito = distrito;
+                    obj.CLIt07_especialidad_medica = espcMedica;
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda Empleado View por ID: ", e.Message);
+                }
+            }
+            return obj;
+        }
+
         public PERt04_empleado EmpleadoXEmail(string email)
         {
             var obj = new PERt04_empleado();

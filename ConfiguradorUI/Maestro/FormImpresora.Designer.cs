@@ -138,7 +138,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvImpresora.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvImpresora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvImpresora.Size = new System.Drawing.Size(222, 232);
-            this.dgvImpresora.TabIndex = 117;
+            this.dgvImpresora.TabIndex = 0;
             this.dgvImpresora.SelectionChanged += new System.EventHandler(this.dgvImpresora_SelectionChanged);
             this.dgvImpresora.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
@@ -155,7 +155,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.Location = new System.Drawing.Point(314, 349);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
-            this.panelFiltro.TabIndex = 120;
+            this.panelFiltro.TabIndex = 3;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
             this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
@@ -231,7 +231,7 @@ namespace ConfiguradorUI.Maestro
             this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // panelMantenimiento
@@ -249,7 +249,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
-            this.panelMantenimiento.TabIndex = 119;
+            this.panelMantenimiento.TabIndex = 2;
             this.panelMantenimiento.UseCustomBackColor = true;
             this.panelMantenimiento.UseStyleColors = true;
             this.panelMantenimiento.VerticalScrollbarBarColor = true;
@@ -282,7 +282,7 @@ namespace ConfiguradorUI.Maestro
             this.btnNuevo.Location = new System.Drawing.Point(370, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -297,7 +297,7 @@ namespace ConfiguradorUI.Maestro
             this.btnRollback.Location = new System.Drawing.Point(496, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -327,7 +327,7 @@ namespace ConfiguradorUI.Maestro
             this.btnDelete.Location = new System.Drawing.Point(412, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -337,7 +337,7 @@ namespace ConfiguradorUI.Maestro
             this.tglListarInactivos.Location = new System.Drawing.Point(131, 116);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 122;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -358,7 +358,7 @@ namespace ConfiguradorUI.Maestro
             this.tabImpresora.Name = "tabImpresora";
             this.tabImpresora.SelectedIndex = 0;
             this.tabImpresora.Size = new System.Drawing.Size(562, 252);
-            this.tabImpresora.TabIndex = 118;
+            this.tabImpresora.TabIndex = 1;
             this.tabImpresora.UseSelectable = true;
             // 
             // tabPagGeneral
@@ -607,7 +607,7 @@ namespace ConfiguradorUI.Maestro
             this.btnTipoImpresora.Location = new System.Drawing.Point(239, 68);
             this.btnTipoImpresora.Name = "btnTipoImpresora";
             this.btnTipoImpresora.Size = new System.Drawing.Size(29, 27);
-            this.btnTipoImpresora.TabIndex = 59;
+            this.btnTipoImpresora.TabIndex = 8;
             this.btnTipoImpresora.UseSelectable = true;
             this.btnTipoImpresora.Click += new System.EventHandler(this.btnTipoImpresora_Click);
             // 
@@ -746,7 +746,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 123;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

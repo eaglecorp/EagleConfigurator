@@ -1268,7 +1268,6 @@ namespace ConfiguradorUI.Producto
                             //la primera vez no se ejecuta el evento enlazado.
                             isSelected = false;
                             SetObjeto(obj);
-                            SelectTabDetail();
                             isChangedRow = true;
                             isSelected = true;
 
@@ -1280,19 +1279,6 @@ namespace ConfiguradorUI.Producto
                     MessageBox.Show(this, "No se pudo capturar el id en la grilla", "MENSAJE EAGLE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-        }
-
-        private void SelectTabDetail()
-        {
-            if (details != null && !details.Any(x => x.id_producto != null && x.id_estado == Estado.IdActivo))
-            {
-                tabDetails.SelectedTab = tabPagCboElectivo;
-            }
-            else
-            {
-                tabDetails.SelectedTab = tabPagProductos;
-            }
-            dgvCombo.Focus();
         }
 
         private string GetIdSelected()
@@ -1697,13 +1683,11 @@ namespace ConfiguradorUI.Producto
             {
                 DetailView = Detail.Producto;
                 lblItemDesc.Text = "Descrip. Producto";
-                btnItem.Location = new Point(187, 111);
             }
             else if (tabDetails.SelectedTab == tabDetails.TabPages["tabPagCboElectivo"])
             {
                 DetailView = Detail.ComboVariable;
                 lblItemDesc.Text = "Descrip. Cbo. Electivo";
-                btnItem.Location = new Point(207, 111);
             }
             CleanItem(true);
 
@@ -1713,7 +1697,6 @@ namespace ConfiguradorUI.Producto
         private void SetInit()
         {
             #region Controls
-            btnItem.Visible = false;
             lblIdCombo.Visible = false;
             txtItemDesc.ReadOnly = true;
             txtItemPriceConImp.ReadOnly = true;
@@ -2298,20 +2281,6 @@ namespace ConfiguradorUI.Producto
         private void btnBuscarItem_Click(object sender, EventArgs e)
         {
             SearchAndSetItem();
-        }
-
-        private void btnItem_Click(object sender, EventArgs e)
-        {
-            if (DetailView == Detail.Producto)
-            {
-                var form = new FormProducto();
-                form.ShowDialog();
-            }
-            else if (DetailView == Detail.ComboVariable)
-            {
-                var form = new FormComboVariable();
-                form.ShowDialog();
-            }
         }
 
         private void dgvProductDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

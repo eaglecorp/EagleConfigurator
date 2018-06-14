@@ -188,7 +188,7 @@ namespace ConfiguradorUI.Seguridad
             this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // panelMantenimiento
@@ -240,7 +240,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnNuevo.Location = new System.Drawing.Point(369, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -255,7 +255,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnRollback.Location = new System.Drawing.Point(495, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -285,7 +285,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnDelete.Location = new System.Drawing.Point(411, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -295,7 +295,7 @@ namespace ConfiguradorUI.Seguridad
             this.tglListarInactivos.Location = new System.Drawing.Point(138, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 5;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -384,7 +384,7 @@ namespace ConfiguradorUI.Seguridad
             this.txtIdPassword.SelectionStart = 0;
             this.txtIdPassword.ShortcutsEnabled = true;
             this.txtIdPassword.Size = new System.Drawing.Size(183, 23);
-            this.txtIdPassword.TabIndex = 90;
+            this.txtIdPassword.TabIndex = 3;
             this.txtIdPassword.UseCustomBackColor = true;
             this.txtIdPassword.UseSelectable = true;
             this.txtIdPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -416,7 +416,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnEnviarCredenciales.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnEnviarCredenciales.Name = "btnEnviarCredenciales";
             this.btnEnviarCredenciales.Size = new System.Drawing.Size(161, 30);
-            this.btnEnviarCredenciales.TabIndex = 88;
+            this.btnEnviarCredenciales.TabIndex = 6;
             this.btnEnviarCredenciales.Text = "Enviar credenciales";
             this.btnEnviarCredenciales.UseVisualStyleBackColor = false;
             this.btnEnviarCredenciales.Click += new System.EventHandler(this.btnEnviarCredenciales_Click);
@@ -435,7 +435,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnCambiarContrasena.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCambiarContrasena.Name = "btnCambiarContrasena";
             this.btnCambiarContrasena.Size = new System.Drawing.Size(161, 30);
-            this.btnCambiarContrasena.TabIndex = 87;
+            this.btnCambiarContrasena.TabIndex = 5;
             this.btnCambiarContrasena.Text = "Cambiar Contraseña";
             this.btnCambiarContrasena.UseVisualStyleBackColor = false;
             this.btnCambiarContrasena.Click += new System.EventHandler(this.btnCambiarContrasena_Click);
@@ -466,7 +466,7 @@ namespace ConfiguradorUI.Seguridad
             this.txtNombreEmpleado.SelectionStart = 0;
             this.txtNombreEmpleado.ShortcutsEnabled = true;
             this.txtNombreEmpleado.Size = new System.Drawing.Size(450, 23);
-            this.txtNombreEmpleado.TabIndex = 5;
+            this.txtNombreEmpleado.TabIndex = 2;
             this.txtNombreEmpleado.UseCustomBackColor = true;
             this.txtNombreEmpleado.UseSelectable = true;
             this.txtNombreEmpleado.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -501,7 +501,7 @@ namespace ConfiguradorUI.Seguridad
             this.chkActivo.Location = new System.Drawing.Point(8, 166);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 7;
+            this.chkActivo.TabIndex = 4;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -544,7 +544,7 @@ namespace ConfiguradorUI.Seguridad
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -588,7 +588,7 @@ namespace ConfiguradorUI.Seguridad
             this.txtUsuario.SelectionStart = 0;
             this.txtUsuario.ShortcutsEnabled = true;
             this.txtUsuario.Size = new System.Drawing.Size(184, 23);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
             this.txtUsuario.UseCustomBackColor = true;
             this.txtUsuario.UseSelectable = true;
             this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -624,7 +624,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

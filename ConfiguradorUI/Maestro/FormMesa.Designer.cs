@@ -89,7 +89,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvMesa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMesa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMesa.Size = new System.Drawing.Size(222, 210);
-            this.dgvMesa.TabIndex = 117;
+            this.dgvMesa.TabIndex = 0;
             this.dgvMesa.SelectionChanged += new System.EventHandler(this.dgvMesa_SelectionChanged);
             this.dgvMesa.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
@@ -106,7 +106,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.Location = new System.Drawing.Point(311, 273);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
-            this.panelFiltro.TabIndex = 120;
+            this.panelFiltro.TabIndex = 3;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
             this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
@@ -182,7 +182,7 @@ namespace ConfiguradorUI.Maestro
             this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // panelMantenimiento
@@ -200,7 +200,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
-            this.panelMantenimiento.TabIndex = 119;
+            this.panelMantenimiento.TabIndex = 2;
             this.panelMantenimiento.UseCustomBackColor = true;
             this.panelMantenimiento.UseStyleColors = true;
             this.panelMantenimiento.VerticalScrollbarBarColor = true;
@@ -233,7 +233,7 @@ namespace ConfiguradorUI.Maestro
             this.btnNuevo.Location = new System.Drawing.Point(412, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 3;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -248,7 +248,7 @@ namespace ConfiguradorUI.Maestro
             this.btnRollback.Location = new System.Drawing.Point(496, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -289,7 +289,7 @@ namespace ConfiguradorUI.Maestro
             this.tabMesa.Name = "tabMesa";
             this.tabMesa.SelectedIndex = 0;
             this.tabMesa.Size = new System.Drawing.Size(562, 176);
-            this.tabMesa.TabIndex = 118;
+            this.tabMesa.TabIndex = 1;
             this.tabMesa.UseSelectable = true;
             // 
             // tabPagGeneral
@@ -397,7 +397,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCanalVenta.Location = new System.Drawing.Point(510, 67);
             this.btnCanalVenta.Name = "btnCanalVenta";
             this.btnCanalVenta.Size = new System.Drawing.Size(29, 27);
-            this.btnCanalVenta.TabIndex = 68;
+            this.btnCanalVenta.TabIndex = 5;
             this.btnCanalVenta.UseSelectable = true;
             this.btnCanalVenta.Click += new System.EventHandler(this.btnCanalVenta_Click);
             // 
@@ -428,7 +428,7 @@ namespace ConfiguradorUI.Maestro
             this.btnEstadoMesa.Location = new System.Drawing.Point(242, 105);
             this.btnEstadoMesa.Name = "btnEstadoMesa";
             this.btnEstadoMesa.Size = new System.Drawing.Size(29, 27);
-            this.btnEstadoMesa.TabIndex = 59;
+            this.btnEstadoMesa.TabIndex = 6;
             this.btnEstadoMesa.UseSelectable = true;
             this.btnEstadoMesa.Click += new System.EventHandler(this.btnEstadoMesa_Click);
             // 
@@ -550,7 +550,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 123;
+            this.btnCerrar.TabIndex = 4;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

@@ -142,7 +142,7 @@ namespace ConfiguradorUI.Reporte
             this.dgvReporte.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReporte.Size = new System.Drawing.Size(222, 314);
-            this.dgvReporte.TabIndex = 117;
+            this.dgvReporte.TabIndex = 0;
             this.dgvReporte.SelectionChanged += new System.EventHandler(this.dgvReporte_SelectionChanged);
             this.dgvReporte.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
@@ -167,7 +167,7 @@ namespace ConfiguradorUI.Reporte
             this.panelFiltro.Location = new System.Drawing.Point(311, 419);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
-            this.panelFiltro.TabIndex = 120;
+            this.panelFiltro.TabIndex = 3;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
             this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
@@ -243,7 +243,7 @@ namespace ConfiguradorUI.Reporte
             this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // panelMantenimiento
@@ -261,7 +261,7 @@ namespace ConfiguradorUI.Reporte
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
-            this.panelMantenimiento.TabIndex = 119;
+            this.panelMantenimiento.TabIndex = 2;
             this.panelMantenimiento.UseCustomBackColor = true;
             this.panelMantenimiento.UseStyleColors = true;
             this.panelMantenimiento.VerticalScrollbarBarColor = true;
@@ -294,7 +294,7 @@ namespace ConfiguradorUI.Reporte
             this.btnNuevo.Location = new System.Drawing.Point(370, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -309,7 +309,7 @@ namespace ConfiguradorUI.Reporte
             this.btnRollback.Location = new System.Drawing.Point(496, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -339,7 +339,7 @@ namespace ConfiguradorUI.Reporte
             this.btnDelete.Location = new System.Drawing.Point(412, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -349,7 +349,7 @@ namespace ConfiguradorUI.Reporte
             this.tglListarInactivos.Location = new System.Drawing.Point(131, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 122;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -370,7 +370,7 @@ namespace ConfiguradorUI.Reporte
             this.tabReportes.Name = "tabReportes";
             this.tabReportes.SelectedIndex = 0;
             this.tabReportes.Size = new System.Drawing.Size(562, 322);
-            this.tabReportes.TabIndex = 118;
+            this.tabReportes.TabIndex = 1;
             this.tabReportes.UseSelectable = true;
             // 
             // tabPagGeneral
@@ -430,7 +430,7 @@ namespace ConfiguradorUI.Reporte
             this.chkFamiliaProducto.Location = new System.Drawing.Point(234, 161);
             this.chkFamiliaProducto.Name = "chkFamiliaProducto";
             this.chkFamiliaProducto.Size = new System.Drawing.Size(148, 19);
-            this.chkFamiliaProducto.TabIndex = 8;
+            this.chkFamiliaProducto.TabIndex = 9;
             this.chkFamiliaProducto.Text = "Familia de productos";
             this.chkFamiliaProducto.UseCustomForeColor = true;
             this.chkFamiliaProducto.UseSelectable = true;
@@ -460,7 +460,7 @@ namespace ConfiguradorUI.Reporte
             this.chkClaseEmpleado.Location = new System.Drawing.Point(7, 179);
             this.chkClaseEmpleado.Name = "chkClaseEmpleado";
             this.chkClaseEmpleado.Size = new System.Drawing.Size(144, 19);
-            this.chkClaseEmpleado.TabIndex = 9;
+            this.chkClaseEmpleado.TabIndex = 6;
             this.chkClaseEmpleado.Text = "Clase de empleados";
             this.chkClaseEmpleado.UseCustomForeColor = true;
             this.chkClaseEmpleado.UseSelectable = true;
@@ -475,7 +475,7 @@ namespace ConfiguradorUI.Reporte
             this.chkNombreProducto.Location = new System.Drawing.Point(234, 143);
             this.chkNombreProducto.Name = "chkNombreProducto";
             this.chkNombreProducto.Size = new System.Drawing.Size(152, 19);
-            this.chkNombreProducto.TabIndex = 6;
+            this.chkNombreProducto.TabIndex = 8;
             this.chkNombreProducto.Text = "Nombre de producto";
             this.chkNombreProducto.UseCustomForeColor = true;
             this.chkNombreProducto.UseSelectable = true;
@@ -490,7 +490,7 @@ namespace ConfiguradorUI.Reporte
             this.chkEmpleado.Location = new System.Drawing.Point(7, 161);
             this.chkEmpleado.Name = "chkEmpleado";
             this.chkEmpleado.Size = new System.Drawing.Size(90, 19);
-            this.chkEmpleado.TabIndex = 7;
+            this.chkEmpleado.TabIndex = 5;
             this.chkEmpleado.Text = "Empleados";
             this.chkEmpleado.UseCustomForeColor = true;
             this.chkEmpleado.UseSelectable = true;
@@ -510,7 +510,7 @@ namespace ConfiguradorUI.Reporte
             this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(33, 23);
-            this.btnBrowse.TabIndex = 11;
+            this.btnBrowse.TabIndex = 12;
             this.btnBrowse.Text = ". . .";
             this.btnBrowse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowse.UseVisualStyleBackColor = false;
@@ -543,7 +543,7 @@ namespace ConfiguradorUI.Reporte
             this.txtPath.SelectionStart = 0;
             this.txtPath.ShortcutsEnabled = true;
             this.txtPath.Size = new System.Drawing.Size(412, 23);
-            this.txtPath.TabIndex = 91;
+            this.txtPath.TabIndex = 11;
             this.txtPath.UseCustomBackColor = true;
             this.txtPath.UseSelectable = true;
             this.txtPath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -570,7 +570,7 @@ namespace ConfiguradorUI.Reporte
             this.chkRangoRVC.Location = new System.Drawing.Point(7, 143);
             this.chkRangoRVC.Name = "chkRangoRVC";
             this.chkRangoRVC.Size = new System.Drawing.Size(92, 19);
-            this.chkRangoRVC.TabIndex = 5;
+            this.chkRangoRVC.TabIndex = 4;
             this.chkRangoRVC.Text = "Rango RVC";
             this.chkRangoRVC.UseCustomForeColor = true;
             this.chkRangoRVC.UseSelectable = true;
@@ -585,7 +585,7 @@ namespace ConfiguradorUI.Reporte
             this.chkTurno.Location = new System.Drawing.Point(234, 125);
             this.chkTurno.Name = "chkTurno";
             this.chkTurno.Size = new System.Drawing.Size(62, 19);
-            this.chkTurno.TabIndex = 4;
+            this.chkTurno.TabIndex = 7;
             this.chkTurno.Text = "Turnos";
             this.chkTurno.UseCustomForeColor = true;
             this.chkTurno.UseSelectable = true;
@@ -631,7 +631,7 @@ namespace ConfiguradorUI.Reporte
             this.btnCategoriaReporte.Location = new System.Drawing.Point(239, 67);
             this.btnCategoriaReporte.Name = "btnCategoriaReporte";
             this.btnCategoriaReporte.Size = new System.Drawing.Size(29, 27);
-            this.btnCategoriaReporte.TabIndex = 59;
+            this.btnCategoriaReporte.TabIndex = 14;
             this.btnCategoriaReporte.UseSelectable = true;
             this.btnCategoriaReporte.Click += new System.EventHandler(this.btnCategoriaReporte_Click);
             // 
@@ -659,7 +659,7 @@ namespace ConfiguradorUI.Reporte
             this.chkActivo.Location = new System.Drawing.Point(4, 262);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 12;
+            this.chkActivo.TabIndex = 13;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -783,7 +783,7 @@ namespace ConfiguradorUI.Reporte
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 123;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

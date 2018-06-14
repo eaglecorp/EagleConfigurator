@@ -36,6 +36,19 @@ namespace ConfigBusinessLogic.Persona
             return proveedor;
         }
 
+        public PERt03_proveedor ProveedorViewXId(long id)
+        {
+            var proveedor = new ProveedorDA().ProveedorViewXId(id);
+
+            if (proveedor.SNTt33_distrito != null && proveedor.SNTt33_distrito.id_dist > 0)
+            {
+                var provincia = new ProvinciaBL().ProvinciaXId(proveedor.SNTt33_distrito.id_prov);
+                proveedor.SNTt33_distrito.SNTt32_provincia = provincia;
+            }
+
+            return proveedor;
+        }
+
         public PERt03_proveedor ProveedorXCod(string cod)
         {
             return new ProveedorDA().ProveedorXCod(cod);

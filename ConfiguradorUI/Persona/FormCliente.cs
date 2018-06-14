@@ -645,7 +645,7 @@ namespace ConfiguradorUI.Persona
                 {
                     if (id > 0)
                     {
-                        var obj = new ClienteBL().ClienteXIdMM(id);
+                        var obj = new ClienteBL().ClienteViewXId(id);
                         if (obj != null)
                         {
                             isSelected = false;
@@ -776,7 +776,6 @@ namespace ConfiguradorUI.Persona
                 isPending = false;
                 ControlarBotones(true, true, false, false, true, true);
                 errorProv.Clear();
-                //tabProducto.SelectedTab = tabPagGeneral;
             }
             else
             {
@@ -786,7 +785,7 @@ namespace ConfiguradorUI.Persona
                     errorProv.Clear();
                     LimpiarForm();
                     tabCliente.SelectedTab = tabPagGeneral;
-                    txtApPaterno.Focus();
+                    txtPrimerNom.Focus();
                 }
                 else
                 {
@@ -800,7 +799,6 @@ namespace ConfiguradorUI.Persona
 
                         long idInsertado = (long)id;
                         SeleccionarPorId(idInsertado);
-                        tabCliente.SelectedTab = tabPagGeneral;
                         btnNuevo.Focus();
                     }
                     else
@@ -812,7 +810,6 @@ namespace ConfiguradorUI.Persona
                             ControlarBotones(true, true, false, false, true, true);
                             LimpiarForm();
                             if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
-                            tabCliente.SelectedTab = tabPagGeneral;
                             btnNuevo.Focus();
                         }
                         else
@@ -824,7 +821,6 @@ namespace ConfiguradorUI.Persona
                                 errorProv.Clear();
                                 LimpiarForm();
                                 SeleccionarRegistro();
-                                tabCliente.SelectedTab = tabPagGeneral;
                                 btnNuevo.Focus();
                             }
                             else
@@ -847,7 +843,6 @@ namespace ConfiguradorUI.Persona
 
                                         if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
 
-                                        tabCliente.SelectedTab = tabPagGeneral;
 
                                         if (id != null)
                                         {
@@ -924,8 +919,9 @@ namespace ConfiguradorUI.Persona
                 {
                     x.id_cliente,
                     CODIGO = x.cod_cliente,
-                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, rznSocial: x.txt_rzn_social)
+                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, x.txt_ape_mat, x.txt_seg_nom, x.txt_rzn_social)
                 })
+
                 .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
 
                 if (lista != null)

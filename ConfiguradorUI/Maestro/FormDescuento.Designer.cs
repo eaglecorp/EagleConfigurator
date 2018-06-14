@@ -244,7 +244,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -337,7 +337,7 @@ namespace ConfiguradorUI.Maestro
             this.cboFiltro.Location = new System.Drawing.Point(95, 12);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(177, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // panelMantenimiento
@@ -353,7 +353,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.HorizontalScrollbarSize = 10;
             this.panelMantenimiento.Location = new System.Drawing.Point(308, 36);
             this.panelMantenimiento.Name = "panelMantenimiento";
-            this.panelMantenimiento.Size = new System.Drawing.Size(563, 49);
+            this.panelMantenimiento.Size = new System.Drawing.Size(568, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
             this.panelMantenimiento.TabIndex = 2;
             this.panelMantenimiento.UseCustomBackColor = true;
@@ -385,10 +385,10 @@ namespace ConfiguradorUI.Maestro
             this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(393, 5);
+            this.btnNuevo.Location = new System.Drawing.Point(398, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -400,10 +400,10 @@ namespace ConfiguradorUI.Maestro
             this.btnRollback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnRollback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRollback.Image = ((System.Drawing.Image)(resources.GetObject("btnRollback.Image")));
-            this.btnRollback.Location = new System.Drawing.Point(519, 5);
+            this.btnRollback.Location = new System.Drawing.Point(524, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -415,7 +415,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
-            this.btnCommit.Location = new System.Drawing.Point(477, 5);
+            this.btnCommit.Location = new System.Drawing.Point(482, 5);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Size = new System.Drawing.Size(40, 40);
             this.btnCommit.TabIndex = 0;
@@ -430,10 +430,10 @@ namespace ConfiguradorUI.Maestro
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(435, 5);
+            this.btnDelete.Location = new System.Drawing.Point(440, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -933,7 +933,7 @@ namespace ConfiguradorUI.Maestro
             // rbtDia
             // 
             this.rbtDia.AutoSize = true;
-            this.rbtDia.Location = new System.Drawing.Point(300, 12);
+            this.rbtDia.Location = new System.Drawing.Point(300, 10);
             this.rbtDia.Name = "rbtDia";
             this.rbtDia.Size = new System.Drawing.Size(45, 15);
             this.rbtDia.TabIndex = 1;
@@ -944,7 +944,7 @@ namespace ConfiguradorUI.Maestro
             // rbtPeriodo
             // 
             this.rbtPeriodo.AutoSize = true;
-            this.rbtPeriodo.Location = new System.Drawing.Point(215, 12);
+            this.rbtPeriodo.Location = new System.Drawing.Point(215, 10);
             this.rbtPeriodo.Name = "rbtPeriodo";
             this.rbtPeriodo.Size = new System.Drawing.Size(64, 15);
             this.rbtPeriodo.TabIndex = 0;
@@ -962,7 +962,7 @@ namespace ConfiguradorUI.Maestro
             this.panelPeriodo.Controls.Add(this.grbP3);
             this.panelPeriodo.Controls.Add(this.grbP2);
             this.panelPeriodo.Controls.Add(this.grbP1);
-            this.panelPeriodo.Location = new System.Drawing.Point(3, 33);
+            this.panelPeriodo.Location = new System.Drawing.Point(4, 30);
             this.panelPeriodo.Name = "panelPeriodo";
             this.panelPeriodo.Size = new System.Drawing.Size(566, 442);
             this.panelPeriodo.TabIndex = 2;
@@ -980,8 +980,8 @@ namespace ConfiguradorUI.Maestro
             this.grbP7.Controls.Add(this.lblP7Hf);
             this.grbP7.Controls.Add(this.lblP7Hi);
             this.grbP7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbP7.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbP7.ForeColor = System.Drawing.Color.Black;
+            this.grbP7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbP7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbP7.Location = new System.Drawing.Point(5, 381);
             this.grbP7.Name = "grbP7";
             this.grbP7.Size = new System.Drawing.Size(560, 57);
@@ -997,7 +997,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP7Fin.Location = new System.Drawing.Point(203, 22);
             this.dtpP7Fin.Name = "dtpP7Fin";
             this.dtpP7Fin.Size = new System.Drawing.Size(99, 23);
-            this.dtpP7Fin.TabIndex = 0;
+            this.dtpP7Fin.TabIndex = 1;
             this.dtpP7Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP7FecFin
@@ -1021,7 +1021,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP7Hf.Location = new System.Drawing.Point(484, 22);
             this.cboP7Hf.Name = "cboP7Hf";
             this.cboP7Hf.Size = new System.Drawing.Size(67, 21);
-            this.cboP7Hf.TabIndex = 4;
+            this.cboP7Hf.TabIndex = 3;
             this.cboP7Hf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboP7Hi
@@ -1045,7 +1045,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP7Ini.Location = new System.Drawing.Point(54, 22);
             this.dtpP7Ini.Name = "dtpP7Ini";
             this.dtpP7Ini.Size = new System.Drawing.Size(99, 23);
-            this.dtpP7Ini.TabIndex = 86;
+            this.dtpP7Ini.TabIndex = 0;
             this.dtpP7Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP7FecIni
@@ -1093,8 +1093,8 @@ namespace ConfiguradorUI.Maestro
             this.grbP6.Controls.Add(this.lblP6Hf);
             this.grbP6.Controls.Add(this.lblP6Hi);
             this.grbP6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbP6.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbP6.ForeColor = System.Drawing.Color.Black;
+            this.grbP6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbP6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbP6.Location = new System.Drawing.Point(3, 318);
             this.grbP6.Name = "grbP6";
             this.grbP6.Size = new System.Drawing.Size(560, 57);
@@ -1134,7 +1134,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP6Hf.Location = new System.Drawing.Point(484, 22);
             this.cboP6Hf.Name = "cboP6Hf";
             this.cboP6Hf.Size = new System.Drawing.Size(67, 21);
-            this.cboP6Hf.TabIndex = 5;
+            this.cboP6Hf.TabIndex = 3;
             this.cboP6Hf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboP6Hi
@@ -1147,7 +1147,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP6Hi.Location = new System.Drawing.Point(371, 22);
             this.cboP6Hi.Name = "cboP6Hi";
             this.cboP6Hi.Size = new System.Drawing.Size(67, 21);
-            this.cboP6Hi.TabIndex = 3;
+            this.cboP6Hi.TabIndex = 2;
             this.cboP6Hi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // dtpP6Ini
@@ -1206,8 +1206,8 @@ namespace ConfiguradorUI.Maestro
             this.grbP5.Controls.Add(this.lblP5Hf);
             this.grbP5.Controls.Add(this.lblP5Hi);
             this.grbP5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbP5.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbP5.ForeColor = System.Drawing.Color.Black;
+            this.grbP5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbP5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbP5.Location = new System.Drawing.Point(3, 255);
             this.grbP5.Name = "grbP5";
             this.grbP5.Size = new System.Drawing.Size(560, 57);
@@ -1223,7 +1223,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP5Fin.Location = new System.Drawing.Point(203, 22);
             this.dtpP5Fin.Name = "dtpP5Fin";
             this.dtpP5Fin.Size = new System.Drawing.Size(99, 23);
-            this.dtpP5Fin.TabIndex = 0;
+            this.dtpP5Fin.TabIndex = 1;
             this.dtpP5Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP5FecFin
@@ -1247,7 +1247,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP5Hf.Location = new System.Drawing.Point(484, 22);
             this.cboP5Hf.Name = "cboP5Hf";
             this.cboP5Hf.Size = new System.Drawing.Size(67, 21);
-            this.cboP5Hf.TabIndex = 4;
+            this.cboP5Hf.TabIndex = 3;
             this.cboP5Hf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboP5Hi
@@ -1271,7 +1271,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP5Ini.Location = new System.Drawing.Point(54, 22);
             this.dtpP5Ini.Name = "dtpP5Ini";
             this.dtpP5Ini.Size = new System.Drawing.Size(99, 23);
-            this.dtpP5Ini.TabIndex = 86;
+            this.dtpP5Ini.TabIndex = 0;
             this.dtpP5Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP5FecIni
@@ -1319,8 +1319,8 @@ namespace ConfiguradorUI.Maestro
             this.grbP4.Controls.Add(this.lblP4Hf);
             this.grbP4.Controls.Add(this.lblP4Hi);
             this.grbP4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbP4.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbP4.ForeColor = System.Drawing.Color.Black;
+            this.grbP4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbP4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbP4.Location = new System.Drawing.Point(3, 192);
             this.grbP4.Name = "grbP4";
             this.grbP4.Size = new System.Drawing.Size(560, 57);
@@ -1360,7 +1360,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP4Hf.Location = new System.Drawing.Point(484, 22);
             this.cboP4Hf.Name = "cboP4Hf";
             this.cboP4Hf.Size = new System.Drawing.Size(67, 21);
-            this.cboP4Hf.TabIndex = 5;
+            this.cboP4Hf.TabIndex = 3;
             this.cboP4Hf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboP4Hi
@@ -1373,7 +1373,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP4Hi.Location = new System.Drawing.Point(371, 22);
             this.cboP4Hi.Name = "cboP4Hi";
             this.cboP4Hi.Size = new System.Drawing.Size(67, 21);
-            this.cboP4Hi.TabIndex = 3;
+            this.cboP4Hi.TabIndex = 2;
             this.cboP4Hi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // dtpP4Ini
@@ -1432,8 +1432,8 @@ namespace ConfiguradorUI.Maestro
             this.grbP3.Controls.Add(this.lblP3Hf);
             this.grbP3.Controls.Add(this.lblP3Hi);
             this.grbP3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbP3.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbP3.ForeColor = System.Drawing.Color.Black;
+            this.grbP3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbP3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbP3.Location = new System.Drawing.Point(3, 129);
             this.grbP3.Name = "grbP3";
             this.grbP3.Size = new System.Drawing.Size(560, 57);
@@ -1449,7 +1449,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP3Fin.Location = new System.Drawing.Point(203, 22);
             this.dtpP3Fin.Name = "dtpP3Fin";
             this.dtpP3Fin.Size = new System.Drawing.Size(99, 23);
-            this.dtpP3Fin.TabIndex = 0;
+            this.dtpP3Fin.TabIndex = 1;
             this.dtpP3Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP3FecFin
@@ -1473,7 +1473,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP3Hf.Location = new System.Drawing.Point(484, 22);
             this.cboP3Hf.Name = "cboP3Hf";
             this.cboP3Hf.Size = new System.Drawing.Size(67, 21);
-            this.cboP3Hf.TabIndex = 4;
+            this.cboP3Hf.TabIndex = 3;
             this.cboP3Hf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboP3Hi
@@ -1497,7 +1497,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP3Ini.Location = new System.Drawing.Point(54, 22);
             this.dtpP3Ini.Name = "dtpP3Ini";
             this.dtpP3Ini.Size = new System.Drawing.Size(99, 23);
-            this.dtpP3Ini.TabIndex = 86;
+            this.dtpP3Ini.TabIndex = 0;
             this.dtpP3Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP3FecIni
@@ -1545,8 +1545,8 @@ namespace ConfiguradorUI.Maestro
             this.grbP2.Controls.Add(this.lblP2Hf);
             this.grbP2.Controls.Add(this.lblP2Hi);
             this.grbP2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbP2.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbP2.ForeColor = System.Drawing.Color.Black;
+            this.grbP2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbP2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbP2.Location = new System.Drawing.Point(3, 66);
             this.grbP2.Name = "grbP2";
             this.grbP2.Size = new System.Drawing.Size(560, 57);
@@ -1562,7 +1562,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP2Fin.Location = new System.Drawing.Point(204, 22);
             this.dtpP2Fin.Name = "dtpP2Fin";
             this.dtpP2Fin.Size = new System.Drawing.Size(99, 23);
-            this.dtpP2Fin.TabIndex = 3;
+            this.dtpP2Fin.TabIndex = 1;
             this.dtpP2Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP2FecFin
@@ -1586,7 +1586,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP2Hf.Location = new System.Drawing.Point(484, 22);
             this.cboP2Hf.Name = "cboP2Hf";
             this.cboP2Hf.Size = new System.Drawing.Size(67, 21);
-            this.cboP2Hf.TabIndex = 7;
+            this.cboP2Hf.TabIndex = 3;
             this.cboP2Hf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboP2Hi
@@ -1599,7 +1599,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP2Hi.Location = new System.Drawing.Point(371, 22);
             this.cboP2Hi.Name = "cboP2Hi";
             this.cboP2Hi.Size = new System.Drawing.Size(67, 21);
-            this.cboP2Hi.TabIndex = 5;
+            this.cboP2Hi.TabIndex = 2;
             this.cboP2Hi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // dtpP2Ini
@@ -1610,7 +1610,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP2Ini.Location = new System.Drawing.Point(54, 22);
             this.dtpP2Ini.Name = "dtpP2Ini";
             this.dtpP2Ini.Size = new System.Drawing.Size(99, 23);
-            this.dtpP2Ini.TabIndex = 1;
+            this.dtpP2Ini.TabIndex = 0;
             this.dtpP2Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP2FecIni
@@ -1658,8 +1658,8 @@ namespace ConfiguradorUI.Maestro
             this.grbP1.Controls.Add(this.lblP1Hf);
             this.grbP1.Controls.Add(this.lblP1Hi);
             this.grbP1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grbP1.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbP1.ForeColor = System.Drawing.Color.Black;
+            this.grbP1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbP1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbP1.Location = new System.Drawing.Point(3, 3);
             this.grbP1.Name = "grbP1";
             this.grbP1.Size = new System.Drawing.Size(560, 57);
@@ -1675,7 +1675,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP1Fin.Location = new System.Drawing.Point(203, 22);
             this.dtpP1Fin.Name = "dtpP1Fin";
             this.dtpP1Fin.Size = new System.Drawing.Size(99, 23);
-            this.dtpP1Fin.TabIndex = 3;
+            this.dtpP1Fin.TabIndex = 1;
             this.dtpP1Fin.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP1FecFin
@@ -1699,7 +1699,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP1Hf.Location = new System.Drawing.Point(484, 22);
             this.cboP1Hf.Name = "cboP1Hf";
             this.cboP1Hf.Size = new System.Drawing.Size(67, 21);
-            this.cboP1Hf.TabIndex = 7;
+            this.cboP1Hf.TabIndex = 3;
             this.cboP1Hf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboP1Hi
@@ -1712,7 +1712,7 @@ namespace ConfiguradorUI.Maestro
             this.cboP1Hi.Location = new System.Drawing.Point(371, 22);
             this.cboP1Hi.Name = "cboP1Hi";
             this.cboP1Hi.Size = new System.Drawing.Size(67, 21);
-            this.cboP1Hi.TabIndex = 5;
+            this.cboP1Hi.TabIndex = 2;
             this.cboP1Hi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // dtpP1Ini
@@ -1723,7 +1723,7 @@ namespace ConfiguradorUI.Maestro
             this.dtpP1Ini.Location = new System.Drawing.Point(54, 22);
             this.dtpP1Ini.Name = "dtpP1Ini";
             this.dtpP1Ini.Size = new System.Drawing.Size(99, 23);
-            this.dtpP1Ini.TabIndex = 1;
+            this.dtpP1Ini.TabIndex = 0;
             this.dtpP1Ini.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblP1FecIni
@@ -1798,10 +1798,10 @@ namespace ConfiguradorUI.Maestro
             this.panelDia.Controls.Add(this.chkMiercoles);
             this.panelDia.Controls.Add(this.chkLunes);
             this.panelDia.Controls.Add(this.chkDomingo);
-            this.panelDia.Location = new System.Drawing.Point(3, 33);
+            this.panelDia.Location = new System.Drawing.Point(4, 30);
             this.panelDia.Name = "panelDia";
             this.panelDia.Size = new System.Drawing.Size(566, 438);
-            this.panelDia.TabIndex = 2;
+            this.panelDia.TabIndex = 0;
             this.panelDia.Visible = false;
             // 
             // lblInfoDia
@@ -1825,7 +1825,7 @@ namespace ConfiguradorUI.Maestro
             this.cboSabHf.Location = new System.Drawing.Point(452, 296);
             this.cboSabHf.Name = "cboSabHf";
             this.cboSabHf.Size = new System.Drawing.Size(75, 21);
-            this.cboSabHf.TabIndex = 34;
+            this.cboSabHf.TabIndex = 20;
             this.cboSabHf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblSabHf
@@ -1860,7 +1860,7 @@ namespace ConfiguradorUI.Maestro
             this.cboSabHi.Location = new System.Drawing.Point(285, 297);
             this.cboSabHi.Name = "cboSabHi";
             this.cboSabHi.Size = new System.Drawing.Size(75, 21);
-            this.cboSabHi.TabIndex = 32;
+            this.cboSabHi.TabIndex = 19;
             this.cboSabHi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboVieHf
@@ -1873,7 +1873,7 @@ namespace ConfiguradorUI.Maestro
             this.cboVieHf.Location = new System.Drawing.Point(452, 254);
             this.cboVieHf.Name = "cboVieHf";
             this.cboVieHf.Size = new System.Drawing.Size(75, 21);
-            this.cboVieHf.TabIndex = 29;
+            this.cboVieHf.TabIndex = 17;
             this.cboVieHf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblVieHf
@@ -1908,7 +1908,7 @@ namespace ConfiguradorUI.Maestro
             this.cboVieHi.Location = new System.Drawing.Point(285, 255);
             this.cboVieHi.Name = "cboVieHi";
             this.cboVieHi.Size = new System.Drawing.Size(75, 21);
-            this.cboVieHi.TabIndex = 27;
+            this.cboVieHi.TabIndex = 16;
             this.cboVieHi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboJueHf
@@ -1921,7 +1921,7 @@ namespace ConfiguradorUI.Maestro
             this.cboJueHf.Location = new System.Drawing.Point(452, 212);
             this.cboJueHf.Name = "cboJueHf";
             this.cboJueHf.Size = new System.Drawing.Size(75, 21);
-            this.cboJueHf.TabIndex = 24;
+            this.cboJueHf.TabIndex = 14;
             this.cboJueHf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblJueHf
@@ -1956,7 +1956,7 @@ namespace ConfiguradorUI.Maestro
             this.cboJueHi.Location = new System.Drawing.Point(285, 213);
             this.cboJueHi.Name = "cboJueHi";
             this.cboJueHi.Size = new System.Drawing.Size(75, 21);
-            this.cboJueHi.TabIndex = 22;
+            this.cboJueHi.TabIndex = 13;
             this.cboJueHi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboMieHf
@@ -1969,7 +1969,7 @@ namespace ConfiguradorUI.Maestro
             this.cboMieHf.Location = new System.Drawing.Point(452, 170);
             this.cboMieHf.Name = "cboMieHf";
             this.cboMieHf.Size = new System.Drawing.Size(75, 21);
-            this.cboMieHf.TabIndex = 19;
+            this.cboMieHf.TabIndex = 11;
             this.cboMieHf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblMieHf
@@ -2004,7 +2004,7 @@ namespace ConfiguradorUI.Maestro
             this.cboMieHi.Location = new System.Drawing.Point(285, 171);
             this.cboMieHi.Name = "cboMieHi";
             this.cboMieHi.Size = new System.Drawing.Size(75, 21);
-            this.cboMieHi.TabIndex = 17;
+            this.cboMieHi.TabIndex = 10;
             this.cboMieHi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboMarHf
@@ -2017,7 +2017,7 @@ namespace ConfiguradorUI.Maestro
             this.cboMarHf.Location = new System.Drawing.Point(452, 128);
             this.cboMarHf.Name = "cboMarHf";
             this.cboMarHf.Size = new System.Drawing.Size(75, 21);
-            this.cboMarHf.TabIndex = 14;
+            this.cboMarHf.TabIndex = 8;
             this.cboMarHf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblMarHf
@@ -2052,7 +2052,7 @@ namespace ConfiguradorUI.Maestro
             this.cboMarHi.Location = new System.Drawing.Point(285, 129);
             this.cboMarHi.Name = "cboMarHi";
             this.cboMarHi.Size = new System.Drawing.Size(75, 21);
-            this.cboMarHi.TabIndex = 12;
+            this.cboMarHi.TabIndex = 7;
             this.cboMarHi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboLunHf
@@ -2065,7 +2065,7 @@ namespace ConfiguradorUI.Maestro
             this.cboLunHf.Location = new System.Drawing.Point(452, 86);
             this.cboLunHf.Name = "cboLunHf";
             this.cboLunHf.Size = new System.Drawing.Size(75, 21);
-            this.cboLunHf.TabIndex = 9;
+            this.cboLunHf.TabIndex = 5;
             this.cboLunHf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblLunHf
@@ -2100,7 +2100,7 @@ namespace ConfiguradorUI.Maestro
             this.cboLunHi.Location = new System.Drawing.Point(285, 87);
             this.cboLunHi.Name = "cboLunHi";
             this.cboLunHi.Size = new System.Drawing.Size(75, 21);
-            this.cboLunHi.TabIndex = 7;
+            this.cboLunHi.TabIndex = 4;
             this.cboLunHi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboDomHf
@@ -2113,7 +2113,7 @@ namespace ConfiguradorUI.Maestro
             this.cboDomHf.Location = new System.Drawing.Point(452, 48);
             this.cboDomHf.Name = "cboDomHf";
             this.cboDomHf.Size = new System.Drawing.Size(75, 21);
-            this.cboDomHf.TabIndex = 4;
+            this.cboDomHf.TabIndex = 2;
             this.cboDomHf.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // chkSabado
@@ -2125,7 +2125,7 @@ namespace ConfiguradorUI.Maestro
             this.chkSabado.Location = new System.Drawing.Point(48, 300);
             this.chkSabado.Name = "chkSabado";
             this.chkSabado.Size = new System.Drawing.Size(70, 19);
-            this.chkSabado.TabIndex = 30;
+            this.chkSabado.TabIndex = 18;
             this.chkSabado.Text = "Sábado";
             this.chkSabado.UseSelectable = true;
             this.chkSabado.CheckedChanged += new System.EventHandler(this.chkSabado_CheckedChanged);
@@ -2150,7 +2150,7 @@ namespace ConfiguradorUI.Maestro
             this.chkViernes.Location = new System.Drawing.Point(48, 258);
             this.chkViernes.Name = "chkViernes";
             this.chkViernes.Size = new System.Drawing.Size(70, 19);
-            this.chkViernes.TabIndex = 25;
+            this.chkViernes.TabIndex = 15;
             this.chkViernes.Text = "Viernes";
             this.chkViernes.UseSelectable = true;
             this.chkViernes.CheckedChanged += new System.EventHandler(this.chkViernes_CheckedChanged);
@@ -2175,7 +2175,7 @@ namespace ConfiguradorUI.Maestro
             this.chkJueves.Location = new System.Drawing.Point(50, 217);
             this.chkJueves.Name = "chkJueves";
             this.chkJueves.Size = new System.Drawing.Size(65, 19);
-            this.chkJueves.TabIndex = 20;
+            this.chkJueves.TabIndex = 12;
             this.chkJueves.Text = "Jueves";
             this.chkJueves.UseSelectable = true;
             this.chkJueves.CheckedChanged += new System.EventHandler(this.chkJueves_CheckedChanged);
@@ -2190,7 +2190,7 @@ namespace ConfiguradorUI.Maestro
             this.cboDomHi.Location = new System.Drawing.Point(285, 49);
             this.cboDomHi.Name = "cboDomHi";
             this.cboDomHi.Size = new System.Drawing.Size(75, 21);
-            this.cboDomHi.TabIndex = 2;
+            this.cboDomHi.TabIndex = 1;
             this.cboDomHi.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // chkMartes
@@ -2202,7 +2202,7 @@ namespace ConfiguradorUI.Maestro
             this.chkMartes.Location = new System.Drawing.Point(50, 132);
             this.chkMartes.Name = "chkMartes";
             this.chkMartes.Size = new System.Drawing.Size(68, 19);
-            this.chkMartes.TabIndex = 10;
+            this.chkMartes.TabIndex = 6;
             this.chkMartes.Text = "Martes";
             this.chkMartes.UseSelectable = true;
             this.chkMartes.CheckedChanged += new System.EventHandler(this.chkMartes_CheckedChanged);
@@ -2216,7 +2216,7 @@ namespace ConfiguradorUI.Maestro
             this.chkMiercoles.Location = new System.Drawing.Point(50, 174);
             this.chkMiercoles.Name = "chkMiercoles";
             this.chkMiercoles.Size = new System.Drawing.Size(83, 19);
-            this.chkMiercoles.TabIndex = 15;
+            this.chkMiercoles.TabIndex = 9;
             this.chkMiercoles.Text = "Miércoles";
             this.chkMiercoles.UseSelectable = true;
             this.chkMiercoles.CheckedChanged += new System.EventHandler(this.chkMiercoles_CheckedChanged);
@@ -2230,7 +2230,7 @@ namespace ConfiguradorUI.Maestro
             this.chkLunes.Location = new System.Drawing.Point(50, 90);
             this.chkLunes.Name = "chkLunes";
             this.chkLunes.Size = new System.Drawing.Size(61, 19);
-            this.chkLunes.TabIndex = 5;
+            this.chkLunes.TabIndex = 3;
             this.chkLunes.Text = "Lunes";
             this.chkLunes.UseSelectable = true;
             this.chkLunes.CheckedChanged += new System.EventHandler(this.chkLunes_CheckedChanged);
@@ -2255,7 +2255,7 @@ namespace ConfiguradorUI.Maestro
             this.tglListarInactivos.Location = new System.Drawing.Point(131, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 5;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -2326,7 +2326,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 683);
+            this.ClientSize = new System.Drawing.Size(919, 683);
             this.Controls.Add(this.lblNumInactivo);
             this.Controls.Add(this.lblNumActivo);
             this.Controls.Add(this.lblNumReg);

@@ -91,7 +91,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.grbBuscarEmp.Location = new System.Drawing.Point(38, 89);
             this.grbBuscarEmp.Name = "grbBuscarEmp";
             this.grbBuscarEmp.Size = new System.Drawing.Size(289, 87);
-            this.grbBuscarEmp.TabIndex = 115;
+            this.grbBuscarEmp.TabIndex = 0;
             this.grbBuscarEmp.TabStop = false;
             this.grbBuscarEmp.Text = "Buscar empleado";
             // 
@@ -102,7 +102,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.lblNroDocEmp.Location = new System.Drawing.Point(18, 28);
             this.lblNroDocEmp.Name = "lblNroDocEmp";
             this.lblNroDocEmp.Size = new System.Drawing.Size(133, 19);
-            this.lblNroDocEmp.TabIndex = 108;
+            this.lblNroDocEmp.TabIndex = 2;
             this.lblNroDocEmp.Text = "Número Documento:";
             this.lblNroDocEmp.UseCustomForeColor = true;
             // 
@@ -132,7 +132,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.txtNroDocEmp.SelectionStart = 0;
             this.txtNroDocEmp.ShortcutsEnabled = true;
             this.txtNroDocEmp.Size = new System.Drawing.Size(163, 23);
-            this.txtNroDocEmp.TabIndex = 109;
+            this.txtNroDocEmp.TabIndex = 0;
             this.txtNroDocEmp.UseCustomBackColor = true;
             this.txtNroDocEmp.UseSelectable = true;
             this.txtNroDocEmp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -153,7 +153,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnBuscarEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarEmp.Name = "btnBuscarEmp";
             this.btnBuscarEmp.Size = new System.Drawing.Size(81, 24);
-            this.btnBuscarEmp.TabIndex = 0;
+            this.btnBuscarEmp.TabIndex = 1;
             this.btnBuscarEmp.Text = "Buscar";
             this.btnBuscarEmp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscarEmp.UseVisualStyleBackColor = false;
@@ -177,7 +177,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.tabHorario.Name = "tabHorario";
             this.tabHorario.SelectedIndex = 0;
             this.tabHorario.Size = new System.Drawing.Size(737, 147);
-            this.tabHorario.TabIndex = 175;
+            this.tabHorario.TabIndex = 1;
             this.tabHorario.UseSelectable = true;
             // 
             // tabPagGeneral
@@ -214,7 +214,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.groupBox3.Location = new System.Drawing.Point(297, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(432, 98);
-            this.groupBox3.TabIndex = 204;
+            this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos del horario";
             // 
@@ -248,7 +248,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnUltimoDiaTrabajo.Location = new System.Drawing.Point(152, 66);
             this.btnUltimoDiaTrabajo.Name = "btnUltimoDiaTrabajo";
             this.btnUltimoDiaTrabajo.Size = new System.Drawing.Size(76, 23);
-            this.btnUltimoDiaTrabajo.TabIndex = 211;
+            this.btnUltimoDiaTrabajo.TabIndex = 2;
             this.btnUltimoDiaTrabajo.Text = "-";
             this.btnUltimoDiaTrabajo.UseVisualStyleBackColor = false;
             // 
@@ -262,7 +262,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnPrimerDiaTrabajo.Location = new System.Drawing.Point(152, 43);
             this.btnPrimerDiaTrabajo.Name = "btnPrimerDiaTrabajo";
             this.btnPrimerDiaTrabajo.Size = new System.Drawing.Size(76, 23);
-            this.btnPrimerDiaTrabajo.TabIndex = 210;
+            this.btnPrimerDiaTrabajo.TabIndex = 1;
             this.btnPrimerDiaTrabajo.Text = "-";
             this.btnPrimerDiaTrabajo.UseVisualStyleBackColor = false;
             // 
@@ -298,7 +298,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnHoy.Location = new System.Drawing.Point(152, 20);
             this.btnHoy.Name = "btnHoy";
             this.btnHoy.Size = new System.Drawing.Size(76, 23);
-            this.btnHoy.TabIndex = 205;
+            this.btnHoy.TabIndex = 0;
             this.btnHoy.Text = "-";
             this.btnHoy.UseVisualStyleBackColor = false;
             // 
@@ -346,7 +346,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.groupBox2.Location = new System.Drawing.Point(0, 7);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(291, 98);
-            this.groupBox2.TabIndex = 203;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Operaciones";
             // 
@@ -365,7 +365,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnEditarHorario.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnEditarHorario.Name = "btnEditarHorario";
             this.btnEditarHorario.Size = new System.Drawing.Size(133, 30);
-            this.btnEditarHorario.TabIndex = 203;
+            this.btnEditarHorario.TabIndex = 1;
             this.btnEditarHorario.Text = "Editar horario";
             this.btnEditarHorario.UseVisualStyleBackColor = false;
             this.btnEditarHorario.Click += new System.EventHandler(this.btnEditarHorario_Click);
@@ -385,7 +385,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnQuitarFechas.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnQuitarFechas.Name = "btnQuitarFechas";
             this.btnQuitarFechas.Size = new System.Drawing.Size(133, 30);
-            this.btnQuitarFechas.TabIndex = 204;
+            this.btnQuitarFechas.TabIndex = 2;
             this.btnQuitarFechas.Text = "Eliminar fechas";
             this.btnQuitarFechas.UseVisualStyleBackColor = false;
             this.btnQuitarFechas.Click += new System.EventHandler(this.btnEliminarFechas_Click);
@@ -405,7 +405,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnAsignarHorario.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnAsignarHorario.Name = "btnAsignarHorario";
             this.btnAsignarHorario.Size = new System.Drawing.Size(133, 30);
-            this.btnAsignarHorario.TabIndex = 202;
+            this.btnAsignarHorario.TabIndex = 0;
             this.btnAsignarHorario.Text = "Asignar horario";
             this.btnAsignarHorario.UseVisualStyleBackColor = false;
             this.btnAsignarHorario.Click += new System.EventHandler(this.btnAsignarHorario_Click);
@@ -557,7 +557,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.mcaMes.Name = "mcaMes";
             this.mcaMes.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2018, 4, 1, 0, 0, 0, 0), new System.DateTime(2018, 4, 1, 0, 0, 0, 0));
             this.mcaMes.ShowFooter = false;
-            this.mcaMes.TabIndex = 197;
+            this.mcaMes.TabIndex = 2;
             this.mcaMes.DateChanged += new System.EventHandler<System.Windows.Forms.DateRangeEventArgs>(this.mcaMes_DateChanged);
             // 
             // btnCerrar
@@ -568,7 +568,7 @@ namespace ConfiguradorUI.Labor.Horario
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 113;
+            this.btnCerrar.TabIndex = 3;
             this.btnCerrar.UseSelectable = true;
             // 
             // ctxMenuDate

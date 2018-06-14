@@ -65,6 +65,23 @@ namespace ConfigBusinessLogic.Persona
             return empleado;
         }
 
+        public PERt04_empleado EmpleadoViewXId(long id)
+        {
+            var empleado = new EmpleadoDA().EmpleadoViewXId(id);
+
+            if (empleado.SNTt33_distrito != null && empleado.SNTt33_distrito.id_dist > 0)
+            {
+                var provincia = new ProvinciaBL().ProvinciaXId(empleado.SNTt33_distrito.id_prov);
+                empleado.SNTt33_distrito.SNTt32_provincia = provincia;
+            }
+            if (empleado != null && empleado.id_empleado > 0)
+            {
+                empleado.LABt07_emp_trabajo = new TrabajoEmpleadoDA().ListaTrabajoXEmpleado(empleado.id_empleado);
+            }
+
+            return empleado;
+        }
+
         public PERt04_empleado EmpleadoXId(long id)
         {
             return new EmpleadoDA().EmpleadoXId(id);

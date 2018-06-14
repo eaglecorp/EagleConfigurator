@@ -59,15 +59,10 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora02 = new ConfigUtilitarios.Controls.BorderedCombo();
             this.cboImpresora = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblImpresoras = new MetroFramework.Controls.MetroLabel();
-            this.btnImpresora06 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora06 = new MetroFramework.Controls.MetroLabel();
-            this.btnImpresora05 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora05 = new MetroFramework.Controls.MetroLabel();
-            this.btnImpresora04 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora04 = new MetroFramework.Controls.MetroLabel();
-            this.btnImpresora03 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora03 = new MetroFramework.Controls.MetroLabel();
-            this.btnImpresora02 = new MetroFramework.Controls.MetroLink();
             this.lblImpresora02 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtIp = new MetroFramework.Controls.MetroTextBox();
@@ -165,7 +160,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvCaja.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCaja.Size = new System.Drawing.Size(222, 338);
-            this.dgvCaja.TabIndex = 129;
+            this.dgvCaja.TabIndex = 0;
             this.dgvCaja.SelectionChanged += new System.EventHandler(this.dgvCaja_SelectionChanged);
             this.dgvCaja.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
@@ -182,7 +177,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.Location = new System.Drawing.Point(315, 443);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
-            this.panelFiltro.TabIndex = 132;
+            this.panelFiltro.TabIndex = 3;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
             this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
@@ -258,7 +253,7 @@ namespace ConfiguradorUI.Maestro
             this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // panelMantenimiento
@@ -276,7 +271,7 @@ namespace ConfiguradorUI.Maestro
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(544, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
-            this.panelMantenimiento.TabIndex = 131;
+            this.panelMantenimiento.TabIndex = 2;
             this.panelMantenimiento.UseCustomBackColor = true;
             this.panelMantenimiento.UseStyleColors = true;
             this.panelMantenimiento.VerticalScrollbarBarColor = true;
@@ -309,7 +304,7 @@ namespace ConfiguradorUI.Maestro
             this.btnNuevo.Location = new System.Drawing.Point(374, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -324,7 +319,7 @@ namespace ConfiguradorUI.Maestro
             this.btnRollback.Location = new System.Drawing.Point(500, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -354,7 +349,7 @@ namespace ConfiguradorUI.Maestro
             this.btnDelete.Location = new System.Drawing.Point(416, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -364,7 +359,7 @@ namespace ConfiguradorUI.Maestro
             this.tglListarInactivos.Location = new System.Drawing.Point(131, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 134;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -386,7 +381,7 @@ namespace ConfiguradorUI.Maestro
             this.tabCaja.Name = "tabCaja";
             this.tabCaja.SelectedIndex = 0;
             this.tabCaja.Size = new System.Drawing.Size(562, 346);
-            this.tabCaja.TabIndex = 130;
+            this.tabCaja.TabIndex = 1;
             this.tabCaja.UseSelectable = true;
             // 
             // tabPagGeneral
@@ -398,15 +393,10 @@ namespace ConfiguradorUI.Maestro
             this.tabPagGeneral.Controls.Add(this.cboImpresora02);
             this.tabPagGeneral.Controls.Add(this.cboImpresora);
             this.tabPagGeneral.Controls.Add(this.lblImpresoras);
-            this.tabPagGeneral.Controls.Add(this.btnImpresora06);
             this.tabPagGeneral.Controls.Add(this.lblImpresora06);
-            this.tabPagGeneral.Controls.Add(this.btnImpresora05);
             this.tabPagGeneral.Controls.Add(this.lblImpresora05);
-            this.tabPagGeneral.Controls.Add(this.btnImpresora04);
             this.tabPagGeneral.Controls.Add(this.lblImpresora04);
-            this.tabPagGeneral.Controls.Add(this.btnImpresora03);
             this.tabPagGeneral.Controls.Add(this.lblImpresora03);
-            this.tabPagGeneral.Controls.Add(this.btnImpresora02);
             this.tabPagGeneral.Controls.Add(this.lblImpresora02);
             this.tabPagGeneral.Controls.Add(this.panel1);
             this.tabPagGeneral.Controls.Add(this.txtIp);
@@ -445,7 +435,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora06.FormattingEnabled = true;
             this.cboImpresora06.Location = new System.Drawing.Point(348, 236);
             this.cboImpresora06.Name = "cboImpresora06";
-            this.cboImpresora06.Size = new System.Drawing.Size(150, 23);
+            this.cboImpresora06.Size = new System.Drawing.Size(184, 23);
             this.cboImpresora06.TabIndex = 10;
             this.cboImpresora06.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -458,7 +448,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora05.FormattingEnabled = true;
             this.cboImpresora05.Location = new System.Drawing.Point(348, 200);
             this.cboImpresora05.Name = "cboImpresora05";
-            this.cboImpresora05.Size = new System.Drawing.Size(150, 23);
+            this.cboImpresora05.Size = new System.Drawing.Size(184, 23);
             this.cboImpresora05.TabIndex = 9;
             this.cboImpresora05.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -471,7 +461,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora04.FormattingEnabled = true;
             this.cboImpresora04.Location = new System.Drawing.Point(348, 164);
             this.cboImpresora04.Name = "cboImpresora04";
-            this.cboImpresora04.Size = new System.Drawing.Size(150, 23);
+            this.cboImpresora04.Size = new System.Drawing.Size(184, 23);
             this.cboImpresora04.TabIndex = 8;
             this.cboImpresora04.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -484,7 +474,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora03.FormattingEnabled = true;
             this.cboImpresora03.Location = new System.Drawing.Point(77, 236);
             this.cboImpresora03.Name = "cboImpresora03";
-            this.cboImpresora03.Size = new System.Drawing.Size(150, 23);
+            this.cboImpresora03.Size = new System.Drawing.Size(184, 23);
             this.cboImpresora03.TabIndex = 7;
             this.cboImpresora03.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -497,7 +487,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora02.FormattingEnabled = true;
             this.cboImpresora02.Location = new System.Drawing.Point(77, 200);
             this.cboImpresora02.Name = "cboImpresora02";
-            this.cboImpresora02.Size = new System.Drawing.Size(150, 23);
+            this.cboImpresora02.Size = new System.Drawing.Size(184, 23);
             this.cboImpresora02.TabIndex = 6;
             this.cboImpresora02.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -510,7 +500,7 @@ namespace ConfiguradorUI.Maestro
             this.cboImpresora.FormattingEnabled = true;
             this.cboImpresora.Location = new System.Drawing.Point(77, 164);
             this.cboImpresora.Name = "cboImpresora";
-            this.cboImpresora.Size = new System.Drawing.Size(150, 23);
+            this.cboImpresora.Size = new System.Drawing.Size(184, 23);
             this.cboImpresora.TabIndex = 5;
             this.cboImpresora.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
@@ -526,17 +516,6 @@ namespace ConfiguradorUI.Maestro
             this.lblImpresoras.Text = "Impresoras";
             this.lblImpresoras.UseCustomForeColor = true;
             // 
-            // btnImpresora06
-            // 
-            this.btnImpresora06.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora06.Image")));
-            this.btnImpresora06.ImageSize = 24;
-            this.btnImpresora06.Location = new System.Drawing.Point(504, 232);
-            this.btnImpresora06.Name = "btnImpresora06";
-            this.btnImpresora06.Size = new System.Drawing.Size(29, 27);
-            this.btnImpresora06.TabIndex = 116;
-            this.btnImpresora06.UseSelectable = true;
-            this.btnImpresora06.Click += new System.EventHandler(this.btnImpresora_Click);
-            // 
             // lblImpresora06
             // 
             this.lblImpresora06.AutoSize = true;
@@ -547,17 +526,6 @@ namespace ConfiguradorUI.Maestro
             this.lblImpresora06.TabIndex = 115;
             this.lblImpresora06.Text = "Impr. 06:";
             this.lblImpresora06.UseCustomForeColor = true;
-            // 
-            // btnImpresora05
-            // 
-            this.btnImpresora05.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora05.Image")));
-            this.btnImpresora05.ImageSize = 24;
-            this.btnImpresora05.Location = new System.Drawing.Point(504, 196);
-            this.btnImpresora05.Name = "btnImpresora05";
-            this.btnImpresora05.Size = new System.Drawing.Size(29, 27);
-            this.btnImpresora05.TabIndex = 113;
-            this.btnImpresora05.UseSelectable = true;
-            this.btnImpresora05.Click += new System.EventHandler(this.btnImpresora_Click);
             // 
             // lblImpresora05
             // 
@@ -570,17 +538,6 @@ namespace ConfiguradorUI.Maestro
             this.lblImpresora05.Text = "Impr. 05:";
             this.lblImpresora05.UseCustomForeColor = true;
             // 
-            // btnImpresora04
-            // 
-            this.btnImpresora04.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora04.Image")));
-            this.btnImpresora04.ImageSize = 24;
-            this.btnImpresora04.Location = new System.Drawing.Point(504, 160);
-            this.btnImpresora04.Name = "btnImpresora04";
-            this.btnImpresora04.Size = new System.Drawing.Size(29, 27);
-            this.btnImpresora04.TabIndex = 110;
-            this.btnImpresora04.UseSelectable = true;
-            this.btnImpresora04.Click += new System.EventHandler(this.btnImpresora_Click);
-            // 
             // lblImpresora04
             // 
             this.lblImpresora04.AutoSize = true;
@@ -592,17 +549,6 @@ namespace ConfiguradorUI.Maestro
             this.lblImpresora04.Text = "Impr. 04:";
             this.lblImpresora04.UseCustomForeColor = true;
             // 
-            // btnImpresora03
-            // 
-            this.btnImpresora03.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora03.Image")));
-            this.btnImpresora03.ImageSize = 24;
-            this.btnImpresora03.Location = new System.Drawing.Point(233, 232);
-            this.btnImpresora03.Name = "btnImpresora03";
-            this.btnImpresora03.Size = new System.Drawing.Size(29, 27);
-            this.btnImpresora03.TabIndex = 107;
-            this.btnImpresora03.UseSelectable = true;
-            this.btnImpresora03.Click += new System.EventHandler(this.btnImpresora_Click);
-            // 
             // lblImpresora03
             // 
             this.lblImpresora03.AutoSize = true;
@@ -613,17 +559,6 @@ namespace ConfiguradorUI.Maestro
             this.lblImpresora03.TabIndex = 106;
             this.lblImpresora03.Text = "Impr. 03:";
             this.lblImpresora03.UseCustomForeColor = true;
-            // 
-            // btnImpresora02
-            // 
-            this.btnImpresora02.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora02.Image")));
-            this.btnImpresora02.ImageSize = 24;
-            this.btnImpresora02.Location = new System.Drawing.Point(233, 196);
-            this.btnImpresora02.Name = "btnImpresora02";
-            this.btnImpresora02.Size = new System.Drawing.Size(29, 27);
-            this.btnImpresora02.TabIndex = 104;
-            this.btnImpresora02.UseSelectable = true;
-            this.btnImpresora02.Click += new System.EventHandler(this.btnImpresora_Click);
             // 
             // lblImpresora02
             // 
@@ -640,9 +575,9 @@ namespace ConfiguradorUI.Maestro
             // 
             this.panel1.BackgroundImage = global::ConfiguradorUI.Properties.Resources.linea_celeste;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(82, 144);
+            this.panel1.Location = new System.Drawing.Point(122, 144);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(450, 5);
+            this.panel1.Size = new System.Drawing.Size(410, 5);
             this.panel1.TabIndex = 101;
             // 
             // txtIp
@@ -693,10 +628,10 @@ namespace ConfiguradorUI.Maestro
             // 
             this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
             this.btnImpresora.ImageSize = 24;
-            this.btnImpresora.Location = new System.Drawing.Point(233, 160);
+            this.btnImpresora.Location = new System.Drawing.Point(89, 133);
             this.btnImpresora.Name = "btnImpresora";
             this.btnImpresora.Size = new System.Drawing.Size(29, 27);
-            this.btnImpresora.TabIndex = 98;
+            this.btnImpresora.TabIndex = 12;
             this.btnImpresora.UseSelectable = true;
             this.btnImpresora.Click += new System.EventHandler(this.btnImpresora_Click);
             // 
@@ -943,7 +878,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvConfigFiscalCaja.Location = new System.Drawing.Point(3, 15);
             this.dgvConfigFiscalCaja.Name = "dgvConfigFiscalCaja";
             this.dgvConfigFiscalCaja.Size = new System.Drawing.Size(548, 286);
-            this.dgvConfigFiscalCaja.TabIndex = 2;
+            this.dgvConfigFiscalCaja.TabIndex = 0;
             this.dgvConfigFiscalCaja.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConfigFiscalCaja_CellValueChanged);
             this.dgvConfigFiscalCaja.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
@@ -966,7 +901,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 135;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -1047,15 +982,10 @@ namespace ConfiguradorUI.Maestro
         private MetroFramework.Controls.MetroLink btnCerrar;
         private MetroFramework.Controls.MetroLink btnImpresora;
         private MetroFramework.Controls.MetroLabel lblImpresora;
-        private MetroFramework.Controls.MetroLink btnImpresora06;
         private MetroFramework.Controls.MetroLabel lblImpresora06;
-        private MetroFramework.Controls.MetroLink btnImpresora05;
         private MetroFramework.Controls.MetroLabel lblImpresora05;
-        private MetroFramework.Controls.MetroLink btnImpresora04;
         private MetroFramework.Controls.MetroLabel lblImpresora04;
-        private MetroFramework.Controls.MetroLink btnImpresora03;
         private MetroFramework.Controls.MetroLabel lblImpresora03;
-        private MetroFramework.Controls.MetroLink btnImpresora02;
         private MetroFramework.Controls.MetroLabel lblImpresora02;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroTextBox txtIp;

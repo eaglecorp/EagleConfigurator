@@ -54,7 +54,7 @@
             this.btnSi.Margin = new System.Windows.Forms.Padding(2);
             this.btnSi.Name = "btnSi";
             this.btnSi.Size = new System.Drawing.Size(81, 30);
-            this.btnSi.TabIndex = 1;
+            this.btnSi.TabIndex = 0;
             this.btnSi.Text = "&Sí";
             this.btnSi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSi.UseVisualStyleBackColor = false;
@@ -75,7 +75,7 @@
             this.btnNo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(81, 30);
-            this.btnNo.TabIndex = 0;
+            this.btnNo.TabIndex = 1;
             this.btnNo.Text = "&No";
             this.btnNo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNo.UseVisualStyleBackColor = false;
@@ -129,7 +129,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(412, 220);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 0;
             // 
             // picLogo
             // 

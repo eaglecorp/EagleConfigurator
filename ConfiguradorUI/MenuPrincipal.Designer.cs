@@ -105,7 +105,7 @@
             this.tabPanel.Controls.Add(this.tabPagLabor);
             this.tabPanel.Location = new System.Drawing.Point(31, 161);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 2;
+            this.tabPanel.SelectedIndex = 0;
             this.tabPanel.Size = new System.Drawing.Size(681, 264);
             this.tabPanel.TabIndex = 0;
             this.tabPanel.UseSelectable = true;
@@ -268,7 +268,7 @@
             this.btnGrupoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrupoProducto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrupoProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupoProducto.Image")));
-            this.btnGrupoProducto.Location = new System.Drawing.Point(151, 52);
+            this.btnGrupoProducto.Location = new System.Drawing.Point(151, 11);
             this.btnGrupoProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrupoProducto.Name = "btnGrupoProducto";
             this.btnGrupoProducto.Size = new System.Drawing.Size(145, 37);
@@ -288,7 +288,7 @@
             this.btnSubFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubFamilia.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubFamilia.Image = ((System.Drawing.Image)(resources.GetObject("btnSubFamilia.Image")));
-            this.btnSubFamilia.Location = new System.Drawing.Point(2, 52);
+            this.btnSubFamilia.Location = new System.Drawing.Point(2, 93);
             this.btnSubFamilia.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubFamilia.Name = "btnSubFamilia";
             this.btnSubFamilia.Size = new System.Drawing.Size(145, 37);
@@ -308,7 +308,7 @@
             this.btnClaseProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClaseProducto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClaseProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnClaseProducto.Image")));
-            this.btnClaseProducto.Location = new System.Drawing.Point(151, 11);
+            this.btnClaseProducto.Location = new System.Drawing.Point(151, 93);
             this.btnClaseProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnClaseProducto.Name = "btnClaseProducto";
             this.btnClaseProducto.Size = new System.Drawing.Size(145, 37);
@@ -328,7 +328,7 @@
             this.btnFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFamilia.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFamilia.Image = ((System.Drawing.Image)(resources.GetObject("btnFamilia.Image")));
-            this.btnFamilia.Location = new System.Drawing.Point(2, 94);
+            this.btnFamilia.Location = new System.Drawing.Point(2, 52);
             this.btnFamilia.Margin = new System.Windows.Forms.Padding(2);
             this.btnFamilia.Name = "btnFamilia";
             this.btnFamilia.Size = new System.Drawing.Size(145, 37);
@@ -348,7 +348,7 @@
             this.btnTipoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoProducto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoProducto.Image")));
-            this.btnTipoProducto.Location = new System.Drawing.Point(151, 94);
+            this.btnTipoProducto.Location = new System.Drawing.Point(151, 52);
             this.btnTipoProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnTipoProducto.Name = "btnTipoProducto";
             this.btnTipoProducto.Size = new System.Drawing.Size(145, 37);
@@ -368,7 +368,7 @@
             this.btnModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModelo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModelo.Image = ((System.Drawing.Image)(resources.GetObject("btnModelo.Image")));
-            this.btnModelo.Location = new System.Drawing.Point(2, 135);
+            this.btnModelo.Location = new System.Drawing.Point(2, 176);
             this.btnModelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnModelo.Name = "btnModelo";
             this.btnModelo.Size = new System.Drawing.Size(145, 37);
@@ -388,7 +388,7 @@
             this.btnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarca.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarca.Image = ((System.Drawing.Image)(resources.GetObject("btnMarca.Image")));
-            this.btnMarca.Location = new System.Drawing.Point(2, 176);
+            this.btnMarca.Location = new System.Drawing.Point(2, 135);
             this.btnMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Size = new System.Drawing.Size(145, 37);
@@ -429,11 +429,11 @@
             this.btnClaseEmp.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClaseEmp.ForeColor = System.Drawing.Color.White;
             this.btnClaseEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnClaseEmp.Image")));
-            this.btnClaseEmp.Location = new System.Drawing.Point(2, 94);
+            this.btnClaseEmp.Location = new System.Drawing.Point(2, 175);
             this.btnClaseEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btnClaseEmp.Name = "btnClaseEmp";
             this.btnClaseEmp.Size = new System.Drawing.Size(145, 37);
-            this.btnClaseEmp.TabIndex = 5;
+            this.btnClaseEmp.TabIndex = 4;
             this.btnClaseEmp.Text = "Clases Emp.";
             this.btnClaseEmp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClaseEmp.UseVisualStyleBackColor = false;
@@ -450,11 +450,11 @@
             this.btnCategoriaEmp.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoriaEmp.ForeColor = System.Drawing.Color.White;
             this.btnCategoriaEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaEmp.Image")));
-            this.btnCategoriaEmp.Location = new System.Drawing.Point(2, 52);
+            this.btnCategoriaEmp.Location = new System.Drawing.Point(2, 134);
             this.btnCategoriaEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCategoriaEmp.Name = "btnCategoriaEmp";
             this.btnCategoriaEmp.Size = new System.Drawing.Size(145, 37);
-            this.btnCategoriaEmp.TabIndex = 4;
+            this.btnCategoriaEmp.TabIndex = 3;
             this.btnCategoriaEmp.Text = "Categ. Emp.";
             this.btnCategoriaEmp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCategoriaEmp.UseVisualStyleBackColor = false;
@@ -475,7 +475,7 @@
             this.btnUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(145, 37);
-            this.btnUsuario.TabIndex = 3;
+            this.btnUsuario.TabIndex = 5;
             this.btnUsuario.Text = "Usuarios";
             this.btnUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUsuario.UseVisualStyleBackColor = false;
@@ -492,11 +492,11 @@
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.White;
             this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
-            this.btnCliente.Location = new System.Drawing.Point(2, 176);
+            this.btnCliente.Location = new System.Drawing.Point(2, 11);
             this.btnCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(145, 37);
-            this.btnCliente.TabIndex = 2;
+            this.btnCliente.TabIndex = 0;
             this.btnCliente.Text = "Clientes";
             this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCliente.UseVisualStyleBackColor = false;
@@ -513,7 +513,7 @@
             this.btnProveedor.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
             this.btnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedor.Image")));
-            this.btnProveedor.Location = new System.Drawing.Point(2, 135);
+            this.btnProveedor.Location = new System.Drawing.Point(2, 52);
             this.btnProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(145, 37);
@@ -534,11 +534,11 @@
             this.btnEmpleado.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleado.ForeColor = System.Drawing.Color.White;
             this.btnEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleado.Image")));
-            this.btnEmpleado.Location = new System.Drawing.Point(2, 11);
+            this.btnEmpleado.Location = new System.Drawing.Point(2, 93);
             this.btnEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmpleado.Name = "btnEmpleado";
             this.btnEmpleado.Size = new System.Drawing.Size(145, 37);
-            this.btnEmpleado.TabIndex = 0;
+            this.btnEmpleado.TabIndex = 2;
             this.btnEmpleado.Text = "Empleados";
             this.btnEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEmpleado.UseVisualStyleBackColor = false;
@@ -584,11 +584,11 @@
             this.btnTipoRazon.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoRazon.ForeColor = System.Drawing.Color.White;
             this.btnTipoRazon.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoRazon.Image")));
-            this.btnTipoRazon.Location = new System.Drawing.Point(151, 11);
+            this.btnTipoRazon.Location = new System.Drawing.Point(151, 175);
             this.btnTipoRazon.Margin = new System.Windows.Forms.Padding(2);
             this.btnTipoRazon.Name = "btnTipoRazon";
             this.btnTipoRazon.Size = new System.Drawing.Size(145, 37);
-            this.btnTipoRazon.TabIndex = 15;
+            this.btnTipoRazon.TabIndex = 9;
             this.btnTipoRazon.Text = "Tipos Razones";
             this.btnTipoRazon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTipoRazon.UseVisualStyleBackColor = false;
@@ -605,11 +605,11 @@
             this.btnTurno.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTurno.ForeColor = System.Drawing.Color.White;
             this.btnTurno.Image = ((System.Drawing.Image)(resources.GetObject("btnTurno.Image")));
-            this.btnTurno.Location = new System.Drawing.Point(300, 176);
+            this.btnTurno.Location = new System.Drawing.Point(2, 175);
             this.btnTurno.Margin = new System.Windows.Forms.Padding(2);
             this.btnTurno.Name = "btnTurno";
             this.btnTurno.Size = new System.Drawing.Size(145, 37);
-            this.btnTurno.TabIndex = 14;
+            this.btnTurno.TabIndex = 4;
             this.btnTurno.Text = "Turnos";
             this.btnTurno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTurno.UseVisualStyleBackColor = false;
@@ -626,11 +626,11 @@
             this.btnEstadoMesa.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoMesa.ForeColor = System.Drawing.Color.White;
             this.btnEstadoMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadoMesa.Image")));
-            this.btnEstadoMesa.Location = new System.Drawing.Point(300, 135);
+            this.btnEstadoMesa.Location = new System.Drawing.Point(300, 175);
             this.btnEstadoMesa.Margin = new System.Windows.Forms.Padding(2);
             this.btnEstadoMesa.Name = "btnEstadoMesa";
             this.btnEstadoMesa.Size = new System.Drawing.Size(145, 37);
-            this.btnEstadoMesa.TabIndex = 13;
+            this.btnEstadoMesa.TabIndex = 14;
             this.btnEstadoMesa.Text = "Estados Mesas";
             this.btnEstadoMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEstadoMesa.UseVisualStyleBackColor = false;
@@ -647,11 +647,11 @@
             this.btnMesa.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMesa.ForeColor = System.Drawing.Color.White;
             this.btnMesa.Image = ((System.Drawing.Image)(resources.GetObject("btnMesa.Image")));
-            this.btnMesa.Location = new System.Drawing.Point(300, 94);
+            this.btnMesa.Location = new System.Drawing.Point(300, 134);
             this.btnMesa.Margin = new System.Windows.Forms.Padding(2);
             this.btnMesa.Name = "btnMesa";
             this.btnMesa.Size = new System.Drawing.Size(145, 37);
-            this.btnMesa.TabIndex = 12;
+            this.btnMesa.TabIndex = 13;
             this.btnMesa.Text = "Mesas";
             this.btnMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMesa.UseVisualStyleBackColor = false;
@@ -668,11 +668,11 @@
             this.btnCaja.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaja.ForeColor = System.Drawing.Color.White;
             this.btnCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCaja.Image")));
-            this.btnCaja.Location = new System.Drawing.Point(300, 53);
+            this.btnCaja.Location = new System.Drawing.Point(300, 11);
             this.btnCaja.Margin = new System.Windows.Forms.Padding(2);
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(145, 37);
-            this.btnCaja.TabIndex = 11;
+            this.btnCaja.TabIndex = 10;
             this.btnCaja.Text = "Cajas";
             this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCaja.UseVisualStyleBackColor = false;
@@ -689,11 +689,11 @@
             this.btnImpresora.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImpresora.ForeColor = System.Drawing.Color.White;
             this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
-            this.btnImpresora.Location = new System.Drawing.Point(151, 176);
+            this.btnImpresora.Location = new System.Drawing.Point(300, 52);
             this.btnImpresora.Margin = new System.Windows.Forms.Padding(2);
             this.btnImpresora.Name = "btnImpresora";
             this.btnImpresora.Size = new System.Drawing.Size(145, 37);
-            this.btnImpresora.TabIndex = 10;
+            this.btnImpresora.TabIndex = 11;
             this.btnImpresora.Text = "Impresoras";
             this.btnImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImpresora.UseVisualStyleBackColor = false;
@@ -710,11 +710,11 @@
             this.btnTipoImpresora.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoImpresora.ForeColor = System.Drawing.Color.White;
             this.btnTipoImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoImpresora.Image")));
-            this.btnTipoImpresora.Location = new System.Drawing.Point(300, 12);
+            this.btnTipoImpresora.Location = new System.Drawing.Point(300, 93);
             this.btnTipoImpresora.Margin = new System.Windows.Forms.Padding(2);
             this.btnTipoImpresora.Name = "btnTipoImpresora";
             this.btnTipoImpresora.Size = new System.Drawing.Size(145, 37);
-            this.btnTipoImpresora.TabIndex = 9;
+            this.btnTipoImpresora.TabIndex = 12;
             this.btnTipoImpresora.Text = "Tipos Impr.";
             this.btnTipoImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTipoImpresora.UseVisualStyleBackColor = false;
@@ -732,11 +732,11 @@
             this.btnTipoLocation.ForeColor = System.Drawing.Color.White;
             this.btnTipoLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoLocation.Image")));
             this.btnTipoLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTipoLocation.Location = new System.Drawing.Point(151, 135);
-            this.btnTipoLocation.Margin = new System.Windows.Forms.Padding(0);
+            this.btnTipoLocation.Location = new System.Drawing.Point(2, 52);
+            this.btnTipoLocation.Margin = new System.Windows.Forms.Padding(2);
             this.btnTipoLocation.Name = "btnTipoLocation";
             this.btnTipoLocation.Size = new System.Drawing.Size(145, 37);
-            this.btnTipoLocation.TabIndex = 7;
+            this.btnTipoLocation.TabIndex = 1;
             this.btnTipoLocation.Text = "Tipos Locations";
             this.btnTipoLocation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTipoLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -754,11 +754,11 @@
             this.btnLocation.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocation.ForeColor = System.Drawing.Color.White;
             this.btnLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnLocation.Image")));
-            this.btnLocation.Location = new System.Drawing.Point(151, 93);
+            this.btnLocation.Location = new System.Drawing.Point(2, 11);
             this.btnLocation.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocation.Name = "btnLocation";
             this.btnLocation.Size = new System.Drawing.Size(145, 37);
-            this.btnLocation.TabIndex = 6;
+            this.btnLocation.TabIndex = 0;
             this.btnLocation.Text = "Locations";
             this.btnLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLocation.UseVisualStyleBackColor = false;
@@ -775,11 +775,11 @@
             this.btnMedioPago.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMedioPago.ForeColor = System.Drawing.Color.White;
             this.btnMedioPago.Image = ((System.Drawing.Image)(resources.GetObject("btnMedioPago.Image")));
-            this.btnMedioPago.Location = new System.Drawing.Point(2, 11);
+            this.btnMedioPago.Location = new System.Drawing.Point(151, 11);
             this.btnMedioPago.Margin = new System.Windows.Forms.Padding(2);
             this.btnMedioPago.Name = "btnMedioPago";
             this.btnMedioPago.Size = new System.Drawing.Size(145, 37);
-            this.btnMedioPago.TabIndex = 0;
+            this.btnMedioPago.TabIndex = 5;
             this.btnMedioPago.Text = "Medios Pagos";
             this.btnMedioPago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMedioPago.UseVisualStyleBackColor = false;
@@ -796,11 +796,11 @@
             this.btnImpuesto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImpuesto.ForeColor = System.Drawing.Color.White;
             this.btnImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuesto.Image")));
-            this.btnImpuesto.Location = new System.Drawing.Point(151, 52);
+            this.btnImpuesto.Location = new System.Drawing.Point(151, 93);
             this.btnImpuesto.Margin = new System.Windows.Forms.Padding(2);
             this.btnImpuesto.Name = "btnImpuesto";
             this.btnImpuesto.Size = new System.Drawing.Size(145, 37);
-            this.btnImpuesto.TabIndex = 5;
+            this.btnImpuesto.TabIndex = 7;
             this.btnImpuesto.Text = "Impuestos";
             this.btnImpuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImpuesto.UseVisualStyleBackColor = false;
@@ -817,11 +817,11 @@
             this.btnDescuento.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescuento.ForeColor = System.Drawing.Color.White;
             this.btnDescuento.Image = ((System.Drawing.Image)(resources.GetObject("btnDescuento.Image")));
-            this.btnDescuento.Location = new System.Drawing.Point(2, 52);
+            this.btnDescuento.Location = new System.Drawing.Point(151, 52);
             this.btnDescuento.Margin = new System.Windows.Forms.Padding(2);
             this.btnDescuento.Name = "btnDescuento";
             this.btnDescuento.Size = new System.Drawing.Size(145, 37);
-            this.btnDescuento.TabIndex = 1;
+            this.btnDescuento.TabIndex = 6;
             this.btnDescuento.Text = "Descuentos";
             this.btnDescuento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDescuento.UseVisualStyleBackColor = false;
@@ -838,11 +838,11 @@
             this.btnRazon.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRazon.ForeColor = System.Drawing.Color.White;
             this.btnRazon.Image = ((System.Drawing.Image)(resources.GetObject("btnRazon.Image")));
-            this.btnRazon.Location = new System.Drawing.Point(2, 176);
+            this.btnRazon.Location = new System.Drawing.Point(151, 134);
             this.btnRazon.Margin = new System.Windows.Forms.Padding(2);
             this.btnRazon.Name = "btnRazon";
             this.btnRazon.Size = new System.Drawing.Size(145, 37);
-            this.btnRazon.TabIndex = 4;
+            this.btnRazon.TabIndex = 8;
             this.btnRazon.Text = "Razones";
             this.btnRazon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRazon.UseVisualStyleBackColor = false;
@@ -859,11 +859,11 @@
             this.btnTipoOrden.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoOrden.ForeColor = System.Drawing.Color.White;
             this.btnTipoOrden.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoOrden.Image")));
-            this.btnTipoOrden.Location = new System.Drawing.Point(2, 94);
+            this.btnTipoOrden.Location = new System.Drawing.Point(2, 134);
             this.btnTipoOrden.Margin = new System.Windows.Forms.Padding(2);
             this.btnTipoOrden.Name = "btnTipoOrden";
             this.btnTipoOrden.Size = new System.Drawing.Size(145, 37);
-            this.btnTipoOrden.TabIndex = 2;
+            this.btnTipoOrden.TabIndex = 3;
             this.btnTipoOrden.Text = "Tipos Ordenes";
             this.btnTipoOrden.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTipoOrden.UseVisualStyleBackColor = false;
@@ -880,11 +880,11 @@
             this.btnCanalVenta.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCanalVenta.ForeColor = System.Drawing.Color.White;
             this.btnCanalVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnCanalVenta.Image")));
-            this.btnCanalVenta.Location = new System.Drawing.Point(2, 135);
+            this.btnCanalVenta.Location = new System.Drawing.Point(2, 93);
             this.btnCanalVenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnCanalVenta.Name = "btnCanalVenta";
             this.btnCanalVenta.Size = new System.Drawing.Size(145, 37);
-            this.btnCanalVenta.TabIndex = 3;
+            this.btnCanalVenta.TabIndex = 2;
             this.btnCanalVenta.Text = "Canales Ventas";
             this.btnCanalVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCanalVenta.UseVisualStyleBackColor = false;
@@ -921,7 +921,7 @@
             this.btnCategoriaReporte.Margin = new System.Windows.Forms.Padding(2);
             this.btnCategoriaReporte.Name = "btnCategoriaReporte";
             this.btnCategoriaReporte.Size = new System.Drawing.Size(145, 37);
-            this.btnCategoriaReporte.TabIndex = 13;
+            this.btnCategoriaReporte.TabIndex = 1;
             this.btnCategoriaReporte.Text = "Categ. Rpt";
             this.btnCategoriaReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCategoriaReporte.UseVisualStyleBackColor = false;
@@ -942,7 +942,7 @@
             this.btnReporte.Margin = new System.Windows.Forms.Padding(2);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(145, 37);
-            this.btnReporte.TabIndex = 12;
+            this.btnReporte.TabIndex = 0;
             this.btnReporte.Text = "Reportes";
             this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReporte.UseVisualStyleBackColor = false;
@@ -979,7 +979,7 @@
             this.btnTrabajo.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrabajo.Name = "btnTrabajo";
             this.btnTrabajo.Size = new System.Drawing.Size(145, 37);
-            this.btnTrabajo.TabIndex = 14;
+            this.btnTrabajo.TabIndex = 1;
             this.btnTrabajo.Text = "Trabajos";
             this.btnTrabajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTrabajo.UseVisualStyleBackColor = false;
@@ -1000,7 +1000,7 @@
             this.btnHorario.Margin = new System.Windows.Forms.Padding(2);
             this.btnHorario.Name = "btnHorario";
             this.btnHorario.Size = new System.Drawing.Size(145, 37);
-            this.btnHorario.TabIndex = 13;
+            this.btnHorario.TabIndex = 0;
             this.btnHorario.Text = "Horarios Emp.";
             this.btnHorario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHorario.UseVisualStyleBackColor = false;
@@ -1085,7 +1085,7 @@
             this.StatusStripEagle.Location = new System.Drawing.Point(35, 434);
             this.StatusStripEagle.Name = "StatusStripEagle";
             this.StatusStripEagle.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.StatusStripEagle.Size = new System.Drawing.Size(259, 26);
+            this.StatusStripEagle.Size = new System.Drawing.Size(306, 26);
             this.StatusStripEagle.SizingGrip = false;
             this.StatusStripEagle.TabIndex = 11;
             // 
@@ -1101,18 +1101,18 @@
             // toolStripFechaCronologica
             // 
             this.toolStripFechaCronologica.BackColor = System.Drawing.Color.White;
-            this.toolStripFechaCronologica.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripFechaCronologica.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripFechaCronologica.ForeColor = System.Drawing.Color.DodgerBlue;
             this.toolStripFechaCronologica.Name = "toolStripFechaCronologica";
-            this.toolStripFechaCronologica.Size = new System.Drawing.Size(120, 21);
+            this.toolStripFechaCronologica.Size = new System.Drawing.Size(132, 21);
             this.toolStripFechaCronologica.Text = "FechaCronologica";
             // 
             // toolStripHora
             // 
-            this.toolStripHora.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripHora.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripHora.ForeColor = System.Drawing.Color.DodgerBlue;
             this.toolStripHora.Name = "toolStripHora";
-            this.toolStripHora.Size = new System.Drawing.Size(39, 21);
+            this.toolStripHora.Size = new System.Drawing.Size(43, 21);
             this.toolStripHora.Text = "Hora";
             // 
             // panel3
@@ -1135,7 +1135,7 @@
             this.lnkConfiguracion.Location = new System.Drawing.Point(185, 111);
             this.lnkConfiguracion.Name = "lnkConfiguracion";
             this.lnkConfiguracion.Size = new System.Drawing.Size(97, 44);
-            this.lnkConfiguracion.TabIndex = 67;
+            this.lnkConfiguracion.TabIndex = 3;
             this.lnkConfiguracion.Text = "Configuración";
             this.lnkConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lnkConfiguracion.UseSelectable = true;

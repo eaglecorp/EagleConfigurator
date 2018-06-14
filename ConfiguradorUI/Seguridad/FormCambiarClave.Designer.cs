@@ -59,7 +59,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -79,7 +79,7 @@
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(102, 30);
-            this.btnConfirmar.TabIndex = 6;
+            this.btnConfirmar.TabIndex = 2;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
@@ -122,7 +122,7 @@
             this.txtNuevaClaveRepeat.SelectionStart = 0;
             this.txtNuevaClaveRepeat.ShortcutsEnabled = true;
             this.txtNuevaClaveRepeat.Size = new System.Drawing.Size(184, 23);
-            this.txtNuevaClaveRepeat.TabIndex = 5;
+            this.txtNuevaClaveRepeat.TabIndex = 1;
             this.txtNuevaClaveRepeat.UseCustomBackColor = true;
             this.txtNuevaClaveRepeat.UseSelectable = true;
             this.txtNuevaClaveRepeat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -166,7 +166,7 @@
             this.txtNuevaClave.SelectionStart = 0;
             this.txtNuevaClave.ShortcutsEnabled = true;
             this.txtNuevaClave.Size = new System.Drawing.Size(184, 23);
-            this.txtNuevaClave.TabIndex = 3;
+            this.txtNuevaClave.TabIndex = 0;
             this.txtNuevaClave.UseCustomBackColor = true;
             this.txtNuevaClave.UseSelectable = true;
             this.txtNuevaClave.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -213,7 +213,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 8;
+            this.btnCerrar.TabIndex = 4;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

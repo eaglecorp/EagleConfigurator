@@ -199,7 +199,7 @@ namespace ConfiguradorUI.Maestro
             this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // lblFiltro
@@ -263,7 +263,7 @@ namespace ConfiguradorUI.Maestro
             this.btnNuevo.Location = new System.Drawing.Point(381, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -278,7 +278,7 @@ namespace ConfiguradorUI.Maestro
             this.btnRollback.Location = new System.Drawing.Point(507, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -308,7 +308,7 @@ namespace ConfiguradorUI.Maestro
             this.btnDelete.Location = new System.Drawing.Point(423, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -318,7 +318,7 @@ namespace ConfiguradorUI.Maestro
             this.tglListarInactivos.Location = new System.Drawing.Point(139, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 5;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -423,7 +423,7 @@ namespace ConfiguradorUI.Maestro
             this.panel1.Location = new System.Drawing.Point(3, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 116);
-            this.panel1.TabIndex = 115;
+            this.panel1.TabIndex = 3;
             // 
             // txtPorcentaje05
             // 
@@ -451,7 +451,7 @@ namespace ConfiguradorUI.Maestro
             this.txtPorcentaje05.SelectionStart = 0;
             this.txtPorcentaje05.ShortcutsEnabled = true;
             this.txtPorcentaje05.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje05.TabIndex = 91;
+            this.txtPorcentaje05.TabIndex = 4;
             this.txtPorcentaje05.UseCustomBackColor = true;
             this.txtPorcentaje05.UseSelectable = true;
             this.txtPorcentaje05.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -484,7 +484,7 @@ namespace ConfiguradorUI.Maestro
             this.txtPorcentaje08.SelectionStart = 0;
             this.txtPorcentaje08.ShortcutsEnabled = true;
             this.txtPorcentaje08.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje08.TabIndex = 94;
+            this.txtPorcentaje08.TabIndex = 7;
             this.txtPorcentaje08.UseCustomBackColor = true;
             this.txtPorcentaje08.UseSelectable = true;
             this.txtPorcentaje08.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -517,7 +517,7 @@ namespace ConfiguradorUI.Maestro
             this.txtPorcentaje07.SelectionStart = 0;
             this.txtPorcentaje07.ShortcutsEnabled = true;
             this.txtPorcentaje07.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje07.TabIndex = 93;
+            this.txtPorcentaje07.TabIndex = 6;
             this.txtPorcentaje07.UseCustomBackColor = true;
             this.txtPorcentaje07.UseSelectable = true;
             this.txtPorcentaje07.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -550,7 +550,7 @@ namespace ConfiguradorUI.Maestro
             this.txtPorcentaje06.SelectionStart = 0;
             this.txtPorcentaje06.ShortcutsEnabled = true;
             this.txtPorcentaje06.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje06.TabIndex = 92;
+            this.txtPorcentaje06.TabIndex = 5;
             this.txtPorcentaje06.UseCustomBackColor = true;
             this.txtPorcentaje06.UseSelectable = true;
             this.txtPorcentaje06.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -583,7 +583,7 @@ namespace ConfiguradorUI.Maestro
             this.txtPorcentaje04.SelectionStart = 0;
             this.txtPorcentaje04.ShortcutsEnabled = true;
             this.txtPorcentaje04.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje04.TabIndex = 89;
+            this.txtPorcentaje04.TabIndex = 3;
             this.txtPorcentaje04.UseCustomBackColor = true;
             this.txtPorcentaje04.UseSelectable = true;
             this.txtPorcentaje04.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -630,7 +630,7 @@ namespace ConfiguradorUI.Maestro
             this.txtPorcentaje02.SelectionStart = 0;
             this.txtPorcentaje02.ShortcutsEnabled = true;
             this.txtPorcentaje02.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje02.TabIndex = 87;
+            this.txtPorcentaje02.TabIndex = 1;
             this.txtPorcentaje02.UseCustomBackColor = true;
             this.txtPorcentaje02.UseSelectable = true;
             this.txtPorcentaje02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -663,7 +663,7 @@ namespace ConfiguradorUI.Maestro
             this.txtPorcentaje03.SelectionStart = 0;
             this.txtPorcentaje03.ShortcutsEnabled = true;
             this.txtPorcentaje03.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje03.TabIndex = 88;
+            this.txtPorcentaje03.TabIndex = 2;
             this.txtPorcentaje03.UseCustomBackColor = true;
             this.txtPorcentaje03.UseSelectable = true;
             this.txtPorcentaje03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -696,7 +696,7 @@ namespace ConfiguradorUI.Maestro
             this.txtPorcentaje01.SelectionStart = 0;
             this.txtPorcentaje01.ShortcutsEnabled = true;
             this.txtPorcentaje01.Size = new System.Drawing.Size(74, 23);
-            this.txtPorcentaje01.TabIndex = 7;
+            this.txtPorcentaje01.TabIndex = 0;
             this.txtPorcentaje01.UseCustomBackColor = true;
             this.txtPorcentaje01.UseSelectable = true;
             this.txtPorcentaje01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -913,7 +913,7 @@ namespace ConfiguradorUI.Maestro
             this.txtAbreviacion.SelectionStart = 0;
             this.txtAbreviacion.ShortcutsEnabled = true;
             this.txtAbreviacion.Size = new System.Drawing.Size(184, 23);
-            this.txtAbreviacion.TabIndex = 3;
+            this.txtAbreviacion.TabIndex = 2;
             this.txtAbreviacion.UseCustomBackColor = true;
             this.txtAbreviacion.UseSelectable = true;
             this.txtAbreviacion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -960,7 +960,7 @@ namespace ConfiguradorUI.Maestro
             this.chkActivo.Location = new System.Drawing.Point(6, 255);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 8;
+            this.chkActivo.TabIndex = 4;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -992,7 +992,7 @@ namespace ConfiguradorUI.Maestro
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1036,7 +1036,7 @@ namespace ConfiguradorUI.Maestro
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(184, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.UseCustomBackColor = true;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1073,7 +1073,7 @@ namespace ConfiguradorUI.Maestro
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

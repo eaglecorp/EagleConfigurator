@@ -684,7 +684,7 @@ namespace ConfiguradorUI.Persona
                 {
                     if (id > 0)
                     {
-                        var obj = new ProveedorBL().ProveedorXIdMM(id);
+                        var obj = new ProveedorBL().ProveedorViewXId(id);
                         if (obj != null)
                         {
                             isSelected = false;
@@ -819,7 +819,6 @@ namespace ConfiguradorUI.Persona
                 isPending = false;
                 ControlarBotones(true, true, false, false, true, true);
                 errorProv.Clear();
-                //tabProducto.SelectedTab = tabPagGeneral;
             }
             else
             {
@@ -829,7 +828,7 @@ namespace ConfiguradorUI.Persona
                     errorProv.Clear();
                     LimpiarForm();
                     tabProveedor.SelectedTab = tabPagGeneral;
-                    txtApPaterno.Focus();
+                    txtPrimerNom.Focus();
                 }
                 else
                 {
@@ -843,7 +842,6 @@ namespace ConfiguradorUI.Persona
 
                         long idInsertado = (long)id;
                         SeleccionarPorId(idInsertado);
-                        tabProveedor.SelectedTab = tabPagGeneral;
                         btnNuevo.Focus();
                     }
                     else
@@ -855,7 +853,6 @@ namespace ConfiguradorUI.Persona
                             ControlarBotones(true, true, false, false, true, true);
                             LimpiarForm();
                             if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
-                            tabProveedor.SelectedTab = tabPagGeneral;
                             btnNuevo.Focus();
                         }
                         else
@@ -867,7 +864,6 @@ namespace ConfiguradorUI.Persona
                                 errorProv.Clear();
                                 LimpiarForm();
                                 SeleccionarRegistro();
-                                tabProveedor.SelectedTab = tabPagGeneral;
                                 btnNuevo.Focus();
                             }
                             else
@@ -889,8 +885,6 @@ namespace ConfiguradorUI.Persona
                                         isChangedRow = false;
 
                                         if (tglListarInactivos.Checked) { ActualizarGrilla(); } else { ActualizarGrilla(Estado.IdActivo); }
-
-                                        tabProveedor.SelectedTab = tabPagGeneral;
 
                                         if (id != null)
                                         {
@@ -968,7 +962,7 @@ namespace ConfiguradorUI.Persona
                 {
                     x.id_proveedor,
                     CODIGO = x.cod_proveedor,
-                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, rznSocial: x.txt_rzn_social)
+                    NOMBRE = Human.Nombre(x.txt_ape_pat, x.txt_pri_nom, x.txt_ape_mat, x.txt_seg_nom, x.txt_rzn_social)
                 })
                                         .OrderBy(x => string.IsNullOrEmpty(x.CODIGO)).ThenBy(x => x.CODIGO, new AlphaNumericComparer()).ThenBy(x => x.NOMBRE).ToList();
                 if (lista != null)

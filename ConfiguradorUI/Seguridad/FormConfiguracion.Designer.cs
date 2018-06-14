@@ -57,10 +57,6 @@
             this.txtPort = new MetroFramework.Controls.MetroTextBox();
             this.lblMailServer = new MetroFramework.Controls.MetroLabel();
             this.txtMailServer = new MetroFramework.Controls.MetroTextBox();
-            this.tabPagComprobante = new MetroFramework.Controls.MetroTabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chkAuthReimprComp = new MetroFramework.Controls.MetroCheckBox();
-            this.chkAuthAnularComp = new MetroFramework.Controls.MetroCheckBox();
             this.tabPagFiscal = new MetroFramework.Controls.MetroTabPage();
             this.btnRemoveParamFis = new System.Windows.Forms.Button();
             this.txtValorDefParamFis = new MetroFramework.Controls.MetroTextBox();
@@ -68,6 +64,10 @@
             this.txtCodParamFis = new MetroFramework.Controls.MetroTextBox();
             this.btnAddParametroFiscal = new System.Windows.Forms.Button();
             this.dgvParametrosFiscales = new System.Windows.Forms.DataGridView();
+            this.tabPagComprobante = new MetroFramework.Controls.MetroTabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkAuthReimprComp = new MetroFramework.Controls.MetroCheckBox();
+            this.chkAuthAnularComp = new MetroFramework.Controls.MetroCheckBox();
             this.tabPagUsuario = new MetroFramework.Controls.MetroTabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkCreateUserAfterRegisterEmployee = new MetroFramework.Controls.MetroCheckBox();
@@ -98,10 +98,10 @@
             this.grbConfiguracionMensajes.SuspendLayout();
             this.grbCredencialesSistema.SuspendLayout();
             this.grbServidorCorreo.SuspendLayout();
-            this.tabPagComprobante.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabPagFiscal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParametrosFiscales)).BeginInit();
+            this.tabPagComprobante.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPagUsuario.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPagBaseDeDatos.SuspendLayout();
@@ -136,7 +136,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 109;
+            this.btnCerrar.TabIndex = 3;
             this.btnCerrar.UseSelectable = true;
             // 
             // tabConfiguracion
@@ -189,7 +189,7 @@
             this.grbConfiguracionMensajes.Location = new System.Drawing.Point(254, 12);
             this.grbConfiguracionMensajes.Name = "grbConfiguracionMensajes";
             this.grbConfiguracionMensajes.Size = new System.Drawing.Size(302, 329);
-            this.grbConfiguracionMensajes.TabIndex = 7;
+            this.grbConfiguracionMensajes.TabIndex = 2;
             this.grbConfiguracionMensajes.TabStop = false;
             this.grbConfiguracionMensajes.Text = "Configuración de mensajes";
             // 
@@ -364,7 +364,7 @@
             this.grbCredencialesSistema.Location = new System.Drawing.Point(3, 157);
             this.grbCredencialesSistema.Name = "grbCredencialesSistema";
             this.grbCredencialesSistema.Size = new System.Drawing.Size(245, 184);
-            this.grbCredencialesSistema.TabIndex = 6;
+            this.grbCredencialesSistema.TabIndex = 1;
             this.grbCredencialesSistema.TabStop = false;
             this.grbCredencialesSistema.Text = "Credenciales del sistema";
             // 
@@ -512,7 +512,7 @@
             this.grbServidorCorreo.Location = new System.Drawing.Point(3, 12);
             this.grbServidorCorreo.Name = "grbServidorCorreo";
             this.grbServidorCorreo.Size = new System.Drawing.Size(245, 139);
-            this.grbServidorCorreo.TabIndex = 4;
+            this.grbServidorCorreo.TabIndex = 0;
             this.grbServidorCorreo.TabStop = false;
             this.grbServidorCorreo.Text = "Servidor de correo";
             // 
@@ -604,6 +604,172 @@
             this.txtMailServer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtMailServer.Enter += new System.EventHandler(this.txtMailServer_Enter);
             // 
+            // tabPagFiscal
+            // 
+            this.tabPagFiscal.Controls.Add(this.btnRemoveParamFis);
+            this.tabPagFiscal.Controls.Add(this.txtValorDefParamFis);
+            this.tabPagFiscal.Controls.Add(this.txtDescParamFis);
+            this.tabPagFiscal.Controls.Add(this.txtCodParamFis);
+            this.tabPagFiscal.Controls.Add(this.btnAddParametroFiscal);
+            this.tabPagFiscal.Controls.Add(this.dgvParametrosFiscales);
+            this.tabPagFiscal.HorizontalScrollbarBarColor = true;
+            this.tabPagFiscal.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPagFiscal.HorizontalScrollbarSize = 10;
+            this.tabPagFiscal.Location = new System.Drawing.Point(4, 38);
+            this.tabPagFiscal.Name = "tabPagFiscal";
+            this.tabPagFiscal.Size = new System.Drawing.Size(559, 347);
+            this.tabPagFiscal.TabIndex = 3;
+            this.tabPagFiscal.Text = "Fiscal";
+            this.tabPagFiscal.VerticalScrollbarBarColor = true;
+            this.tabPagFiscal.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPagFiscal.VerticalScrollbarSize = 10;
+            // 
+            // btnRemoveParamFis
+            // 
+            this.btnRemoveParamFis.BackColor = System.Drawing.Color.Gray;
+            this.btnRemoveParamFis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRemoveParamFis.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnRemoveParamFis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRemoveParamFis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveParamFis.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveParamFis.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveParamFis.Image")));
+            this.btnRemoveParamFis.Location = new System.Drawing.Point(526, 10);
+            this.btnRemoveParamFis.Name = "btnRemoveParamFis";
+            this.btnRemoveParamFis.Size = new System.Drawing.Size(30, 23);
+            this.btnRemoveParamFis.TabIndex = 4;
+            this.btnRemoveParamFis.UseVisualStyleBackColor = false;
+            this.btnRemoveParamFis.Click += new System.EventHandler(this.btnRemoveParamFis_Click);
+            // 
+            // txtValorDefParamFis
+            // 
+            this.txtValorDefParamFis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtValorDefParamFis.CustomButton.Image = null;
+            this.txtValorDefParamFis.CustomButton.Location = new System.Drawing.Point(64, 1);
+            this.txtValorDefParamFis.CustomButton.Name = "";
+            this.txtValorDefParamFis.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtValorDefParamFis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtValorDefParamFis.CustomButton.TabIndex = 1;
+            this.txtValorDefParamFis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtValorDefParamFis.CustomButton.UseSelectable = true;
+            this.txtValorDefParamFis.CustomButton.Visible = false;
+            this.txtValorDefParamFis.Lines = new string[0];
+            this.txtValorDefParamFis.Location = new System.Drawing.Point(398, 10);
+            this.txtValorDefParamFis.MaxLength = 32767;
+            this.txtValorDefParamFis.Name = "txtValorDefParamFis";
+            this.txtValorDefParamFis.PasswordChar = '\0';
+            this.txtValorDefParamFis.PromptText = "Valor Default";
+            this.txtValorDefParamFis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtValorDefParamFis.SelectedText = "";
+            this.txtValorDefParamFis.SelectionLength = 0;
+            this.txtValorDefParamFis.SelectionStart = 0;
+            this.txtValorDefParamFis.ShortcutsEnabled = true;
+            this.txtValorDefParamFis.Size = new System.Drawing.Size(86, 23);
+            this.txtValorDefParamFis.TabIndex = 2;
+            this.txtValorDefParamFis.UseCustomBackColor = true;
+            this.txtValorDefParamFis.UseSelectable = true;
+            this.txtValorDefParamFis.WaterMark = "Valor Default";
+            this.txtValorDefParamFis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtValorDefParamFis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtDescParamFis
+            // 
+            this.txtDescParamFis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtDescParamFis.CustomButton.Image = null;
+            this.txtDescParamFis.CustomButton.Location = new System.Drawing.Point(226, 1);
+            this.txtDescParamFis.CustomButton.Name = "";
+            this.txtDescParamFis.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDescParamFis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDescParamFis.CustomButton.TabIndex = 1;
+            this.txtDescParamFis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDescParamFis.CustomButton.UseSelectable = true;
+            this.txtDescParamFis.CustomButton.Visible = false;
+            this.txtDescParamFis.Lines = new string[0];
+            this.txtDescParamFis.Location = new System.Drawing.Point(144, 10);
+            this.txtDescParamFis.MaxLength = 32767;
+            this.txtDescParamFis.Name = "txtDescParamFis";
+            this.txtDescParamFis.PasswordChar = '\0';
+            this.txtDescParamFis.PromptText = "Nombre del parámetro";
+            this.txtDescParamFis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDescParamFis.SelectedText = "";
+            this.txtDescParamFis.SelectionLength = 0;
+            this.txtDescParamFis.SelectionStart = 0;
+            this.txtDescParamFis.ShortcutsEnabled = true;
+            this.txtDescParamFis.Size = new System.Drawing.Size(248, 23);
+            this.txtDescParamFis.TabIndex = 1;
+            this.txtDescParamFis.UseCustomBackColor = true;
+            this.txtDescParamFis.UseSelectable = true;
+            this.txtDescParamFis.WaterMark = "Nombre del parámetro";
+            this.txtDescParamFis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDescParamFis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtCodParamFis
+            // 
+            this.txtCodParamFis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtCodParamFis.CustomButton.Image = null;
+            this.txtCodParamFis.CustomButton.Location = new System.Drawing.Point(113, 1);
+            this.txtCodParamFis.CustomButton.Name = "";
+            this.txtCodParamFis.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCodParamFis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCodParamFis.CustomButton.TabIndex = 1;
+            this.txtCodParamFis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCodParamFis.CustomButton.UseSelectable = true;
+            this.txtCodParamFis.CustomButton.Visible = false;
+            this.txtCodParamFis.Lines = new string[0];
+            this.txtCodParamFis.Location = new System.Drawing.Point(3, 10);
+            this.txtCodParamFis.MaxLength = 32767;
+            this.txtCodParamFis.Name = "txtCodParamFis";
+            this.txtCodParamFis.PasswordChar = '\0';
+            this.txtCodParamFis.PromptText = "Código";
+            this.txtCodParamFis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCodParamFis.SelectedText = "";
+            this.txtCodParamFis.SelectionLength = 0;
+            this.txtCodParamFis.SelectionStart = 0;
+            this.txtCodParamFis.ShortcutsEnabled = true;
+            this.txtCodParamFis.Size = new System.Drawing.Size(135, 23);
+            this.txtCodParamFis.TabIndex = 0;
+            this.txtCodParamFis.UseCustomBackColor = true;
+            this.txtCodParamFis.UseSelectable = true;
+            this.txtCodParamFis.WaterMark = "Código";
+            this.txtCodParamFis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCodParamFis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btnAddParametroFiscal
+            // 
+            this.btnAddParametroFiscal.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddParametroFiscal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddParametroFiscal.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddParametroFiscal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.btnAddParametroFiscal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddParametroFiscal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddParametroFiscal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddParametroFiscal.Image = ((System.Drawing.Image)(resources.GetObject("btnAddParametroFiscal.Image")));
+            this.btnAddParametroFiscal.Location = new System.Drawing.Point(490, 10);
+            this.btnAddParametroFiscal.Name = "btnAddParametroFiscal";
+            this.btnAddParametroFiscal.Size = new System.Drawing.Size(30, 23);
+            this.btnAddParametroFiscal.TabIndex = 3;
+            this.btnAddParametroFiscal.UseVisualStyleBackColor = false;
+            this.btnAddParametroFiscal.Click += new System.EventHandler(this.btnAddParametroFiscal_Click);
+            // 
+            // dgvParametrosFiscales
+            // 
+            this.dgvParametrosFiscales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParametrosFiscales.Location = new System.Drawing.Point(3, 39);
+            this.dgvParametrosFiscales.Name = "dgvParametrosFiscales";
+            this.dgvParametrosFiscales.Size = new System.Drawing.Size(553, 302);
+            this.dgvParametrosFiscales.TabIndex = 5;
+            this.dgvParametrosFiscales.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParametrosFiscales_CellValueChanged);
+            this.dgvParametrosFiscales.SelectionChanged += new System.EventHandler(this.dgvParametrosFiscales_SelectionChanged);
+            this.dgvParametrosFiscales.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
+            // 
             // tabPagComprobante
             // 
             this.tabPagComprobante.Controls.Add(this.groupBox1);
@@ -629,7 +795,7 @@
             this.groupBox1.Location = new System.Drawing.Point(3, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(553, 84);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Autorizaciones";
             // 
@@ -667,172 +833,6 @@
             this.chkAuthAnularComp.UseSelectable = true;
             this.chkAuthAnularComp.MouseEnter += new System.EventHandler(this.chkAuthAnularComp_MouseEnter);
             // 
-            // tabPagFiscal
-            // 
-            this.tabPagFiscal.Controls.Add(this.btnRemoveParamFis);
-            this.tabPagFiscal.Controls.Add(this.txtValorDefParamFis);
-            this.tabPagFiscal.Controls.Add(this.txtDescParamFis);
-            this.tabPagFiscal.Controls.Add(this.txtCodParamFis);
-            this.tabPagFiscal.Controls.Add(this.btnAddParametroFiscal);
-            this.tabPagFiscal.Controls.Add(this.dgvParametrosFiscales);
-            this.tabPagFiscal.HorizontalScrollbarBarColor = true;
-            this.tabPagFiscal.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabPagFiscal.HorizontalScrollbarSize = 10;
-            this.tabPagFiscal.Location = new System.Drawing.Point(4, 38);
-            this.tabPagFiscal.Name = "tabPagFiscal";
-            this.tabPagFiscal.Size = new System.Drawing.Size(559, 347);
-            this.tabPagFiscal.TabIndex = 3;
-            this.tabPagFiscal.Text = "Fiscal";
-            this.tabPagFiscal.VerticalScrollbarBarColor = true;
-            this.tabPagFiscal.VerticalScrollbarHighlightOnWheel = false;
-            this.tabPagFiscal.VerticalScrollbarSize = 10;
-            // 
-            // btnRemoveParamFis
-            // 
-            this.btnRemoveParamFis.BackColor = System.Drawing.Color.Gray;
-            this.btnRemoveParamFis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRemoveParamFis.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnRemoveParamFis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnRemoveParamFis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveParamFis.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveParamFis.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveParamFis.Image")));
-            this.btnRemoveParamFis.Location = new System.Drawing.Point(526, 10);
-            this.btnRemoveParamFis.Name = "btnRemoveParamFis";
-            this.btnRemoveParamFis.Size = new System.Drawing.Size(30, 23);
-            this.btnRemoveParamFis.TabIndex = 10;
-            this.btnRemoveParamFis.UseVisualStyleBackColor = false;
-            this.btnRemoveParamFis.Click += new System.EventHandler(this.btnRemoveParamFis_Click);
-            // 
-            // txtValorDefParamFis
-            // 
-            this.txtValorDefParamFis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtValorDefParamFis.CustomButton.Image = null;
-            this.txtValorDefParamFis.CustomButton.Location = new System.Drawing.Point(64, 1);
-            this.txtValorDefParamFis.CustomButton.Name = "";
-            this.txtValorDefParamFis.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtValorDefParamFis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtValorDefParamFis.CustomButton.TabIndex = 1;
-            this.txtValorDefParamFis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtValorDefParamFis.CustomButton.UseSelectable = true;
-            this.txtValorDefParamFis.CustomButton.Visible = false;
-            this.txtValorDefParamFis.Lines = new string[0];
-            this.txtValorDefParamFis.Location = new System.Drawing.Point(398, 10);
-            this.txtValorDefParamFis.MaxLength = 32767;
-            this.txtValorDefParamFis.Name = "txtValorDefParamFis";
-            this.txtValorDefParamFis.PasswordChar = '\0';
-            this.txtValorDefParamFis.PromptText = "Valor Default";
-            this.txtValorDefParamFis.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtValorDefParamFis.SelectedText = "";
-            this.txtValorDefParamFis.SelectionLength = 0;
-            this.txtValorDefParamFis.SelectionStart = 0;
-            this.txtValorDefParamFis.ShortcutsEnabled = true;
-            this.txtValorDefParamFis.Size = new System.Drawing.Size(86, 23);
-            this.txtValorDefParamFis.TabIndex = 9;
-            this.txtValorDefParamFis.UseCustomBackColor = true;
-            this.txtValorDefParamFis.UseSelectable = true;
-            this.txtValorDefParamFis.WaterMark = "Valor Default";
-            this.txtValorDefParamFis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtValorDefParamFis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtDescParamFis
-            // 
-            this.txtDescParamFis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtDescParamFis.CustomButton.Image = null;
-            this.txtDescParamFis.CustomButton.Location = new System.Drawing.Point(226, 1);
-            this.txtDescParamFis.CustomButton.Name = "";
-            this.txtDescParamFis.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDescParamFis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDescParamFis.CustomButton.TabIndex = 1;
-            this.txtDescParamFis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDescParamFis.CustomButton.UseSelectable = true;
-            this.txtDescParamFis.CustomButton.Visible = false;
-            this.txtDescParamFis.Lines = new string[0];
-            this.txtDescParamFis.Location = new System.Drawing.Point(144, 10);
-            this.txtDescParamFis.MaxLength = 32767;
-            this.txtDescParamFis.Name = "txtDescParamFis";
-            this.txtDescParamFis.PasswordChar = '\0';
-            this.txtDescParamFis.PromptText = "Nombre del parámetro";
-            this.txtDescParamFis.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDescParamFis.SelectedText = "";
-            this.txtDescParamFis.SelectionLength = 0;
-            this.txtDescParamFis.SelectionStart = 0;
-            this.txtDescParamFis.ShortcutsEnabled = true;
-            this.txtDescParamFis.Size = new System.Drawing.Size(248, 23);
-            this.txtDescParamFis.TabIndex = 8;
-            this.txtDescParamFis.UseCustomBackColor = true;
-            this.txtDescParamFis.UseSelectable = true;
-            this.txtDescParamFis.WaterMark = "Nombre del parámetro";
-            this.txtDescParamFis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDescParamFis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtCodParamFis
-            // 
-            this.txtCodParamFis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtCodParamFis.CustomButton.Image = null;
-            this.txtCodParamFis.CustomButton.Location = new System.Drawing.Point(113, 1);
-            this.txtCodParamFis.CustomButton.Name = "";
-            this.txtCodParamFis.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtCodParamFis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCodParamFis.CustomButton.TabIndex = 1;
-            this.txtCodParamFis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCodParamFis.CustomButton.UseSelectable = true;
-            this.txtCodParamFis.CustomButton.Visible = false;
-            this.txtCodParamFis.Lines = new string[0];
-            this.txtCodParamFis.Location = new System.Drawing.Point(3, 10);
-            this.txtCodParamFis.MaxLength = 32767;
-            this.txtCodParamFis.Name = "txtCodParamFis";
-            this.txtCodParamFis.PasswordChar = '\0';
-            this.txtCodParamFis.PromptText = "Código";
-            this.txtCodParamFis.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCodParamFis.SelectedText = "";
-            this.txtCodParamFis.SelectionLength = 0;
-            this.txtCodParamFis.SelectionStart = 0;
-            this.txtCodParamFis.ShortcutsEnabled = true;
-            this.txtCodParamFis.Size = new System.Drawing.Size(135, 23);
-            this.txtCodParamFis.TabIndex = 7;
-            this.txtCodParamFis.UseCustomBackColor = true;
-            this.txtCodParamFis.UseSelectable = true;
-            this.txtCodParamFis.WaterMark = "Código";
-            this.txtCodParamFis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCodParamFis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // btnAddParametroFiscal
-            // 
-            this.btnAddParametroFiscal.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAddParametroFiscal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddParametroFiscal.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAddParametroFiscal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.btnAddParametroFiscal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddParametroFiscal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddParametroFiscal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddParametroFiscal.Image = ((System.Drawing.Image)(resources.GetObject("btnAddParametroFiscal.Image")));
-            this.btnAddParametroFiscal.Location = new System.Drawing.Point(490, 10);
-            this.btnAddParametroFiscal.Name = "btnAddParametroFiscal";
-            this.btnAddParametroFiscal.Size = new System.Drawing.Size(30, 23);
-            this.btnAddParametroFiscal.TabIndex = 6;
-            this.btnAddParametroFiscal.UseVisualStyleBackColor = false;
-            this.btnAddParametroFiscal.Click += new System.EventHandler(this.btnAddParametroFiscal_Click);
-            // 
-            // dgvParametrosFiscales
-            // 
-            this.dgvParametrosFiscales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvParametrosFiscales.Location = new System.Drawing.Point(3, 39);
-            this.dgvParametrosFiscales.Name = "dgvParametrosFiscales";
-            this.dgvParametrosFiscales.Size = new System.Drawing.Size(553, 302);
-            this.dgvParametrosFiscales.TabIndex = 3;
-            this.dgvParametrosFiscales.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParametrosFiscales_CellValueChanged);
-            this.dgvParametrosFiscales.SelectionChanged += new System.EventHandler(this.dgvParametrosFiscales_SelectionChanged);
-            this.dgvParametrosFiscales.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
-            // 
             // tabPagUsuario
             // 
             this.tabPagUsuario.Controls.Add(this.groupBox2);
@@ -857,7 +857,7 @@
             this.groupBox2.Location = new System.Drawing.Point(3, 14);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(553, 62);
-            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Usuario de empleado";
             // 
@@ -902,7 +902,7 @@
             this.grbBackupRestore.Location = new System.Drawing.Point(3, 16);
             this.grbBackupRestore.Name = "grbBackupRestore";
             this.grbBackupRestore.Size = new System.Drawing.Size(553, 62);
-            this.grbBackupRestore.TabIndex = 13;
+            this.grbBackupRestore.TabIndex = 0;
             this.grbBackupRestore.TabStop = false;
             this.grbBackupRestore.Text = "Backup y Restore";
             // 
@@ -952,7 +952,7 @@
             this.grbLogo.Margin = new System.Windows.Forms.Padding(20);
             this.grbLogo.Name = "grbLogo";
             this.grbLogo.Size = new System.Drawing.Size(162, 200);
-            this.grbLogo.TabIndex = 23;
+            this.grbLogo.TabIndex = 2;
             this.grbLogo.TabStop = false;
             this.grbLogo.Text = "Logo";
             // 
@@ -1009,7 +1009,7 @@
             this.grbImagenLogin.Margin = new System.Windows.Forms.Padding(20);
             this.grbImagenLogin.Name = "grbImagenLogin";
             this.grbImagenLogin.Size = new System.Drawing.Size(162, 200);
-            this.grbImagenLogin.TabIndex = 22;
+            this.grbImagenLogin.TabIndex = 1;
             this.grbImagenLogin.TabStop = false;
             this.grbImagenLogin.Text = "Imagen del login";
             // 
@@ -1066,7 +1066,7 @@
             this.grbSplash.Margin = new System.Windows.Forms.Padding(20);
             this.grbSplash.Name = "grbSplash";
             this.grbSplash.Size = new System.Drawing.Size(162, 200);
-            this.grbSplash.TabIndex = 5;
+            this.grbSplash.TabIndex = 0;
             this.grbSplash.TabStop = false;
             this.grbSplash.Text = "Splash";
             // 
@@ -1126,7 +1126,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
-            this.btnCancelar.TabIndex = 113;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -1144,7 +1144,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(135, 30);
-            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar Cambios";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -1199,11 +1199,11 @@
             this.grbCredencialesSistema.PerformLayout();
             this.grbServidorCorreo.ResumeLayout(false);
             this.grbServidorCorreo.PerformLayout();
+            this.tabPagFiscal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParametrosFiscales)).EndInit();
             this.tabPagComprobante.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPagFiscal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvParametrosFiscales)).EndInit();
             this.tabPagUsuario.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

@@ -72,7 +72,7 @@
             this.txtItemPriceConImp.SelectionStart = 0;
             this.txtItemPriceConImp.ShortcutsEnabled = true;
             this.txtItemPriceConImp.Size = new System.Drawing.Size(122, 23);
-            this.txtItemPriceConImp.TabIndex = 141;
+            this.txtItemPriceConImp.TabIndex = 3;
             this.txtItemPriceConImp.UseCustomBackColor = true;
             this.txtItemPriceConImp.UseSelectable = true;
             this.txtItemPriceConImp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -104,7 +104,7 @@
             this.txtItemPriceSinImp.SelectionStart = 0;
             this.txtItemPriceSinImp.ShortcutsEnabled = true;
             this.txtItemPriceSinImp.Size = new System.Drawing.Size(122, 23);
-            this.txtItemPriceSinImp.TabIndex = 142;
+            this.txtItemPriceSinImp.TabIndex = 4;
             this.txtItemPriceSinImp.UseCustomBackColor = true;
             this.txtItemPriceSinImp.UseSelectable = true;
             this.txtItemPriceSinImp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -136,7 +136,7 @@
             this.txtItemQuantity.SelectionStart = 0;
             this.txtItemQuantity.ShortcutsEnabled = true;
             this.txtItemQuantity.Size = new System.Drawing.Size(122, 23);
-            this.txtItemQuantity.TabIndex = 143;
+            this.txtItemQuantity.TabIndex = 1;
             this.txtItemQuantity.UseCustomBackColor = true;
             this.txtItemQuantity.UseSelectable = true;
             this.txtItemQuantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -202,7 +202,7 @@
             this.txtItemCod.SelectionStart = 0;
             this.txtItemCod.ShortcutsEnabled = true;
             this.txtItemCod.Size = new System.Drawing.Size(122, 23);
-            this.txtItemCod.TabIndex = 140;
+            this.txtItemCod.TabIndex = 0;
             this.txtItemCod.UseCustomBackColor = true;
             this.txtItemCod.UseSelectable = true;
             this.txtItemCod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -244,7 +244,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
-            this.btnCancelar.TabIndex = 151;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -264,7 +264,7 @@
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(78, 30);
-            this.btnEditar.TabIndex = 150;
+            this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -281,7 +281,7 @@
             this.chkActivo.Location = new System.Drawing.Point(94, 112);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 152;
+            this.chkActivo.TabIndex = 2;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;

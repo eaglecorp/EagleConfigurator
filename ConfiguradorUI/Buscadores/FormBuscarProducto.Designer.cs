@@ -56,7 +56,7 @@
             this.btnVerTodos.Location = new System.Drawing.Point(737, 24);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(87, 25);
-            this.btnVerTodos.TabIndex = 10;
+            this.btnVerTodos.TabIndex = 5;
             this.btnVerTodos.Text = "Ver todos";
             this.btnVerTodos.UseVisualStyleBackColor = false;
             this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
@@ -71,7 +71,7 @@
             this.btnSeleccionar.Location = new System.Drawing.Point(737, 51);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(87, 25);
-            this.btnSeleccionar.TabIndex = 1;
+            this.btnSeleccionar.TabIndex = 4;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
@@ -85,7 +85,7 @@
             this.chkIncluirInactivos.Location = new System.Drawing.Point(619, 28);
             this.chkIncluirInactivos.Name = "chkIncluirInactivos";
             this.chkIncluirInactivos.Size = new System.Drawing.Size(112, 19);
-            this.chkIncluirInactivos.TabIndex = 8;
+            this.chkIncluirInactivos.TabIndex = 2;
             this.chkIncluirInactivos.Text = "Incluir Inactivos";
             this.chkIncluirInactivos.UseCustomForeColor = true;
             this.chkIncluirInactivos.UseSelectable = true;
@@ -128,7 +128,7 @@
             this.txtDescripcionProd.SelectionStart = 0;
             this.txtDescripcionProd.ShortcutsEnabled = true;
             this.txtDescripcionProd.Size = new System.Drawing.Size(640, 23);
-            this.txtDescripcionProd.TabIndex = 5;
+            this.txtDescripcionProd.TabIndex = 3;
             this.txtDescripcionProd.UseCustomBackColor = true;
             this.txtDescripcionProd.UseSelectable = true;
             this.txtDescripcionProd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -172,7 +172,7 @@
             this.txtCodigo02.SelectionStart = 0;
             this.txtCodigo02.ShortcutsEnabled = true;
             this.txtCodigo02.Size = new System.Drawing.Size(137, 23);
-            this.txtCodigo02.TabIndex = 7;
+            this.txtCodigo02.TabIndex = 1;
             this.txtCodigo02.UseCustomBackColor = true;
             this.txtCodigo02.UseSelectable = true;
             this.txtCodigo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -216,7 +216,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(137, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -229,7 +229,7 @@
             this.dgvProd.Location = new System.Drawing.Point(23, 180);
             this.dgvProd.Name = "dgvProd";
             this.dgvProd.Size = new System.Drawing.Size(834, 342);
-            this.dgvProd.TabIndex = 0;
+            this.dgvProd.TabIndex = 1;
             this.dgvProd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProd_CellDoubleClick);
             this.dgvProd.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvProd_Paint);
             this.dgvProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProd_KeyDown);
@@ -250,7 +250,7 @@
             this.gbxFiltro.Location = new System.Drawing.Point(23, 83);
             this.gbxFiltro.Name = "gbxFiltro";
             this.gbxFiltro.Size = new System.Drawing.Size(834, 91);
-            this.gbxFiltro.TabIndex = 12;
+            this.gbxFiltro.TabIndex = 0;
             this.gbxFiltro.TabStop = false;
             this.gbxFiltro.Text = "Panel de filtros";
             // 
@@ -273,7 +273,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(23, 20);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 78;
+            this.btnCerrar.TabIndex = 2;
             this.btnCerrar.UseSelectable = true;
             // 
             // FormBuscarProducto

@@ -36,6 +36,19 @@ namespace ConfigBusinessLogic.Persona
             return cliente;
         }
 
+        public PERt02_cliente ClienteViewXId(long id)
+        {
+            var cliente = new ClienteDA().ClienteViewXId(id);
+
+            if (cliente.SNTt33_distrito != null && cliente.SNTt33_distrito.id_dist > 0)
+            {
+                var provincia = new ProvinciaBL().ProvinciaXId(cliente.SNTt33_distrito.id_prov);
+                cliente.SNTt33_distrito.SNTt32_provincia = provincia;
+            }
+
+            return cliente;
+        }
+
         public PERt02_cliente ClienteXCod(string cod)
         {
             return new ClienteDA().ClienteXCod(cod);

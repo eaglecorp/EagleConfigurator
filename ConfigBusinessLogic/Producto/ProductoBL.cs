@@ -50,6 +50,11 @@ namespace ConfigBusinessLogic
             return new ProductoDA().ProductoXIdMM(id);
         }
 
+        public PROt09_producto ProductoViewXId(long id)
+        {
+            return new ProductoDA().ProductoViewXId(id);
+        }
+
         public PROt09_producto ProductoXCod(string cod)
         {
             return new ProductoDA().ProductoXCod(cod);

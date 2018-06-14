@@ -68,7 +68,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
-            this.btnCancelar.TabIndex = 212;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -86,7 +86,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(78, 30);
-            this.btnEliminar.TabIndex = 211;
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -109,7 +109,7 @@
             this.chkSabado.Location = new System.Drawing.Point(373, 195);
             this.chkSabado.Name = "chkSabado";
             this.chkSabado.Size = new System.Drawing.Size(50, 19);
-            this.chkSabado.TabIndex = 202;
+            this.chkSabado.TabIndex = 8;
             this.chkSabado.Text = "Sáb.";
             this.chkSabado.UseSelectable = true;
             // 
@@ -120,7 +120,7 @@
             this.chkViernes.Location = new System.Drawing.Point(320, 195);
             this.chkViernes.Name = "chkViernes";
             this.chkViernes.Size = new System.Drawing.Size(47, 19);
-            this.chkViernes.TabIndex = 201;
+            this.chkViernes.TabIndex = 7;
             this.chkViernes.Text = "Vie.";
             this.chkViernes.UseSelectable = true;
             // 
@@ -131,7 +131,7 @@
             this.chkJueves.Location = new System.Drawing.Point(266, 195);
             this.chkJueves.Name = "chkJueves";
             this.chkJueves.Size = new System.Drawing.Size(48, 19);
-            this.chkJueves.TabIndex = 200;
+            this.chkJueves.TabIndex = 6;
             this.chkJueves.Text = "Jue.";
             this.chkJueves.UseSelectable = true;
             // 
@@ -153,7 +153,7 @@
             this.chkDomingo.Location = new System.Drawing.Point(29, 195);
             this.chkDomingo.Name = "chkDomingo";
             this.chkDomingo.Size = new System.Drawing.Size(58, 19);
-            this.chkDomingo.TabIndex = 208;
+            this.chkDomingo.TabIndex = 2;
             this.chkDomingo.Text = "Dom.";
             this.chkDomingo.UseSelectable = true;
             // 
@@ -164,7 +164,7 @@
             this.chkMartes.Location = new System.Drawing.Point(150, 195);
             this.chkMartes.Name = "chkMartes";
             this.chkMartes.Size = new System.Drawing.Size(53, 19);
-            this.chkMartes.TabIndex = 198;
+            this.chkMartes.TabIndex = 4;
             this.chkMartes.Text = "Mar.";
             this.chkMartes.UseSelectable = true;
             // 
@@ -175,7 +175,7 @@
             this.chkLunes.Location = new System.Drawing.Point(93, 195);
             this.chkLunes.Name = "chkLunes";
             this.chkLunes.Size = new System.Drawing.Size(51, 19);
-            this.chkLunes.TabIndex = 197;
+            this.chkLunes.TabIndex = 3;
             this.chkLunes.Text = "Lun.";
             this.chkLunes.UseSelectable = true;
             // 
@@ -186,7 +186,7 @@
             this.chkMiercoles.Location = new System.Drawing.Point(209, 195);
             this.chkMiercoles.Name = "chkMiercoles";
             this.chkMiercoles.Size = new System.Drawing.Size(51, 19);
-            this.chkMiercoles.TabIndex = 199;
+            this.chkMiercoles.TabIndex = 5;
             this.chkMiercoles.Text = "Mié.";
             this.chkMiercoles.UseSelectable = true;
             // 
@@ -250,7 +250,7 @@
             this.dtpDesde.MinDate = new System.DateTime(2017, 1, 30, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(117, 20);
-            this.dtpDesde.TabIndex = 220;
+            this.dtpDesde.TabIndex = 0;
             // 
             // metroLabel3
             // 
@@ -280,7 +280,7 @@
             this.dtpHasta.Location = new System.Drawing.Point(262, 122);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(117, 20);
-            this.dtpHasta.TabIndex = 222;
+            this.dtpHasta.TabIndex = 1;
             // 
             // errorProv
             // 

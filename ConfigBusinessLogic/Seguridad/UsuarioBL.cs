@@ -210,7 +210,7 @@ namespace ConfigBusinessLogic.Seguridad
                                     }
                                     else
                                     {
-                                        Msg.Ok_Wng("El empleado no tiene ningún correo electrónico asociado. No se pudo enviar sus credenciales.");
+                                        Msg.Ok_Info("El empleado no tiene ningún correo electrónico asociado. No se pudo enviar sus credenciales.");
                                     }
                                 }
                                 catch (Exception e)

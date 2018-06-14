@@ -59,13 +59,13 @@ namespace ConfigUtilitarios
         {
             get
             {
-                string strPath = "";
+                string path = "";
                 try
                 {
-                    strPath = Application.StartupPath + @"\Reports\CustomReports";
-                    if (!Directory.Exists(strPath))
+                    path = Application.StartupPath + @"\Reports\CustomReports";
+                    if (!Directory.Exists(path))
                     {
-                        Directory.CreateDirectory(strPath);
+                        Directory.CreateDirectory(path);
                     }
                 }
                 catch (Exception e)
@@ -73,7 +73,7 @@ namespace ConfigUtilitarios
                     var log = new Log();
                     log.ArchiveLog("Reports Path: Utilitarios. ", e.Message);
                 }
-                return strPath;
+                return path;
             }
         }
 

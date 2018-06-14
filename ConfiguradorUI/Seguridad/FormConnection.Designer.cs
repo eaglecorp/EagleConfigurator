@@ -67,7 +67,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnTestConnection.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnTestConnection.Name = "btnTestConnection";
             this.btnTestConnection.Size = new System.Drawing.Size(129, 30);
-            this.btnTestConnection.TabIndex = 2;
+            this.btnTestConnection.TabIndex = 1;
             this.btnTestConnection.Text = "Test Connection";
             this.btnTestConnection.UseVisualStyleBackColor = false;
             this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
@@ -98,7 +98,7 @@ namespace ConfiguradorUI.Seguridad
             this.txtUsuario.SelectionStart = 0;
             this.txtUsuario.ShortcutsEnabled = true;
             this.txtUsuario.Size = new System.Drawing.Size(133, 23);
-            this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.TabIndex = 2;
             this.txtUsuario.UseCustomBackColor = true;
             this.txtUsuario.UseSelectable = true;
             this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -174,7 +174,7 @@ namespace ConfiguradorUI.Seguridad
             this.txtContrasena.SelectionStart = 0;
             this.txtContrasena.ShortcutsEnabled = true;
             this.txtContrasena.Size = new System.Drawing.Size(130, 23);
-            this.txtContrasena.TabIndex = 5;
+            this.txtContrasena.TabIndex = 3;
             this.txtContrasena.UseCustomBackColor = true;
             this.txtContrasena.UseSelectable = true;
             this.txtContrasena.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -237,7 +237,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 30);
-            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -257,7 +257,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -307,7 +307,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnCambiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCambiar.Name = "btnCambiar";
             this.btnCambiar.Size = new System.Drawing.Size(82, 24);
-            this.btnCambiar.TabIndex = 7;
+            this.btnCambiar.TabIndex = 0;
             this.btnCambiar.Text = "Cambiar";
             this.btnCambiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCambiar.UseVisualStyleBackColor = false;
@@ -327,7 +327,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnConnect.Margin = new System.Windows.Forms.Padding(2);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(82, 24);
-            this.btnConnect.TabIndex = 6;
+            this.btnConnect.TabIndex = 4;
             this.btnConnect.Text = "Conectar";
             this.btnConnect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConnect.UseVisualStyleBackColor = false;
@@ -342,7 +342,7 @@ namespace ConfiguradorUI.Seguridad
             this.groupBox1.Location = new System.Drawing.Point(40, 221);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(566, 74);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bases de Datos";
             // 
@@ -356,7 +356,7 @@ namespace ConfiguradorUI.Seguridad
             this.cboDatabase.Location = new System.Drawing.Point(102, 29);
             this.cboDatabase.Name = "cboDatabase";
             this.cboDatabase.Size = new System.Drawing.Size(356, 25);
-            this.cboDatabase.TabIndex = 1;
+            this.cboDatabase.TabIndex = 0;
             this.cboDatabase.SelectedIndexChanged += new System.EventHandler(this.cboDatabase_SelectedIndexChanged);
             // 
             // btnCerrar
@@ -366,7 +366,7 @@ namespace ConfiguradorUI.Seguridad
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 5;
+            this.btnCerrar.TabIndex = 4;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

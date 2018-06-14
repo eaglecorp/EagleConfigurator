@@ -187,6 +187,37 @@ namespace ConfigDataAccess.Persona
             }
             return obj;
         }
+
+        public PERt02_cliente ClienteViewXId(long id)
+        {
+            var obj = new PERt02_cliente();
+            //obteniendo
+            obj = ClienteXId(id);
+            const string sentencia =
+                    @"SELECT * FROM SNTt33_distrito WHERE id_dist=@id_dist";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    var multi = cnn.QueryMultiple(sentencia, new
+                    {
+                        id_dist = obj.id_dist
+                    });
+
+                    var distrito = multi.Read<SNTt33_distrito>().FirstOrDefault();
+                    obj.SNTt33_distrito = distrito;
+
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda Cliente View por ID: ", e.Message);
+                }
+            }
+            return obj;
+        }
+
         public PERt02_cliente ClienteXEmail(string email)
         {
             var obj = new PERt02_cliente();

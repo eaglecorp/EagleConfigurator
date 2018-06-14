@@ -212,6 +212,7 @@ namespace ConfiguradorUI.Persona
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.btnCerrar = new MetroFramework.Controls.MetroLink();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
+            this.btnCommit = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnRollback = new System.Windows.Forms.Button();
@@ -222,7 +223,6 @@ namespace ConfiguradorUI.Persona
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.btnCommit = new System.Windows.Forms.Button();
             this.panelFiltro.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
@@ -253,7 +253,7 @@ namespace ConfiguradorUI.Persona
             this.tglListarInactivos.Location = new System.Drawing.Point(138, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 5;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -357,7 +357,7 @@ namespace ConfiguradorUI.Persona
             this.cboFiltro.Location = new System.Drawing.Point(95, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(172, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // tabEmpleado
@@ -466,7 +466,7 @@ namespace ConfiguradorUI.Persona
             this.grbUser.Location = new System.Drawing.Point(376, 380);
             this.grbUser.Name = "grbUser";
             this.grbUser.Size = new System.Drawing.Size(177, 41);
-            this.grbUser.TabIndex = 112;
+            this.grbUser.TabIndex = 20;
             this.grbUser.TabStop = false;
             // 
             // lblUsername
@@ -495,7 +495,7 @@ namespace ConfiguradorUI.Persona
             this.btnCrearUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
             this.btnCrearUsuario.Size = new System.Drawing.Size(167, 24);
-            this.btnCrearUsuario.TabIndex = 111;
+            this.btnCrearUsuario.TabIndex = 0;
             this.btnCrearUsuario.Text = "Crear usuario";
             this.btnCrearUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCrearUsuario.UseVisualStyleBackColor = false;
@@ -520,7 +520,7 @@ namespace ConfiguradorUI.Persona
             this.cboMotivoBaja.Location = new System.Drawing.Point(376, 312);
             this.cboMotivoBaja.Name = "cboMotivoBaja";
             this.cboMotivoBaja.Size = new System.Drawing.Size(180, 23);
-            this.cboMotivoBaja.TabIndex = 3;
+            this.cboMotivoBaja.TabIndex = 17;
             this.cboMotivoBaja.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboSuspLaboral
@@ -533,7 +533,7 @@ namespace ConfiguradorUI.Persona
             this.cboSuspLaboral.Location = new System.Drawing.Point(82, 346);
             this.cboSuspLaboral.Name = "cboSuspLaboral";
             this.cboSuspLaboral.Size = new System.Drawing.Size(184, 23);
-            this.cboSuspLaboral.TabIndex = 5;
+            this.cboSuspLaboral.TabIndex = 18;
             this.cboSuspLaboral.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // btnCategoriaEmp
@@ -543,7 +543,7 @@ namespace ConfiguradorUI.Persona
             this.btnCategoriaEmp.Location = new System.Drawing.Point(534, 157);
             this.btnCategoriaEmp.Name = "btnCategoriaEmp";
             this.btnCategoriaEmp.Size = new System.Drawing.Size(29, 27);
-            this.btnCategoriaEmp.TabIndex = 57;
+            this.btnCategoriaEmp.TabIndex = 22;
             this.btnCategoriaEmp.UseSelectable = true;
             this.btnCategoriaEmp.Click += new System.EventHandler(this.btnCategoriaEmp_Click);
             // 
@@ -554,7 +554,7 @@ namespace ConfiguradorUI.Persona
             this.btnClaseEmp.Location = new System.Drawing.Point(244, 157);
             this.btnClaseEmp.Name = "btnClaseEmp";
             this.btnClaseEmp.Size = new System.Drawing.Size(29, 27);
-            this.btnClaseEmp.TabIndex = 56;
+            this.btnClaseEmp.TabIndex = 21;
             this.btnClaseEmp.UseSelectable = true;
             this.btnClaseEmp.Click += new System.EventHandler(this.btnClaseEmp_Click);
             // 
@@ -590,7 +590,7 @@ namespace ConfiguradorUI.Persona
             this.cboCategoriaEmp.Location = new System.Drawing.Point(376, 161);
             this.cboCategoriaEmp.Name = "cboCategoriaEmp";
             this.cboCategoriaEmp.Size = new System.Drawing.Size(152, 23);
-            this.cboCategoriaEmp.TabIndex = 20;
+            this.cboCategoriaEmp.TabIndex = 10;
             this.cboCategoriaEmp.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboClaseEmp
@@ -603,7 +603,7 @@ namespace ConfiguradorUI.Persona
             this.cboClaseEmp.Location = new System.Drawing.Point(83, 161);
             this.cboClaseEmp.Name = "cboClaseEmp";
             this.cboClaseEmp.Size = new System.Drawing.Size(155, 23);
-            this.cboClaseEmp.TabIndex = 18;
+            this.cboClaseEmp.TabIndex = 9;
             this.cboClaseEmp.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblClaseEmp
@@ -628,7 +628,7 @@ namespace ConfiguradorUI.Persona
             this.chkActivo.Location = new System.Drawing.Point(5, 396);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 31;
+            this.chkActivo.TabIndex = 19;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -660,7 +660,7 @@ namespace ConfiguradorUI.Persona
             this.txtSegundoNom.SelectionStart = 0;
             this.txtSegundoNom.ShortcutsEnabled = true;
             this.txtSegundoNom.Size = new System.Drawing.Size(181, 23);
-            this.txtSegundoNom.TabIndex = 3;
+            this.txtSegundoNom.TabIndex = 1;
             this.txtSegundoNom.UseCustomBackColor = true;
             this.txtSegundoNom.UseSelectable = true;
             this.txtSegundoNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -715,7 +715,7 @@ namespace ConfiguradorUI.Persona
             this.txtPrimerNom.SelectionStart = 0;
             this.txtPrimerNom.ShortcutsEnabled = true;
             this.txtPrimerNom.Size = new System.Drawing.Size(184, 23);
-            this.txtPrimerNom.TabIndex = 1;
+            this.txtPrimerNom.TabIndex = 0;
             this.txtPrimerNom.UseCustomBackColor = true;
             this.txtPrimerNom.UseSelectable = true;
             this.txtPrimerNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -732,7 +732,7 @@ namespace ConfiguradorUI.Persona
             this.cboSituacion.Location = new System.Drawing.Point(82, 310);
             this.cboSituacion.Name = "cboSituacion";
             this.cboSituacion.Size = new System.Drawing.Size(184, 23);
-            this.cboSituacion.TabIndex = 1;
+            this.cboSituacion.TabIndex = 16;
             this.cboSituacion.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblSegundoNom
@@ -772,7 +772,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumRuc.SelectionStart = 0;
             this.txtNumRuc.ShortcutsEnabled = true;
             this.txtNumRuc.Size = new System.Drawing.Size(184, 23);
-            this.txtNumRuc.TabIndex = 30;
+            this.txtNumRuc.TabIndex = 15;
             this.txtNumRuc.UseCustomBackColor = true;
             this.txtNumRuc.UseSelectable = true;
             this.txtNumRuc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -816,7 +816,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumDoc.SelectionStart = 0;
             this.txtNumDoc.ShortcutsEnabled = true;
             this.txtNumDoc.Size = new System.Drawing.Size(182, 23);
-            this.txtNumDoc.TabIndex = 28;
+            this.txtNumDoc.TabIndex = 14;
             this.txtNumDoc.UseCustomBackColor = true;
             this.txtNumDoc.UseSelectable = true;
             this.txtNumDoc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -844,7 +844,7 @@ namespace ConfiguradorUI.Persona
             this.cboTipoDocIdentidad.Location = new System.Drawing.Point(83, 228);
             this.cboTipoDocIdentidad.Name = "cboTipoDocIdentidad";
             this.cboTipoDocIdentidad.Size = new System.Drawing.Size(184, 23);
-            this.cboTipoDocIdentidad.TabIndex = 26;
+            this.cboTipoDocIdentidad.TabIndex = 13;
             this.cboTipoDocIdentidad.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblTipoDocIdentidad
@@ -884,7 +884,7 @@ namespace ConfiguradorUI.Persona
             this.txtNomComercial.SelectionStart = 0;
             this.txtNomComercial.ShortcutsEnabled = true;
             this.txtNomComercial.Size = new System.Drawing.Size(182, 23);
-            this.txtNomComercial.TabIndex = 24;
+            this.txtNomComercial.TabIndex = 12;
             this.txtNomComercial.UseCustomBackColor = true;
             this.txtNomComercial.UseSelectable = true;
             this.txtNomComercial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -928,7 +928,7 @@ namespace ConfiguradorUI.Persona
             this.txtRazonSocial.SelectionStart = 0;
             this.txtRazonSocial.ShortcutsEnabled = true;
             this.txtRazonSocial.Size = new System.Drawing.Size(184, 23);
-            this.txtRazonSocial.TabIndex = 22;
+            this.txtRazonSocial.TabIndex = 11;
             this.txtRazonSocial.UseCustomBackColor = true;
             this.txtRazonSocial.UseSelectable = true;
             this.txtRazonSocial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -963,7 +963,7 @@ namespace ConfiguradorUI.Persona
             this.rbtFemenino.Location = new System.Drawing.Point(482, 119);
             this.rbtFemenino.Name = "rbtFemenino";
             this.rbtFemenino.Size = new System.Drawing.Size(76, 15);
-            this.rbtFemenino.TabIndex = 16;
+            this.rbtFemenino.TabIndex = 8;
             this.rbtFemenino.Text = "Femenino";
             this.rbtFemenino.UseSelectable = true;
             this.rbtFemenino.CheckedChanged += new System.EventHandler(this.CambioEnControl);
@@ -974,7 +974,7 @@ namespace ConfiguradorUI.Persona
             this.rbtMasculino.Location = new System.Drawing.Point(376, 119);
             this.rbtMasculino.Name = "rbtMasculino";
             this.rbtMasculino.Size = new System.Drawing.Size(78, 15);
-            this.rbtMasculino.TabIndex = 15;
+            this.rbtMasculino.TabIndex = 7;
             this.rbtMasculino.Text = "Masculino";
             this.rbtMasculino.UseSelectable = true;
             this.rbtMasculino.CheckedChanged += new System.EventHandler(this.CambioEnControl);
@@ -1005,7 +1005,7 @@ namespace ConfiguradorUI.Persona
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(184, 23);
-            this.txtCodigo.TabIndex = 9;
+            this.txtCodigo.TabIndex = 4;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1031,7 +1031,7 @@ namespace ConfiguradorUI.Persona
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(376, 80);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(179, 23);
-            this.dtpFechaNacimiento.TabIndex = 11;
+            this.dtpFechaNacimiento.TabIndex = 5;
             this.dtpFechaNacimiento.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // panel1
@@ -1064,7 +1064,7 @@ namespace ConfiguradorUI.Persona
             this.cboEstadoCivil.Location = new System.Drawing.Point(84, 114);
             this.cboEstadoCivil.Name = "cboEstadoCivil";
             this.cboEstadoCivil.Size = new System.Drawing.Size(181, 23);
-            this.cboEstadoCivil.TabIndex = 13;
+            this.cboEstadoCivil.TabIndex = 6;
             this.cboEstadoCivil.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblEstadoCivil
@@ -1104,7 +1104,7 @@ namespace ConfiguradorUI.Persona
             this.txtApMaterno.SelectionStart = 0;
             this.txtApMaterno.ShortcutsEnabled = true;
             this.txtApMaterno.Size = new System.Drawing.Size(181, 23);
-            this.txtApMaterno.TabIndex = 7;
+            this.txtApMaterno.TabIndex = 3;
             this.txtApMaterno.UseCustomBackColor = true;
             this.txtApMaterno.UseSelectable = true;
             this.txtApMaterno.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1148,7 +1148,7 @@ namespace ConfiguradorUI.Persona
             this.txtApPaterno.SelectionStart = 0;
             this.txtApPaterno.ShortcutsEnabled = true;
             this.txtApPaterno.Size = new System.Drawing.Size(184, 23);
-            this.txtApPaterno.TabIndex = 5;
+            this.txtApPaterno.TabIndex = 2;
             this.txtApPaterno.UseCustomBackColor = true;
             this.txtApPaterno.UseSelectable = true;
             this.txtApPaterno.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1220,7 +1220,7 @@ namespace ConfiguradorUI.Persona
             this.grbLaboralSaludPen.Location = new System.Drawing.Point(4, 196);
             this.grbLaboralSaludPen.Name = "grbLaboralSaludPen";
             this.grbLaboralSaludPen.Size = new System.Drawing.Size(571, 155);
-            this.grbLaboralSaludPen.TabIndex = 5;
+            this.grbLaboralSaludPen.TabIndex = 3;
             this.grbLaboralSaludPen.TabStop = false;
             this.grbLaboralSaludPen.Text = "Situación Laboral, Salud y Pensión";
             // 
@@ -1234,7 +1234,7 @@ namespace ConfiguradorUI.Persona
             this.cboSaludEps.Location = new System.Drawing.Point(97, 120);
             this.cboSaludEps.Name = "cboSaludEps";
             this.cboSaludEps.Size = new System.Drawing.Size(176, 23);
-            this.cboSaludEps.TabIndex = 13;
+            this.cboSaludEps.TabIndex = 6;
             this.cboSaludEps.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblSaludEps
@@ -1258,7 +1258,7 @@ namespace ConfiguradorUI.Persona
             this.cboRegSalud.Location = new System.Drawing.Point(379, 88);
             this.cboRegSalud.Name = "cboRegSalud";
             this.cboRegSalud.Size = new System.Drawing.Size(176, 23);
-            this.cboRegSalud.TabIndex = 11;
+            this.cboRegSalud.TabIndex = 5;
             this.cboRegSalud.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblRegSalud
@@ -1282,7 +1282,7 @@ namespace ConfiguradorUI.Persona
             this.cboRegLaboral.Location = new System.Drawing.Point(97, 88);
             this.cboRegLaboral.Name = "cboRegLaboral";
             this.cboRegLaboral.Size = new System.Drawing.Size(176, 23);
-            this.cboRegLaboral.TabIndex = 9;
+            this.cboRegLaboral.TabIndex = 4;
             this.cboRegLaboral.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblRegLaboral
@@ -1306,7 +1306,7 @@ namespace ConfiguradorUI.Persona
             this.cboRegPension.Location = new System.Drawing.Point(379, 56);
             this.cboRegPension.Name = "cboRegPension";
             this.cboRegPension.Size = new System.Drawing.Size(176, 23);
-            this.cboRegPension.TabIndex = 7;
+            this.cboRegPension.TabIndex = 3;
             this.cboRegPension.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblRegPension
@@ -1330,7 +1330,7 @@ namespace ConfiguradorUI.Persona
             this.cboCondicionLaboral.Location = new System.Drawing.Point(97, 56);
             this.cboCondicionLaboral.Name = "cboCondicionLaboral";
             this.cboCondicionLaboral.Size = new System.Drawing.Size(176, 23);
-            this.cboCondicionLaboral.TabIndex = 5;
+            this.cboCondicionLaboral.TabIndex = 2;
             this.cboCondicionLaboral.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblCondicionLaboral
@@ -1354,7 +1354,7 @@ namespace ConfiguradorUI.Persona
             this.cboOcupacion.Location = new System.Drawing.Point(379, 24);
             this.cboOcupacion.Name = "cboOcupacion";
             this.cboOcupacion.Size = new System.Drawing.Size(176, 23);
-            this.cboOcupacion.TabIndex = 3;
+            this.cboOcupacion.TabIndex = 1;
             this.cboOcupacion.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblOcupacion
@@ -1378,7 +1378,7 @@ namespace ConfiguradorUI.Persona
             this.cboTipoTrabajador.Location = new System.Drawing.Point(97, 24);
             this.cboTipoTrabajador.Name = "cboTipoTrabajador";
             this.cboTipoTrabajador.Size = new System.Drawing.Size(176, 23);
-            this.cboTipoTrabajador.TabIndex = 1;
+            this.cboTipoTrabajador.TabIndex = 0;
             this.cboTipoTrabajador.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblTipoTrabajador
@@ -1401,7 +1401,7 @@ namespace ConfiguradorUI.Persona
             this.dtpFechaCese.Name = "dtpFechaCese";
             this.dtpFechaCese.ShowCheckBox = true;
             this.dtpFechaCese.Size = new System.Drawing.Size(116, 23);
-            this.dtpFechaCese.TabIndex = 3;
+            this.dtpFechaCese.TabIndex = 1;
             this.dtpFechaCese.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // metroLabel5
@@ -1423,7 +1423,7 @@ namespace ConfiguradorUI.Persona
             this.dtpFechaIngreso.Location = new System.Drawing.Point(154, 12);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(116, 23);
-            this.dtpFechaIngreso.TabIndex = 1;
+            this.dtpFechaIngreso.TabIndex = 0;
             this.dtpFechaIngreso.ValueChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // metroLabel4
@@ -1460,7 +1460,7 @@ namespace ConfiguradorUI.Persona
             this.grbSalario.Location = new System.Drawing.Point(3, 41);
             this.grbSalario.Name = "grbSalario";
             this.grbSalario.Size = new System.Drawing.Size(571, 149);
-            this.grbSalario.TabIndex = 4;
+            this.grbSalario.TabIndex = 2;
             this.grbSalario.TabStop = false;
             this.grbSalario.Text = "Horas y Salario";
             // 
@@ -1474,7 +1474,7 @@ namespace ConfiguradorUI.Persona
             this.cboPeriodoPago.Location = new System.Drawing.Point(98, 56);
             this.cboPeriodoPago.Name = "cboPeriodoPago";
             this.cboPeriodoPago.Size = new System.Drawing.Size(176, 23);
-            this.cboPeriodoPago.TabIndex = 3;
+            this.cboPeriodoPago.TabIndex = 1;
             this.cboPeriodoPago.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboEntidadFinanciera
@@ -1487,7 +1487,7 @@ namespace ConfiguradorUI.Persona
             this.cboEntidadFinanciera.Location = new System.Drawing.Point(98, 24);
             this.cboEntidadFinanciera.Name = "cboEntidadFinanciera";
             this.cboEntidadFinanciera.Size = new System.Drawing.Size(176, 23);
-            this.cboEntidadFinanciera.TabIndex = 5;
+            this.cboEntidadFinanciera.TabIndex = 0;
             this.cboEntidadFinanciera.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblPeriodoPago
@@ -1527,7 +1527,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumHorasMes.SelectionStart = 0;
             this.txtNumHorasMes.ShortcutsEnabled = true;
             this.txtNumHorasMes.Size = new System.Drawing.Size(104, 23);
-            this.txtNumHorasMes.TabIndex = 1;
+            this.txtNumHorasMes.TabIndex = 6;
             this.txtNumHorasMes.UseCustomBackColor = true;
             this.txtNumHorasMes.UseSelectable = true;
             this.txtNumHorasMes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1572,7 +1572,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumCuenta.SelectionStart = 0;
             this.txtNumCuenta.ShortcutsEnabled = true;
             this.txtNumCuenta.Size = new System.Drawing.Size(176, 23);
-            this.txtNumCuenta.TabIndex = 7;
+            this.txtNumCuenta.TabIndex = 2;
             this.txtNumCuenta.UseCustomBackColor = true;
             this.txtNumCuenta.UseSelectable = true;
             this.txtNumCuenta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1629,7 +1629,7 @@ namespace ConfiguradorUI.Persona
             this.txtSalQuincenal.SelectionStart = 0;
             this.txtSalQuincenal.ShortcutsEnabled = true;
             this.txtSalQuincenal.Size = new System.Drawing.Size(104, 23);
-            this.txtSalQuincenal.TabIndex = 11;
+            this.txtSalQuincenal.TabIndex = 4;
             this.txtSalQuincenal.UseCustomBackColor = true;
             this.txtSalQuincenal.UseSelectable = true;
             this.txtSalQuincenal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1674,7 +1674,7 @@ namespace ConfiguradorUI.Persona
             this.txtSalHora.SelectionStart = 0;
             this.txtSalHora.ShortcutsEnabled = true;
             this.txtSalHora.Size = new System.Drawing.Size(104, 23);
-            this.txtSalHora.TabIndex = 13;
+            this.txtSalHora.TabIndex = 5;
             this.txtSalHora.UseCustomBackColor = true;
             this.txtSalHora.UseSelectable = true;
             this.txtSalHora.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1719,7 +1719,7 @@ namespace ConfiguradorUI.Persona
             this.txtSalMensual.SelectionStart = 0;
             this.txtSalMensual.ShortcutsEnabled = true;
             this.txtSalMensual.Size = new System.Drawing.Size(104, 23);
-            this.txtSalMensual.TabIndex = 9;
+            this.txtSalMensual.TabIndex = 3;
             this.txtSalMensual.UseCustomBackColor = true;
             this.txtSalMensual.UseSelectable = true;
             this.txtSalMensual.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1771,7 +1771,7 @@ namespace ConfiguradorUI.Persona
             this.btnAsignarTrabajo.Location = new System.Drawing.Point(403, 8);
             this.btnAsignarTrabajo.Name = "btnAsignarTrabajo";
             this.btnAsignarTrabajo.Size = new System.Drawing.Size(81, 30);
-            this.btnAsignarTrabajo.TabIndex = 178;
+            this.btnAsignarTrabajo.TabIndex = 2;
             this.btnAsignarTrabajo.Text = "Asignar";
             this.btnAsignarTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAsignarTrabajo.UseVisualStyleBackColor = false;
@@ -1802,7 +1802,7 @@ namespace ConfiguradorUI.Persona
             this.btnDesasignarTrabajo.Location = new System.Drawing.Point(494, 8);
             this.btnDesasignarTrabajo.Name = "btnDesasignarTrabajo";
             this.btnDesasignarTrabajo.Size = new System.Drawing.Size(81, 30);
-            this.btnDesasignarTrabajo.TabIndex = 179;
+            this.btnDesasignarTrabajo.TabIndex = 3;
             this.btnDesasignarTrabajo.Text = "Eliminar";
             this.btnDesasignarTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDesasignarTrabajo.UseVisualStyleBackColor = false;
@@ -1818,7 +1818,7 @@ namespace ConfiguradorUI.Persona
             this.cboTrabajo.Location = new System.Drawing.Point(200, 12);
             this.cboTrabajo.Name = "cboTrabajo";
             this.cboTrabajo.Size = new System.Drawing.Size(185, 23);
-            this.cboTrabajo.TabIndex = 181;
+            this.cboTrabajo.TabIndex = 1;
             // 
             // dgvTrabajoEmpleado
             // 
@@ -1826,7 +1826,7 @@ namespace ConfiguradorUI.Persona
             this.dgvTrabajoEmpleado.Location = new System.Drawing.Point(3, 44);
             this.dgvTrabajoEmpleado.Name = "dgvTrabajoEmpleado";
             this.dgvTrabajoEmpleado.Size = new System.Drawing.Size(572, 347);
-            this.dgvTrabajoEmpleado.TabIndex = 3;
+            this.dgvTrabajoEmpleado.TabIndex = 0;
             this.dgvTrabajoEmpleado.DataSourceChanged += new System.EventHandler(this.dgvTrabajoEmpleado_DataSourceChanged);
             // 
             // tabPagDireccion
@@ -1870,7 +1870,7 @@ namespace ConfiguradorUI.Persona
             this.grbUbicacionDetallada.Location = new System.Drawing.Point(5, 106);
             this.grbUbicacionDetallada.Name = "grbUbicacionDetallada";
             this.grbUbicacionDetallada.Size = new System.Drawing.Size(555, 210);
-            this.grbUbicacionDetallada.TabIndex = 57;
+            this.grbUbicacionDetallada.TabIndex = 1;
             this.grbUbicacionDetallada.TabStop = false;
             this.grbUbicacionDetallada.Text = "Ubicación detallada";
             // 
@@ -1900,7 +1900,7 @@ namespace ConfiguradorUI.Persona
             this.txtDireccion01.SelectionStart = 0;
             this.txtDireccion01.ShortcutsEnabled = true;
             this.txtDireccion01.Size = new System.Drawing.Size(465, 23);
-            this.txtDireccion01.TabIndex = 53;
+            this.txtDireccion01.TabIndex = 5;
             this.txtDireccion01.UseCustomBackColor = true;
             this.txtDireccion01.UseSelectable = true;
             this.txtDireccion01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1955,7 +1955,7 @@ namespace ConfiguradorUI.Persona
             this.txtDireccion02.SelectionStart = 0;
             this.txtDireccion02.ShortcutsEnabled = true;
             this.txtDireccion02.Size = new System.Drawing.Size(465, 23);
-            this.txtDireccion02.TabIndex = 55;
+            this.txtDireccion02.TabIndex = 6;
             this.txtDireccion02.UseCustomBackColor = true;
             this.txtDireccion02.UseSelectable = true;
             this.txtDireccion02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1988,7 +1988,7 @@ namespace ConfiguradorUI.Persona
             this.txtNomZona.SelectionStart = 0;
             this.txtNomZona.ShortcutsEnabled = true;
             this.txtNomZona.Size = new System.Drawing.Size(184, 23);
-            this.txtNomZona.TabIndex = 43;
+            this.txtNomZona.TabIndex = 1;
             this.txtNomZona.UseCustomBackColor = true;
             this.txtNomZona.UseSelectable = true;
             this.txtNomZona.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2032,7 +2032,7 @@ namespace ConfiguradorUI.Persona
             this.txtNomVia.SelectionStart = 0;
             this.txtNomVia.ShortcutsEnabled = true;
             this.txtNomVia.Size = new System.Drawing.Size(125, 23);
-            this.txtNomVia.TabIndex = 47;
+            this.txtNomVia.TabIndex = 3;
             this.txtNomVia.UseCustomBackColor = true;
             this.txtNomVia.UseSelectable = true;
             this.txtNomVia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2060,7 +2060,7 @@ namespace ConfiguradorUI.Persona
             this.cboZona.Location = new System.Drawing.Point(82, 33);
             this.cboZona.Name = "cboZona";
             this.cboZona.Size = new System.Drawing.Size(163, 23);
-            this.cboZona.TabIndex = 41;
+            this.cboZona.TabIndex = 0;
             this.cboZona.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // txtReferencia
@@ -2089,7 +2089,7 @@ namespace ConfiguradorUI.Persona
             this.txtReferencia.SelectionStart = 0;
             this.txtReferencia.ShortcutsEnabled = true;
             this.txtReferencia.Size = new System.Drawing.Size(465, 23);
-            this.txtReferencia.TabIndex = 51;
+            this.txtReferencia.TabIndex = 7;
             this.txtReferencia.UseCustomBackColor = true;
             this.txtReferencia.UseSelectable = true;
             this.txtReferencia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2144,7 +2144,7 @@ namespace ConfiguradorUI.Persona
             this.txtNumVia.SelectionStart = 0;
             this.txtNumVia.ShortcutsEnabled = true;
             this.txtNumVia.Size = new System.Drawing.Size(33, 23);
-            this.txtNumVia.TabIndex = 49;
+            this.txtNumVia.TabIndex = 4;
             this.txtNumVia.UseCustomBackColor = true;
             this.txtNumVia.UseSelectable = true;
             this.txtNumVia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2172,7 +2172,7 @@ namespace ConfiguradorUI.Persona
             this.cboVia.Location = new System.Drawing.Point(82, 69);
             this.cboVia.Name = "cboVia";
             this.cboVia.Size = new System.Drawing.Size(163, 23);
-            this.cboVia.TabIndex = 45;
+            this.cboVia.TabIndex = 2;
             this.cboVia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblNumVia
@@ -2203,7 +2203,7 @@ namespace ConfiguradorUI.Persona
             this.gbrUbigeo.Location = new System.Drawing.Point(4, 7);
             this.gbrUbigeo.Name = "gbrUbigeo";
             this.gbrUbigeo.Size = new System.Drawing.Size(555, 93);
-            this.gbrUbigeo.TabIndex = 56;
+            this.gbrUbigeo.TabIndex = 0;
             this.gbrUbigeo.TabStop = false;
             this.gbrUbigeo.Text = "Ubicación general";
             // 
@@ -2228,7 +2228,7 @@ namespace ConfiguradorUI.Persona
             this.cboDepartamento.Location = new System.Drawing.Point(62, 24);
             this.cboDepartamento.Name = "cboDepartamento";
             this.cboDepartamento.Size = new System.Drawing.Size(184, 23);
-            this.cboDepartamento.TabIndex = 33;
+            this.cboDepartamento.TabIndex = 0;
             this.cboDepartamento.SelectedIndexChanged += new System.EventHandler(this.cboDepartamento_SelectedIndexChanged);
             // 
             // cboDistrito
@@ -2241,7 +2241,7 @@ namespace ConfiguradorUI.Persona
             this.cboDistrito.Location = new System.Drawing.Point(62, 59);
             this.cboDistrito.Name = "cboDistrito";
             this.cboDistrito.Size = new System.Drawing.Size(184, 23);
-            this.cboDistrito.TabIndex = 37;
+            this.cboDistrito.TabIndex = 2;
             this.cboDistrito.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblDistrito
@@ -2287,7 +2287,7 @@ namespace ConfiguradorUI.Persona
             this.cboNacionalidad.Location = new System.Drawing.Point(364, 59);
             this.cboNacionalidad.Name = "cboNacionalidad";
             this.cboNacionalidad.Size = new System.Drawing.Size(184, 23);
-            this.cboNacionalidad.TabIndex = 39;
+            this.cboNacionalidad.TabIndex = 3;
             this.cboNacionalidad.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // cboProvincia
@@ -2300,7 +2300,7 @@ namespace ConfiguradorUI.Persona
             this.cboProvincia.Location = new System.Drawing.Point(364, 24);
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(184, 23);
-            this.cboProvincia.TabIndex = 35;
+            this.cboProvincia.TabIndex = 1;
             this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
             // 
             // tabPagEducacion
@@ -2335,7 +2335,7 @@ namespace ConfiguradorUI.Persona
             this.grbSkillsEducativas.Location = new System.Drawing.Point(4, 8);
             this.grbSkillsEducativas.Name = "grbSkillsEducativas";
             this.grbSkillsEducativas.Size = new System.Drawing.Size(571, 91);
-            this.grbSkillsEducativas.TabIndex = 6;
+            this.grbSkillsEducativas.TabIndex = 0;
             this.grbSkillsEducativas.TabStop = false;
             this.grbSkillsEducativas.Text = "Formación y Educación";
             // 
@@ -2349,7 +2349,7 @@ namespace ConfiguradorUI.Persona
             this.cboEspcMedica.Location = new System.Drawing.Point(380, 56);
             this.cboEspcMedica.Name = "cboEspcMedica";
             this.cboEspcMedica.Size = new System.Drawing.Size(175, 23);
-            this.cboEspcMedica.TabIndex = 7;
+            this.cboEspcMedica.TabIndex = 3;
             this.cboEspcMedica.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblEspcMedica
@@ -2384,7 +2384,7 @@ namespace ConfiguradorUI.Persona
             this.cboTipoEspc.Location = new System.Drawing.Point(90, 56);
             this.cboTipoEspc.Name = "cboTipoEspc";
             this.cboTipoEspc.Size = new System.Drawing.Size(177, 23);
-            this.cboTipoEspc.TabIndex = 5;
+            this.cboTipoEspc.TabIndex = 2;
             this.cboTipoEspc.SelectedIndexChanged += new System.EventHandler(this.cboTipoEspc_SelectedIndexChanged);
             // 
             // cboSituacionEdu
@@ -2397,7 +2397,7 @@ namespace ConfiguradorUI.Persona
             this.cboSituacionEdu.Location = new System.Drawing.Point(90, 24);
             this.cboSituacionEdu.Name = "cboSituacionEdu";
             this.cboSituacionEdu.Size = new System.Drawing.Size(177, 23);
-            this.cboSituacionEdu.TabIndex = 1;
+            this.cboSituacionEdu.TabIndex = 0;
             this.cboSituacionEdu.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblTipoEspc
@@ -2434,7 +2434,7 @@ namespace ConfiguradorUI.Persona
             this.cboModalidadFormativa.Location = new System.Drawing.Point(380, 24);
             this.cboModalidadFormativa.Name = "cboModalidadFormativa";
             this.cboModalidadFormativa.Size = new System.Drawing.Size(175, 23);
-            this.cboModalidadFormativa.TabIndex = 3;
+            this.cboModalidadFormativa.TabIndex = 1;
             this.cboModalidadFormativa.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // tabPagContacto
@@ -2468,7 +2468,7 @@ namespace ConfiguradorUI.Persona
             this.grbEmailYWeb.Location = new System.Drawing.Point(12, 7);
             this.grbEmailYWeb.Name = "grbEmailYWeb";
             this.grbEmailYWeb.Size = new System.Drawing.Size(555, 130);
-            this.grbEmailYWeb.TabIndex = 2;
+            this.grbEmailYWeb.TabIndex = 0;
             this.grbEmailYWeb.TabStop = false;
             this.grbEmailYWeb.Text = "Email\'s y Web";
             // 
@@ -2498,7 +2498,7 @@ namespace ConfiguradorUI.Persona
             this.txtEmail02.SelectionStart = 0;
             this.txtEmail02.ShortcutsEnabled = true;
             this.txtEmail02.Size = new System.Drawing.Size(446, 23);
-            this.txtEmail02.TabIndex = 3;
+            this.txtEmail02.TabIndex = 1;
             this.txtEmail02.UseCustomBackColor = true;
             this.txtEmail02.UseSelectable = true;
             this.txtEmail02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2543,7 +2543,7 @@ namespace ConfiguradorUI.Persona
             this.txtPagWeb.SelectionStart = 0;
             this.txtPagWeb.ShortcutsEnabled = true;
             this.txtPagWeb.Size = new System.Drawing.Size(446, 23);
-            this.txtPagWeb.TabIndex = 5;
+            this.txtPagWeb.TabIndex = 2;
             this.txtPagWeb.UseCustomBackColor = true;
             this.txtPagWeb.UseSelectable = true;
             this.txtPagWeb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2588,7 +2588,7 @@ namespace ConfiguradorUI.Persona
             this.txtEmail01.SelectionStart = 0;
             this.txtEmail01.ShortcutsEnabled = true;
             this.txtEmail01.Size = new System.Drawing.Size(446, 23);
-            this.txtEmail01.TabIndex = 1;
+            this.txtEmail01.TabIndex = 0;
             this.txtEmail01.UseCustomBackColor = true;
             this.txtEmail01.UseSelectable = true;
             this.txtEmail01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2628,7 +2628,7 @@ namespace ConfiguradorUI.Persona
             this.grbNumerosContacto.Location = new System.Drawing.Point(12, 143);
             this.grbNumerosContacto.Name = "grbNumerosContacto";
             this.grbNumerosContacto.Size = new System.Drawing.Size(555, 129);
-            this.grbNumerosContacto.TabIndex = 0;
+            this.grbNumerosContacto.TabIndex = 1;
             this.grbNumerosContacto.TabStop = false;
             this.grbNumerosContacto.Text = "Celulares y teléfonos";
             // 
@@ -2658,7 +2658,7 @@ namespace ConfiguradorUI.Persona
             this.txtTelfFijo02.SelectionStart = 0;
             this.txtTelfFijo02.ShortcutsEnabled = true;
             this.txtTelfFijo02.Size = new System.Drawing.Size(156, 23);
-            this.txtTelfFijo02.TabIndex = 3;
+            this.txtTelfFijo02.TabIndex = 4;
             this.txtTelfFijo02.UseCustomBackColor = true;
             this.txtTelfFijo02.UseSelectable = true;
             this.txtTelfFijo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2691,7 +2691,7 @@ namespace ConfiguradorUI.Persona
             this.txtCelular02.SelectionStart = 0;
             this.txtCelular02.ShortcutsEnabled = true;
             this.txtCelular02.Size = new System.Drawing.Size(156, 23);
-            this.txtCelular02.TabIndex = 3;
+            this.txtCelular02.TabIndex = 1;
             this.txtCelular02.UseCustomBackColor = true;
             this.txtCelular02.UseSelectable = true;
             this.txtCelular02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2724,7 +2724,7 @@ namespace ConfiguradorUI.Persona
             this.txtTelfFijo01.SelectionStart = 0;
             this.txtTelfFijo01.ShortcutsEnabled = true;
             this.txtTelfFijo01.Size = new System.Drawing.Size(156, 23);
-            this.txtTelfFijo01.TabIndex = 1;
+            this.txtTelfFijo01.TabIndex = 3;
             this.txtTelfFijo01.UseCustomBackColor = true;
             this.txtTelfFijo01.UseSelectable = true;
             this.txtTelfFijo01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2781,7 +2781,7 @@ namespace ConfiguradorUI.Persona
             this.txtCelular03.SelectionStart = 0;
             this.txtCelular03.ShortcutsEnabled = true;
             this.txtCelular03.Size = new System.Drawing.Size(156, 23);
-            this.txtCelular03.TabIndex = 5;
+            this.txtCelular03.TabIndex = 2;
             this.txtCelular03.UseCustomBackColor = true;
             this.txtCelular03.UseSelectable = true;
             this.txtCelular03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2883,7 +2883,7 @@ namespace ConfiguradorUI.Persona
             this.txtCelular01.SelectionStart = 0;
             this.txtCelular01.ShortcutsEnabled = true;
             this.txtCelular01.Size = new System.Drawing.Size(156, 23);
-            this.txtCelular01.TabIndex = 1;
+            this.txtCelular01.TabIndex = 0;
             this.txtCelular01.UseCustomBackColor = true;
             this.txtCelular01.UseSelectable = true;
             this.txtCelular01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2976,7 +2976,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo10.SelectionStart = 0;
             this.txtInfo10.ShortcutsEnabled = true;
             this.txtInfo10.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo10.TabIndex = 19;
+            this.txtInfo10.TabIndex = 9;
             this.txtInfo10.UseCustomBackColor = true;
             this.txtInfo10.UseSelectable = true;
             this.txtInfo10.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3021,7 +3021,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo08.SelectionStart = 0;
             this.txtInfo08.ShortcutsEnabled = true;
             this.txtInfo08.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo08.TabIndex = 15;
+            this.txtInfo08.TabIndex = 7;
             this.txtInfo08.UseCustomBackColor = true;
             this.txtInfo08.UseSelectable = true;
             this.txtInfo08.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3066,7 +3066,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo09.SelectionStart = 0;
             this.txtInfo09.ShortcutsEnabled = true;
             this.txtInfo09.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo09.TabIndex = 17;
+            this.txtInfo09.TabIndex = 8;
             this.txtInfo09.UseCustomBackColor = true;
             this.txtInfo09.UseSelectable = true;
             this.txtInfo09.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3111,7 +3111,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo07.SelectionStart = 0;
             this.txtInfo07.ShortcutsEnabled = true;
             this.txtInfo07.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo07.TabIndex = 13;
+            this.txtInfo07.TabIndex = 6;
             this.txtInfo07.UseCustomBackColor = true;
             this.txtInfo07.UseSelectable = true;
             this.txtInfo07.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3156,7 +3156,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo05.SelectionStart = 0;
             this.txtInfo05.ShortcutsEnabled = true;
             this.txtInfo05.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo05.TabIndex = 9;
+            this.txtInfo05.TabIndex = 4;
             this.txtInfo05.UseCustomBackColor = true;
             this.txtInfo05.UseSelectable = true;
             this.txtInfo05.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3201,7 +3201,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo06.SelectionStart = 0;
             this.txtInfo06.ShortcutsEnabled = true;
             this.txtInfo06.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo06.TabIndex = 11;
+            this.txtInfo06.TabIndex = 5;
             this.txtInfo06.UseCustomBackColor = true;
             this.txtInfo06.UseSelectable = true;
             this.txtInfo06.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3246,7 +3246,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo04.SelectionStart = 0;
             this.txtInfo04.ShortcutsEnabled = true;
             this.txtInfo04.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo04.TabIndex = 7;
+            this.txtInfo04.TabIndex = 3;
             this.txtInfo04.UseCustomBackColor = true;
             this.txtInfo04.UseSelectable = true;
             this.txtInfo04.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3291,7 +3291,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo02.SelectionStart = 0;
             this.txtInfo02.ShortcutsEnabled = true;
             this.txtInfo02.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo02.TabIndex = 3;
+            this.txtInfo02.TabIndex = 1;
             this.txtInfo02.UseCustomBackColor = true;
             this.txtInfo02.UseSelectable = true;
             this.txtInfo02.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3336,7 +3336,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo03.SelectionStart = 0;
             this.txtInfo03.ShortcutsEnabled = true;
             this.txtInfo03.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo03.TabIndex = 5;
+            this.txtInfo03.TabIndex = 2;
             this.txtInfo03.UseCustomBackColor = true;
             this.txtInfo03.UseSelectable = true;
             this.txtInfo03.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3381,7 +3381,7 @@ namespace ConfiguradorUI.Persona
             this.txtInfo01.SelectionStart = 0;
             this.txtInfo01.ShortcutsEnabled = true;
             this.txtInfo01.Size = new System.Drawing.Size(184, 23);
-            this.txtInfo01.TabIndex = 1;
+            this.txtInfo01.TabIndex = 0;
             this.txtInfo01.UseCustomBackColor = true;
             this.txtInfo01.UseSelectable = true;
             this.txtInfo01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -3419,7 +3419,7 @@ namespace ConfiguradorUI.Persona
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -3444,6 +3444,21 @@ namespace ConfiguradorUI.Persona
             this.panelMantenimiento.VerticalScrollbarBarColor = true;
             this.panelMantenimiento.VerticalScrollbarHighlightOnWheel = false;
             this.panelMantenimiento.VerticalScrollbarSize = 10;
+            // 
+            // btnCommit
+            // 
+            this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
+            this.btnCommit.Location = new System.Drawing.Point(481, 5);
+            this.btnCommit.Name = "btnCommit";
+            this.btnCommit.Size = new System.Drawing.Size(40, 40);
+            this.btnCommit.TabIndex = 0;
+            this.btnCommit.UseVisualStyleBackColor = false;
+            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 
             // btnSearch
             // 
@@ -3471,7 +3486,7 @@ namespace ConfiguradorUI.Persona
             this.btnNuevo.Location = new System.Drawing.Point(397, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -3486,7 +3501,7 @@ namespace ConfiguradorUI.Persona
             this.btnRollback.Location = new System.Drawing.Point(523, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -3501,7 +3516,7 @@ namespace ConfiguradorUI.Persona
             this.btnDelete.Location = new System.Drawing.Point(439, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -3579,21 +3594,6 @@ namespace ConfiguradorUI.Persona
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
             this.lblNumReg.TabIndex = 108;
             this.lblNumReg.Text = "Total: ";
-            // 
-            // btnCommit
-            // 
-            this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnCommit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnCommit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
-            this.btnCommit.Location = new System.Drawing.Point(481, 5);
-            this.btnCommit.Name = "btnCommit";
-            this.btnCommit.Size = new System.Drawing.Size(40, 40);
-            this.btnCommit.TabIndex = 111;
-            this.btnCommit.UseVisualStyleBackColor = false;
-            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 
             // FormEmpleado
             // 

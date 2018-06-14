@@ -67,7 +67,7 @@ namespace ConfiguradorUI.Producto.Auxiliares
             {
                 txt_desc_item = item.id_producto != null ? item.PROt09_producto?.txt_desc : item.PROt15_combo_variable?.txt_desc,
                 cod_combo_item = item.cod_combo_fixed_dtl,
-                cantidad = item.cantidad != null ? (decimal)item.cantidad : 0,
+                cantidad = item.cantidad != null ? item.cantidad : 0,
                 mto_pvpu_con_tax = item.mto_pvpu_con_tax,
                 mto_pvpu_sin_tax = item.mto_pvpu_sin_tax,
                 id_estado = item.id_estado
@@ -236,6 +236,8 @@ namespace ConfiguradorUI.Producto.Auxiliares
             txtItemQuantity.KeyPress += ControlHelper.TxtValidInteger;
 
             btnEditar.Enabled = false;
+
+            txtItemQuantity.Select();
         }
 
         private void CloseForm()

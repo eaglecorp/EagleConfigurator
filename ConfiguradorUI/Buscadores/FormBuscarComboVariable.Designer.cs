@@ -62,7 +62,7 @@
             this.gbxFiltro.Location = new System.Drawing.Point(23, 83);
             this.gbxFiltro.Name = "gbxFiltro";
             this.gbxFiltro.Size = new System.Drawing.Size(831, 91);
-            this.gbxFiltro.TabIndex = 14;
+            this.gbxFiltro.TabIndex = 0;
             this.gbxFiltro.TabStop = false;
             this.gbxFiltro.Text = "Panel de filtros";
             // 
@@ -92,7 +92,7 @@
             this.txtDescripcion.SelectionStart = 0;
             this.txtDescripcion.ShortcutsEnabled = true;
             this.txtDescripcion.Size = new System.Drawing.Size(636, 23);
-            this.txtDescripcion.TabIndex = 0;
+            this.txtDescripcion.TabIndex = 2;
             this.txtDescripcion.UseCustomBackColor = true;
             this.txtDescripcion.UseSelectable = true;
             this.txtDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -109,7 +109,7 @@
             this.btnVerTodos.Location = new System.Drawing.Point(733, 24);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(87, 25);
-            this.btnVerTodos.TabIndex = 10;
+            this.btnVerTodos.TabIndex = 4;
             this.btnVerTodos.Text = "Ver todos";
             this.btnVerTodos.UseVisualStyleBackColor = false;
             this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
@@ -124,7 +124,7 @@
             this.btnSeleccionar.Location = new System.Drawing.Point(733, 51);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(87, 25);
-            this.btnSeleccionar.TabIndex = 1;
+            this.btnSeleccionar.TabIndex = 3;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
@@ -155,7 +155,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.ShortcutsEnabled = true;
             this.txtCodigo.Size = new System.Drawing.Size(139, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.UseCustomBackColor = true;
             this.txtCodigo.UseSelectable = true;
             this.txtCodigo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -181,7 +181,7 @@
             this.chkIncluirInactivos.Location = new System.Drawing.Point(607, 28);
             this.chkIncluirInactivos.Name = "chkIncluirInactivos";
             this.chkIncluirInactivos.Size = new System.Drawing.Size(120, 19);
-            this.chkIncluirInactivos.TabIndex = 8;
+            this.chkIncluirInactivos.TabIndex = 1;
             this.chkIncluirInactivos.Text = "Incluir Inactivos";
             this.chkIncluirInactivos.UseCustomForeColor = true;
             this.chkIncluirInactivos.UseSelectable = true;
@@ -222,9 +222,9 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 314F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 342F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 342);
-            this.tableLayoutPanel1.TabIndex = 15;
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // dgvComboVariableDtl
             // 
@@ -233,7 +233,7 @@
             this.dgvComboVariableDtl.Location = new System.Drawing.Point(543, 3);
             this.dgvComboVariableDtl.Name = "dgvComboVariableDtl";
             this.dgvComboVariableDtl.Size = new System.Drawing.Size(285, 336);
-            this.dgvComboVariableDtl.TabIndex = 14;
+            this.dgvComboVariableDtl.TabIndex = 1;
             this.dgvComboVariableDtl.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
             // 
             // lblNombreForm
@@ -255,7 +255,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(23, 20);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 73;
+            this.btnCerrar.TabIndex = 2;
             this.btnCerrar.UseSelectable = true;
             // 
             // FormBuscarComboVariable

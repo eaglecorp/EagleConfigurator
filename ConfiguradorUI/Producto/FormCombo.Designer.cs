@@ -77,7 +77,6 @@ namespace ConfiguradorUI.Producto
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCboVariableDetail = new System.Windows.Forms.DataGridView();
             this.btnBuscarItem = new MetroFramework.Controls.MetroLink();
-            this.btnItem = new MetroFramework.Controls.MetroLink();
             this.txtItemCod = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -202,7 +201,7 @@ namespace ConfiguradorUI.Producto
             this.panelFiltro.Location = new System.Drawing.Point(287, 610);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(689, 44);
-            this.panelFiltro.TabIndex = 145;
+            this.panelFiltro.TabIndex = 3;
             this.panelFiltro.UseCustomBackColor = true;
             this.panelFiltro.VerticalScrollbarBarColor = true;
             this.panelFiltro.VerticalScrollbarHighlightOnWheel = false;
@@ -278,7 +277,7 @@ namespace ConfiguradorUI.Producto
             this.cboFiltro.Location = new System.Drawing.Point(84, 11);
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(215, 23);
-            this.cboFiltro.TabIndex = 3;
+            this.cboFiltro.TabIndex = 2;
             this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // panelMantenimiento
@@ -296,7 +295,7 @@ namespace ConfiguradorUI.Producto
             this.panelMantenimiento.Name = "panelMantenimiento";
             this.panelMantenimiento.Size = new System.Drawing.Size(690, 49);
             this.panelMantenimiento.Style = MetroFramework.MetroColorStyle.Green;
-            this.panelMantenimiento.TabIndex = 144;
+            this.panelMantenimiento.TabIndex = 2;
             this.panelMantenimiento.UseCustomBackColor = true;
             this.panelMantenimiento.UseStyleColors = true;
             this.panelMantenimiento.VerticalScrollbarBarColor = true;
@@ -329,7 +328,7 @@ namespace ConfiguradorUI.Producto
             this.btnNuevo.Location = new System.Drawing.Point(519, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -344,7 +343,7 @@ namespace ConfiguradorUI.Producto
             this.btnRollback.Location = new System.Drawing.Point(645, 5);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(40, 40);
-            this.btnRollback.TabIndex = 3;
+            this.btnRollback.TabIndex = 1;
             this.btnRollback.UseVisualStyleBackColor = false;
             this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
             // 
@@ -374,7 +373,7 @@ namespace ConfiguradorUI.Producto
             this.btnDelete.Location = new System.Drawing.Point(561, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -384,7 +383,7 @@ namespace ConfiguradorUI.Producto
             this.tglListarInactivos.Location = new System.Drawing.Point(142, 104);
             this.tglListarInactivos.Name = "tglListarInactivos";
             this.tglListarInactivos.Size = new System.Drawing.Size(80, 17);
-            this.tglListarInactivos.TabIndex = 147;
+            this.tglListarInactivos.TabIndex = 4;
             this.tglListarInactivos.Text = "Off";
             this.tglListarInactivos.UseSelectable = true;
             this.tglListarInactivos.Click += new System.EventHandler(this.tglListarInactivos_Click);
@@ -416,7 +415,7 @@ namespace ConfiguradorUI.Producto
             this.tabCombo.Name = "tabCombo";
             this.tabCombo.SelectedIndex = 0;
             this.tabCombo.Size = new System.Drawing.Size(706, 513);
-            this.tabCombo.TabIndex = 143;
+            this.tabCombo.TabIndex = 1;
             this.tabCombo.UseSelectable = true;
             // 
             // tabPagGeneral
@@ -438,7 +437,6 @@ namespace ConfiguradorUI.Producto
             this.tabPagGeneral.Controls.Add(this.btnRemoveItem);
             this.tabPagGeneral.Controls.Add(this.tabDetails);
             this.tabPagGeneral.Controls.Add(this.btnBuscarItem);
-            this.tabPagGeneral.Controls.Add(this.btnItem);
             this.tabPagGeneral.Controls.Add(this.txtItemCod);
             this.tabPagGeneral.Controls.Add(this.metroLabel4);
             this.tabPagGeneral.Controls.Add(this.metroLabel3);
@@ -484,7 +482,7 @@ namespace ConfiguradorUI.Producto
             this.chkPrecioAcumulado.Location = new System.Drawing.Point(0, 430);
             this.chkPrecioAcumulado.Name = "chkPrecioAcumulado";
             this.chkPrecioAcumulado.Size = new System.Drawing.Size(131, 19);
-            this.chkPrecioAcumulado.TabIndex = 8;
+            this.chkPrecioAcumulado.TabIndex = 15;
             this.chkPrecioAcumulado.Text = "Precio acumulado";
             this.chkPrecioAcumulado.UseCustomForeColor = true;
             this.chkPrecioAcumulado.UseSelectable = true;
@@ -501,7 +499,7 @@ namespace ConfiguradorUI.Producto
             this.chkIncluyeImpto.Location = new System.Drawing.Point(0, 409);
             this.chkIncluyeImpto.Name = "chkIncluyeImpto";
             this.chkIncluyeImpto.Size = new System.Drawing.Size(163, 19);
-            this.chkIncluyeImpto.TabIndex = 7;
+            this.chkIncluyeImpto.TabIndex = 14;
             this.chkIncluyeImpto.Text = "Precio incluye impuesto";
             this.chkIncluyeImpto.UseCustomForeColor = true;
             this.chkIncluyeImpto.UseSelectable = true;
@@ -542,7 +540,7 @@ namespace ConfiguradorUI.Producto
             this.cboImpuesto.Location = new System.Drawing.Point(77, 360);
             this.cboImpuesto.Name = "cboImpuesto";
             this.cboImpuesto.Size = new System.Drawing.Size(187, 23);
-            this.cboImpuesto.TabIndex = 6;
+            this.cboImpuesto.TabIndex = 13;
             this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
             // 
             // lblImpuesto
@@ -564,7 +562,7 @@ namespace ConfiguradorUI.Producto
             this.btnImpuesto.Location = new System.Drawing.Point(270, 356);
             this.btnImpuesto.Name = "btnImpuesto";
             this.btnImpuesto.Size = new System.Drawing.Size(29, 27);
-            this.btnImpuesto.TabIndex = 169;
+            this.btnImpuesto.TabIndex = 20;
             this.btnImpuesto.UseSelectable = true;
             this.btnImpuesto.Click += new System.EventHandler(this.btnImpuesto_Click);
             // 
@@ -598,7 +596,7 @@ namespace ConfiguradorUI.Producto
             this.chkMostrarInactivos.Location = new System.Drawing.Point(143, 169);
             this.chkMostrarInactivos.Name = "chkMostrarInactivos";
             this.chkMostrarInactivos.Size = new System.Drawing.Size(108, 15);
-            this.chkMostrarInactivos.TabIndex = 155;
+            this.chkMostrarInactivos.TabIndex = 19;
             this.chkMostrarInactivos.Text = "Mostrar inactivos";
             this.chkMostrarInactivos.UseCustomForeColor = true;
             this.chkMostrarInactivos.UseSelectable = true;
@@ -611,7 +609,7 @@ namespace ConfiguradorUI.Producto
             this.btnComboGrupo.Location = new System.Drawing.Point(270, 46);
             this.btnComboGrupo.Name = "btnComboGrupo";
             this.btnComboGrupo.Size = new System.Drawing.Size(29, 27);
-            this.btnComboGrupo.TabIndex = 155;
+            this.btnComboGrupo.TabIndex = 17;
             this.btnComboGrupo.UseSelectable = true;
             this.btnComboGrupo.Click += new System.EventHandler(this.btnComboGrupo_Click);
             // 
@@ -628,7 +626,7 @@ namespace ConfiguradorUI.Producto
             this.btnAddItem.Location = new System.Drawing.Point(645, 131);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(33, 29);
-            this.btnAddItem.TabIndex = 5;
+            this.btnAddItem.TabIndex = 8;
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
@@ -657,7 +655,7 @@ namespace ConfiguradorUI.Producto
             this.btnRemoveItem.Location = new System.Drawing.Point(645, 99);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(33, 29);
-            this.btnRemoveItem.TabIndex = 164;
+            this.btnRemoveItem.TabIndex = 9;
             this.btnRemoveItem.UseVisualStyleBackColor = false;
             this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
@@ -669,7 +667,7 @@ namespace ConfiguradorUI.Producto
             this.tabDetails.Name = "tabDetails";
             this.tabDetails.SelectedIndex = 0;
             this.tabDetails.Size = new System.Drawing.Size(678, 186);
-            this.tabDetails.TabIndex = 156;
+            this.tabDetails.TabIndex = 10;
             this.tabDetails.SelectedIndexChanged += new System.EventHandler(this.tabDetails_SelectedIndexChanged);
             // 
             // tabPagProductos
@@ -692,7 +690,7 @@ namespace ConfiguradorUI.Producto
             this.dgvProductDetail.Location = new System.Drawing.Point(3, 3);
             this.dgvProductDetail.Name = "dgvProductDetail";
             this.dgvProductDetail.Size = new System.Drawing.Size(664, 154);
-            this.dgvProductDetail.TabIndex = 150;
+            this.dgvProductDetail.TabIndex = 0;
             this.dgvProductDetail.DataSourceChanged += new System.EventHandler(this.dgvProductDetail_DataSourceChanged);
             this.dgvProductDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductDetail_CellContentClick);
             this.dgvProductDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductDetail_CellDoubleClick);
@@ -741,7 +739,7 @@ namespace ConfiguradorUI.Producto
             this.dgvProductOfCboVarDetail.Location = new System.Drawing.Point(0, 24);
             this.dgvProductOfCboVarDetail.Name = "dgvProductOfCboVarDetail";
             this.dgvProductOfCboVarDetail.Size = new System.Drawing.Size(240, 124);
-            this.dgvProductOfCboVarDetail.TabIndex = 152;
+            this.dgvProductOfCboVarDetail.TabIndex = 1;
             // 
             // label1
             // 
@@ -765,7 +763,7 @@ namespace ConfiguradorUI.Producto
             this.dgvCboVariableDetail.Location = new System.Drawing.Point(3, 3);
             this.dgvCboVariableDetail.Name = "dgvCboVariableDetail";
             this.dgvCboVariableDetail.Size = new System.Drawing.Size(426, 148);
-            this.dgvCboVariableDetail.TabIndex = 151;
+            this.dgvCboVariableDetail.TabIndex = 1;
             this.dgvCboVariableDetail.DataSourceChanged += new System.EventHandler(this.dgvCboVariableDetail_DataSourceChanged);
             this.dgvCboVariableDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCboVariableDetail_CellContentClick);
             this.dgvCboVariableDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCboVariableDetail_CellDoubleClick);
@@ -779,21 +777,9 @@ namespace ConfiguradorUI.Producto
             this.btnBuscarItem.Location = new System.Drawing.Point(45, 111);
             this.btnBuscarItem.Name = "btnBuscarItem";
             this.btnBuscarItem.Size = new System.Drawing.Size(31, 24);
-            this.btnBuscarItem.TabIndex = 152;
+            this.btnBuscarItem.TabIndex = 18;
             this.btnBuscarItem.UseSelectable = true;
             this.btnBuscarItem.Click += new System.EventHandler(this.btnBuscarItem_Click);
-            // 
-            // btnItem
-            // 
-            this.btnItem.BackColor = System.Drawing.Color.Transparent;
-            this.btnItem.Image = ((System.Drawing.Image)(resources.GetObject("btnItem.Image")));
-            this.btnItem.ImageSize = 20;
-            this.btnItem.Location = new System.Drawing.Point(187, 111);
-            this.btnItem.Name = "btnItem";
-            this.btnItem.Size = new System.Drawing.Size(31, 24);
-            this.btnItem.TabIndex = 151;
-            this.btnItem.UseSelectable = true;
-            this.btnItem.Click += new System.EventHandler(this.btnItem_Click);
             // 
             // txtItemCod
             // 
@@ -887,7 +873,7 @@ namespace ConfiguradorUI.Producto
             this.txtItemPriceSinImp.SelectionStart = 0;
             this.txtItemPriceSinImp.ShortcutsEnabled = true;
             this.txtItemPriceSinImp.Size = new System.Drawing.Size(93, 23);
-            this.txtItemPriceSinImp.TabIndex = 146;
+            this.txtItemPriceSinImp.TabIndex = 7;
             this.txtItemPriceSinImp.UseCustomBackColor = true;
             this.txtItemPriceSinImp.UseSelectable = true;
             this.txtItemPriceSinImp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -930,7 +916,7 @@ namespace ConfiguradorUI.Producto
             this.txtItemPriceConImp.SelectionStart = 0;
             this.txtItemPriceConImp.ShortcutsEnabled = true;
             this.txtItemPriceConImp.Size = new System.Drawing.Size(93, 23);
-            this.txtItemPriceConImp.TabIndex = 140;
+            this.txtItemPriceConImp.TabIndex = 6;
             this.txtItemPriceConImp.UseCustomBackColor = true;
             this.txtItemPriceConImp.UseSelectable = true;
             this.txtItemPriceConImp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -974,7 +960,7 @@ namespace ConfiguradorUI.Producto
             this.txtItemQuantity.SelectionStart = 0;
             this.txtItemQuantity.ShortcutsEnabled = true;
             this.txtItemQuantity.Size = new System.Drawing.Size(93, 23);
-            this.txtItemQuantity.TabIndex = 4;
+            this.txtItemQuantity.TabIndex = 5;
             this.txtItemQuantity.UseCustomBackColor = true;
             this.txtItemQuantity.UseSelectable = true;
             this.txtItemQuantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1018,7 +1004,7 @@ namespace ConfiguradorUI.Producto
             this.txtPrecioCboSinTax.SelectionStart = 0;
             this.txtPrecioCboSinTax.ShortcutsEnabled = true;
             this.txtPrecioCboSinTax.Size = new System.Drawing.Size(126, 23);
-            this.txtPrecioCboSinTax.TabIndex = 136;
+            this.txtPrecioCboSinTax.TabIndex = 12;
             this.txtPrecioCboSinTax.UseCustomBackColor = true;
             this.txtPrecioCboSinTax.UseSelectable = true;
             this.txtPrecioCboSinTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1051,7 +1037,7 @@ namespace ConfiguradorUI.Producto
             this.txtPrecioCboConTax.SelectionStart = 0;
             this.txtPrecioCboConTax.ShortcutsEnabled = true;
             this.txtPrecioCboConTax.Size = new System.Drawing.Size(126, 23);
-            this.txtPrecioCboConTax.TabIndex = 5;
+            this.txtPrecioCboConTax.TabIndex = 11;
             this.txtPrecioCboConTax.UseCustomBackColor = true;
             this.txtPrecioCboConTax.UseSelectable = true;
             this.txtPrecioCboConTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1133,7 +1119,7 @@ namespace ConfiguradorUI.Producto
             this.chkActivo.Location = new System.Drawing.Point(0, 451);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(61, 19);
-            this.chkActivo.TabIndex = 9;
+            this.chkActivo.TabIndex = 16;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseCustomForeColor = true;
             this.chkActivo.UseSelectable = true;
@@ -1254,7 +1240,7 @@ namespace ConfiguradorUI.Producto
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 148;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -1324,7 +1310,6 @@ namespace ConfiguradorUI.Producto
         private MetroFramework.Controls.MetroTabControl tabCombo;
         private MetroFramework.Controls.MetroTabPage tabPagGeneral;
         private MetroFramework.Controls.MetroLink btnBuscarItem;
-        private MetroFramework.Controls.MetroLink btnItem;
         private System.Windows.Forms.DataGridView dgvProductDetail;
         private MetroFramework.Controls.MetroTextBox txtItemCod;
         private MetroFramework.Controls.MetroLabel metroLabel4;

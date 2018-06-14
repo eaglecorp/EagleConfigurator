@@ -75,7 +75,7 @@
             this.btnRestore.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(69, 24);
-            this.btnRestore.TabIndex = 1;
+            this.btnRestore.TabIndex = 2;
             this.btnRestore.Text = "Restore";
             this.btnRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRestore.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             this.btnBrowseRestore.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowseRestore.Name = "btnBrowseRestore";
             this.btnBrowseRestore.Size = new System.Drawing.Size(69, 24);
-            this.btnBrowseRestore.TabIndex = 0;
+            this.btnBrowseRestore.TabIndex = 1;
             this.btnBrowseRestore.Text = "Browse";
             this.btnBrowseRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowseRestore.UseVisualStyleBackColor = false;
@@ -127,7 +127,7 @@
             this.txtLocationRestore.SelectionStart = 0;
             this.txtLocationRestore.ShortcutsEnabled = true;
             this.txtLocationRestore.Size = new System.Drawing.Size(373, 23);
-            this.txtLocationRestore.TabIndex = 113;
+            this.txtLocationRestore.TabIndex = 0;
             this.txtLocationRestore.UseCustomBackColor = true;
             this.txtLocationRestore.UseSelectable = true;
             this.txtLocationRestore.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -173,7 +173,7 @@
             this.btnBackup.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(69, 24);
-            this.btnBackup.TabIndex = 1;
+            this.btnBackup.TabIndex = 2;
             this.btnBackup.Text = "Backup";
             this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackup.UseVisualStyleBackColor = false;
@@ -193,7 +193,7 @@
             this.btnBrowseBackup.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowseBackup.Name = "btnBrowseBackup";
             this.btnBrowseBackup.Size = new System.Drawing.Size(69, 24);
-            this.btnBrowseBackup.TabIndex = 0;
+            this.btnBrowseBackup.TabIndex = 1;
             this.btnBrowseBackup.Text = "Browse";
             this.btnBrowseBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowseBackup.UseVisualStyleBackColor = false;
@@ -225,7 +225,7 @@
             this.txtLocationBackup.SelectionStart = 0;
             this.txtLocationBackup.ShortcutsEnabled = true;
             this.txtLocationBackup.Size = new System.Drawing.Size(377, 23);
-            this.txtLocationBackup.TabIndex = 109;
+            this.txtLocationBackup.TabIndex = 0;
             this.txtLocationBackup.UseCustomBackColor = true;
             this.txtLocationBackup.UseSelectable = true;
             this.txtLocationBackup.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -250,7 +250,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(28, 28);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 57);
-            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.TabIndex = 3;
             this.btnCerrar.UseSelectable = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -280,7 +280,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
-            this.btnCancelar.TabIndex = 109;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 

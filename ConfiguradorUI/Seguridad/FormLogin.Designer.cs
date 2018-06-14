@@ -73,7 +73,7 @@
             this.txtClave.SelectionStart = 0;
             this.txtClave.ShortcutsEnabled = true;
             this.txtClave.Size = new System.Drawing.Size(263, 28);
-            this.txtClave.TabIndex = 3;
+            this.txtClave.TabIndex = 1;
             this.txtClave.UseSelectable = true;
             this.txtClave.WaterMark = "Contraseña";
             this.txtClave.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -110,7 +110,7 @@
             this.txtUsuario.SelectionStart = 0;
             this.txtUsuario.ShortcutsEnabled = true;
             this.txtUsuario.Size = new System.Drawing.Size(263, 28);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
             this.txtUsuario.UseSelectable = true;
             this.txtUsuario.WaterMark = "Usuario";
             this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -137,7 +137,7 @@
             this.linkOlvideCuenta.Location = new System.Drawing.Point(299, 219);
             this.linkOlvideCuenta.Name = "linkOlvideCuenta";
             this.linkOlvideCuenta.Size = new System.Drawing.Size(138, 17);
-            this.linkOlvideCuenta.TabIndex = 6;
+            this.linkOlvideCuenta.TabIndex = 4;
             this.linkOlvideCuenta.TabStop = true;
             this.linkOlvideCuenta.Text = "¿Olvidaste tu cuenta?";
             this.linkOlvideCuenta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkOlvideCuenta_LinkClicked);
@@ -165,7 +165,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(103, 32);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Salir";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -186,7 +186,7 @@
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(103, 32);
-            this.btnEntrar.TabIndex = 4;
+            this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "Login";
             this.btnEntrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEntrar.UseVisualStyleBackColor = false;
