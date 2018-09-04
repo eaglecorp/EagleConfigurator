@@ -210,7 +210,7 @@ namespace ConfigDataAccess.Labor
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("USP_LAB_UPD_HOR_DTL_X_DIA_SEMANA", conexion))
+                    using (var cmd = new SqlCommand("USP_LAB_ACT_HOR_DTL_POR_DIA_SEMANA", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -237,7 +237,7 @@ namespace ConfigDataAccess.Labor
                         else
                         {
                             var log = new Log();
-                            log.ArchiveLog("Ocurrió un error en la actualización de los horarios dtl x dia de semana.", "USP_LAB_UPD_HOR_DTL_X_DIA_SEMANA");
+                            log.ArchiveLog("Ocurrió un error en la actualización de los horarios dtl x dia de semana.", "USP_LAB_ACT_HOR_DTL_POR_DIA_SEMANA");
                         }
                         #endregion
                     }

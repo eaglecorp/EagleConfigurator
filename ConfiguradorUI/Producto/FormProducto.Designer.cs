@@ -41,7 +41,6 @@ namespace ConfiguradorUI.Producto
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboUnidadMedida = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblUnidadMedida = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.btnClaseProd = new MetroFramework.Controls.MetroLink();
@@ -63,18 +62,10 @@ namespace ConfiguradorUI.Producto
             this.chkProductoCompra = new MetroFramework.Controls.MetroCheckBox();
             this.chkProductoVenta = new MetroFramework.Controls.MetroCheckBox();
             this.lblPeso = new MetroFramework.Controls.MetroLabel();
-            this.cboClaseProd = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboGrupoProd = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboTipoExistencia = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboTipoProd = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblClaseProd = new MetroFramework.Controls.MetroLabel();
             this.lblGrupo = new MetroFramework.Controls.MetroLabel();
             this.lblTipoExistencia = new MetroFramework.Controls.MetroLabel();
             this.lblTipoProd = new MetroFramework.Controls.MetroLabel();
-            this.cboModelo = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboMarca = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboSubFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblModelo = new MetroFramework.Controls.MetroLabel();
             this.lblMarca = new MetroFramework.Controls.MetroLabel();
             this.lblSubFamilia = new MetroFramework.Controls.MetroLabel();
@@ -95,28 +86,25 @@ namespace ConfiguradorUI.Producto
             this.txtCostoProd = new MetroFramework.Controls.MetroTextBox();
             this.lblCosto = new MetroFramework.Controls.MetroLabel();
             this.grbConImpto = new System.Windows.Forms.GroupBox();
-            this.txtPvMiConImpto = new MetroFramework.Controls.MetroTextBox();
-            this.lblPvMiConIGV = new MetroFramework.Controls.MetroLabel();
-            this.txtPvMaConImpto = new MetroFramework.Controls.MetroTextBox();
-            this.lblPvMaConIGV = new MetroFramework.Controls.MetroLabel();
-            this.txtPvPuConImpto = new MetroFramework.Controls.MetroTextBox();
-            this.lblPvPuConIGV = new MetroFramework.Controls.MetroLabel();
+            this.txtPvMiConTax = new MetroFramework.Controls.MetroTextBox();
+            this.lblPvMiConTax = new MetroFramework.Controls.MetroLabel();
+            this.txtPvMaConTax = new MetroFramework.Controls.MetroTextBox();
+            this.lblPvMaConTax = new MetroFramework.Controls.MetroLabel();
+            this.txtPvPuConTax = new MetroFramework.Controls.MetroTextBox();
+            this.lblPvPuConTax = new MetroFramework.Controls.MetroLabel();
             this.grbSinImpto = new System.Windows.Forms.GroupBox();
-            this.txtPvMiSinImpto = new MetroFramework.Controls.MetroTextBox();
-            this.lblPvMiSinIGV = new MetroFramework.Controls.MetroLabel();
-            this.txtPvMaSinImpto = new MetroFramework.Controls.MetroTextBox();
-            this.lblPvMaSinIGV = new MetroFramework.Controls.MetroLabel();
-            this.txtPvPuSinImpto = new MetroFramework.Controls.MetroTextBox();
-            this.lblPvPuSinIGV = new MetroFramework.Controls.MetroLabel();
+            this.txtPvMiSinTax = new MetroFramework.Controls.MetroTextBox();
+            this.lblPvMiSinTax = new MetroFramework.Controls.MetroLabel();
+            this.txtPvMaSinTax = new MetroFramework.Controls.MetroTextBox();
+            this.lblPvMaSinTax = new MetroFramework.Controls.MetroLabel();
+            this.txtPvPuSinTax = new MetroFramework.Controls.MetroTextBox();
+            this.lblPvPuSinTax = new MetroFramework.Controls.MetroLabel();
             this.chkInafecto = new MetroFramework.Controls.MetroCheckBox();
             this.chkExento = new MetroFramework.Controls.MetroCheckBox();
             this.chkImpto = new MetroFramework.Controls.MetroCheckBox();
-            this.cboImpuesto = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboTipoMoneda = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblImpuesto = new MetroFramework.Controls.MetroLabel();
             this.lblTipoMoneda = new MetroFramework.Controls.MetroLabel();
             this.btnImpuesto = new MetroFramework.Controls.MetroLink();
-            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
             this.panelMantenimiento = new MetroFramework.Controls.MetroPanel();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -137,6 +125,18 @@ namespace ConfiguradorUI.Producto
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboUnidadMedida = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboClaseProd = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboGrupoProd = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboTipoExistencia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboTipoProd = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboModelo = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboMarca = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboSubFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboImpuesto = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboTipoMoneda = new ConfigUtilitarios.Controls.BorderedCombo();
             this.tabProducto.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             this.tabPagPrecio.SuspendLayout();
@@ -322,19 +322,6 @@ namespace ConfiguradorUI.Producto
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 5);
             this.panel1.TabIndex = 57;
-            // 
-            // cboUnidadMedida
-            // 
-            this.cboUnidadMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUnidadMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboUnidadMedida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboUnidadMedida.FormattingEnabled = true;
-            this.cboUnidadMedida.Location = new System.Drawing.Point(354, 83);
-            this.cboUnidadMedida.Name = "cboUnidadMedida";
-            this.cboUnidadMedida.Size = new System.Drawing.Size(183, 23);
-            this.cboUnidadMedida.TabIndex = 4;
-            this.cboUnidadMedida.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblUnidadMedida
             // 
@@ -697,58 +684,6 @@ namespace ConfiguradorUI.Producto
             this.lblPeso.Text = "Peso:";
             this.lblPeso.UseCustomForeColor = true;
             // 
-            // cboClaseProd
-            // 
-            this.cboClaseProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboClaseProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboClaseProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboClaseProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboClaseProd.FormattingEnabled = true;
-            this.cboClaseProd.Location = new System.Drawing.Point(353, 277);
-            this.cboClaseProd.Name = "cboClaseProd";
-            this.cboClaseProd.Size = new System.Drawing.Size(152, 23);
-            this.cboClaseProd.TabIndex = 12;
-            this.cboClaseProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboGrupoProd
-            // 
-            this.cboGrupoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboGrupoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGrupoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboGrupoProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboGrupoProd.FormattingEnabled = true;
-            this.cboGrupoProd.Location = new System.Drawing.Point(353, 241);
-            this.cboGrupoProd.Name = "cboGrupoProd";
-            this.cboGrupoProd.Size = new System.Drawing.Size(152, 23);
-            this.cboGrupoProd.TabIndex = 10;
-            this.cboGrupoProd.SelectedIndexChanged += new System.EventHandler(this.cboGrupoProd_SelectedIndexChanged);
-            // 
-            // cboTipoExistencia
-            // 
-            this.cboTipoExistencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoExistencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoExistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoExistencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoExistencia.FormattingEnabled = true;
-            this.cboTipoExistencia.Location = new System.Drawing.Point(75, 277);
-            this.cboTipoExistencia.Name = "cboTipoExistencia";
-            this.cboTipoExistencia.Size = new System.Drawing.Size(184, 23);
-            this.cboTipoExistencia.TabIndex = 11;
-            this.cboTipoExistencia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboTipoProd
-            // 
-            this.cboTipoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoProd.FormattingEnabled = true;
-            this.cboTipoProd.Location = new System.Drawing.Point(76, 241);
-            this.cboTipoProd.Name = "cboTipoProd";
-            this.cboTipoProd.Size = new System.Drawing.Size(152, 23);
-            this.cboTipoProd.TabIndex = 9;
-            this.cboTipoProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
             // lblClaseProd
             // 
             this.lblClaseProd.AutoSize = true;
@@ -792,58 +727,6 @@ namespace ConfiguradorUI.Producto
             this.lblTipoProd.TabIndex = 18;
             this.lblTipoProd.Text = "Tipo Prod:";
             this.lblTipoProd.UseCustomForeColor = true;
-            // 
-            // cboModelo
-            // 
-            this.cboModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboModelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboModelo.FormattingEnabled = true;
-            this.cboModelo.Location = new System.Drawing.Point(353, 178);
-            this.cboModelo.Name = "cboModelo";
-            this.cboModelo.Size = new System.Drawing.Size(152, 23);
-            this.cboModelo.TabIndex = 8;
-            this.cboModelo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboMarca
-            // 
-            this.cboMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(353, 142);
-            this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(152, 23);
-            this.cboMarca.TabIndex = 6;
-            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
-            // 
-            // cboSubFamilia
-            // 
-            this.cboSubFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboSubFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSubFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboSubFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSubFamilia.FormattingEnabled = true;
-            this.cboSubFamilia.Location = new System.Drawing.Point(75, 178);
-            this.cboSubFamilia.Name = "cboSubFamilia";
-            this.cboSubFamilia.Size = new System.Drawing.Size(152, 23);
-            this.cboSubFamilia.TabIndex = 7;
-            this.cboSubFamilia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboFamilia
-            // 
-            this.cboFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFamilia.FormattingEnabled = true;
-            this.cboFamilia.Location = new System.Drawing.Point(75, 142);
-            this.cboFamilia.Name = "cboFamilia";
-            this.cboFamilia.Size = new System.Drawing.Size(152, 23);
-            this.cboFamilia.TabIndex = 5;
-            this.cboFamilia.SelectedIndexChanged += new System.EventHandler(this.cboFamilia_SelectedIndexChanged);
             // 
             // lblModelo
             // 
@@ -1191,12 +1074,12 @@ namespace ConfiguradorUI.Producto
             // grbConImpto
             // 
             this.grbConImpto.BackColor = System.Drawing.Color.Transparent;
-            this.grbConImpto.Controls.Add(this.txtPvMiConImpto);
-            this.grbConImpto.Controls.Add(this.lblPvMiConIGV);
-            this.grbConImpto.Controls.Add(this.txtPvMaConImpto);
-            this.grbConImpto.Controls.Add(this.lblPvMaConIGV);
-            this.grbConImpto.Controls.Add(this.txtPvPuConImpto);
-            this.grbConImpto.Controls.Add(this.lblPvPuConIGV);
+            this.grbConImpto.Controls.Add(this.txtPvMiConTax);
+            this.grbConImpto.Controls.Add(this.lblPvMiConTax);
+            this.grbConImpto.Controls.Add(this.txtPvMaConTax);
+            this.grbConImpto.Controls.Add(this.lblPvMaConTax);
+            this.grbConImpto.Controls.Add(this.txtPvPuConTax);
+            this.grbConImpto.Controls.Add(this.lblPvPuConTax);
             this.grbConImpto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbConImpto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grbConImpto.Location = new System.Drawing.Point(287, 88);
@@ -1206,150 +1089,150 @@ namespace ConfiguradorUI.Producto
             this.grbConImpto.TabStop = false;
             this.grbConImpto.Text = "Precio con impuesto";
             // 
-            // txtPvMiConImpto
+            // txtPvMiConTax
             // 
-            this.txtPvMiConImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPvMiConImpto.CustomButton.Image = null;
-            this.txtPvMiConImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvMiConImpto.CustomButton.Name = "";
-            this.txtPvMiConImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvMiConImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvMiConImpto.CustomButton.TabIndex = 1;
-            this.txtPvMiConImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvMiConImpto.CustomButton.UseSelectable = true;
-            this.txtPvMiConImpto.CustomButton.Visible = false;
-            this.txtPvMiConImpto.Lines = new string[0];
-            this.txtPvMiConImpto.Location = new System.Drawing.Point(100, 68);
-            this.txtPvMiConImpto.MaxLength = 32767;
-            this.txtPvMiConImpto.Name = "txtPvMiConImpto";
-            this.txtPvMiConImpto.PasswordChar = '\0';
-            this.txtPvMiConImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvMiConImpto.SelectedText = "";
-            this.txtPvMiConImpto.SelectionLength = 0;
-            this.txtPvMiConImpto.SelectionStart = 0;
-            this.txtPvMiConImpto.ShortcutsEnabled = true;
-            this.txtPvMiConImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMiConImpto.TabIndex = 1;
-            this.txtPvMiConImpto.UseCustomBackColor = true;
-            this.txtPvMiConImpto.UseSelectable = true;
-            this.txtPvMiConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvMiConImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMiConImpto.TextChanged += new System.EventHandler(this.txtPvMiConImpto_TextChanged);
-            // 
-            // lblPvMiConIGV
-            // 
-            this.lblPvMiConIGV.AutoSize = true;
-            this.lblPvMiConIGV.BackColor = System.Drawing.Color.Transparent;
-            this.lblPvMiConIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMiConIGV.Location = new System.Drawing.Point(24, 69);
-            this.lblPvMiConIGV.Name = "lblPvMiConIGV";
-            this.lblPvMiConIGV.Size = new System.Drawing.Size(69, 19);
-            this.lblPvMiConIGV.TabIndex = 2;
-            this.lblPvMiConIGV.Text = "P. Mínimo:";
-            this.lblPvMiConIGV.UseCustomForeColor = true;
-            // 
-            // txtPvMaConImpto
-            // 
-            this.txtPvMaConImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvMiConTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvMaConImpto.CustomButton.Image = null;
-            this.txtPvMaConImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvMaConImpto.CustomButton.Name = "";
-            this.txtPvMaConImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvMaConImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvMaConImpto.CustomButton.TabIndex = 1;
-            this.txtPvMaConImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvMaConImpto.CustomButton.UseSelectable = true;
-            this.txtPvMaConImpto.CustomButton.Visible = false;
-            this.txtPvMaConImpto.Lines = new string[0];
-            this.txtPvMaConImpto.Location = new System.Drawing.Point(100, 104);
-            this.txtPvMaConImpto.MaxLength = 32767;
-            this.txtPvMaConImpto.Name = "txtPvMaConImpto";
-            this.txtPvMaConImpto.PasswordChar = '\0';
-            this.txtPvMaConImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvMaConImpto.SelectedText = "";
-            this.txtPvMaConImpto.SelectionLength = 0;
-            this.txtPvMaConImpto.SelectionStart = 0;
-            this.txtPvMaConImpto.ShortcutsEnabled = true;
-            this.txtPvMaConImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMaConImpto.TabIndex = 2;
-            this.txtPvMaConImpto.UseCustomBackColor = true;
-            this.txtPvMaConImpto.UseSelectable = true;
-            this.txtPvMaConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvMaConImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMaConImpto.TextChanged += new System.EventHandler(this.txtPvMaConImpto_TextChanged);
+            this.txtPvMiConTax.CustomButton.Image = null;
+            this.txtPvMiConTax.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvMiConTax.CustomButton.Name = "";
+            this.txtPvMiConTax.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvMiConTax.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvMiConTax.CustomButton.TabIndex = 1;
+            this.txtPvMiConTax.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvMiConTax.CustomButton.UseSelectable = true;
+            this.txtPvMiConTax.CustomButton.Visible = false;
+            this.txtPvMiConTax.Lines = new string[0];
+            this.txtPvMiConTax.Location = new System.Drawing.Point(100, 68);
+            this.txtPvMiConTax.MaxLength = 32767;
+            this.txtPvMiConTax.Name = "txtPvMiConTax";
+            this.txtPvMiConTax.PasswordChar = '\0';
+            this.txtPvMiConTax.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvMiConTax.SelectedText = "";
+            this.txtPvMiConTax.SelectionLength = 0;
+            this.txtPvMiConTax.SelectionStart = 0;
+            this.txtPvMiConTax.ShortcutsEnabled = true;
+            this.txtPvMiConTax.Size = new System.Drawing.Size(126, 23);
+            this.txtPvMiConTax.TabIndex = 1;
+            this.txtPvMiConTax.UseCustomBackColor = true;
+            this.txtPvMiConTax.UseSelectable = true;
+            this.txtPvMiConTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvMiConTax.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvMiConTax.TextChanged += new System.EventHandler(this.txtPvMiConTax_TextChanged);
             // 
-            // lblPvMaConIGV
+            // lblPvMiConTax
             // 
-            this.lblPvMaConIGV.AutoSize = true;
-            this.lblPvMaConIGV.BackColor = System.Drawing.Color.Transparent;
-            this.lblPvMaConIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMaConIGV.Location = new System.Drawing.Point(24, 106);
-            this.lblPvMaConIGV.Name = "lblPvMaConIGV";
-            this.lblPvMaConIGV.Size = new System.Drawing.Size(72, 19);
-            this.lblPvMaConIGV.TabIndex = 4;
-            this.lblPvMaConIGV.Text = "P. Máximo:";
-            this.lblPvMaConIGV.UseCustomForeColor = true;
+            this.lblPvMiConTax.AutoSize = true;
+            this.lblPvMiConTax.BackColor = System.Drawing.Color.Transparent;
+            this.lblPvMiConTax.ForeColor = System.Drawing.Color.Navy;
+            this.lblPvMiConTax.Location = new System.Drawing.Point(24, 69);
+            this.lblPvMiConTax.Name = "lblPvMiConTax";
+            this.lblPvMiConTax.Size = new System.Drawing.Size(69, 19);
+            this.lblPvMiConTax.TabIndex = 2;
+            this.lblPvMiConTax.Text = "P. Mínimo:";
+            this.lblPvMiConTax.UseCustomForeColor = true;
             // 
-            // txtPvPuConImpto
+            // txtPvMaConTax
             // 
-            this.txtPvPuConImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvMaConTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvPuConImpto.CustomButton.Image = null;
-            this.txtPvPuConImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvPuConImpto.CustomButton.Name = "";
-            this.txtPvPuConImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvPuConImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvPuConImpto.CustomButton.TabIndex = 1;
-            this.txtPvPuConImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvPuConImpto.CustomButton.UseSelectable = true;
-            this.txtPvPuConImpto.CustomButton.Visible = false;
-            this.txtPvPuConImpto.Lines = new string[0];
-            this.txtPvPuConImpto.Location = new System.Drawing.Point(100, 32);
-            this.txtPvPuConImpto.MaxLength = 32767;
-            this.txtPvPuConImpto.Name = "txtPvPuConImpto";
-            this.txtPvPuConImpto.PasswordChar = '\0';
-            this.txtPvPuConImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvPuConImpto.SelectedText = "";
-            this.txtPvPuConImpto.SelectionLength = 0;
-            this.txtPvPuConImpto.SelectionStart = 0;
-            this.txtPvPuConImpto.ShortcutsEnabled = true;
-            this.txtPvPuConImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvPuConImpto.TabIndex = 0;
-            this.txtPvPuConImpto.UseCustomBackColor = true;
-            this.txtPvPuConImpto.UseSelectable = true;
-            this.txtPvPuConImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvPuConImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvPuConImpto.TextChanged += new System.EventHandler(this.txtPvPuConImpto_TextChanged);
+            this.txtPvMaConTax.CustomButton.Image = null;
+            this.txtPvMaConTax.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvMaConTax.CustomButton.Name = "";
+            this.txtPvMaConTax.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvMaConTax.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvMaConTax.CustomButton.TabIndex = 1;
+            this.txtPvMaConTax.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvMaConTax.CustomButton.UseSelectable = true;
+            this.txtPvMaConTax.CustomButton.Visible = false;
+            this.txtPvMaConTax.Lines = new string[0];
+            this.txtPvMaConTax.Location = new System.Drawing.Point(100, 104);
+            this.txtPvMaConTax.MaxLength = 32767;
+            this.txtPvMaConTax.Name = "txtPvMaConTax";
+            this.txtPvMaConTax.PasswordChar = '\0';
+            this.txtPvMaConTax.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvMaConTax.SelectedText = "";
+            this.txtPvMaConTax.SelectionLength = 0;
+            this.txtPvMaConTax.SelectionStart = 0;
+            this.txtPvMaConTax.ShortcutsEnabled = true;
+            this.txtPvMaConTax.Size = new System.Drawing.Size(126, 23);
+            this.txtPvMaConTax.TabIndex = 2;
+            this.txtPvMaConTax.UseCustomBackColor = true;
+            this.txtPvMaConTax.UseSelectable = true;
+            this.txtPvMaConTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvMaConTax.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvMaConTax.TextChanged += new System.EventHandler(this.txtPvMaConTax_TextChanged);
             // 
-            // lblPvPuConIGV
+            // lblPvMaConTax
             // 
-            this.lblPvPuConIGV.AutoSize = true;
-            this.lblPvPuConIGV.BackColor = System.Drawing.Color.Transparent;
-            this.lblPvPuConIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvPuConIGV.Location = new System.Drawing.Point(24, 34);
-            this.lblPvPuConIGV.Name = "lblPvPuConIGV";
-            this.lblPvPuConIGV.Size = new System.Drawing.Size(70, 19);
-            this.lblPvPuConIGV.TabIndex = 0;
-            this.lblPvPuConIGV.Text = "P. Unitario:";
-            this.lblPvPuConIGV.UseCustomForeColor = true;
+            this.lblPvMaConTax.AutoSize = true;
+            this.lblPvMaConTax.BackColor = System.Drawing.Color.Transparent;
+            this.lblPvMaConTax.ForeColor = System.Drawing.Color.Navy;
+            this.lblPvMaConTax.Location = new System.Drawing.Point(24, 106);
+            this.lblPvMaConTax.Name = "lblPvMaConTax";
+            this.lblPvMaConTax.Size = new System.Drawing.Size(72, 19);
+            this.lblPvMaConTax.TabIndex = 4;
+            this.lblPvMaConTax.Text = "P. Máximo:";
+            this.lblPvMaConTax.UseCustomForeColor = true;
+            // 
+            // txtPvPuConTax
+            // 
+            this.txtPvPuConTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPvPuConTax.CustomButton.Image = null;
+            this.txtPvPuConTax.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvPuConTax.CustomButton.Name = "";
+            this.txtPvPuConTax.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvPuConTax.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvPuConTax.CustomButton.TabIndex = 1;
+            this.txtPvPuConTax.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvPuConTax.CustomButton.UseSelectable = true;
+            this.txtPvPuConTax.CustomButton.Visible = false;
+            this.txtPvPuConTax.Lines = new string[0];
+            this.txtPvPuConTax.Location = new System.Drawing.Point(100, 32);
+            this.txtPvPuConTax.MaxLength = 32767;
+            this.txtPvPuConTax.Name = "txtPvPuConTax";
+            this.txtPvPuConTax.PasswordChar = '\0';
+            this.txtPvPuConTax.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvPuConTax.SelectedText = "";
+            this.txtPvPuConTax.SelectionLength = 0;
+            this.txtPvPuConTax.SelectionStart = 0;
+            this.txtPvPuConTax.ShortcutsEnabled = true;
+            this.txtPvPuConTax.Size = new System.Drawing.Size(126, 23);
+            this.txtPvPuConTax.TabIndex = 0;
+            this.txtPvPuConTax.UseCustomBackColor = true;
+            this.txtPvPuConTax.UseSelectable = true;
+            this.txtPvPuConTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvPuConTax.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvPuConTax.TextChanged += new System.EventHandler(this.txtPvPuConTax_TextChanged);
+            // 
+            // lblPvPuConTax
+            // 
+            this.lblPvPuConTax.AutoSize = true;
+            this.lblPvPuConTax.BackColor = System.Drawing.Color.Transparent;
+            this.lblPvPuConTax.ForeColor = System.Drawing.Color.Navy;
+            this.lblPvPuConTax.Location = new System.Drawing.Point(24, 34);
+            this.lblPvPuConTax.Name = "lblPvPuConTax";
+            this.lblPvPuConTax.Size = new System.Drawing.Size(70, 19);
+            this.lblPvPuConTax.TabIndex = 0;
+            this.lblPvPuConTax.Text = "P. Unitario:";
+            this.lblPvPuConTax.UseCustomForeColor = true;
             // 
             // grbSinImpto
             // 
             this.grbSinImpto.BackColor = System.Drawing.Color.Transparent;
-            this.grbSinImpto.Controls.Add(this.txtPvMiSinImpto);
-            this.grbSinImpto.Controls.Add(this.lblPvMiSinIGV);
-            this.grbSinImpto.Controls.Add(this.txtPvMaSinImpto);
-            this.grbSinImpto.Controls.Add(this.lblPvMaSinIGV);
-            this.grbSinImpto.Controls.Add(this.txtPvPuSinImpto);
-            this.grbSinImpto.Controls.Add(this.lblPvPuSinIGV);
+            this.grbSinImpto.Controls.Add(this.txtPvMiSinTax);
+            this.grbSinImpto.Controls.Add(this.lblPvMiSinTax);
+            this.grbSinImpto.Controls.Add(this.txtPvMaSinTax);
+            this.grbSinImpto.Controls.Add(this.lblPvMaSinTax);
+            this.grbSinImpto.Controls.Add(this.txtPvPuSinTax);
+            this.grbSinImpto.Controls.Add(this.lblPvPuSinTax);
             this.grbSinImpto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbSinImpto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbSinImpto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -1360,140 +1243,140 @@ namespace ConfiguradorUI.Producto
             this.grbSinImpto.TabStop = false;
             this.grbSinImpto.Text = "Precio sin impuesto";
             // 
-            // txtPvMiSinImpto
+            // txtPvMiSinTax
             // 
-            this.txtPvMiSinImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.txtPvMiSinImpto.CustomButton.Image = null;
-            this.txtPvMiSinImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvMiSinImpto.CustomButton.Name = "";
-            this.txtPvMiSinImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvMiSinImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvMiSinImpto.CustomButton.TabIndex = 1;
-            this.txtPvMiSinImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvMiSinImpto.CustomButton.UseSelectable = true;
-            this.txtPvMiSinImpto.CustomButton.Visible = false;
-            this.txtPvMiSinImpto.Lines = new string[0];
-            this.txtPvMiSinImpto.Location = new System.Drawing.Point(98, 68);
-            this.txtPvMiSinImpto.MaxLength = 32767;
-            this.txtPvMiSinImpto.Name = "txtPvMiSinImpto";
-            this.txtPvMiSinImpto.PasswordChar = '\0';
-            this.txtPvMiSinImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvMiSinImpto.SelectedText = "";
-            this.txtPvMiSinImpto.SelectionLength = 0;
-            this.txtPvMiSinImpto.SelectionStart = 0;
-            this.txtPvMiSinImpto.ShortcutsEnabled = true;
-            this.txtPvMiSinImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMiSinImpto.TabIndex = 1;
-            this.txtPvMiSinImpto.UseCustomBackColor = true;
-            this.txtPvMiSinImpto.UseSelectable = true;
-            this.txtPvMiSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvMiSinImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMiSinImpto.TextChanged += new System.EventHandler(this.txtPvMiSinImpto_TextChanged);
-            // 
-            // lblPvMiSinIGV
-            // 
-            this.lblPvMiSinIGV.AutoSize = true;
-            this.lblPvMiSinIGV.BackColor = System.Drawing.Color.Transparent;
-            this.lblPvMiSinIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMiSinIGV.Location = new System.Drawing.Point(22, 69);
-            this.lblPvMiSinIGV.Name = "lblPvMiSinIGV";
-            this.lblPvMiSinIGV.Size = new System.Drawing.Size(69, 19);
-            this.lblPvMiSinIGV.TabIndex = 2;
-            this.lblPvMiSinIGV.Text = "P. Mínimo:";
-            this.lblPvMiSinIGV.UseCustomForeColor = true;
-            // 
-            // txtPvMaSinImpto
-            // 
-            this.txtPvMaSinImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvMiSinTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvMaSinImpto.CustomButton.Image = null;
-            this.txtPvMaSinImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvMaSinImpto.CustomButton.Name = "";
-            this.txtPvMaSinImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvMaSinImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvMaSinImpto.CustomButton.TabIndex = 1;
-            this.txtPvMaSinImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvMaSinImpto.CustomButton.UseSelectable = true;
-            this.txtPvMaSinImpto.CustomButton.Visible = false;
-            this.txtPvMaSinImpto.Lines = new string[0];
-            this.txtPvMaSinImpto.Location = new System.Drawing.Point(98, 104);
-            this.txtPvMaSinImpto.MaxLength = 32767;
-            this.txtPvMaSinImpto.Name = "txtPvMaSinImpto";
-            this.txtPvMaSinImpto.PasswordChar = '\0';
-            this.txtPvMaSinImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvMaSinImpto.SelectedText = "";
-            this.txtPvMaSinImpto.SelectionLength = 0;
-            this.txtPvMaSinImpto.SelectionStart = 0;
-            this.txtPvMaSinImpto.ShortcutsEnabled = true;
-            this.txtPvMaSinImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvMaSinImpto.TabIndex = 2;
-            this.txtPvMaSinImpto.UseCustomBackColor = true;
-            this.txtPvMaSinImpto.UseSelectable = true;
-            this.txtPvMaSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvMaSinImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvMaSinImpto.TextChanged += new System.EventHandler(this.txtPvMaSinImpto_TextChanged);
+            this.txtPvMiSinTax.CustomButton.Image = null;
+            this.txtPvMiSinTax.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvMiSinTax.CustomButton.Name = "";
+            this.txtPvMiSinTax.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvMiSinTax.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvMiSinTax.CustomButton.TabIndex = 1;
+            this.txtPvMiSinTax.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvMiSinTax.CustomButton.UseSelectable = true;
+            this.txtPvMiSinTax.CustomButton.Visible = false;
+            this.txtPvMiSinTax.Lines = new string[0];
+            this.txtPvMiSinTax.Location = new System.Drawing.Point(98, 68);
+            this.txtPvMiSinTax.MaxLength = 32767;
+            this.txtPvMiSinTax.Name = "txtPvMiSinTax";
+            this.txtPvMiSinTax.PasswordChar = '\0';
+            this.txtPvMiSinTax.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvMiSinTax.SelectedText = "";
+            this.txtPvMiSinTax.SelectionLength = 0;
+            this.txtPvMiSinTax.SelectionStart = 0;
+            this.txtPvMiSinTax.ShortcutsEnabled = true;
+            this.txtPvMiSinTax.Size = new System.Drawing.Size(126, 23);
+            this.txtPvMiSinTax.TabIndex = 1;
+            this.txtPvMiSinTax.UseCustomBackColor = true;
+            this.txtPvMiSinTax.UseSelectable = true;
+            this.txtPvMiSinTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvMiSinTax.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvMiSinTax.TextChanged += new System.EventHandler(this.txtPvMiSinTax_TextChanged);
             // 
-            // lblPvMaSinIGV
+            // lblPvMiSinTax
             // 
-            this.lblPvMaSinIGV.AutoSize = true;
-            this.lblPvMaSinIGV.BackColor = System.Drawing.Color.Transparent;
-            this.lblPvMaSinIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMaSinIGV.Location = new System.Drawing.Point(22, 106);
-            this.lblPvMaSinIGV.Name = "lblPvMaSinIGV";
-            this.lblPvMaSinIGV.Size = new System.Drawing.Size(72, 19);
-            this.lblPvMaSinIGV.TabIndex = 4;
-            this.lblPvMaSinIGV.Text = "P. Máximo:";
-            this.lblPvMaSinIGV.UseCustomForeColor = true;
+            this.lblPvMiSinTax.AutoSize = true;
+            this.lblPvMiSinTax.BackColor = System.Drawing.Color.Transparent;
+            this.lblPvMiSinTax.ForeColor = System.Drawing.Color.Navy;
+            this.lblPvMiSinTax.Location = new System.Drawing.Point(22, 69);
+            this.lblPvMiSinTax.Name = "lblPvMiSinTax";
+            this.lblPvMiSinTax.Size = new System.Drawing.Size(69, 19);
+            this.lblPvMiSinTax.TabIndex = 2;
+            this.lblPvMiSinTax.Text = "P. Mínimo:";
+            this.lblPvMiSinTax.UseCustomForeColor = true;
             // 
-            // txtPvPuSinImpto
+            // txtPvMaSinTax
             // 
-            this.txtPvPuSinImpto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.txtPvMaSinTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
-            this.txtPvPuSinImpto.CustomButton.Image = null;
-            this.txtPvPuSinImpto.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtPvPuSinImpto.CustomButton.Name = "";
-            this.txtPvPuSinImpto.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPvPuSinImpto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPvPuSinImpto.CustomButton.TabIndex = 1;
-            this.txtPvPuSinImpto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPvPuSinImpto.CustomButton.UseSelectable = true;
-            this.txtPvPuSinImpto.CustomButton.Visible = false;
-            this.txtPvPuSinImpto.Lines = new string[0];
-            this.txtPvPuSinImpto.Location = new System.Drawing.Point(98, 32);
-            this.txtPvPuSinImpto.MaxLength = 32767;
-            this.txtPvPuSinImpto.Name = "txtPvPuSinImpto";
-            this.txtPvPuSinImpto.PasswordChar = '\0';
-            this.txtPvPuSinImpto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPvPuSinImpto.SelectedText = "";
-            this.txtPvPuSinImpto.SelectionLength = 0;
-            this.txtPvPuSinImpto.SelectionStart = 0;
-            this.txtPvPuSinImpto.ShortcutsEnabled = true;
-            this.txtPvPuSinImpto.Size = new System.Drawing.Size(126, 23);
-            this.txtPvPuSinImpto.TabIndex = 0;
-            this.txtPvPuSinImpto.UseCustomBackColor = true;
-            this.txtPvPuSinImpto.UseSelectable = true;
-            this.txtPvPuSinImpto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPvPuSinImpto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPvPuSinImpto.TextChanged += new System.EventHandler(this.txtPvPuSinImpto_TextChanged);
+            this.txtPvMaSinTax.CustomButton.Image = null;
+            this.txtPvMaSinTax.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvMaSinTax.CustomButton.Name = "";
+            this.txtPvMaSinTax.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvMaSinTax.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvMaSinTax.CustomButton.TabIndex = 1;
+            this.txtPvMaSinTax.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvMaSinTax.CustomButton.UseSelectable = true;
+            this.txtPvMaSinTax.CustomButton.Visible = false;
+            this.txtPvMaSinTax.Lines = new string[0];
+            this.txtPvMaSinTax.Location = new System.Drawing.Point(98, 104);
+            this.txtPvMaSinTax.MaxLength = 32767;
+            this.txtPvMaSinTax.Name = "txtPvMaSinTax";
+            this.txtPvMaSinTax.PasswordChar = '\0';
+            this.txtPvMaSinTax.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvMaSinTax.SelectedText = "";
+            this.txtPvMaSinTax.SelectionLength = 0;
+            this.txtPvMaSinTax.SelectionStart = 0;
+            this.txtPvMaSinTax.ShortcutsEnabled = true;
+            this.txtPvMaSinTax.Size = new System.Drawing.Size(126, 23);
+            this.txtPvMaSinTax.TabIndex = 2;
+            this.txtPvMaSinTax.UseCustomBackColor = true;
+            this.txtPvMaSinTax.UseSelectable = true;
+            this.txtPvMaSinTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvMaSinTax.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvMaSinTax.TextChanged += new System.EventHandler(this.txtPvMaSinTax_TextChanged);
             // 
-            // lblPvPuSinIGV
+            // lblPvMaSinTax
             // 
-            this.lblPvPuSinIGV.AutoSize = true;
-            this.lblPvPuSinIGV.BackColor = System.Drawing.Color.Transparent;
-            this.lblPvPuSinIGV.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvPuSinIGV.Location = new System.Drawing.Point(22, 34);
-            this.lblPvPuSinIGV.Name = "lblPvPuSinIGV";
-            this.lblPvPuSinIGV.Size = new System.Drawing.Size(70, 19);
-            this.lblPvPuSinIGV.TabIndex = 0;
-            this.lblPvPuSinIGV.Text = "P. Unitario:";
-            this.lblPvPuSinIGV.UseCustomForeColor = true;
+            this.lblPvMaSinTax.AutoSize = true;
+            this.lblPvMaSinTax.BackColor = System.Drawing.Color.Transparent;
+            this.lblPvMaSinTax.ForeColor = System.Drawing.Color.Navy;
+            this.lblPvMaSinTax.Location = new System.Drawing.Point(22, 106);
+            this.lblPvMaSinTax.Name = "lblPvMaSinTax";
+            this.lblPvMaSinTax.Size = new System.Drawing.Size(72, 19);
+            this.lblPvMaSinTax.TabIndex = 4;
+            this.lblPvMaSinTax.Text = "P. Máximo:";
+            this.lblPvMaSinTax.UseCustomForeColor = true;
+            // 
+            // txtPvPuSinTax
+            // 
+            this.txtPvPuSinTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.txtPvPuSinTax.CustomButton.Image = null;
+            this.txtPvPuSinTax.CustomButton.Location = new System.Drawing.Point(104, 1);
+            this.txtPvPuSinTax.CustomButton.Name = "";
+            this.txtPvPuSinTax.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPvPuSinTax.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPvPuSinTax.CustomButton.TabIndex = 1;
+            this.txtPvPuSinTax.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPvPuSinTax.CustomButton.UseSelectable = true;
+            this.txtPvPuSinTax.CustomButton.Visible = false;
+            this.txtPvPuSinTax.Lines = new string[0];
+            this.txtPvPuSinTax.Location = new System.Drawing.Point(98, 32);
+            this.txtPvPuSinTax.MaxLength = 32767;
+            this.txtPvPuSinTax.Name = "txtPvPuSinTax";
+            this.txtPvPuSinTax.PasswordChar = '\0';
+            this.txtPvPuSinTax.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPvPuSinTax.SelectedText = "";
+            this.txtPvPuSinTax.SelectionLength = 0;
+            this.txtPvPuSinTax.SelectionStart = 0;
+            this.txtPvPuSinTax.ShortcutsEnabled = true;
+            this.txtPvPuSinTax.Size = new System.Drawing.Size(126, 23);
+            this.txtPvPuSinTax.TabIndex = 0;
+            this.txtPvPuSinTax.UseCustomBackColor = true;
+            this.txtPvPuSinTax.UseSelectable = true;
+            this.txtPvPuSinTax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPvPuSinTax.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPvPuSinTax.TextChanged += new System.EventHandler(this.txtPvPuSinTax_TextChanged);
+            // 
+            // lblPvPuSinTax
+            // 
+            this.lblPvPuSinTax.AutoSize = true;
+            this.lblPvPuSinTax.BackColor = System.Drawing.Color.Transparent;
+            this.lblPvPuSinTax.ForeColor = System.Drawing.Color.Navy;
+            this.lblPvPuSinTax.Location = new System.Drawing.Point(22, 34);
+            this.lblPvPuSinTax.Name = "lblPvPuSinTax";
+            this.lblPvPuSinTax.Size = new System.Drawing.Size(70, 19);
+            this.lblPvPuSinTax.TabIndex = 0;
+            this.lblPvPuSinTax.Text = "P. Unitario:";
+            this.lblPvPuSinTax.UseCustomForeColor = true;
             // 
             // chkInafecto
             // 
@@ -1543,32 +1426,6 @@ namespace ConfiguradorUI.Producto
             this.chkImpto.UseSelectable = true;
             this.chkImpto.CheckedChanged += new System.EventHandler(this.chkImpto_CheckedChanged);
             // 
-            // cboImpuesto
-            // 
-            this.cboImpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboImpuesto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboImpuesto.FormattingEnabled = true;
-            this.cboImpuesto.Location = new System.Drawing.Point(348, 12);
-            this.cboImpuesto.Name = "cboImpuesto";
-            this.cboImpuesto.Size = new System.Drawing.Size(163, 23);
-            this.cboImpuesto.TabIndex = 1;
-            this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
-            // 
-            // cboTipoMoneda
-            // 
-            this.cboTipoMoneda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoMoneda.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoMoneda.FormattingEnabled = true;
-            this.cboTipoMoneda.Location = new System.Drawing.Point(78, 12);
-            this.cboTipoMoneda.Name = "cboTipoMoneda";
-            this.cboTipoMoneda.Size = new System.Drawing.Size(182, 23);
-            this.cboTipoMoneda.TabIndex = 0;
-            this.cboTipoMoneda.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
             // lblImpuesto
             // 
             this.lblImpuesto.AutoSize = true;
@@ -1603,18 +1460,6 @@ namespace ConfiguradorUI.Producto
             this.btnImpuesto.TabIndex = 8;
             this.btnImpuesto.UseSelectable = true;
             this.btnImpuesto.Click += new System.EventHandler(this.btnImpuesto_Click);
-            // 
-            // cboFiltro
-            // 
-            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(91, 11);
-            this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(176, 23);
-            this.cboFiltro.TabIndex = 2;
-            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // txtFiltro
             // 
@@ -1911,6 +1756,161 @@ namespace ConfiguradorUI.Producto
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
             // 
+            // cboFiltro
+            // 
+            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Location = new System.Drawing.Point(91, 11);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(176, 23);
+            this.cboFiltro.TabIndex = 2;
+            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
+            // 
+            // cboUnidadMedida
+            // 
+            this.cboUnidadMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUnidadMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboUnidadMedida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboUnidadMedida.FormattingEnabled = true;
+            this.cboUnidadMedida.Location = new System.Drawing.Point(354, 83);
+            this.cboUnidadMedida.Name = "cboUnidadMedida";
+            this.cboUnidadMedida.Size = new System.Drawing.Size(183, 23);
+            this.cboUnidadMedida.TabIndex = 4;
+            this.cboUnidadMedida.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboClaseProd
+            // 
+            this.cboClaseProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboClaseProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboClaseProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboClaseProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboClaseProd.FormattingEnabled = true;
+            this.cboClaseProd.Location = new System.Drawing.Point(353, 277);
+            this.cboClaseProd.Name = "cboClaseProd";
+            this.cboClaseProd.Size = new System.Drawing.Size(152, 23);
+            this.cboClaseProd.TabIndex = 12;
+            this.cboClaseProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboGrupoProd
+            // 
+            this.cboGrupoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboGrupoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGrupoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboGrupoProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGrupoProd.FormattingEnabled = true;
+            this.cboGrupoProd.Location = new System.Drawing.Point(353, 241);
+            this.cboGrupoProd.Name = "cboGrupoProd";
+            this.cboGrupoProd.Size = new System.Drawing.Size(152, 23);
+            this.cboGrupoProd.TabIndex = 10;
+            this.cboGrupoProd.SelectedIndexChanged += new System.EventHandler(this.cboGrupoProd_SelectedIndexChanged);
+            // 
+            // cboTipoExistencia
+            // 
+            this.cboTipoExistencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTipoExistencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoExistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoExistencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoExistencia.FormattingEnabled = true;
+            this.cboTipoExistencia.Location = new System.Drawing.Point(75, 277);
+            this.cboTipoExistencia.Name = "cboTipoExistencia";
+            this.cboTipoExistencia.Size = new System.Drawing.Size(184, 23);
+            this.cboTipoExistencia.TabIndex = 11;
+            this.cboTipoExistencia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboTipoProd
+            // 
+            this.cboTipoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTipoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoProd.FormattingEnabled = true;
+            this.cboTipoProd.Location = new System.Drawing.Point(76, 241);
+            this.cboTipoProd.Name = "cboTipoProd";
+            this.cboTipoProd.Size = new System.Drawing.Size(152, 23);
+            this.cboTipoProd.TabIndex = 9;
+            this.cboTipoProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboModelo
+            // 
+            this.cboModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboModelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboModelo.FormattingEnabled = true;
+            this.cboModelo.Location = new System.Drawing.Point(353, 178);
+            this.cboModelo.Name = "cboModelo";
+            this.cboModelo.Size = new System.Drawing.Size(152, 23);
+            this.cboModelo.TabIndex = 8;
+            this.cboModelo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(353, 142);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(152, 23);
+            this.cboMarca.TabIndex = 6;
+            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
+            // 
+            // cboSubFamilia
+            // 
+            this.cboSubFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboSubFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSubFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboSubFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSubFamilia.FormattingEnabled = true;
+            this.cboSubFamilia.Location = new System.Drawing.Point(75, 178);
+            this.cboSubFamilia.Name = "cboSubFamilia";
+            this.cboSubFamilia.Size = new System.Drawing.Size(152, 23);
+            this.cboSubFamilia.TabIndex = 7;
+            this.cboSubFamilia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboFamilia
+            // 
+            this.cboFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFamilia.FormattingEnabled = true;
+            this.cboFamilia.Location = new System.Drawing.Point(75, 142);
+            this.cboFamilia.Name = "cboFamilia";
+            this.cboFamilia.Size = new System.Drawing.Size(152, 23);
+            this.cboFamilia.TabIndex = 5;
+            this.cboFamilia.SelectedIndexChanged += new System.EventHandler(this.cboFamilia_SelectedIndexChanged);
+            // 
+            // cboImpuesto
+            // 
+            this.cboImpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboImpuesto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboImpuesto.FormattingEnabled = true;
+            this.cboImpuesto.Location = new System.Drawing.Point(348, 12);
+            this.cboImpuesto.Name = "cboImpuesto";
+            this.cboImpuesto.Size = new System.Drawing.Size(163, 23);
+            this.cboImpuesto.TabIndex = 1;
+            this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
+            // 
+            // cboTipoMoneda
+            // 
+            this.cboTipoMoneda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTipoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoMoneda.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoMoneda.FormattingEnabled = true;
+            this.cboTipoMoneda.Location = new System.Drawing.Point(78, 12);
+            this.cboTipoMoneda.Name = "cboTipoMoneda";
+            this.cboTipoMoneda.Size = new System.Drawing.Size(182, 23);
+            this.cboTipoMoneda.TabIndex = 0;
+            this.cboTipoMoneda.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2026,18 +2026,18 @@ namespace ConfiguradorUI.Producto
         private MetroFramework.Controls.MetroCheckBox chkInafecto;
         private MetroFramework.Controls.MetroCheckBox chkExento;
         private MetroFramework.Controls.MetroCheckBox chkImpto;
-        private MetroFramework.Controls.MetroTextBox txtPvMiConImpto;
-        private MetroFramework.Controls.MetroLabel lblPvMiConIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvMaConImpto;
-        private MetroFramework.Controls.MetroLabel lblPvMaConIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvPuConImpto;
-        private MetroFramework.Controls.MetroLabel lblPvPuConIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvMiSinImpto;
-        private MetroFramework.Controls.MetroLabel lblPvMiSinIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvMaSinImpto;
-        private MetroFramework.Controls.MetroLabel lblPvMaSinIGV;
-        private MetroFramework.Controls.MetroTextBox txtPvPuSinImpto;
-        private MetroFramework.Controls.MetroLabel lblPvPuSinIGV;
+        private MetroFramework.Controls.MetroTextBox txtPvMiConTax;
+        private MetroFramework.Controls.MetroLabel lblPvMiConTax;
+        private MetroFramework.Controls.MetroTextBox txtPvMaConTax;
+        private MetroFramework.Controls.MetroLabel lblPvMaConTax;
+        private MetroFramework.Controls.MetroTextBox txtPvPuConTax;
+        private MetroFramework.Controls.MetroLabel lblPvPuConTax;
+        private MetroFramework.Controls.MetroTextBox txtPvMiSinTax;
+        private MetroFramework.Controls.MetroLabel lblPvMiSinTax;
+        private MetroFramework.Controls.MetroTextBox txtPvMaSinTax;
+        private MetroFramework.Controls.MetroLabel lblPvMaSinTax;
+        private MetroFramework.Controls.MetroTextBox txtPvPuSinTax;
+        private MetroFramework.Controls.MetroLabel lblPvPuSinTax;
         private BorderedCombo cboUnidadMedida;
         private MetroFramework.Controls.MetroLabel lblUnidadMedida;
         private System.Windows.Forms.ErrorProvider errorProv;

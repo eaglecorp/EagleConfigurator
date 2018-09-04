@@ -117,7 +117,7 @@ namespace ConfigDataAccess
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("USP_PROD_UPD_CASCADE_PRICE_PROD", conexion))
+                    using (var cmd = new SqlCommand("USP_PROD_ACT_PRECIO_PROD_CASCADA", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -139,7 +139,7 @@ namespace ConfigDataAccess
                         else
                         {
                             var log = new Log();
-                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "USP_PROD_UPD_CASCADE_PRICE_PROD");
+                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "USP_PROD_ACT_PRECIO_PROD_CASCADA");
                         }
                         #endregion
                     }
@@ -158,12 +158,12 @@ namespace ConfigDataAccess
         {
             var lista = new List<PROt09_producto>();
             string sentencia = @"SELECT [id_producto]
-                                      ,[mto_pvpu_con_igv]
-                                      ,[mto_pvmi_con_igv]
-                                      ,[mto_pvma_con_igv]
-                                      ,[mto_pvpu_sin_igv]
-                                      ,[mto_pvmi_sin_igv]
-                                      ,[mto_pvma_sin_igv]     
+                                      ,[mto_pvpu_con_tax]
+                                      ,[mto_pvmi_con_tax]
+                                      ,[mto_pvma_con_tax]
+                                      ,[mto_pvpu_sin_tax]
+                                      ,[mto_pvmi_sin_tax]
+                                      ,[mto_pvma_sin_tax]     
                                       FROM [PROt09_producto] prod
                                       WHERE prod.id_impuesto = @id_impuesto  
                                       AND prod.sn_incluye_impto = @sn_incluye_impto";
@@ -199,10 +199,10 @@ namespace ConfigDataAccess
                     {
                         bool actualizarPrecioCascada = true;
 
-                        if (prodActualizado.mto_pvpu_con_igv != original.mto_pvpu_con_igv ||
-                            prodActualizado.mto_pvpu_sin_igv != original.mto_pvpu_sin_igv)
+                        if (prodActualizado.mto_pvpu_con_tax != original.mto_pvpu_con_tax ||
+                            prodActualizado.mto_pvpu_sin_tax != original.mto_pvpu_sin_tax)
                         {
-                            actualizarPrecioCascada = ActualizarEnCascadaPrecioProducto(prodActualizado.id_producto, prodActualizado.mto_pvpu_con_igv, prodActualizado.mto_pvpu_sin_igv);
+                            actualizarPrecioCascada = ActualizarEnCascadaPrecioProducto(prodActualizado.id_producto, prodActualizado.mto_pvpu_con_tax, prodActualizado.mto_pvpu_sin_tax);
                         }
                         if (actualizarPrecioCascada)
                         {
@@ -466,10 +466,10 @@ namespace ConfigDataAccess
             }
         }
 
-        public decimal GetPvPuConIgvProductoXId(long id)
+        public decimal GetPvPuConTaxProductoXId(long id)
         {
-            decimal pvpuconigv = 0;
-            var queryString = @"SELECT mto_pvpu_con_igv from PROt09_producto WHERE id_producto = @id_producto";
+            decimal pvpucontax = 0;
+            var queryString = @"SELECT mto_pvpu_con_tax from PROt09_producto WHERE id_producto = @id_producto";
             using (var connection =
                 new SqlConnection(ConnectionManager.GetConnectionString()))
             {
@@ -483,18 +483,18 @@ namespace ConfigDataAccess
                     {
                         while (reader.Read())
                         {
-                            string column = reader["mto_pvpu_con_igv"].ToString();
-                            decimal.TryParse(column, out pvpuconigv);
+                            string column = reader["mto_pvpu_con_tax"].ToString();
+                            decimal.TryParse(column, out pvpucontax);
                         }
                     }
                 }
                 catch (Exception e)
                 {
                     var log = new Log();
-                    log.ArchiveLog("Get Precio de venta por unidad con IGV por ID: ", e.Message);
+                    log.ArchiveLog("Get Precio de venta por unidad con TAX por ID: ", e.Message);
                 }
             }
-            return pvpuconigv;
+            return pvpucontax;
         }
     }
 }

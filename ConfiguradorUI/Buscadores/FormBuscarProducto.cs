@@ -53,8 +53,8 @@ namespace ConfiguradorUI.Buscadores
                     CODIGO = x.cod_producto,
                     CODIGO02 = x.cod_producto2,
                     DESCRIPCION = x.txt_desc?.ToUpper(),
-                    PVPU_CON_IGV = x.mto_pvpu_con_igv.RemoveTrailingZeros(),
-                    PVPU_SIN_IGV = x.mto_pvpu_sin_igv,
+                    PVPU_CON_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
+                    PVPU_SIN_TAX = x.mto_pvpu_sin_tax,
                     ESTADO = x.txt_estado?.ToUpper(),
                     POR_IMPTO = x.por_impto,
                     PESO = x.peso_prod,
@@ -71,8 +71,8 @@ namespace ConfiguradorUI.Buscadores
                     CODIGO = "",
                     CODIGO02 = "",
                     DESCRIPCION = "",
-                    PVPU_CON_IGV = "",
-                    PVPU_SIN_IGV = "",
+                    PVPU_CON_TAX = "",
+                    PVPU_SIN_TAX = "",
                     ESTADO = "",
                     POR_IMPTO = "",
                     PESO = "",
@@ -113,8 +113,8 @@ namespace ConfiguradorUI.Buscadores
             try
             {
                 dgvProd.Columns["ID"].Visible = false;
-                //dgvProd.Columns["PVPU_CON_IGV"].Visible = false;
-                dgvProd.Columns["PVPU_SIN_IGV"].Visible = false;
+                //dgvProd.Columns["PVPU_CON_TAX"].Visible = false;
+                dgvProd.Columns["PVPU_SIN_TAX"].Visible = false;
                 dgvProd.Columns["POR_IMPTO"].Visible = false;
                 dgvProd.Columns["PESO"].Visible = false;
                 dgvProd.Columns["UM"].Visible = false;
@@ -129,9 +129,9 @@ namespace ConfiguradorUI.Buscadores
 
                 dgvProd.Columns["DESCRIPCION"].HeaderText = "DESCRIPCIÓN";
 
-                dgvProd.Columns["PVPU_CON_IGV"].HeaderText = "PREC. UNIT";
-                dgvProd.Columns["PVPU_CON_IGV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvProd.Columns["PVPU_CON_IGV"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvProd.Columns["PVPU_CON_TAX"].HeaderText = "PREC. UNIT";
+                dgvProd.Columns["PVPU_CON_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvProd.Columns["PVPU_CON_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvProd.Columns["ESTADO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvProd.Columns["ESTADO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -139,7 +139,7 @@ namespace ConfiguradorUI.Buscadores
                 dgvProd.Columns["DESCRIPCION"].Width = 435;
                 dgvProd.Columns["CODIGO"].Width = 100;
                 dgvProd.Columns["CODIGO02"].Width = 100;
-                dgvProd.Columns["PVPU_CON_IGV"].Width = 100;
+                dgvProd.Columns["PVPU_CON_TAX"].Width = 100;
                 dgvProd.Columns["ESTADO"].Width = 90;
             }
             catch (Exception e)
@@ -177,8 +177,8 @@ namespace ConfiguradorUI.Buscadores
                 CODIGO = "",
                 CODIGO02 = "",
                 DESCRIPCION = "",
-                PVPU_CON_IGV = "",
-                PVPU_SIN_IGV = "",
+                PVPU_CON_TAX = "",
+                PVPU_SIN_TAX = "",
                 ESTADO = "",
                 POR_IMPTO = "",
                 PESO = "",
@@ -206,14 +206,14 @@ namespace ConfiguradorUI.Buscadores
                     peso_prod = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PESO"].Value.ToString()
                 };
 
-                var pvpu_con_igv = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PVPU_CON_IGV"].Value;
-                var pvpu_sin_igv = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PVPU_SIN_IGV"].Value;
+                var pvpu_con_tax = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PVPU_CON_TAX"].Value;
+                var pvpu_sin_tax = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["PVPU_SIN_TAX"].Value;
                 var por_impto = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["POR_IMPTO"].Value;
                 var id_um = dgvProd.Rows[dgvProd.CurrentRow.Index].Cells["UM"].Value;
 
-                if (pvpu_con_igv == null) prod.mto_pvpu_con_igv = null; else prod.mto_pvpu_con_igv = decimal.Parse(pvpu_con_igv.ToString());
-                if (pvpu_sin_igv == null) prod.mto_pvpu_sin_igv = null; else prod.mto_pvpu_sin_igv = decimal.Parse(pvpu_sin_igv.ToString());
-                if (por_impto == null) prod.por_impto = null; else prod.por_impto = decimal.Parse(por_impto.ToString());
+                if (pvpu_con_tax == null) prod.mto_pvpu_con_tax = null; else prod.mto_pvpu_con_tax = decimal.Parse(pvpu_con_tax.ToString());
+                if (pvpu_sin_tax == null) prod.mto_pvpu_sin_tax = null; else prod.mto_pvpu_sin_tax = decimal.Parse(pvpu_sin_tax.ToString());
+                if (por_impto == null) prod.por_impto = 0; else prod.por_impto = decimal.Parse(por_impto.ToString());
                 if (id_um == null) prod.id_um = null; else prod.id_um = int.Parse(id_um.ToString());
 
                 return prod;

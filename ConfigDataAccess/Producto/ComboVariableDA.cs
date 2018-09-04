@@ -338,7 +338,7 @@ namespace ConfigDataAccess.Producto
             {
                 try
                 {
-                    using (var cmd = new SqlCommand("USP_PROD_UPD_CASCADE_PRICE_CBO_VAR", conexion))
+                    using (var cmd = new SqlCommand("USP_PROD_ACT_PRECIO_CBO_VAR_CASCADA", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -360,7 +360,7 @@ namespace ConfigDataAccess.Producto
                         else
                         {
                             var log = new Log();
-                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "USP_PROD_UPD_CASCADE_PRICE_CBO_VAR");
+                            log.ArchiveLog("Ocurrió un error en la actualización en cascada de precios.", "USP_PROD_ACT_PRECIO_CBO_VAR_CASCADA");
                         }
                         #endregion
                     }

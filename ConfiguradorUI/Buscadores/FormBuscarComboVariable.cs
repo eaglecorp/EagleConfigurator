@@ -143,8 +143,8 @@ namespace ConfiguradorUI.Buscadores
                     ID = x.id_combo_variable,
                     CODIGO = x.cod_combo_variable,
                     DESCRIPCION = x.txt_desc?.ToUpper(),
-                    PVPU_CON_IGV = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
-                    PVPU_SIN_IGV = x.mto_pvpu_sin_tax,
+                    PVPU_CON_TAX = x.mto_pvpu_con_tax.RemoveTrailingZeros(),
+                    PVPU_SIN_TAX = x.mto_pvpu_sin_tax,
                     ESTADO = x.txt_estado?.ToUpper()
                 }).ToList();
             }
@@ -156,8 +156,8 @@ namespace ConfiguradorUI.Buscadores
                     ID = "",
                     CODIGO = "",
                     DESCRIPCION = "",
-                    PVPU_CON_IGV = "",
-                    PVPU_SIN_IGV = "",
+                    PVPU_CON_TAX = "",
+                    PVPU_SIN_TAX = "",
                     ESTADO = ""
                 }).ToList();
 
@@ -199,15 +199,15 @@ namespace ConfiguradorUI.Buscadores
             try
             {
                 dgvComboVariable.Columns["ID"].Visible = false;
-                dgvComboVariable.Columns["PVPU_SIN_IGV"].Visible = false;
+                dgvComboVariable.Columns["PVPU_SIN_TAX"].Visible = false;
 
                 dgvComboVariable.Columns["CODIGO"].HeaderText = "CÓDIGO";
                 dgvComboVariable.Columns["CODIGO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvComboVariable.Columns["CODIGO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                dgvComboVariable.Columns["PVPU_CON_IGV"].HeaderText = "PREC. UNIT";
-                dgvComboVariable.Columns["PVPU_CON_IGV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvComboVariable.Columns["PVPU_CON_IGV"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvComboVariable.Columns["PVPU_CON_TAX"].HeaderText = "PREC. UNIT";
+                dgvComboVariable.Columns["PVPU_CON_TAX"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvComboVariable.Columns["PVPU_CON_TAX"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 dgvComboVariable.Columns["DESCRIPCION"].HeaderText = "COMBO ELECTIVO";
 
@@ -216,7 +216,7 @@ namespace ConfiguradorUI.Buscadores
 
                 dgvComboVariable.Columns["CODIGO"].Width = 100;
                 dgvComboVariable.Columns["DESCRIPCION"].Width = 260;
-                dgvComboVariable.Columns["PVPU_CON_IGV"].Width = 100;
+                dgvComboVariable.Columns["PVPU_CON_TAX"].Width = 100;
                 dgvComboVariable.Columns["ESTADO"].Width = 90;
             }
             catch (Exception e)
@@ -258,8 +258,8 @@ namespace ConfiguradorUI.Buscadores
                 ID = "",
                 CODIGO = "",
                 DESCRIPCION = "",
-                PVPU_CON_IGV = "",
-                PVPU_SIN_IGV = "",
+                PVPU_CON_TAX = "",
+                PVPU_SIN_TAX = "",
                 ESTADO = ""
             }).ToList();
             DefinirCabeceraGrid();
@@ -283,10 +283,10 @@ namespace ConfiguradorUI.Buscadores
                     txt_desc = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["DESCRIPCION"].Value.ToString(),
                     txt_estado = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["ESTADO"].Value.ToString()
                 };
-                var pvpu_con_igv = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["PVPU_CON_IGV"].Value;
-                var pvpu_sin_igv = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["PVPU_SIN_IGV"].Value;
-                if (pvpu_con_igv != null) cboVar.mto_pvpu_con_tax = decimal.Parse(pvpu_con_igv.ToString());
-                if (pvpu_sin_igv != null) cboVar.mto_pvpu_sin_tax = decimal.Parse(pvpu_sin_igv.ToString());
+                var pvpu_con_tax = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["PVPU_CON_TAX"].Value;
+                var pvpu_sin_tax = dgvComboVariable.Rows[dgvComboVariable.CurrentRow.Index].Cells["PVPU_SIN_TAX"].Value;
+                if (pvpu_con_tax != null) cboVar.mto_pvpu_con_tax = decimal.Parse(pvpu_con_tax.ToString());
+                if (pvpu_sin_tax != null) cboVar.mto_pvpu_sin_tax = decimal.Parse(pvpu_sin_tax.ToString());
 
                 return cboVar;
             }

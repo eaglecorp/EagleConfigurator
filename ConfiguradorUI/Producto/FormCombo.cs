@@ -61,8 +61,8 @@ namespace ConfiguradorUI.Producto
                 product = producto;
                 txtItemCod.Text = producto.cod_producto;
                 txtItemDesc.Text = producto.txt_desc;
-                txtItemPriceConImp.Text = producto.mto_pvpu_con_igv?.RemoveTrailingZeros();
-                txtItemPriceSinImp.Text = producto.mto_pvpu_sin_igv?.RemoveTrailingZeros();
+                txtItemPriceConImp.Text = producto.mto_pvpu_con_tax?.RemoveTrailingZeros();
+                txtItemPriceSinImp.Text = producto.mto_pvpu_sin_tax?.RemoveTrailingZeros();
                 txtItemQuantity.Focus();
             }
             catch (Exception e)
