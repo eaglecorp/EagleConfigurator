@@ -88,7 +88,7 @@ namespace ConfiguradorUI.Maestro
             this.dgvMesa.RowHeadersVisible = false;
             this.dgvMesa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMesa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMesa.Size = new System.Drawing.Size(222, 210);
+            this.dgvMesa.Size = new System.Drawing.Size(222, 314);
             this.dgvMesa.TabIndex = 0;
             this.dgvMesa.SelectionChanged += new System.EventHandler(this.dgvMesa_SelectionChanged);
             this.dgvMesa.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvBordered_Paint);
@@ -103,7 +103,7 @@ namespace ConfiguradorUI.Maestro
             this.panelFiltro.HorizontalScrollbarBarColor = true;
             this.panelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.panelFiltro.HorizontalScrollbarSize = 10;
-            this.panelFiltro.Location = new System.Drawing.Point(311, 273);
+            this.panelFiltro.Location = new System.Drawing.Point(314, 377);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(544, 44);
             this.panelFiltro.TabIndex = 3;
@@ -570,7 +570,7 @@ namespace ConfiguradorUI.Maestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 344);
+            this.ClientSize = new System.Drawing.Size(900, 450);
             this.Controls.Add(this.lblIdMesa);
             this.Controls.Add(this.dgvMesa);
             this.Controls.Add(this.panelFiltro);

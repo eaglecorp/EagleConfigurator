@@ -61,7 +61,7 @@ namespace ConfigUtilitarios
                 else if (e.KeyChar == '-')
                 {
                     var selectionStart = txt.SelectionStart;
-                    e.Handled = (!txt.Text.Contains("-") && selectionStart == 0) || (txt.SelectionLength == txt.Text.Length)? false : true;
+                    e.Handled = (!txt.Text.Contains("-") && selectionStart == 0) || (txt.SelectionLength == txt.Text.Length) ? false : true;
                 }
                 else
                     e.Handled = true;
@@ -148,7 +148,10 @@ namespace ConfigUtilitarios
 
         public static void DgvSetColorBorder(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawRectangle(new Pen(ColorTranslator.FromHtml("#DCDCDC")), new Rectangle(0, 0, ((DataGridView)sender).Width - 1, ((DataGridView)sender).Height - 1));
+            if (sender == null) return;
+            var dgv = sender as DataGridView;
+            if (dgv == null) return;
+            dgv.BackgroundColor = Color.FromArgb(240, 253, 255);
         }
 
         public static void DgvStyle(DataGridView dgv, float fontSize = 9.75F, FontStyle fontStyle = FontStyle.Regular, Color? colorLetter = null)
