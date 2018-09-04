@@ -15,6 +15,7 @@ namespace ConfigBusinessEntity
             FISt01_control_numeracion = new HashSet<FISt01_control_numeracion>();
             FISt05_configuracion_fiscal_caja = new HashSet<FISt05_configuracion_fiscal_caja>();
             GRLt04_configuracion_caja = new HashSet<GRLt04_configuracion_caja>();
+            TNSt04_comp_emitido = new HashSet<TNSt04_comp_emitido>();
         }
 
         [Key]
@@ -77,5 +78,8 @@ namespace ConfigBusinessEntity
         public virtual MSTt10_impresora MSTt10_impresora4 { get; set; }
 
         public virtual MSTt10_impresora MSTt10_impresora5 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TNSt04_comp_emitido> TNSt04_comp_emitido { get; set; }
     }
 }

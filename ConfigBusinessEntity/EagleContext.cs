@@ -7,12 +7,11 @@ namespace ConfigBusinessEntity
 
     public partial class EagleContext : DbContext
     {
+
         public EagleContext(string connectionString)
-                           : base(connectionString)
+                                  : base(connectionString)
         {
         }
-
-
 
         public virtual DbSet<CLIt01_paciente> CLIt01_paciente { get; set; }
         public virtual DbSet<CLIt02_actividad> CLIt02_actividad { get; set; }
@@ -1115,6 +1114,11 @@ namespace ConfigBusinessEntity
                 .WithRequired(e => e.MSTt12_caja)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<MSTt12_caja>()
+                .HasMany(e => e.TNSt04_comp_emitido)
+                .WithRequired(e => e.MSTt12_caja)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<MSTt13_turno>()
                 .Property(e => e.cod_turno)
                 .IsUnicode(false);
@@ -2066,31 +2070,95 @@ namespace ConfigBusinessEntity
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<PROt09_producto>()
-                .Property(e => e.mto_pvpu_con_igv)
+                .Property(e => e.mto_pvpu_con_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<PROt09_producto>()
-                .Property(e => e.mto_pvmi_con_igv)
+                .Property(e => e.mto_pvmi_con_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<PROt09_producto>()
-                .Property(e => e.mto_pvma_con_igv)
+                .Property(e => e.mto_pvma_con_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<PROt09_producto>()
-                .Property(e => e.mto_pvpu_sin_igv)
+                .Property(e => e.mto_pvpu_sin_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<PROt09_producto>()
-                .Property(e => e.mto_pvmi_sin_igv)
+                .Property(e => e.mto_pvmi_sin_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<PROt09_producto>()
-                .Property(e => e.mto_pvma_sin_igv)
+                .Property(e => e.mto_pvma_sin_tax)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<PROt09_producto>()
                 .Property(e => e.costo_prod)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_por01)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_por02)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_por03)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_por04)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_por05)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_por06)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_por07)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_por08)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_mto01)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_mto02)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_mto03)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_mto04)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_mto05)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_mto06)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_mto07)
+                .HasPrecision(18, 8);
+
+            modelBuilder.Entity<PROt09_producto>()
+                .Property(e => e.tax_mto08)
                 .HasPrecision(18, 8);
 
             modelBuilder.Entity<PROt09_producto>()
@@ -2400,11 +2468,6 @@ namespace ConfigBusinessEntity
             modelBuilder.Entity<SNTt04_tipo_moneda>()
                 .Property(e => e.txt_estado)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<SNTt04_tipo_moneda>()
-                .HasMany(e => e.TNSt01_comp_recibido)
-                .WithRequired(e => e.SNTt04_tipo_moneda)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SNTt05_tipo_existencia>()
                 .Property(e => e.cod_tipo_existencia)
@@ -3352,10 +3415,6 @@ namespace ConfigBusinessEntity
 
             modelBuilder.Entity<TNSt04_comp_emitido>()
                 .Property(e => e.nro_comp_emitido)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TNSt04_comp_emitido>()
-                .Property(e => e.cod_caja)
                 .IsUnicode(false);
 
             modelBuilder.Entity<TNSt04_comp_emitido>()

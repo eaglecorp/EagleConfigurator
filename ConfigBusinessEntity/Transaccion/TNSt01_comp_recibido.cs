@@ -47,7 +47,7 @@ namespace ConfigBusinessEntity
         [Column(TypeName = "datetime2")]
         public DateTime? fec_canc { get; set; }
 
-        public int id_tipo_moneda { get; set; }
+        public int? id_tipo_moneda { get; set; }
 
         public int? id_tipo_orden { get; set; }
 

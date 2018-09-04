@@ -34,9 +34,6 @@ namespace ConfigBusinessEntity
 
         public long? id_emp_autorizador { get; set; }
 
-        [StringLength(50)]
-        public string cod_caja { get; set; }
-
         [Required]
         [StringLength(6)]
         public string txt_serie { get; set; }
@@ -116,37 +113,37 @@ namespace ConfigBusinessEntity
 
         public bool sn_chk_enviado { get; set; }
 
-        public decimal? tax_por01 { get; set; }
+        public decimal tax_por01 { get; set; }
 
-        public decimal? tax_por02 { get; set; }
+        public decimal tax_por02 { get; set; }
 
-        public decimal? tax_por03 { get; set; }
+        public decimal tax_por03 { get; set; }
 
-        public decimal? tax_por04 { get; set; }
+        public decimal tax_por04 { get; set; }
 
-        public decimal? tax_por05 { get; set; }
+        public decimal tax_por05 { get; set; }
 
-        public decimal? tax_por06 { get; set; }
+        public decimal tax_por06 { get; set; }
 
-        public decimal? tax_por07 { get; set; }
+        public decimal tax_por07 { get; set; }
 
-        public decimal? tax_por08 { get; set; }
+        public decimal tax_por08 { get; set; }
 
-        public decimal? tax_mto01 { get; set; }
+        public decimal tax_mto01 { get; set; }
 
-        public decimal? tax_mto02 { get; set; }
+        public decimal tax_mto02 { get; set; }
 
-        public decimal? tax_mto03 { get; set; }
+        public decimal tax_mto03 { get; set; }
 
-        public decimal? tax_mto04 { get; set; }
+        public decimal tax_mto04 { get; set; }
 
-        public decimal? tax_mto05 { get; set; }
+        public decimal tax_mto05 { get; set; }
 
-        public decimal? tax_mto06 { get; set; }
+        public decimal tax_mto06 { get; set; }
 
-        public decimal? tax_mto07 { get; set; }
+        public decimal tax_mto07 { get; set; }
 
-        public decimal? tax_mto08 { get; set; }
+        public decimal tax_mto08 { get; set; }
 
         [StringLength(500)]
         public string info01 { get; set; }
@@ -234,11 +231,15 @@ namespace ConfigBusinessEntity
 
         public int? id_turno { get; set; }
 
+        public int id_caja { get; set; }
+
         public virtual MSTt03_tipo_orden MSTt03_tipo_orden { get; set; }
 
         public virtual MSTt04_canal_vta MSTt04_canal_vta { get; set; }
 
         public virtual MSTt08_location MSTt08_location { get; set; }
+
+        public virtual MSTt12_caja MSTt12_caja { get; set; }
 
         public virtual MSTt13_turno MSTt13_turno { get; set; }
 

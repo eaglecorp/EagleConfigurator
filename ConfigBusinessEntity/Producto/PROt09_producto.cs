@@ -38,23 +38,55 @@ namespace ConfigBusinessEntity
 
         public int? id_modelo { get; set; }
 
-        public decimal? por_impto { get; set; }
+        public decimal por_impto { get; set; }
 
         public int? id_tipo_moneda { get; set; }
 
-        public decimal? mto_pvpu_con_igv { get; set; }
+        public decimal? mto_pvpu_con_tax { get; set; }
 
-        public decimal? mto_pvmi_con_igv { get; set; }
+        public decimal? mto_pvmi_con_tax { get; set; }
 
-        public decimal? mto_pvma_con_igv { get; set; }
+        public decimal? mto_pvma_con_tax { get; set; }
 
-        public decimal? mto_pvpu_sin_igv { get; set; }
+        public decimal? mto_pvpu_sin_tax { get; set; }
 
-        public decimal? mto_pvmi_sin_igv { get; set; }
+        public decimal? mto_pvmi_sin_tax { get; set; }
 
-        public decimal? mto_pvma_sin_igv { get; set; }
+        public decimal? mto_pvma_sin_tax { get; set; }
 
         public decimal? costo_prod { get; set; }
+
+        public decimal tax_por01 { get; set; }
+
+        public decimal tax_por02 { get; set; }
+
+        public decimal tax_por03 { get; set; }
+
+        public decimal tax_por04 { get; set; }
+
+        public decimal tax_por05 { get; set; }
+
+        public decimal tax_por06 { get; set; }
+
+        public decimal tax_por07 { get; set; }
+
+        public decimal tax_por08 { get; set; }
+
+        public decimal tax_mto01 { get; set; }
+
+        public decimal tax_mto02 { get; set; }
+
+        public decimal tax_mto03 { get; set; }
+
+        public decimal tax_mto04 { get; set; }
+
+        public decimal tax_mto05 { get; set; }
+
+        public decimal tax_mto06 { get; set; }
+
+        public decimal tax_mto07 { get; set; }
+
+        public decimal tax_mto08 { get; set; }
 
         [StringLength(10)]
         public string peso_prod { get; set; }
