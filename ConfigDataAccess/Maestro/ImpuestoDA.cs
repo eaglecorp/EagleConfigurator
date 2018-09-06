@@ -225,7 +225,7 @@ namespace ConfigDataAccess
             }
             return porcentajeAcumulado;
         }
-
+       
         public bool ActualizarEnCascadaPreciosPorImpto(int id_impto, decimal nuevoPorcImpto)
         {
             bool success = false;

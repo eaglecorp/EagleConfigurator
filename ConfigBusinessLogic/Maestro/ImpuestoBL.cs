@@ -17,6 +17,46 @@ namespace ConfigBusinessLogic
             return new ImpuestoDA().InsertarImpuesto(obj);
         }
 
+        public decimal SumarImpuestos(MSTt06_impuesto impto)
+        {
+            decimal porcImpto = 0;
+
+            if (impto.por_impto01 != null)
+            {
+                porcImpto += (decimal)impto.por_impto01;
+            }
+            if (impto.por_impto02 != null)
+            {
+                porcImpto += (decimal)impto.por_impto02;
+            }
+            if (impto.por_impto03 != null)
+            {
+                porcImpto += (decimal)impto.por_impto03;
+            }
+            if (impto.por_impto04 != null)
+            {
+                porcImpto += (decimal)impto.por_impto04;
+            }
+            if (impto.por_impto05 != null)
+            {
+                porcImpto += (decimal)impto.por_impto05;
+            }
+            if (impto.por_impto06 != null)
+            {
+                porcImpto += (decimal)impto.por_impto06;
+            }
+            if (impto.por_impto07 != null)
+            {
+                porcImpto += (decimal)impto.por_impto07;
+            }
+            if (impto.por_impto08 != null)
+            {
+                porcImpto += (decimal)impto.por_impto08;
+            }
+
+            return porcImpto;
+        }
+
         public void EliminarImpuesto(int id)
         {
             new ImpuestoDA().EliminarImpuesto(id);

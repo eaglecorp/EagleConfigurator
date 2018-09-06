@@ -81,6 +81,38 @@ namespace ConfiguradorUI.Producto
             this.lblReferencia = new MetroFramework.Controls.MetroLabel();
             this.tabPagPrecio = new MetroFramework.Controls.MetroTabPage();
             this.lblPorcentajeAcumuladoImpto = new System.Windows.Forms.Label();
+            this.grbDetalleImpuesto = new System.Windows.Forms.GroupBox();
+            this.lblMtoImpto08 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtoImpto07 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtoImpto06 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtoImpto05 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtoImpto04 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtoImpto03 = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajeImpto08 = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajeImpto07 = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajeImpto06 = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajeImpto05 = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajeImpto04 = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajeImpto03 = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajeImpto02 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloMtoImpto08 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloMtoImpto07 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloMtoImpto06 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloMtoImpto05 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloMtoImpto04 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloMtoImpto03 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloMtoImpto02 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloMtoImpto01 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloPorcentajeImpto08 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloPorcentajeImpto07 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloPorcentajeImpto06 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloPorcentajeImpto05 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloPorcentajeImpto04 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloPorcentajeImpto03 = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloPorcentajeImpto02 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtosImptos = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajesImptos = new MetroFramework.Controls.MetroLabel();
+            this.lblTituloPorcentajeImpto01 = new MetroFramework.Controls.MetroLabel();
             this.lblSimboloPorcentaje = new System.Windows.Forms.Label();
             this.grbCostoProd = new System.Windows.Forms.GroupBox();
             this.txtCostoProd = new MetroFramework.Controls.MetroTextBox();
@@ -137,9 +169,13 @@ namespace ConfiguradorUI.Producto
             this.cboFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
             this.cboImpuesto = new ConfigUtilitarios.Controls.BorderedCombo();
             this.cboTipoMoneda = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.lblPorcentajeImpto01 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtoImpto02 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtoImpto01 = new MetroFramework.Controls.MetroLabel();
             this.tabProducto.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             this.tabPagPrecio.SuspendLayout();
+            this.grbDetalleImpuesto.SuspendLayout();
             this.grbCostoProd.SuspendLayout();
             this.grbConImpto.SuspendLayout();
             this.grbSinImpto.SuspendLayout();
@@ -962,6 +998,7 @@ namespace ConfiguradorUI.Producto
             // tabPagPrecio
             // 
             this.tabPagPrecio.Controls.Add(this.lblPorcentajeAcumuladoImpto);
+            this.tabPagPrecio.Controls.Add(this.grbDetalleImpuesto);
             this.tabPagPrecio.Controls.Add(this.lblSimboloPorcentaje);
             this.tabPagPrecio.Controls.Add(this.grbCostoProd);
             this.tabPagPrecio.Controls.Add(this.grbConImpto);
@@ -994,10 +1031,429 @@ namespace ConfiguradorUI.Producto
             this.lblPorcentajeAcumuladoImpto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblPorcentajeAcumuladoImpto.Location = new System.Drawing.Point(348, 35);
             this.lblPorcentajeAcumuladoImpto.Name = "lblPorcentajeAcumuladoImpto";
-            this.lblPorcentajeAcumuladoImpto.Size = new System.Drawing.Size(147, 17);
+            this.lblPorcentajeAcumuladoImpto.Size = new System.Drawing.Size(147, 18);
             this.lblPorcentajeAcumuladoImpto.TabIndex = 56;
             this.lblPorcentajeAcumuladoImpto.Text = "0";
             this.lblPorcentajeAcumuladoImpto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // grbDetalleImpuesto
+            // 
+            this.grbDetalleImpuesto.BackColor = System.Drawing.Color.Transparent;
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtoImpto01);
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtoImpto02);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajeImpto01);
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtoImpto08);
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtoImpto07);
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtoImpto06);
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtoImpto05);
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtoImpto04);
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtoImpto03);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajeImpto08);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajeImpto07);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajeImpto06);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajeImpto05);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajeImpto04);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajeImpto03);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajeImpto02);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloMtoImpto08);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloMtoImpto07);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloMtoImpto06);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloMtoImpto05);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloMtoImpto04);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloMtoImpto03);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloMtoImpto02);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloMtoImpto01);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloPorcentajeImpto08);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloPorcentajeImpto07);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloPorcentajeImpto06);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloPorcentajeImpto05);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloPorcentajeImpto04);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloPorcentajeImpto03);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloPorcentajeImpto02);
+            this.grbDetalleImpuesto.Controls.Add(this.lblMtosImptos);
+            this.grbDetalleImpuesto.Controls.Add(this.lblPorcentajesImptos);
+            this.grbDetalleImpuesto.Controls.Add(this.lblTituloPorcentajeImpto01);
+            this.grbDetalleImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbDetalleImpuesto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDetalleImpuesto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grbDetalleImpuesto.Location = new System.Drawing.Point(8, 219);
+            this.grbDetalleImpuesto.Name = "grbDetalleImpuesto";
+            this.grbDetalleImpuesto.Size = new System.Drawing.Size(530, 203);
+            this.grbDetalleImpuesto.TabIndex = 57;
+            this.grbDetalleImpuesto.TabStop = false;
+            this.grbDetalleImpuesto.Text = "Detalles de impuestos aplicados";
+            // 
+            // lblMtoImpto08
+            // 
+            this.lblMtoImpto08.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto08.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto08.Location = new System.Drawing.Point(372, 176);
+            this.lblMtoImpto08.Name = "lblMtoImpto08";
+            this.lblMtoImpto08.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto08.TabIndex = 191;
+            this.lblMtoImpto08.Text = "0";
+            this.lblMtoImpto08.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto08.UseCustomForeColor = true;
+            // 
+            // lblMtoImpto07
+            // 
+            this.lblMtoImpto07.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto07.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto07.Location = new System.Drawing.Point(372, 157);
+            this.lblMtoImpto07.Name = "lblMtoImpto07";
+            this.lblMtoImpto07.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto07.TabIndex = 190;
+            this.lblMtoImpto07.Text = "0";
+            this.lblMtoImpto07.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto07.UseCustomForeColor = true;
+            // 
+            // lblMtoImpto06
+            // 
+            this.lblMtoImpto06.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto06.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto06.Location = new System.Drawing.Point(372, 138);
+            this.lblMtoImpto06.Name = "lblMtoImpto06";
+            this.lblMtoImpto06.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto06.TabIndex = 189;
+            this.lblMtoImpto06.Text = "0";
+            this.lblMtoImpto06.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto06.UseCustomForeColor = true;
+            // 
+            // lblMtoImpto05
+            // 
+            this.lblMtoImpto05.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto05.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto05.Location = new System.Drawing.Point(372, 119);
+            this.lblMtoImpto05.Name = "lblMtoImpto05";
+            this.lblMtoImpto05.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto05.TabIndex = 188;
+            this.lblMtoImpto05.Text = "0";
+            this.lblMtoImpto05.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto05.UseCustomForeColor = true;
+            // 
+            // lblMtoImpto04
+            // 
+            this.lblMtoImpto04.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto04.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto04.Location = new System.Drawing.Point(372, 100);
+            this.lblMtoImpto04.Name = "lblMtoImpto04";
+            this.lblMtoImpto04.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto04.TabIndex = 187;
+            this.lblMtoImpto04.Text = "0";
+            this.lblMtoImpto04.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto04.UseCustomForeColor = true;
+            // 
+            // lblMtoImpto03
+            // 
+            this.lblMtoImpto03.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto03.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto03.Location = new System.Drawing.Point(372, 81);
+            this.lblMtoImpto03.Name = "lblMtoImpto03";
+            this.lblMtoImpto03.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto03.TabIndex = 186;
+            this.lblMtoImpto03.Text = "0";
+            this.lblMtoImpto03.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto03.UseCustomForeColor = true;
+            // 
+            // lblPorcentajeImpto08
+            // 
+            this.lblPorcentajeImpto08.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto08.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto08.Location = new System.Drawing.Point(120, 176);
+            this.lblPorcentajeImpto08.Name = "lblPorcentajeImpto08";
+            this.lblPorcentajeImpto08.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto08.TabIndex = 183;
+            this.lblPorcentajeImpto08.Text = "0";
+            this.lblPorcentajeImpto08.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto08.UseCustomForeColor = true;
+            // 
+            // lblPorcentajeImpto07
+            // 
+            this.lblPorcentajeImpto07.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto07.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto07.Location = new System.Drawing.Point(120, 157);
+            this.lblPorcentajeImpto07.Name = "lblPorcentajeImpto07";
+            this.lblPorcentajeImpto07.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto07.TabIndex = 182;
+            this.lblPorcentajeImpto07.Text = "0";
+            this.lblPorcentajeImpto07.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto07.UseCustomForeColor = true;
+            // 
+            // lblPorcentajeImpto06
+            // 
+            this.lblPorcentajeImpto06.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto06.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto06.Location = new System.Drawing.Point(120, 138);
+            this.lblPorcentajeImpto06.Name = "lblPorcentajeImpto06";
+            this.lblPorcentajeImpto06.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto06.TabIndex = 181;
+            this.lblPorcentajeImpto06.Text = "0";
+            this.lblPorcentajeImpto06.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto06.UseCustomForeColor = true;
+            // 
+            // lblPorcentajeImpto05
+            // 
+            this.lblPorcentajeImpto05.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto05.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto05.Location = new System.Drawing.Point(120, 119);
+            this.lblPorcentajeImpto05.Name = "lblPorcentajeImpto05";
+            this.lblPorcentajeImpto05.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto05.TabIndex = 180;
+            this.lblPorcentajeImpto05.Text = "0";
+            this.lblPorcentajeImpto05.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto05.UseCustomForeColor = true;
+            // 
+            // lblPorcentajeImpto04
+            // 
+            this.lblPorcentajeImpto04.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto04.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto04.Location = new System.Drawing.Point(120, 100);
+            this.lblPorcentajeImpto04.Name = "lblPorcentajeImpto04";
+            this.lblPorcentajeImpto04.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto04.TabIndex = 179;
+            this.lblPorcentajeImpto04.Text = "0";
+            this.lblPorcentajeImpto04.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto04.UseCustomForeColor = true;
+            // 
+            // lblPorcentajeImpto03
+            // 
+            this.lblPorcentajeImpto03.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto03.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto03.Location = new System.Drawing.Point(120, 81);
+            this.lblPorcentajeImpto03.Name = "lblPorcentajeImpto03";
+            this.lblPorcentajeImpto03.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto03.TabIndex = 178;
+            this.lblPorcentajeImpto03.Text = "0";
+            this.lblPorcentajeImpto03.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto03.UseCustomForeColor = true;
+            // 
+            // lblPorcentajeImpto02
+            // 
+            this.lblPorcentajeImpto02.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto02.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto02.Location = new System.Drawing.Point(120, 62);
+            this.lblPorcentajeImpto02.Name = "lblPorcentajeImpto02";
+            this.lblPorcentajeImpto02.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto02.TabIndex = 177;
+            this.lblPorcentajeImpto02.Text = "0";
+            this.lblPorcentajeImpto02.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto02.UseCustomForeColor = true;
+            // 
+            // lblTituloMtoImpto08
+            // 
+            this.lblTituloMtoImpto08.AutoSize = true;
+            this.lblTituloMtoImpto08.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloMtoImpto08.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloMtoImpto08.Location = new System.Drawing.Point(266, 176);
+            this.lblTituloMtoImpto08.Name = "lblTituloMtoImpto08";
+            this.lblTituloMtoImpto08.Size = new System.Drawing.Size(103, 19);
+            this.lblTituloMtoImpto08.TabIndex = 175;
+            this.lblTituloMtoImpto08.Text = "Mto. Impto. 08: ";
+            this.lblTituloMtoImpto08.UseCustomForeColor = true;
+            // 
+            // lblTituloMtoImpto07
+            // 
+            this.lblTituloMtoImpto07.AutoSize = true;
+            this.lblTituloMtoImpto07.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloMtoImpto07.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloMtoImpto07.Location = new System.Drawing.Point(266, 157);
+            this.lblTituloMtoImpto07.Name = "lblTituloMtoImpto07";
+            this.lblTituloMtoImpto07.Size = new System.Drawing.Size(103, 19);
+            this.lblTituloMtoImpto07.TabIndex = 174;
+            this.lblTituloMtoImpto07.Text = "Mto. Impto. 07: ";
+            this.lblTituloMtoImpto07.UseCustomForeColor = true;
+            // 
+            // lblTituloMtoImpto06
+            // 
+            this.lblTituloMtoImpto06.AutoSize = true;
+            this.lblTituloMtoImpto06.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloMtoImpto06.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloMtoImpto06.Location = new System.Drawing.Point(266, 138);
+            this.lblTituloMtoImpto06.Name = "lblTituloMtoImpto06";
+            this.lblTituloMtoImpto06.Size = new System.Drawing.Size(103, 19);
+            this.lblTituloMtoImpto06.TabIndex = 173;
+            this.lblTituloMtoImpto06.Text = "Mto. Impto. 06: ";
+            this.lblTituloMtoImpto06.UseCustomForeColor = true;
+            // 
+            // lblTituloMtoImpto05
+            // 
+            this.lblTituloMtoImpto05.AutoSize = true;
+            this.lblTituloMtoImpto05.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloMtoImpto05.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloMtoImpto05.Location = new System.Drawing.Point(266, 119);
+            this.lblTituloMtoImpto05.Name = "lblTituloMtoImpto05";
+            this.lblTituloMtoImpto05.Size = new System.Drawing.Size(103, 19);
+            this.lblTituloMtoImpto05.TabIndex = 172;
+            this.lblTituloMtoImpto05.Text = "Mto. Impto. 05: ";
+            this.lblTituloMtoImpto05.UseCustomForeColor = true;
+            // 
+            // lblTituloMtoImpto04
+            // 
+            this.lblTituloMtoImpto04.AutoSize = true;
+            this.lblTituloMtoImpto04.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloMtoImpto04.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloMtoImpto04.Location = new System.Drawing.Point(266, 100);
+            this.lblTituloMtoImpto04.Name = "lblTituloMtoImpto04";
+            this.lblTituloMtoImpto04.Size = new System.Drawing.Size(103, 19);
+            this.lblTituloMtoImpto04.TabIndex = 171;
+            this.lblTituloMtoImpto04.Text = "Mto. Impto. 04: ";
+            this.lblTituloMtoImpto04.UseCustomForeColor = true;
+            // 
+            // lblTituloMtoImpto03
+            // 
+            this.lblTituloMtoImpto03.AutoSize = true;
+            this.lblTituloMtoImpto03.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloMtoImpto03.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloMtoImpto03.Location = new System.Drawing.Point(266, 81);
+            this.lblTituloMtoImpto03.Name = "lblTituloMtoImpto03";
+            this.lblTituloMtoImpto03.Size = new System.Drawing.Size(103, 19);
+            this.lblTituloMtoImpto03.TabIndex = 170;
+            this.lblTituloMtoImpto03.Text = "Mto. Impto. 03: ";
+            this.lblTituloMtoImpto03.UseCustomForeColor = true;
+            // 
+            // lblTituloMtoImpto02
+            // 
+            this.lblTituloMtoImpto02.AutoSize = true;
+            this.lblTituloMtoImpto02.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloMtoImpto02.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloMtoImpto02.Location = new System.Drawing.Point(266, 62);
+            this.lblTituloMtoImpto02.Name = "lblTituloMtoImpto02";
+            this.lblTituloMtoImpto02.Size = new System.Drawing.Size(103, 19);
+            this.lblTituloMtoImpto02.TabIndex = 169;
+            this.lblTituloMtoImpto02.Text = "Mto. Impto. 02: ";
+            this.lblTituloMtoImpto02.UseCustomForeColor = true;
+            // 
+            // lblTituloMtoImpto01
+            // 
+            this.lblTituloMtoImpto01.AutoSize = true;
+            this.lblTituloMtoImpto01.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloMtoImpto01.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloMtoImpto01.Location = new System.Drawing.Point(266, 43);
+            this.lblTituloMtoImpto01.Name = "lblTituloMtoImpto01";
+            this.lblTituloMtoImpto01.Size = new System.Drawing.Size(101, 19);
+            this.lblTituloMtoImpto01.TabIndex = 168;
+            this.lblTituloMtoImpto01.Text = "Mto. Impto. 01: ";
+            this.lblTituloMtoImpto01.UseCustomForeColor = true;
+            // 
+            // lblTituloPorcentajeImpto08
+            // 
+            this.lblTituloPorcentajeImpto08.AutoSize = true;
+            this.lblTituloPorcentajeImpto08.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloPorcentajeImpto08.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloPorcentajeImpto08.Location = new System.Drawing.Point(23, 176);
+            this.lblTituloPorcentajeImpto08.Name = "lblTituloPorcentajeImpto08";
+            this.lblTituloPorcentajeImpto08.Size = new System.Drawing.Size(87, 19);
+            this.lblTituloPorcentajeImpto08.TabIndex = 167;
+            this.lblTituloPorcentajeImpto08.Text = "% Impto. 08: ";
+            this.lblTituloPorcentajeImpto08.UseCustomForeColor = true;
+            // 
+            // lblTituloPorcentajeImpto07
+            // 
+            this.lblTituloPorcentajeImpto07.AutoSize = true;
+            this.lblTituloPorcentajeImpto07.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloPorcentajeImpto07.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloPorcentajeImpto07.Location = new System.Drawing.Point(23, 157);
+            this.lblTituloPorcentajeImpto07.Name = "lblTituloPorcentajeImpto07";
+            this.lblTituloPorcentajeImpto07.Size = new System.Drawing.Size(87, 19);
+            this.lblTituloPorcentajeImpto07.TabIndex = 166;
+            this.lblTituloPorcentajeImpto07.Text = "% Impto. 07: ";
+            this.lblTituloPorcentajeImpto07.UseCustomForeColor = true;
+            // 
+            // lblTituloPorcentajeImpto06
+            // 
+            this.lblTituloPorcentajeImpto06.AutoSize = true;
+            this.lblTituloPorcentajeImpto06.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloPorcentajeImpto06.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloPorcentajeImpto06.Location = new System.Drawing.Point(23, 138);
+            this.lblTituloPorcentajeImpto06.Name = "lblTituloPorcentajeImpto06";
+            this.lblTituloPorcentajeImpto06.Size = new System.Drawing.Size(87, 19);
+            this.lblTituloPorcentajeImpto06.TabIndex = 165;
+            this.lblTituloPorcentajeImpto06.Text = "% Impto. 06: ";
+            this.lblTituloPorcentajeImpto06.UseCustomForeColor = true;
+            // 
+            // lblTituloPorcentajeImpto05
+            // 
+            this.lblTituloPorcentajeImpto05.AutoSize = true;
+            this.lblTituloPorcentajeImpto05.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloPorcentajeImpto05.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloPorcentajeImpto05.Location = new System.Drawing.Point(23, 119);
+            this.lblTituloPorcentajeImpto05.Name = "lblTituloPorcentajeImpto05";
+            this.lblTituloPorcentajeImpto05.Size = new System.Drawing.Size(87, 19);
+            this.lblTituloPorcentajeImpto05.TabIndex = 164;
+            this.lblTituloPorcentajeImpto05.Text = "% Impto. 05: ";
+            this.lblTituloPorcentajeImpto05.UseCustomForeColor = true;
+            // 
+            // lblTituloPorcentajeImpto04
+            // 
+            this.lblTituloPorcentajeImpto04.AutoSize = true;
+            this.lblTituloPorcentajeImpto04.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloPorcentajeImpto04.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloPorcentajeImpto04.Location = new System.Drawing.Point(23, 100);
+            this.lblTituloPorcentajeImpto04.Name = "lblTituloPorcentajeImpto04";
+            this.lblTituloPorcentajeImpto04.Size = new System.Drawing.Size(87, 19);
+            this.lblTituloPorcentajeImpto04.TabIndex = 163;
+            this.lblTituloPorcentajeImpto04.Text = "% Impto. 04: ";
+            this.lblTituloPorcentajeImpto04.UseCustomForeColor = true;
+            // 
+            // lblTituloPorcentajeImpto03
+            // 
+            this.lblTituloPorcentajeImpto03.AutoSize = true;
+            this.lblTituloPorcentajeImpto03.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloPorcentajeImpto03.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloPorcentajeImpto03.Location = new System.Drawing.Point(23, 81);
+            this.lblTituloPorcentajeImpto03.Name = "lblTituloPorcentajeImpto03";
+            this.lblTituloPorcentajeImpto03.Size = new System.Drawing.Size(87, 19);
+            this.lblTituloPorcentajeImpto03.TabIndex = 162;
+            this.lblTituloPorcentajeImpto03.Text = "% Impto. 03: ";
+            this.lblTituloPorcentajeImpto03.UseCustomForeColor = true;
+            // 
+            // lblTituloPorcentajeImpto02
+            // 
+            this.lblTituloPorcentajeImpto02.AutoSize = true;
+            this.lblTituloPorcentajeImpto02.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloPorcentajeImpto02.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloPorcentajeImpto02.Location = new System.Drawing.Point(23, 62);
+            this.lblTituloPorcentajeImpto02.Name = "lblTituloPorcentajeImpto02";
+            this.lblTituloPorcentajeImpto02.Size = new System.Drawing.Size(87, 19);
+            this.lblTituloPorcentajeImpto02.TabIndex = 161;
+            this.lblTituloPorcentajeImpto02.Text = "% Impto. 02: ";
+            this.lblTituloPorcentajeImpto02.UseCustomForeColor = true;
+            // 
+            // lblMtosImptos
+            // 
+            this.lblMtosImptos.AutoSize = true;
+            this.lblMtosImptos.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblMtosImptos.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtosImptos.Location = new System.Drawing.Point(314, 21);
+            this.lblMtosImptos.Name = "lblMtosImptos";
+            this.lblMtosImptos.Size = new System.Drawing.Size(152, 19);
+            this.lblMtosImptos.TabIndex = 160;
+            this.lblMtosImptos.Text = "Montos de impuestos";
+            this.lblMtosImptos.UseCustomForeColor = true;
+            // 
+            // lblPorcentajesImptos
+            // 
+            this.lblPorcentajesImptos.AutoSize = true;
+            this.lblPorcentajesImptos.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblPorcentajesImptos.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajesImptos.Location = new System.Drawing.Point(33, 21);
+            this.lblPorcentajesImptos.Name = "lblPorcentajesImptos";
+            this.lblPorcentajesImptos.Size = new System.Drawing.Size(180, 19);
+            this.lblPorcentajesImptos.TabIndex = 159;
+            this.lblPorcentajesImptos.Text = "Porcentajes de impuestos";
+            this.lblPorcentajesImptos.UseCustomForeColor = true;
+            // 
+            // lblTituloPorcentajeImpto01
+            // 
+            this.lblTituloPorcentajeImpto01.AutoSize = true;
+            this.lblTituloPorcentajeImpto01.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloPorcentajeImpto01.ForeColor = System.Drawing.Color.Navy;
+            this.lblTituloPorcentajeImpto01.Location = new System.Drawing.Point(23, 43);
+            this.lblTituloPorcentajeImpto01.Name = "lblTituloPorcentajeImpto01";
+            this.lblTituloPorcentajeImpto01.Size = new System.Drawing.Size(85, 19);
+            this.lblTituloPorcentajeImpto01.TabIndex = 0;
+            this.lblTituloPorcentajeImpto01.Text = "% Impto. 01: ";
+            this.lblTituloPorcentajeImpto01.UseCustomForeColor = true;
             // 
             // lblSimboloPorcentaje
             // 
@@ -1019,9 +1475,9 @@ namespace ConfiguradorUI.Producto
             this.grbCostoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbCostoProd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbCostoProd.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbCostoProd.Location = new System.Drawing.Point(9, 241);
+            this.grbCostoProd.Location = new System.Drawing.Point(9, 428);
             this.grbCostoProd.Name = "grbCostoProd";
-            this.grbCostoProd.Size = new System.Drawing.Size(251, 73);
+            this.grbCostoProd.Size = new System.Drawing.Size(251, 54);
             this.grbCostoProd.TabIndex = 7;
             this.grbCostoProd.TabStop = false;
             this.grbCostoProd.Text = "Costo del producto";
@@ -1033,7 +1489,7 @@ namespace ConfiguradorUI.Producto
             // 
             // 
             this.txtCostoProd.CustomButton.Image = null;
-            this.txtCostoProd.CustomButton.Location = new System.Drawing.Point(106, 1);
+            this.txtCostoProd.CustomButton.Location = new System.Drawing.Point(104, 1);
             this.txtCostoProd.CustomButton.Name = "";
             this.txtCostoProd.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtCostoProd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1042,7 +1498,7 @@ namespace ConfiguradorUI.Producto
             this.txtCostoProd.CustomButton.UseSelectable = true;
             this.txtCostoProd.CustomButton.Visible = false;
             this.txtCostoProd.Lines = new string[0];
-            this.txtCostoProd.Location = new System.Drawing.Point(96, 32);
+            this.txtCostoProd.Location = new System.Drawing.Point(99, 21);
             this.txtCostoProd.MaxLength = 32767;
             this.txtCostoProd.Name = "txtCostoProd";
             this.txtCostoProd.PasswordChar = '\0';
@@ -1051,7 +1507,7 @@ namespace ConfiguradorUI.Producto
             this.txtCostoProd.SelectionLength = 0;
             this.txtCostoProd.SelectionStart = 0;
             this.txtCostoProd.ShortcutsEnabled = true;
-            this.txtCostoProd.Size = new System.Drawing.Size(128, 23);
+            this.txtCostoProd.Size = new System.Drawing.Size(126, 23);
             this.txtCostoProd.TabIndex = 0;
             this.txtCostoProd.UseCustomBackColor = true;
             this.txtCostoProd.UseSelectable = true;
@@ -1064,7 +1520,7 @@ namespace ConfiguradorUI.Producto
             this.lblCosto.AutoSize = true;
             this.lblCosto.BackColor = System.Drawing.Color.Transparent;
             this.lblCosto.ForeColor = System.Drawing.Color.Navy;
-            this.lblCosto.Location = new System.Drawing.Point(20, 32);
+            this.lblCosto.Location = new System.Drawing.Point(22, 23);
             this.lblCosto.Name = "lblCosto";
             this.lblCosto.Size = new System.Drawing.Size(50, 19);
             this.lblCosto.TabIndex = 0;
@@ -1082,9 +1538,9 @@ namespace ConfiguradorUI.Producto
             this.grbConImpto.Controls.Add(this.lblPvPuConTax);
             this.grbConImpto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbConImpto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbConImpto.Location = new System.Drawing.Point(287, 88);
+            this.grbConImpto.Location = new System.Drawing.Point(9, 81);
             this.grbConImpto.Name = "grbConImpto";
-            this.grbConImpto.Size = new System.Drawing.Size(251, 147);
+            this.grbConImpto.Size = new System.Drawing.Size(251, 132);
             this.grbConImpto.TabIndex = 5;
             this.grbConImpto.TabStop = false;
             this.grbConImpto.Text = "Precio con impuesto";
@@ -1105,7 +1561,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMiConTax.CustomButton.UseSelectable = true;
             this.txtPvMiConTax.CustomButton.Visible = false;
             this.txtPvMiConTax.Lines = new string[0];
-            this.txtPvMiConTax.Location = new System.Drawing.Point(100, 68);
+            this.txtPvMiConTax.Location = new System.Drawing.Point(100, 61);
             this.txtPvMiConTax.MaxLength = 32767;
             this.txtPvMiConTax.Name = "txtPvMiConTax";
             this.txtPvMiConTax.PasswordChar = '\0';
@@ -1127,7 +1583,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvMiConTax.AutoSize = true;
             this.lblPvMiConTax.BackColor = System.Drawing.Color.Transparent;
             this.lblPvMiConTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMiConTax.Location = new System.Drawing.Point(24, 69);
+            this.lblPvMiConTax.Location = new System.Drawing.Point(24, 62);
             this.lblPvMiConTax.Name = "lblPvMiConTax";
             this.lblPvMiConTax.Size = new System.Drawing.Size(69, 19);
             this.lblPvMiConTax.TabIndex = 2;
@@ -1150,7 +1606,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMaConTax.CustomButton.UseSelectable = true;
             this.txtPvMaConTax.CustomButton.Visible = false;
             this.txtPvMaConTax.Lines = new string[0];
-            this.txtPvMaConTax.Location = new System.Drawing.Point(100, 104);
+            this.txtPvMaConTax.Location = new System.Drawing.Point(100, 97);
             this.txtPvMaConTax.MaxLength = 32767;
             this.txtPvMaConTax.Name = "txtPvMaConTax";
             this.txtPvMaConTax.PasswordChar = '\0';
@@ -1172,7 +1628,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvMaConTax.AutoSize = true;
             this.lblPvMaConTax.BackColor = System.Drawing.Color.Transparent;
             this.lblPvMaConTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMaConTax.Location = new System.Drawing.Point(24, 106);
+            this.lblPvMaConTax.Location = new System.Drawing.Point(24, 99);
             this.lblPvMaConTax.Name = "lblPvMaConTax";
             this.lblPvMaConTax.Size = new System.Drawing.Size(72, 19);
             this.lblPvMaConTax.TabIndex = 4;
@@ -1195,7 +1651,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvPuConTax.CustomButton.UseSelectable = true;
             this.txtPvPuConTax.CustomButton.Visible = false;
             this.txtPvPuConTax.Lines = new string[0];
-            this.txtPvPuConTax.Location = new System.Drawing.Point(100, 32);
+            this.txtPvPuConTax.Location = new System.Drawing.Point(100, 25);
             this.txtPvPuConTax.MaxLength = 32767;
             this.txtPvPuConTax.Name = "txtPvPuConTax";
             this.txtPvPuConTax.PasswordChar = '\0';
@@ -1217,7 +1673,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvPuConTax.AutoSize = true;
             this.lblPvPuConTax.BackColor = System.Drawing.Color.Transparent;
             this.lblPvPuConTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvPuConTax.Location = new System.Drawing.Point(24, 34);
+            this.lblPvPuConTax.Location = new System.Drawing.Point(24, 27);
             this.lblPvPuConTax.Name = "lblPvPuConTax";
             this.lblPvPuConTax.Size = new System.Drawing.Size(70, 19);
             this.lblPvPuConTax.TabIndex = 0;
@@ -1236,9 +1692,9 @@ namespace ConfiguradorUI.Producto
             this.grbSinImpto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbSinImpto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbSinImpto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grbSinImpto.Location = new System.Drawing.Point(9, 88);
+            this.grbSinImpto.Location = new System.Drawing.Point(287, 81);
             this.grbSinImpto.Name = "grbSinImpto";
-            this.grbSinImpto.Size = new System.Drawing.Size(251, 147);
+            this.grbSinImpto.Size = new System.Drawing.Size(251, 132);
             this.grbSinImpto.TabIndex = 6;
             this.grbSinImpto.TabStop = false;
             this.grbSinImpto.Text = "Precio sin impuesto";
@@ -1259,7 +1715,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMiSinTax.CustomButton.UseSelectable = true;
             this.txtPvMiSinTax.CustomButton.Visible = false;
             this.txtPvMiSinTax.Lines = new string[0];
-            this.txtPvMiSinTax.Location = new System.Drawing.Point(98, 68);
+            this.txtPvMiSinTax.Location = new System.Drawing.Point(98, 61);
             this.txtPvMiSinTax.MaxLength = 32767;
             this.txtPvMiSinTax.Name = "txtPvMiSinTax";
             this.txtPvMiSinTax.PasswordChar = '\0';
@@ -1281,7 +1737,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvMiSinTax.AutoSize = true;
             this.lblPvMiSinTax.BackColor = System.Drawing.Color.Transparent;
             this.lblPvMiSinTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMiSinTax.Location = new System.Drawing.Point(22, 69);
+            this.lblPvMiSinTax.Location = new System.Drawing.Point(22, 62);
             this.lblPvMiSinTax.Name = "lblPvMiSinTax";
             this.lblPvMiSinTax.Size = new System.Drawing.Size(69, 19);
             this.lblPvMiSinTax.TabIndex = 2;
@@ -1304,7 +1760,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvMaSinTax.CustomButton.UseSelectable = true;
             this.txtPvMaSinTax.CustomButton.Visible = false;
             this.txtPvMaSinTax.Lines = new string[0];
-            this.txtPvMaSinTax.Location = new System.Drawing.Point(98, 104);
+            this.txtPvMaSinTax.Location = new System.Drawing.Point(98, 97);
             this.txtPvMaSinTax.MaxLength = 32767;
             this.txtPvMaSinTax.Name = "txtPvMaSinTax";
             this.txtPvMaSinTax.PasswordChar = '\0';
@@ -1326,7 +1782,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvMaSinTax.AutoSize = true;
             this.lblPvMaSinTax.BackColor = System.Drawing.Color.Transparent;
             this.lblPvMaSinTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvMaSinTax.Location = new System.Drawing.Point(22, 106);
+            this.lblPvMaSinTax.Location = new System.Drawing.Point(22, 99);
             this.lblPvMaSinTax.Name = "lblPvMaSinTax";
             this.lblPvMaSinTax.Size = new System.Drawing.Size(72, 19);
             this.lblPvMaSinTax.TabIndex = 4;
@@ -1349,7 +1805,7 @@ namespace ConfiguradorUI.Producto
             this.txtPvPuSinTax.CustomButton.UseSelectable = true;
             this.txtPvPuSinTax.CustomButton.Visible = false;
             this.txtPvPuSinTax.Lines = new string[0];
-            this.txtPvPuSinTax.Location = new System.Drawing.Point(98, 32);
+            this.txtPvPuSinTax.Location = new System.Drawing.Point(98, 25);
             this.txtPvPuSinTax.MaxLength = 32767;
             this.txtPvPuSinTax.Name = "txtPvPuSinTax";
             this.txtPvPuSinTax.PasswordChar = '\0';
@@ -1371,7 +1827,7 @@ namespace ConfiguradorUI.Producto
             this.lblPvPuSinTax.AutoSize = true;
             this.lblPvPuSinTax.BackColor = System.Drawing.Color.Transparent;
             this.lblPvPuSinTax.ForeColor = System.Drawing.Color.Navy;
-            this.lblPvPuSinTax.Location = new System.Drawing.Point(22, 34);
+            this.lblPvPuSinTax.Location = new System.Drawing.Point(22, 27);
             this.lblPvPuSinTax.Name = "lblPvPuSinTax";
             this.lblPvPuSinTax.Size = new System.Drawing.Size(70, 19);
             this.lblPvPuSinTax.TabIndex = 0;
@@ -1385,7 +1841,7 @@ namespace ConfiguradorUI.Producto
             this.chkInafecto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkInafecto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkInafecto.ForeColor = System.Drawing.Color.Navy;
-            this.chkInafecto.Location = new System.Drawing.Point(317, 56);
+            this.chkInafecto.Location = new System.Drawing.Point(317, 55);
             this.chkInafecto.Name = "chkInafecto";
             this.chkInafecto.Size = new System.Drawing.Size(129, 19);
             this.chkInafecto.TabIndex = 4;
@@ -1401,7 +1857,7 @@ namespace ConfiguradorUI.Producto
             this.chkExento.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkExento.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkExento.ForeColor = System.Drawing.Color.Navy;
-            this.chkExento.Location = new System.Drawing.Point(189, 56);
+            this.chkExento.Location = new System.Drawing.Point(189, 55);
             this.chkExento.Name = "chkExento";
             this.chkExento.Size = new System.Drawing.Size(122, 19);
             this.chkExento.TabIndex = 3;
@@ -1417,7 +1873,7 @@ namespace ConfiguradorUI.Producto
             this.chkImpto.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkImpto.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
             this.chkImpto.ForeColor = System.Drawing.Color.Navy;
-            this.chkImpto.Location = new System.Drawing.Point(8, 56);
+            this.chkImpto.Location = new System.Drawing.Point(8, 55);
             this.chkImpto.Name = "chkImpto";
             this.chkImpto.Size = new System.Drawing.Size(175, 19);
             this.chkImpto.TabIndex = 2;
@@ -1705,7 +2161,7 @@ namespace ConfiguradorUI.Producto
             this.dgvProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvProducto.Location = new System.Drawing.Point(40, 129);
+            this.dgvProducto.Location = new System.Drawing.Point(54, 126);
             this.dgvProducto.MultiSelect = false;
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1911,6 +2367,42 @@ namespace ConfiguradorUI.Producto
             this.cboTipoMoneda.TabIndex = 0;
             this.cboTipoMoneda.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
+            // lblPorcentajeImpto01
+            // 
+            this.lblPorcentajeImpto01.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto01.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto01.Location = new System.Drawing.Point(120, 43);
+            this.lblPorcentajeImpto01.Name = "lblPorcentajeImpto01";
+            this.lblPorcentajeImpto01.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto01.TabIndex = 192;
+            this.lblPorcentajeImpto01.Text = "0";
+            this.lblPorcentajeImpto01.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto01.UseCustomForeColor = true;
+            // 
+            // lblMtoImpto02
+            // 
+            this.lblMtoImpto02.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto02.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto02.Location = new System.Drawing.Point(372, 62);
+            this.lblMtoImpto02.Name = "lblMtoImpto02";
+            this.lblMtoImpto02.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto02.TabIndex = 193;
+            this.lblMtoImpto02.Text = "0";
+            this.lblMtoImpto02.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto02.UseCustomForeColor = true;
+            // 
+            // lblMtoImpto01
+            // 
+            this.lblMtoImpto01.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto01.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto01.Location = new System.Drawing.Point(372, 43);
+            this.lblMtoImpto01.Name = "lblMtoImpto01";
+            this.lblMtoImpto01.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto01.TabIndex = 194;
+            this.lblMtoImpto01.Text = "0";
+            this.lblMtoImpto01.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto01.UseCustomForeColor = true;
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1937,6 +2429,8 @@ namespace ConfiguradorUI.Producto
             this.tabPagGeneral.PerformLayout();
             this.tabPagPrecio.ResumeLayout(false);
             this.tabPagPrecio.PerformLayout();
+            this.grbDetalleImpuesto.ResumeLayout(false);
+            this.grbDetalleImpuesto.PerformLayout();
             this.grbCostoProd.ResumeLayout(false);
             this.grbCostoProd.PerformLayout();
             this.grbConImpto.ResumeLayout(false);
@@ -2059,5 +2553,40 @@ namespace ConfiguradorUI.Producto
         private System.Windows.Forms.Label lblNumReg;
         private System.Windows.Forms.Label lblPorcentajeAcumuladoImpto;
         private System.Windows.Forms.Label lblSimboloPorcentaje;
+        private System.Windows.Forms.GroupBox grbDetalleImpuesto;
+        private MetroFramework.Controls.MetroLabel lblTituloPorcentajeImpto01;
+        private MetroFramework.Controls.MetroLabel lblTituloPorcentajeImpto08;
+        private MetroFramework.Controls.MetroLabel lblTituloPorcentajeImpto07;
+        private MetroFramework.Controls.MetroLabel lblTituloPorcentajeImpto06;
+        private MetroFramework.Controls.MetroLabel lblTituloPorcentajeImpto05;
+        private MetroFramework.Controls.MetroLabel lblTituloPorcentajeImpto04;
+        private MetroFramework.Controls.MetroLabel lblTituloPorcentajeImpto03;
+        private MetroFramework.Controls.MetroLabel lblTituloPorcentajeImpto02;
+        private MetroFramework.Controls.MetroLabel lblMtosImptos;
+        private MetroFramework.Controls.MetroLabel lblPorcentajesImptos;
+        private MetroFramework.Controls.MetroLabel lblTituloMtoImpto08;
+        private MetroFramework.Controls.MetroLabel lblTituloMtoImpto07;
+        private MetroFramework.Controls.MetroLabel lblTituloMtoImpto06;
+        private MetroFramework.Controls.MetroLabel lblTituloMtoImpto05;
+        private MetroFramework.Controls.MetroLabel lblTituloMtoImpto04;
+        private MetroFramework.Controls.MetroLabel lblTituloMtoImpto03;
+        private MetroFramework.Controls.MetroLabel lblTituloMtoImpto02;
+        private MetroFramework.Controls.MetroLabel lblTituloMtoImpto01;
+        private MetroFramework.Controls.MetroLabel lblPorcentajeImpto08;
+        private MetroFramework.Controls.MetroLabel lblPorcentajeImpto07;
+        private MetroFramework.Controls.MetroLabel lblPorcentajeImpto06;
+        private MetroFramework.Controls.MetroLabel lblPorcentajeImpto05;
+        private MetroFramework.Controls.MetroLabel lblPorcentajeImpto04;
+        private MetroFramework.Controls.MetroLabel lblPorcentajeImpto03;
+        private MetroFramework.Controls.MetroLabel lblPorcentajeImpto02;
+        private MetroFramework.Controls.MetroLabel lblMtoImpto08;
+        private MetroFramework.Controls.MetroLabel lblMtoImpto07;
+        private MetroFramework.Controls.MetroLabel lblMtoImpto06;
+        private MetroFramework.Controls.MetroLabel lblMtoImpto05;
+        private MetroFramework.Controls.MetroLabel lblMtoImpto04;
+        private MetroFramework.Controls.MetroLabel lblMtoImpto03;
+        private MetroFramework.Controls.MetroLabel lblMtoImpto01;
+        private MetroFramework.Controls.MetroLabel lblMtoImpto02;
+        private MetroFramework.Controls.MetroLabel lblPorcentajeImpto01;
     }
 }

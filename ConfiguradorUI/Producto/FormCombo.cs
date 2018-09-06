@@ -2077,7 +2077,7 @@ namespace ConfiguradorUI.Producto
                 porcentajeAcumulado = new ImpuestoBL().GetPorcentajeAcumulado(id);
             }
 
-            lblPorcentajeAcumuladoImpto.Text = porcentajeAcumulado == null ? "-" : porcentajeAcumulado.RemoveTrailingZeros();
+            lblPorcentajeAcumuladoImpto.Text = porcentajeAcumulado == null ? "0" : porcentajeAcumulado.RemoveTrailingZeros();
 
             if (chkIncluyeImpto.Checked)
             {
