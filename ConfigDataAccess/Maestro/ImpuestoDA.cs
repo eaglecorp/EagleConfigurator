@@ -84,7 +84,7 @@ namespace ConfigDataAccess
         {
             decimal porcImpto = 0;
 
-            if(impto.por_impto01!=null)
+            if (impto.por_impto01 != null)
             {
                 porcImpto += (decimal)impto.por_impto01;
             }
@@ -120,6 +120,20 @@ namespace ConfigDataAccess
             return porcImpto;
         }
 
+        public bool CambioDistribucionDeImptos(MSTt06_impuesto original, MSTt06_impuesto actualizado)
+        {
+            if (original.por_impto01 != actualizado.por_impto01 ||
+                original.por_impto02 != actualizado.por_impto02 ||
+                original.por_impto03 != actualizado.por_impto03 ||
+                original.por_impto04 != actualizado.por_impto04 ||
+                original.por_impto05 != actualizado.por_impto05 ||
+                original.por_impto06 != actualizado.por_impto06 ||
+                original.por_impto07 != actualizado.por_impto07 ||
+                original.por_impto08 != actualizado.por_impto08
+                ) return true;
+            return false;
+        }
+
         public bool ActualizarImpuesto(MSTt06_impuesto actualizado)
         {
             bool success = false;
@@ -131,11 +145,12 @@ namespace ConfigDataAccess
                     if (original != null && original.id_impuesto > 0)
                     {
                         bool actualizarPrecioCascada = true;
-                        decimal nuevoPorcImpto = SumarImpuestos(actualizado);
+                        decimal nuevoPorcAcumulado = SumarImpuestos(actualizado);
+                        decimal anteriorPorcAcumulado = SumarImpuestos(original);
 
-                        if (SumarImpuestos(original) != nuevoPorcImpto )
+                        if (anteriorPorcAcumulado != nuevoPorcAcumulado || CambioDistribucionDeImptos(original, actualizado))
                         {
-                            actualizarPrecioCascada = ActualizarEnCascadaPreciosPorImpto(actualizado.id_impuesto, nuevoPorcImpto);
+                            actualizarPrecioCascada = ActualizarEnCascadaPreciosPorImpto(actualizado.id_impuesto, anteriorPorcAcumulado, actualizado);
                         }
 
                         if (actualizarPrecioCascada)
@@ -207,7 +222,7 @@ namespace ConfigDataAccess
 		                    isnull(impto.por_impto08,0))
 		                    as por_acumulado
 		                      from dbo.MSTt06_impuesto impto
-		                      where impto.id_impuesto = @id"; 
+		                      where impto.id_impuesto = @id";
             #endregion
 
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
@@ -225,8 +240,8 @@ namespace ConfigDataAccess
             }
             return porcentajeAcumulado;
         }
-       
-        public bool ActualizarEnCascadaPreciosPorImpto(int id_impto, decimal nuevoPorcImpto)
+
+        public bool ActualizarEnCascadaPreciosPorImpto(int id_impto, decimal anteriorPorcImpto, MSTt06_impuesto actualizado)
         {
             bool success = false;
 
@@ -238,8 +253,16 @@ namespace ConfigDataAccess
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
+                        cmd.Parameters.Add(new SqlParameter("@por_total_anterior", anteriorPorcImpto));
+                        cmd.Parameters.Add(new SqlParameter("@por_impto01", actualizado.por_impto01 ?? (object)DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@por_impto02", actualizado.por_impto02 ?? (object)DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@por_impto03", actualizado.por_impto03 ?? (object)DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@por_impto04", actualizado.por_impto04 ?? (object)DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@por_impto05", actualizado.por_impto05 ?? (object)DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@por_impto06", actualizado.por_impto06 ?? (object)DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@por_impto07", actualizado.por_impto07 ?? (object)DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter("@por_impto08", actualizado.por_impto08 ?? (object)DBNull.Value));
                         cmd.Parameters.Add(new SqlParameter("@id_impuesto", id_impto));
-                        cmd.Parameters.Add(new SqlParameter("@nuevoPorc", nuevoPorcImpto));
                         cmd.Parameters.Add(new SqlParameter("@sn_incluye_impto", Estado.IdActivo));
 
                         var returnParameter = cmd.Parameters.Add("@success", SqlDbType.Bit);

@@ -546,41 +546,6 @@ namespace ConfiguradorUI.Producto
             lblPorcentajeImpto08.Text = porTax08.RemoveTrailingZeros();
         }
 
-        private void CalcularMtosDeImptos()
-        {
-            decimal.TryParse(lblPorcentajeImpto01.Text, out decimal porTax01);
-            decimal.TryParse(lblPorcentajeImpto02.Text, out decimal porTax02);
-            decimal.TryParse(lblPorcentajeImpto03.Text, out decimal porTax03);
-            decimal.TryParse(lblPorcentajeImpto04.Text, out decimal porTax04);
-            decimal.TryParse(lblPorcentajeImpto05.Text, out decimal porTax05);
-            decimal.TryParse(lblPorcentajeImpto06.Text, out decimal porTax06);
-            decimal.TryParse(lblPorcentajeImpto07.Text, out decimal porTax07);
-            decimal.TryParse(lblPorcentajeImpto08.Text, out decimal porTax08);
-
-            decimal.TryParse(txtPvPuConTax.Text, out decimal pvPuConTax);
-
-            decimal dividendo = porTax01 + porTax02 + porTax03 + porTax04 +
-                                    porTax05 + porTax06 + porTax07 + porTax08 + 100.0m;
-
-            if (dividendo != 0 && pvPuConTax != 0)
-            {
-                lblMtoImpto01.Text = (((pvPuConTax * porTax01) / dividendo)).RemoveTrailingZeros();
-                lblMtoImpto02.Text = (((pvPuConTax * porTax02) / dividendo)).RemoveTrailingZeros();
-                lblMtoImpto03.Text = (((pvPuConTax * porTax03) / dividendo)).RemoveTrailingZeros();
-                lblMtoImpto04.Text = (((pvPuConTax * porTax04) / dividendo)).RemoveTrailingZeros();
-                lblMtoImpto05.Text = (((pvPuConTax * porTax05) / dividendo)).RemoveTrailingZeros();
-                lblMtoImpto06.Text = (((pvPuConTax * porTax06) / dividendo)).RemoveTrailingZeros();
-                lblMtoImpto07.Text = (((pvPuConTax * porTax07) / dividendo)).RemoveTrailingZeros();
-                lblMtoImpto08.Text = (((pvPuConTax * porTax08) / dividendo)).RemoveTrailingZeros();
-
-            }
-            else
-            {
-                LimpiarMtosDeImptos();
-            }
-        }
-
-
         private bool EsValido()
         {
             errorProv.Clear();
@@ -1174,10 +1139,82 @@ namespace ConfiguradorUI.Producto
             return precio_con_impt;
         }
 
+        private void CalcularMtosDeImptos()
+        {
+            decimal.TryParse(lblPorcentajeImpto01.Text, out decimal porTax01);
+            decimal.TryParse(lblPorcentajeImpto02.Text, out decimal porTax02);
+            decimal.TryParse(lblPorcentajeImpto03.Text, out decimal porTax03);
+            decimal.TryParse(lblPorcentajeImpto04.Text, out decimal porTax04);
+            decimal.TryParse(lblPorcentajeImpto05.Text, out decimal porTax05);
+            decimal.TryParse(lblPorcentajeImpto06.Text, out decimal porTax06);
+            decimal.TryParse(lblPorcentajeImpto07.Text, out decimal porTax07);
+            decimal.TryParse(lblPorcentajeImpto08.Text, out decimal porTax08);
+
+            decimal.TryParse(txtPvPuConTax.Text, out decimal pvPuConTax);
+
+            decimal dividendo = porTax01 + porTax02 + porTax03 + porTax04 +
+                                    porTax05 + porTax06 + porTax07 + porTax08 + 100.0m;
+
+            if (dividendo != 0 && pvPuConTax != 0)
+            {
+                lblMtoImpto01.Text = (((pvPuConTax * porTax01) / dividendo)).RemoveTrailingZeros();
+                lblMtoImpto02.Text = (((pvPuConTax * porTax02) / dividendo)).RemoveTrailingZeros();
+                lblMtoImpto03.Text = (((pvPuConTax * porTax03) / dividendo)).RemoveTrailingZeros();
+                lblMtoImpto04.Text = (((pvPuConTax * porTax04) / dividendo)).RemoveTrailingZeros();
+                lblMtoImpto05.Text = (((pvPuConTax * porTax05) / dividendo)).RemoveTrailingZeros();
+                lblMtoImpto06.Text = (((pvPuConTax * porTax06) / dividendo)).RemoveTrailingZeros();
+                lblMtoImpto07.Text = (((pvPuConTax * porTax07) / dividendo)).RemoveTrailingZeros();
+                lblMtoImpto08.Text = (((pvPuConTax * porTax08) / dividendo)).RemoveTrailingZeros();
+
+            }
+            else
+            {
+                LimpiarMtosDeImptos();
+            }
+        }
         private decimal GetPorcentajeImpuesto()
         {
             decimal.TryParse(lblPorcentajeAcumuladoImpto.Text, out decimal porcentaje);
             return porcentaje;
+        }
+        private void LimpiarDetallesDeImptos()
+        {
+            LimpiarPorcentajesDeImptos();
+            LimpiarMtosDeImptos();
+        }
+        private void LimpiarPorcentajesDeImptos()
+        {
+            var lbls = new[] {
+                lblPorcentajeImpto01,
+                lblPorcentajeImpto02,
+                lblPorcentajeImpto03,
+                lblPorcentajeImpto04,
+                lblPorcentajeImpto05,
+                lblPorcentajeImpto06,
+                lblPorcentajeImpto07,
+                lblPorcentajeImpto08
+            };
+            foreach (var lbl in lbls)
+            {
+                lbl.Text = "0";
+            }
+        }
+        private void LimpiarMtosDeImptos()
+        {
+            var lbls = new[] {
+                lblMtoImpto01,
+                lblMtoImpto02,
+                lblMtoImpto03,
+                lblMtoImpto04,
+                lblMtoImpto05,
+                lblMtoImpto06,
+                lblMtoImpto07,
+                lblMtoImpto08
+            };
+            foreach (var lbl in lbls)
+            {
+                lbl.Text = "0";
+            }
         }
 
         private void ActualizarPreciosSinImpto()
@@ -1357,47 +1394,6 @@ namespace ConfiguradorUI.Producto
             txtPvMaSinTax.Clear();
 
             txtCostoProd.Clear();
-        }
-        private void LimpiarDetallesDeImptos()
-        {
-            LimpiarPorcentajesDeImptos();
-            LimpiarMtosDeImptos();
-        }
-
-        private void LimpiarPorcentajesDeImptos()
-        {
-            var lbls = new[] {
-                lblPorcentajeImpto01,
-                lblPorcentajeImpto02,
-                lblPorcentajeImpto03,
-                lblPorcentajeImpto04,
-                lblPorcentajeImpto05,
-                lblPorcentajeImpto06,
-                lblPorcentajeImpto07,
-                lblPorcentajeImpto08
-            };
-            foreach (var lbl in lbls)
-            {
-                lbl.Text = "0";
-            }
-        }
-
-        private void LimpiarMtosDeImptos()
-        {
-            var lbls = new[] {
-                lblMtoImpto01,
-                lblMtoImpto02,
-                lblMtoImpto03,
-                lblMtoImpto04,
-                lblMtoImpto05,
-                lblMtoImpto06,
-                lblMtoImpto07,
-                lblMtoImpto08
-            };
-            foreach (var lbl in lbls)
-            {
-                lbl.Text = "0";
-            }
         }
 
         private void ControlarBotones(bool eNuevo, bool eDelete, bool eCommit, bool eRollback, bool eSearch, bool eFilter)

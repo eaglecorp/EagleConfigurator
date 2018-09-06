@@ -41,6 +41,7 @@ namespace ConfiguradorUI.Producto
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboUnidadMedida = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblUnidadMedida = new MetroFramework.Controls.MetroLabel();
             this.chkActivo = new MetroFramework.Controls.MetroCheckBox();
             this.btnClaseProd = new MetroFramework.Controls.MetroLink();
@@ -62,10 +63,18 @@ namespace ConfiguradorUI.Producto
             this.chkProductoCompra = new MetroFramework.Controls.MetroCheckBox();
             this.chkProductoVenta = new MetroFramework.Controls.MetroCheckBox();
             this.lblPeso = new MetroFramework.Controls.MetroLabel();
+            this.cboClaseProd = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboGrupoProd = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboTipoExistencia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboTipoProd = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblClaseProd = new MetroFramework.Controls.MetroLabel();
             this.lblGrupo = new MetroFramework.Controls.MetroLabel();
             this.lblTipoExistencia = new MetroFramework.Controls.MetroLabel();
             this.lblTipoProd = new MetroFramework.Controls.MetroLabel();
+            this.cboModelo = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboMarca = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboSubFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblModelo = new MetroFramework.Controls.MetroLabel();
             this.lblMarca = new MetroFramework.Controls.MetroLabel();
             this.lblSubFamilia = new MetroFramework.Controls.MetroLabel();
@@ -82,6 +91,9 @@ namespace ConfiguradorUI.Producto
             this.tabPagPrecio = new MetroFramework.Controls.MetroTabPage();
             this.lblPorcentajeAcumuladoImpto = new System.Windows.Forms.Label();
             this.grbDetalleImpuesto = new System.Windows.Forms.GroupBox();
+            this.lblMtoImpto01 = new MetroFramework.Controls.MetroLabel();
+            this.lblMtoImpto02 = new MetroFramework.Controls.MetroLabel();
+            this.lblPorcentajeImpto01 = new MetroFramework.Controls.MetroLabel();
             this.lblMtoImpto08 = new MetroFramework.Controls.MetroLabel();
             this.lblMtoImpto07 = new MetroFramework.Controls.MetroLabel();
             this.lblMtoImpto06 = new MetroFramework.Controls.MetroLabel();
@@ -134,6 +146,8 @@ namespace ConfiguradorUI.Producto
             this.chkInafecto = new MetroFramework.Controls.MetroCheckBox();
             this.chkExento = new MetroFramework.Controls.MetroCheckBox();
             this.chkImpto = new MetroFramework.Controls.MetroCheckBox();
+            this.cboImpuesto = new ConfigUtilitarios.Controls.BorderedCombo();
+            this.cboTipoMoneda = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblImpuesto = new MetroFramework.Controls.MetroLabel();
             this.lblTipoMoneda = new MetroFramework.Controls.MetroLabel();
             this.btnImpuesto = new MetroFramework.Controls.MetroLink();
@@ -149,6 +163,7 @@ namespace ConfiguradorUI.Producto
             this.panelFiltro = new MetroFramework.Controls.MetroPanel();
             this.lblFiltro = new MetroFramework.Controls.MetroLabel();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
             this.lblNombreForm = new System.Windows.Forms.Label();
             this.errorProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblIdProducto = new System.Windows.Forms.Label();
@@ -157,21 +172,6 @@ namespace ConfiguradorUI.Producto
             this.lblNumInactivo = new System.Windows.Forms.Label();
             this.lblNumActivo = new System.Windows.Forms.Label();
             this.lblNumReg = new System.Windows.Forms.Label();
-            this.cboFiltro = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboUnidadMedida = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboClaseProd = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboGrupoProd = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboTipoExistencia = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboTipoProd = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboModelo = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboMarca = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboSubFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboFamilia = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboImpuesto = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.cboTipoMoneda = new ConfigUtilitarios.Controls.BorderedCombo();
-            this.lblPorcentajeImpto01 = new MetroFramework.Controls.MetroLabel();
-            this.lblMtoImpto02 = new MetroFramework.Controls.MetroLabel();
-            this.lblMtoImpto01 = new MetroFramework.Controls.MetroLabel();
             this.tabProducto.SuspendLayout();
             this.tabPagGeneral.SuspendLayout();
             this.tabPagPrecio.SuspendLayout();
@@ -358,6 +358,19 @@ namespace ConfiguradorUI.Producto
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 5);
             this.panel1.TabIndex = 57;
+            // 
+            // cboUnidadMedida
+            // 
+            this.cboUnidadMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUnidadMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboUnidadMedida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboUnidadMedida.FormattingEnabled = true;
+            this.cboUnidadMedida.Location = new System.Drawing.Point(354, 83);
+            this.cboUnidadMedida.Name = "cboUnidadMedida";
+            this.cboUnidadMedida.Size = new System.Drawing.Size(183, 23);
+            this.cboUnidadMedida.TabIndex = 4;
+            this.cboUnidadMedida.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
             // 
             // lblUnidadMedida
             // 
@@ -720,6 +733,58 @@ namespace ConfiguradorUI.Producto
             this.lblPeso.Text = "Peso:";
             this.lblPeso.UseCustomForeColor = true;
             // 
+            // cboClaseProd
+            // 
+            this.cboClaseProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboClaseProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboClaseProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboClaseProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboClaseProd.FormattingEnabled = true;
+            this.cboClaseProd.Location = new System.Drawing.Point(353, 277);
+            this.cboClaseProd.Name = "cboClaseProd";
+            this.cboClaseProd.Size = new System.Drawing.Size(152, 23);
+            this.cboClaseProd.TabIndex = 12;
+            this.cboClaseProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboGrupoProd
+            // 
+            this.cboGrupoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboGrupoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGrupoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboGrupoProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGrupoProd.FormattingEnabled = true;
+            this.cboGrupoProd.Location = new System.Drawing.Point(353, 241);
+            this.cboGrupoProd.Name = "cboGrupoProd";
+            this.cboGrupoProd.Size = new System.Drawing.Size(152, 23);
+            this.cboGrupoProd.TabIndex = 10;
+            this.cboGrupoProd.SelectedIndexChanged += new System.EventHandler(this.cboGrupoProd_SelectedIndexChanged);
+            // 
+            // cboTipoExistencia
+            // 
+            this.cboTipoExistencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTipoExistencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoExistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoExistencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoExistencia.FormattingEnabled = true;
+            this.cboTipoExistencia.Location = new System.Drawing.Point(75, 277);
+            this.cboTipoExistencia.Name = "cboTipoExistencia";
+            this.cboTipoExistencia.Size = new System.Drawing.Size(184, 23);
+            this.cboTipoExistencia.TabIndex = 11;
+            this.cboTipoExistencia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboTipoProd
+            // 
+            this.cboTipoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTipoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoProd.FormattingEnabled = true;
+            this.cboTipoProd.Location = new System.Drawing.Point(76, 241);
+            this.cboTipoProd.Name = "cboTipoProd";
+            this.cboTipoProd.Size = new System.Drawing.Size(152, 23);
+            this.cboTipoProd.TabIndex = 9;
+            this.cboTipoProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // lblClaseProd
             // 
             this.lblClaseProd.AutoSize = true;
@@ -763,6 +828,58 @@ namespace ConfiguradorUI.Producto
             this.lblTipoProd.TabIndex = 18;
             this.lblTipoProd.Text = "Tipo Prod:";
             this.lblTipoProd.UseCustomForeColor = true;
+            // 
+            // cboModelo
+            // 
+            this.cboModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboModelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboModelo.FormattingEnabled = true;
+            this.cboModelo.Location = new System.Drawing.Point(353, 178);
+            this.cboModelo.Name = "cboModelo";
+            this.cboModelo.Size = new System.Drawing.Size(152, 23);
+            this.cboModelo.TabIndex = 8;
+            this.cboModelo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(353, 142);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(152, 23);
+            this.cboMarca.TabIndex = 6;
+            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
+            // 
+            // cboSubFamilia
+            // 
+            this.cboSubFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboSubFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSubFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboSubFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSubFamilia.FormattingEnabled = true;
+            this.cboSubFamilia.Location = new System.Drawing.Point(75, 178);
+            this.cboSubFamilia.Name = "cboSubFamilia";
+            this.cboSubFamilia.Size = new System.Drawing.Size(152, 23);
+            this.cboSubFamilia.TabIndex = 7;
+            this.cboSubFamilia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
+            // cboFamilia
+            // 
+            this.cboFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFamilia.FormattingEnabled = true;
+            this.cboFamilia.Location = new System.Drawing.Point(75, 142);
+            this.cboFamilia.Name = "cboFamilia";
+            this.cboFamilia.Size = new System.Drawing.Size(153, 23);
+            this.cboFamilia.TabIndex = 5;
+            this.cboFamilia.SelectedIndexChanged += new System.EventHandler(this.cboFamilia_SelectedIndexChanged);
             // 
             // lblModelo
             // 
@@ -1082,6 +1199,42 @@ namespace ConfiguradorUI.Producto
             this.grbDetalleImpuesto.TabIndex = 57;
             this.grbDetalleImpuesto.TabStop = false;
             this.grbDetalleImpuesto.Text = "Detalles de impuestos aplicados";
+            // 
+            // lblMtoImpto01
+            // 
+            this.lblMtoImpto01.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto01.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto01.Location = new System.Drawing.Point(372, 43);
+            this.lblMtoImpto01.Name = "lblMtoImpto01";
+            this.lblMtoImpto01.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto01.TabIndex = 194;
+            this.lblMtoImpto01.Text = "0";
+            this.lblMtoImpto01.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto01.UseCustomForeColor = true;
+            // 
+            // lblMtoImpto02
+            // 
+            this.lblMtoImpto02.BackColor = System.Drawing.Color.Transparent;
+            this.lblMtoImpto02.ForeColor = System.Drawing.Color.Navy;
+            this.lblMtoImpto02.Location = new System.Drawing.Point(372, 62);
+            this.lblMtoImpto02.Name = "lblMtoImpto02";
+            this.lblMtoImpto02.Size = new System.Drawing.Size(133, 19);
+            this.lblMtoImpto02.TabIndex = 193;
+            this.lblMtoImpto02.Text = "0";
+            this.lblMtoImpto02.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMtoImpto02.UseCustomForeColor = true;
+            // 
+            // lblPorcentajeImpto01
+            // 
+            this.lblPorcentajeImpto01.BackColor = System.Drawing.Color.Transparent;
+            this.lblPorcentajeImpto01.ForeColor = System.Drawing.Color.Navy;
+            this.lblPorcentajeImpto01.Location = new System.Drawing.Point(120, 43);
+            this.lblPorcentajeImpto01.Name = "lblPorcentajeImpto01";
+            this.lblPorcentajeImpto01.Size = new System.Drawing.Size(105, 19);
+            this.lblPorcentajeImpto01.TabIndex = 192;
+            this.lblPorcentajeImpto01.Text = "0";
+            this.lblPorcentajeImpto01.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPorcentajeImpto01.UseCustomForeColor = true;
             // 
             // lblMtoImpto08
             // 
@@ -1882,6 +2035,32 @@ namespace ConfiguradorUI.Producto
             this.chkImpto.UseSelectable = true;
             this.chkImpto.CheckedChanged += new System.EventHandler(this.chkImpto_CheckedChanged);
             // 
+            // cboImpuesto
+            // 
+            this.cboImpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboImpuesto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboImpuesto.FormattingEnabled = true;
+            this.cboImpuesto.Location = new System.Drawing.Point(348, 12);
+            this.cboImpuesto.Name = "cboImpuesto";
+            this.cboImpuesto.Size = new System.Drawing.Size(163, 23);
+            this.cboImpuesto.TabIndex = 1;
+            this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
+            // 
+            // cboTipoMoneda
+            // 
+            this.cboTipoMoneda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
+            this.cboTipoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoMoneda.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoMoneda.FormattingEnabled = true;
+            this.cboTipoMoneda.Location = new System.Drawing.Point(78, 12);
+            this.cboTipoMoneda.Name = "cboTipoMoneda";
+            this.cboTipoMoneda.Size = new System.Drawing.Size(182, 23);
+            this.cboTipoMoneda.TabIndex = 0;
+            this.cboTipoMoneda.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
+            // 
             // lblImpuesto
             // 
             this.lblImpuesto.AutoSize = true;
@@ -2116,6 +2295,18 @@ namespace ConfiguradorUI.Producto
             this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
+            // cboFiltro
+            // 
+            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Location = new System.Drawing.Point(91, 11);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(176, 23);
+            this.cboFiltro.TabIndex = 2;
+            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
+            // 
             // lblNombreForm
             // 
             this.lblNombreForm.AutoSize = true;
@@ -2211,197 +2402,6 @@ namespace ConfiguradorUI.Producto
             this.lblNumReg.Size = new System.Drawing.Size(43, 17);
             this.lblNumReg.TabIndex = 114;
             this.lblNumReg.Text = "Total: ";
-            // 
-            // cboFiltro
-            // 
-            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(91, 11);
-            this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(176, 23);
-            this.cboFiltro.TabIndex = 2;
-            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
-            // 
-            // cboUnidadMedida
-            // 
-            this.cboUnidadMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUnidadMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboUnidadMedida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboUnidadMedida.FormattingEnabled = true;
-            this.cboUnidadMedida.Location = new System.Drawing.Point(354, 83);
-            this.cboUnidadMedida.Name = "cboUnidadMedida";
-            this.cboUnidadMedida.Size = new System.Drawing.Size(183, 23);
-            this.cboUnidadMedida.TabIndex = 4;
-            this.cboUnidadMedida.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboClaseProd
-            // 
-            this.cboClaseProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboClaseProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboClaseProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboClaseProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboClaseProd.FormattingEnabled = true;
-            this.cboClaseProd.Location = new System.Drawing.Point(353, 277);
-            this.cboClaseProd.Name = "cboClaseProd";
-            this.cboClaseProd.Size = new System.Drawing.Size(152, 23);
-            this.cboClaseProd.TabIndex = 12;
-            this.cboClaseProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboGrupoProd
-            // 
-            this.cboGrupoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboGrupoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGrupoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboGrupoProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboGrupoProd.FormattingEnabled = true;
-            this.cboGrupoProd.Location = new System.Drawing.Point(353, 241);
-            this.cboGrupoProd.Name = "cboGrupoProd";
-            this.cboGrupoProd.Size = new System.Drawing.Size(152, 23);
-            this.cboGrupoProd.TabIndex = 10;
-            this.cboGrupoProd.SelectedIndexChanged += new System.EventHandler(this.cboGrupoProd_SelectedIndexChanged);
-            // 
-            // cboTipoExistencia
-            // 
-            this.cboTipoExistencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoExistencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoExistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoExistencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoExistencia.FormattingEnabled = true;
-            this.cboTipoExistencia.Location = new System.Drawing.Point(75, 277);
-            this.cboTipoExistencia.Name = "cboTipoExistencia";
-            this.cboTipoExistencia.Size = new System.Drawing.Size(184, 23);
-            this.cboTipoExistencia.TabIndex = 11;
-            this.cboTipoExistencia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboTipoProd
-            // 
-            this.cboTipoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoProd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoProd.FormattingEnabled = true;
-            this.cboTipoProd.Location = new System.Drawing.Point(76, 241);
-            this.cboTipoProd.Name = "cboTipoProd";
-            this.cboTipoProd.Size = new System.Drawing.Size(152, 23);
-            this.cboTipoProd.TabIndex = 9;
-            this.cboTipoProd.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboModelo
-            // 
-            this.cboModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboModelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboModelo.FormattingEnabled = true;
-            this.cboModelo.Location = new System.Drawing.Point(353, 178);
-            this.cboModelo.Name = "cboModelo";
-            this.cboModelo.Size = new System.Drawing.Size(152, 23);
-            this.cboModelo.TabIndex = 8;
-            this.cboModelo.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboMarca
-            // 
-            this.cboMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(353, 142);
-            this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(152, 23);
-            this.cboMarca.TabIndex = 6;
-            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
-            // 
-            // cboSubFamilia
-            // 
-            this.cboSubFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboSubFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSubFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboSubFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSubFamilia.FormattingEnabled = true;
-            this.cboSubFamilia.Location = new System.Drawing.Point(75, 178);
-            this.cboSubFamilia.Name = "cboSubFamilia";
-            this.cboSubFamilia.Size = new System.Drawing.Size(152, 23);
-            this.cboSubFamilia.TabIndex = 7;
-            this.cboSubFamilia.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // cboFamilia
-            // 
-            this.cboFamilia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboFamilia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFamilia.FormattingEnabled = true;
-            this.cboFamilia.Location = new System.Drawing.Point(75, 142);
-            this.cboFamilia.Name = "cboFamilia";
-            this.cboFamilia.Size = new System.Drawing.Size(152, 23);
-            this.cboFamilia.TabIndex = 5;
-            this.cboFamilia.SelectedIndexChanged += new System.EventHandler(this.cboFamilia_SelectedIndexChanged);
-            // 
-            // cboImpuesto
-            // 
-            this.cboImpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboImpuesto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboImpuesto.FormattingEnabled = true;
-            this.cboImpuesto.Location = new System.Drawing.Point(348, 12);
-            this.cboImpuesto.Name = "cboImpuesto";
-            this.cboImpuesto.Size = new System.Drawing.Size(163, 23);
-            this.cboImpuesto.TabIndex = 1;
-            this.cboImpuesto.SelectedIndexChanged += new System.EventHandler(this.cboImpuesto_SelectedIndexChanged);
-            // 
-            // cboTipoMoneda
-            // 
-            this.cboTipoMoneda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(255)))));
-            this.cboTipoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoMoneda.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoMoneda.FormattingEnabled = true;
-            this.cboTipoMoneda.Location = new System.Drawing.Point(78, 12);
-            this.cboTipoMoneda.Name = "cboTipoMoneda";
-            this.cboTipoMoneda.Size = new System.Drawing.Size(182, 23);
-            this.cboTipoMoneda.TabIndex = 0;
-            this.cboTipoMoneda.SelectedIndexChanged += new System.EventHandler(this.CambioEnControl);
-            // 
-            // lblPorcentajeImpto01
-            // 
-            this.lblPorcentajeImpto01.BackColor = System.Drawing.Color.Transparent;
-            this.lblPorcentajeImpto01.ForeColor = System.Drawing.Color.Navy;
-            this.lblPorcentajeImpto01.Location = new System.Drawing.Point(120, 43);
-            this.lblPorcentajeImpto01.Name = "lblPorcentajeImpto01";
-            this.lblPorcentajeImpto01.Size = new System.Drawing.Size(105, 19);
-            this.lblPorcentajeImpto01.TabIndex = 192;
-            this.lblPorcentajeImpto01.Text = "0";
-            this.lblPorcentajeImpto01.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPorcentajeImpto01.UseCustomForeColor = true;
-            // 
-            // lblMtoImpto02
-            // 
-            this.lblMtoImpto02.BackColor = System.Drawing.Color.Transparent;
-            this.lblMtoImpto02.ForeColor = System.Drawing.Color.Navy;
-            this.lblMtoImpto02.Location = new System.Drawing.Point(372, 62);
-            this.lblMtoImpto02.Name = "lblMtoImpto02";
-            this.lblMtoImpto02.Size = new System.Drawing.Size(133, 19);
-            this.lblMtoImpto02.TabIndex = 193;
-            this.lblMtoImpto02.Text = "0";
-            this.lblMtoImpto02.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblMtoImpto02.UseCustomForeColor = true;
-            // 
-            // lblMtoImpto01
-            // 
-            this.lblMtoImpto01.BackColor = System.Drawing.Color.Transparent;
-            this.lblMtoImpto01.ForeColor = System.Drawing.Color.Navy;
-            this.lblMtoImpto01.Location = new System.Drawing.Point(372, 43);
-            this.lblMtoImpto01.Name = "lblMtoImpto01";
-            this.lblMtoImpto01.Size = new System.Drawing.Size(133, 19);
-            this.lblMtoImpto01.TabIndex = 194;
-            this.lblMtoImpto01.Text = "0";
-            this.lblMtoImpto01.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblMtoImpto01.UseCustomForeColor = true;
             // 
             // FormProducto
             // 
