@@ -238,7 +238,6 @@ namespace ConfigDataAccess
                 }
             }
             return oProducto;
-
         }
         public PROt09_producto ProductoXCod(string cod)
         {
@@ -496,6 +495,27 @@ namespace ConfigDataAccess
             }
             return pvpucontax;
         }
+
+        public PROt09_producto GetIdPorcentajeDeProducto(long id_producto)
+        {
+            var oProducto = new PROt09_producto();
+            string sentencia = "SELECT id_producto, sn_incluye_impto, id_impuesto FROM PROt09_producto WHERE id_producto=@id_producto";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    oProducto = cnn.Query<PROt09_producto>(sentencia, new { id_producto }).SingleOrDefault();
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda GetIdPorcentajeDeProducto: ", e.Message);
+                }
+            }
+            return oProducto;
+        }
+
 
     }
 }

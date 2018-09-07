@@ -32,7 +32,7 @@ namespace ConfiguradorUI.Maestro
 
         string codSelected = "";
         MetroToolTip tooltip;
-
+        public ICollection<int> colaIdsActualizados;
         #endregion
 
         public FormImpuesto()
@@ -243,6 +243,7 @@ namespace ConfiguradorUI.Maestro
                             obj.id_impuesto = id;
                             bool success = new ImpuestoBL().ActualizarImpuesto(obj);
                             actualizar = true;
+                            colaIdsActualizados.Add(id);
                             ControlarEventosABM(obj.id_impuesto);
                             if (!success)
                             {
@@ -277,6 +278,7 @@ namespace ConfiguradorUI.Maestro
                             obj.id_impuesto = id;
                             bool success = new ImpuestoBL().ActualizarImpuesto(obj);
                             actualizar = true;
+                            colaIdsActualizados.Add(id);
                             if (!success)
                             {
                                 MessageBox.Show("No se pudo actualizar el impuesto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -907,6 +909,7 @@ namespace ConfiguradorUI.Maestro
 
         private void SetInit()
         {
+            colaIdsActualizados = new List<int>();
             lblIdImpuesto.Visible = false;
             ConfigurarControles();
             ControlarEventosABM();
@@ -935,7 +938,6 @@ namespace ConfiguradorUI.Maestro
             SetInit();
         }
 
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             TipoOperacion = TipoOperacionABM.Nuevo;
@@ -954,14 +956,38 @@ namespace ConfiguradorUI.Maestro
             {
                 TipoOperacion = TipoOperacionABM.Insertar;
             }
+            else if (TipoOperacion == TipoOperacionABM.Cambio)
+            {
+                TipoOperacion = TipoOperacionABM.Modificar;
+            }
+
+            if (TipoOperacion == TipoOperacionABM.Modificar)
+            {
+                #region Preguntar en caso de modificación
+                string msg = "Cuando cambia los porcentajes del impuesto, tenga en cuenta que los precios de los productos, " +
+                                "combos electivos y combos que apliquen este impuesto también serán modificados.\n" +
+                                "¿Está seguro de continuar?";
+                var result = MessageBox.Show(msg, "Advertencia", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    Commit();
+                }
+                else if (result == DialogResult.No)
+                {
+                    SeleccionarRegistro();
+                    TipoOperacion = TipoOperacionABM.No_Action;
+                    ControlarEventosABM();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    btnRollback.Focus();
+                }
+                #endregion
+            }
             else
             {
-                if (TipoOperacion == TipoOperacionABM.Cambio)
-                {
-                    TipoOperacion = TipoOperacionABM.Modificar;
-                }
+                Commit();
             }
-            Commit();
         }
 
         private void btnRollback_Click(object sender, EventArgs e)

@@ -202,5 +202,24 @@ namespace ConfigDataAccess.Producto
             }
             return obj;
         }
+        public PROt13_combo GetIdPorcentajeDeCombo(long id_combo)
+        {
+            var obj = new PROt13_combo();
+            string sentencia = "SELECT id_combo, sn_incluye_impto, id_impuesto FROM PROt13_combo WHERE id_combo=@id_combo";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    obj = cnn.Query<PROt13_combo>(sentencia, new { id_combo }).SingleOrDefault();
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda GetIdPorcentajeDeCombo: ", e.Message);
+                }
+            }
+            return obj;
+        }
     }
 }

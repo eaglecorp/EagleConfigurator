@@ -329,6 +329,25 @@ namespace ConfigDataAccess.Producto
             return list;
         }
 
+        public PROt15_combo_variable GetIdPorcentajeDeComboVariable(long id_combo_variable)
+        {
+            var obj = new PROt15_combo_variable();
+            string sentencia = "SELECT id_combo_variable, sn_incluye_impto, id_impuesto FROM PROt15_combo_variable WHERE id_combo_variable=@id_combo_variable";
+            using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
+            {
+                try
+                {
+                    cnn.Open();
+                    obj = cnn.Query<PROt15_combo_variable>(sentencia, new { id_combo_variable }).SingleOrDefault();
+                }
+                catch (Exception e)
+                {
+                    var log = new Log();
+                    log.ArchiveLog("Búsqueda GetIdPorcentajeDeComboVariable: ", e.Message);
+                }
+            }
+            return obj;
+        }
 
         public bool ActualizarEnCascadaPrecioCboVar(long idCboVar, decimal nuevoPrecioConTax, decimal nuevoPrecioSinTax)
         {

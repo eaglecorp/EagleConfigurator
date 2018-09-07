@@ -43,5 +43,9 @@ namespace ConfigBusinessLogic.Producto
         {
             return new ComboVariableDA().BuscarComboVariable(cod, descripcion, id_estado);
         }
+        public PROt15_combo_variable GetIdPorcentajeDeComboVariable(long id_combo_variable)
+        {
+            return new ComboVariableDA().GetIdPorcentajeDeComboVariable(id_combo_variable);
+        }
     }
 }

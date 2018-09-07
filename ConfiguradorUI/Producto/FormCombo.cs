@@ -517,6 +517,79 @@ namespace ConfiguradorUI.Producto
             }
             return id;
         }
+        private void ManejarPosiblesCambiosDeImptos()
+        {
+            try
+            {
+                //Auxiliares que consiguen consistencia en el flujo de la UI
+                int oldId = 0;
+                int op = TipoOperacion;
+
+                if (cboImpuesto.SelectedValue != null)
+                    oldId = int.Parse(cboImpuesto.SelectedValue.ToString());
+
+                var frm = new FormImpuesto();
+                frm.ShowDialog();
+
+                if (frm.actualizar)
+                {
+                    cboImpuesto.DataSource = null;
+                    cboImpuesto.DisplayMember = "txt_abrv";
+                    cboImpuesto.ValueMember = "id_impuesto";
+                    cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
+                    cboImpuesto.DropDownWidth = ControlHelper.DropDownWidth(cboImpuesto);
+                    long idCombo = getIdCombo();
+                    //Cuando se trata de un registro que podría requerir un rollback
+                    if (idCombo != 0 && frm.colaIdsActualizados != null && frm.colaIdsActualizados.Count > 0)
+                    {
+                        var comboConImpto = new ComboBL().GetIdPorcentajeDeCombo(idCombo);
+                        if (comboConImpto != null)
+                        {
+                            bool requiereRollback = frm.colaIdsActualizados.Any(x => x == comboConImpto.id_impuesto) &&
+                                                    comboConImpto.sn_incluye_impto == Estado.IdActivo;
+                            if (requiereRollback)
+                            {
+                                SeleccionarRegistro();
+                                TipoOperacion = TipoOperacionABM.No_Action;
+                                ControlarEventosABM();
+                                Msg.Ok_Info("Se ha vuelto a cargar los datos del combo por actualización de su impuesto.");
+                                return;
+                            }
+                        }
+                    }
+
+                    cboImpuesto.SelectedValue = oldId;
+                    TipoOperacion = op;
+                    MantenerEstadoABM();
+
+                    long getIdCombo()
+                    {
+                        long.TryParse(lblIdCombo.Text, out long id);
+                        return id;
+                    }
+                }
+
+                SetFocusControl();
+
+                void SetFocusControl()
+                {
+                    if (chkIncluyeImpto.Checked)
+                    {
+                        txtPrecioCboConTax.Focus();
+                        txtPrecioCboConTax.SelectionStart = txtPrecioCboConTax.Text.Length;
+                    }
+                    else
+                    {
+                        txtPrecioCboSinTax.Focus();
+                        txtPrecioCboSinTax.SelectionStart = txtPrecioCboConTax.Text.Length;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void CargarGridDetail(IEnumerable<PROt14_combo_fixed_dtl> list, bool refreshAllGrids = false, bool showInactive = false)
         {
@@ -1804,13 +1877,11 @@ namespace ConfiguradorUI.Producto
             {
                 TipoOperacion = TipoOperacionABM.Insertar;
             }
-            else
+            else if (TipoOperacion == TipoOperacionABM.Cambio)
             {
-                if (TipoOperacion == TipoOperacionABM.Cambio)
-                {
-                    TipoOperacion = TipoOperacionABM.Modificar;
-                }
+                TipoOperacion = TipoOperacionABM.Modificar;
             }
+
             Commit();
         }
 
@@ -2138,38 +2209,7 @@ namespace ConfiguradorUI.Producto
 
         private void btnImpuesto_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //int oldValue = 0;
-                //int op = TipoOperacion;
-
-                //if (cboImpuesto.SelectedValue != null)
-                //    oldValue = int.Parse(cboImpuesto.SelectedValue.ToString());
-
-                var frm = new FormImpuesto();
-                frm.ShowDialog();
-
-                if (frm.actualizar)
-                {
-                    cboImpuesto.DataSource = null;
-                    cboImpuesto.DisplayMember = "txt_abrv";
-                    cboImpuesto.ValueMember = "id_impuesto";
-                    cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
-                    cboImpuesto.DropDownWidth = ControlHelper.DropDownWidth(cboImpuesto);
-                    //cboImpuesto.SelectedValue = oldValue;
-                    //TipoOperacion = op;
-                    //MantenerEstadoABM();
-                    SeleccionarRegistro();
-                    TipoOperacion = TipoOperacionABM.No_Action;
-                    ControlarEventosABM();
-                    Msg.Ok_Info("Se han vuelto a cargar los datos del combo por actualización de los impuestos.");
-                }
-
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(this, $"Excepción cuando se intentaba actualizar el combo. {exc.Message}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            ManejarPosiblesCambiosDeImptos();
         }
 
         private void chkPrecioAcumulado_CheckedChanged(object sender, EventArgs e)

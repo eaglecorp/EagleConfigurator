@@ -34,5 +34,9 @@ namespace ConfigBusinessLogic.Producto
         {
             return new ComboDA().ComboXCod(cod);
         }
+        public PROt13_combo GetIdPorcentajeDeCombo(long id_combo)
+        {
+            return new ComboDA().GetIdPorcentajeDeCombo(id_combo);
+        }
     }
 }

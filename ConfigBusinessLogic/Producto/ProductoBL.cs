@@ -90,6 +90,10 @@ namespace ConfigBusinessLogic
             return lista;
         }
 
+        public PROt09_producto GetIdPorcentajeDeProducto(long id_producto)
+        {
+            return new ProductoDA().GetIdPorcentajeDeProducto(id_producto);
+        }
 
     }
 }
