@@ -35,6 +35,7 @@ namespace ConfigDataAccess
             }
             return lista;
         }
+
         public int InsertarImpuesto(MSTt06_impuesto obj)
         {
             int id = 0;
@@ -54,6 +55,7 @@ namespace ConfigDataAccess
             }
             return id;
         }
+
         public void EliminarImpuesto(int id)
         {
             using (var cnn = new SqlConnection(ConnectionManager.GetConnectionString()))
@@ -169,6 +171,7 @@ namespace ConfigDataAccess
             }
             return success;
         }
+
         public MSTt06_impuesto ImpuestoXId(int id)
         {
             var obj = new MSTt06_impuesto();
@@ -188,6 +191,7 @@ namespace ConfigDataAccess
             }
             return obj;
         }
+
         public MSTt06_impuesto ImpuestoXCod(string cod)
         {
             var obj = new MSTt06_impuesto();
@@ -207,6 +211,7 @@ namespace ConfigDataAccess
             }
             return obj;
         }
+
         public decimal? GetPorcentajeAcumulado(int id)
         {
             decimal? porcentajeAcumulado = 0;

@@ -1724,11 +1724,11 @@ namespace ConfiguradorUI.Producto
         {
             try
             {
-                int oldValue = 0;
-                int op = TipoOperacion;
+                //int oldValue = 0;
+                //int op = TipoOperacion;
 
-                if (cboImpuesto.SelectedValue != null)
-                    oldValue = int.Parse(cboImpuesto.SelectedValue.ToString());
+                //if (cboImpuesto.SelectedValue != null)
+                //    oldValue = int.Parse(cboImpuesto.SelectedValue.ToString());
 
                 var frm = new FormImpuesto();
                 frm.ShowDialog();
@@ -1740,9 +1740,13 @@ namespace ConfiguradorUI.Producto
                     cboImpuesto.ValueMember = "id_impuesto";
                     cboImpuesto.DataSource = new ImpuestoBL().ListaImpuesto(Estado.IdActivo, false, true);
                     cboImpuesto.DropDownWidth = ControlHelper.DropDownWidth(cboImpuesto);
-                    cboImpuesto.SelectedValue = oldValue;
-                    TipoOperacion = op;
-                    MantenerEstadoABM();
+                    //cboImpuesto.SelectedValue = oldValue;
+                    //TipoOperacion = op;
+                    //MantenerEstadoABM();
+                    SeleccionarRegistro();
+                    TipoOperacion = TipoOperacionABM.No_Action;
+                    ControlarEventosABM();
+                    Msg.Ok_Info("Se han vuelto a cargar los datos del combo electivo por actualización de los impuestos.");
                 }
 
             }
