@@ -6,6 +6,7 @@ using ConfigUtilitarios;
 using ConfigUtilitarios.Extensions;
 using ConfigUtilitarios.HelperGeneric;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace ConfiguradorUI.Maestro
 
         string codSelected = "";
         string sinColor = UtilString.Space(10) + "Sin Color";
+        MetroToolTip tooltip;
         #endregion
 
         public FormEstadoMesa()
@@ -78,7 +80,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Insertar)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt15_estado_mesa();
                         obj = GetObjeto();
@@ -159,7 +161,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
 
                         var obj = new MSTt15_estado_mesa();
@@ -190,7 +192,7 @@ namespace ConfiguradorUI.Maestro
             {
                 if (TipoOperacion == TipoOperacionABM.Modificar && isSelected && isPending)
                 {
-                    if (esValido())
+                    if (EsValido())
                     {
                         var obj = new MSTt15_estado_mesa();
                         obj = GetObjeto();
@@ -260,7 +262,7 @@ namespace ConfiguradorUI.Maestro
 
         }
 
-        private bool esValido()
+        private bool EsValido()
         {
             //Por ver - validar combos.
             bool no_error = true;
@@ -721,6 +723,16 @@ namespace ConfiguradorUI.Maestro
 
         private void FormEstadoMesa_Load(object sender, EventArgs e)
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            #endregion
+
             lblIdEstadoMesa.Visible = false;
             lblColorPanel.Text = sinColor;
             txtColor.Enabled = false;

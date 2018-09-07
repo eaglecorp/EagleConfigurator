@@ -1768,7 +1768,7 @@ namespace ConfiguradorUI.Persona
             this.btnAsignarTrabajo.ForeColor = System.Drawing.Color.White;
             this.btnAsignarTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarTrabajo.Image")));
             this.btnAsignarTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarTrabajo.Location = new System.Drawing.Point(403, 8);
+            this.btnAsignarTrabajo.Location = new System.Drawing.Point(390, 8);
             this.btnAsignarTrabajo.Name = "btnAsignarTrabajo";
             this.btnAsignarTrabajo.Size = new System.Drawing.Size(81, 30);
             this.btnAsignarTrabajo.TabIndex = 2;
@@ -1783,9 +1783,9 @@ namespace ConfiguradorUI.Persona
             this.metroLabel1.ForeColor = System.Drawing.Color.Navy;
             this.metroLabel1.Location = new System.Drawing.Point(3, 14);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(191, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(137, 19);
             this.metroLabel1.TabIndex = 182;
-            this.metroLabel1.Text = "Seleccione el trabajo a asignar:";
+            this.metroLabel1.Text = "Seleccione un trabajo:";
             this.metroLabel1.UseCustomForeColor = true;
             // 
             // btnDesasignarTrabajo
@@ -1799,11 +1799,11 @@ namespace ConfiguradorUI.Persona
             this.btnDesasignarTrabajo.ForeColor = System.Drawing.Color.White;
             this.btnDesasignarTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnDesasignarTrabajo.Image")));
             this.btnDesasignarTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesasignarTrabajo.Location = new System.Drawing.Point(494, 8);
+            this.btnDesasignarTrabajo.Location = new System.Drawing.Point(477, 8);
             this.btnDesasignarTrabajo.Name = "btnDesasignarTrabajo";
-            this.btnDesasignarTrabajo.Size = new System.Drawing.Size(81, 30);
+            this.btnDesasignarTrabajo.Size = new System.Drawing.Size(98, 30);
             this.btnDesasignarTrabajo.TabIndex = 3;
-            this.btnDesasignarTrabajo.Text = "Eliminar";
+            this.btnDesasignarTrabajo.Text = "Desasignar";
             this.btnDesasignarTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDesasignarTrabajo.UseVisualStyleBackColor = false;
             this.btnDesasignarTrabajo.Click += new System.EventHandler(this.btnDesasignarTrabajo_Click);
@@ -1815,9 +1815,9 @@ namespace ConfiguradorUI.Persona
             this.cboTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTrabajo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTrabajo.FormattingEnabled = true;
-            this.cboTrabajo.Location = new System.Drawing.Point(200, 12);
+            this.cboTrabajo.Location = new System.Drawing.Point(141, 12);
             this.cboTrabajo.Name = "cboTrabajo";
-            this.cboTrabajo.Size = new System.Drawing.Size(185, 23);
+            this.cboTrabajo.Size = new System.Drawing.Size(243, 23);
             this.cboTrabajo.TabIndex = 1;
             // 
             // dgvTrabajoEmpleado

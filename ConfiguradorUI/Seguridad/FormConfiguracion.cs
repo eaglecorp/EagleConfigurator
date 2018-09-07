@@ -19,6 +19,7 @@ using ConfigUtilitarios.HelperGeneric;
 using ConfigBusinessLogic.Fiscal;
 using ConfigUtilitarios.ViewModels;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 
 namespace ConfiguradorUI.Seguridad
 {
@@ -45,6 +46,7 @@ namespace ConfiguradorUI.Seguridad
         };
 
         bool postLoad = false;
+        MetroToolTip tooltip;
         #endregion
 
         public FormConfiguracion()
@@ -660,6 +662,12 @@ namespace ConfiguradorUI.Seguridad
         }
         private void ConfigurarControles()
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnAddParametroFiscal, "Agregar parámetro");
+            tooltip.SetToolTip(btnRemoveParamFis, "Eliminar parámetro");
+            #endregion
+
             #region Label
             var lblPathsImg = new[] { lblPathSplash, lblPathLoginImg, lblPathLogo };
             foreach (var lbl in lblPathsImg)

@@ -9,6 +9,7 @@ using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
 using ConfigUtilitarios.ViewModels;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace ConfiguradorUI.Producto
         PROt09_producto product = null;
         PROt15_combo_variable cboVar = null;
         List<PROt14_combo_fixed_dtl> details = null;
-
+        MetroToolTip tooltip;
         #endregion
 
         public FormCombo()
@@ -1696,6 +1697,19 @@ namespace ConfiguradorUI.Producto
 
         private void SetInit()
         {
+
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            tooltip.SetToolTip(btnAddItem, "Agregar item");
+            tooltip.SetToolTip(btnRemoveItem, "Eliminar item");
+            #endregion
+
             #region Controls
             lblIdCombo.Visible = false;
             txtItemDesc.ReadOnly = true;

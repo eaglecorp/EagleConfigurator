@@ -6,6 +6,7 @@ using ConfiguradorUI.Maestro;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -30,6 +31,7 @@ namespace ConfiguradorUI.Producto
         string codBarraSelected = "";
         string cod1Selected = "";
         string cod2Selected = "";
+        MetroToolTip tooltip;
         #endregion
 
         public FormProducto()
@@ -1628,6 +1630,16 @@ namespace ConfiguradorUI.Producto
         }
         private void ConfigurarControles()
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            #endregion
+
             txtPvPuConTax.TextAlign = HorizontalAlignment.Right;
             txtPvMiConTax.TextAlign = HorizontalAlignment.Right;
             txtPvMaConTax.TextAlign = HorizontalAlignment.Right;

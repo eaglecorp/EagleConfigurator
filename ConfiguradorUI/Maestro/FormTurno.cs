@@ -5,6 +5,7 @@ using ConfigUtilitarios;
 using ConfigUtilitarios.HelperClass;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -30,6 +31,7 @@ namespace ConfiguradorUI.Maestro
         public bool actualizar = false;
         private int TipoOperacion = TipoOperacionABM.No_Action;
         string codSelected = "";
+        MetroToolTip tooltip;
         #endregion
 
         public FormTurno()
@@ -690,6 +692,15 @@ namespace ConfiguradorUI.Maestro
 
         private void SetInit()
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            #endregion
             lblIdTurno.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();

@@ -4,6 +4,7 @@ using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace ConfiguradorUI.Reporte
 
         //string pathAndFile = null;
         string codSelected = "";
+        MetroToolTip tooltip;
         #endregion
 
         public FormReporte()
@@ -818,6 +820,16 @@ namespace ConfiguradorUI.Reporte
 
         private void FormReporte_Load(object sender, EventArgs e)
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            tooltip.SetToolTip(btnBrowse, "Buscar reportes");
+            #endregion
             lblIdReporte.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();

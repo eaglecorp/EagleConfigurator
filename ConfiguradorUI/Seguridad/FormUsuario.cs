@@ -8,6 +8,7 @@ using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.HelperGeneric;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace ConfiguradorUI.Seguridad
 
         //para que al actualizar no se pierda la clave
         private PERt01_usuario usuarioSelected = null;
-
+        MetroToolTip tooltip;
         #endregion
 
         public FormUsuario()
@@ -878,6 +879,15 @@ namespace ConfiguradorUI.Seguridad
 
         private void FormUsuario_Load(object sender, EventArgs e)
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            #endregion
             lblIdUsuario.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();

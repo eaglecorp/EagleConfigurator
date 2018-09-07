@@ -14,6 +14,7 @@ using ConfigBusinessLogic;
 using ConfiguradorUI.FormUtil;
 using ConfigBusinessLogic.Utiles;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 
 namespace ConfiguradorUI.Producto
 {
@@ -28,6 +29,7 @@ namespace ConfiguradorUI.Producto
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
         string codSelected = "";
+        MetroToolTip tooltip;
         #endregion
 
         public FormTipoProd()
@@ -696,6 +698,15 @@ namespace ConfiguradorUI.Producto
 
         private void FormTipoProd_Load(object sender, EventArgs e)
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            #endregion
             lblIdTipoProd.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();

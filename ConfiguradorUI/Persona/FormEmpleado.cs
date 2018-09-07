@@ -20,6 +20,7 @@ using ConfigUtilitarios.HelperGeneric;
 using ConfigBusinessLogic.Labor;
 using ConfigUtilitarios.ViewModels;
 using ConfigBusinessLogic.Utiles;
+using MetroFramework.Components;
 
 namespace ConfiguradorUI.Persona
 {
@@ -39,6 +40,7 @@ namespace ConfiguradorUI.Persona
 
         string codSelected = "";
         string esActivo = "";
+        MetroToolTip tooltip;
         #endregion
 
         public FormEmpleado()
@@ -1924,6 +1926,17 @@ namespace ConfiguradorUI.Persona
 
         private void ConfigurarControles()
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            tooltip.SetToolTip(btnAsignarTrabajo, "Asignar trabajo");
+            tooltip.SetToolTip(btnDesasignarTrabajo, "Desasignar trabajo");
+            #endregion
             DateFormat.SetFormat(dtpFechaCese, DateFormat.DateOnly);
             SetMaxLengthTxt();
         }

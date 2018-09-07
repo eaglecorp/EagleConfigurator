@@ -14,6 +14,7 @@ using ConfigBusinessLogic.Maestro;
 using ConfigBusinessLogic.Sunat;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 
 namespace ConfiguradorUI.Maestro
 {
@@ -27,6 +28,7 @@ namespace ConfiguradorUI.Maestro
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
         string codSelected = "";
+        MetroToolTip tooltip;
         #endregion
 
         public FormMedioPago()
@@ -682,6 +684,15 @@ namespace ConfiguradorUI.Maestro
 
         private void FormMedioPago_Load(object sender, EventArgs e)
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            #endregion
             lblIdMedioPago.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();

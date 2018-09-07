@@ -7,6 +7,7 @@ using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
 using ConfigUtilitarios.ViewModels;
+using MetroFramework.Components;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -45,6 +46,7 @@ namespace ConfiguradorUI.Maestro
                     colValorParametroCaja = 5;
 
         string codSelected = "";
+        MetroToolTip tooltip;
         #endregion
 
         public FormCaja()
@@ -1073,6 +1075,16 @@ namespace ConfiguradorUI.Maestro
 
         private void SetInit()
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            #endregion
+
             lblIdCaja.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();

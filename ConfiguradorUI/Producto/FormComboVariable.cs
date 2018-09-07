@@ -9,6 +9,7 @@ using ConfiguradorUI.Producto.Auxiliares;
 using ConfigUtilitarios;
 using ConfigUtilitarios.HelperControl;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,7 @@ namespace ConfiguradorUI.Producto
         int maxNumItems = 10;
 
         enum DeleteDtlAction { Remove, ActiveDesactive };
+        MetroToolTip tooltip;
         #endregion
 
         public FormComboVariable()
@@ -1347,6 +1349,17 @@ namespace ConfiguradorUI.Producto
         }
         private void SetInit()
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            tooltip.SetToolTip(btnAddItem, "Agregar item");
+            tooltip.SetToolTip(btnRemoveItem, "Eliminar item");
+            #endregion
 
             #region Controls
             lblIdComboVariable.Visible = false;

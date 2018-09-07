@@ -4,6 +4,7 @@ using ConfigBusinessLogic.Utiles;
 using ConfiguradorUI.FormUtil;
 using ConfigUtilitarios;
 using ConfigUtilitarios.KeyValues;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace ConfiguradorUI.Maestro
         private int TipoOperacion = TipoOperacionABM.No_Action;
 
         string codSelected = "";
+        MetroToolTip tooltip;
         #endregion
 
         public FormImpresora()
@@ -761,6 +763,15 @@ namespace ConfiguradorUI.Maestro
 
         private void FormImpresora_Load(object sender, EventArgs e)
         {
+            #region Set tooltip
+            tooltip = new MetroToolTip();
+            tooltip.SetToolTip(btnNuevo, "Nuevo");
+            tooltip.SetToolTip(btnDelete, "Eliminar");
+            tooltip.SetToolTip(btnCommit, "Confirmar");
+            tooltip.SetToolTip(btnRollback, "Cancelar");
+            tooltip.SetToolTip(btnSearch, "Mostrar/Ocultar búsqueda");
+            tooltip.SetToolTip(btnFilter, "Buscar");
+            #endregion
             lblIdImpresora.Visible = false;
             SetMaxLengthTxt();
             ControlarEventosABM();
