@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfiguradorUI", "Configura
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigUtilitarios", "ConfigUtilitarios\ConfigUtilitarios.csproj", "{F3D8EA2A-C06C-44F9-BB6B-23AA33D24591}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EagleConfiguratorInstaller", "EagleConfiguratorInstaller\EagleConfiguratorInstaller.vdproj", "{8BECEE77-1C0A-4D76-8086-387F255325E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,8 @@ Global
 		{F3D8EA2A-C06C-44F9-BB6B-23AA33D24591}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D8EA2A-C06C-44F9-BB6B-23AA33D24591}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D8EA2A-C06C-44F9-BB6B-23AA33D24591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BECEE77-1C0A-4D76-8086-387F255325E7}.Debug|Any CPU.ActiveCfg = Debug
+		{8BECEE77-1C0A-4D76-8086-387F255325E7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
