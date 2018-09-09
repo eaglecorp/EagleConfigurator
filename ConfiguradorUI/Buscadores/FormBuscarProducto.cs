@@ -22,6 +22,7 @@ namespace ConfiguradorUI.Buscadores
         {
             InitializeComponent();
         }
+
         #region Métodos
 
         void AddHandled()
@@ -225,8 +226,10 @@ namespace ConfiguradorUI.Buscadores
             return null;
         }
 
-        private void SeleccionarProducto()
+        private void SeleccionarProducto(DataGridViewCellEventArgs e = null)
         {
+            if (e != null && e.RowIndex == -1 || !(dgvProd.SelectedRows.Count > 0)) return;
+
             if (dgvProd.CurrentRow != null)
             {
                 try
@@ -263,10 +266,10 @@ namespace ConfiguradorUI.Buscadores
                         }
                     }
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
                     producto = null;
-                    MessageBox.Show($"No se pudo seleccionar el producto. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"No se pudo seleccionar el producto. Excepción: {ex.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -304,7 +307,7 @@ namespace ConfiguradorUI.Buscadores
 
         private void dgvProd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            SeleccionarProducto();
+            SeleccionarProducto(e);
         }
 
         private void chkIncluirInactivos_CheckedChanged(object sender, EventArgs e)

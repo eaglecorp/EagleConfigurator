@@ -155,7 +155,7 @@ namespace ConfiguradorUI.Buscadores
                 COD = "",
                 NOMBRE = "",
                 NUM_DOC = "",
-                RUC=""
+                RUC = ""
             }).ToList();
             DefinirCabeceraGrid();
             ControlHelper.DgvReadOnly(dgvEmpleado);
@@ -178,8 +178,9 @@ namespace ConfiguradorUI.Buscadores
             return null;
         }
 
-        private void Seleccionar()
+        private void Seleccionar(DataGridViewCellEventArgs e=null)
         {
+            if (e != null && e.RowIndex == -1 || !(dgvEmpleado.SelectedRows.Count > 0)) return;
             if (dgvEmpleado.CurrentRow != null)
             {
                 try
@@ -187,10 +188,10 @@ namespace ConfiguradorUI.Buscadores
                     _empleado = GetEmpleado();
                     CerrarForm();
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
                     _empleado = null;
-                    MessageBox.Show($"No se pudo seleccionar el empleado. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"No se pudo seleccionar el empleado. Excepción: {ex.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -228,7 +229,7 @@ namespace ConfiguradorUI.Buscadores
 
         private void dgvEmpleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Seleccionar();
+            Seleccionar(e);
         }
 
         private void btnVerTodos_Click(object sender, EventArgs e)

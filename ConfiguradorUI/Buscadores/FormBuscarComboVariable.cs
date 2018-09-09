@@ -297,8 +297,10 @@ namespace ConfiguradorUI.Buscadores
             return null;
         }
 
-        private void SeleccionarComboVariable()
+        private void SeleccionarComboVariable(DataGridViewCellEventArgs e = null)
         {
+            if (e != null && e.RowIndex == -1 || !(dgvComboVariable.SelectedRows.Count > 0)) return;
+
             if (dgvComboVariable.CurrentRow != null)
             {
                 try
@@ -335,10 +337,10 @@ namespace ConfiguradorUI.Buscadores
                         }
                     }
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
                     cboVariable = null;
-                    MessageBox.Show($"No se pudo seleccionar el combo. Excepción: {e.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"No se pudo seleccionar el combo. Excepción: {ex.Message}", "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -369,7 +371,7 @@ namespace ConfiguradorUI.Buscadores
 
         private void dgvComboVariable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            SeleccionarComboVariable();
+            SeleccionarComboVariable(e);
         }
 
         private void chkIncluirInactivos_CheckedChanged(object sender, EventArgs e)
